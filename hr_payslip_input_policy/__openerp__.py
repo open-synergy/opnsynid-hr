@@ -6,7 +6,7 @@
     "version": "8.0.1.0.0",
     "category": "Human Resources",
     "website": "https://opensynergy-indonesia/",
-    "author": "OpenSynergy Indonesia, Odoo Community Association (OCA)",
+    "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
