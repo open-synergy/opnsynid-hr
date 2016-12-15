@@ -24,6 +24,7 @@ class HrExpenseCase(TransactionCase):
             "name": "Test",
             "employee_id": self.employee.id
         })
+        expense1.onchange_currency_id()
         self.assertEqual(
             expense1.journal_id.id,
             False)
@@ -32,6 +33,7 @@ class HrExpenseCase(TransactionCase):
                 "name": "Test",
                 "employee_id": self.employee.id
             })
+        expense2.onchange_currency_id()
         self.assertEqual(
             expense2.journal_id.id,
             self.journal.id)
