@@ -12,6 +12,7 @@ class HrExpensePayableAccount(BaseCase):
     # default_credit_account == True
     # home_address == True
     # property_account_payable == True
+
     def test_onchange_journal_id_1(self):
         with self.env.do_in_onchange():
             new = self.obj_hr_expense.new()

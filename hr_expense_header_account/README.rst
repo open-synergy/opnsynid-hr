@@ -3,7 +3,7 @@
    :alt: License: AGPL-3
 
 ==========================
-HR Expense Payable Account
+HR Expense Header Account
 ==========================
 
 This module adds field accounts for Expense.
@@ -17,7 +17,7 @@ To install this module, you need to:
 2.  Add the path to this repository in your configuration (addons-path)
 3.  Update the module list
 4.  Go to menu *Setting -> Modules -> Local Modules*
-5.  Search For *HR Expense Payable Account*
+5.  Search For *HR Expense Header Account*
 6.  Install the module
 
 Credits

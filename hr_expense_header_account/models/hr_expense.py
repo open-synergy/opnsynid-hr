@@ -22,7 +22,8 @@ class HrExpense(models.Model):
                 if not expense.account_id:
                     continue
 
-                partner = expense.employee_id.address_home_id.commercial_partner_id
+                partner = expense.employee_id.\
+                    address_home_id.commercial_partner_id
                 acc_payable = partner.property_account_payable
                 if line.account_id == acc_payable:
                     line.write({"account_id": expense.account_id.id})
