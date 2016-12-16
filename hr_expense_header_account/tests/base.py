@@ -6,19 +6,32 @@ from openerp.tests.common import TransactionCase
 
 
 class BaseCase(TransactionCase):
+
     def setUp(self):
         super(BaseCase, self).setUp()
         # Data Object
         self.obj_hr_expense = self.env['hr.expense.expense']
 
+        # Data Account
+        self.account = self.env["account.account"].create({
+            "name": "Cash Advance - (test)",
+            "code": "CA",
+            "parent_id": self.env.ref("account.cas").id,
+            "type": "receivable",
+            "reconcile": True,
+            "user_type": self.env.ref(
+                "account.data_account_type_receivable").id,
+        })
         # Data Journal
         self.journal_1 = self.env.ref('account.expenses_journal')
+        self.journal_1.write({
+            "default_credit_account_id": self.account.id,
+            "default_debit_account_id": self.account.id,
+        })
         self.journal_2 = self.create_journal()
         # Data Employee
         self.employee_1 = self.env.ref('hr.employee_mit')
         self.employee_2 = self.create_employee()
-
-        self.account_id
 
     def create_journal(self):
         # Create Journal
