@@ -65,3 +65,25 @@ class HrExpensePayableAccount(BaseCase):
             self.assertEqual(
                 False,
                 new.account_id.id)
+
+    # Check value account_id
+    # Condition :
+    # journal_id == False
+    # default_credit_account == False
+    # home_address == True
+    # property_account_payable == True
+    def test_onchange_journal_id_4(self):
+        with self.env.do_in_onchange():
+            new = self.obj_hr_expense.new()
+
+            new.journal_id = False
+            new.employee_id = self.employee_1.id
+
+            property_account_payable =\
+                new._get_partner_account()
+
+            new.onchange_journal_id()
+
+            self.assertEqual(
+                property_account_payable,
+                new.account_id.id)
