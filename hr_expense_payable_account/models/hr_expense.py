@@ -28,7 +28,10 @@ class HrExpense(models.Model):
         return False
 
     @api.multi
-    @api.onchange('journal_id')
+    @api.onchange(
+        'journal_id',
+        'employee_id'
+    )
     def onchange_journal_id(self):
         value = False
         if self.journal_id:
@@ -38,4 +41,6 @@ class HrExpense(models.Model):
                 value = account_id.id
             else:
                 value = self._get_partner_account()
+        else:
+            value = self._get_partner_account()
         self.account_id = value
