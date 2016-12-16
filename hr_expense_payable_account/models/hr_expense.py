@@ -13,6 +13,21 @@ class HrExpense(models.Model):
         comodel_name="account.account"
     )
 
+    @api.multi
+    def action_move_create(self):
+        """Reconcile supplier invoice payables with the created move lines."""
+        res = super(HrExpense, self).action_move_create()
+        for expense in self:
+            for line in expense.account_move_id.line_id:
+                if not expense.account_id:
+                    continue
+
+                partner = expense.employee_id.address_home_id.commercial_partner_id
+                acc_payable = partner.property_account_payable
+                if line.account_id == acc_payable:
+                    line.write({"account_id": expense.account_id.id})
+        return res
+
     @api.model
     def _get_partner_account(self):
         address_home_id =\

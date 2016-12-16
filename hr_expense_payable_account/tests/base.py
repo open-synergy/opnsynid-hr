@@ -18,6 +18,8 @@ class BaseCase(TransactionCase):
         self.employee_1 = self.env.ref('hr.employee_mit')
         self.employee_2 = self.create_employee()
 
+        self.account_id
+
     def create_journal(self):
         # Create Journal
         # Condition :
