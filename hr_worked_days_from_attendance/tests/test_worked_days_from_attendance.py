@@ -86,7 +86,7 @@ class TestComputeWorkdays(TransactionCase):
             date_start = date_start + timedelta(days=1)
             date_end = date_end + timedelta(days=1)
         self.ts.button_confirm()
-        self.signal_workflow("done")
+        self.ts.signal_workflow("done")
 
     def test_timesheet_import(self):
         wd_obj = self.env['hr.payslip.worked_days']
