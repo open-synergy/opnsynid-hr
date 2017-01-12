@@ -11,17 +11,18 @@ class HrPayslip(models.Model):
     @api.multi
     def button_import_attendance(self):
         for payslip in self:
-            self._import_attendance(payslip)
+            payslip._import_attendance()
 
-    @api.model
-    def _import_attendance(self, payslip):
+    @api.multi
+    def _import_attendance(self):
+        self.ensure_one()
         wd_obj = self.env["hr.payslip.worked_days"]
         day_obj = self.env["hr_timesheet_sheet.sheet.day"]
-        date_from = payslip.date_from
-        date_to = payslip.date_to
+        date_from = self.date_from
+        date_to = self.date_to
 
         criteria1 = [
-            ("payslip_id", "=", payslip.id),
+            ("payslip_id", "=", self.id),
             ("import_from_attendance", "=", True),
         ]
         wd_obj.search(criteria1).unlink()
@@ -31,15 +32,16 @@ class HrPayslip(models.Model):
             "code": "ATTN",
             "number_of_days": 0.0,
             "number_of_hours": 0.0,
-            "contract_id": payslip.contract_id.id,
+            "contract_id": self.contract_id.id,
             "import_from_attendance": True,
-            "payslip_id": payslip.id,
+            "payslip_id": self.id,
         }
 
         criteria2 = [
             ("sheet_id.date_from", ">=", date_from),
             ("sheet_id.date_to", "<=", date_to),
-            ("sheet_id.employee_id", "=", payslip.employee_id.id),
+            ("sheet_id.employee_id", "=", self.employee_id.id),
+            ("sheet_id.state","=","done"),
         ]
 
         for day in day_obj.search(criteria2):
