@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_payslip_view_tree" model="ir.ui.view">
+            <field name="name">Inherit HR Payslip Tree</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='compute_sheet']" position="after">
+                        <button 
+                            name="%(hr_compute_sheet_action)d"
+                            type="action" 
+                            string="Compute Sheet"
+                            states="draft"
+                            class="oe_highlight"
+                        /> 
+                </xpath>
+                <xpath expr="//button[@name='compute_sheet']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
