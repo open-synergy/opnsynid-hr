@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_compute_sheet_view_form" model="ir.ui.view">
+            <field name="name">HR Compute Sheet Form</field>
+            <field name="model">hr.compute_sheet</field>
+            <field name="arch" type="xml">
+                <form string="Compute Sheet">
+                    <group colspan="2" col="2">
+                        <field name="reload_input"/>
+                        <field name="reload_workdays"/>
+                    </group>
+                    <footer>
+                        <button string="Compute" name="button_compute_sheet" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+           </field>
+        </record>
+
+        <record id="hr_compute_sheet_action" model="ir.actions.act_window">
+            <field name="name">Compute Sheet</field>
+            <field name="res_model">hr.compute_sheet</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_compute_sheet_view_form"/>
+            <field name="target">new</field>
+        </record>
+        
+    </data>
+</openerp>

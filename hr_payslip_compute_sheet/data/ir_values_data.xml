@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_compute_sheet_value" model="ir.values">
+            <field name="model_id" ref="hr_payroll.model_hr_payslip" />
+            <field name="name">Compute Sheet</field>
+            <field name="key2">client_action_multi</field>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('hr_compute_sheet_action'))" />    
+            <field name="key">action</field>
+            <field name="model">hr.payslip</field>
+        </record>
+
+    </data>
+</openerp>
