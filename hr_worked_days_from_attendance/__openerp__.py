@@ -4,7 +4,7 @@
 {
     "name": "Worked Days From Attendance",
     "summary": "Compute worked days from attendance",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "category": "Human Resources",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
