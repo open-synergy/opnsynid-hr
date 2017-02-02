@@ -38,8 +38,8 @@ class HrPayslip(models.Model):
         }
 
         criteria2 = [
-            ("sheet_id.date_from", ">=", date_from),
-            ("sheet_id.date_to", "<=", date_to),
+            ("name", ">=", date_from),
+            ("name", "<=", date_to),
             ("sheet_id.employee_id", "=", self.employee_id.id),
             ("sheet_id.state", "=", "done"),
         ]
