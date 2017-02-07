@@ -12,4 +12,4 @@
 # sale-workflow https://github.com/OCA/sale-workflow
 #
 # To provide both the URL and a branch, use:
-# sale-workflow https://github.com/OCA/sale-workflow branchname
+hr https://github.com/OCA/hr 8.0
