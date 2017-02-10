@@ -2,8 +2,8 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
-    "name": "HR Worked Days Compute Holiday",
-    "version": "8.0.1.0.0",
+    "name": "Public Holiday Computation on Worked Days",
+    "version": "8.0.1.0.1",
     "category": "Human Resources",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
