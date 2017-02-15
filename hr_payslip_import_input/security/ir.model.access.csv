@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_payslip_imported_line,HR Payslip Imported Line,model_hr_payslip_imported_line,,1,1,1,1
+access_hr_payslip_process_line,HR Payslip Process Line,model_hr_payslip_process_line,,1,1,1,1

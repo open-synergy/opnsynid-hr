@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_payslip_run_view_form" model="ir.ui.view">
+            <field name="name">Inherit HR Payslip Run Form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='slip_ids']" position="replace">
+                    <notebook>
+                        <page name="page_payslip" string="Payslips">
+                            <field name="slip_ids"/>
+                        </page>
+                        <page name="page_imported_files" string="Imported Files">
+                            <group name="grp_imported_files">
+                                <button 
+                                    name="%(hr_payslip_import_input_view_action)d"
+                                    type="action" 
+                                    string="Import File"
+                                /> 
+                                <field colspan="2" name="imported_files" nolabel="1">
+                                    <tree string="Imported Files">
+                                        <field name="name"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                        <page name="page_process_inputs" string="Process Inputs">
+                            <group name="grp_process_inputs">
+                                <field colspan="2" name="process_inputs" nolabel="1">
+                                    <tree string="Process Inputs">
+                                        <field name="name"/>
+                                        <field name="employee_code"/>
+                                        <field name="input_code"/>
+                                        <field name="amount"/>
+                                        <field name="input_id"/>
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+                <xpath expr="//separator" position="replace">
+                    <separator string="Payslips" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
+
