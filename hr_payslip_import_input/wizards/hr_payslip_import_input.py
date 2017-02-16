@@ -24,7 +24,8 @@ class HrPayslipImportInput(models.TransientModel):
 
     @api.multi
     def _create_imported_line(self, payslip_run):
-        obj_imported_line = self.env['hr.payslip_imported_line']
+        obj_imported_line =\
+            self.env['hr.payslip_run_imported_input_file']
         criteria = [
             ('name', '=', self.name),
             ('run_id', '=', payslip_run.id)
@@ -37,14 +38,19 @@ class HrPayslipImportInput(models.TransientModel):
                 'name': self.name,
                 'run_id': payslip_run.id
             }
-            obj_imported_line.create(val_imported)
+            imported_line_id =\
+                obj_imported_line.create(val_imported)
+            return imported_line_id
 
     @api.multi
-    def _create_process_line(self, data, keys, payslip_run):
+    def _create_process_line(
+        self, data, keys, payslip_run, imported_line_id
+    ):
         obj_employee = self.env['hr.employee']
         obj_payslip_input = self.env['hr.payslip.input']
         obj_payslip = self.env['hr.payslip']
-        obj_process_line = self.env['hr.payslip_process_line']
+        obj_process_line =\
+            self.env['hr.payslip_run_process_input_line']
         for i in range(len(data)):
             val_process = {}
             field = data[i]
@@ -68,7 +74,7 @@ class HrPayslipImportInput(models.TransientModel):
                 input_line.amount = values['amount']
                 val_process['input_id'] = input_line.id
 
-            val_process['name'] = self.name
+            val_process['name'] = imported_line_id.id
             val_process['employee_code'] = values['employee']
             val_process['input_code'] = values['code']
             val_process['amount'] = values['amount']
@@ -111,7 +117,9 @@ class HrPayslipImportInput(models.TransientModel):
         del reader_info[0]
 
         # Create Imported Line
-        self._create_imported_line(payslip_run)
+        imported_line_id =\
+            self._create_imported_line(payslip_run)
 
         # Create Process Line
-        self._create_process_line(reader_info, keys, payslip_run)
+        self._create_process_line(
+            reader_info, keys, payslip_run, imported_line_id)

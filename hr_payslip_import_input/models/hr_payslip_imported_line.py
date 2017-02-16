@@ -5,12 +5,13 @@
 from openerp import models, fields
 
 
-class HrPayslipImportedLine(models.Model):
-    _name = "hr.payslip_imported_line"
-    _description = "HR Payslip Imported Line"
+class HrPayslipRunImportedInputLine(models.Model):
+    _name = "hr.payslip_run_imported_input_file"
+    _description = "HR Payslip Run Imported Input Line"
 
     name = fields.Char(
-        string="Filename"
+        string="Filename",
+        required=True
     )
     run_id = fields.Many2one(
         string="Payslip Run",

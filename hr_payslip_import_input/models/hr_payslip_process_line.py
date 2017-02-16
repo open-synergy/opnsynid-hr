@@ -5,12 +5,13 @@
 from openerp import models, fields
 
 
-class HrPayslipProcessLine(models.Model):
-    _name = "hr.payslip_process_line"
-    _description = "HR Payslip Process Line"
+class HrPayslipRunProcessInputLine(models.Model):
+    _name = "hr.payslip_run_process_input_line"
+    _description = "HR Payslip Run Process Input Line"
 
-    name = fields.Char(
-        string="Filename"
+    name = fields.Many2one(
+        string="Filename",
+        comodel_name="hr.payslip_run_imported_input_file"
     )
     employee_code = fields.Char(
         string="Employee Code"
