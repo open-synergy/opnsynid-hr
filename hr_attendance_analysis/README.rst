@@ -1,8 +1,8 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
     :alt: License: AGPL-3
 
-HR - Attendance Analysis
-========================
+Attendance Computation
+======================
 
 Dynamic reports based on employee's attendances and contract's calendar.
 Among other things, it lets you see the amount of working hours outside and
