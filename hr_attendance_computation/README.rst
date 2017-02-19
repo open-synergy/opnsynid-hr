@@ -1,8 +1,11 @@
 .. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-    :alt: License: AGPL-3
+   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+   :alt: License: AGPL-3
 
 Attendance Computation
 ======================
+
+This module only for temporary until this PR (https://github.com/OCA/hr-timesheet/pull/39) merged.
 
 Dynamic reports based on employee's attendances and contract's calendar.
 Among other things, it lets you see the amount of working hours outside and
@@ -15,20 +18,33 @@ Several analysis settings can be configured, like:
 * Attendances and overtimes roundings
 * Diffrent types of overtime, according to the overtime amount
 
+Installation
+============
+
+To install this module, you need to:
+
+1.  Clone the branch 8.0 of the repository https://github.com/open-synergy/opnsynid-hr
+2.  Add the path to this repository in your configuration (addons-path)
+3.  Update the module list
+4.  Go to menu *Setting -> Modules -> Local Modules*
+5.  Search For *Attendance Computation*
+6.  Install the module
+
+Configuration
+=============
+
+
 Usage
 =====
 
-.. image:: https://odoo-community.org/website/image/ir.attachment/5784_f2813bd/datas
-   :alt: Try me on Runbot
-   :target: https://runbot.odoo-community.org/runbot/117/8.0
 
 Bug Tracker
 ===========
 
-Bugs are tracked on `GitHub Issues <https://github.com/OCA/hr-timesheet/issues>`_.
-In case of trouble, please check there if your issue has already been reported.
-If you spotted it first, help us smashing it by providing a detailed and welcomed feedback
-`here <https://github.com/OCA/hr-timesheet/issues/new?body=module:%20hr_attendance_analysis%0Aversion:%208.0%0A%0A**Steps%20to%20reproduce**%0A-%20...%0A%0A**Current%20behavior**%0A%0A**Expected%20behavior**>`_.
+Bugs are tracked on `GitHub Issues
+<https://github.com/open-synergy/opnsynid-hr/issues>`_. In case of trouble, please
+check there if your issue has already been reported. If you spotted it first,
+help us smashing it by providing a detailed and welcomed feedback.
 
 
 Credits
@@ -39,18 +55,14 @@ Contributors
 
 * Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 * Alex Comba <alex.comba@agilebg.com>
+* Michael Viriyananda <viriyananda.michael@gmail.com>
+* Andhitia Rama <andhitia.r@gmail.com>
 
 Maintainer
 ----------
 
-.. image:: https://odoo-community.org/logo.png
-   :alt: Odoo Community Association
-   :target: https://odoo-community.org
+.. image:: https://opensynergy-indonesia.com/logo.png
+   :alt: OpenSynergy Indonesia
+   :target: https://opensynergy-indonesia.com
 
-This module is maintained by the OCA.
-
-OCA, or the Odoo Community Association, is a nonprofit organization whose
-mission is to support the collaborative development of Odoo features and
-promote its widespread use.
-
-To contribute to this module, please visit http://odoo-community.org.
+This module is maintained by the OpenSynergy Indonesia.
