@@ -30,20 +30,6 @@
                                 <field name="overtime_rounding_tolerance" widget="float_time"/>
                             </group>
                         </page>
-                        <page string="Overtime types">
-                            <field name="overtime_type_ids" colspan="4" nolabel="1">
-                                <tree string="Types" editable="bottom">
-                                    <field name="sequence"/>
-                                    <field name="name"/>
-                                    <field name="limit" widget="float_time"/>
-                                </tree>
-                                <form string="Type">
-                                    <field name="sequence"/>
-                                    <field name="name"/>
-                                    <field name="limit" widget="float_time"/>
-                                </form>
-                            </field>
-                        </page>
                     </notebook>
                 </field>
             </field>
