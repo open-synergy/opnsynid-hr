@@ -15,25 +15,6 @@ import pytz
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
 
-class ResCompany(models.Model):
-    _inherit = 'res.company'
-
-    working_time_precision = fields.Float(
-        string='Working time precision',
-        help='The precision used to analyse working times over working '
-             'schedule (hh:mm)',
-        required=True,
-        default=1.0 / 60,
-    )
-
-    @api.multi
-    def update_attendance_data(self):
-        attendance_pool = self.env['hr.attendance']
-        attendances = attendance_pool.search([])
-        attendances.button_dummy()
-        return True
-
-
 class HrAttendance(models.Model):
     # ref: https://bugs.launchpad.net/openobject-client/+bug/887612
     # test: 0.9853 - 0.0085
