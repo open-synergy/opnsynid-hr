@@ -20,7 +20,8 @@
         "security/ir.model.access.csv",
         "views/res_company_views.xml",
         "views/hr_attendance_views.xml",
-        "views/resource_resource_views.xml",
+        "views/resource_calendar_views.xml",
+        "views/resource_calendar_attendance_views.xml",
     ],
     "demo": [
         "demo/hr_attendance_demo.xml",
