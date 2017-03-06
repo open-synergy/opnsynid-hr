@@ -7,6 +7,7 @@
 from openerp.tests.common import TransactionCase
 from datetime import datetime, timedelta
 from openerp.tools import float_compare
+from openerp.exceptions import Warning as UserError
 
 
 class TestHrAttendance(TransactionCase):
@@ -15,6 +16,8 @@ class TestHrAttendance(TransactionCase):
         result = super(TestHrAttendance, self).setUp(*args, **kwargs)
         self.obj_contract = self.env["hr.contract"]
         self.obj_attendance = self.env["hr.attendance"]
+        self.resource_calendar = self.env['resource.calendar']
+        self.resource_attendance = self.env['resource.calendar.attendance']
         self.employee = self.env.ref("hr.employee")
         self.working_hours = self.env.ref("resource.timesheet_group1")
         self.start_date = datetime.now()
@@ -237,3 +240,47 @@ class TestHrAttendance(TransactionCase):
                 precision_rounding=0.0000001,
             ),
             0)
+
+    def test_error_1(self):
+        self.calendar_id = self.resource_calendar.create({
+            'name': 'TestCalendar',
+            'overtime_rounding': "2"
+        })
+        self.att1_id = self.resource_attendance.create({
+            'name': 'Att1',
+            'dayofweek': '0',
+            'hour_from': 8,
+            'hour_to': 16,
+            'calendar_id': self.calendar_id.id,
+        })
+        self.att2_id = self.resource_attendance.create({
+            'name': 'Att2',
+            'dayofweek': '0',
+            'hour_from': 10,
+            'hour_to': 13,
+            'calendar_id': self.calendar_id.id,
+        })
+
+        self.contract.update({'working_hours': self.calendar_id.id})
+
+        self.obj_attendance.create({
+            "employee_id": self.employee.id,
+            "action": "sign_in",
+            "name": self.next_monday.strftime("%Y-%m-%d") + " 08:00:00",
+        })
+
+        self.obj_attendance.create({
+            "employee_id": self.employee.id,
+            "action": "sign_out",
+            "name": self.next_monday.strftime("%Y-%m-%d") + " 12:40:00",
+        })
+
+        msg = (
+            'Wrongly configured working schedule with '
+            'id %s'
+        ) % (unicode(self.calendar_id.id),)
+
+        with self.assertRaises(UserError) as error:
+            self.env.user.company_id.update_attendance_data()
+
+        self.assertEqual(error.exception.message, msg)

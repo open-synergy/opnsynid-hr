@@ -11,7 +11,7 @@ from openerp.exceptions import Warning as UserError
 from datetime import datetime, timedelta
 import math
 import time
-from openerp.tools import float_compare
+# from openerp.tools import float_compare
 import pytz
 from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
 
@@ -25,9 +25,13 @@ class HrAttendance(models.Model):
         hours = math.floor(abs(float_val))
         mins = abs(float_val) - hours
         mins = round(mins * 60)
-        if mins >= 60.0:
-            hours = hours + 1
-            mins = 0.0
+        # Original Code
+        # Comment by Reason:
+        #     1. Mins can't be greater than 60
+        # ====================================
+        # if mins >= 60.0:
+        #    hours = hours + 1
+        #    mins = 0.0
         float_time = '%02d:%02d' % (hours, mins)
         return float_time
 
@@ -41,13 +45,17 @@ class HrAttendance(models.Model):
             hours = hours % 24
         return datetime(1900, 1, int(days), hours, minutes)
 
-    def float_to_timedelta(self, float_val):
-        str_time = self.float_time_convert(float_val)
-        int_hour = int(str_time.split(":")[0])
-        int_minute = int(str_time.split(":")[1])
-        return timedelta(
-            0,
-            (int_hour * 3600.0) + (int_minute * 6.0)),
+    # Original Code
+    # Comment by Reason:
+    #    1. Not used
+    # ==================================================
+    # def float_to_timedelta(self, float_val):
+    #    str_time = self.float_time_convert(float_val)
+    #    int_hour = int(str_time.split(":")[0])
+    #    int_minute = int(str_time.split(":")[1])
+    #    return timedelta(
+    #        0,
+    #        (int_hour * 3600.0) + (int_minute * 6.0)),
 
     def total_seconds(self, td):
         return (td.microseconds +
@@ -57,16 +65,23 @@ class HrAttendance(models.Model):
     def time_difference(
         self, float_start_time, float_end_time, help_message=False
     ):
-        if float_compare(
-            float_end_time, float_start_time, precision_rounding=0.0000001
-        ) == -1:
-            # that means a difference smaller than 0.36 milliseconds
-            message = _('End time %s < start time %s %s') % (
-                unicode(float_end_time),
-                unicode(float_start_time),
-                help_message and '(' + help_message + ')' or ''
-            )
-            raise UserError(message)
+        # Original Code
+        # Condition:
+        #    1. End Time = Duration within working schedule
+        #    2. Start Time = Duration
+        # Comment by Reason:
+        #    1. Start Time can't be greater than end time
+        # ================================================================
+        # if float_compare(
+        #    float_end_time, float_start_time, precision_rounding=0.0000001
+        # ) == -1:
+        #    that means a difference smaller than 0.36 milliseconds
+        #    message = _('End time %s < start time %s %s') % (
+        #        unicode(float_end_time),
+        #        unicode(float_start_time),
+        #        help_message and '(' + help_message + ')' or ''
+        #    )
+        #    raise UserError(message)
 
         delta = (self.float_to_datetime(float_end_time) -
                  self.float_to_datetime(float_start_time))
@@ -131,43 +146,47 @@ class HrAttendance(models.Model):
         )
         return matched_schedules
 
-    @api.model
-    def get_reference_calendar(
-            self, employee_id, date=None):
-
-        if date is None:
-            date = fields.date.context_today()
-
-        contract_pool = self.env['hr.contract']
-        employee_pool = self.env['hr.employee']
-
-        active_contracts = contract_pool.search([
-            '&',
-            ('employee_id', '=', employee_id),
-            '|',
-            '&',
-            ('date_start', '<=', date),
-            '|',
-            ('date_end', '>=', date),
-            ('date_end', '=', False),
-            '&',
-            '&',
-            ('trial_date_start', '!=', False),
-            ('trial_date_start', '<=', date),
-            '&',
-            ('trial_date_end', '!=', False),
-            ('trial_date_end', '>=', date),
-        ])
-
-        if len(active_contracts) > 1:
-            employee = employee_pool.browse(employee_id)
-            msg = _('Too many active contracts for employee %s at date %s')
-            raise UserError(msg % (employee.name, date))
-        elif active_contracts:
-            contract = active_contracts[0]
-            return contract.working_hours
-        else:
-            return None
+    # Original Code
+    # Comment by Reason:
+    #    1. Not used
+    # ====================================
+    # @api.model
+    # def get_reference_calendar(
+    #        self, employee_id, date=None):
+    #
+    #    if date is None:
+    #        date = fields.date.context_today()
+    #
+    #    contract_pool = self.env['hr.contract']
+    #    employee_pool = self.env['hr.employee']
+    #
+    #    active_contracts = contract_pool.search([
+    #        '&',
+    #        ('employee_id', '=', employee_id),
+    #        '|',
+    #        '&',
+    #        ('date_start', '<=', date),
+    #        '|',
+    #        ('date_end', '>=', date),
+    #        ('date_end', '=', False),
+    #        '&',
+    #        '&',
+    #        ('trial_date_start', '!=', False),
+    #        ('trial_date_start', '<=', date),
+    #        '&',
+    #        ('trial_date_end', '!=', False),
+    #        ('trial_date_end', '>=', date),
+    #    ])
+    #
+    #    if len(active_contracts) > 1:
+    #        employee = employee_pool.browse(employee_id)
+    #        msg = _('Too many active contracts for employee %s at date %s')
+    #        raise UserError(msg % (employee.name, date))
+    #    elif active_contracts:
+    #        contract = active_contracts[0]
+    #        return contract.working_hours
+    #    else:
+    #        return None
 
     def _ceil_rounding(self, rounding, datetime_):
         minutes = (datetime_.minute / 60.0 +
@@ -221,11 +240,15 @@ class HrAttendance(models.Model):
                      ('name', '>', attendance.name)], order='name')
                 if next_attendances:
                     next_attendance = next_attendances[0]
-                    if next_attendance.action == 'sign_in':
-                        # 2012.10.16 LF FIX : Attendance in context timezone
-                        raise UserError(
-                            _('Incongruent data: sign-in %s is followed by '
-                              'another sign-in') % attendance_start)
+                    # Original Code
+                    # Comment by Reason:
+                    #    1. hr.attendance already has constraints againts it
+                    # ======================================================
+                    # if next_attendance.action == 'sign_in':
+                    #    2012.10.16 LF FIX : Attendance in context timezone
+                    #    raise UserError(
+                    #        _('Incongruent data: sign-in %s is followed by '
+                    #          'another sign-in') % attendance_start)
                     next_attendance_date = next_attendance.name
                 # 2012.10.16 LF FIX : Attendance in context timezone
                 attendance_stop = datetime.strptime(
