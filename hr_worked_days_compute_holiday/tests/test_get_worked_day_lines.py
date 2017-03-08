@@ -124,7 +124,9 @@ class TestGetWorkedDayLines(TransactionCase):
         vals = {
             'employee_id': employee.id,
             'contract_id': contract.id,
-            'struct_id': struct.id
+            'struct_id': struct.id,
+            'date_from': '2017-02-1',
+            'date_to': '2017-02-28'
         }
         new = self.obj_payslip.create(vals)
         onchange = new.onchange_employee_id(
