@@ -17,6 +17,6 @@
     "data": [
         "views/hr_salary_rule_views.xml",
         "views/hr_payslip_views.xml",
-        "views/hr_payslip_activity_mass_assign_view.xml"
+        "views/hr_payslip_mass_import_timesheet_activity_view.xml"
     ],
 }

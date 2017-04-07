@@ -2,9 +2,9 @@
 <openerp>
     <data>
 
-        <record id="hr_payslip_activity_mass_assign_view_form" model="ir.ui.view">
-            <field name="name">Hr Payslip Activity Mass Assign Form</field>
-            <field name="model">hr.payslip.activity_mass_assign</field>
+        <record id="hr_payslip_mass_import_timesheet_activity_view_form" model="ir.ui.view">
+            <field name="name">Mass Import Timesheet Activity Form</field>
+            <field name="model">hr.payslip.mass_import_timesheet_activity</field>
             <field name="arch" type="xml">
                 <form string="Import Activity">
                     <footer>
@@ -16,20 +16,20 @@
            </field>
         </record>
 
-        <record id="hr_payslip_activity_mass_assign_act_window" model="ir.actions.act_window">
-            <field name="name">Import Activity</field>
-            <field name="res_model">hr.payslip.activity_mass_assign</field>
+        <record id="hr_payslip_mass_import_timesheet_activity_act_window" model="ir.actions.act_window">
+            <field name="name">Mass Import Timesheet Activity</field>
+            <field name="res_model">hr.payslip.mass_import_timesheet_activity</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="hr_payslip_activity_mass_assign_view_form"/>
+            <field name="view_id" ref="hr_payslip_mass_import_timesheet_activity_view_form"/>
             <field name="target">new</field>
         </record>
 
-        <record id="hr_payslip_activity_mass_assign_values" model="ir.values">
+        <record id="hr_payslip_mass_import_timesheet_activity_values" model="ir.values">
             <field name="model_id" ref="hr_payroll.model_hr_payslip" />
-            <field name="name">Import Activity Mass Assign</field>
+            <field name="name">Mass Import Timesheet Activity</field>
             <field name="key2">client_action_multi</field>
-            <field name="value" eval="'ir.actions.act_window,' + str(ref('hr_payslip_activity_mass_assign_act_window'))"/>
+            <field name="value" eval="'ir.actions.act_window,' + str(ref('hr_payslip_mass_import_timesheet_activity_act_window'))"/>
             <field name="key">action</field>
             <field name="model">hr.payslip</field>
         </record>

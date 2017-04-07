@@ -5,9 +5,9 @@
 from openerp import models, api
 
 
-class HrPayslipActivityMassAssign(models.TransientModel):
-    _name = "hr.payslip.activity_mass_assign"
-    _description = "Hr Payslip Activity Mass Assign"
+class HrPayslipMassImportTimesheetActivity(models.TransientModel):
+    _name = "hr.payslip.mass_import_timesheet_activity"
+    _description = "Hr Payslip Mass Import Timesheet Activity"
 
     @api.multi
     def button_import_activity(self):
