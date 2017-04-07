@@ -13,7 +13,7 @@ class BaseTestHrPayslip(TransactionCase):
         self.obj_timesheet = self.env["hr_timesheet_sheet.sheet"]
         self.obj_wd = self.env["hr.payslip.worked_days"]
         self.obj_ts_line = self.env["hr.analytic.timesheet"]
-        self.wiz = self.env['hr.payslip.activity_mass_assign']
+        self.wiz = self.env['hr.payslip.mass_import_timesheet_activity']
 
         # Data
         timesheet_period = self.env.ref("account.period_10")
