@@ -9,7 +9,7 @@
     "website": "https://opensynergy-indonesia/",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
-    "installable": True,
+    "installable": False,
     "depends": [
         "hr_payroll",
         "hr_employee_id"

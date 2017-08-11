@@ -28,5 +28,5 @@
     "demo": [
         "demo/hr_attendance_demo.xml",
     ],
-    "installable": True
+    "installable": False
 }
