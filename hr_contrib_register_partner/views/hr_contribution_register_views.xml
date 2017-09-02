@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_contribution_register_view_form" model="ir.ui.view">
+    <field name="name">Show Partner</field>
+    <field name="model">hr.contribution.register</field>
+    <field name="inherit_id" ref="hr_payroll.hr_contribution_register_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="partner_id"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_contribution_register_view_tree" model="ir.ui.view">
+    <field name="name">Show Partner</field>
+    <field name="model">hr.contribution.register</field>
+    <field name="inherit_id" ref="hr_payroll.hr_contribution_register_tree"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="partner_id"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
