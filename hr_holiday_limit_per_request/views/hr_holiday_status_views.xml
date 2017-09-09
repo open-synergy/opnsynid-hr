@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_holiday_status_view_form" model="ir.ui.view">
+    <field name="name">Limit Day Per Request</field>
+    <field name="model">hr.holidays.status</field>
+    <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='limit']" position="after">
+                <field name="limit_day_per_request"/>
+                <field name="day_limit_per_request"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
