@@ -5,14 +5,15 @@
 from openerp import fields, models, api
 import pytz
 from datetime import datetime
-from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FORMAT
+from openerp.tools import DEFAULT_SERVER_DATETIME_FORMAT
+
 
 class HrTimesheetSheetSheetDay(models.Model):
     _inherit = "hr_timesheet_sheet.sheet.day"
 
-    @api.model
+    @api.multi
     def _convert_datetime_utc(self, employee, dt):
-        user = self.env.user
+        self.ensure_one()
         convert_dt = datetime.strptime(dt, DEFAULT_SERVER_DATETIME_FORMAT)
 
         if employee.user_id.tz:
@@ -22,25 +23,29 @@ class HrTimesheetSheetSheetDay(models.Model):
 
         convert_tz = tz.localize(convert_dt)
         convert_utc = convert_tz.astimezone(pytz.utc)
-        format_utc = datetime.strftime(convert_utc, DEFAULT_SERVER_DATE_FORMAT)
+        format_utc = datetime.strftime(
+            convert_utc,
+            DEFAULT_SERVER_DATETIME_FORMAT
+        )
 
         return format_utc
 
     @api.multi
     def _compute_summary_info(self):
         obj_hr_attendance = self.env['hr.attendance']
-        obj_timesheet_sheet_day = self.env['hr_timesheet_sheet.sheet.day']
         for sheet_day in self:
+            first_sign_in = False
+            last_sign_out = False
+
             employee = sheet_day.sheet_id.employee_id
-            utc_date_1 = obj_timesheet_sheet_day._convert_datetime_utc(
+            utc_date_1 = sheet_day._convert_datetime_utc(
                 dt=sheet_day.name + ' 00:00:00',
                 employee=employee
             )
-            utc_date_2 = obj_timesheet_sheet_day._convert_datetime_utc(
+            utc_date_2 = sheet_day._convert_datetime_utc(
                 dt=sheet_day.name + ' 23:59:59',
                 employee=employee
             )
-
             if utc_date_1 and utc_date_2:
                 criteria_first_sign_in = [
                     ('sheet_id', '=', sheet_day.sheet_id.id),
@@ -49,11 +54,12 @@ class HrTimesheetSheetSheetDay(models.Model):
                     ('name', '<=', utc_date_2),
                 ]
                 list_sign_in =\
-                    obj_hr_attendance.search(criteria_first_sign_in, order='name asc')
+                    obj_hr_attendance.search(
+                        criteria_first_sign_in,
+                        order='name asc'
+                    )
                 if list_sign_in:
                     first_sign_in = list_sign_in[0].id
-                else:
-                    first_sign_in = False
 
                 criteria_last_sign_out = [
                     ('sheet_id', '=', sheet_day.sheet_id.id),
@@ -62,14 +68,13 @@ class HrTimesheetSheetSheetDay(models.Model):
                     ('name', '<=', utc_date_2),
                 ]
                 list_sign_out =\
-                    obj_hr_attendance.search(criteria_last_sign_out, order='name asc')
+                    obj_hr_attendance.search(
+                        criteria_last_sign_out,
+                        order='name asc'
+                    )
                 if list_sign_out:
                     last_sign_out = list_sign_out[-1].id
-                else:
-                    last_sign_out = False
-            else:
-                first_sign_in = False
-                last_sign_out = False
+
             sheet_day.first_sign_in = first_sign_in
             sheet_day.last_sign_out = last_sign_out
 
