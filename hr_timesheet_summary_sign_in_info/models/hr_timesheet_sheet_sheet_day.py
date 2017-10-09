@@ -10,9 +10,8 @@ from openerp.tools import DEFAULT_SERVER_DATE_FORMAT, DEFAULT_SERVER_DATETIME_FO
 class HrTimesheetSheetSheetDay(models.Model):
     _inherit = "hr_timesheet_sheet.sheet.day"
 
-    @api.multi
+    @api.model
     def _convert_datetime_utc(self, employee, dt):
-        self.ensure_one()
         user = self.env.user
         convert_dt = datetime.strptime(dt, DEFAULT_SERVER_DATETIME_FORMAT)
 
@@ -30,13 +29,14 @@ class HrTimesheetSheetSheetDay(models.Model):
     @api.multi
     def _compute_summary_info(self):
         obj_hr_attendance = self.env['hr.attendance']
+        obj_timesheet_sheet_day = self.env['hr_timesheet_sheet.sheet.day']
         for sheet_day in self:
             employee = sheet_day.sheet_id.employee_id
-            utc_date_1 = sheet_day._convert_datetime_utc(
+            utc_date_1 = obj_timesheet_sheet_day._convert_datetime_utc(
                 dt=sheet_day.name + ' 00:00:00',
                 employee=employee
             )
-            utc_date_2 = sheet_day._convert_datetime_utc(
+            utc_date_2 = obj_timesheet_sheet_day._convert_datetime_utc(
                 dt=sheet_day.name + ' 23:59:59',
                 employee=employee
             )
