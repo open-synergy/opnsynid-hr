@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_timesheet_mass_generate_view_form" model="ir.ui.view">
+            <field name="name">HR Timesheet Mass Generate Form</field>
+            <field name="model">hr.timesheet_mass_generate</field>
+            <field name="arch" type="xml">
+                <form string="Generate Timesheet">
+                    <group colspan="2" col="2">
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                        <field name="employee_ids"/>
+                    </group>
+                    <footer>
+                        <button string="Generate" name="button_generate" type="object" class="oe_highlight"/>
+                        or
+                        <button string="Cancel" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+           </field>
+        </record>
+
+        <record id="hr_timesheet_mass_generate_action" model="ir.actions.act_window">
+            <field name="name">Generate Timesheet</field>
+            <field name="res_model">hr.timesheet_mass_generate</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="hr_timesheet_mass_generate_view_form"/>
+            <field name="target">new</field>
+        </record>
+
+        <menuitem
+            id="hr_timesheet_mass_generate_menu"
+            name="Generate Timesheet"
+            parent="hr_attendance.menu_hr_time_tracking"
+            action="hr_timesheet_mass_generate_action"
+            sequence="1000"
+        />
+        
+    </data>
+</openerp>
