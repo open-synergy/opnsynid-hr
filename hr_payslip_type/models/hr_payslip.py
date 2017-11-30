@@ -8,12 +8,8 @@ from openerp import models, api, fields
 class HrPayslip(models.Model):
     _inherit = "hr.payslip"
 
-    @api.model
     def _default_payslip_type(self):
-        payslip_type_normal = self.env.ref(
-            "hr_payslip_type.hr_payslip_type_normal"
-        )
-        return payslip_type_normal.id
+        return self.env['hr.payslip.type'].search([])[:1]
 
     payslip_type_id = fields.Many2one(
         string="Payslip Type",

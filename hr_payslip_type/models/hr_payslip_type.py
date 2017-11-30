@@ -17,6 +17,6 @@ class HrPayslipType(models.Model):
         string="Description"
     )
     active = fields.Boolean(
-        string="active",
+        string="Active",
         default=True
     )
