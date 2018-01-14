@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © <YEAR(S)> <AUTHOR(S)>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<openerp>
+<data>
+
+<!-- Job Family -->
+<record id="hr_job_family_view_tree" model="ir.ui.view">
+    <field name="name">tree hr.job_family</field>
+    <field name="model">hr.job_family</field>
+    <field name="arch" type="xml">
+        <tree string="Job Family">
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_job_family_view_form" model="ir.ui.view">
+    <field name="name">form hr.job_family</field>
+    <field name="model">hr.job_family</field>
+    <field name="arch" type="xml">
+        <form string="Job Family">
+            <group name="main">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+                <field name="note"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="hr_job_family_action" model="ir.actions.act_window">
+    <field name="name">Job Family</field>
+    <field name="res_model">hr.job_family</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem action="hr_job_family_action"
+    id="hr_job_family_menu"
+    parent="job_family_modelling_configuration_menu"
+    groups="base.group_hr_user"
+    sequence="4"/>
+
+</data>
+</openerp>
