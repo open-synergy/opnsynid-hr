@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_view_form" model="ir.ui.view">
+    <field name="name">hr.training form</field>
+    <field name="model">hr.training</field>
+    <field name="inherit_id" ref="hr_employee_training.hr_training_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//notebook" position="inside">
+                <page name="page_budget" string="Budget">
+                    <group name="group_budget" colspan="4" col="2">
+                        <field name="budget_id"/>
+                    </group>
+                    <field name="budget_line_ids" nolabel="1" colspan="4" readonly="1"/>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
