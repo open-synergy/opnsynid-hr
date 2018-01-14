@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_attendance_view_tree" model="ir.ui.view">
+    <field name="name">hr.training_attendance tree</field>
+    <field name="model">hr.training_attendance</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree create="false" delete="false">
+            <field name="training_id"/>
+            <field name="session_id" invisible="1"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="partisipant_id" invisible="1"/>
+            <field name="employee_id"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_attendance_view_form" model="ir.ui.view">
+    <field name="name">hr.training_attendance form</field>
+    <field name="model">hr.training_attendance</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form create="false" delete="false">
+            <header>
+                <button name="button_present" string="Present" class="oe_highlight" type="object" states="absence"/>
+                <button name="button_absence" string="Absence" class="oe_highlight" type="object" states="present"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <group name="group_1" colspan="4" col="2">
+                    <field name="training_id"/>
+                    <field name="session_id" invisible="1"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="partisipant_id" invisible="1"/>
+                    <field name="employee_id"/>
+                </group>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_attendance_view_search" model="ir.ui.view">
+    <field name="name">hr.training_attendance search</field>
+    <field name="model">hr.training_attendance</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="training_id"/>
+            <field name="partisipant_id"/>
+            <field name="state"/>
+            <group name="group_1" string="Group By">
+                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+                <filter name="grp_training" string="Training" context="{'group_by':'training_id'}"/>
+                <filter name="grp_partisipant" string="Participant" context="{'group_by':'participant_id'}"/>
+                <filter name="grp_date_start_day" string="Date Start by Day" context="{'group_by':'date_start:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_attendance_action" model="ir.actions.act_window">
+    <field name="name">Training Attendance</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_attendance</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_attendance_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_attendance_menu"
+    name="Training Attendance"
+    parent="hr_employee_training.hr_training_root_menu"
+    action="hr_training_attendance_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_cancel_reason_view_tree" model="ir.ui.view">
+    <field name="name">hr.training_cancel_reason tree</field>
+    <field name="model">hr.training_cancel_reason</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_cancel_reason_view_form" model="ir.ui.view">
+    <field name="name">hr.training_cancel_reason form</field>
+    <field name="model">hr.training_cancel_reason</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="name"/>
+                <field name="active"/>
+                <field name="note"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_cancel_reason_view_search" model="ir.ui.view">
+    <field name="name">hr.training_cancel_reason search</field>
+    <field name="model">hr.training_cancel_reason</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_cancel_reason_action" model="ir.actions.act_window">
+    <field name="name">Training Cancel Reason</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_cancel_reason</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_cancel_reason_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_cancel_reason_menu"
+    name="Training Cancel Reason"
+    parent="hr_employee_training.hr_training_configuration_menu"
+    action="hr_training_cancel_reason_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>

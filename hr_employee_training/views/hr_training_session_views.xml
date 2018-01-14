@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_session_view_tree" model="ir.ui.view">
+    <field name="name">hr.training_session tree</field>
+    <field name="model">hr.training_session</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree create="false" delete="false">
+            <field name="training_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_session_view_form" model="ir.ui.view">
+    <field name="name">hr.training_session form</field>
+    <field name="model">hr.training_session</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form create="false" delete="false">
+            <header>
+                <button name="button_start" string="Start" class="oe_highlight" type="object" states="draft"/>
+                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start"/>
+                <button name="button_cancel" string="Cancel" type="object" states="draft,start,finish"/>
+                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <group name="group_1" colspan="4" col="2">
+                    <field name="training_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                </group>
+                <notebook>
+                    <page name="page_attendance" string="Attendances">
+                        <field name="attendance_ids" colspan="4" nolabel="1" readonly="1">
+                            <tree>
+                                <field name="partisipant_id" invisible="1"/>
+                                <field name="employee_id"/>
+                                <field name="state"/>
+                            </tree>
+                        </field>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_session_view_search" model="ir.ui.view">
+    <field name="name">hr.training_session search</field>
+    <field name="model">hr.training_session</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="training_id"/>
+            <field name="state"/>
+            <group name="group_1" string="Group By">
+                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+                <filter name="grp_training" string="Training" context="{'group_by':'training_id'}"/>
+                <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
+                <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_session_action" model="ir.actions.act_window">
+    <field name="name">Training Session</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_session</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_session_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_session_menu"
+    name="Training Session"
+    parent="hr_employee_training.hr_training_root_menu"
+    action="hr_training_session_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>
