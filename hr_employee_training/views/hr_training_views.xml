@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_view_tree" model="ir.ui.view">
+    <field name="name">hr.training tree</field>
+    <field name="model">hr.training</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="category_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="request_by_id"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_view_form" model="ir.ui.view">
+    <field name="name">hr.training form</field>
+    <field name="model">hr.training</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" states="draft"/>
+                <button name="button_generate_attendance" string="Generate Attendance" type="object" states="draft"/>
+                <button name="button_approve" string="Approve" class="oe_highlight" type="object" states="confirm"/>
+                <button name="button_start" string="Start" class="oe_highlight" type="object" states="approve"/>
+                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start"/>
+                <button name="button_cancel" string="Cancel" type="object" states="draft,confirm,approve,start,finish"/>
+                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel"/>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <label for="name"/>
+                <h1>
+                    <field name="name"/>
+                </h1>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="category_id"/>
+                        <field name="method_ids" widget="many2many_tags"/>
+                        <field name="trainer_ids" widget="many2many_tags"/>
+                        <field name="observer_ids" widget="many2many_tags"/>
+                        <field name="vendor_ids" widget="many2many_tags"/>
+                        <field name="is_public"/>
+                    </group>
+                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="request_by_id"/>
+                        <field name="responsible_id"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="page_syllabus_purpose" string="Purpose &amp; Syllabus">
+                        <separator string="Purpose" colspan="4"/>
+                        <field name="training_purpose_ids" nolabel="1" colspan="4"/>
+                        <separator string="Syllabus" colspan="4"/>
+                        <field name="training_syllabus_id" nolabel="1" colspan="4"/>
+                    </page>
+                    <page name="page_session" string="Sessions">
+                        <field name="session_ids" colspan="4" nolabel="1">
+                            <tree editable="top">
+                                <field name="date_start"/>
+                                <field name="date_end"/>
+                                <field name="trainer_ids" widget="many2many_tags"/>
+                                <field name="observer_ids" widget="many2many_tags"/>
+                                <field name="state"/>
+                                <button name="button_generate_attendance" string="Generate Attendance" icon="gtk-execute" type="object"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="page_partisipant" string="Partisipants">
+                        <field name="partisipant_ids" colspan="4" nolabel="1">
+                            <tree editable="top">
+                                <field name="partisipant_id"/>
+                                <field name="job_id"/>
+                            </tree>
+                        </field>
+                    </page>
+                    <page name="page_note" string="Note">
+                        <field name="note"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_view_search" model="ir.ui.view">
+    <field name="name">hr.training search</field>
+    <field name="model">hr.training</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="category_id"/>
+            <group name="group_1" string="Group By">
+                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+                <filter name="grp_category" string="Category" context="{'group_by':'category_id'}"/>
+                <filter name="grp_request_by" string="Request By" context="{'group_by':'request_by_id'}"/>
+                <filter name="grp_responsible" string="Responsible" context="{'group_by':'responsible_id'}"/>
+                <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
+                <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_action" model="ir.actions.act_window">
+    <field name="name">Training</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_menu"
+    name="Training"
+    parent="hr_employee_training.hr_training_root_menu"
+    action="hr_training_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>
