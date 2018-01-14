@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_job_grade_category_employee,hr.job_grade_category - employee,model_hr_job_grade_category,base.group_user,1,1,1,1
+hr_job_grade_category_all,hr.job_grade_category - all,model_hr_job_grade_category,,1,0,0,0
+hr_job_grade_employee,hr.job_grade - employee,model_hr_job_grade,base.group_user,1,1,1,1
+hr_job_grade_all,hr.job_grade - all,model_hr_job_grade,,1,0,0,0
+hr_job_family_grade_employee,hr.job_family_grade - employee,model_hr_job_family_grade,base.group_user,1,1,1,1
+hr_job_family_grade_all,hr.job_family_grade - all,model_hr_job_family_grade,,1,0,0,0
+hr_job_family_employee,hr.job_family - employee,model_hr_job_family,base.group_user,1,1,1,1
+hr_job_family_all,hr.job_family - all,model_hr_job_family,,1,0,0,0

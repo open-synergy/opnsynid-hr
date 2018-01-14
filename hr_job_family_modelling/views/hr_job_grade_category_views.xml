@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © <YEAR(S)> <AUTHOR(S)>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<openerp>
+<data>
+<!-- Job Grade Category -->
+<record id="hr_job_grade_category_view_tree" model="ir.ui.view">
+    <field name="name">tree hr.job.grade.category</field>
+    <field name="model">hr.job_grade_category</field>
+    <field name="arch" type="xml">
+        <tree string="Job Grade Category">
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_job_grade_category_view_form" model="ir.ui.view">
+    <field name="name">form hr.job.grade.category</field>
+    <field name="model">hr.job_grade_category</field>
+    <field name="arch" type="xml">
+        <form string="Job Grade Category">
+            <group name="main">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+                <field name="note"/>
+            </group>
+        </form>
+    </field>
+</record>
+
+<record id="hr_job_grade_category_action" model="ir.actions.act_window">
+    <field name="name">Job Grade Category</field>
+    <field name="res_model">hr.job_grade_category</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem action="hr_job_grade_category_action"
+    id="hr_job_grade_category_menu"
+    parent="job_family_modelling_configuration_menu"
+    groups="base.group_hr_user"
+    sequence="1"/>
+</data>
+</openerp>
