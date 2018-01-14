@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<odoo>
+
+<!-- Job Family Grade -->
+<record id="hr_job_family_grade_view_tree" model="ir.ui.view">
+    <field name="name">tree hr.job_family_grade</field>
+    <field name="model">hr.job_family_grade</field>
+    <field name="arch" type="xml">
+        <tree string="Job Family Grade">
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_job_family_grade_view_form" model="ir.ui.view">
+    <field name="name">form hr.job_family_grade</field>
+    <field name="model">hr.job_family_grade</field>
+    <field name="arch" type="xml">
+        <form string="Job Family Grade">
+            <group name="main">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+            </group>
+            <notebook colspan="4">
+                <page name="note" string="Note">
+                    <field name="note" colspan="4" nolabel="1"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="hr_job_family_grade_action" model="ir.actions.act_window">
+    <field name="name">Job Family Grade</field>
+    <field name="res_model">hr.job_family_grade</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem action="hr_job_family_grade_action"
+    id="hr_job_family_grade_menu"
+    parent="job_family_modelling_configuration_menu"
+    sequence="3"/>
+
+</odoo>
