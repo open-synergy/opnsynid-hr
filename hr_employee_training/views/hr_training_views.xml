@@ -29,6 +29,7 @@
         <form>
             <header>
                 <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" states="draft"/>
+                <button name="%(select_training_participant_action)d" string="Select Participant" type="action" states="draft"/>
                 <button name="button_generate_attendance" string="Generate Attendance" type="object" states="draft"/>
                 <button name="button_approve" string="Approve" class="oe_highlight" type="object" states="confirm"/>
                 <button name="button_start" string="Start" class="oe_highlight" type="object" states="approve"/>
