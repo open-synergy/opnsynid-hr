@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<record id="select_training_participant_view_form" model="ir.ui.view">
+    <field name="name">Select Training Participant</field>
+    <field name="model">hr.select_training_participant</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2" string="Select Employees">
+                <field name="employee_ids" nolabel="1" colspan="4"/>
+            </group>
+            <footer>
+                <button string="Select" name="action_select_participant" type="object" class="oe_highlight"/>
+                or
+                <button string="Cancel" class="oe_link" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="select_training_participant_action" model="ir.actions.act_window">
+    <field name="name">Select Participant</field>
+    <field name="res_model">hr.select_training_participant</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="select_training_participant_view_form"/>
+    <field name="target">new</field>
+</record>
+</data>
+</openerp>
