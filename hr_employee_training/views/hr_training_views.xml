@@ -71,8 +71,8 @@
                             <tree editable="top">
                                 <field name="date_start"/>
                                 <field name="date_end"/>
-                                <field name="trainer_ids" widget="many2many_tags"/>
-                                <field name="observer_ids" widget="many2many_tags"/>
+                                <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',parent.trainer_ids[0][2])]"/>
+                                <field name="observer_ids" widget="many2many_tags" domain="[('id','in',parent.observer_ids[0][2]"/>
                                 <field name="state"/>
                                 <button name="button_generate_attendance" string="Generate Attendance" icon="gtk-execute" type="object"/>
                             </tree>

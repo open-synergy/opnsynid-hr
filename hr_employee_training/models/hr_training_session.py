@@ -26,6 +26,9 @@ class HrTrainingSession(models.Model):
         relation="rel_session_2_trainer",
         column1="session_id",
         columns2="partner_id",
+        domain=[
+            ("is_company", "=", False),
+            ],
     )
     observer_ids = fields.Many2many(
         string="Observer",
@@ -33,6 +36,9 @@ class HrTrainingSession(models.Model):
         relation="rel_session_2_observer",
         column1="training_id",
         columns2="partner_id",
+        domain=[
+            ("is_company", "=", False),
+            ],
     )
     attendance_ids = fields.One2many(
         string="Attendance",
