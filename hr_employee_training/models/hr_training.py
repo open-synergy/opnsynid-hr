@@ -99,6 +99,9 @@ class HrTraining(models.Model):
         relation="rel_training_2_trainer",
         column1="training_id",
         columns2="partner_id",
+        domain=[
+            ("is_company", "=", False),
+            ],
     )
     observer_ids = fields.Many2many(
         string="Observer",
@@ -106,6 +109,9 @@ class HrTraining(models.Model):
         relation="rel_training_2_observer",
         column1="training_id",
         columns2="partner_id",
+        domain=[
+            ("is_company", "=", False),
+            ],
     )
     partisipant_ids = fields.One2many(
         string="Partisipants",
