@@ -34,10 +34,12 @@ class HrTrainingAttendance(models.Model):
     date_start = fields.Datetime(
         string="Date Start",
         related="session_id.date_start",
+        store=True,
     )
     date_end = fields.Datetime(
         string="Date End",
         related="session_id.date_end",
+        store=True,
     )
     state = fields.Selection(
         string="State",
