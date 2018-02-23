@@ -20,8 +20,7 @@ class HrEmployee(models.Model):
             self.department_id = False
             domain = {
                 'department_id': [
-                    ('id', 'child_of', [self.organization_unit_id.id]),
-                    ('id', '<>', self.organization_unit_id.id)
+                    ('id', 'child_of', [self.organization_unit_id.id])
                 ]
             }
         return {'domain': domain}
