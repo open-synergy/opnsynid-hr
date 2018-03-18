@@ -29,8 +29,8 @@
     <field name="arch" type="xml">
         <form create="false" delete="false">
             <header>
-                <button name="button_present" string="Present" class="oe_highlight" type="object" states="absence"/>
-                <button name="button_absence" string="Absence" class="oe_highlight" type="object" states="present"/>
+                <button name="button_present" string="Present" class="oe_highlight" type="object" states="absence" confirm="Participant present. Are you sure?"/>
+                <button name="button_absence" string="Absence" class="oe_highlight" type="object" states="present" confirm="Participant absent. Are you sure?"/>
                 <field name="state" widget="statusbar"/>
             </header>
             <sheet>
@@ -59,12 +59,61 @@
             <group name="group_1" string="Group By">
                 <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
                 <filter name="grp_training" string="Training" context="{'group_by':'training_id'}"/>
-                <filter name="grp_partisipant" string="Participant" context="{'group_by':'participant_id'}"/>
+                <filter name="grp_partisipant" string="Participant" context="{'group_by':'partisipant_id'}"/>
                 <filter name="grp_date_start_day" string="Date Start by Day" context="{'group_by':'date_start:day'}"/>
             </group>
         </search>
     </field>
 </record>
+
+<record id="hr_training_attendance_view_search_2" model="ir.ui.view">
+    <field name="name">hr.training_attendance search 2</field>
+    <field name="model">hr.training_attendance</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="employee_id" domain_filter="['|',('employee_id.name','ilike',self),('employee_id.identification_id','ilike',self)]"/>
+        </search>
+    </field>
+</record>
+
+<record model="ir.ui.view" id="hr_training_attendance_view_kanban">
+    <field name="name">hr.training.attendance kanban</field>
+    <field name="model">hr.training_attendance</field>
+    <field name="priority">10</field>
+    <field name="arch" type="xml">
+        <kanban create="false">
+            <field name="state"/>
+            <field name="employee_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_employee_vignette">
+                            <div class="oe_employee_image">
+                                <a type="open"><img t-att-src="kanban_image('hr.employee', 'image', record.employee_id.raw_value)" class="oe_employee_picture"/></a>
+                            </div>
+                            <div class="oe_employee_details">
+                                <h4>
+                                    <field name="employee_id"/>
+                                </h4>
+                                <ul>
+                                    <li><field name="identification_id"/></li>
+                                </ul>
+                                <div name="div_attn">
+                                    <button t-if="record.state.raw_value == 'absence'" name="button_present" type="object">
+                                        <span class="oe_unfollow">Present</span>
+                                    </button>
+                                    <button t-if="record.state.raw_value == 'present'" name="button_absence" type="object">
+                                        <span class="oe_unfollow">Absence</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+        </kanban>
+    </field>
+</record>
+
 
 <record id="hr_training_attendance_action" model="ir.actions.act_window">
     <field name="name">Training Attendance</field>
@@ -82,6 +131,16 @@
     action="hr_training_attendance_action"
     sequence="1"
     />
+
+<record id="hr_training_attendance_per_session_action" model="ir.actions.act_window">
+    <field name="name">Training Attendance</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_attendance</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">kanban,tree</field>
+    <field name="domain">[('session_id','=',active_id)]</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_attendance_view_search_2"/>
+</record>
 
 
 </data>

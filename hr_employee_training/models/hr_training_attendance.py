@@ -25,6 +25,11 @@ class HrTrainingAttendance(models.Model):
         related="partisipant_id.partisipant_id",
         store=True,
     )
+    identification_id = fields.Char(
+        string="Employee ID",
+        related="partisipant_id.partisipant_id.identification_id",
+        readonly=True,
+    )
     training_id = fields.Many2one(
         string="Training",
         comodel_name="hr.training",
@@ -49,7 +54,12 @@ class HrTrainingAttendance(models.Model):
         ],
         required=True,
         default="absence",
+        readonly=True,
     )
+    _sql_constraints = [
+        ("participant_unique", "unique(session_id, partisipant_id)",
+         "Participant must be unique"),
+    ]
 
     @api.multi
     def button_present(self):
