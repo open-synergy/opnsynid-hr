@@ -12,6 +12,17 @@
             </field>
         </record>
 
+        <record id="hr_employee_view_search" model="ir.ui.view">
+            <field name="name">Inherit: HR Employee Organization Unit Search</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group" position="inside">
+                    <filter name="grp_organization_unit" string="Organization Unit" context="{'group_by':'organization_unit_id'}"/>
+                </xpath>
+            </field>
+        </record>
+
     </data>
 </openerp>
 
