@@ -28,6 +28,22 @@ class SelectTrainingParticipant(models.TransientModel):
         required=True,
     )
 
+    @api.onchange("training_id")
+    def onchange_employee_ids(self):
+        result = {
+            "domain": {},
+        }
+        if self.training_id:
+            existing_employee_ids = []
+            for participant in self.training_id.partisipant_ids:
+                existing_employee_ids.append(participant.partisipant_id.id)
+            result["domain"].update({
+                "employee_ids": [
+                    ("id", "not in", existing_employee_ids),
+                ]
+            })
+        return result
+
     @api.multi
     def action_select_participant(self):
         for wiz in self:
@@ -40,6 +56,7 @@ class SelectTrainingParticipant(models.TransientModel):
         training_id = self.env.context.get("active_id", False)
         training = obj_training.browse([training_id])[0]
         training.write(self._prepare_write_data())
+        training.session_ids.button_generate_attendance()
 
     @api.multi
     def _prepare_write_data(self):
@@ -57,6 +74,8 @@ class SelectTrainingParticipant(models.TransientModel):
                 "partisipant_id": employee.id,
                 "job_id": employee.job_id and employee.job_id.id or False,
             }
+            if self.training_id.state in ["start"]:
+                data.update({"additional": True})
             list_participant.append((0, 0, data))
         result = {
             "partisipant_ids": list_participant,

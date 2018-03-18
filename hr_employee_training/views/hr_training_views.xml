@@ -28,14 +28,16 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" states="draft"/>
-                <button name="%(select_training_participant_action)d" string="Select Participant" type="action" states="draft"/>
+                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" states="draft" confirm="Confirm training. Are you sure?"/>
+                <button name="%(select_training_participant_action)d" string="Select Participant" type="action" states="draft,start"/>
+                <button name="%(accomplish_participant_action)d" string="Accomplish Participants" type="action" states="start"/>
+                <button name="%(cancel_participant_action)d" string="Cancel Participants" type="action" states="start"/>
                 <button name="button_generate_attendance" string="Generate Attendance" type="object" states="draft"/>
-                <button name="button_approve" string="Approve" class="oe_highlight" type="object" states="confirm"/>
-                <button name="button_start" string="Start" class="oe_highlight" type="object" states="approve"/>
-                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start"/>
-                <button name="button_cancel" string="Cancel" type="object" states="draft,confirm,approve,start,finish"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel"/>
+                <button name="button_approve" string="Approve" class="oe_highlight" type="object" states="confirm" confirm="Approve training. Are you sure?"/>
+                <button name="button_start" string="Start" class="oe_highlight" type="object" states="approve" confirm="Start Training. Are you sure?"/>
+                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start" confirm="Finish training. Are you sure?"/>
+                <button name="button_cancel" string="Cancel" type="object" states="draft,confirm,approve,start,finish" confirm="Cancel training. Are you sure?"/>
+                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel" confirm="Reset training. Are you sure?"/>
                 <field name="state" widget="statusbar"/>
             </header>
             <sheet>
@@ -57,6 +59,7 @@
                         <field name="date_end"/>
                         <field name="request_by_id"/>
                         <field name="responsible_id"/>
+                        <field name="secondary_responsible_id"/>
                     </group>
                 </group>
                 <notebook>
@@ -68,21 +71,47 @@
                     </page>
                     <page name="page_session" string="Sessions">
                         <field name="session_ids" colspan="4" nolabel="1">
-                            <tree editable="top">
+                            <tree>
                                 <field name="date_start"/>
                                 <field name="date_end"/>
                                 <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',parent.trainer_ids[0][2])]"/>
-                                <field name="observer_ids" widget="many2many_tags" domain="[('id','in',parent.observer_ids[0][2]"/>
+                                <field name="observer_ids" widget="many2many_tags" domain="[('id','in',parent.observer_ids[0][2])]"/>
+                                <field name="attendance_ids"/>
                                 <field name="state"/>
-                                <button name="button_generate_attendance" string="Generate Attendance" icon="gtk-execute" type="object"/>
+                                <field name="training_state" invisible="1"/>
+                                <button name="button_generate_attendance" string="Generate Attendance" icon="gtk-execute" type="object" attrs="{'invisible':[('training_state','in',['finish','cancel'])]}"/>
                             </tree>
+                            <form>
+                                <header>
+                                    <field name="state" widget="statusbar"/>
+                                </header>
+                                <sheet>
+                                    <div class="oe_right oe_button_box"/>
+                                    <group name="group_1" colspan="4" col="2">
+                                        <group name="group_1_1" colspan="1" col="2">
+                                            <field name="date_start"/>
+                                            <field name="date_end"/>
+                                        </group>
+                                        <group name="group_1_2" colspan="1" col="2">
+                                            <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',parent.trainer_ids[0][2])]"/>
+                                            <field name="observer_ids" widget="many2many_tags" domain="[('id','in',parent.observer_ids[0][2])]"/>
+                                        </group>
+                                    </group>
+                                </sheet>
+                            </form>
                         </field>
                     </page>
                     <page name="page_partisipant" string="Partisipants">
                         <field name="partisipant_ids" colspan="4" nolabel="1">
-                            <tree editable="top">
+                            <tree editable="top" create="false">
                                 <field name="partisipant_id"/>
+                                <field name="additional"/>
                                 <field name="job_id"/>
+                                <field name="state"/>
+                                <field name="cancel_reason_id" readonly="1"/>
+                                <field name="substitute_by_id" readonly="1"/>
+                                <field name="substitute_from_id" readonly="1"/>
+                                <button name="button_reset" string="Reset" icon="gtk-refresh" type="object" states="accomplish,cancel"/>
                             </tree>
                         </field>
                     </page>
@@ -107,7 +136,8 @@
                 <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
                 <filter name="grp_category" string="Category" context="{'group_by':'category_id'}"/>
                 <filter name="grp_request_by" string="Request By" context="{'group_by':'request_by_id'}"/>
-                <filter name="grp_responsible" string="Responsible" context="{'group_by':'responsible_id'}"/>
+                <filter name="grp_responsible" string="Primary PIC" context="{'group_by':'responsible_id'}"/>
+                <filter name="grp_second_responsible" string="Secondary PIC" context="{'group_by':'secondary_responsible_id'}"/>
                 <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
                 <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
             </group>

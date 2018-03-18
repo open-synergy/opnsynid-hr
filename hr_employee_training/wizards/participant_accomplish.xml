@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<record id="accomplish_participant_view_form" model="ir.ui.view">
+    <field name="name">Accomplish Participant</field>
+    <field name="model">hr.accomplish_participant</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2" string="Accomplish Participants">
+                <field name="detail_ids" nolabel="1" colspan="4">
+                    <tree editable="top" create="false" edit="true" delete="true">
+                        <field name="participant_id" invisible="1"/>
+                        <field name="employee_id"/>
+                    </tree>
+                </field>
+            </group>
+            <footer>
+                <button string="Confirm" name="action_confirm" type="object" class="oe_highlight" confirm="Accomplish participants. Are you sure?"/>
+                or
+                <button string="Cancel" class="oe_link" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="accomplish_participant_action" model="ir.actions.act_window">
+    <field name="name">Accomplish Participants</field>
+    <field name="res_model">hr.accomplish_participant</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="accomplish_participant_view_form"/>
+    <field name="target">new</field>
+</record>
+</data>
+</openerp>

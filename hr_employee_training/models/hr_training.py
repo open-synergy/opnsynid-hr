@@ -3,18 +3,33 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
+from openerp.exceptions import Warning as UserError
+from openerp.tools.translate import _
 
 
 class HrTraining(models.Model):
     _name = "hr.training"
     _description = "Employee Training"
+    _order = "date_start desc, id"
 
     name = fields.Char(
         string="Training Name",
         required=True,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     source_document = fields.Char(
         string="Source Document",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     category_id = fields.Many2one(
         string="Category",
@@ -23,6 +38,12 @@ class HrTraining(models.Model):
         domain=[
             ("type", "=", "normal"),
         ],
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     method_ids = fields.Many2many(
         string="Training Method",
@@ -30,6 +51,12 @@ class HrTraining(models.Model):
         relation="rel_training_2_training_method",
         column1="training_id",
         column2="training_method_id",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     vendor_ids = fields.Many2many(
         string="Vendor",
@@ -37,17 +64,41 @@ class HrTraining(models.Model):
         relation="rel_training_vendor",
         column1="training_id",
         column2="partner_id",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
-    date_start = fields.Date(
+    date_start = fields.Datetime(
         string="Date Start",
         required=True,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
-    date_end = fields.Date(
+    date_end = fields.Datetime(
         string="Date End",
         required=True,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     is_public = fields.Boolean(
         string="Is Public",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     training_purpose_ids = fields.Many2many(
         string="Training Purpose",
@@ -55,6 +106,12 @@ class HrTraining(models.Model):
         relation="rel_training_2_purpose",
         column1="training_id",
         column2="purpose_id",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     training_syllabus_id = fields.Many2many(
         string="Training Syllabus",
@@ -62,16 +119,44 @@ class HrTraining(models.Model):
         relation="rel_training_2_syllabus",
         column1="training_id",
         column2="syllabus_id",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     request_by_id = fields.Many2one(
         string="Request By",
         comodel_name="hr.employee",
         required=True,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     responsible_id = fields.Many2one(
-        string="PIC",
+        string="Primary PIC",
         comodel_name="hr.employee",
         required=True,
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
+    )
+    secondary_responsible_id = fields.Many2one(
+        string="Secondary PIC",
+        comodel_name="hr.employee",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     state = fields.Selection(
         string="State",
@@ -101,7 +186,13 @@ class HrTraining(models.Model):
         columns2="partner_id",
         domain=[
             ("is_company", "=", False),
+        ],
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
             ],
+        },
     )
     observer_ids = fields.Many2many(
         string="Observer",
@@ -111,17 +202,35 @@ class HrTraining(models.Model):
         columns2="partner_id",
         domain=[
             ("is_company", "=", False),
+        ],
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
             ],
+        },
     )
     partisipant_ids = fields.One2many(
         string="Partisipants",
         comodel_name="hr.training_partisipant",
         inverse_name="training_id",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     session_ids = fields.One2many(
         string="Sessions",
         comodel_name="hr.training_session",
         inverse_name="training_id",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
 
     @api.multi
@@ -206,3 +315,18 @@ class HrTraining(models.Model):
         self.ensure_one()
         for session in self.session_ids:
             session.button_generate_attendance()
+
+    @api.constrains("state")
+    def _check_session_close(self):
+        strWarning = _("There are unfinished session(s)")
+        if self.state == "finish":
+            for session in self.session_ids:
+                if session.state not in ["finish", "cancel"]:
+                    raise UserError(strWarning)
+
+    @api.constrains("date_start", "date_end")
+    def _check_duration(self):
+        strWarning = _("Date end must be greater than date start")
+        if self.date_start and self.date_end:
+            if self.date_end < self.date_start:
+                raise UserError(strWarning)

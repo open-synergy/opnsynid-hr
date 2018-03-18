@@ -10,7 +10,7 @@
     <field name="model">hr.training_session</field>
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <tree create="false" delete="false">
+        <tree create="false" delete="false" edit="false">
             <field name="training_id"/>
             <field name="date_start"/>
             <field name="date_end"/>
@@ -26,17 +26,27 @@
     <field name="arch" type="xml">
         <form create="false" delete="false">
             <header>
-                <button name="button_start" string="Start" class="oe_highlight" type="object" states="draft"/>
-                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start"/>
-                <button name="button_cancel" string="Cancel" type="object" states="draft,start,finish"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel"/>
+                <button name="button_start" string="Start" class="oe_highlight" type="object" states="draft" confirm="Start training session. Are you sure?"/>
+                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start" confirm="Finish training session. Are you sure?"/>
+                <button name="button_cancel" string="Cancel" type="object" states="draft,start,finish" confirm="Cancel training session. Are you sure?"/>
+                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel" confirm="Restart training session. Are you sure?"/>
+                <button type="action" string="Attendances" name="%(hr_training_attendance_per_session_action)d" states="start"/>
                 <field name="state" widget="statusbar"/>
             </header>
             <sheet>
+                <div class="oe_right oe_button_box"/>
                 <group name="group_1" colspan="4" col="2">
-                    <field name="training_id"/>
-                    <field name="date_start"/>
-                    <field name="date_end"/>
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="training_id" readonly="1"/>
+                        <field name="date_start" readonly="1"/>
+                        <field name="date_end" readonly="1"/>
+                    </group>
+                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="allowed_trainer_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="allowed_observer_ids" widget="many2many_tags" invisible="1"/>
+                        <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',allowed_trainer_ids[0][2])]"/>
+                        <field name="observer_ids" widget="many2many_tags" domain="[('id','in',allowed_observer_ids[0][2])]"/>
+                    </group>
                 </group>
                 <notebook>
                     <page name="page_attendance" string="Attendances">

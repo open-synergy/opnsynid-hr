@@ -10,7 +10,7 @@
                 <field name="employee_ids" nolabel="1" colspan="4"/>
             </group>
             <footer>
-                <button string="Select" name="action_select_participant" type="object" class="oe_highlight"/>
+                <button string="Select" name="action_select_participant" type="object" class="oe_highlight" confirm="Select participant. Are you sure?"/>
                 or
                 <button string="Cancel" class="oe_link" special="cancel"/>
             </footer>
