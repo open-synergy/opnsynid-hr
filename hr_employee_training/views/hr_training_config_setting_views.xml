@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_config_setting_view_form" model="ir.ui.view">
+    <field name="name">hr.training.config.setting form</field>
+    <field name="model">hr.training.config.setting</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form class="oe_form_configuration">
+            <header>
+                <button name="execute" string="Apply" type="object" class="oe_highlight"/>
+                or
+                <button name="cancel" string="Cancel" type="object" class="oe_link"/>
+            </header>
+            <field name="company_id" invisible="1"/>
+            <separator string="Training"/>
+            <group name="training_group">
+                <label for="id" string="Allowed Groups"/>
+                <div>
+                    <div>
+                        <label for="id" string="To Confirm" class="oe_inline"/>
+                        <field name="employee_training_allowed_confirm_group_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Approve" class="oe_inline"/>
+                        <field name="employee_training_allowed_approve_group_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Start" class="oe_inline"/>
+                        <field name="employee_training_allowed_start_group_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To FInish" class="oe_inline"/>
+                        <field name="employee_training_allowed_finish_group_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Cancel" class="oe_inline"/>
+                        <field name="employee_training_allowed_cancel_group_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="To Restart" class="oe_inline"/>
+                        <field name="employee_training_allowed_restart_group_ids" widget="many2many_tags" class="oe_inline"/>
+                    </div>
+                </div>
+            </group>
+        </form>
+    </field>
+</record>
+
+
+<record id="hr_training_config_setting_action" model="ir.actions.act_window">
+    <field name="name">Employee Training Configuration</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training.config.setting</field>
+    <field name="view_type">form</field>
+    <field name="target">inline</field>
+    <field name="view_mode">form</field>
+</record>
+
+<menuitem
+    id="hr_training_config_setting_menu"
+    name="Configuration"
+    parent="hr_employee_training.hr_training_configuration_menu"
+    action="hr_training_config_setting_action"
+    sequence="0"
+    />
+
+
+</data>
+</openerp>

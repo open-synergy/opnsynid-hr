@@ -13,6 +13,7 @@
         <tree>
             <field name="name"/>
             <field name="category_id"/>
+            <field name="company_id" groups="base.group_multi_company"/>
             <field name="date_start"/>
             <field name="date_end"/>
             <field name="request_by_id"/>
@@ -28,16 +29,16 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" states="draft" confirm="Confirm training. Are you sure?"/>
+                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm training. Are you sure?"/>
                 <button name="%(select_training_participant_action)d" string="Select Participant" type="action" states="draft,start"/>
                 <button name="%(accomplish_participant_action)d" string="Accomplish Participants" type="action" states="start"/>
                 <button name="%(cancel_participant_action)d" string="Cancel Participants" type="action" states="start"/>
                 <button name="button_generate_attendance" string="Generate Attendance" type="object" states="draft"/>
-                <button name="button_approve" string="Approve" class="oe_highlight" type="object" states="confirm" confirm="Approve training. Are you sure?"/>
-                <button name="button_start" string="Start" class="oe_highlight" type="object" states="approve" confirm="Start Training. Are you sure?"/>
-                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start" confirm="Finish training. Are you sure?"/>
-                <button name="button_cancel" string="Cancel" type="object" states="draft,confirm,approve,start,finish" confirm="Cancel training. Are you sure?"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel" confirm="Reset training. Are you sure?"/>
+                <button name="button_approve" string="Approve" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}" confirm="Approve training. Are you sure?"/>
+                <button name="button_start" string="Start" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','approve'),('start_ok','=',False)]}" confirm="Start Training. Are you sure?"/>
+                <button name="button_finish" string="Finish" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','start'),('finish_ok','=',False)]}" confirm="Finish training. Are you sure?"/>
+                <button name="button_cancel" string="Cancel" type="object" attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}" confirm="Cancel training. Are you sure?"/>
+                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Reset training. Are you sure?"/>
                 <field name="state" widget="statusbar"/>
             </header>
             <sheet>
@@ -47,6 +48,7 @@
                 </h1>
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
+                        <field name="company_id" groups="base.group_multi_company"/>
                         <field name="category_id"/>
                         <field name="method_ids" widget="many2many_tags"/>
                         <field name="trainer_ids" widget="many2many_tags"/>
@@ -117,6 +119,16 @@
                     </page>
                     <page name="page_note" string="Note">
                         <field name="note"/>
+                    </page>
+                    <page name="page_policy" string="Policy" groups="base.group_system">
+                        <group name="grp_policy_1" colspan="4" col="2">
+                            <field name="confirm_ok"/>
+                            <field name="approve_ok"/>
+                            <field name="start_ok"/>
+                            <field name="finish_ok"/>
+                            <field name="cancel_ok"/>
+                            <field name="restart_ok"/>
+                        </group>
                     </page>
                 </notebook>
             </sheet>

@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Employee Training",
-    "version": "8.0.2.0.0",
+    "version": "8.0.2.1.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -19,6 +19,7 @@
         "wizards/participant_accomplish.xml",
         "wizards/cancel_participant.xml",
         "wizards/change_training_attendance_status.xml",
+        "views/hr_training_config_setting_views.xml",
         "views/hr_training_category_views.xml",
         "views/hr_training_method_views.xml",
         "views/hr_training_purpose_views.xml",
