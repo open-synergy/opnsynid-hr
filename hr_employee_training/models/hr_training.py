@@ -12,6 +12,71 @@ class HrTraining(models.Model):
     _description = "Employee Training"
     _order = "date_start desc, id"
 
+    @api.multi
+    @api.depends(
+        "company_id",
+    )
+    def _compute_policy(self):
+        user_group_ids = self.env.user.groups_id.ids
+        for training in self:
+            can_confirm = can_approve = can_start = \
+                can_finish = can_cancel = \
+                can_restart = True
+            company = training.company_id
+
+            confirm_group_ids = company.\
+                employee_training_allowed_confirm_group_ids.ids
+            if confirm_group_ids:
+                if not (set(user_group_ids) & set(confirm_group_ids)):
+                    can_confirm = False
+
+            approve_group_ids = company.\
+                employee_training_allowed_approve_group_ids.ids
+            if approve_group_ids:
+                if not (set(user_group_ids) & set(approve_group_ids)):
+                    can_approve = False
+
+            start_group_ids = company.\
+                employee_training_allowed_start_group_ids.ids
+            if start_group_ids:
+                if not (set(user_group_ids) & set(start_group_ids)):
+                    can_start = False
+
+            finish_group_ids = company.\
+                employee_training_allowed_finish_group_ids.ids
+            if finish_group_ids:
+                if not (set(user_group_ids) & set(finish_group_ids)):
+                    can_finish = False
+
+            cancel_group_ids = company.\
+                employee_training_allowed_cancel_group_ids.ids
+            if cancel_group_ids:
+                if not (set(user_group_ids) & set(cancel_group_ids)):
+                    can_cancel = False
+
+            restart_group_ids = company.\
+                employee_training_allowed_restart_group_ids.ids
+            if restart_group_ids:
+                if not (set(user_group_ids) & set(restart_group_ids)):
+                    can_restart = False
+
+            training.confirm_ok = can_confirm
+            training.approve_ok = can_approve
+            training.start_ok = can_start
+            training.finish_ok = can_finish
+            training.cancel_ok = can_cancel
+            training.restart_ok = can_restart
+
+    @api.model
+    def _default_company_id(self):
+        return self.env.user.company_id
+
+    company_id = fields.Many2one(
+        string="Company",
+        comodel_name="res.company",
+        required=True,
+        default=lambda self: self._default_company_id(),
+    )
     name = fields.Char(
         string="Training Name",
         required=True,
@@ -231,6 +296,30 @@ class HrTraining(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    confirm_ok = fields.Boolean(
+        string="Can Confirm",
+        compute="_compute_policy",
+    )
+    approve_ok = fields.Boolean(
+        string="Can Approve",
+        compute="_compute_policy",
+    )
+    start_ok = fields.Boolean(
+        string="Can Start",
+        compute="_compute_policy",
+    )
+    finish_ok = fields.Boolean(
+        string="Can Finish",
+        compute="_compute_policy",
+    )
+    cancel_ok = fields.Boolean(
+        string="Can Cancel",
+        compute="_compute_policy",
+    )
+    restart_ok = fields.Boolean(
+        string="Can Restart",
+        compute="_compute_policy",
     )
 
     @api.multi
