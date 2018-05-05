@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_participant_type_default" model="hr.training_participant_type">
+    <field name="name">Default Type</field>
+</record>
+
+
+</data>
+</openerp>

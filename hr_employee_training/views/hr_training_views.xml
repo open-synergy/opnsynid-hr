@@ -104,9 +104,13 @@
                         </field>
                     </page>
                     <page name="page_partisipant" string="Partisipants">
-                        <field name="partisipant_ids" colspan="4" nolabel="1">
+                        <group name="partcipant_1" colspan="4" col="2">
+                            <field name="participant_type_id"/>
+                        </group>
+                        <field name="partisipant_ids" colspan="4" nolabel="1" context="{'default_type_id':participant_type_id}">
                             <tree editable="top" create="false">
                                 <field name="partisipant_id"/>
+                                <field name="type_id"/>
                                 <field name="additional"/>
                                 <field name="job_id"/>
                                 <field name="state"/>

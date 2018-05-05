@@ -3,6 +3,8 @@ hr_training_category_employee,hr.training_category - employee,model_hr_training_
 hr_training_category_all,hr.training_category - all,model_hr_training_category,,1,0,0,0
 hr_training_method_employee,hr.training_method - employee,model_hr_training_method,base.group_user,1,1,1,1
 hr_training_method_all,hr.training_method - all,model_hr_training_method,,1,0,0,0
+hr_training_participant_type_employee,hr.training_participant_type - employee,model_hr_training_participant_type,base.group_user,1,1,1,1
+hr_training_participant_type_all,hr.training_participant_type - all,model_hr_training_participant_type,,1,0,0,0
 hr_training_purpose,hr.training_purpose - employee,model_hr_training_purpose,base.group_user,1,1,1,1
 hr_training_purpose_all,hr.training_purpose - all,model_hr_training_purpose,,1,0,0,0
 hr_training_cancel_reason_employee,hr.training_cancel_reason - employee,model_hr_training_cancel_reason,base.group_user,1,1,1,1

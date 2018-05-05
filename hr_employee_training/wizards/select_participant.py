@@ -73,6 +73,7 @@ class SelectTrainingParticipant(models.TransientModel):
             data = {
                 "partisipant_id": employee.id,
                 "job_id": employee.job_id and employee.job_id.id or False,
+                "type_id": self.training_id.participant_type_id.id,
             }
             if self.training_id.state in ["start"]:
                 data.update({"additional": True})

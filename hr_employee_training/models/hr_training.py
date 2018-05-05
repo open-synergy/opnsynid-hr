@@ -223,6 +223,17 @@ class HrTraining(models.Model):
             ],
         },
     )
+    participant_type_id = fields.Many2one(
+        string="Default Participant Type",
+        comodel_name="hr.training_participant_type",
+        required=True,
+        readonly=False,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
+    )
     state = fields.Selection(
         string="State",
         selection=[

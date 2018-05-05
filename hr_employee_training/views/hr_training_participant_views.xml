@@ -12,6 +12,7 @@
     <field name="arch" type="xml">
         <tree create="false" delete="false">
             <field name="partisipant_id"/>
+            <field name="type_id"/>
             <field name="training_id"/>
             <field name="job_id"/>
             <field name="additional"/>
@@ -35,6 +36,7 @@
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
                         <field name="partisipant_id" readonly="1"/>
+                        <field name="type_id"/>
                         <field name="training_id" readonly="1"/>
                         <field name="job_id" readonly="1"/>
                     </group>
@@ -83,7 +85,7 @@
 </record>
 
 <record id="hr_training_participant_action" model="ir.actions.act_window">
-    <field name="name">Training</field>
+    <field name="name">Training Participant</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">hr.training_partisipant</field>
     <field name="view_type">form</field>
