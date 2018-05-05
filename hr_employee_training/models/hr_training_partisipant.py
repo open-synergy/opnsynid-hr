@@ -15,6 +15,11 @@ class HrTrainingPartisipant(models.Model):
         comodel_name="hr.employee",
         required=True,
     )
+    type_id = fields.Many2one(
+        string="Type",
+        comodel_name="hr.training_participant_type",
+        required=True,
+    )
     training_id = fields.Many2one(
         string="Training",
         comodel_name="hr.training",

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_participant_type_view_tree" model="ir.ui.view">
+    <field name="name">hr.training_participant_type tree</field>
+    <field name="model">hr.training_participant_type</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_participant_type_view_form" model="ir.ui.view">
+    <field name="name">hr.training_participant_type form</field>
+    <field name="model">hr.training_participant_type</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="name"/>
+                <field name="active"/>
+            </group>
+            <notebook>
+                <page name="note" string="Note">
+                    <field name="note" colspan="4"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_participant_type_view_search" model="ir.ui.view">
+    <field name="name">hr.training_participant_type search</field>
+    <field name="model">hr.training_participant_type</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_participant_type_action" model="ir.actions.act_window">
+    <field name="name">Training method</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_participant_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_participant_type_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_participant_type_menu"
+    name="Participant Type"
+    parent="hr_employee_training.hr_training_configuration_menu"
+    action="hr_training_participant_type_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>
