@@ -96,7 +96,7 @@
     name="Training Session"
     parent="hr_employee_training.hr_training_root_menu"
     action="hr_training_session_action"
-    sequence="1"
+    sequence="3"
     />
 
 

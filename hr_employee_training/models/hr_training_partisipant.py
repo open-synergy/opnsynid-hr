@@ -8,6 +8,7 @@ from openerp import models, fields, api
 class HrTrainingPartisipant(models.Model):
     _name = "hr.training_partisipant"
     _description = "Training Partisipant"
+    _rec_name = "partisipant_id"
 
     partisipant_id = fields.Many2one(
         string="Partisipant",

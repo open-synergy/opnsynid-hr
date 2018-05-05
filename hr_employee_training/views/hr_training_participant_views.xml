@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_training_participant_view_tree" model="ir.ui.view">
+    <field name="name">hr.training_partisipant tree</field>
+    <field name="model">hr.training_partisipant</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree create="false" delete="false">
+            <field name="partisipant_id"/>
+            <field name="training_id"/>
+            <field name="job_id"/>
+            <field name="additional"/>
+            <field name="substitute_by_id"/>
+            <field name="substitute_from_id"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_participant_view_form" model="ir.ui.view">
+    <field name="name">hr.training_partisipant form</field>
+    <field name="model">hr.training_partisipant</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form create="false" delete="false">
+            <header>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <sheet>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="partisipant_id" readonly="1"/>
+                        <field name="training_id" readonly="1"/>
+                        <field name="job_id" readonly="1"/>
+                    </group>
+                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="additional" readonly="1"/>
+                        <field name="substitute_by_id" readonly="1"/>
+                        <field name="substitute_from_id" readonly="1"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="attendance" string="Attendances">
+                        <field name="attendance_ids" nolabel="1" colspan="4"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_participant_view_search" model="ir.ui.view">
+    <field name="name">hr.training_partisipant search</field>
+    <field name="model">hr.training_partisipant</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="partisipant_id"/>
+            <field name="training_id"/>
+            <field name="additional"/>
+            <field name="substitute_by_id"/>
+            <field name="substitute_from_id"/>
+            <filter name="dom_addtional" string="Additional Participant" domain="[('additional','=',True)]"/>
+            <group name="group_state" string="State">
+                <filter name="dom_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="dom_accomplish" string="Accomplish" domain="[('state','=','accomplish')]"/>
+                <filter name="dom_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
+            </group>
+            <group name="group_by" string="Group By">
+                <filter name="grp_participant" string="Participant" context="{'group_by':'partisipant_id'}"/>
+                <filter name="grp_training" string="Training" context="{'group_by':'training_id'}"/>
+                <filter name="grp_substitute_by" string="Substitute By" context="{'group_by':'substitute_by_id'}"/>
+                <filter name="grp_substitute_from" string="Substitute From" context="{'group_by':'substitute_from_id'}"/>
+                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_participant_action" model="ir.actions.act_window">
+    <field name="name">Training</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_partisipant</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_participant_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_participant_menu"
+    name="Training Participant"
+    parent="hr_employee_training.hr_training_root_menu"
+    action="hr_training_participant_action"
+    sequence="2"
+    />
+
+
+</data>
+</openerp>
