@@ -1,0 +1,9 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_training_allowance_employee,hr.training_allowance - employee,model_hr_training_allowance,base.group_user,1,1,1,1
+hr_training_allowance_all,hr.training_allowance - all,model_hr_training_allowance,,1,0,0,0
+hr_training_allowance_pricelist_policy_employee,hr.training_allowance_pricelist_policy - employee,model_hr_training_allowance_pricelist_policy,base.group_user,1,1,1,1
+hr_training_allowance_pricelist_policy_all,hr.training_allowance_pricelist_policy - all,model_hr_training_allowance_pricelist_policy,,1,0,0,0
+hr_training_allowance_pricelist_policy_field_employee,hr.training_allowance_pricelist_policy_field - employee,model_hr_training_allowance_pricelist_policy_field,base.group_user,1,1,1,1
+hr_training_allowance_pricelist_policy_field_all,hr.training_allowance_pricelist_policy_field - all,model_hr_training_allowance_pricelist_policy_field,,1,0,0,0
+hr_training_participant_allowance_employee,hr.training_participant_allowance - employee,model_hr_training_participant_allowance,base.group_user,1,1,1,1
+hr_training_participant_allowance_all,hr.training_participant_allowance - all,model_hr_training_participant_allowance,,1,0,0,0
