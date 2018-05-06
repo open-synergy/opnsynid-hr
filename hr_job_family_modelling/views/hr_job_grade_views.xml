@@ -28,8 +28,12 @@
                 <field name="code"/>
                 <field name="category_id"/>
                 <field name="active"/>
-                <field name="note"/>
             </group>
+            <notebook colspan="4">
+                <page name="note" string="Note">
+                    <field name="note" colspan="4" nolabel="1"/>
+                </page>
+            </notebook>
         </form>
     </field>
 </record>
