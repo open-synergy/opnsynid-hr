@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="allowance_field_job_family_grade" model="hr.training_allowance_pricelist_policy_field">
+    <field name="name">Job Family Grade</field>
+    <field name="python_code">job_family_grade = employee.job_family_grade_id or False
+if job_family_grade:
+    result = job_family_grade.allowance_pricelist_id
+else:
+    result = False    
+</field>
+</record>
+
+<record id="allowance_field_job_grade" model="hr.training_allowance_pricelist_policy_field">
+    <field name="name">Job Grade</field>
+    <field name="python_code">job_grade = employee.job_grade_id or False
+if job_grade:
+    result = job_grade.allowance_pricelist_id
+else:
+    result = False    
+</field>
+</record>
+
+
+</data>
+</openerp>
