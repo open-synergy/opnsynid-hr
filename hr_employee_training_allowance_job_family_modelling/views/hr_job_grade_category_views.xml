@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- © <YEAR(S)> <AUTHOR(S)>
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<openerp>
+<data>
+<record id="hr_job_grade_category_view_form" model="ir.ui.view">
+    <field name="name">form hr.job.grade.category</field>
+    <field name="model">hr.job_grade_category</field>
+    <field name="inherit_id" ref="hr_job_family_modelling.hr_job_grade_category_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//notebook" position="inside">
+                <page name="training_allowance" string="Training Allowance">
+                    <field name="training_allowance_pricelist_ids" nolabel="1" colspan="4">
+                        <tree editable="top">
+                            <field name="participant_type_id"/>
+                            <field name="pricelist_id" 
+                                domain="[('type','=','training_allowance')]"/>                            
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>
