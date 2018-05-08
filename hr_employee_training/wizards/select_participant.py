@@ -13,6 +13,16 @@ class SelectTrainingParticipant(models.TransientModel):
     def _default_training_id(self):
         return self.env.context.get("active_id", False)
 
+    @api.model
+    def _default_participant_type_id(self):
+        training_id = self._default_training_id()
+        if not training_id:
+            return False
+
+        obj_training = self.env["hr.training"]
+        return obj_training.browse([training_id])[0].\
+            participant_type_id.id
+
     training_id = fields.Many2one(
         string="Training",
         comodel_name="hr.training",
@@ -26,6 +36,12 @@ class SelectTrainingParticipant(models.TransientModel):
         column1="wizard_id",
         column2="employee_id",
         required=True,
+    )
+    participant_type_id = fields.Many2one(
+        string="Participant Type",
+        comodel_name="hr.training_participant_type",
+        required=True,
+        default=lambda self: self._default_participant_type_id(),
     )
 
     @api.onchange("training_id")
@@ -73,7 +89,7 @@ class SelectTrainingParticipant(models.TransientModel):
             data = {
                 "partisipant_id": employee.id,
                 "job_id": employee.job_id and employee.job_id.id or False,
-                "type_id": self.training_id.participant_type_id.id,
+                "type_id": self.participant_type_id.id,
             }
             if self.training_id.state in ["start"]:
                 data.update({"additional": True})

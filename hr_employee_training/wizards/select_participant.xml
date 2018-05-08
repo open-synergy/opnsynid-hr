@@ -6,6 +6,9 @@
     <field name="model">hr.select_training_participant</field>
     <field name="arch" type="xml">
         <form>
+            <group name="group_2" colspan="4" col="2">
+                <field name="participant_type_id"/>
+            </group>
             <group name="group_1" colspan="4" col="2" string="Select Employees">
                 <field name="employee_ids" nolabel="1" colspan="4"/>
             </group>
