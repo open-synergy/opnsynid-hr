@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_certification_method_view_tree" model="ir.ui.view">
+    <field name="name">hr.certification tree</field>
+    <field name="model">hr.certification</field>
+    <field name="inherit_id" ref="hr_experience.view_certification_tree"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="training_category_id"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_certification_view_form" model="ir.ui.view">
+    <field name="name">hr.certification form</field>
+    <field name="model">hr.certification</field>
+    <field name="inherit_id" ref="hr_experience.view_certification_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='name']" position="after">
+                <field name="training_category_id" attrs="{'readonly':[('participant_id','!=',False)]}"/>
+                <field name="training_id" readonly="1"/>
+                <field name="participant_id" readonly="1"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>
