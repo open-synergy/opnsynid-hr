@@ -31,8 +31,12 @@
                 <field name="active"/>
                 <field name="type"/>
                 <field name="parent_id"/>
-                <field name="note"/>
             </group>
+            <notebook colspan="4">
+                <page name="note" string="Notes">
+                    <field name="note"/>
+                </page>
+            </notebook>
         </form>
     </field>
 </record>
