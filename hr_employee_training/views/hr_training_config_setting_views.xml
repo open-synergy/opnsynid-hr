@@ -17,6 +17,39 @@
                 <button name="cancel" string="Cancel" type="object" class="oe_link"/>
             </header>
             <field name="company_id" invisible="1"/>
+            <separator string="Feature &amp; Integration"/>
+            <group name="training_group">
+                <label for="id" string="Feature"/>
+                    <div>
+                    <div>
+                        <field name="module_hr_employee_training_allowance" class="on_inline"/>
+                        <label for="module_hr_employee_training_allowance"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_employee_training_budget" class="on_inline"/>
+                        <label for="module_hr_employee_training_budget"/>
+                    </div>
+                </div>
+                <label for="id" string="Integration"/>
+                <div>
+                    <div>
+                        <field name="module_hr_employee_training_analytic" class="on_inline"/>
+                        <label for="module_hr_employee_training_analytic"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_employee_training_job_family_modelling" class="on_inline"/>
+                        <label for="module_hr_employee_training_job_family_modelling"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_employee_training_experience" class="on_inline"/>
+                        <label for="module_hr_employee_training_experience"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_employee_training_organization_unit" class="on_inline"/>
+                        <label for="module_hr_employee_training_organization_unit"/>
+                    </div>
+                </div>
+            </group>
             <separator string="Training"/>
             <group name="training_group">
                 <label for="id" string="Allowed Groups"/>
