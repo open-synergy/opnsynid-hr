@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_department_view_form" model="ir.ui.view">
+    <field name="name">hr.department form</field>
+    <field name="model">hr.department</field>
+    <field name="inherit_id" ref="hr_department_notebook.hr_department_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//notebook" position="inside">
+                <page name="holiday" string="Holiday" groups="base.group_system">
+                    <group name="holiday_1" colspan="4" col="2" string="Holiday Allocation Workflow">
+                        <field name="holiday_allocation_confirm_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_allocation_approve_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_allocation_validate_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_allocation_refuse_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_allocation_restart_group_ids" widget="many2many_tags"/>
+                    </group>
+                    <group name="holiday_2" colspan="4" col="2" string="Holiday Request Workflow">
+                        <field name="holiday_request_confirm_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_request_approve_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_request_validate_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_request_refuse_group_ids" widget="many2many_tags"/>
+                        <field name="holiday_request_restart_group_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
