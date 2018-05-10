@@ -67,3 +67,21 @@ class ResConfig(models.TransientModel):
         column2="group_id",
         related="company_id.employee_training_allowed_restart_group_ids",
     )
+    module_hr_employee_training_allowance = fields.Boolean(
+        string="Manage Training Allowance",
+    )
+    module_hr_employee_training_budget = fields.Boolean(
+        string="Manage Training Budget",
+    )
+    module_hr_employee_training_experience = fields.Boolean(
+        string="Experience",
+    )
+    module_hr_employee_training_analytic = fields.Boolean(
+        string="Analytic Account",
+    )
+    module_hr_employee_training_job_family_modelling = fields.Boolean(
+        string="Job Family Modelling",
+    )
+    module_hr_employee_training_organization_unit = fields.Boolean(
+        string="Organization Unit",
+    )
