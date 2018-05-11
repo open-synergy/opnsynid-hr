@@ -11,5 +11,5 @@ from . import (
     hr_training_category, hr_training, hr_training_partisipant,
     hr_training_session, hr_training_attendance,
     res_company,
-    res_config,
+    res_config, res_partner,
 )
