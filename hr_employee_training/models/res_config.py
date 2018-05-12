@@ -73,6 +73,9 @@ class ResConfig(models.TransientModel):
     module_hr_employee_training_budget = fields.Boolean(
         string="Manage Training Budget",
     )
+    module_hr_employee_training_evaluation = fields.Boolean(
+        string="Manage Training Evaluation",
+    )
     module_hr_employee_training_experience = fields.Boolean(
         string="Experience",
     )
