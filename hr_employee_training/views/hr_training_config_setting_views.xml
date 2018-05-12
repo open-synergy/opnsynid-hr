@@ -29,6 +29,10 @@
                         <field name="module_hr_employee_training_budget" class="on_inline"/>
                         <label for="module_hr_employee_training_budget"/>
                     </div>
+                    <div>
+                        <field name="module_hr_employee_training_evaluation" class="on_inline"/>
+                        <label for="module_hr_employee_training_evaluation"/>
+                    </div>
                 </div>
                 <label for="id" string="Integration"/>
                 <div>
