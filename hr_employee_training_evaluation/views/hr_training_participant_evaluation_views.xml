@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="hr_training_participant_evaluation_view_tree" model="ir.ui.view">
+    <field name="name">hr.training_participant_evaluation tree</field>
+    <field name="model">hr.training_participant_evaluation</field>
+    <field name="arch" type="xml">
+        <tree create="false" delete="false">
+            <field name="participant_id"/>
+            <field name="training_id"/>
+            <field name="survey_id"/>
+            <field name="pre_post_test"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_training_participant_evaluation_view_form" model="ir.ui.view">
+    <field name="name">hr.training_participant_evaluation form</field>
+    <field name="model">hr.training_participant_evaluation</field>
+    <field name="arch" type="xml">
+        <form create="false" delete="false">
+            <header>
+                <button name="action_start" string="Start" type="object" class="oe_highlight" states="draft"/>
+                <button name="action_start_survey" string="Fill Evaluation" type="object" states="waiting"/>
+                <button name="action_done" string="Done" type="object" class="oe_highlight" states="waiting"/>
+                <button name="action_cancel" string="Cancel" type="object" states="draft,waiting,done"/>
+                <button name="action_restart" string="Reset to Draft" type="object" states="cancel"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,waiting,done"/>
+            </header>
+            <sheet>
+                <group name="main" colspan="4" col="2">
+                    <group name="main_1" colspan="1" col="2">
+                        <field name="sequence"/>
+                        <field name="pre_post_test" readonly="1"/>
+                        <field name="training_id" readonly="1"/>
+                        <field name="training_evaluation_id" readonly="1" groups="base.group_system"/>
+                        <field name="survey_id" readonly="1"/>
+                        <field name="respon_id" groups="base.group_system"/>
+                    </group>
+                    <group name="main_1" colspan="1" col="2">
+                        <field name="participant_id" readonly="1"/>
+                    </group>
+                </group>
+                <notebook colspan="4">
+                    <page name="note" string="Notes">
+                        <field name="note" colspan="4"/>
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="hr_training_participant_evaluation_view_search" model="ir.ui.view">
+    <field name="name">hr.training_participant_evaluation search</field>
+    <field name="model">hr.training_participant_evaluation</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="participant_id"/>
+            <field name="training_id"/>
+            <field name="state"/>
+            <group name="state" string="State">
+                <filter name="dom_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="dom_waiting" string="In Progress" domain="[('state','=','waiting')]"/>
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]"/>
+                <filter name="dom_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
+            </group>
+            <group name="grouping" string="Group By..">
+                <filter name="grp_participant" string="Participant" context="{'group_by':'participant_id'}"/>
+                <filter name="grp_training" string="Training" context="{'group_by':'training_id'}"/>
+                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_training_participant_evaluation_action" model="ir.actions.act_window">
+    <field name="name">Participant Evaluation</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.training_participant_evaluation</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_training_participant_evaluation_view_search"/>
+</record>
+
+<menuitem
+    id="hr_training_participant_evaluation_menu"
+    name="Participant Evaluation"
+    parent="hr_employee_training.hr_training_root_menu"
+    action="hr_training_participant_evaluation_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>
