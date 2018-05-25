@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_timesheet_computation_item_view_tree" model="ir.ui.view">
+    <field name="name">hr.timesheet_computation_item tree</field>
+    <field name="model">hr.timesheet_computation_item</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="code"/>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_timesheet_computation_item_view_form" model="ir.ui.view">
+    <field name="name">hr.timesheet_computation_item form</field>
+    <field name="model">hr.timesheet_computation_item</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <form>
+            <group name="group_1" colspan="4" col="2">
+                <field name="code"/>
+                <field name="name"/>
+                <field name="active"/>
+            </group>
+            <notebook colspan="4">
+                <page name="code" string="Computation">
+                    <field name="python_code"/>
+                </page>            
+                <page name="note" string="Notes">
+                    <field name="note"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="hr_timesheet_computation_item_view_search" model="ir.ui.view">
+    <field name="name">hr.timesheet_computation_item search</field>
+    <field name="model">hr.timesheet_computation_item</field>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="code"/>            
+        </search>
+    </field>
+</record>
+
+<record id="hr_timesheet_computation_item_action" model="ir.actions.act_window">
+    <field name="name">Timesheet Computation Item</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.timesheet_computation_item</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_timesheet_computation_item_view_search"/>
+</record>
+
+<menuitem
+    id="hr_timesheet_computation_item_menu"
+    name="Timesheet Computation Item"
+    parent="hr.menu_open_view_attendance_reason_new_config"
+    action="hr_timesheet_computation_item_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>
