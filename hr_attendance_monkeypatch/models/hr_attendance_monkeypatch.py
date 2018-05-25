@@ -11,27 +11,6 @@ def _altern_si_so(self):
     return True
 
 
-@api.multi
-def _altern_si_so_1(self):
-    for attn in self:
-        if not attn._do_check():
-            return True
-            continue
-
-        prev_attns = self._get_prev_attendance()
-        next_attns = self._get_next_attendance()
-
-        if prev_attns and prev_attns[0].action == attn.action:
-            return False
-        elif next_attns and next_attns[0].action == attn.action:
-            return False
-        elif (not prev_attns) and (not next_attns) and \
-                attn.action != "sign_in":
-            return False
-
-        return True
-
-
 class HrAttendanceMonkeypatch(models.TransientModel):
     _name = "hr.attendance_monkeypatch"
 
