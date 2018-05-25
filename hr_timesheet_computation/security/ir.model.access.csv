@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_timesheet_computation_item_employee,hr.timesheet_computation_item - employee,model_hr_timesheet_computation_item,base.group_user,1,1,1,1
+hr_timesheet_computation_item_all,hr.timesheet_computation_item - all,model_hr_timesheet_computation_item,,1,0,0,0
+hr_timesheet_computation_employee,hr.timesheet_computation - employee,model_hr_timesheet_computation,base.group_user,1,1,1,1
+hr_timesheet_computation_all,hr.timesheet_computation - all,model_hr_timesheet_computation,,1,0,0,0
+hr_contract_timesheet_computation_employee,hr.contract_timesheet_computation - employee,model_hr_contract_timesheet_computation,base.group_user,1,1,1,1
+hr_contract_timesheet_computation_all,hr.contract_timesheet_computation - all,model_hr_contract_timesheet_computation,,1,0,0,0
