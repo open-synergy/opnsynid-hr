@@ -36,8 +36,8 @@ The file must have 3 columns head keys, which is:
 Usage
 =====
 
-Import Mekanism:
-----------------
+Import Mechanism:
+-----------------
 
 You need to:
 
@@ -46,7 +46,7 @@ You need to:
 3. Click "Generate Payslip" Button
 4. Open *Imported Files* tab
 5. Click "Import File"
-4. Add file
+6. Add file
 
 Bug Tracker
 ===========
