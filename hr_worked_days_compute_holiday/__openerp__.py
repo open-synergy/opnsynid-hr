@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Public Holiday Computation on Worked Days",
-    "version": "8.0.1.0.1",
+    "version": "8.0.1.0.2",
     "category": "Human Resources",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
