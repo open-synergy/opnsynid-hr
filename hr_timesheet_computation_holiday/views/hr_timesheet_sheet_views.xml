@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_timesheet_sheet_view_form" model="ir.ui.view">
+    <field name="name">hr_timesheet_sheet.sheet form</field>
+    <field name="model">hr_timesheet_sheet.sheet</field>
+    <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//page[3]" position="after">
+                <page name="holiday" string="Holidays">
+                    <field name="holiday_ids" colspan="4" nolabel="1"/>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
