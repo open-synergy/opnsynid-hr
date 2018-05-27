@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+<record id="hr_overtime_request_view_form" model="ir.ui.view">
+    <field name="name">hr.overtime_request form</field>
+    <field name="model">hr.overtime_request</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"/>
+                <button name="action_valid" type="object" string="Valid" class="oe_highlight" attrs="{'invisible':['|',('state','!=','confirm'),('valid_ok','=',False)]}"/>
+                <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible':['|',('state','not in',['draft','confirm','valid']),('cancel_ok','=',False)]}"/>
+                <button name="action_restart" type="object" string="Restart" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,valid"/>
+            </header>
+            <sheet>
+                <label for="name"/>
+                <h1>
+                    <field name="name"/>
+                </h1>
+                <group name="group_1" colspan="4" col="2">
+                    <group name="group_1_1" colspan="1" col="2">
+                        <field name="company_id" groups="base.group_multi_company"/>
+                        <field name="employee_id"/>
+                    </group>
+                    <group name="group_1_2" colspan="1" col="2">
+                        <field name="date_start"/>
+                        <field name="date_end"/>
+                        <field name="overtime_hour"/>
+                    </group>
+                </group>
+                <notebook>
+                    <page name="note" string="Note">
+                        <field name="note" colspan="4" nolabel="1"/>
+                    </page>
+                    <page name="policy" string="Policy" groups="base.group_system">
+                        <group name="group_policy_1" colspan="4" col="2">
+                            <field name="confirm_ok"/>
+                            <field name="valid_ok"/>
+                            <field name="cancel_ok"/>
+                            <field name="restart_ok"/>
+                        </group>
+                    </page>
+                </notebook>
+            </sheet>
+            <div class="oe_chatter">
+                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                <field name="message_ids" widget="mail_thread"/>
+            </div>
+        </form>
+    </field>
+</record>
+
+<record id="hr_overtime_request_view_tree" model="ir.ui.view">
+    <field name="name">hr.overtime_request tree</field>
+    <field name="model">hr.overtime_request</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="employee_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="overtime_hour"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_overtime_request_view_search" model="ir.ui.view">
+    <field name="name">hr.overtime_request search</field>
+    <field name="model">hr.overtime_request</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="employee_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="state"/>
+            <group name="group_state" string="State">
+                <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="filter_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
+                <filter name="filter_valid" string="Valid" domain="[('state','=','valid')]"/>
+                <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
+            </group>
+            <group name="group_by" string="Group By..">
+                <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                <filter name="grp_date_year" string="Date by Year" context="{'group_by':'date_start:year'}"/>
+                <filter name="grp_date_month" string="Date by Month" context="{'group_by':'date_start:month'}"/>
+                <filter name="grp_date_day" string="Date by Day" context="{'group_by':'date_start:day'}"/>
+                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_overtime_request_action" model="ir.actions.act_window">
+    <field name="name">Overtime Request</field>
+    <field name="res_model">hr.overtime_request</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_overtime_request_view_search"/>
+</record>
+
+<menuitem 
+    id="hr_overtime_request_menu"
+    name="Overtime"
+    parent="hr_overtime_root_menu"
+    action="hr_overtime_request_action"
+    sequence="1"/>
+
+
+</data>
+</openerp>
