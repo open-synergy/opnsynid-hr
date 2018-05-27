@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_timesheet_attendance_schedule_view_tree" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule tree</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="employee_id"/>
+            <field name="sheet_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="schedule_work_hour" widget="float_time"/>
+            <field name="real_work_hour" widget="float_time"/>
+            <field name="early_start_hour" widget="float_time"/>
+            <field name="late_start_hour" widget="float_time"/>
+            <field name="finish_early_hour" widget="float_time"/>
+            <field name="finish_late_hour" widget="float_time"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_view_form" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule form</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <group name="attendance_1" colspan="4" col="2">
+                <group name="attendance_1_1" colspan="1" col="2">
+                    <field name="employee_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="start_attendance_id"/>
+                    <field name="end_attendance_id"/>
+                    <field name="real_date_start"/>
+                    <field name="real_date_end"/>
+                </group>
+                <group name="attendance_1_2" colspan="1" col="2">
+                    <field name="schedule_work_hour" widget="float_time"/>
+                    <field name="real_work_hour" widget="float_time"/>
+                    <field name="early_start_hour" widget="float_time"/>
+                    <field name="late_start_hour" widget="float_time"/>
+                    <field name="finish_early_hour" widget="float_time"/>
+                    <field name="finish_late_hour" widget="float_time"/>
+                </group>
+            </group>
+            <notebook>
+                <page name="attendance" string="Attendances">
+                    <field name="attendance_ids" colspan="4" nolabel="1"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_view_search" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule search</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="employee_id"/>
+            <field name="sheet_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="state"/>
+        </search>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_action" model="ir.actions.act_window">
+    <field name="name">Timesheet Attendance Schedule</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.timesheet_attendance_schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_timesheet_attendance_schedule_view_search"/>
+</record>
+
+<menuitem
+    id="hr_timesheet_attendance_schedule_menu"
+    name="Timesheet Attendance Schedule"
+    parent="hr_attendance.menu_hr_time_tracking"
+    action="hr_timesheet_attendance_schedule_action"
+    sequence="1"
+    />
+
+
+</data>
+</openerp>

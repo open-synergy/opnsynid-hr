@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="after_attendance_schedule_filter" model="ir.filters">
+    <field name="name">After Attendance Schedule Creation</field>
+    <field name="model_id">hr_timesheet_sheet.sheet</field>
+    <field name="domain">[["state","=","draft"]]</field>
+    <field name="active" eval="0"/>
+</record>
+
+</data>
+</openerp>
