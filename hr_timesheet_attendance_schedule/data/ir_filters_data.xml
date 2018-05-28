@@ -5,6 +5,14 @@
 <openerp>
 <data>
 
+<record id="before_attendance_schedule_filter" model="ir.filters">
+    <field name="name">Before Attendance Schedule Creation</field>
+    <field name="model_id">hr_timesheet_sheet.sheet</field>
+    <field name="domain">[["state","!=","draft"]]</field>
+    <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
+</record>
+
 <record id="after_attendance_schedule_filter" model="ir.filters">
     <field name="name">After Attendance Schedule Creation</field>
     <field name="model_id">hr_timesheet_sheet.sheet</field>
