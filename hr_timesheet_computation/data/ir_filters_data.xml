@@ -10,6 +10,7 @@
     <field name="model_id">hr_timesheet_sheet.sheet</field>
     <field name="domain">[["state","=","draft"]]</field>
     <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
 </record>
 
 <record id="after_timesheet_computation_filter" model="ir.filters">
@@ -17,6 +18,7 @@
     <field name="model_id">hr_timesheet_sheet.sheet</field>
     <field name="domain">[["state","=","confirm"]]</field>
     <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
 </record>
 
 
