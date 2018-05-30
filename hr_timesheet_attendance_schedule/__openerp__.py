@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Timesheet Attendance Schedule",
-    "version": "8.0.1.2.0",
+    "version": "8.0.1.3.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -17,6 +17,7 @@
         "data/ir_filters_data.xml",
         "data/ir_actions_server_data.xml",
         "data/base_action_rule_data.xml",
+        "data/ir_values_data.xml",
         "views/hr_timesheet_sheet_views.xml",
         "views/hr_timesheet_attendance_schedule_views.xml",
         "views/hr_attendance_config_setting_views.xml",

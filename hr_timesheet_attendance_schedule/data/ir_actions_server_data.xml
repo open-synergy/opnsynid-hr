@@ -15,6 +15,19 @@
     <field name="code">object.action_create_attendance_schedule()</field>
 </record>
 
+<record id="recompute_attendance_schedule_actions_server" model="ir.actions.server">
+    <field name="name">Recompute Attendance Schedule</field>
+    <field name="sequence" eval="5"/>
+    <field name="type">ir.actions.server</field>
+    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet"/>
+    <field name="condition">True</field>
+    <field name="state">code</field>
+    <field name="code">ts_ids = env.context.get("active_ids", [])
+for timesheet in model.browse(ts_ids):
+    timesheet.attendances_ids._compute_schedule()
+    </field>
+</record>
+
 
 
 </data>
