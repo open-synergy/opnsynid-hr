@@ -223,7 +223,7 @@ class HrOvertimeRequest(models.Model):
             result = company.overtime_request_sequence_id
         else:
             result = self.env.ref(
-                "hr_attendance_overtime_request.overtime_request")
+                "hr_attendance_overtime_request.sequence_overtime_request")
         return result
 
     @api.model
