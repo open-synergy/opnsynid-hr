@@ -245,3 +245,24 @@ class HrOvertimeRequest(models.Model):
             if report.state != "draft" and not force_unlink:
                 raise UserError(_("You can only delete data with draft state"))
         _super.unlink()
+
+    @api.constrains("date_start", "date_end")
+    def _check_duration(self):
+        strWarning = _("Date end must be greater than date start")
+        if self.date_start and self.date_end:
+            if self.date_end < self.date_start:
+                raise UserError(strWarning)
+
+    @api.constrains("employee_id", "state", "date_start", "date_end")
+    def _check_availability(self):
+        obj_overtime = self.env[self._name]
+        if self.state in ["confirm", "valid"]:
+            criteria = [
+                ("employee_id", "=", self.employee_id.id),
+                ("id", "<>", self.id),
+                ("state", "=", "valid"),
+                ("date_start", "<=", self.date_end),
+                ("date_end", ">=", self.date_start),
+                ]
+            if obj_overtime.search_count(criteria) > 0:
+                raise UserError(_("Employe already has an overtime request"))

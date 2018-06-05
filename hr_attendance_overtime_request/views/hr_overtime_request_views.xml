@@ -26,7 +26,11 @@
                     <group name="group_1_2" colspan="1" col="2">
                         <field name="date_start"/>
                         <field name="date_end"/>
-                        <field name="overtime_hour"/>
+                        <label for="overtime_hour"/>
+                        <div>
+                            <field name="overtime_hour" class="oe_inline" widget="float_time"/>
+                            hour(s)
+                        </div>
                     </group>
                 </group>
                 <notebook>
@@ -61,7 +65,7 @@
             <field name="employee_id"/>
             <field name="date_start"/>
             <field name="date_end"/>
-            <field name="overtime_hour"/>
+            <field name="overtime_hour" widget="float_time"/>
             <field name="state"/>
         </tree>
     </field>
