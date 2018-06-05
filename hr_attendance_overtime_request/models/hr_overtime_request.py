@@ -16,6 +16,13 @@ class HrOvertimeRequest(models.Model):
     def _default_company_id(self):
         return self.env.user.company_id.id
 
+    @api.model
+    def _default_employee_id(self):
+        employees = self.env.user.employee_ids
+        if len(employees) > 0:
+            employee = employees[0]
+        return employee.id
+
     @api.multi
     @api.depends(
         "date_start", "date_end")
@@ -61,6 +68,7 @@ class HrOvertimeRequest(models.Model):
         required=True,
         default="/",
         readonly=True,
+        copy=False,
         states={
             "draft": [
                 ("readonly", False),
@@ -78,6 +86,8 @@ class HrOvertimeRequest(models.Model):
         comodel_name="hr.employee",
         required=True,
         readonly=True,
+        default=_default_employee_id,
+        track_visibility="onchange",
         states={
             "draft": [
                 ("readonly", False),
@@ -88,11 +98,15 @@ class HrOvertimeRequest(models.Model):
         string="Department",
         comodel_name="hr.department",
         readonly=False,
+        copy=False,
+        track_visibility="onchange",
     )
     manager_id = fields.Many2one(
         string="Manager",
         comodel_name="hr.employee",
         readonly=False,
+        copy=False,
+        track_visibility="onchange",
     )
     date_start = fields.Datetime(
         string="Date Start",
@@ -103,6 +117,7 @@ class HrOvertimeRequest(models.Model):
                 ("readonly", False),
             ],
         },
+        track_visibility="onchange",
     )
     date_end = fields.Datetime(
         string="Date End",
@@ -113,6 +128,7 @@ class HrOvertimeRequest(models.Model):
                 ("readonly", False),
             ],
         },
+        track_visibility="onchange",
     )
     overtime_hour = fields.Float(
         string="Overtime Hour",
@@ -126,6 +142,7 @@ class HrOvertimeRequest(models.Model):
         string="State",
         required=True,
         readonly=True,
+        track_visibility="onchange",
         selection=[
             ("draft", "Draft"),
             ("confirm", "Waiting for Approval"),
@@ -159,6 +176,39 @@ class HrOvertimeRequest(models.Model):
         store=False,
         readonly=True,
     )
+    confirmed_date = fields.Datetime(
+        string="Confirmation Date",
+        readonly=True,
+        copy=False,
+    )
+    confirmed_user_id = fields.Many2one(
+        string="Confirmation By",
+        comodel_name="res.users",
+        readonly=True,
+        copy=False,
+    )
+    validated_date = fields.Datetime(
+        string="Validation Date",
+        readonly=True,
+        copy=False,
+    )
+    validated_user_id = fields.Many2one(
+        string="Validation By",
+        comodel_name="res.users",
+        readonly=True,
+        copy=False,
+    )
+    cancelled_date = fields.Datetime(
+        string="Cancellation Date",
+        readonly=True,
+        copy=False,
+    )
+    cancelled_user_id = fields.Many2one(
+        string="Cancellation By",
+        comodel_name="res.users",
+        readonly=True,
+        copy=False,
+    )
 
     @api.multi
     def action_confirm(self):
@@ -185,6 +235,8 @@ class HrOvertimeRequest(models.Model):
         self.ensure_one()
         result = {
             "state": "confirm",
+            "confirmed_user_id": self.env.user.id,
+            "confirmed_date": fields.Datetime.now(),
         }
         return result
 
@@ -193,6 +245,8 @@ class HrOvertimeRequest(models.Model):
         self.ensure_one()
         result = {
             "state": "valid",
+            "validated_user_id": self.env.user.id,
+            "validated_date": fields.Datetime.now(),
         }
         return result
 
@@ -201,6 +255,8 @@ class HrOvertimeRequest(models.Model):
         self.ensure_one()
         result = {
             "state": "cancel",
+            "cancelled_user_id": self.env.user.id,
+            "cancelled_date": fields.Datetime.now(),
         }
         return result
 
@@ -209,6 +265,12 @@ class HrOvertimeRequest(models.Model):
         self.ensure_one()
         result = {
             "state": "draft",
+            "confirmed_user_id": False,
+            "confirmed_date": False,
+            "validated_user_id": False,
+            "validated_date": False,
+            "cancelled_user_id": False,
+            "cancelled_date": False,
         }
         return result
 
@@ -243,6 +305,16 @@ class HrOvertimeRequest(models.Model):
         return super(HrOvertimeRequest, self).create(new_values)
 
     @api.multi
+    def copy(self, default):
+        self.ensure_one()
+        _super = super(HrOvertimeRequest, self)
+        default.update({
+            "department_id": self._get_department_id().id,
+            "manager_id": self._get_manager_id().id,
+        })
+        return _super.copy(default)
+
+    @api.multi
     def unlink(self):
         _super = super(HrOvertimeRequest, self)
         force_unlink = self._context.get("force_unlink", False)
@@ -268,18 +340,30 @@ class HrOvertimeRequest(models.Model):
                 ("state", "=", "valid"),
                 ("date_start", "<=", self.date_end),
                 ("date_end", ">=", self.date_start),
-                ]
+            ]
             if obj_overtime.search_count(criteria) > 0:
                 raise UserError(_("Employe already has an overtime request"))
 
+    @api.multi
+    def _get_department_id(self):
+        self.ensure_one()
+        department_id = False
+        if self.employee_id:
+            department_id = self.employee_id.department_id
+        return department_id
+
+    @api.multi
+    def _get_manager_id(self):
+        self.ensure_one()
+        manager_id = False
+        if self.employee_id:
+            manager_id = self.employee_id.parent_id
+        return manager_id
+
     @api.onchange("employee_id")
     def onchange_department_id(self):
-        self.department_id = False
-        if self.employee_id:
-            self.department_id = self.employee_id.department_id
+        self.department_id = self._get_department_id()
 
     @api.onchange("employee_id")
     def onchange_manager_id(self):
-        self.manager_id = False
-        if self.employee_id:
-            self.manager_id = self.employee_id.parent_id
+        self.manager_id = self._get_manager_id()
