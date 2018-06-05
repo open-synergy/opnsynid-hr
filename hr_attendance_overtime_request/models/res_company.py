@@ -42,7 +42,7 @@ class ResCompany(models.Model):
     )
 
     @api.model
-    def _get_partner_arrangement_button_policy_map(self):
+    def _get_overtime_button_policy_map(self):
         return [
             ("confirm_ok",
                 "overtime_request_confirm_grp_ids"),
@@ -52,7 +52,7 @@ class ResCompany(models.Model):
         ]
 
     @api.multi
-    def _get_overtime_request_button_policy(self, policy_field):
+    def _get_overtime_button_policy(self, policy_field):
         self.ensure_one()
         result = False
         button_group_ids = []
