@@ -71,12 +71,7 @@ class HrOvertimeRequest(models.Model):
         string="Company",
         comodel_name="res.company",
         default=lambda self: self._default_company_id(),
-        readonly=True,
-        states={
-            "draft": [
-                ("readonly", False),
-            ],
-        },
+        readonly=False,
     )
     employee_id = fields.Many2one(
         string="Employee",
@@ -88,6 +83,16 @@ class HrOvertimeRequest(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    department_id = fields.Many2one(
+        string="Department",
+        comodel_name="hr.department",
+        readonly=False,
+    )
+    manager_id = fields.Many2one(
+        string="Manager",
+        comodel_name="hr.employee",
+        readonly=False,
     )
     date_start = fields.Datetime(
         string="Date Start",
@@ -266,3 +271,15 @@ class HrOvertimeRequest(models.Model):
                 ]
             if obj_overtime.search_count(criteria) > 0:
                 raise UserError(_("Employe already has an overtime request"))
+
+    @api.onchange("employee_id")
+    def onchange_department_id(self):
+        self.department_id = False
+        if self.employee_id:
+            self.department_id = self.employee_id.department_id
+
+    @api.onchange("employee_id")
+    def onchange_manager_id(self):
+        self.manager_id = False
+        if self.employee_id:
+            self.manager_id = self.employee_id.parent_id

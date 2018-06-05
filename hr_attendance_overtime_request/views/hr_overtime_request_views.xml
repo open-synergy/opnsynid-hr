@@ -22,6 +22,8 @@
                     <group name="group_1_1" colspan="1" col="2">
                         <field name="company_id" groups="base.group_multi_company"/>
                         <field name="employee_id"/>
+                        <field name="department_id" groups="base.group_system"/>
+                        <field name="manager_id" groups="base.group_system"/>
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
                         <field name="date_start"/>
@@ -63,6 +65,8 @@
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
             <field name="employee_id"/>
+            <field name="department_id" groups="base.group_system"/>
+            <field name="manager_id" groups="base.group_system"/>
             <field name="date_start"/>
             <field name="date_end"/>
             <field name="overtime_hour" widget="float_time"/>
@@ -79,6 +83,8 @@
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
             <field name="employee_id"/>
+            <field name="department_id" groups="base.group_system"/>
+            <field name="manager_id" groups="base.group_system"/>
             <field name="date_start"/>
             <field name="date_end"/>
             <field name="state"/>

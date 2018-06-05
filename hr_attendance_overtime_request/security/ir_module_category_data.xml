@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+
+<record id="module_attendance_overtime" model="ir.module.category">
+    <field name="name">Overtime Request</field>
+</record>
+
+</data>
+</openerp>
