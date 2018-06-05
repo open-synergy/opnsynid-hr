@@ -21,7 +21,8 @@
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
                         <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="employee_id"/>
+                        <field name="employee_id"
+                            invisible="context.get('hide_employee', 0)"/>
                         <field name="department_id" groups="base.group_system"/>
                         <field name="manager_id" groups="base.group_system"/>
                     </group>
@@ -47,6 +48,18 @@
                             <field name="restart_ok"/>
                         </group>
                     </page>
+                    <page name="log" string="Log" groups="base.group_system">
+                        <group name="group_log_1" colspan="4" col="3">
+                            <field name="create_date" string="Creation"/>
+                            <field name="create_uid" nolabel="1"/>
+                            <field name="confirmed_date" string="Confirmation"/>
+                            <field name="confirmed_user_id" nolabel="1"/>
+                            <field name="validated_date" string="Validation"/>
+                            <field name="validated_user_id" nolabel="1"/>
+                            <field name="cancelled_date" string="Cancellation"/>
+                            <field name="cancelled_user_id" nolabel="1"/>
+                        </group>
+                    </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
@@ -64,7 +77,9 @@
         <tree>
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
-            <field name="employee_id"/>
+            <field name="employee_id"
+                invisible="context.get('hide_employee', 0)"
+                />
             <field name="department_id" groups="base.group_system"/>
             <field name="manager_id" groups="base.group_system"/>
             <field name="date_start"/>
@@ -82,7 +97,9 @@
         <search>
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
-            <field name="employee_id"/>
+            <field name="employee_id"
+                invisible="context.get('hide_employee', 0)"
+                />
             <field name="department_id" groups="base.group_system"/>
             <field name="manager_id" groups="base.group_system"/>
             <field name="date_start"/>
@@ -110,14 +127,32 @@
     <field name="res_model">hr.overtime_request</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
+    <field name="context">{'search_default_filter_draft':1, 'search_default_filter_confirm':1}</field>
     <field name="search_view_id" ref="hr_overtime_request_view_search"/>
 </record>
 
 <menuitem 
     id="hr_overtime_request_menu"
-    name="Overtime"
+    name="Overtime Request"
     parent="hr_overtime_root_menu"
     action="hr_overtime_request_action"
+    sequence="2"/>
+
+<record id="hr_overtime_request_my_action" model="ir.actions.act_window">
+    <field name="name">My Overtime Request</field>
+    <field name="res_model">hr.overtime_request</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="context">{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'hide_employee':1}</field>
+    <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
+    <field name="search_view_id" ref="hr_overtime_request_view_search"/>
+</record>
+
+<menuitem 
+    id="hr_overtime_request_my_menu"
+    name="My Overtime Request"
+    parent="hr_overtime_root_menu"
+    action="hr_overtime_request_my_action"
     sequence="1"/>
 
 
