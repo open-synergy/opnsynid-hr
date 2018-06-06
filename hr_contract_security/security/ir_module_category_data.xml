@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+<record id="module_hr_contract" model="ir.module.category">
+    <field name="name">Employee Contract</field>
+</record>
+
+</data>
+</openerp>

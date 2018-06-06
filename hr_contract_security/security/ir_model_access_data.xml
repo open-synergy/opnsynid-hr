@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+<record id="hr_contract.access_hr_contract_manager" model="ir.model.access">
+    <field name="name">Depreceted</field>
+    <field name="model_id" ref="hr_contract.model_hr_contract"/>
+    <field name="active" eval="0"/>
+</record>
+
+</data>
+</openerp>
