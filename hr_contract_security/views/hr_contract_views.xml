@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_contract_my_action" model="ir.actions.act_window">
+    <field name="name">My Contract</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.contract</field>
+    <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="hr_contract_my_menu"
+    name="My Contracts"
+    parent="hr.menu_hr_main"
+    action="hr_contract_my_action"
+    sequence="11"
+    groups="base.group_user"
+    />
+
+<menuitem
+    id="hr_contract.hr_menu_contract"
+    name="Contracts"
+    parent="hr.menu_hr_main"
+    action="hr_contract.action_hr_contract"
+    sequence="12"
+    />
+
+
+</data>
+</openerp>
