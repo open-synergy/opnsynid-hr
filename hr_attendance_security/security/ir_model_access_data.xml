@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+<record id="hr_attendance.access_hr_attendance_user" model="ir.model.access">
+    <field name="name">Depreceted</field>
+    <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+    <field name="active" eval="0"/>
+</record>
+
+<record id="hr_attendance.access_hr_attendance_system_user" model="ir.model.access">
+    <field name="name">Depreceted</field>
+    <field name="model_id" ref="hr_attendance.model_hr_attendance"/>
+    <field name="active" eval="0"/>
+</record>
+
+</data>
+</openerp>

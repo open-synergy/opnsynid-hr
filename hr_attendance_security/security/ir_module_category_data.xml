@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<openerp>
+<data noupdate="1">
+
+<record id="module_attendance" model="ir.module.category">
+    <field name="name">Attendance</field>
+</record>
+
+</data>
+</openerp>
