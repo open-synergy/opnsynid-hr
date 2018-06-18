@@ -28,7 +28,8 @@ class HrTrainingParticipant(models.Model):
             str_warning = _("No pricelist defined")
             raise UserError(str_warning)
         for allowance in training.allowance_ids:
-            if self._check_existing_product(allowance.product_id):
+            if self._check_existing_product(allowance.product_id) and \
+                    allowance._check_participant_type(self):
                 allowance._create_participant_allowance(self)
 
     @api.multi

@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import models, fields, api, _
 from openerp.exceptions import Warning as UserError
 from openerp.tools.safe_eval import safe_eval as eval
 
@@ -34,5 +34,6 @@ class HrTrainingParticipantType(models.Model):
                 if result:
                     break
             except:
-                raise UserError("Weks")
+                warning_msg = _("Error on pricelist allowance formula")
+                raise UserError(warning_msg)
         return result

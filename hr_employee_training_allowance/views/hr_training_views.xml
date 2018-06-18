@@ -14,13 +14,37 @@
             <xpath expr="//notebook" position="inside">
                 <page name="page_allowance" string="Allowance">
                     <field name="allowance_ids" nolabel="1" colspan="4" readonly="0">
-                        <tree editable="top">
+                        <tree>
                             <field name="sequence" widget="handle"/>
-                            <field name="product_id"
-                                domain="[('training_allowance_ok','=',True)]"/>
-                            <field name="uom_id"/>
+                            <field name="participant_type_ids" widget="many2many_tags"/>
+                            <field name="product_id"/>
+                            <field name="qty_computation_method"/>
                             <field name="quantity"/>
+                            <field name="uom_id"/>
                         </tree>
+                        <form>
+                            <group name="allowance_form" colspan="4" col="2">
+                                <group name="allowance_form_1" colspan="1" col="2">
+                                    <field name="sequence"/>
+                                    <field name="product_id"/>
+                                    <field name="participant_type_ids" widget="many2many_tags"/>
+                                </group>
+                                <group name="allowance_form_1" colspan="1" col="2">
+                                    <field name="qty_computation_method"
+                                        domain="[('training_allowance_ok','=',True)]"/>
+                                    <field name="quantity"/>
+                                    <field name="uom_id"/>
+                                </group>
+                            </group>
+                            <notebook>
+                                <page name="allowance_computation" string="Qty. Computation Formula">
+                                    <field name="python_code" colspan="4" nolabel="1"/>
+                                </page>
+                                <page name="allowance_note" string="Note">
+                                    <field name="note" colspan="4" nolabel="1"/>
+                                </page>
+                            </notebook>
+                        </form>
                     </field>
                 </page>
             </xpath>
