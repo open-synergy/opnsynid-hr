@@ -21,8 +21,8 @@ class HrTrainingParticipantAllowance(models.Model):
     )
     def _compute_price(self):
         for allw in self:
-            self.price_subtotal = self.price_unit * \
-                self.quantity
+            allw.price_subtotal = allw.price_unit * \
+                allw.quantity
 
     participant_id = fields.Many2one(
         string="Participant",
