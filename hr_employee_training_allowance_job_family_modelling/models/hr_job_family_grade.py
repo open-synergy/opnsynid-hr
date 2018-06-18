@@ -24,7 +24,7 @@ class HrJobFamilyGrade(models.Model):
             ("participant_type_id", "=", participant_type.id),
         ]
         pricelists = obj_pricelist.search(criteria)
-        return pricelists[0] if len(pricelists) > 0 else False
+        return pricelists[0].pricelist_id if len(pricelists) > 0 else False
 
 
 class HrJobFamilyGradeTrainingAllowancePricelist(models.Model):
