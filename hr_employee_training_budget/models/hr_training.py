@@ -17,6 +17,7 @@ class HrTraining(models.Model):
         for rec in self:
             obj_line = self.env["crossovered.budget.lines"]
             aa = rec.analytic_account_id
+            rec.budget_line_ids = []
             if aa and rec.budget_id:
                 criteria = [
                     ("crossovered_budget_id", "=", rec.budget_id.id),
