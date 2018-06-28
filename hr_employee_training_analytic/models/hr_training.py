@@ -15,17 +15,17 @@ class HrTraining(models.Model):
     def _compute_analytic_line(self):
         for rec in self:
             obj_line = self.env["account.analytic.line"]
-            criteria = [
-                ("account_id", "child_of", rec.analytic_account_id.id),
-            ]
-            rec.analytic_line_ids = obj_line.search(criteria).ids
+            rec.analytic_line_ids = []
+            if rec.analytic_account_id:
+                criteria = [
+                    ("account_id", "child_of", rec.analytic_account_id.id),
+                ]
+                rec.analytic_line_ids = obj_line.search(criteria).ids
 
     analytic_account_id = fields.Many2one(
         string="Parent Analytic Account",
         comodel_name="account.analytic.account",
-        domain=[
-            ("type", "=", "view"),
-        ],
+        domain=[],
     )
     analytic_line_ids = fields.Many2many(
         string="Cost and Revenue",
