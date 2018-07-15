@@ -14,7 +14,7 @@
             <xpath expr="//sheet" position="inside">
                 <group name="allowance" string="Training Allowance">
                     <field name="allowance_pricelist_id"
-                        domain="[('type','=','training_allowance)]"
+                        domain="[('type','=','training_allowance')]"
                         />
                 </group>
             </xpath>
