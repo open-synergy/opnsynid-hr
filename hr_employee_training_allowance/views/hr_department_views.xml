@@ -13,7 +13,7 @@
         <data>
             <xpath expr="//field[@name='company_id']" position="after">
                 <field name="allowance_pricelist_id"
-                    domain="[('type','=','training_allowance)]"
+                    domain="[('type','=','training_allowance')]"
                     />
             </xpath>
         </data>

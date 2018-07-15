@@ -14,7 +14,7 @@
             <xpath expr="//group[@name='active_group']" position="after">
                 <group name="allowance" string="Allowance">
                     <field name="allowance_pricelist_id"
-                        domain="[('type','=','training_allowance)]"
+                        domain="[('type','=','training_allowance')]"
                         />
                 </group>
             </xpath>
