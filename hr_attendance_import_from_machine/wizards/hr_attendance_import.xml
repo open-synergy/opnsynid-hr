@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="hr_attendance_import_view_form" model="ir.ui.view">
+    <field name="name">hr.attendance_import.form</field>
+    <field name="model">hr.attendance_import</field>
+    <field name="arch" type="xml">
+        <form string="Import">
+            <group name="main" colspan="2" col="2">
+                <field name="attendance_machine_id"/>
+                <field name="data"/>
+            </group>
+            <footer>
+                <button string="Import" name="button_import" type="object" class="oe_highlight"/>
+                or
+                <button string="Cancel" class="oe_link" special="cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="hr_attendance_import_action" model="ir.actions.act_window">
+    <field name="name">Attendance Import</field>
+    <field name="res_model">hr.attendance_import</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="hr_attendance_import_view_form"/>
+    <field name="target">new</field>
+</record>
+
+<menuitem 
+    id="hr_attendance_import_menu"
+    name="Attendance Import" 
+    parent="hr_attendance.menu_hr_attendance"
+    action="hr_attendance_import_action"
+    sequence="100"/>
+        
+</data>
+</openerp>
