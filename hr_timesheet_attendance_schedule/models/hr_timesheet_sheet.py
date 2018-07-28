@@ -32,13 +32,22 @@ class HrTimesheetSheet(models.Model):
         dt_start = fields.Datetime.from_string(self.date_from)
         dt_end = fields.Datetime.from_string(self.date_to)
         duration = abs((dt_end - dt_start).days) + 1
-        if self.contract_ids:
-            contract = self.contract_ids.sorted(
-                lambda r: r.date_start, reverse=True)[0]
+        if not self.contract_ids:
+            return True
+
+        contract = self.contract_ids.sorted(
+            lambda r: r.date_start, reverse=True)[0]
+
+        if not contract.working_hours:
+            return True
 
         schedules = contract.working_hours._schedule_days(
             days=duration,
             day_date=dt_start)
+
+        if len(schedules) == 0:
+            return True
+
         for schedule in schedules[0]:
             str_start = fields.Datetime.to_string(schedule[0])
             str_end = fields.Datetime.to_string(schedule[1])
