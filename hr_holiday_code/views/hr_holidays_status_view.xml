@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="hr_holidays_status_form_view">
+            <field name="name">hr.holidays.status.form</field>
+            <field name="model">hr.holidays.status</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_status_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//notebook/page/group[last()]" position="after">
+                  <group name="sequence" string="Sequence">
+                      <field name="leave_request_sequence_id"/>
+                      <field name="allocation_request_sequence_id"/>
+                  </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
