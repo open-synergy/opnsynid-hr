@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data>
+        <record model="ir.ui.view" id="hr_holidays_lvr_tree_view">
+            <field name="name">hr.holidays.lvr.tree</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="before">
+                    <field name="holiday_code" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_holidays_alr_tree_view">
+            <field name="name">hr.holidays.alr.tree</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_holiday_allocation_tree" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='employee_id']" position="before">
+                    <field name="holiday_code" />
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_holidays_form_view">
+            <field name="name">hr.holidays.form</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new" />
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/group[1]" position="before">
+                    <h1>
+                        <field name="holiday_code" nolabel="1"/>
+                    </h1>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hr_holidays_lvr_search_view">
+            <field name="name">hr.holidays.lvr.search</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter" />
+            <field name="arch" type="xml">
+                <field name="name" position="before">
+                    <field name="holiday_code"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</openerp>

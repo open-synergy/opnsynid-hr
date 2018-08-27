@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+    <data noupdate="1">
+        <record id="leave_request_sequence_type" model="ir.sequence.type">
+            <field name="name">Leave Request Type</field>
+            <field name="code">hr.holidays.lvr</field>
+        </record>
+        <record id="leave_request_sequence" model="ir.sequence">
+            <field name="name">Leave Request</field>
+            <field name="code">hr.holidays.lvr</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">LVR</field>
+        </record>
+
+        <record id="allocation_request_sequence_type" model="ir.sequence.type">
+            <field name="name">Allocation Request Type</field>
+            <field name="code">hr.holidays.alr</field>
+        </record>
+        <record id="allocation_request_sequence" model="ir.sequence">
+            <field name="name">Allocation Request</field>
+            <field name="code">hr.holidays.alr</field>
+            <field eval="4" name="padding" />
+            <field name="prefix">ALR</field>
+        </record>
+
+    </data>
+</openerp>
