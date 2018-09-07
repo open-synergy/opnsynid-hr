@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Import Other Inputs From Payslip Batches",
     "version": "8.0.1.0.0",

@@ -105,8 +105,8 @@ class TestImport(TransactionCase):
     def _create_contract_1(self):
         vals = {
             'name': 'Contract 1',
-            'date_start': time.strftime('%Y-%m')+'-1',
-            'date_end': time.strftime('%Y')+'-12-31',
+            'date_start': time.strftime('%Y-%m') + '-1',
+            'date_end': time.strftime('%Y') + '-12-31',
             'wage': 7500000.0,
             'type_id': self.type.id,
             'employee_id': self.employee_1.id,
@@ -120,8 +120,8 @@ class TestImport(TransactionCase):
     def _create_contract_2(self):
         vals = {
             'name': 'Contract 2',
-            'date_start': time.strftime('%Y-%m')+'-1',
-            'date_end': time.strftime('%Y')+'-12-31',
+            'date_start': time.strftime('%Y-%m') + '-1',
+            'date_end': time.strftime('%Y') + '-12-31',
             'wage': 7500000.0,
             'type_id': self.type.id,
             'employee_id': self.employee_2.id,
@@ -185,7 +185,7 @@ class TestImport(TransactionCase):
              }
         )
 
-        msg_error_2 = ("Not 'employee' or 'code' or 'amount' keys found")
+        msg_error_2 = ("Not employee or code or amount keys found")
         with self.assertRaises(UserError) as error:
             wiz.import_data()
 
