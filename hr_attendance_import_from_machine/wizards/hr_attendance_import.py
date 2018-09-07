@@ -62,7 +62,7 @@ class HrAttendanceImport(models.TransientModel):
                     }
             return dict_field
         else:
-            raise UserError("No CSV Details")
+            raise UserError(_("No CSV Details"))
 
     @api.multi
     def check_employee_code(self, row, column):
@@ -140,9 +140,8 @@ class HrAttendanceImport(models.TransientModel):
         try:
             sign_in_out = row[column]
         except:
-            return True,
-            "Invalid Sign In/Out Column "
-            "on line %s" % (str(line_num))
+            err_msg = "Invalid Sign In/Out Column on line %s" % (str(line_num))
+            return True, err_msg
 
         if sign_in_out == sign_in_code:
             return False, 1
