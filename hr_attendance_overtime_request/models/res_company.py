@@ -8,6 +8,16 @@ from openerp import models, fields, api
 class ResCompany(models.Model):
     _inherit = "res.company"
 
+    start_overtime_buffer = fields.Float(
+        string="Start Overtime Buffer",
+        default=0.0,
+        required=True,
+    )
+    end_overtime_buffer = fields.Float(
+        string="End Overtime Buffer",
+        default=0.0,
+        required=True,
+    )
     overtime_request_sequence_id = fields.Many2one(
         string="Overtime Request Sequence",
         comodel_name="ir.sequence",

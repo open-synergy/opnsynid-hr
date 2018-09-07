@@ -19,6 +19,14 @@ class ResConfig(models.TransientModel):
         required=True,
         default=lambda self: self._default_company_id(),
     )
+    start_overtime_buffer = fields.Float(
+        string="Start Overtime Buffer",
+        related="company_id.start_overtime_buffer",
+    )
+    end_overtime_buffer = fields.Float(
+        string="End Overtime Buffer",
+        related="company_id.end_overtime_buffer",
+    )
     overtime_request_sequence_id = fields.Many2one(
         string="Sequence Overtime Request",
         comodel_name="ir.sequence",
