@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
-# © 2016 OpenSynergy Indonesia
+# Copyright 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
+# pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Job Family Modelling",
     "summary": "Grading system that divides jobs into coherent groups "
