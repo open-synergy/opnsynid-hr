@@ -1,18 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2016 OpenSynergy Indonesia
+     Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
 <openerp>
-    <data>
+<data>
 
-         <record id="hr_timesheet_sheet_sheet_view_forms" model="ir.ui.view">
-            <field name="name">Inherit : Summary Sign In Info</field>
-            <field name="model">hr_timesheet_sheet.sheet</field>
-            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
-            <field name="arch" type="xml">
-            	<xpath expr="/form/sheet/notebook/page[3]/field[@name='period_ids']/tree/field[@name='name']" position="after">
-            		<field name="first_sign_in"/>
-        			<field name="last_sign_out"/>	
-        		</xpath>
-            </field>
-        </record>
+<record id="hr_timesheet_sheet_sheet_view_forms" model="ir.ui.view">
+<field name="name">Inherit : Summary Sign In Info</field>
+<field name="model">hr_timesheet_sheet.sheet</field>
+<field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+<field name="arch" type="xml">
+    <xpath expr="/form/sheet/notebook/page[3]/field[@name='period_ids']/tree/field[@name='name']" position="after">
+        <field name="first_sign_in"/>
+        <field name="last_sign_out"/>   
+    </xpath>
+</field>
+</record>
 
-	</data>
+</data>
 </openerp>
