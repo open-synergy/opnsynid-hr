@@ -35,6 +35,7 @@ def assign_old_sequences(cr, registry):
             cr, SUPERUSER_ID, criteria_lvr, order="id")
 
     for lvr in lvr_ids:
+        # pylint: disable=locally-disabled, sql-injection
         cr.execute("UPDATE hr_holidays "
                    "SET holiday_code = '%s' "
                    "WHERE id = %d;" %
@@ -50,6 +51,7 @@ def assign_old_sequences(cr, registry):
             cr, SUPERUSER_ID, criteria_alr, order="id")
 
     for alr in alr_ids:
+        # pylint: disable=locally-disabled, sql-injection
         cr.execute("UPDATE hr_holidays "
                    "SET holiday_code = '%s' "
                    "WHERE id = %d;" %
