@@ -24,6 +24,75 @@ class HrOvertimeRequest(models.Model):
         return employee.id
 
     @api.multi
+    @api.depends("attendance_ids")
+    def _compute_attendance(self):
+        for overtime in self:
+            attendances = overtime.attendance_ids.filtered(
+                lambda r: r.action == "sign_in").sorted(key=lambda r: r.name)
+            overtime.start_attendance_id = attendances[
+                0].id if len(attendances) > 0 else False
+
+            attendances = overtime.attendance_ids.\
+                filtered(lambda r: r.action == "sign_out").\
+                sorted(key=lambda r: r.name, reverse=True)
+            overtime.end_attendance_id = attendances[
+                0].id if len(attendances) > 0 else False
+
+    @api.multi
+    @api.depends(
+        "start_attendance_id",
+        "date_start")
+    def _compute_real_start(self):
+        for overtime in self:
+            overtime.real_date_start = False
+            if not overtime.start_attendance_id or \
+                    not overtime.date_start:
+                continue
+
+            if overtime.start_attendance_id.name <= \
+                    overtime.date_start:
+                overtime.real_date_start = \
+                    overtime.date_start
+            else:
+                overtime.real_date_start = \
+                    overtime.start_attendance_id.name
+
+    @api.multi
+    @api.depends(
+        "end_attendance_id",
+        "date_end")
+    def _compute_real_end(self):
+        for overtime in self:
+            overtime.real_date_end = False
+            if not overtime.end_attendance_id or \
+                    not overtime.date_end:
+                continue
+
+            if overtime.end_attendance_id.name <= \
+                    overtime.date_end:
+                overtime.real_date_end = \
+                    overtime.end_attendance_id.name
+            else:
+                overtime.real_date_end = \
+                    overtime.date_end
+
+    @api.multi
+    @api.depends(
+        "real_date_start",
+        "real_date_end")
+    def _compute_real(self):
+        for overtime in self:
+            overtime.real_overtime_hour = 0.0
+            if overtime.real_date_start and \
+                    overtime.real_date_end:
+                dt_start = fields.Datetime.\
+                    from_string(overtime.real_date_start)
+                dt_end = fields.Datetime.\
+                    from_string(overtime.real_date_end)
+                overtime.real_overtime_hour = (dt_end - dt_start).\
+                    total_seconds() / 3600.00
+
+    @api.multi
     @api.depends(
         "date_start", "date_end")
     def _compute_hour(self):
@@ -130,13 +199,50 @@ class HrOvertimeRequest(models.Model):
         },
         track_visibility="onchange",
     )
+    real_date_start = fields.Datetime(
+        string="Real Date Start",
+        readonly=True,
+        compute="_compute_real_start",
+        store=True,
+    )
+    real_date_end = fields.Datetime(
+        string="Real Date End",
+        readonly=True,
+        compute="_compute_real_end",
+        store=True,
+    )
     overtime_hour = fields.Float(
         string="Overtime Hour",
         compute="_compute_hour",
         store=True,
     )
+    real_overtime_hour = fields.Float(
+        string="Real Overtime Hour",
+        compute="_compute_real",
+        store=True,
+    )
     note = fields.Text(
         string="Note",
+    )
+    attendance_ids = fields.One2many(
+        string="Attendances",
+        comodel_name="hr.attendance",
+        inverse_name="overtime_id",
+        readonly=True,
+    )
+    start_attendance_id = fields.Many2one(
+        string="Start Attendance",
+        comodel_name="hr.attendance",
+        compute="_compute_attendance",
+        store=True,
+        readonly=True,
+    )
+    end_attendance_id = fields.Many2one(
+        string="End Attendance",
+        comodel_name="hr.attendance",
+        compute="_compute_attendance",
+        store=True,
+        readonly=True,
     )
     state = fields.Selection(
         string="State",

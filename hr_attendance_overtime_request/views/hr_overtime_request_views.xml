@@ -27,6 +27,7 @@
                         <field name="manager_id" groups="base.group_system"/>
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
+                        <separator string="Planned" colspan="2"/>
                         <field name="date_start"/>
                         <field name="date_end"/>
                         <label for="overtime_hour"/>
@@ -34,11 +35,24 @@
                             <field name="overtime_hour" class="oe_inline" widget="float_time"/>
                             hour(s)
                         </div>
+                        <separator string="Realization" colspan="2"/>
+                        <field name="start_attendance_id"/>
+                        <field name="end_attendance_id"/>
+                        <field name="real_date_start"/>
+                        <field name="real_date_end"/>
+                        <label for="real_overtime_hour"/>
+                        <div>
+                            <field name="real_overtime_hour" class="oe_inline" widget="float_time"/>
+                            hour(s)
+                        </div>
                     </group>
                 </group>
                 <notebook>
                     <page name="note" string="Note">
                         <field name="note" colspan="4" nolabel="1"/>
+                    </page>
+                    <page name="attendances" string="Attendance(s)">
+                        <field name="attendance_ids" colspan="4" nolabel="1"/>
                     </page>
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="group_policy_1" colspan="4" col="2">
@@ -85,6 +99,9 @@
             <field name="date_start"/>
             <field name="date_end"/>
             <field name="overtime_hour" widget="float_time"/>
+            <field name="real_date_start"/>
+            <field name="real_date_end"/>
+            <field name="real_overtime_hour" widget="float_time"/>
             <field name="state"/>
         </tree>
     </field>

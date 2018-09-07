@@ -34,6 +34,16 @@
                         <label for="id" string="Sequence" class="oe_inline"/>
                         <field name="overtime_request_sequence_id" class="oe_inline" domain="[('code','=','hr.overtime_request')]"/>
                     </div>
+                    <div>
+                        <label for="id" string="Start Overtime Buffer" class="oe_inline"/>
+                        <field name="start_overtime_buffer" widget="float_time" class="oe_inline"/>
+                        <label for="id" string="hour(s)" class="oe_inline"/>
+                    </div> 
+                    <div>
+                        <label for="id" string="End Overtime Buffer" class="oe_inline"/>
+                        <field name="end_overtime_buffer" widget="float_time" class="oe_inline"/>
+                        <label for="id" string="hour(s)" class="oe_inline"/>
+                    </div>               
                 </div>
             </group>             
             <group name="overtime_group">
