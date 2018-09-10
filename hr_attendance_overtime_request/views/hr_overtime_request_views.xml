@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data>
 <record id="hr_overtime_request_view_form" model="ir.ui.view">
@@ -148,7 +150,7 @@
     <field name="search_view_id" ref="hr_overtime_request_view_search"/>
 </record>
 
-<menuitem 
+<menuitem
     id="hr_overtime_request_menu"
     name="Overtime Request"
     parent="hr_overtime_root_menu"
@@ -165,7 +167,7 @@
     <field name="search_view_id" ref="hr_overtime_request_view_search"/>
 </record>
 
-<menuitem 
+<menuitem
     id="hr_overtime_request_my_menu"
     name="My Overtime Request"
     parent="hr_overtime_root_menu"
