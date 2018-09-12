@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="hr_timesheet_sheet_sheet_my_action" model="ir.actions.act_window">
+    <field name="name">My Timesheets</field>
+    <field name="res_model">hr_timesheet_sheet.sheet</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="domain">[('user_id','=',uid)]</field>
+    <field name="search_view_id" ref="hr_timesheet_sheet.view_hr_timesheet_sheet_filter"/>
+</record>
+
+<menuitem
+    id="hr_timsheet_sheet_sheet_my_menu"
+    name="My Timesheets"
+    parent="hr_attendance.menu_hr_time_tracking"
+    action="hr_timesheet_sheet_sheet_my_action"
+    groups="base.group_user"
+    sequence="3"/>
+
+<record id="hr_timesheet_sheet_sheet_action" model="ir.actions.act_window">
+    <field name="name">Timesheets</field>
+    <field name="res_model">hr_timesheet_sheet.sheet</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_timesheet_sheet.view_hr_timesheet_sheet_filter"/>
+</record>
+
+<menuitem
+    id="hr_timesheet_sheet_sheet_menu"
+    name="Timesheets"
+    parent="hr_attendance.menu_hr_time_tracking"
+    action="hr_timesheet_sheet_sheet_action"
+    groups="group_timesheet_supervisor,group_timesheet_department,group_timesheet_company"
+    sequence="4"/>
+
+</data>
+</openerp>
