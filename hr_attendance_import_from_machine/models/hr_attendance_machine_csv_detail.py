@@ -26,6 +26,23 @@ class HrAttendanceMachineCsvDetail(models.Model):
         domain="[('model', '=', 'hr.attendance')]",
         required=True,
     )
+    field_type = fields.Char(
+        string="Field Type"
+    )
+    date_format = fields.Selection(
+        string="Format Date",
+        selection=[
+            ("datetime", "Datetime"),
+            ("date", "Date"),
+            ("time", "Time")
+        ],
+    )
+
+    @api.onchange("field_id")
+    def onchange_field_type(self):
+        if self.field_id:
+            self.field_type = self.field_id.ttype
+            self.date_format = False
 
     @api.constrains("attendance_machine_id", "csv_column")
     def _check_duplicate_column(self):
@@ -46,6 +63,7 @@ class HrAttendanceMachineCsvDetail(models.Model):
             ("id", "!=", self.id),
             ("field_id.id", "=", self.field_id.id),
             ("attendance_machine_id", "=", self.attendance_machine_id.id),
+            ("field_id.ttype", "<>", "datetime")
         ]
         result = obj_machine.search_count(criteria)
         if result > 0:
