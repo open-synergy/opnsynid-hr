@@ -42,6 +42,8 @@
                                 <tree editable="bottom">
                                     <field name="csv_column"/>
                                     <field name="field_id"/>
+                                    <field name="field_type" invisible="0"/>
+                                    <field name="date_format" attrs="{'readonly':[('field_type','&lt;&gt;','datetime')],'required':[('field_type','=','datetime')]}" />
                                 </tree>
                             </field>
                         </page>

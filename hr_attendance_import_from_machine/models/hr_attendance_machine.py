@@ -33,11 +33,11 @@ class HrAttendanceMachine(models.Model):
     )
     sign_in_code = fields.Char(
         string="Sign In Code",
-        required=True,
+        required=False,
     )
     sign_out_code = fields.Char(
         string="Sign Out Code",
-        required=True,
+        required=False,
     )
     delimiter = fields.Char(
         string="Delimiter",
