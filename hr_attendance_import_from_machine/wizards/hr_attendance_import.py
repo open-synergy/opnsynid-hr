@@ -386,10 +386,8 @@ class HrAttendanceImport(models.TransientModel):
         fileobj.write(base64.decodestring(self.data))
         fileobj.seek(0)
 
-        if delimiter_format:
-            delimiter = str(delimiter_format)
-        else:
-            delimiter = ","
+        delimiter =\
+            delimiter_format.decode("string_escape")
 
         reader = csv.reader(fileobj, delimiter=delimiter)
 

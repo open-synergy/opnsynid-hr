@@ -39,8 +39,15 @@ class HrAttendanceMachine(models.Model):
         string="Sign Out Code",
         required=False,
     )
-    delimiter = fields.Char(
+    delimiter = fields.Selection(
         string="Delimiter",
+        selection=[
+            (",", ","),
+            (";", ";"),
+            (":", ":"),
+            ("\t", "{tab}"),
+            (" ", "{space}")
+        ],
         default=",",
         required=True,
     )
