@@ -319,22 +319,22 @@ class HrOvertimeRequest(models.Model):
     @api.multi
     def action_confirm(self):
         for overtime in self:
-            overtime.write(self._prepare_confirm_data())
+            overtime.write(overtime._prepare_confirm_data())
 
     @api.multi
     def action_valid(self):
         for overtime in self:
-            overtime.write(self._prepare_valid_data())
+            overtime.write(overtime._prepare_valid_data())
 
     @api.multi
     def action_cancel(self):
         for overtime in self:
-            overtime.write(self._prepare_cancel_data())
+            overtime.write(overtime._prepare_cancel_data())
 
     @api.multi
     def action_restart(self):
         for overtime in self:
-            overtime.write(self._prepare_restart_data())
+            overtime.write(overtime._prepare_restart_data())
 
     @api.multi
     def _prepare_confirm_data(self):
