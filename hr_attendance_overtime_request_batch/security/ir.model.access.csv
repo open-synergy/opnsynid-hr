@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_overtime_request_batch_employee,hr.overtime_request_batch - employee,model_hr_overtime_request_batch,base.group_user,1,0,0,0
+access_hr_overtime_request_batch_user,hr.overtime_request_batch - overtime user,model_hr_overtime_request_batch,hr_attendance_overtime_request.group_overtime_user,1,1,1,1
