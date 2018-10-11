@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="hr_holiday_config_setting_view_form" model="ir.ui.view">
+            <field name="name">hr.holiday_config_setting form</field>
+            <field name="model">hr.holiday_config_setting</field>
+            <field name="inherit_id" ref="hr_holiday_configuration_page.hr_holiday_config_setting_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='company_id']" position="after">
+                    <separator string="Feature &amp; Integration"/>
+                    <group name="holiday_feature_integration">
+                        <label for="id" string="Feature"/>
+                            <div name="feature">
+                            </div>
+                        <label for="id" string="Integration"/>
+                        <div  name="integration">
+                        </div>
+                    </group>
+                    <separator string="Leave Request"/>
+                    <group name="leave_request_config">
+                        <label for="id" string="General"/>
+                        <div>
+                            <div>
+                                <label for="id" string="Sequence" class="oe_inline"/>
+                                <field name="leave_request_batch_sequence_id" class="oe_inline" domain="[('code','=','hr.batch_leave_request')]"/>
+                            </div>
+                        </div>
+                    </group>
+                    <group name="leave_request_group">
+                        <label for="id" string="Allowed Groups"/>
+                        <div>
+                            <div>
+                                <label for="id" string="To Confirm" class="oe_inline"/>
+                                <field name="leave_request_batch_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Approve" class="oe_inline"/>
+                                <field name="leave_request_batch_valid_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Refuse" class="oe_inline"/>
+                                <field name="leave_request_batch_refuse_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Cancel" class="oe_inline"/>
+                                <field name="leave_request_batch_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Restart" class="oe_inline"/>
+                                <field name="leave_request_batch_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Generate" class="oe_inline"/>
+                                <field name="leave_request_batch_generate_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Allocation Request"/>
+                    <group name="allocation_request_config">
+                        <label for="id" string="General"/>
+                        <div>
+                            <div>
+                                <label for="id" string="Sequence" class="oe_inline"/>
+                                <field name="allocation_request_batch_sequence_id" class="oe_inline" domain="[('code','=','hr.batch_allocation_request')]"/>
+                            </div>
+                        </div>
+                    </group>
+                    <group name="allocation_request_group">
+                        <label for="id" string="Allowed Groups"/>
+                        <div>
+                            <div>
+                                <label for="id" string="To Confirm" class="oe_inline"/>
+                                <field name="allocation_request_batch_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Approve" class="oe_inline"/>
+                                <field name="allocation_request_batch_valid_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Refuse" class="oe_inline"/>
+                                <field name="allocation_request_batch_refuse_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Cancel" class="oe_inline"/>
+                                <field name="allocation_request_batch_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Restart" class="oe_inline"/>
+                                <field name="allocation_request_batch_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Generate" class="oe_inline"/>
+                                <field name="allocation_request_batch_generate_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_holiday_batch_allocation_request_employee,hr.holiday_batch_allocation_request - employee,model_hr_holiday_batch_allocation_request,base.group_user,1,0,0,0
+hr_holiday_batch_allocation_request_user,hr.holiday_batch_allocation_request – user,model_hr_holiday_batch_allocation_request,hr_holiday_batch.group_allocation_request_user,1,1,1,1
+hr_holiday_batch_leave_request_employee,hr.holiday_batch_leave_request - employee,model_hr_holiday_batch_leave_request,base.group_user,1,0,0,0
+hr_holiday_batch_leave_request_user,hr.holiday_batch_leave_request – user,model_hr_holiday_batch_leave_request,hr_holiday_batch.group_leave_request_user,1,1,1,1

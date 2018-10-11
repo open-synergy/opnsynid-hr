@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+    <data>
+
+        <!-- Leave Request -->
+        <record id="module_leave_request" model="ir.module.category">
+            <field name="name">Leave Request</field>
+        </record>
+
+        <record id="module_leave_request_visibility" model="ir.module.category">
+            <field name="name">Leave Request Data Visibility</field>
+        </record>
+
+        <!-- Allocation Request -->
+        <record id="module_allocation_request" model="ir.module.category">
+            <field name="name">Allocation Request</field>
+        </record>
+
+        <record id="module_allocation_request_visibility" model="ir.module.category">
+            <field name="name">Allocation Request Data Visibility</field>
+        </record>
+
+    </data>
+</openerp>
