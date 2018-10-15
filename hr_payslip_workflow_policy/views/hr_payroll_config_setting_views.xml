@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="hr_payroll_config_setting_view_form" model="ir.ui.view">
+            <field name="name">Inherit Config Payslip Form</field>
+            <field name="model">hr.payroll_config_setting</field>
+            <field name="inherit_id" ref="hr_payroll_configuration_page.hr_payroll_config_setting_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='general_configuration']" position="after">
+                    <separator string="Employee Payslips"/>
+                    <group name="payslip_group">
+                        <label for="id" string="Allowed Groups"/>
+                        <div>
+                            <div>
+                                <label for="id" string="To Confirm" class="oe_inline"/>
+                                <field name="payslip_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Refund" class="oe_inline"/>
+                                <field name="payslip_refund_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Compute Sheet" class="oe_inline"/>
+                                <field name="payslip_compute_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Set to Draft" class="oe_inline"/>
+                                <field name="payslip_set2draft_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Cancel" class="oe_inline"/>
+                                <field name="payslip_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                    <separator string="Payslips Batches"/>
+                    <group name="payslip_group">
+                        <label for="id" string="Allowed Groups"/>
+                        <div>
+                            <div>
+                                <label for="id" string="To Close" class="oe_inline"/>
+                                <field name="payslip_run_close_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Generate Payslips" class="oe_inline"/>
+                                <field name="payslip_run_generate_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                            <div>
+                                <label for="id" string="To Set to Draft" class="oe_inline"/>
+                                <field name="payslip_run_set2draft_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                            </div>
+                        </div>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
