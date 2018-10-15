@@ -13,7 +13,7 @@
 
 <menuitem
     id="hr_overtime_configuration_menu"
-    name="Overime"
+    name="Overtime"
     parent="hr.menu_hr_configuration"
     />
 
