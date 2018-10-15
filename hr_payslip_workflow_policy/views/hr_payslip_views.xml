@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+        <record id="hr_payslip_view_form" model="ir.ui.view">
+            <field name="name">hr.payslip.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//button[@name='hr_verify_sheet']" position="attributes">
+                        <attribute name="states"></attribute>
+                        <attribute name="groups"></attribute>
+                        <attribute name="attrs">{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='refund_sheet']" position="attributes">
+                        <attribute name="states"></attribute>
+                        <attribute name="groups"></attribute>
+                        <attribute name="attrs">{'invisible':['|',('state','not in',['confirm','done']),('refund_ok','=',False)]}</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='draft']" position="attributes">
+                        <attribute name="states"></attribute>
+                        <attribute name="groups"></attribute>
+                        <attribute name="attrs">{'invisible':['|',('state','!=','cancel'),('set2draft_ok','=',False)]}</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='compute_sheet']" position="attributes">
+                        <attribute name="states"></attribute>
+                        <attribute name="groups"></attribute>
+                        <attribute name="attrs">{'invisible':['|',('state','!=','draft'),('compute_ok','=',False)]}</attribute>
+                    </xpath>
+                    <xpath expr="//button[@name='cancel_sheet']" position="attributes">
+                        <attribute name="states"></attribute>
+                        <attribute name="groups"></attribute>
+                        <attribute name="attrs">{'invisible':['|',('state','not in',['draft','hr_check','confirm','verify']),('cancel_ok','=',False)]}</attribute>
+                    </xpath>
+                    <xpath expr="//notebook/page[last()]" position="after">
+                        <page string="Policy" groups="base.group_system">
+                            <group name="policy" colspan="4" col="2">
+                                <field name="confirm_ok"/>
+                                <field name="refund_ok"/>
+                                <field name="set2draft_ok"/>
+                                <field name="compute_ok"/>
+                                <field name="cancel_ok"/>
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>
