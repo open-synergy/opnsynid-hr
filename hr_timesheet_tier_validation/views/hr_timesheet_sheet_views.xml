@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<openerp>
+    <data>
+        <record id="hr_timesheet_sheet_view_form" model="ir.ui.view">
+            <field name="name">hr_timesheet_sheet.sheet tier validation form</field>
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+            <field name="arch" type="xml">
+                <button name="button_confirm" position="before">
+                    <button name="request_validation"
+                        string="Request Validation"
+                        attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                        type="object"/>
+                    <button name="restart_validation"
+                        string="Restart Validation"
+                        attrs="{'invisible': ['|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm'])]}"
+                        type="object"/>
+                </button>
+                <header position="after">
+                    <field name="need_validation" invisible="1"/>
+                    <field name="validated" invisible="1"/>
+                    <field name="rejected" invisible="1"/>
+                    <div class="alert alert-warning"
+                         attrs="{'invisible': ['|', '|', '|',
+                         ('validated', '=', True), ('state', 'not in', ['confirm']),
+                         ('rejected', '=', True), ('review_ids', '=', [])]}"
+                         style="margin-bottom:0px;">
+                        <p><i class="fa fa-info-circle"/>This Timesheet needs to be
+                            validated.
+                            <button name="validate_tier"
+                                string="Validate"
+                                attrs="{'invisible': [('review_ids', '=', [])]}"
+                                type="object"
+                                class="oe_inline oe_button btn-success"
+                                icon="terp-check"/>
+                            <button name="reject_tier"
+                                string="Reject"
+                                type="object"
+                                class="btn-icon btn-danger"
+                                icon="terp-gtk-stop"/>
+                        </p>
+                    </div>
+                    <div class="alert alert-success"
+                         attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                         style="margin-bottom:0px;">
+                        <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+                    </div>
+                    <div class="alert alert-danger"
+                         attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                         style="margin-bottom:0px;">
+                        <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+                    </div>
+                </header>
+                <notebook position="inside">
+                    <page string="Reviews" name="tier_validation">
+                        <field name="review_ids" readonly="1"/>
+                    </page>
+                </notebook>
+            </field>
+        </record>
+
+        <record id="hr_timesheet_sheet_view_search" model="ir.ui.view">
+            <field name="name">hr_timesheet_sheet.sheet tier validation search</field>
+            <field name="model">hr_timesheet_sheet.sheet</field>
+            <field name="inherit_id" ref="hr_timesheet_sheet.view_hr_timesheet_sheet_filter"/>
+            <field name="arch" type="xml">
+                <filter name="to_approve" position="after">
+                    <filter name="needs_review" string="Needs my Review"
+                            domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel'])]"
+                            help="My Timesheet to review"/>
+                    <filter name="tier_validated" string="Validated"
+                            domain="[('validated', '=', True)]"
+                            help="Timesheet validated and ready to be confirmed"/>
+                </filter>
+            </field>
+        </record>
+
+    </data>
+</openerp>
