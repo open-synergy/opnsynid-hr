@@ -2,57 +2,53 @@
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
-<openerp>
-    <data>
+<odoo>
+    <record id="hr_department_type_view_tree" model="ir.ui.view">
+        <field name="name">Tree Hr Department Type</field>
+        <field name="model">hr.department.type</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="description"/>
+                <field name="active"/>
+            </tree>
+        </field>
+    </record>
 
-        <record id="hr_department_type_view_tree" model="ir.ui.view">
-            <field name="name">Tree Hr Department Type</field>
-            <field name="model">hr.department.type</field>
-            <field name="arch" type="xml">
-                <tree>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="active"/>
-                </tree>
-            </field>
-        </record>
+    <record id="hr_department_type_view_form" model="ir.ui.view">
+        <field name="name">Form Hr Department Type</field>
+        <field name="model">hr.department.type</field>
+        <field name="arch" type="xml">
+            <form string="Department Type">
+                <sheet>
+                    <group col="4">
+                        <field name="name"/>
+                        <field name="active"/>
+                        <field name="description"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
 
-        <record id="hr_department_type_view_form" model="ir.ui.view">
-            <field name="name">Form Hr Department Type</field>
-            <field name="model">hr.department.type</field>
-            <field name="arch" type="xml">
-                <form string="Department Type">
-                    <sheet>
-                        <group col="4">
-                            <field name="name"/>
-                            <field name="active"/>
-                            <field name="description"/>
-                        </group>
-                    </sheet>
-                </form>
-            </field>
-        </record>
+    <record id="hr_department_type_action" model="ir.actions.act_window">
+        <field name="name">Department Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.department.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+            Click to add a Department Type.
+          </p>
+        </field>
+    </record>
 
-        <record id="hr_department_type_action" model="ir.actions.act_window">
-            <field name="name">Department Type</field>
-            <field name="type">ir.actions.act_window</field>
-            <field name="res_model">hr.department.type</field>
-            <field name="view_type">form</field>
-            <field name="view_mode">tree,form</field>
-            <field name="help" type="html">
-              <p class="oe_view_nocontent_create">
-                Click to add a Department Type.
-              </p>
-            </field>
-        </record>
-
-        <menuitem
-            id="hr_department_type_menu"
-            name="Department Type"
-            parent="hr.menu_hr_configuration"
-            action="hr_department_type_action"
-            sequence="6"
-            />
-
-    </data>
-</openerp>
+    <menuitem
+        id="hr_department_type_menu"
+        name="Department Type"
+        parent="hr.menu_human_resources_configuration"
+        action="hr_department_type_action"
+        sequence="6"
+        />
+</odoo>
