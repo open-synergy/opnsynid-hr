@@ -18,7 +18,10 @@ class HrAttendanceMachine(models.Model):
         selection=[
             ("%d/%m/%Y", "dd/mm/yyyy"),
             ("%m/%d/%Y", "mm/dd/yyyy"),
-            ("%Y/%m/%d", "yyyy/mm/dd")
+            ("%Y/%m/%d", "yyyy/mm/dd"),
+            ("%d-%m-%Y", "dd-mm-yyyy"),
+            ("%m-%d-%Y", "mm-dd-yyyy"),
+            ("%Y-%m-%d", "yyyy-mm-dd")
         ],
         required=True,
     )
