@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 hr_contract_employee,hr.contract - employee,hr_contract.model_hr_contract,base.group_user,1,0,0,0
 hr_contract_user,hr.contract - contract user,hr_contract.model_hr_contract,hr_contract_security.group_contract_user,1,1,1,1
+hr_contract_type_employee,hr.contract.type - employee,hr_contract.model_hr_contract_type,base.group_user,1,1,1,1
