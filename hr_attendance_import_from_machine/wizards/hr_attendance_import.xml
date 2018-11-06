@@ -29,12 +29,12 @@
     <field name="target">new</field>
 </record>
 
-<menuitem 
+<menuitem
     id="hr_attendance_import_menu"
-    name="Attendance Import" 
+    name="Attendance Import"
     parent="hr_attendance.menu_hr_attendance"
     action="hr_attendance_import_action"
     sequence="100"/>
-        
+
 </data>
 </openerp>

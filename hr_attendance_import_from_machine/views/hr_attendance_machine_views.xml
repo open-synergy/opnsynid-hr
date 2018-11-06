@@ -67,10 +67,10 @@
             <field name="view_mode">tree,form</field>
         </record>
 
-        <menuitem 
+        <menuitem
             id="hr_attendance_machine_menu"
-            name="Attendance Machine" 
-            parent="hr.menu_hr_configuration"
+            name="Attendance Machine"
+            parent="hr.menu_open_view_attendance_reason_new_config"
             action="hr_attendance_machine_view_action"/>
 
     </data>
