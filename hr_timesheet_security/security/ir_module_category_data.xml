@@ -4,12 +4,12 @@
 <openerp>
 <data>
 
-<record id="module_attendance_timesheet" model="ir.module.category">
-    <field name="name">Timesheet</field>
+<record id="module_hr_timesheet_operation" model="ir.module.category">
+    <field name="name">Timesheet Operation</field>
 </record>
 
-<record id="module_attendance_timesheet_visibility" model="ir.module.category">
-    <field name="name">Timesheet Visibility</field>
+<record id="module_hr_timesheet_viewer" model="ir.module.category">
+    <field name="name">Timesheet Viewer</field>
 </record>
 
 </data>
