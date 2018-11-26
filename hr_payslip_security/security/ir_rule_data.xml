@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+    <record id="hr_payroll.property_rule_employee_payslip" model="ir.rule">
+        <field name="active" eval="0"/>
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+    </record>
+
+    <!-- Employee -->
+    <record id="ir_rule_payslip_employee"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('employee_id.user_id.id','=',user.id),
+            ]</field>
+        <field name="name">Payslip Rule for Employee</field>
+        <field name="groups" eval="[(4, ref('base.group_user'))]"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_create"/>
+    </record>
+
+    <!-- Operation -->
+    <record id="ir_rule_payslip_operation_user"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('employee_id.user_id.id','=',user.id),
+            ]</field>
+        <field name="name">Payslip Rule for Operation User</field>
+        <field name="groups" eval="[(4, ref('group_payslip_operation_user'))]"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_create"/>
+    </record>
+
+    <record id="ir_rule_payslip_operation_supervisor"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('department_id.manager_id.id','=',user.employee_ids[0].id)
+            ]</field>
+        <field name="name">Payslip Rule for Operation Manager</field>
+        <field name="groups" eval="[(4, ref('group_payslip_operation_supervisor'))]"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_create"/>
+    </record>
+
+    <record id="ir_rule_payslip_operation_department"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('department_id.id','child_of',user.employee_ids[0].department_id.id),
+            ]</field>
+        <field name="name">Payslip Rule for Operation Department</field>
+        <field name="groups" eval="[(4, ref('group_payslip_operation_department'))]"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_create"/>
+    </record>
+
+    <record id="ir_rule_payslip_operation_company"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('company_id.id','child_of',user.company_id.id),
+            ]</field>
+        <field name="name">Payslip Rule for Operation Company</field>
+        <field name="groups" eval="[(4, ref('group_payslip_operation_company'))]"/>
+        <field eval="1" name="perm_unlink"/>
+        <field eval="1" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="1" name="perm_create"/>
+    </record>
+
+    <!-- Payslip Viewer -->
+    <record id="ir_rule_payslip_viewer_supervisor"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('department_id.manager_id.id','=',user.employee_ids[0].id)
+            ]</field>
+        <field name="name">Payslip Rule for Viewer Manager</field>
+        <field name="groups" eval="[(4, ref('group_payslip_viewer_supervisor'))]"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_create"/>
+    </record>
+
+    <record id="ir_rule_payslip_viewer_department"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('department_id.id','child_of',user.employee_ids[0].department_id.id),
+            ]</field>
+        <field name="name">Employee Contract Viewer Rule for Department</field>
+        <field name="groups" eval="[(4, ref('group_payslip_viewer_department'))]"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_create"/>
+    </record>
+
+    <record id="ir_rule_payslip_viewer_company"
+            model="ir.rule">
+        <field name="model_id" ref="hr_payroll.model_hr_payslip"/>
+        <field name="domain_force">[
+            ('company_id.id','child_of',user.company_id.id),
+            ]</field>
+        <field name="name">Employee Contract Viewer Rule for Company</field>
+        <field name="groups" eval="[(4, ref('group_payslip_viewer_company'))]"/>
+        <field eval="0" name="perm_unlink"/>
+        <field eval="0" name="perm_write"/>
+        <field eval="1" name="perm_read"/>
+        <field eval="0" name="perm_create"/>
+    </record>
+
+</data>
+</openerp>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="module_hr_payslip_operation" model="ir.module.category">
+            <field name="name">Payslip Operation</field>
+        </record>
+
+        <record id="module_hr_payslip_viewer" model="ir.module.category">
+            <field name="name">Payslip Viewer</field>
+        </record>
+
+    </data>
+</openerp>
