@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+
+        <record id="hr_payslip_view_form" model="ir.ui.view">
+            <field name="name">hr.payslip form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='employee_id']" position="attributes">
+                        <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='contract_id']" position="after">
+                        <field name="department_id"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record id="hr_payslip_view_tree" model="ir.ui.view">
+            <field name="name">hr.payslip tree</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='employee_id']" position="attributes">
+                        <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+                    </xpath>
+                    <xpath expr="//field[@name='employee_id']" position="after">
+                        <field name="department_id"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    <record id="hr_payslip_my_action" model="ir.actions.act_window">
+        <field name="name">My Payslips</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">hr.payslip</field>
+        <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
+        <field name="context">{"hide_employee_field":1}</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem
+        id="hr_payslip_my_menu"
+        name="My Payslips"
+        parent="hr_payroll.menu_hr_root_payroll"
+        action="hr_payslip_my_action"
+        sequence="1"
+        />
+
+    <menuitem
+        id="hr_payroll.menu_department_tree"
+        name="Employee Payslips"
+        parent="hr_payroll.menu_hr_root_payroll"
+        action="hr_payroll.action_view_hr_payslip_form"
+        sequence="2"
+        />
+
+    </data>
+</openerp>

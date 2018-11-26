@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_payslip_employee,hr.payslip – employee,hr_payroll.model_hr_payslip,base.group_user,1,0,0,0
+access_hr_payslip_operation_user,hr.payslip - operation user,hr_payroll.model_hr_payslip,hr_payslip_security.group_payslip_operation_user,1,1,1,1
