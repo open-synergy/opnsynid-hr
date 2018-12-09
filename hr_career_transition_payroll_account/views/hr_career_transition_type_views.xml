@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_career_transition_type_view_form" model="ir.ui.view">
+    <field name="name">hr.career_transition_type form</field>
+    <field name="model">hr.career_transition_type</field>
+    <field name="inherit_id" ref="hr_career_transition_payroll.hr_career_transition_type_view_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='change_salary_structure']" position="after">
+            <field name="change_analytic_account"/>
+        </xpath>
+    </field>
+</record>
+
+
+</data>
+</openerp>
