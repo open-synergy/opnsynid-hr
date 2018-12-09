@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_career_transition_type_employee,hr.career_transition_type - Employee,model_hr_career_transition_type,base.group_hr_user,1,1,1,1
+access_hr_career_transition_type_reason_employee,hr.career_transition_type_reason - Employee,model_hr_career_transition_type_reason,base.group_hr_user,1,1,1,1
+access_hr_career_transition_employee,hr.career_transition - Employee,model_hr_career_transition,base.group_hr_user,1,1,1,1
