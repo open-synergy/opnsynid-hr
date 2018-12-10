@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+<record id="hr_career_transition_view_form" model="ir.ui.view">
+    <field name="name">hr.career_transition form</field>
+    <field name="model">hr.career_transition</field>
+    <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='state']" position="before">
+                <button name="update_computation_ids" type="object" string="Update Timesheet Computation" states="draft"/>
+            </xpath>
+            <xpath expr="//field[@name='new_working_hour_id']" position="after">
+                <field name="previous_timesheet_computation_ids" string="Timesheet Computations" readonly="1">
+                    <tree>
+                        <field name="item_id"/>
+                    </tree>
+                </field>
+                <field name="new_timesheet_computation_ids" nolabel="1"
+                    attrs="{'readonly':[('change_timesheet_computation','=',False)]}">
+                    <tree editable="top">
+                        <field name="item_id"/>
+                    </tree>
+                </field>
+            </xpath>
+            <xpath expr="//group[@name='group_policy_1']" position="inside">
+                <field name="change_timesheet_computation"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
