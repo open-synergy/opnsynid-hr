@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="seq_type_promotion_transition" model="ir.sequence.type">
+    <field name="name">Career Transition - Promotion</field>
+    <field name="code">hr.promotion_transition</field>
+</record>
+</data>
+
+<data noupdate="1">
+<record id="sequence_promotion_transition" model="ir.sequence">
+    <field name="name">Career Transition - Promotion</field>
+    <field name="code">hr.promotion_transition</field>
+    <field name="padding">5</field>
+    <field name="prefix">PRM/%(year)s/</field>
+    <field eval="1" name="number_next"/>
+    <field eval="1" name="number_increment"/>
+</record>
+</data>
+</openerp>
