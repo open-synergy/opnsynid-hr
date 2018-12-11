@@ -9,13 +9,7 @@
     <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_form"/>
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data>
-            <xpath expr="//form" position="attributes">
-                <attribute name="create">true</attribute>
-                <attribute name="edit">true</attribute>
-                <attribute name="delete">true</attribute>
-            </xpath>
-        </data>
+        <data/>
     </field>
 </record>
 
@@ -25,13 +19,7 @@
     <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_tree"/>
     <field name="mode">primary</field>
     <field name="arch" type="xml">
-        <data>
-            <xpath expr="//tree" position="attributes">
-                <attribute name="create">true</attribute>
-                <attribute name="edit">true</attribute>
-                <attribute name="delete">true</attribute>
-            </xpath>
-        </data>
+        <data/>
     </field>
 </record>
 
