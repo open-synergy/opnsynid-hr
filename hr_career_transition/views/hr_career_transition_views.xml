@@ -7,7 +7,7 @@
     <field name="name">hr.career_transition form</field>
     <field name="model">hr.career_transition</field>
     <field name="arch" type="xml">
-        <form create="false" edit="false" delete="false">
+        <form>
             <header>
                 <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"/>
                 <button name="action_approve" type="object" string="Approve" class="oe_highlight" attrs="{'invisible':['|',('state','!=','confirm'),('open_ok','=',False)]}"/>
@@ -31,7 +31,7 @@
                     <group name="group_1_1" colspan="1" col="2">
                         <field name="company_id" groups="base.group_multi_company"/>
                         <field name="effective_date"/>
-                        <field name="type_id"/>
+                        <field name="type_id" invisible="1"/>
                         <field name="require_reason"/>
                         <field name="reason_id" domain="[('type_id','=',type_id)]"
                             attrs="{'required':[('require_reason','=',True)], 'invisible':[('require_reason','=',False)]}"/>
@@ -109,10 +109,10 @@
     <field name="name">hr.career_transition tree</field>
     <field name="model">hr.career_transition</field>
     <field name="arch" type="xml">
-        <tree create="false" edit="false" delete="false">
+        <tree>
             <field name="name"/>
             <field name="company_id" groups="base.group_multi_company"/>
-            <field name="type_id"/>
+            <field name="type_id" invisible="1"/>
             <field name="effective_date"/>
             <field name="employee_id"/>
             <field name="reason_id"/>
@@ -155,6 +155,42 @@
     </field>
 </record>
 
+<record id="hr_career_transition_view_form_1" model="ir.ui.view">
+    <field name="name">hr.career_transition form</field>
+    <field name="model">hr.career_transition</field>
+    <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_form"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <xpath expr="//form" position="attributes">
+            <attribute name="create">false</attribute>
+            <attribute name="edit">false</attribute>
+            <attribute name="delete">false</attribute>
+        </xpath>
+
+        <xpath expr="//field[@name='type_id']" position="attributes">
+            <attribute name="invisible">0</attribute>
+        </xpath>
+    </field>
+</record>
+
+<record id="hr_career_transition_view_tree_1" model="ir.ui.view">
+    <field name="name">hr.career_transition tree</field>
+    <field name="model">hr.career_transition</field>
+    <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_tree"/>
+    <field name="mode">primary</field>
+    <field name="arch" type="xml">
+        <xpath expr="//tree" position="attributes">
+            <attribute name="create">false</attribute>
+            <attribute name="edit">false</attribute>
+            <attribute name="delete">false</attribute>
+        </xpath>
+
+        <xpath expr="//field[@name='type_id']" position="attributes">
+            <attribute name="invisible">0</attribute>
+        </xpath>
+    </field>
+</record>
+
 <record id="hr_career_transition_action" model="ir.actions.act_window">
     <field name="name">All Career Transitions</field>
     <field name="res_model">hr.career_transition</field>
@@ -167,14 +203,14 @@
 <record id="hr_career_transition_window_tree" model="ir.actions.act_window.view">
     <field eval="1" name="sequence"/>
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="hr_career_transition_view_tree"/>
+    <field name="view_id" ref="hr_career_transition_view_tree_1"/>
     <field name="act_window_id" ref="hr_career_transition_action"/>
 </record>
 
 <record id="hr_career_transition_window_form" model="ir.actions.act_window.view">
     <field eval="2" name="sequence"/>
     <field name="view_mode">form</field>
-    <field name="view_id" ref="hr_career_transition_view_form"/>
+    <field name="view_id" ref="hr_career_transition_view_form_1"/>
     <field name="act_window_id" ref="hr_career_transition_action"/>
 </record>
 
