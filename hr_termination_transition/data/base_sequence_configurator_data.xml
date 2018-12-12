@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="base_sequence_termination" model="base.sequence_configurator">
+    <field name="model_id" ref="hr_termination_transition.model_hr_termination_transition"/>
+    <field name="sequence_field_id" search="[('model_id.model','=','hr.termination_transition'),('name','=','name')]"/>
+    <field name="fallback_sequence_id" ref="hr_termination_transition.sequence_termination_transition"/>
+</record>
+
+<record id="base_sequence_termination_line" model="base.sequence_configurator_line">
+    <field name="generator_id" ref="hr_termination_transition.base_sequence_termination"/>
+    <field name="sequence" eval="1"/>
+    <field name="sequence_computation_code">result = document.type_id.sequence_id</field>
+</record>
+</data>
+</openerp>
