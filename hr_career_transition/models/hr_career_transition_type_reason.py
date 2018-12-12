@@ -24,3 +24,8 @@ class HrCareerTransitionTypeReason(models.Model):
         string="Career Transition Type",
         comodel_name="hr.career_transition_type",
     )
+    limit = fields.Integer(
+        string="Limit",
+        required=True,
+        default=0,
+    )
