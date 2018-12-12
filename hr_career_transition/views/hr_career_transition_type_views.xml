@@ -53,6 +53,7 @@
                                 <tree editable="top">
                                     <field name="name"/>
                                     <field name="active"/>
+                                    <field name="limit"/>
                                     <field name="description"/>
                                 </tree>
                             </field>

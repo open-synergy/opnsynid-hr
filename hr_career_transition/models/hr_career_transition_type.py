@@ -34,7 +34,7 @@ class HrCareerTransitionType(models.Model):
     # Config
     limit = fields.Integer(
         string="Transition Limit",
-        default=1,
+        default=0,
     )
     create_new_contract = fields.Boolean(
         string="Create New Contract",
