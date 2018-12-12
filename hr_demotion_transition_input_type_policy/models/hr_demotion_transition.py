@@ -5,6 +5,6 @@
 from openerp import models
 
 
-class HrPromotionTransition(models.Model):
-    _name = "hr.promotion_transition"
-    _inherit = ["hr.career_transition", "hr.promotion_transition"]
+class HrDemotionTransition(models.Model):
+    _name = "hr.demotion_transition"
+    _inherit = ["hr.career_transition", "hr.demotion_transition"]

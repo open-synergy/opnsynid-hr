@@ -5,7 +5,7 @@
 {
     "name": "Demotion Transition - "
             "Integration With Payslip Input Policy",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "Hidden",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
