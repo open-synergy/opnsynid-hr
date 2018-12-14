@@ -14,11 +14,11 @@
                         </page>
                         <page name="page_imported_files" string="Imported Files">
                             <group name="grp_imported_files">
-                                <button 
+                                <button
                                     name="%(hr_payslip_import_input_view_action)d"
-                                    type="action" 
+                                    type="action"
                                     string="Import File"
-                                /> 
+                                />
                                 <field colspan="2" name="imported_files" nolabel="1">
                                     <tree string="Imported Files">
                                         <field name="name"/>
@@ -41,6 +41,7 @@
                         </page>
                     </notebook>
                 </xpath>
+# pylint: disable=dangerous-view-replace-wo-priority               
                 <xpath expr="//separator" position="replace">
                     <separator string="Payslips" invisible="1"/>
                 </xpath>
@@ -49,4 +50,3 @@
 
     </data>
 </openerp>
-
