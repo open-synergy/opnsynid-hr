@@ -41,7 +41,6 @@
                         </page>
                     </notebook>
                 </xpath>
-# pylint: disable=dangerous-view-replace-wo-priority               
                 <xpath expr="//separator" position="replace">
                     <separator string="Payslips" invisible="1"/>
                 </xpath>
