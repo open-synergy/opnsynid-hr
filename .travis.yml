@@ -54,8 +54,8 @@ env:
   matrix:
   - LINT_CHECK="1"
   #- TRANSIFEX="1"
-  - TESTS="1" ODOO_REPO="odoo/odoo" UNIT_TEST="0"
-  - TESTS="1" ODOO_REPO="OCA/OCB" UNIT_TEST="0"
+  #- TESTS="1" ODOO_REPO="odoo/odoo" UNIT_TEST="0"
+  #- TESTS="1" ODOO_REPO="OCA/OCB" UNIT_TEST="0"
   - TESTS="1" ODOO_REPO="odoo/odoo" EXCLUDE="hr_worked_days_from_activity,hr_contract_security"
   - TESTS="1" ODOO_REPO="OCA/OCB" EXCLUDE="hr_worked_days_from_activity,hr_contract_security"
 # either use the two lines above or the two below. Don't change the default if
