@@ -33,6 +33,7 @@
                                 </group>
                                 <group name="general_1_2" colspan="1" col="2">
                                     <field name="limit"/>
+                                    <field name="need_previous_contract"/>
                                     <field name="create_new_contract"/>
                                 </group>
                             </group>

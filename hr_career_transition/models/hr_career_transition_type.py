@@ -36,6 +36,9 @@ class HrCareerTransitionType(models.Model):
         string="Transition Limit",
         default=0,
     )
+    need_previous_contract = fields.Boolean(
+        string="Need Previous Contract",
+    )
     create_new_contract = fields.Boolean(
         string="Create New Contract",
     )

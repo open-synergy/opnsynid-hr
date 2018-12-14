@@ -32,21 +32,26 @@
                         <field name="company_id" groups="base.group_multi_company"/>
                         <field name="effective_date"/>
                         <field name="type_id" invisible="1"/>
-                        <field name="require_reason"/>
+                        <field name="require_reason" invisible="1"/>
                         <field name="reason_id" domain="[('type_id','=',type_id)]"
                             attrs="{'required':[('require_reason','=',True)], 'invisible':[('require_reason','=',False)]}"/>
                         <field name="archieve"/>
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
                         <field name="employee_id"/>
-                        <field name="previous_contract_id" domain="[('employee_id','=',employee_id)]" attrs="{'required':[('archieve','=',False)]}"/>
-                        <field name="create_new_contract"/>
-                        <field name="new_contract_id" attrs="{'invisible':[('create_new_contract','=',False)]}"/>
+                        <field name="need_previous_contract"
+                            attrs="{'invisible':[('archieve','=',True)]}"/>
+                        <field name="previous_contract_id"
+                            readonly="1"
+                            domain="[('employee_id','=',employee_id)]"
+                            attrs="{'required':[('archieve','=',False),('need_previous_contract','=',True)],'invisible':[('archieve','=',True)]}"/>
+                        <field name="create_new_contract" attrs="{'invisible':[('archieve','=',True)]}"/>
+                        <field name="new_contract_id" attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"/>
                         <field name="contract_type_id"
-                            attrs="{'required':[('create_new_contract','=',True)],'invisible':[('create_new_contract','=',False)]}"/>
-                        <label for="contract_start_date" string="Contract Duraction" attrs="{'invisible':[('create_new_contract','=',False)]}"/>
-                        <div attrs="{'invisible':[('create_new_contract','=',False)]}">
-                            <field name="contract_start_date" class="oe_inline" attrs="{'required':[('create_new_contract','=',True)]}"/> - <field name="contract_end_date" class="oe_inline"/>
+                            attrs="{'required':[('create_new_contract','=',True),('archieve','=',False)],'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"/>
+                        <label for="contract_start_date" string="Contract Duraction" attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"/>
+                        <div attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}">
+                            <field name="contract_start_date" class="oe_inline" attrs="{'required':[('create_new_contract','=',True),('archieve','=',False)]}"/> - <field name="contract_end_date" class="oe_inline"/>
                         </div>
                     </group>
                 </group>

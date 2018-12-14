@@ -157,6 +157,12 @@ class HrCareerTransition(models.Model):
         store=False,
         readonly=True,
     )
+    need_previous_contract = fields.Boolean(
+        string="Need Previous Contract",
+        related="type_id.need_previous_contract",
+        store=False,
+        readonly=True,
+    )
     contract_start_date = fields.Date(
         string="Contract Date Start",
         readonly=True,
@@ -504,7 +510,7 @@ class HrCareerTransition(models.Model):
     @api.onchange("employee_id")
     def onchange_previous_contract_id(self):
         self.previous_contract_id = False
-        if self.employee_id:
+        if self.employee_id and self.need_previous_contract:
             self.previous_contract_id = \
                 self.employee_id.contract_id
 
