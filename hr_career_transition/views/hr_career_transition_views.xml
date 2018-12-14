@@ -34,7 +34,7 @@
                         <field name="type_id" invisible="1"/>
                         <field name="require_reason" invisible="1"/>
                         <field name="reason_id" domain="[('type_id','=',type_id)]"
-                            attrs="{'required':[('require_reason','=',True)], 'invisible':[('require_reason','=',False)]}"/>
+                            attrs="{'required':[('require_reason','=',True)]}"/>
                         <field name="archieve"/>
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
@@ -224,7 +224,39 @@
     name="All Career Transitions"
     parent="hr_career_transition_root_menu"
     action="hr_career_transition_action"
-    sequence="20"/>
+    sequence="1"/>
+
+
+    <record id="hr_my_career_transition_action" model="ir.actions.act_window">
+        <field name="name">My Career Transitions</field>
+        <field name="res_model">hr.career_transition</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'search_default_filter_open':1, 'readonly_by_pass': True}</field>
+        <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
+        <field name="search_view_id" ref="hr_career_transition_view_search"/>
+    </record>
+
+    <record id="hr_my_career_transition_window_tree" model="ir.actions.act_window.view">
+        <field eval="1" name="sequence"/>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="hr_career_transition_view_tree_1"/>
+        <field name="act_window_id" ref="hr_my_career_transition_action"/>
+    </record>
+
+    <record id="hr_my_career_transition_window_form" model="ir.actions.act_window.view">
+        <field eval="2" name="sequence"/>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="hr_career_transition_view_form_1"/>
+        <field name="act_window_id" ref="hr_my_career_transition_action"/>
+    </record>
+
+    <menuitem
+        id="hr_my_career_transition_menu"
+        name="My Career Transitions"
+        parent="hr_career_transition_root_menu"
+        action="hr_my_career_transition_action"
+        sequence="2"/>
 
 </data>
 </openerp>
