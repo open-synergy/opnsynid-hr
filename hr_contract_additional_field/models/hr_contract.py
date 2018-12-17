@@ -11,6 +11,8 @@ class HrContract(models.Model):
     department_id = fields.Many2one(
         string="Department",
         comodel_name="hr.department",
+        readonly=False,
+        store=True,
     )
     company_id = fields.Many2one(
         string="Company",
