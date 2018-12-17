@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_employee_view_form" model="ir.ui.view">
+    <field name="name">hr.employee form</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='address_home_id']" position="replace"/>
+
+            <xpath expr="//label[@for='work_email']" position="before">
+                <label for="address_home_id"/>
+                <field name="address_home_id"/>
+            </xpath>
+
+            <xpath expr="//page[@string='Personal Information']" position="attributes">
+                <attribute name="attrs">{'invisible':[('address_home_id','=',False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//page[@string='Personal Information']//group[@string='Contact Information']" position="inside">
+
+                <group colspan="2">
+                    <label for="home_street" string="Address"/>
+                    <div>
+                        <field name="home_street" placeholder="Street..."/>
+                        <field name="home_street2"/>
+                        <div class="address_format">
+                            <field name="home_city" placeholder="City" style="width: 40%%"/>
+                            <field name="home_state_id" class="oe_no_button" placeholder="State" style="width: 37%%"/>
+                            <field name="home_zip" placeholder="ZIP" style="width: 20%%"/>
+                        </div>
+                        <field name="home_country_id" placeholder="Country" class="oe_no_button"/>
+                    </div>
+                </group>
+                <group colspan="2">
+                    <field name="home_phone"/>
+                    <field name="home_mobile"/>
+                    <field name="home_fax"/>
+                    <field name="home_email" widget="email"/>
+                    <field name="title"/>
+                </group>
+            </xpath>
+
+            <xpath expr="//page[@string='Personal Information']/group" position="after">
+                <field name="bank_ids" context="{'default_partner_id': address_home_id, 'form_view_ref': 'base.view_partner_bank_form'}">
+                    <tree string="Bank Details">
+                        <field name="state" invisible="1"/>
+                        <field name="sequence" invisible="1"/>
+                        <field name="acc_number"/>
+                        <field name="bank_name"/>
+                        <field name="owner_name"/>
+                    </tree>
+                </field>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
