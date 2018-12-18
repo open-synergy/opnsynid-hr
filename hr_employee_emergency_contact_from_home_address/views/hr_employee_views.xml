@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_employee_view_form" model="ir.ui.view">
+    <field name="name">hr.employee form</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr_emergency_contact.hr_employee_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <!-- Academic -->
+            <xpath expr="//page[@string='Emergency Contacts']" position="attributes">
+                <attribute name="attrs">{'invisible':[('address_home_id','=',False)]}</attribute>
+            </xpath>
+
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
