@@ -47,15 +47,17 @@
             </xpath>
 
             <xpath expr="//page[@string='Personal Information']/group" position="after">
-                <field name="bank_ids" context="{'default_partner_id': address_home_id, 'form_view_ref': 'base.view_partner_bank_form'}">
-                    <tree string="Bank Details">
-                        <field name="state" invisible="1"/>
-                        <field name="sequence" invisible="1"/>
-                        <field name="acc_number"/>
-                        <field name="bank_name"/>
-                        <field name="owner_name"/>
-                    </tree>
-                </field>
+                <group name="bank" string="Bank Accounts" colspan="4" col="2">
+                    <field name="bank_ids" context="{'default_partner_id': address_home_id, 'form_view_ref': 'base.view_partner_bank_form'}" nolabel="1">
+                        <tree string="Bank Details">
+                            <field name="state" invisible="1"/>
+                            <field name="sequence" invisible="1"/>
+                            <field name="acc_number"/>
+                            <field name="bank_name"/>
+                            <field name="owner_name"/>
+                        </tree>
+                    </field>
+                </group>
             </xpath>
         </data>
     </field>
