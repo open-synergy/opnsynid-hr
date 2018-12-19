@@ -11,14 +11,14 @@ class HrEmployee(models.Model):
     department_id = fields.Many2one(
         string="Department",
         comodel_name="hr.department",
-        related="contract_id.contract_department_id",
+        related="current_contract_id.contract_department_id",
         store=True,
         readonly=True,
     )
     parent_id = fields.Many2one(
         string="Manager",
         comodel_name="hr.employee",
-        related="contract_id.contract_department_id.manager_id",
+        related="current_contract_id.contract_department_id.manager_id",
         store=True,
         readonly=True,
     )
