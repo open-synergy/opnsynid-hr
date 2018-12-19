@@ -16,13 +16,14 @@ class HrEmployee(models.Model):
     def _compute_current_contract(self):
         for employee in self:
             contract = False
-            contracts = employee.contract_ids.sorted(
-                key=lambda r: r.date_start, reverse=True)
-            if len(contracts) > 0:
-                contract = contracts[0]
-            employee.contract_id = contract
+            if employee.contract_ids:
+                contracts = employee.contract_ids.sorted(
+                    key=lambda r: r.date_start, reverse=True)
+                if len(contracts) > 0:
+                    contract = contracts[0]
+            employee.current_contract_id = contract
 
-    contract_id = fields.Many2one(
+    current_contract_id = fields.Many2one(
         string="Current Contract",
         comodel_name="hr.contract",
         compute="_compute_current_contract",
@@ -31,7 +32,7 @@ class HrEmployee(models.Model):
     job_id = fields.Many2one(
         string="Job Title",
         comodel_name="hr.job",
-        related="contract_id.job_id",
+        related="current_contract_id.job_id",
         readonly=True,
         store=True,
     )
