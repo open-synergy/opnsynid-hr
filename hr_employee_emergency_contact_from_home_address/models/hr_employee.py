@@ -12,5 +12,5 @@ class HrEmployee(models.Model):
         string="Emergency Contact",
         comodel_name="res.partner",
         related="address_home_id.emergency_contact_ids",
-        readonly=True,
+        readonly=False,
     )
