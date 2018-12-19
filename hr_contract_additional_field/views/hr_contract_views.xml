@@ -13,7 +13,7 @@
         <data>
             <xpath expr="//field[@name='job_id']" position="before">
                 <field name="company_id" groups="base.group_multi_company"/>
-                <field name="department_id"/>
+                <field name="contract_department_id"/>
             </xpath>
         </data>
     </field>
