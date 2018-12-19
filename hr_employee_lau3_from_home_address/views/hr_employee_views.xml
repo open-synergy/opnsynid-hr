@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_employee_view_form" model="ir.ui.view">
+    <field name="name">hr.employee form</field>
+    <field name="model">hr.employee</field>
+    <field name="inherit_id" ref="hr_employee_lau_from_home_address.hr_employee_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='home_lau2_id']" position="after">
+                <field name="home_lau3_id"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
