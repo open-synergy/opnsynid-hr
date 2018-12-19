@@ -8,11 +8,10 @@ from openerp import models, fields
 class HrContract(models.Model):
     _inherit = "hr.contract"
 
-    department_id = fields.Many2one(
+    contract_department_id = fields.Many2one(
         string="Department",
         comodel_name="hr.department",
         readonly=False,
-        store=True,
     )
     company_id = fields.Many2one(
         string="Company",
