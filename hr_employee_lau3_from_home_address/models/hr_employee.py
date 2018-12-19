@@ -18,7 +18,7 @@ class HrEmployee(models.Model):
     )
 
     @api.multi
-    @api.onchange("lau2_id")
+    @api.onchange("home_lau2_id")
     def onchange_home_lau3(self):
         for employee in self:
             if employee.home_lau3_id and \
