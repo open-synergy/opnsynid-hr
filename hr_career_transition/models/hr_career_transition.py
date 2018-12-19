@@ -498,7 +498,7 @@ class HrCareerTransition(models.Model):
         self.previous_department_id = False
         if self.previous_contract_id:
             contract = self.previous_contract_id
-            self.previous_department_id = contract.department_id
+            self.previous_department_id = contract.contract_department_id
 
     @api.onchange("previous_contract_id")
     def onchange_previous_company_id(self):
@@ -534,7 +534,7 @@ class HrCareerTransition(models.Model):
             self.new_working_hour_id.id or \
             False,
             "wage": 0.0,
-            "department_id": self.new_department_id and \
+            "contract_department_id": self.new_department_id and \
             self.new_department_id.id or \
             False,
             "company_id": self.new_company_id and \
@@ -552,7 +552,7 @@ class HrCareerTransition(models.Model):
             "working_hours": self.new_working_hour_id and
             self.new_working_hour_id.id or
             False,
-            "department_id": self.new_department_id and
+            "contract_department_id": self.new_department_id and
             self.new_department_id.id or
             False,
             "company_id": self.new_company_id and
