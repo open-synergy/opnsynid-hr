@@ -389,7 +389,12 @@ class HrCareerTransition(models.Model):
     @api.multi
     def action_cancel(self):
         for transition in self:
+            if not transition._check_cant_cancel_latest_transition():
+                msg = _("You can only cancel valid latest transition")
+                raise UserError(msg)
+            new_contract = transition.new_contract_id
             transition.write(self._prepare_cancel_data())
+            new_contract.unlink()
 
     @api.multi
     def action_restart(self):
@@ -437,6 +442,7 @@ class HrCareerTransition(models.Model):
             "state": "cancel",
             "cancelled_user_id": self.env.user.id,
             "cancelled_date": fields.Datetime.now(),
+            "new_contract_id": False,
         }
         return result
 
@@ -507,10 +513,12 @@ class HrCareerTransition(models.Model):
             contract = self.previous_contract_id
             self.previous_company_id = contract.company_id
 
-    @api.onchange("employee_id")
+    @api.onchange("employee_id", "archieve")
     def onchange_previous_contract_id(self):
         self.previous_contract_id = False
-        if self.employee_id and self.need_previous_contract:
+        if self.employee_id and \
+                self.need_previous_contract and \
+                not self.archieve:
             self.previous_contract_id = \
                 self.employee_id.contract_id
 
@@ -586,3 +594,63 @@ class HrCareerTransition(models.Model):
                     raise UserError(strWarning)
         _super = super(HrCareerTransition, self)
         _super.unlink()
+
+    @api.constrains(
+        "effective_date",
+        "state",
+    )
+    def _constrain_check_effective_date(self):
+        if self.state == "valid" and not self.archieve:
+            criteria = [
+                ("id", "!=", self.id),
+                ("state", "=", "valid"),
+                ("employee_id", "=", self.employee_id.id)
+            ]
+            obj_transition = self.env["hr.career_transition"]
+            transitions = obj_transition.search(criteria)
+            if len(transitions) > 0:
+                last_transition = transitions[0]
+                if self.effective_date < last_transition.effective_date:
+                    msg = _(
+                        "Effective date have to be greater than "
+                        "lastest career transition")
+                    raise UserError(msg)
+
+    @api.constrains(
+        "effective_date",
+        "contract_start_date",
+        "create_new_contract",
+        "state",
+        "archieve",
+    )
+    def _check_contract_start_date_no_equal_effective_date(self):
+        if self.state == "valid" and \
+                self.create_new_contract and \
+                not self.archieve:
+            if self.contract_start_date != self.effective_date:
+                msg = _("Contract start date have to be "
+                        "equal to effective date")
+                raise UserError(msg)
+
+    @api.constrains(
+        "create_new_contract",
+        "contract_start_date",
+        "contract_end_date",
+        "state",
+    )
+    def _check_contract_end_date_equal_less_start_date(self):
+        if self.state == "valid" and \
+                self.create_new_contract and \
+                self.contract_end_date:
+            if self.contract_end_date <= self.contract_start_date:
+                msg = _("Contract date end have to be greater than start date")
+                raise UserError(msg)
+
+    @api.multi
+    def _check_cant_cancel_latest_transition(self):
+        self.ensure_one()
+        result = True
+        if self.id != self.employee_id.latest_career_transition_id.id and \
+                not self.archieve:
+            result = False
+        return result
