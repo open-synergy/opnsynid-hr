@@ -13,7 +13,10 @@
         <data>
             <xpath expr="//notebook" position="inside">
                 <page name="career_transition" string="Career Transitions">
-                    <field name="career_transition_ids" colspan="4" nolabel="1"/>
+                    <group name="career_transition_1" colspan="4" col="2">
+                        <field name="latest_career_transition_id"/>
+                    </group>
+                    <field name="career_transition_ids" colspan="4" nolabel="1" readonly="1"/>
                 </page>
             </xpath>
         </data>

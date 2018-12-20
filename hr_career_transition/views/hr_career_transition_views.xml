@@ -12,7 +12,7 @@
                 <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"/>
                 <button name="action_approve" type="object" string="Approve" class="oe_highlight" attrs="{'invisible':['|',('state','!=','confirm'),('open_ok','=',False)]}"/>
                 <button name="action_valid" type="object" string="Valid" class="oe_highlight" attrs="{'invisible':['|',('state','!=','open'),('valid_ok','=',False)]}"/>
-                <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible':['|',('state','not in',['draft','confirm','valid','open']),('cancel_ok','=',False)]}"/>
+                <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible':['|',('state','not in',['draft','confirm','open','valid']),('cancel_ok','=',False)]}"/>
                 <button name="action_restart" type="object" string="Restart" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"/>
                 <field name="state" widget="statusbar" statusbar_visible="draft,confirm,open,valid"/>
             </header>
@@ -29,6 +29,7 @@
                 </div>
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
+                        <field name="id"/>
                         <field name="company_id" groups="base.group_multi_company"/>
                         <field name="effective_date"/>
                         <field name="type_id" invisible="1"/>
