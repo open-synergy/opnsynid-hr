@@ -5,7 +5,7 @@
 {
     "name": "Join Transition - "
             "Integration With Payslip Input Policy",
-    "version": "8.0.1.0.0",
+    "version": "8.0.2.0.0",
     "category": "Hidden",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -14,7 +14,7 @@
     "auto_install": True,
     "depends": [
         "hr_career_transition_payslip_input_policy",
-        "hr_promotion_transition",
+        "hr_join_transition",
     ],
     "data": [
     ],
