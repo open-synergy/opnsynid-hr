@@ -3,9 +3,9 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
-    "name": "Promotion Transition - "
+    "name": "Demotion Transition - "
             "Integration With Payroll Account",
-    "version": "8.0.1.0.0",
+    "version": "8.0.2.0.0",
     "category": "Hidden",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -14,7 +14,7 @@
     "auto_install": True,
     "depends": [
         "hr_career_transition_payroll_account",
-        "hr_promotion_transition",
+        "hr_demotion_transition",
     ],
     "data": [
     ],
