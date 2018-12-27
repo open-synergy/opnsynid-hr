@@ -34,3 +34,16 @@ class HrEmployee(models.Model):
         store=True,
         readonly=True,
     )
+
+    @api.multi
+    def _get_transition_count(self, transition_type, transition_reason):
+        self.ensure_one()
+        obj_transition = self.env["hr.career_transition"]
+        reason_id = transition_reason and transition_reason.id or False
+        criteria = [
+            ("employee_id", "=", self.id),
+            ("type_id", "=", transition_type.id),
+            ("reason_id", "=", reason_id),
+            ("state", "=", "valid"),
+        ]
+        return obj_transition.search_count(criteria)

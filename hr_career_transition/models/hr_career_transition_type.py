@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import models, fields, api
 
 
 class HrCareerTransitionType(models.Model):
@@ -103,3 +103,13 @@ class HrCareerTransitionType(models.Model):
         column1="type_id",
         column2="group_id",
     )
+
+    @api.multi
+    def _get_transition_limit(self, transition_reason):
+        self.ensure_one()
+        limit = 0
+        if transition_reason:
+            limit = transition_reason.limit
+        else:
+            limit = self.limit
+        return limit
