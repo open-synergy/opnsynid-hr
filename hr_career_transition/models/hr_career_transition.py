@@ -646,11 +646,29 @@ class HrCareerTransition(models.Model):
                 msg = _("Contract date end have to be greater than start date")
                 raise UserError(msg)
 
+    @api.constrains(
+        "state",
+    )
+    def _check_transition_limit(self):
+        transition_count = self.employee_id._get_transition_count(
+            self.type_id,
+            self.reason_id,
+        )
+        transition_limit = self.type_id._get_transition_limit(
+            self.reason_id,
+        )
+        if self.state == "valid" and \
+                transition_limit != 0 and \
+                transition_count > transition_limit:
+            msg = _("Career transition limit exceed")
+            raise UserError(msg)
+
     @api.multi
     def _check_cant_cancel_latest_transition(self):
         self.ensure_one()
         result = True
         if self.id != self.employee_id.latest_career_transition_id.id and \
-                not self.archieve:
+                not self.archieve and \
+                self.state == "valid":
             result = False
         return result
