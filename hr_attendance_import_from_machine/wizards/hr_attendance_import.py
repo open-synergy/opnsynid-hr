@@ -334,14 +334,22 @@ class HrAttendanceImport(models.TransientModel):
 
         return data
 
-    @api.multi
-    def check_attendance(self, employee_id, name):
-        obj_hr_attendance = self.env["hr.attendance"]
-
+    @api.model
+    def _prepare_attendance_domain(self, employee_id, name):
         criteria = [
             ("employee_id", "=", employee_id),
             ("name", "=", name)
         ]
+        return criteria
+
+    @api.multi
+    def check_attendance(self, employee_id, name):
+        obj_hr_attendance = self.env["hr.attendance"]
+
+        criteria = self._prepare_attendance_domain(
+            employee_id,
+            name
+        )
 
         count_attd =\
             obj_hr_attendance.search_count(criteria)
