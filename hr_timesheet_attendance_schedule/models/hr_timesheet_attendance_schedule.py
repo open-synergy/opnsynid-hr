@@ -15,15 +15,24 @@ class HrTimesheetAttendanceSchedule(models.Model):
     def _compute_attendance(self):
         for schedule in self:
             attendances = schedule.attendance_ids.filtered(
-                lambda r: r.action == "sign_in").sorted(key=lambda r: r.name)
-            schedule.start_attendance_id = attendances[
-                0].id if len(attendances) > 0 else False
+                lambda r: r.action == "sign_in")
+            if len(attendances) > 0:
+                attendances = attendances.sorted(key=lambda r: r.name)
+                start_attendance_id = attendances[
+                    0].id if len(attendances) > 0 else False
+            else:
+                start_attendance_id = False
 
             attendances = schedule.attendance_ids.\
-                filtered(lambda r: r.action == "sign_out").\
-                sorted(key=lambda r: r.name, reverse=True)
-            schedule.end_attendance_id = attendances[
-                0].id if len(attendances) > 0 else False
+                filtered(lambda r: r.action == "sign_out")
+            if len(attendances) > 0:
+                attendances = attendances.sorted(
+                    key=lambda r: r.name, reverse=True)
+                end_attendance_id = attendances[
+                    0].id if len(attendances) > 0 else False
+
+            schedule.start_attendance_id = start_attendance_id
+            schedule.end_attendance_id = end_attendance_id
 
     @api.multi
     @api.depends(
