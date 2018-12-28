@@ -13,9 +13,13 @@ class HrTimesheetAttendanceSchedule(models.Model):
     @api.multi
     @api.depends("attendance_ids")
     def _compute_attendance(self):
+        obj_attendance = self.env["hr.attendance"]
         for schedule in self:
-            attendances = schedule.attendance_ids.filtered(
-                lambda r: r.action == "sign_in")
+            criteria = [
+                ("schedule_id", "=", schedule.id),
+                ("action", "=", "sign_in"),
+            ]
+            attendances = obj_attendance.search(criteria)
             if len(attendances) > 0:
                 attendances = attendances.sorted(key=lambda r: r.name)
                 start_attendance_id = attendances[
@@ -23,8 +27,11 @@ class HrTimesheetAttendanceSchedule(models.Model):
             else:
                 start_attendance_id = False
 
-            attendances = schedule.attendance_ids.\
-                filtered(lambda r: r.action == "sign_out")
+            criteria = [
+                ("schedule_id", "=", schedule.id),
+                ("action", "=", "sign_out"),
+            ]
+            attendances = obj_attendance.search(criteria)
             if len(attendances) > 0:
                 attendances = attendances.sorted(
                     key=lambda r: r.name, reverse=True)
