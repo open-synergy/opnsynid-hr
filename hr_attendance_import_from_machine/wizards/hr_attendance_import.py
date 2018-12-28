@@ -376,6 +376,18 @@ class HrAttendanceImport(models.TransientModel):
         else:
             return "sign_in"
 
+    @api.model
+    def _check_attendance_creation(self, employee_id, attendance_date):
+        count_attd = self.check_attendance(
+            employee_id, attendance_date)
+
+        if count_attd == 0:
+            result = True
+        else:
+            result = False
+
+        return result
+
     @api.multi
     def button_import(self):
         self.ensure_one()
@@ -407,11 +419,12 @@ class HrAttendanceImport(models.TransientModel):
         for row in reader:
             data = self.prepare_data(row, line_num)
 
-            count_attd =\
-                self.check_attendance(
-                    data["employee_id"], data["name"])
+            check_creation = self._check_attendance_creation(
+                data["employee_id"],
+                data["name"],
+            )
 
-            if count_attd == 0:
+            if check_creation:
                 if "action" not in data:
                     action =\
                         self.check_attendance_action(
