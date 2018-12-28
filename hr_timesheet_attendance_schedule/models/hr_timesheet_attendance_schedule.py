@@ -30,6 +30,8 @@ class HrTimesheetAttendanceSchedule(models.Model):
                     key=lambda r: r.name, reverse=True)
                 end_attendance_id = attendances[
                     0].id if len(attendances) > 0 else False
+            else:
+                end_attendance_id = False
 
             schedule.start_attendance_id = start_attendance_id
             schedule.end_attendance_id = end_attendance_id
