@@ -32,12 +32,26 @@ class HrCareerTransition(models.Model):
     def onchange_new_analytic_account_id(self):
         self.new_analytic_account_id = self.previous_analytic_account_id
 
-    @api.onchange("previous_contract_id")
-    def onchange_previous_analytic_account_id(self):
-        self.previous_analytic_account_id = False
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            self.previous_analytic_account_id = contract.analytic_account_id
+    @api.multi
+    def _get_value_before_onchange_previous_contract(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_before_onchange_previous_contract()
+        result.update({
+            "previous_analytic_account_id": False,
+        })
+        return result
+
+    @api.multi
+    def _get_value_after_onchange_previous_contract(
+            self, previous_contract):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_after_onchange_previous_contract(
+            previous_contract)
+        result.update({
+            "previous_analytic_account_id": previous_contract.
+            analytic_account_id,
+        })
+        return result
 
     @api.multi
     def _prepare_new_contract(self):
@@ -57,6 +71,17 @@ class HrCareerTransition(models.Model):
         result.update({
             "analytic_account_id": self.new_analytic_account_id and
             self.new_analytic_account_id.id or
+            False,
+        })
+        return result
+
+    @api.multi
+    def _prepare_contract_revert(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._prepare_contract_revert()
+        result.update({
+            "analytic_account_id": self.previous_analytic_account_id and
+            self.previous_analytic_account_id.id or
             False,
         })
         return result
