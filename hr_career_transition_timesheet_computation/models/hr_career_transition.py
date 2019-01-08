@@ -31,24 +31,28 @@ class HrCareerTransition(models.Model):
     )
 
     @api.multi
-    def update_computation_ids(self):
-        self.ensure_one()
-        value = {
+    def _get_value_before_onchange_previous_contract(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_before_onchange_previous_contract()
+        result.update({
             "new_timesheet_computation_ids": [],
             "previous_timesheet_computation_ids": [],
-        }
-        self.new_timesheet_computation_ids.unlink()
-        self.previous_timesheet_computation_ids.unlink()
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            for ts_computation in contract.computation_ids:
-                value["new_timesheet_computation_ids"].append((0, 0, {
-                    "item_id": ts_computation.item_id.id,
-                }))
-                value["previous_timesheet_computation_ids"].append((0, 0, {
-                    "item_id": ts_computation.item_id.id,
-                }))
-        self.write(value)
+        })
+        return result
+
+    @api.multi
+    def _get_value_after_onchange_previous_contract(
+            self, previous_contract):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_after_onchange_previous_contract(
+            previous_contract)
+        result.update({
+            "new_timesheet_computation_ids": previous_contract.
+            _get_timesheet_computation_item_dict(),
+            "previous_timesheet_computation_ids": previous_contract.
+            _get_timesheet_computation_item_dict(),
+        })
+        return result
 
     @api.multi
     def _prepare_new_contract(self):
@@ -56,6 +60,21 @@ class HrCareerTransition(models.Model):
         result = _super._prepare_new_contract()
         computations = []
         for computation in self.new_timesheet_computation_ids:
+            computations.append((0, 0, {
+                "item_id": computation.item_id.id,
+            }))
+        result.update({
+            "computation_ids": computations,
+        })
+        return result
+
+    @api.multi
+    def _prepare_contract_revert(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._prepare_contract_revert()
+        self.previous_contract_id.computation_ids.unlink()
+        computations = []
+        for computation in self.previous_timesheet_computation_ids:
             computations.append((0, 0, {
                 "item_id": computation.item_id.id,
             }))

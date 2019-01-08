@@ -4,3 +4,4 @@
 
 from . import hr_career_transition_type
 from . import hr_career_transition
+from . import hr_contract
