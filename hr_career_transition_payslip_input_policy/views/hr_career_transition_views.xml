@@ -9,9 +9,6 @@
     <field name="inherit_id" ref="hr_career_transition_payroll.hr_career_transition_view_form"/>
     <field name="arch" type="xml">
         <data>
-            <xpath expr="//field[@name='state']" position="before">
-                <button name="unpdate_input_type_ids" type="object" string="Update Input Types" states="draft"/>
-            </xpath>
             <xpath expr="//field[@name='new_salary_structure_id']" position="after">
                 <field name="previous_input_type_ids" string="Input Types" readonly="1">
                     <tree>

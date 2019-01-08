@@ -31,26 +31,27 @@ class HrCareerTransition(models.Model):
     )
 
     @api.multi
-    def unpdate_input_type_ids(self):
-        self.ensure_one()
-        value = {
-            "new_input_type_ids": [],
+    def _get_value_before_onchange_previous_contract(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_before_onchange_previous_contract()
+        result.update({
             "previous_input_type_ids": [],
-        }
-        self.new_input_type_ids.unlink()
-        self.previous_input_type_ids.unlink()
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            for input_type in contract.input_type_ids:
-                value["new_input_type_ids"].append((0, 0, {
-                    "input_type_id": input_type.input_type_id.id,
-                    "amount": input_type.amount,
-                }))
-                value["previous_input_type_ids"].append((0, 0, {
-                    "input_type_id": input_type.input_type_id.id,
-                    "amount": input_type.amount,
-                }))
-        self.write(value)
+            "new_input_type_ids": [],
+        })
+        return result
+
+    @api.multi
+    def _get_value_after_onchange_previous_contract(
+            self, previous_contract):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_after_onchange_previous_contract(
+            previous_contract)
+        result.update({
+            "new_input_type_ids": previous_contract._get_input_types_dict(),
+            "previous_input_type_ids": previous_contract.
+            _get_input_types_dict()
+        })
+        return result
 
     @api.multi
     def _prepare_new_contract(self):
@@ -74,6 +75,22 @@ class HrCareerTransition(models.Model):
         self.previous_contract_id.input_type_ids.unlink()
         input_types = []
         for input_type in self.new_input_type_ids:
+            input_types.append((0, 0, {
+                "input_type_id": input_type.input_type_id.id,
+                "amount": input_type.amount,
+            }))
+        result.update({
+            "input_type_ids": input_types,
+        })
+        return result
+
+    @api.multi
+    def _prepare_contract_revert(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._prepare_contract_revert()
+        self.previous_contract_id.input_type_ids.unlink()
+        input_types = []
+        for input_type in self.previous_input_type_ids:
             input_types.append((0, 0, {
                 "input_type_id": input_type.input_type_id.id,
                 "amount": input_type.amount,
