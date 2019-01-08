@@ -44,6 +44,7 @@
                             attrs="{'invisible':[('archieve','=',True)]}"/>
                         <field name="previous_contract_id"
                             readonly="1"
+                            on_change="onchange_previous_contract(previous_contract_id)"
                             domain="[('employee_id','=',employee_id)]"
                             attrs="{'required':[('archieve','=',False),('need_previous_contract','=',True)],'invisible':[('archieve','=',True)]}"/>
                         <field name="create_new_contract" attrs="{'invisible':[('archieve','=',True)]}"/>

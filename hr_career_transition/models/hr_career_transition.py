@@ -374,17 +374,17 @@ class HrCareerTransition(models.Model):
     @api.multi
     def action_confirm(self):
         for transition in self:
-            transition.write(self._prepare_confirm_data())
+            transition.write(transition._prepare_confirm_data())
 
     @api.multi
     def action_approve(self):
         for transition in self:
-            transition.write(self._prepare_approve_data())
+            transition.write(transition._prepare_approve_data())
 
     @api.multi
     def action_valid(self):
         for transition in self:
-            transition.write(self._prepare_valid_data())
+            transition.write(transition._prepare_valid_data())
 
     @api.multi
     def action_cancel(self):
@@ -392,14 +392,19 @@ class HrCareerTransition(models.Model):
             if not transition._check_cant_cancel_latest_transition():
                 msg = _("You can only cancel valid latest transition")
                 raise UserError(msg)
-            new_contract = transition.new_contract_id
-            transition.write(self._prepare_cancel_data())
-            new_contract.unlink()
+            new_contract = False
+            if transition.new_contract_id:
+                new_contract = transition.new_contract_id
+            transition.write(transition._prepare_cancel_data())
+            if new_contract:
+                new_contract.unlink()
+            else:
+                transition._revert_contract()
 
     @api.multi
     def action_restart(self):
         for transition in self:
-            transition.write(self._prepare_restart_data())
+            transition.write(transition._prepare_restart_data())
 
     @api.multi
     def _prepare_confirm_data(self):
@@ -414,7 +419,6 @@ class HrCareerTransition(models.Model):
     @api.multi
     def _prepare_approve_data(self):
         self.ensure_one()
-
         result = {
             "state": "open",
             "opened_user_id": self.env.user.id,
@@ -485,33 +489,47 @@ class HrCareerTransition(models.Model):
     def onchange_new_working_hour_id(self):
         self.new_working_hour_id = self.previous_working_hour_id
 
-    @api.onchange("previous_contract_id")
-    def onchange_previous_working_hour_id(self):
-        self.previous_working_hour_id = False
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            self.previous_working_hour_id = contract.working_hours
+    @api.multi
+    def onchange_previous_contract(self, previous_contract_id):
+        value = self._get_value_before_onchange_previous_contract()
+        domain = self._get_domain_before_onchange_previous_contract()
 
-    @api.onchange("previous_contract_id")
-    def onchange_previous_job_id(self):
-        self.previous_job_id = False
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            self.previous_job_id = contract.job_id
+        if previous_contract_id:
+            obj_contract = self.env["hr.contract"]
+            previous_contract = obj_contract.browse([previous_contract_id])[0]
+            value = self._get_value_after_onchange_previous_contract(
+                previous_contract)
+            domain = self._get_domain_after_onchange_previous_contract(
+                previous_contract)
+        return {"value": value, "domain": domain}
 
-    @api.onchange("previous_contract_id")
-    def onchange_previous_department_id(self):
-        self.previous_department_id = False
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            self.previous_department_id = contract.contract_department_id
+    @api.multi
+    def _get_value_before_onchange_previous_contract(self):
+        return {
+            "previous_working_hour_id": False,
+            "previous_job_id": False,
+            "previous_department_id": False,
+            "previous_company_id": False,
+        }
 
-    @api.onchange("previous_contract_id")
-    def onchange_previous_company_id(self):
-        self.previous_company_id = False
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            self.previous_company_id = contract.company_id
+    @api.multi
+    def _get_domain_before_onchange_previous_contract(self):
+        return {}
+
+    @api.multi
+    def _get_value_after_onchange_previous_contract(
+            self, previous_contract):
+        return {
+            "previous_working_hour_id": previous_contract.working_hours,
+            "previous_job_id": previous_contract.job_id,
+            "previous_department_id": previous_contract.contract_department_id,
+            "previous_company_id": previous_contract.company_id,
+        }
+
+    @api.multi
+    def _get_domain_after_onchange_previous_contract(
+            self, previous_contract):
+        return {}
 
     @api.onchange("employee_id", "archieve")
     def onchange_previous_contract_id(self):
@@ -569,6 +587,43 @@ class HrCareerTransition(models.Model):
         }
 
     @api.multi
+    def _prepare_contract_revert(self):
+        self.ensure_one()
+        return {
+            "job_id": self.previous_job_id and
+            self.previous_job_id.id or
+            False,
+            "working_hours": self.previous_working_hour_id and
+            self.previous_working_hour_id.id or
+            False,
+            "contract_department_id": self.previous_department_id and
+            self.previous_department_id.id or
+            False,
+            "company_id": self.previous_company_id and
+            self.previous_company_id.id or
+            False,
+        }
+
+    @api.multi
+    def _revert_contract(self):
+        self.ensure_one()
+        if self._check_revert_contract():
+            self.previous_contract_id.write(
+                self._prepare_contract_revert()
+            )
+
+    @api.multi
+    def _check_revert_contract(self):
+        self.ensure_one()
+        result = False
+        if self.need_previous_contract and \
+                self.previous_contract_id and \
+                not self.create_new_contract and \
+                not self.archieve:
+            result = True
+        return result
+
+    @api.multi
     def _create_update_contract(self):
         self.ensure_one()
         obj_contract = self.env["hr.contract"]
@@ -577,7 +632,6 @@ class HrCareerTransition(models.Model):
             result = obj_contract.create(self._prepare_new_contract())
         elif not self.create_new_contract and not self.archieve:
             self.previous_contract_id.write(self._prepare_contract_update())
-            result = self.previous_contract_id
         return result
 
     @api.multi
@@ -617,11 +671,7 @@ class HrCareerTransition(models.Model):
                     raise UserError(msg)
 
     @api.constrains(
-        "effective_date",
-        "contract_start_date",
-        "create_new_contract",
         "state",
-        "archieve",
     )
     def _check_contract_start_date_no_equal_effective_date(self):
         if self.state == "valid" and \
@@ -633,9 +683,6 @@ class HrCareerTransition(models.Model):
                 raise UserError(msg)
 
     @api.constrains(
-        "create_new_contract",
-        "contract_start_date",
-        "contract_end_date",
         "state",
     )
     def _check_contract_end_date_equal_less_start_date(self):
