@@ -32,12 +32,25 @@ class HrCareerTransition(models.Model):
     def onchange_new_salary_structure_id(self):
         self.new_salary_structure_id = self.previous_salary_structure_id
 
-    @api.onchange("previous_contract_id")
-    def onchange_previous_salary_structure_id(self):
-        self.previous_salary_structure_id = False
-        if self.previous_contract_id:
-            contract = self.previous_contract_id
-            self.previous_salary_structure_id = contract.struct_id
+    @api.multi
+    def _get_value_before_onchange_previous_contract(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_before_onchange_previous_contract()
+        result.update({
+            "previous_salary_structure_id": False,
+        })
+        return result
+
+    @api.multi
+    def _get_value_after_onchange_previous_contract(
+            self, previous_contract):
+        _super = super(HrCareerTransition, self)
+        result = _super._get_value_after_onchange_previous_contract(
+            previous_contract)
+        result.update({
+            "previous_salary_structure_id": previous_contract.struct_id,
+        })
+        return result
 
     @api.multi
     def _prepare_new_contract(self):
@@ -57,6 +70,17 @@ class HrCareerTransition(models.Model):
         result.update({
             "struct_id": self.new_salary_structure_id and
             self.new_salary_structure_id.id or
+            False,
+        })
+        return result
+
+    @api.multi
+    def _prepare_contract_revert(self):
+        _super = super(HrCareerTransition, self)
+        result = _super._prepare_contract_revert()
+        result.update({
+            "struct_id": self.previous_salary_structure_id and
+            self.previous_salary_structure_id.id or
             False,
         })
         return result
