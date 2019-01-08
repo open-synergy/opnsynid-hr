@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Career Transition",
-    "version": "8.0.1.3.1",
+    "version": "8.0.1.4.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
