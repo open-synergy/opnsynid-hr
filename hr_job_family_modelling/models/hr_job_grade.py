@@ -19,6 +19,11 @@ class HrJobGrade(models.Model):
         comodel_name="hr.job_grade_category",
         required=False,
     )
+    sequence = fields.Integer(
+        string="Sequence",
+        required=True,
+        default=5,
+    )
     code = fields.Char(
         string="Code",
         required=True,

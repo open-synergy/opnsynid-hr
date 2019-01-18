@@ -6,7 +6,7 @@
     "name": "Job Family Modelling",
     "summary": "Grading system that divides jobs into coherent groups "
                "based on shared characteristics",
-    "version": "8.0.1.1.0",
+    "version": "8.0.1.2.0",
     "category": "Human Resources",
     "website": "https://opensynergy-indonesia.com/",
     "author": "OpenSynergy Indonesia",
@@ -22,6 +22,8 @@
         "views/hr_job_grade_views.xml",
         "views/hr_job_family_grade_views.xml",
         "views/hr_job_family_views.xml",
+        "views/hr_job_family_level_views.xml",
+        "views/hr_job_views.xml",
         "views/hr_employee_views.xml",
     ],
 }
