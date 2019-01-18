@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_join_transition_employee,hr.join_transition - Employee,model_hr_join_transition,base.group_hr_user,1,1,1,1
+access_hr_join_transition_all,hr.join_transition - All,model_hr_join_transition,,1,0,0,0
