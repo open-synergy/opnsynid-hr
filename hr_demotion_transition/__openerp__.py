@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Career Transition - Demotion",
-    "version": "8.0.1.1.0",
+    "version": "8.0.1.2.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -14,6 +14,7 @@
         "hr_career_transition",
     ],
     "data": [
+        "security/ir.model.access.csv",
         "data/ir_sequence_data.xml",
         "data/hr_career_transition_type_data.xml",
         "data/base_sequence_configurator_data.xml",
