@@ -7,5 +7,7 @@ from . import (
     hr_job_grade,
     hr_job_family_grade,
     hr_job_family,
+    hr_job_family_level,
     hr_employee,
+    hr_job,
 )

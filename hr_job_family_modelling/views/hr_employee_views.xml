@@ -13,8 +13,8 @@
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='job_id']" position="after">
-                <field name="job_grade_id"/>
-                <field name="job_family_grade_id"/>
+                <field name="allowed_job_grade_ids" widget="many2many_tags" invisible="1"/>
+                <field name="job_grade_id" domain="[('id','in',allowed_job_grade_ids[0][2])]"/>
             </xpath>
         </data>
     </field>

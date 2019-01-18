@@ -11,6 +11,7 @@
     <field name="model">hr.job_grade</field>
     <field name="arch" type="xml">
         <tree string="Job Grade">
+            <field name="sequence" widget="handle"/>
             <field name="name"/>
             <field name="code"/>
             <field name="category_id"/>
@@ -26,6 +27,7 @@
             <group name="main">
                 <field name="name"/>
                 <field name="code"/>
+                <field name="sequence"/>
                 <field name="category_id"/>
                 <field name="active"/>
             </group>
