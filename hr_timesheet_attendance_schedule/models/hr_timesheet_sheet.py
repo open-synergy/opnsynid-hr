@@ -3,6 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
+from pytz import timezone
+from datetime import datetime
 
 
 class HrTimesheetSheet(models.Model):
@@ -29,9 +31,18 @@ class HrTimesheetSheet(models.Model):
     def _create_attendance_schedule(self):
         self.ensure_one()
         obj_schedule = self.env["hr.timesheet_attendance_schedule"]
-        dt_start = fields.Datetime.from_string(self.date_from)
-        dt_end = fields.Datetime.from_string(self.date_to)
+        tz = self.employee_id.user_id.tz or self.env.user.tz
+
+        # TODO: Refactoring
+        dt_start = datetime.strptime(self.date_from + " 00:00:00",
+                                     "%Y-%m-%d %H:%M:%S")
+        dt_end = datetime.strptime(self.date_to + " 23:59:00",
+                                   "%Y-%m-%d %H:%M:%S")
+
         duration = abs((dt_end - dt_start).days) + 1
+        dt_stop = timezone(tz).localize(dt_end).astimezone(timezone("UTC")).\
+            replace(tzinfo=None)
+
         if not self.contract_ids:
             return True
 
@@ -51,6 +62,9 @@ class HrTimesheetSheet(models.Model):
         for schedule in schedules[0]:
             str_start = fields.Datetime.to_string(schedule[0])
             str_end = fields.Datetime.to_string(schedule[1])
+            if schedule[0] > dt_stop:
+                break
+
             if self._check_existing_schedule(str_start, str_end):
                 data = {
                     "sheet_id": self.id,

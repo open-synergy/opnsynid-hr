@@ -3,6 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
+from pytz import timezone
+from datetime import datetime
 
 
 class HrTimesheetAttendanceSchedule(models.Model):
@@ -119,6 +121,8 @@ class HrTimesheetAttendanceSchedule(models.Model):
     sheet_id = fields.Many2one(
         string="Timesheet",
         comodel_name="hr_timesheet_sheet.sheet",
+        ondelete="cascade",
+        required=True,
     )
     employee_id = fields.Many2one(
         string="Employee",
@@ -201,3 +205,24 @@ class HrTimesheetAttendanceSchedule(models.Model):
         compute="_compute_work_hour",
         store=True,
     )
+
+    @api.multi
+    def name_get(self):
+        result = []
+
+        for schedule in self:
+            tz = schedule.employee_id.user_id.tz or self.env.user.tz
+            dt_start = datetime.strptime(
+                schedule.date_start, "%Y-%m-%d %H:%M:%S")
+            dt_start = timezone("UTC").localize(dt_start)
+            dt_start = dt_start.astimezone(timezone(tz))
+            str_start = dt_start.strftime("%Y-%m-%d %H:%M:%S")
+
+            dt_end = datetime.strptime(
+                schedule.date_end, "%Y-%m-%d %H:%M:%S")
+            dt_end = timezone("UTC").localize(dt_end)
+            dt_end = dt_end.astimezone(timezone(tz))
+            str_end = dt_end.strftime("%Y-%m-%d %H:%M:%S")
+            name = "%s - %s" % (str_start, str_end)
+            result.append([schedule.id, name])
+        return result

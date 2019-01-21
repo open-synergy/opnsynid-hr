@@ -11,7 +11,7 @@
     <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
     <field name="arch" type="xml">
         <data>
-            <xpath expr="//page[3]" position="after">
+            <xpath expr="//page[@string='Attendances']" position="after">
                 <page name="attendance_schedule" string="Attendance Schedules">
                     <field name="attendance_schedule_ids" colspan="4" nolabel="1">
                         <tree>
