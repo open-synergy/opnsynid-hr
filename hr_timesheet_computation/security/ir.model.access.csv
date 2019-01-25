@@ -5,3 +5,4 @@ hr_timesheet_computation_employee,hr.timesheet_computation - employee,model_hr_t
 hr_timesheet_computation_all,hr.timesheet_computation - all,model_hr_timesheet_computation,,1,0,0,0
 hr_contract_timesheet_computation_employee,hr.contract_timesheet_computation - employee,model_hr_contract_timesheet_computation,base.group_user,1,1,1,1
 hr_contract_timesheet_computation_all,hr.contract_timesheet_computation - all,model_hr_contract_timesheet_computation,,1,0,0,0
+hr_timesheet_computation_analysis_employee,hr.timesheet_computation_analysis - employee,model_hr_timesheet_computation_analysis,base.group_user,1,0,0,0
