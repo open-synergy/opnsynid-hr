@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Opensynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_payslip_analysis_view_search" model="ir.ui.view">
+    <field name="name">hr.payslip_analysis form</field>
+    <field name="model">hr.payslip_analysis</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="payslip_id"/>
+            <field name="employee_id"/>
+            <field name="department_id"/>
+            <field name="job_id"/>
+            <field name="parent_id"/>
+            <field name="rule_id"/>
+            <field name="structure_id"/>
+            <field name="run_id"/>
+            <field name="payslip_state"/>
+            <filter name="dom_empty" string="Empty" domain="[('id','=',0)]"/>
+            <group name="filter_payslip_state" string="Payslip State">
+                <filter name="dom_state_draft" string="Draft" domain="[('payslip_state','=','draft')]"/>
+                <filter name="dom_state_verify" string="Waiting" domain="[('payslip_state','=','verify')]"/>
+                <filter name="dom_state_done" string="Done" domain="[('payslip_state','=','done')]"/>
+                <filter name="dom_state_cancel" string="Rejected" domain="[('payslip_state','=','cancel')]"/>
+            </group>
+            <group name="filter_date_start" string="Date Start">
+                <filter string="01" domain="[('date_start','&gt;=', datetime.date(context_today().year,1,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,1,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="02" domain="[('date_start','&gt;=', datetime.date(context_today().year,2,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', (datetime.date(context_today().year,2,1) + relativedelta(months=1) + relativedelta(days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="03" domain="[('date_start','&gt;=', datetime.date(context_today().year,3,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,3,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="04" domain="[('date_start','&gt;=', datetime.date(context_today().year,4,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,4,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="05" domain="[('date_start','&gt;=', datetime.date(context_today().year,5,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,5,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="06" domain="[('date_start','&gt;=', datetime.date(context_today().year,6,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,6,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="07" domain="[('date_start','&gt;=', datetime.date(context_today().year,7,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,7,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="08" domain="[('date_start','&gt;=', datetime.date(context_today().year,8,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,8,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="09" domain="[('date_start','&gt;=', datetime.date(context_today().year,9,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,9,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="10" domain="[('date_start','&gt;=', datetime.date(context_today().year,10,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,10,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="11" domain="[('date_start','&gt;=', datetime.date(context_today().year,11,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,11,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="12" domain="[('date_start','&gt;=', datetime.date(context_today().year,12,1).strftime('%Y-%m-%d')), ('date_start','&lt;=', datetime.date(context_today().year,12,31).strftime('%Y-%m-%d'))]"/>
+            </group>
+            <group name="filter_date_end" string="Date End">
+                <filter string="01" domain="[('date_end','&gt;=', datetime.date(context_today().year,1,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,1,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="02" domain="[('date_end','&gt;=', datetime.date(context_today().year,2,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', (datetime.date(context_today().year,2,1) + relativedelta(months=1) + relativedelta(days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="03" domain="[('date_end','&gt;=', datetime.date(context_today().year,3,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,3,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="04" domain="[('date_end','&gt;=', datetime.date(context_today().year,4,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,4,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="05" domain="[('date_end','&gt;=', datetime.date(context_today().year,5,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,5,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="06" domain="[('date_end','&gt;=', datetime.date(context_today().year,6,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,6,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="07" domain="[('date_end','&gt;=', datetime.date(context_today().year,7,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,7,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="08" domain="[('date_end','&gt;=', datetime.date(context_today().year,8,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,8,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="09" domain="[('date_end','&gt;=', datetime.date(context_today().year,9,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,9,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="10" domain="[('date_end','&gt;=', datetime.date(context_today().year,10,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,10,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="11" domain="[('date_end','&gt;=', datetime.date(context_today().year,11,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,11,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="12" domain="[('date_end','&gt;=', datetime.date(context_today().year,12,1).strftime('%Y-%m-%d')), ('date_end','&lt;=', datetime.date(context_today().year,12,31).strftime('%Y-%m-%d'))]"/>
+            </group>
+            <group name="row_grp" string="Row Grouping">
+                <filter name="row_grp_payslip" string="Payslip" context="{'group_by':'payslip_id'}"/>
+                <filter name="row_grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                <filter name="row_grp_department" string="Department" context="{'group_by':'department_id'}"/>
+                <filter name="row_grp_job" string="Job Title" context="{'group_by':'job_id'}"/>
+                <filter name="row_grp_manager" string="Manager" context="{'group_by':'parent_id'}"/>
+                <filter name="row_grp_rule" string="Payslip Rule" context="{'group_by':'rule_id'}"/>
+                <filter name="row_grp_structure" string="Payslip Structure" context="{'group_by':'structure_id'}"/>
+                <filter name="row_grp_run" string="Payslip Run" context="{'group_by':'run_id'}"/>
+                <filter name="row_grp_payslip_state" string="Payslip State" context="{'group_by':'payslip_state'}"/>
+                <filter name="row_grp_date_start_year" string="Date Started by Year" context="{'group_by':'date_start:year'}"/>
+                <filter name="row_grp_date_start_month" string="Date Started by Month" context="{'group_by':'date_start:month'}"/>
+                <filter name="row_grp_date_start_week" string="Date Started by Week" context="{'group_by':'date_start:week'}"/>
+                <filter name="row_grp_date_start_day" string="Date Started by Day" context="{'group_by':'date_start:day'}"/>
+                <filter name="row_grp_date_end_year" string="Date Ended by Year" context="{'group_by':'date_end:year'}"/>
+                <filter name="row_grp_date_end_month" string="Date Ended by Month" context="{'group_by':'date_end:month'}"/>
+                <filter name="row_grp_date_end_week" string="Date Ended by Week" context="{'group_by':'date_end:week'}"/>
+                <filter name="row_grp_date_end_day" string="Date Ended by Day" context="{'group_by':'date_end:day'}"/>
+            </group>
+            <group name="col_grp" string="Col Grouping">
+                <filter name="col_grp_payslip" string="Payslip" context="{'col_group_by':'payslip_id'}"/>
+                <filter name="col_grp_employee" string="Employee" context="{'col_group_by':'employee_id'}"/>
+                <filter name="col_grp_department" string="Department" context="{'col_group_by':'department_id'}"/>
+                <filter name="col_grp_job" string="Job Title" context="{'col_group_by':'job_id'}"/>
+                <filter name="col_grp_manager" string="Manager" context="{'col_group_by':'parent_id'}"/>
+                <filter name="col_grp_rule" string="Payslip Rule" context="{'col_group_by':'rule_id'}"/>
+                <filter name="col_grp_structure" string="Payslip Structure" context="{'col_group_by':'structure_id'}"/>
+                <filter name="col_grp_run" string="Payslip Run" context="{'col_group_by':'run_id'}"/>
+                <filter name="col_grp_payslip_state" string="Payslip State" context="{'col_group_by':'payslip_state'}"/>
+                <filter name="col_grp_date_start_year" string="Date Started by Year" context="{'col_group_by':'date_start:year'}"/>
+                <filter name="col_grp_date_start_month" string="Date Started by Month" context="{'col_group_by':'date_start:month'}"/>
+                <filter name="col_grp_date_start_week" string="Date Started by Week" context="{'col_group_by':'date_start:week'}"/>
+                <filter name="col_grp_date_start_day" string="Date Started by Day" context="{'col_group_by':'date_start:day'}"/>
+                <filter name="col_grp_date_end_year" string="Date Ended by Year" context="{'col_group_by':'date_end:year'}"/>
+                <filter name="col_grp_date_end_month" string="Date Ended by Month" context="{'col_group_by':'date_end:month'}"/>
+                <filter name="col_grp_date_end_week" string="Date Ended by Week" context="{'col_group_by':'date_end:week'}"/>
+                <filter name="col_grp_date_end_day" string="Date Ended by Day" context="{'col_group_by':'date_end:day'}"/>
+            </group>            
+        </search>
+    </field>
+</record>
+
+<record id="hr_payslip_analysis_view_graph" model="ir.ui.view">
+    <field name="name">hr.payslip_analysis_graph form</field>
+    <field name="model">hr.payslip_analysis</field>
+    <field name="arch" type="xml">
+        <graph type="pivot">
+            <field name="amount" type="measure"/>
+        </graph>
+    </field>
+</record>
+
+<record id="hr_payslip_analysis_action" model="ir.actions.act_window">
+    <field name="name">Payslip Analysis</field>
+    <field name="res_model">hr.payslip_analysis</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">graph</field>
+    <field name="context">{'search_default_dom_empty':1}</field>
+    <field name="view_id" ref="hr_payslip_analysis_view_graph"/>
+    <field name="search_view_id" ref="hr_payslip_analysis_view_search"/>
+</record>
+
+
+<menuitem
+    id="hr_payslip_analysis_menu"
+    name="Payslip Analysis"
+    parent="hr.menu_hr_reporting"
+    action="hr_payslip_analysis_action"
+    sequence="1" />
+
+</data>
+</openerp>
