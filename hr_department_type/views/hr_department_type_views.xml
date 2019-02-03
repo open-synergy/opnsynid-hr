@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <odoo>
     <record id="hr_department_type_view_tree" model="ir.ui.view">
-        <field name="name">Tree Hr Department Type</field>
+        <field name="name">hr.department.type tree</field>
         <field name="model">hr.department.type</field>
         <field name="arch" type="xml">
             <tree>
@@ -16,7 +16,7 @@
     </record>
 
     <record id="hr_department_type_view_form" model="ir.ui.view">
-        <field name="name">Form Hr Department Type</field>
+        <field name="name">hr.department.type form</field>
         <field name="model">hr.department.type</field>
         <field name="arch" type="xml">
             <form string="Department Type">
