@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Opensynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_career_transition_analysis_view_search" model="ir.ui.view">
+    <field name="name">hr.career_transition_analysis search</field>
+    <field name="model">hr.career_transition_analysis</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="employee_id"/>
+            <field name="type_id"/>
+            <field name="reason_id"/>
+            <field name="new_company_id"/>
+            <field name="new_department_id"/>
+            <field name="new_job_id"/>
+            <field name="new_working_hour_id"/>
+            <field name="previous_company_id"/>
+            <field name="previous_department_id"/>
+            <field name="previous_job_id"/>
+            <field name="previous_working_hour_id"/>
+            <field name="state"/>
+            <filter name="dom_empty" string="Empty" domain="[('id','=',0)]"/>
+            <group name="filter_state" string="State">
+                <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="filter_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
+                <filter name="filter_open" string="On Progress" domain="[('state','=','open')]"/>
+                <filter name="filter_valid" string="Valid" domain="[('state','=','valid')]"/>
+                <filter name="filter_cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
+            </group>
+            <group name="filter_effective_date" string="Date Start">
+                <filter string="01" domain="[('effective_date','&gt;=', datetime.date(context_today().year,1,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,1,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="02" domain="[('effective_date','&gt;=', datetime.date(context_today().year,2,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', (datetime.date(context_today().year,2,1) + relativedelta(months=1) + relativedelta(days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="03" domain="[('effective_date','&gt;=', datetime.date(context_today().year,3,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,3,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="04" domain="[('effective_date','&gt;=', datetime.date(context_today().year,4,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,4,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="05" domain="[('effective_date','&gt;=', datetime.date(context_today().year,5,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,5,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="06" domain="[('effective_date','&gt;=', datetime.date(context_today().year,6,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,6,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="07" domain="[('effective_date','&gt;=', datetime.date(context_today().year,7,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,7,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="08" domain="[('effective_date','&gt;=', datetime.date(context_today().year,8,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,8,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="09" domain="[('effective_date','&gt;=', datetime.date(context_today().year,9,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,9,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="10" domain="[('effective_date','&gt;=', datetime.date(context_today().year,10,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,10,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="11" domain="[('effective_date','&gt;=', datetime.date(context_today().year,11,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,11,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="12" domain="[('effective_date','&gt;=', datetime.date(context_today().year,12,1).strftime('%Y-%m-%d')), ('effective_date','&lt;=', datetime.date(context_today().year,12,31).strftime('%Y-%m-%d'))]"/>
+            </group>
+            <group name="row_grp" string="Row Grouping">
+                <filter name="row_grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
+                <filter name="row_grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                <filter name="row_grp_type" string="Type" context="{'group_by':'type_id'}"/>
+                <filter name="row_grp_reason" string="Reason" context="{'group_by':'reason_id'}"/>
+                <filter name="row_grp_new_company" string="New Company" context="{'group_by':'new_company_id'}"/>
+                <filter name="row_grp_new_department" string="New Department" context="{'group_by':'new_department_id'}"/>
+                <filter name="row_grp_new_job" string="New Job" context="{'group_by':'new_job_id'}"/>
+                <filter name="row_grp_new_working_hour" string="New Working Hour" context="{'group_by':'new_working_hour_id'}"/>
+                <filter name="row_grp_previous_company" string="Previous Company" context="{'group_by':'previous_company_id'}"/>
+                <filter name="row_grp_previous_department" string="Previous Department" context="{'group_by':'previous_department_id'}"/>
+                <filter name="row_grp_previous_job" string="Previous Job" context="{'group_by':'previous_job_id'}"/>
+                <filter name="row_grp_previous_working_hour" string="Previous Working Hour" context="{'group_by':'previous_working_hour_id'}"/>
+                <filter name="row_grp_effective_date_year" string="Effective Date by Year" context="{'group_by':'effective_date:year'}"/>
+                <filter name="row_grp_effective_date_month" string="Effective Date by Month" context="{'group_by':'effective_date:month'}"/>
+                <filter name="row_grp_effective_date_week" string="Effective Date by Week" context="{'group_by':'effective_date:week'}"/>
+                <filter name="row_grp_effective_date_day" string="Effective Date by Day" context="{'group_by':'effective_date:day'}"/>
+            </group>
+            <group name="col_grp" string="Column Grouping">
+                <filter name="col_grp_company" string="Company" context="{'col_group_by':'company_id'}" groups="base.group_multi_company"/>
+                <filter name="col_grp_employee" string="Employee" context="{'col_group_by':'employee_id'}"/>
+                <filter name="col_grp_type" string="Type" context="{'col_group_by':'type_id'}"/>
+                <filter name="col_grp_reason" string="Reason" context="{'col_group_by':'reason_id'}"/>
+                <filter name="col_grp_new_company" string="New Company" context="{'col_group_by':'new_company_id'}"/>
+                <filter name="col_grp_new_department" string="New Department" context="{'col_group_by':'new_department_id'}"/>
+                <filter name="col_grp_new_job" string="New Job" context="{'col_group_by':'new_job_id'}"/>
+                <filter name="col_grp_new_working_hour" string="New Working Hour" context="{'col_group_by':'new_working_hour_id'}"/>
+                <filter name="col_grp_previous_company" string="Previous Company" context="{'col_group_by':'previous_company_id'}"/>
+                <filter name="col_grp_previous_department" string="Previous Department" context="{'col_group_by':'previous_department_id'}"/>
+                <filter name="col_grp_previous_job" string="Previous Job" context="{'col_group_by':'previous_job_id'}"/>
+                <filter name="col_grp_previous_working_hour" string="Previous Working Hour" context="{'col_group_by':'previous_working_hour_id'}"/>
+                <filter name="col_grp_effective_date_year" string="Effective Date by Year" context="{'col_group_by':'effective_date:year'}"/>
+                <filter name="col_grp_effective_date_month" string="Effective Date by Month" context="{'col_group_by':'effective_date:month'}"/>
+                <filter name="col_grp_effective_date_week" string="Effective Date by Week" context="{'col_group_by':'effective_date:week'}"/>
+                <filter name="col_grp_effective_date_day" string="Effective Date by Day" context="{'col_group_by':'effective_date:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_career_transition_analysis_view_graph" model="ir.ui.view">
+    <field name="name">hr.career_transition_analysis graph</field>
+    <field name="model">hr.career_transition_analysis</field>
+    <field name="arch" type="xml">
+        <graph type="pivot">
+            <field name="nbr" type="measure"/>
+        </graph>
+    </field>
+</record>
+
+<record id="hr_career_transition_analysis_action" model="ir.actions.act_window">
+    <field name="name">Career Transition Analysis</field>
+    <field name="res_model">hr.career_transition_analysis</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">graph</field>
+    <field name="context">{'search_default_dom_empty':1}</field>
+    <field name="view_id" ref="hr_career_transition_analysis_view_graph"/>
+    <field name="search_view_id" ref="hr_career_transition_analysis_view_search"/>
+</record>
+
+
+<menuitem
+    id="hr_career_transition_analysis_menu"
+    name="Career Transition Analysis"
+    parent="hr.menu_hr_reporting"
+    action="hr_career_transition_analysis_action"
+    sequence="1" />
+
+</data>
+</openerp>
