@@ -9,6 +9,7 @@ Career Transition
     :target: https://github.com/open-synergy/opnsynid-hr/tree/10.0/hr_career_transition
     :alt: open-synergy/opnsynid-hr
 
+|badge2| |badge3|
 
 
 Installation
