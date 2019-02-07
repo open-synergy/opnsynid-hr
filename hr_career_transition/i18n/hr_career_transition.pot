@@ -1,0 +1,682 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_career_transition
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-07 10:56+0000\n"
+"PO-Revision-Date: 2019-02-07 10:56+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_career_transition
+#: field:hr.career_transition,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,ref:0
+msgid "# Reference"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,active:0
+#: field:hr.career_transition_type_reason,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_career_transition
+#: model:ir.actions.act_window,name:hr_career_transition.hr_career_transition_action
+#: model:ir.ui.menu,name:hr_career_transition.hr_career_transition_menu
+msgid "All Career Transitions"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,approve_grp_ids:0
+msgid "Allowed to Approve"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,cancel_grp_ids:0
+msgid "Allowed to Cancel"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,confirm_grp_ids:0
+msgid "Allowed to Confirm"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,restart_grp_ids:0
+msgid "Allowed to Restart"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,open_grp_ids:0
+msgid "Allowed to Start Process"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,valid_grp_ids:0
+msgid "Allowed to Validate"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: field:hr.career_transition,archieve:0
+msgid "Archieve"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: selection:hr.career_transition,state:0
+#: selection:hr.career_transition_analysis,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,cancelled_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Cancelled"
+msgstr ""
+
+#. module: hr_career_transition
+#: model:ir.model,name:hr_career_transition.model_hr_career_transition
+#: model:ir.ui.menu,name:hr_career_transition.hr_career_transition_root_menu
+msgid "Career Transition"
+msgstr ""
+
+#. module: hr_career_transition
+#: model:ir.actions.act_window,name:hr_career_transition.hr_career_transition_analysis_action
+#: model:ir.model,name:hr_career_transition.model_hr_career_transition_analysis
+#: model:ir.ui.menu,name:hr_career_transition.hr_career_transition_analysis_menu
+msgid "Career Transition Analysis"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Career Transition Detail"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,name:0
+#: field:hr.career_transition_type_reason,type_id:0
+#: model:ir.actions.act_window,name:hr_career_transition.hr_career_transition_type_action
+#: model:ir.model,name:hr_career_transition.model_hr_career_transition_type
+#: model:ir.ui.menu,name:hr_career_transition.hr_career_transition_type_menu
+msgid "Career Transition Type"
+msgstr ""
+
+#. module: hr_career_transition
+#: model:ir.model,name:hr_career_transition.model_hr_career_transition_type_reason
+msgid "Career Transition Type Reason"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.employee:hr_career_transition.hr_employee_view_form
+#: field:hr.employee,career_transition_ids:0
+msgid "Career Transitions"
+msgstr ""
+
+#. module: hr_career_transition
+#: code:addons/hr_career_transition/models/hr_career_transition.py:710
+#, python-format
+msgid "Career transition limit exceed"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,change_company:0
+msgid "Change Company?"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,change_department:0
+msgid "Change Department"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,change_job_title:0
+msgid "Change Job Title"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,change_working_schedule:0
+msgid "Change Working Schedule"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Column Grouping"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: field:hr.career_transition,company_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,confirmed_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,contract_end_date:0
+msgid "Contract Date End"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,contract_start_date:0
+msgid "Contract Date Start"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Contract Duraction"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,contract_type_id:0
+msgid "Contract Type"
+msgstr ""
+
+#. module: hr_career_transition
+#: code:addons/hr_career_transition/models/hr_career_transition.py:693
+#, python-format
+msgid "Contract date end have to be greater than start date"
+msgstr ""
+
+#. module: hr_career_transition
+#: code:addons/hr_career_transition/models/hr_career_transition.py:681
+#, python-format
+msgid "Contract start date have to be equal to effective date"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,create_new_contract:0
+msgid "Create New Contract"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,create_uid:0
+#: field:hr.career_transition_type,create_uid:0
+#: field:hr.career_transition_type_reason,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,create_date:0
+#: field:hr.career_transition_type,create_date:0
+#: field:hr.career_transition_type_reason,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_type:hr_career_transition.hr_career_transition_type_view_form
+msgid "Data to Change"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Date Start"
+msgstr ""
+
+#. module: hr_career_transition
+#: help:hr.career_transition,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Department"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,description:0
+#: field:hr.career_transition_type_reason,description:0
+msgid "Description"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: selection:hr.career_transition,state:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: selection:hr.career_transition_analysis,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,effective_date:0
+#: field:hr.career_transition_analysis,effective_date:0
+msgid "Effective Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Effective Date by Day"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Effective Date by Month"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Effective Date by Week"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Effective Date by Year"
+msgstr ""
+
+#. module: hr_career_transition
+#: code:addons/hr_career_transition/models/hr_career_transition.py:668
+#, python-format
+msgid "Effective date have to be greater than lastest career transition"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: field:hr.career_transition,employee_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,employee_id:0
+#: model:ir.model,name:hr_career_transition.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Empty"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_type:hr_career_transition.hr_career_transition_type_view_form
+msgid "General"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: hr_career_transition
+#: help:hr.career_transition,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,id:0
+#: field:hr.career_transition_analysis,id:0
+#: field:hr.career_transition_type,id:0
+#: field:hr.career_transition_type_reason,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_career_transition
+#: help:hr.career_transition,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Job"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,write_uid:0
+#: field:hr.career_transition_type,write_uid:0
+#: field:hr.career_transition_type_reason,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,write_date:0
+#: field:hr.career_transition_type,write_date:0
+#: field:hr.career_transition_type_reason,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.employee,latest_career_transition_id:0
+msgid "Latest Career Transition"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type_reason,limit:0
+msgid "Limit"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Log"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_career_transition
+#: help:hr.career_transition,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_career_transition
+#: model:ir.actions.act_window,name:hr_career_transition.hr_my_career_transition_action
+#: model:ir.ui.menu,name:hr_career_transition.hr_my_career_transition_menu
+msgid "My Career Transitions"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,need_previous_contract:0
+msgid "Need Previous Contract"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,new_company_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,new_company_id:0
+msgid "New Company"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,new_contract_id:0
+msgid "New Contract"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,new_department_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,new_department_id:0
+msgid "New Department"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "New Job"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,new_job_id:0
+#: field:hr.career_transition_analysis,new_job_id:0
+msgid "New Job Title"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "New Working Hour"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,new_working_hour_id:0
+#: field:hr.career_transition_analysis,new_working_hour_id:0
+msgid "New Working Schedule"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+#: field:hr.career_transition,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_analysis,nbr:0
+msgid "Number of Career Transition"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: selection:hr.career_transition,state:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: selection:hr.career_transition_analysis,state:0
+msgid "On Progress"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,opened_user_id:0
+msgid "Open By"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,opened_date:0
+msgid "Opened Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+#: view:hr.career_transition_type:hr_career_transition.hr_career_transition_type_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,previous_company_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,previous_company_id:0
+msgid "Previous Company"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,previous_contract_id:0
+msgid "Previous Contract"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,previous_department_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,previous_department_id:0
+msgid "Previous Department"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Previous Job"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,previous_job_id:0
+#: field:hr.career_transition_analysis,previous_job_id:0
+msgid "Previous Job Title"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Previous Working Hour"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,previous_working_hour_id:0
+#: field:hr.career_transition_analysis,previous_working_hour_id:0
+msgid "Previous Working Schedule"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: field:hr.career_transition,reason_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,reason_id:0
+#: field:hr.career_transition_type_reason,name:0
+msgid "Reason"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_type:hr_career_transition.hr_career_transition_type_view_form
+#: field:hr.career_transition_type,reason_ids:0
+msgid "Reasons"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,require_reason:0
+msgid "Require Reason"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+msgid "Row Grouping"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: field:hr.career_transition,state:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,limit:0
+msgid "Transition Limit"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: field:hr.career_transition,type_id:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: field:hr.career_transition_analysis,type_id:0
+msgid "Type"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: selection:hr.career_transition,state:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: selection:hr.career_transition_analysis,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Validation"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,validated_user_id:0
+msgid "Validation By"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,validated_date:0
+msgid "Validation Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+#: selection:hr.career_transition,state:0
+#: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
+#: selection:hr.career_transition_analysis,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Working Schedule"
+msgstr ""
+
+#. module: hr_career_transition
+#: code:addons/hr_career_transition/models/hr_career_transition.py:393
+#, python-format
+msgid "You can only cancel valid latest transition"
+msgstr ""
+
+#. module: hr_career_transition
+#: code:addons/hr_career_transition/models/hr_career_transition.py:644
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form_1
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_tree_1
+msgid "false"
+msgstr ""
+
