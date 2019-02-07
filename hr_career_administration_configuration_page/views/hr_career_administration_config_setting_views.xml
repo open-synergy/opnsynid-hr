@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -20,10 +20,50 @@
             <separator string="Feature &amp; Integration"/>
             <group name="feature_integration">
                 <label for="id" string="Feature"/>
-                <div>
+                <div id="feature">
+                    <div>
+                        <field name="module_hr_join_transition" class="on_inline"/>
+                        <label for="module_hr_join_transition"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_mutation_transition" class="on_inline"/>
+                        <label for="module_hr_mutation_transition"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_promotion_transition" class="on_inline"/>
+                        <label for="module_hr_promotion_transition"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_demotion_transition" class="on_inline"/>
+                        <label for="module_hr_demotion_transition"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_termination_transition" class="on_inline"/>
+                        <label for="module_hr_termination_transition"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_assignment_transition" class="on_inline"/>
+                        <label for="module_hr_assignment_transition"/>
+                    </div>
                 </div>
                 <label for="id" string="Integration"/>
-                <div>
+                <div id="integration">
+                    <div>
+                        <field name="module_hr_career_transition_payroll" class="on_inline"/>
+                        <label for="module_hr_career_transition_payroll"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_career_transition_payroll_account" class="on_inline"/>
+                        <label for="module_hr_career_transition_payroll_account"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_career_transition_payslip_input_policy" class="on_inline"/>
+                        <label for="module_hr_career_transition_payslip_input_policy"/>
+                    </div>
+                    <div>
+                        <field name="module_hr_career_timesheet_computation" class="on_inline"/>
+                        <label for="module_hr_career_timesheet_computation"/>
+                    </div>
                 </div>
             </group>
             <separator string="General Configuration"/>

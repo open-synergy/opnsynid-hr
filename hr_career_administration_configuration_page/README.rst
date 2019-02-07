@@ -1,10 +1,15 @@
-.. image:: https://img.shields.io/badge/licence-AGPL--3-blue.svg
-   :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
-   :alt: License: AGPL-3
-
 ========================================
 Career Administration Configuration Page
 ========================================
+
+.. |badge2| image:: https://img.shields.io/badge/licence-AGPL--3-blue.png
+    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
+    :alt: License: AGPL-3
+.. |badge3| image:: https://img.shields.io/badge/github-open--synergy%2Fopnsynid--hr-lightgray.png?logo=github
+    :target: https://github.com/open-synergy/opnsynid-hr/tree/8.0/hr_career_administration_configuration_page
+    :alt: open-synergy/opnsynid-hr
+
+|badge2| |badge3|
 
 
 Installation
