@@ -152,7 +152,7 @@
                 <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
                 <filter name="grp_type" string="Type" context="{'group_by':'type_id'}"/>
                 <filter name="grp_reason" string="Reason" context="{'group_by':'reason_id'}"/>
-                <filter name="grp_company" string="Company" context="{'group_by':'employee_id'}" groups="base.group_multi_company"/>
+                <filter name="grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
                 <filter name="grp_date_year" string="Effective Date by Year" context="{'group_by':'effective_date:year'}"/>
                 <filter name="grp_date_month" string="Effective Date by Month" context="{'group_by':'effective_date:month'}"/>
                 <filter name="grp_date_week" string="Effective Date by Week" context="{'group_by':'effective_date:week'}"/>
