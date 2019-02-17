@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 OpenSynergy Indonesia
+# Copyright 2016-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
@@ -48,7 +48,7 @@ class HrExpense(models.Model):
         'journal_id',
         'employee_id'
     )
-    def onchange_journal_id(self):
+    def onchange_account_id(self):
         value = False
         if self.journal_id:
             account_id =\

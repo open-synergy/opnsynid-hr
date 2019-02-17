@@ -20,7 +20,7 @@ class HrExpensePayableAccount(BaseCase):
             new.journal_id = self.journal_1.id
             new.employee_id = self.employee_1.id
 
-            new.onchange_journal_id()
+            new.onchange_account_id()
 
             self.assertEqual(
                 self.journal_1.default_credit_account_id.id,
@@ -42,7 +42,7 @@ class HrExpensePayableAccount(BaseCase):
             property_account_payable =\
                 new._get_partner_account()
 
-            new.onchange_journal_id()
+            new.onchange_account_id()
 
             self.assertEqual(
                 property_account_payable,
@@ -61,7 +61,7 @@ class HrExpensePayableAccount(BaseCase):
             new.journal_id = self.journal_2.id
             new.employee_id = self.employee_2.id
 
-            new.onchange_journal_id()
+            new.onchange_account_id()
 
             self.assertEqual(
                 False,
@@ -83,7 +83,7 @@ class HrExpensePayableAccount(BaseCase):
             property_account_payable =\
                 new._get_partner_account()
 
-            new.onchange_journal_id()
+            new.onchange_account_id()
 
             self.assertEqual(
                 property_account_payable,
