@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_expense_view_form" model="ir.ui.view">
+    <field name="name">hr.expense.expense form</field>
+    <field name="model">hr.expense.expense</field>
+    <field name="inherit_id" ref="hr_expense.view_expenses_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_expense_view_tree" model="ir.ui.view">
+    <field name="name">hr.expense.expense tree</field>
+    <field name="model">hr.expense.expense</field>
+    <field name="inherit_id" ref="hr_expense.view_expenses_tree"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_expense_my_action" model="ir.actions.act_window">
+    <field name="name">My Expenses</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.expense.expense</field>
+    <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
+    <field name="context">{'hide_employee_field':1}</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="hr_expense_my_menu"
+    name="My Expenses"
+    parent="hr_expense.next_id_49"
+    action="hr_expense_my_action"
+    sequence="1"
+    />
+
+</data>
+</openerp>

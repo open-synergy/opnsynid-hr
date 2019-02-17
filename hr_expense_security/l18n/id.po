@@ -1,0 +1,57 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_expense_security
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-02-17 17:15+0000\n"
+"PO-Revision-Date: 2019-02-17 17:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_expense_security
+#: model:res.groups,name:hr_expense_security.group_expense_operation_company
+#: model:res.groups,name:hr_expense_security.group_expense_viewer_company
+msgid "Company"
+msgstr "Company"
+
+#. module: hr_expense_security
+#: model:res.groups,name:hr_expense_security.group_expense_operation_department
+#: model:res.groups,name:hr_expense_security.group_expense_viewer_department
+msgid "Department"
+msgstr "Department"
+
+#. module: hr_expense_security
+#: model:ir.module.category,name:hr_expense_security.module_hr_expense_operation
+msgid "Employee Expense Operation"
+msgstr "Employee Expense Operation"
+
+#. module: hr_expense_security
+#: model:ir.module.category,name:hr_expense_security.module_hr_expense_viewer
+msgid "Employee Expense Viewer"
+msgstr "Employee Expense Viewer"
+
+#. module: hr_expense_security
+#: model:ir.actions.act_window,name:hr_expense_security.hr_expense_my_action
+#: model:ir.ui.menu,name:hr_expense_security.hr_expense_my_menu
+msgid "My Expenses"
+msgstr "My Expenses"
+
+#. module: hr_expense_security
+#: model:res.groups,name:hr_expense_security.group_expense_operation_supervisor
+#: model:res.groups,name:hr_expense_security.group_expense_viewer_supervisor
+msgid "Supervisor"
+msgstr "Supervisor"
+
+#. module: hr_expense_security
+#: view:hr.expense.expense:hr_expense_security.hr_expense_view_form
+#: view:hr.expense.expense:hr_expense_security.hr_expense_view_tree
+msgid "context.get('hide_employee_field',0)"
+msgstr "context.get('hide_employee_field',0)"
+
