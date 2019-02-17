@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+    <data>
+        <record id="hr_expense_view_form" model="ir.ui.view">
+            <field name="name">hr.expense form</field>
+            <field name="model">hr.expense.expense</field>
+            <field name="inherit_id" ref="hr_expense.view_expenses_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//notebook" position="inside">
+                        <page name="page_policy" string="Policy" groups="base.group_system">
+                            <group name="grp_policy">
+                                <field name="confirm_ok"/>
+                                <field name="validate_ok"/>
+                                <field name="refuse_ok"/>
+                                <field name="done_ok"/>
+                                <field name="restart_ok"/>
+                                <field name="view_ok"/>
+                            </group>
+                        </page>
+                    </xpath>
+
+                    <xpath expr="//button[@name='confirm']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=', 'draft'),('confirm_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='validate']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=', 'confirm'),('validate_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='refuse']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not', ['confirm','accepted']),('refuse_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='draft']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','not', ['confirm','cancelled']),('restart_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='done']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=', 'accepted'),('done_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+                    <xpath expr="//button[@name='action_view_move']" position="attributes">
+                        <attribute name="attrs">
+                            {'invisible':['|',('state','!=', 'done'),('view_ok','=',False)]}
+                        </attribute>
+                        <attribute name="states"/>
+                        <attribute name="groups"/>
+                    </xpath>
+
+
+
+                </data>
+            </field>
+        </record>
+    </data>
+</openerp>

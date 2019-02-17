@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="base_workflow_hr_expense_expense" model="base.workflow_policy">
+    <field name="model_id" ref="hr_expense.model_hr_expense_expense"/>
+</record>
+<record id="base_workflow_line_hr_expense_expense_confirm" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="base_workflow_hr_expense_expense"/>
+    <field name="field_id" search="[('model_id.model','=','hr.expense.expense'),('name','=','confirm_ok')]"/>
+    <field name="python_code">result = document.journal_id.expense_confirm_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_hr_expense_expense_validate" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="base_workflow_hr_expense_expense"/>
+    <field name="field_id" search="[('model_id.model','=','hr.expense.expense'),('name','=','validate_ok')]"/>
+    <field name="python_code">result = document.journal_id.expense_validate_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_hr_expense_expense_refuse" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="base_workflow_hr_expense_expense"/>
+    <field name="field_id" search="[('model_id.model','=','hr.expense.expense'),('name','=','refuse_ok')]"/>
+    <field name="python_code">result = document.journal_id.expense_refuse_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_hr_expense_expense_done" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="base_workflow_hr_expense_expense"/>
+    <field name="field_id" search="[('model_id.model','=','hr.expense.expense'),('name','=','done_ok')]"/>
+    <field name="python_code">result = document.journal_id.expense_done_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_hr_expense_expense_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="base_workflow_hr_expense_expense"/>
+    <field name="field_id" search="[('model_id.model','=','hr.expense.expense'),('name','=','restart_ok')]"/>
+    <field name="python_code">result = document.journal_id.expense_restart_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_hr_expense_expense_view" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="base_workflow_hr_expense_expense"/>
+    <field name="field_id" search="[('model_id.model','=','hr.expense.expense'),('name','=','view_ok')]"/>
+    <field name="python_code">result = document.journal_id.expense_view_grp_ids.ids</field>
+</record>
+</data>
+</openerp>
