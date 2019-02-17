@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="module_hr_expense_operation" model="ir.module.category">
+    <field name="name">Employee Expense Operation</field>
+</record>
+
+<record id="module_hr_expense_viewer" model="ir.module.category">
+    <field name="name">Employee Expense Viewer</field>
+</record>
+
+</data>
+</openerp>
