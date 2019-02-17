@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
-# Copyright 2016 OpenSynergy Indonesia
+# Copyright 2016-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+# pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "HR Expense Header Account",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.0.1",
     "summary": "Add the abbility to choose header account",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
