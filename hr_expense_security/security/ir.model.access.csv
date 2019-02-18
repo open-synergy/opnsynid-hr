@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_expense_expense_employee,hr.expense.expense - employee,hr_expense.model_hr_expense_expense,base.group_user,1,0,0,0
+access_hr_expense_expense_operation,hr.expense.expense - operation user,hr_expense.model_hr_expense_expense,hr_expense_security.group_expense_operation_user,1,1,1,1
+access_hr_expense_line_employee,hr.expense.line - employee,hr_expense.model_hr_expense_line,base.group_user,1,0,0,0
+access_hr_expense_line_operation,hr.expense.line - operation user,hr_expense.model_hr_expense_line,hr_expense_security.group_expense_operation_user,1,1,1,1
