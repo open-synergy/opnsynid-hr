@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-<data noupdate="1">
+<data>
 
 <record id="hr_contract.access_hr_contract_manager" model="ir.model.access">
     <field name="name">Deprecated</field>
