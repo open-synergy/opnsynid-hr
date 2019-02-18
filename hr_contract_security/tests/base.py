@@ -195,7 +195,7 @@ class BaseCase(TransactionCase):
             "password": "a",
             "groups_id": [(6, 0, [
                 self.grp_employee.id,
-                ]
+            ]
             )],
             "company_id": self.main_company
         })
@@ -215,7 +215,7 @@ class BaseCase(TransactionCase):
             "password": "a",
             "groups_id": [(6, 0, [
                 self.grp_employee.id,
-                ]
+            ]
             )],
             "company_id": self.main_company
         })
@@ -234,7 +234,7 @@ class BaseCase(TransactionCase):
             "password": "a",
             "groups_id": [(6, 0, [
                 self.grp_employee.id,
-                ]
+            ]
             )],
             "company_id": self.env.ref("base.main_company").id
         })

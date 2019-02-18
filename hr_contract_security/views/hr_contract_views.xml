@@ -4,6 +4,31 @@
 
 <openerp>
 <data>
+<record id="hr_contract_view_form" model="ir.ui.view">
+    <field name="name">hr.contract form</field>
+    <field name="model">hr.contract</field>
+    <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_contract_view_tree" model="ir.ui.view">
+    <field name="name">hr.contract tree</field>
+    <field name="model">hr.contract</field>
+    <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='employee_id']" position="attributes">
+                <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+            </xpath>
+        </data>
+    </field>
+</record>
 
 <record id="hr_contract_my_action" model="ir.actions.act_window">
     <field name="name">My Contract</field>
@@ -12,6 +37,7 @@
     <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
+    <field name="context">{'hide_employee_field':1}</field>
 </record>
 
 <menuitem

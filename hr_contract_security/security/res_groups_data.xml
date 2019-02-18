@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <openerp>
-<data noupdate="1">
+<data>
 
 <!-- Contract Operator -->
 <record id="group_contract_user" model="res.groups">
