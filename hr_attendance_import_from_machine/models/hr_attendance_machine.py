@@ -13,25 +13,12 @@ class HrAttendanceMachine(models.Model):
         string="Name",
         required=True,
     )
-    date_format = fields.Selection(
+    date_format = fields.Char(
         string="Date Format",
-        selection=[
-            ("%d/%m/%Y", "dd/mm/yyyy"),
-            ("%m/%d/%Y", "mm/dd/yyyy"),
-            ("%Y/%m/%d", "yyyy/mm/dd"),
-            ("%d-%m-%Y", "dd-mm-yyyy"),
-            ("%m-%d-%Y", "mm-dd-yyyy"),
-            ("%Y-%m-%d", "yyyy-mm-dd")
-        ],
         required=True,
     )
-    time_format = fields.Selection(
+    time_format = fields.Char(
         string="Time Format",
-        selection=[
-            ("%H:%M:%S", "HH:MM:SS"),
-            ("%H:%M", "HH:MM"),
-            ("%H%M", "HHMM")
-        ],
         required=True,
     )
     sign_in_code = fields.Char(

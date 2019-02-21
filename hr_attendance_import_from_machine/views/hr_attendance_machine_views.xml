@@ -23,8 +23,8 @@
                         <page string="CSV Details">
                             <group>
                                 <group string="Date/Time Format">
-                                    <field name="date_format"/>
-                                    <field name="time_format"/>
+                                    <field name="date_format" placeholder="e.g %d/%m/%Y"/>
+                                    <field name="time_format" placeholder="e.g %H:%M:%S"/>
                                 </group>
                                 <group string="Sign In/Out Code">
                                     <field name="sign_in_code"/>
