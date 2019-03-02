@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-07 10:56+0000\n"
-"PO-Revision-Date: 2019-02-07 10:56+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -76,6 +74,31 @@ msgstr ""
 #: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
 #: field:hr.career_transition,archieve:0
 msgid "Archieve"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,open_ok:0
+msgid "Can Open"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,valid_ok:0
+msgid "Can Validate"
 msgstr ""
 
 #. module: hr_career_transition
@@ -151,21 +174,25 @@ msgid "Career transition limit exceed"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,change_company:0
 #: field:hr.career_transition_type,change_company:0
 msgid "Change Company?"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,change_department:0
 #: field:hr.career_transition_type,change_department:0
 msgid "Change Department"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,change_job_title:0
 #: field:hr.career_transition_type,change_job_title:0
 msgid "Change Job Title"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,change_working_schedule:0
 #: field:hr.career_transition_type,change_working_schedule:0
 msgid "Change Working Schedule"
 msgstr ""
@@ -242,6 +269,7 @@ msgid "Contract start date have to be equal to effective date"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,create_new_contract:0
 #: field:hr.career_transition_type,create_new_contract:0
 msgid "Create New Contract"
 msgstr ""
@@ -284,6 +312,14 @@ msgstr ""
 #: field:hr.career_transition_type,description:0
 #: field:hr.career_transition_type_reason,description:0
 msgid "Description"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,display_name:0
+#: field:hr.career_transition_analysis,display_name:0
+#: field:hr.career_transition_type,display_name:0
+#: field:hr.career_transition_type_reason,display_name:0
+msgid "Display Name"
 msgstr ""
 
 #. module: hr_career_transition
@@ -393,6 +429,14 @@ msgid "Last Message Date"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,__last_update:0
+#: field:hr.career_transition_analysis,__last_update:0
+#: field:hr.career_transition_type,__last_update:0
+#: field:hr.career_transition_type_reason,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_career_transition
 #: field:hr.career_transition,write_uid:0
 #: field:hr.career_transition_type,write_uid:0
 #: field:hr.career_transition_type_reason,write_uid:0
@@ -438,6 +482,7 @@ msgid "My Career Transitions"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,need_previous_contract:0
 #: field:hr.career_transition_type,need_previous_contract:0
 msgid "Need Previous Contract"
 msgstr ""
@@ -575,6 +620,7 @@ msgid "Reasons"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,require_reason:0
 #: field:hr.career_transition_type,require_reason:0
 msgid "Require Reason"
 msgstr ""
@@ -655,6 +701,16 @@ msgstr ""
 #: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
 #: selection:hr.career_transition_analysis,state:0
 msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,website_message_ids:0
+msgid "Website Messages"
+msgstr ""
+
+#. module: hr_career_transition
+#: help:hr.career_transition,website_message_ids:0
+msgid "Website communication history"
 msgstr ""
 
 #. module: hr_career_transition
