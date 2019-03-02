@@ -6,8 +6,6 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Odoo Server 8.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-16 14:41+0000\n"
-"PO-Revision-Date: 2018-10-16 14:41+0000\n"
 "Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -17,7 +15,12 @@ msgstr ""
 
 #. module: hr_payslip_tier_validation
 #: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_search
-msgid "My Timesheet to review"
+msgid "My Payslip to review"
+msgstr ""
+
+#. module: hr_payslip_tier_validation
+#: field:hr.payslip,need_validation:0
+msgid "Need validation"
 msgstr ""
 
 #. module: hr_payslip_tier_validation
@@ -36,8 +39,18 @@ msgid "Pay Slip"
 msgstr ""
 
 #. module: hr_payslip_tier_validation
+#: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_search
+msgid "Payslip validated and ready to be confirmed"
+msgstr ""
+
+#. module: hr_payslip_tier_validation
 #: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_form
 msgid "Reject"
+msgstr ""
+
+#. module: hr_payslip_tier_validation
+#: field:hr.payslip,rejected:0
+msgid "Rejected"
 msgstr ""
 
 #. module: hr_payslip_tier_validation
@@ -48,6 +61,11 @@ msgstr ""
 #. module: hr_payslip_tier_validation
 #: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_form
 msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_payslip_tier_validation
+#: field:hr.payslip,reviewer_ids:0
+msgid "Reviewers"
 msgstr ""
 
 #. module: hr_payslip_tier_validation
@@ -62,17 +80,13 @@ msgid "This Payslip needs to be\n"
 msgstr ""
 
 #. module: hr_payslip_tier_validation
-#: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_search
-msgid "Timesheet validated and ready to be confirmed"
-msgstr ""
-
-#. module: hr_payslip_tier_validation
 #: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_form
 msgid "Validate"
 msgstr ""
 
 #. module: hr_payslip_tier_validation
 #: view:hr.payslip:hr_payslip_tier_validation.hr_payslip_view_search
+#: field:hr.payslip,validated:0
 msgid "Validated"
 msgstr ""
 
