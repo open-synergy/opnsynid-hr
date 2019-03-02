@@ -1,0 +1,413 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_attendance_overtime_request_batch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,name:0
+msgid "# Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: code:addons/hr_attendance_overtime_request_batch/models/hr_overtime_request_batch.py:294
+#, python-format
+msgid "%s"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_config_setting,overtime_request_batch_cancel_grp_ids:0
+msgid "Allowed To Cancel Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:res.company,overtime_request_batch_cancel_grp_ids:0
+msgid "Allowed To Cancel Overtime Request Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_config_setting,overtime_request_batch_confirm_grp_ids:0
+msgid "Allowed To Confirm Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:res.company,overtime_request_batch_confirm_grp_ids:0
+msgid "Allowed To Confirm Overtime Request Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_config_setting,overtime_request_batch_generate_grp_ids:0
+msgid "Allowed To Generate Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:res.company,overtime_request_batch_generate_grp_ids:0
+msgid "Allowed To Generate Overtime Request Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_config_setting,overtime_request_batch_restart_grp_ids:0
+msgid "Allowed To Restart Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:res.company,overtime_request_batch_restart_grp_ids:0
+msgid "Allowed To Restart Overtime Request Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_config_setting,overtime_request_batch_valid_grp_ids:0
+msgid "Allowed To Validate Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:res.company,overtime_request_batch_valid_grp_ids:0
+msgid "Allowed To Validate Overtime Request Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: model:ir.model,name:hr_attendance_overtime_request_batch.model_hr_overtime_request
+msgid "Attendance Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_tree
+#: model:ir.actions.act_window,name:hr_attendance_overtime_request_batch.hr_overtime_request_batch_action
+#: model:ir.ui.menu,name:hr_attendance_overtime_request_batch.hr_overtime_request_batch_menu
+msgid "Batch Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,generate_ok:0
+msgid "Can Generate"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,valid_ok:0
+msgid "Can Validate"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+#: selection:hr.overtime_request_batch,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,cancelled_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: model:ir.model,name:hr_attendance_overtime_request_batch.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,confirmed_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,create_uid:0
+#: field:hr.overtime_request_by_employee,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,create_date:0
+#: field:hr.overtime_request_by_employee,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Creation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: code:addons/hr_attendance_overtime_request_batch/models/hr_overtime_request_batch.py:290
+#, python-format
+msgid "Date start must be greater than date end"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,department_id:0
+msgid "Department"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,display_name:0
+#: field:hr.overtime_request_by_employee,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_search
+msgid "Done"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_search
+msgid "Done Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_search
+#: selection:hr.overtime_request_batch,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_search
+msgid "Draft Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_by_employee,employee_ids:0
+msgid "Employee(s)"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_by_employee:hr_attendance_overtime_request_batch.hr_overtime_request_by_employee_view_form
+msgid "Employees"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "General"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_by_employee:hr_attendance_overtime_request_batch.hr_overtime_request_by_employee_view_form
+msgid "Generate"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Generate Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,id:0
+#: field:hr.overtime_request_by_employee,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,__last_update:0
+#: field:hr.overtime_request_by_employee,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,write_uid:0
+#: field:hr.overtime_request_by_employee,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,write_date:0
+#: field:hr.overtime_request_by_employee,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Log"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,manager_id:0
+msgid "Manager"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_config_setting,overtime_request_batch_sequence_id:0
+#: field:res.company,overtime_request_batch_sequence_id:0
+msgid "Overtime Request Batch Sequence"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: model:ir.model,name:hr_attendance_overtime_request_batch.model_hr_overtime_request_batch
+msgid "Overtime Request Batches"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_by_employee:hr_attendance_overtime_request_batch.hr_overtime_request_by_employee_view_form
+#: model:ir.actions.act_window,name:hr_attendance_overtime_request_batch.hr_overtime_request_by_employee_action
+msgid "Overtime Request by Employees"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,request_ids:0
+msgid "Overtime Request(s)"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request,request_batch_id:0
+msgid "Request Batch"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Request(s)"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_search
+msgid "Search Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Set To Draft"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_by_employee:hr_attendance_overtime_request_batch.hr_overtime_request_by_employee_view_form
+msgid "This wizard will generate overtime requests for all selected employee(s)."
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "To Generate"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "To Restart"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request_batch.hr_overtime_config_setting_view_form
+msgid "To Valid"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,user_id:0
+msgid "User"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+#: selection:hr.overtime_request_batch,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: view:hr.overtime_request_batch:hr_attendance_overtime_request_batch.hr_overtime_request_batch_view_form
+msgid "Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,validated_user_id:0
+msgid "Validation By"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: field:hr.overtime_request_batch,validated_date:0
+msgid "Validation Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_batch
+#: selection:hr.overtime_request_batch,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
