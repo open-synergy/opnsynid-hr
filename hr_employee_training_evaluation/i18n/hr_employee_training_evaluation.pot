@@ -1,0 +1,335 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_training_evaluation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training:hr_employee_training_evaluation.hr_training_view_form
+msgid "Avalaible Survey"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:survey.survey,training_post_ok:0
+msgid "Avalaible for Training Post-Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:survey.survey,training_pre_ok:0
+msgid "Avalaible for Training Pre-Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_form
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: selection:hr.training_participant_evaluation,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training:hr_employee_training_evaluation.hr_training_view_form
+msgid "Create Participant Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,create_uid:0
+#: field:hr.training_participant_evaluation,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,create_date:0
+#: field:hr.training_participant_evaluation,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: help:hr.training_participant_evaluation,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,display_name:0
+#: field:hr.training_participant_evaluation,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_form
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: selection:hr.training_participant_evaluation,state:0
+msgid "Done"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: selection:hr.training_participant_evaluation,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: model:ir.model,name:hr_employee_training_evaluation.model_hr_training
+msgid "Employee Training"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: model:ir.model,name:hr_employee_training_evaluation.model_hr_training_evaluation
+msgid "Employee Training Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: model:ir.model,name:hr_employee_training_evaluation.model_hr_training_participant_evaluation
+msgid "Employee Training Participant Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_category:hr_employee_training_evaluation.hr_training_category_view_form
+msgid "Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: code:addons/hr_employee_training_evaluation/models/hr_training_participant_evaluation.py:164
+#, python-format
+msgid "Evaluation is not finish!"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training:hr_employee_training_evaluation.hr_training_view_form
+#: field:hr.training,evaluation_ids:0
+#: view:hr.training_partisipant:hr_employee_training_evaluation.hr_training_participant_view_form
+#: field:hr.training_partisipant,evaluation_ids:0
+msgid "Evaluations"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_form
+msgid "Fill Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: help:hr.training_participant_evaluation,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,id:0
+#: field:hr.training_participant_evaluation,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: help:hr.training_participant_evaluation,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: selection:hr.training_participant_evaluation,state:0
+msgid "In Progress"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,__last_update:0
+#: field:hr.training_participant_evaluation,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,write_uid:0
+#: field:hr.training_participant_evaluation,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,write_date:0
+#: field:hr.training_participant_evaluation,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: help:hr.training_participant_evaluation,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: field:hr.training_participant_evaluation,participant_id:0
+msgid "Participant"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: model:ir.actions.act_window,name:hr_employee_training_evaluation.hr_training_participant_evaluation_action
+#: model:ir.ui.menu,name:hr_employee_training_evaluation.hr_training_participant_evaluation_menu
+msgid "Participant Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: code:addons/hr_employee_training_evaluation/models/hr_training_participant_evaluation.py:155
+#, python-format
+msgid "Please link employee to user"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: selection:hr.training_evaluation,pre_post_test:0
+msgid "Post Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training,post_survey_ids:0
+#: field:hr.training_category,post_survey_ids:0
+msgid "Post-Evaluation Survey"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training:hr_employee_training_evaluation.hr_training_view_form
+#: field:hr.training,post_evaluation_ids:0
+#: view:hr.training_partisipant:hr_employee_training_evaluation.hr_training_participant_view_form
+#: field:hr.training_partisipant,post_evaluation_ids:0
+msgid "Post-Evaluations"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: selection:hr.training_evaluation,pre_post_test:0
+msgid "Pre Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training,pre_survey_ids:0
+#: field:hr.training_category,pre_survey_ids:0
+msgid "Pre-Evaluation Survey"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training:hr_employee_training_evaluation.hr_training_view_form
+#: field:hr.training,pre_evaluation_ids:0
+#: view:hr.training_partisipant:hr_employee_training_evaluation.hr_training_participant_view_form
+#: field:hr.training_partisipant,pre_evaluation_ids:0
+msgid "Pre-Evaluations"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,pre_post_test:0
+#: field:hr.training_participant_evaluation,pre_post_test:0
+msgid "Pre/Post Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_form
+msgid "Reset to Draft"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,respon_id:0
+msgid "Respon"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,sequence:0
+#: field:hr.training_participant_evaluation,sequence:0
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_form
+msgid "Start"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: field:hr.training_participant_evaluation,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,survey_id:0
+#: field:hr.training_participant_evaluation,survey_id:0
+#: model:ir.model,name:hr_employee_training_evaluation.model_survey_survey
+msgid "Survey"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_evaluation,training_id:0
+#: view:hr.training_participant_evaluation:hr_employee_training_evaluation.hr_training_participant_evaluation_view_search
+#: field:hr.training_participant_evaluation,training_id:0
+msgid "Training"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: model:ir.model,name:hr_employee_training_evaluation.model_hr_training_category
+msgid "Training Category"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,training_evaluation_id:0
+msgid "Training Evaluation"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: model:ir.model,name:hr_employee_training_evaluation.model_hr_training_partisipant
+msgid "Training Partisipant"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: field:hr.training_participant_evaluation,website_message_ids:0
+msgid "Website Messages"
+msgstr ""
+
+#. module: hr_employee_training_evaluation
+#: help:hr.training_participant_evaluation,website_message_ids:0
+msgid "Website communication history"
+msgstr ""
+
