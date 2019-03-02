@@ -1,0 +1,50 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_join_transition_payroll_account
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_join_transition_payroll_account
+#: model:ir.model,name:hr_join_transition_payroll_account.model_hr_join_transition
+msgid "Career Transition - Join"
+msgstr ""
+
+#. module: hr_join_transition_payroll_account
+#: field:hr.join_transition,change_analytic_account:0
+msgid "Change Analytic Account?"
+msgstr ""
+
+#. module: hr_join_transition_payroll_account
+#: field:hr.join_transition,change_timesheet_computation:0
+msgid "Change Timesheet Computation?"
+msgstr ""
+
+#. module: hr_join_transition_payroll_account
+#: field:hr.join_transition,new_analytic_account_id:0
+msgid "New Analytic Account"
+msgstr ""
+
+#. module: hr_join_transition_payroll_account
+#: field:hr.join_transition,new_timesheet_computation_ids:0
+msgid "New Timesheet Computations"
+msgstr ""
+
+#. module: hr_join_transition_payroll_account
+#: field:hr.join_transition,previous_analytic_account_id:0
+msgid "Previous Analytic Account"
+msgstr ""
+
+#. module: hr_join_transition_payroll_account
+#: field:hr.join_transition,previous_timesheet_computation_ids:0
+msgid "Previous Timesheet Computations"
+msgstr ""
+
