@@ -1,0 +1,63 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_holiday_code
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_holiday_code
+#: field:hr.holidays.status,allocation_request_sequence_id:0
+#: field:res.company,allocation_request_sequence_id:0
+msgid "Allocation Request Sequence"
+msgstr ""
+
+#. module: hr_holiday_code
+#: field:hr.holidays,holiday_code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_holiday_code
+#: model:ir.model,name:hr_holiday_code.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_holiday_code
+#: view:res.company:hr_holiday_code.res_company_view_form
+msgid "Hr Holidays Sequence"
+msgstr ""
+
+#. module: hr_holiday_code
+#: model:ir.model,name:hr_holiday_code.model_hr_holidays
+msgid "Leave"
+msgstr ""
+
+#. module: hr_holiday_code
+#: field:hr.holidays.status,leave_request_sequence_id:0
+#: field:res.company,leave_request_sequence_id:0
+msgid "Leave Request Sequence"
+msgstr ""
+
+#. module: hr_holiday_code
+#: model:ir.model,name:hr_holiday_code.model_hr_holidays_status
+msgid "Leave Type"
+msgstr ""
+
+#. module: hr_holiday_code
+#: view:hr.holidays.status:hr_holiday_code.hr_holidays_status_form_view
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_holiday_code
+#: code:addons/hr_holiday_code/models/hr_holidays.py:121
+#, python-format
+msgid "Sequence Is Not Valid"
+msgstr ""
+
