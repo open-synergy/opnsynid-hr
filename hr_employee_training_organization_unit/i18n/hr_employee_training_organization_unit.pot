@@ -1,0 +1,32 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_training_organization_unit
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_training_organization_unit
+#: model:ir.model,name:hr_employee_training_organization_unit.model_hr_training
+msgid "Employee Training"
+msgstr ""
+
+#. module: hr_employee_training_organization_unit
+#: view:hr.training:hr_employee_training_organization_unit.hr_training_view_search
+#: field:hr.training,organization_unit_id:0
+#: field:hr.training_partisipant,organization_unit_id:0
+msgid "Organization Unit"
+msgstr ""
+
+#. module: hr_employee_training_organization_unit
+#: model:ir.model,name:hr_employee_training_organization_unit.model_hr_training_partisipant
+msgid "Training Partisipant"
+msgstr ""
+
