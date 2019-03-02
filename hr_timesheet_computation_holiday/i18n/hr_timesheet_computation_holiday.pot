@@ -1,0 +1,37 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_timesheet_computation_holiday
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_timesheet_computation_holiday
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_computation_holiday.hr_timesheet_sheet_view_form
+#: field:hr_timesheet_sheet.sheet,holiday_ids:0
+msgid "Holidays"
+msgstr ""
+
+#. module: hr_timesheet_computation_holiday
+#: model:ir.model,name:hr_timesheet_computation_holiday.model_hr_holidays
+msgid "Leave"
+msgstr ""
+
+#. module: hr_timesheet_computation_holiday
+#: field:hr.holidays,sheet_id:0
+#: model:ir.model,name:hr_timesheet_computation_holiday.model_hr_timesheet_sheet_sheet
+msgid "Timesheet"
+msgstr ""
+
+#. module: hr_timesheet_computation_holiday
+#: model:ir.model,name:hr_timesheet_computation_holiday.model_hr_timesheet_computation_item
+msgid "Timesheet Computation Item"
+msgstr ""
+
