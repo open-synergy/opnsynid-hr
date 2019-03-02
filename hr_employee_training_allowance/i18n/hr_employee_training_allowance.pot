@@ -1,0 +1,350 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_training_allowance
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance_pricelist_policy_field,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.employee:hr_employee_training_allowance.hr_employee_view_form
+#: view:hr.training:hr_employee_training_allowance.hr_training_view_form
+#: view:hr.training_partisipant:hr_employee_training_allowance.hr_training_participant_view_form
+msgid "Allowance"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training_participant_type:hr_employee_training_allowance.hr_training_participant_type_view_form
+msgid "Allowance Policy"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance_pricelist_policy,policy_field_id:0
+#: field:hr.training_participant_type,pricelist_allowance_policy_ids:0
+msgid "Allowance Pricelist Policy"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,participant_type_ids:0
+msgid "Allowed Participant Types"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training_partisipant:hr_employee_training_allowance.hr_training_participant_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: selection:hr.training_participant_allowance,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:product.template,training_allowance_ok:0
+msgid "Available for Training Allowance"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance_pricelist_policy_field,python_code:0
+msgid "Computation"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training_partisipant:hr_employee_training_allowance.hr_training_participant_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,create_uid:0
+#: field:hr.training_allowance_pricelist_policy,create_uid:0
+#: field:hr.training_allowance_pricelist_policy_field,create_uid:0
+#: field:hr.training_participant_allowance,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,create_date:0
+#: field:hr.training_allowance_pricelist_policy,create_date:0
+#: field:hr.training_allowance_pricelist_policy_field,create_date:0
+#: field:hr.training_participant_allowance,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_partisipant,pricelist_id:0
+msgid "Default Pricelist"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,display_name:0
+#: field:hr.training_allowance_pricelist_policy,display_name:0
+#: field:hr.training_allowance_pricelist_policy_field,display_name:0
+#: field:hr.training_participant_allowance,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: selection:hr.training_participant_allowance,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training
+msgid "Employee Training"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: code:addons/hr_employee_training_allowance/models/hr_training_allowance.py:145
+#, python-format
+msgid "Error on allowance quantity formula"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: code:addons/hr_employee_training_allowance/models/hr_training_participant_type.py:37
+#, python-format
+msgid "Error on pricelist allowance formula"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: selection:hr.training_allowance,qty_computation_method:0
+msgid "Fixed"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training_partisipant:hr_employee_training_allowance.hr_training_participant_view_form
+msgid "Generate Allowance"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,id:0
+#: field:hr.training_allowance_pricelist_policy,id:0
+#: field:hr.training_allowance_pricelist_policy_field,id:0
+#: field:hr.training_participant_allowance,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_job
+msgid "Job Position"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,__last_update:0
+#: field:hr.training_allowance_pricelist_policy,__last_update:0
+#: field:hr.training_allowance_pricelist_policy_field,__last_update:0
+#: field:hr.training_participant_allowance,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,write_uid:0
+#: field:hr.training_allowance_pricelist_policy,write_uid:0
+#: field:hr.training_allowance_pricelist_policy_field,write_uid:0
+#: field:hr.training_participant_allowance,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,write_date:0
+#: field:hr.training_allowance_pricelist_policy,write_date:0
+#: field:hr.training_allowance_pricelist_policy_field,write_date:0
+#: field:hr.training_participant_allowance,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: code:addons/hr_employee_training_allowance/models/hr_training_participant.py:28
+#, python-format
+msgid "No pricelist defined"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training:hr_employee_training_allowance.hr_training_view_form
+#: field:hr.training_allowance,note:0
+#: view:hr.training_allowance_pricelist_policy_field:hr_employee_training_allowance.hr_training_allowance_pricelist_policy_field_view_form
+#: field:hr.training_allowance_pricelist_policy_field,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_participant_allowance,participant_id:0
+msgid "Participant"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance_pricelist_policy,type_id:0
+msgid "Participant Type"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance_pricelist_policy_field,name:0
+msgid "Policy Field"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_participant_allowance,price_subtotal:0
+msgid "Price Subtotal"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,product_id:0
+#: field:hr.training_participant_allowance,product_id:0
+msgid "Product"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_participant_allowance,pricelist_id:0
+msgid "Product Pricelist"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_product_template
+msgid "Product Template"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,python_code:0
+#: selection:hr.training_allowance,qty_computation_method:0
+#: view:hr.training_allowance_pricelist_policy_field:hr_employee_training_allowance.hr_training_allowance_pricelist_policy_field_view_form
+msgid "Python Code"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,quantity:0
+#: field:hr.training_participant_allowance,quantity:0
+msgid "Qty."
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training:hr_employee_training_allowance.hr_training_view_form
+msgid "Qty. Computation Formula"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,qty_computation_method:0
+msgid "Qty. Computation Method"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training_partisipant:hr_employee_training_allowance.hr_training_participant_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: selection:hr.training_participant_allowance,state:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_select_training_participant
+msgid "Select Training Participant"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,sequence:0
+#: field:hr.training_allowance_pricelist_policy,sequence:0
+#: field:hr.training_participant_allowance,sequence:0
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_participant_allowance,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.training_partisipant:hr_employee_training_allowance.hr_training_participant_view_form
+msgid "This will remove all non-draft allowance and regenerate allowance. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,training_id:0
+msgid "Training"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: view:hr.job:hr_employee_training_allowance.hr_job_view_form
+#: field:hr.training,allowance_ids:0
+#: field:hr.training_partisipant,allowance_ids:0
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_allowance
+#: model:product.pricelist.type,name:hr_employee_training_allowance.pricelist_type_training_allowance
+msgid "Training Allowance"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.department,allowance_pricelist_id:0
+#: field:hr.employee,allowance_pricelist_id:0
+#: field:hr.job,allowance_pricelist_id:0
+#: field:hr.training_category,allowance_pricelist_id:0
+msgid "Training Allowance Pricelist"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_allowance_pricelist_policy
+msgid "Training Allowance Pricelist Policy"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.actions.act_window,name:hr_employee_training_allowance.hr_training_allowance_pricelist_policy_field_action
+#: model:ir.ui.menu,name:hr_employee_training_allowance.hr_training_allowance_pricelist_policy_field_menu
+msgid "Training Allowance Pricelist Policy Field"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_allowance_pricelist_policy_field
+msgid "Training Allowance Pricelist Policy_field"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_category
+msgid "Training Category"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_participant_allowance
+msgid "Training Participant Allowance"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_participant_type
+msgid "Training Participant Type"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: model:ir.model,name:hr_employee_training_allowance.model_hr_training_partisipant
+msgid "Training Partisipant"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_participant_allowance,price_unit:0
+msgid "Unit Price"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: field:hr.training_allowance,uom_id:0
+#: field:hr.training_participant_allowance,uom_id:0
+msgid "UoM"
+msgstr ""
+
+#. module: hr_employee_training_allowance
+#: selection:hr.training_participant_allowance,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
