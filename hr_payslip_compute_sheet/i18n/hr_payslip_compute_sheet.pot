@@ -1,0 +1,98 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payslip_compute_sheet
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payslip_compute_sheet
+#: view:hr.compute_sheet:hr_payslip_compute_sheet.hr_compute_sheet_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: view:hr.compute_sheet:hr_payslip_compute_sheet.hr_compute_sheet_view_form
+msgid "Compute"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: view:hr.compute_sheet:hr_payslip_compute_sheet.hr_compute_sheet_view_form
+#: view:hr.payslip:hr_payslip_compute_sheet.hr_payslip_view_tree
+#: model:ir.actions.act_window,name:hr_payslip_compute_sheet.hr_compute_sheet_action
+msgid "Compute Sheet"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: model:ir.model,name:hr_payslip_compute_sheet.model_hr_compute_sheet
+msgid "HR Compute Sheet"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: code:addons/hr_payslip_compute_sheet/wizards/hr_compute_sheet.py:80
+#, python-format
+msgid "Payslip No. %s cannot be computed because state is done."
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,reload_input:0
+msgid "Reload Input"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: field:hr.compute_sheet,reload_workdays:0
+msgid "Reload Workdays"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: view:hr.payslip:hr_payslip_compute_sheet.hr_payslip_view_tree
+msgid "True"
+msgstr ""
+
+#. module: hr_payslip_compute_sheet
+#: view:hr.compute_sheet:hr_payslip_compute_sheet.hr_compute_sheet_view_form
+msgid "or"
+msgstr ""
+
