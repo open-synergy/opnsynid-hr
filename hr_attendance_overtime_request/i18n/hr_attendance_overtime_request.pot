@@ -1,0 +1,538 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_attendance_overtime_request
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,name:0
+msgid "# Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,overtime_request_cancel_grp_ids:0
+#: field:res.company,overtime_request_cancel_grp_ids:0
+msgid "Allowed To Cancel Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,overtime_request_confirm_grp_ids:0
+#: field:res.company,overtime_request_confirm_grp_ids:0
+msgid "Allowed To Confirm Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,overtime_request_restart_grp_ids:0
+#: field:res.company,overtime_request_restart_grp_ids:0
+msgid "Allowed To Restart Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,overtime_request_valid_grp_ids:0
+#: field:res.company,overtime_request_valid_grp_ids:0
+msgid "Allowed To Validate Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "Apply"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.model,name:hr_attendance_overtime_request.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.model,name:hr_attendance_overtime_request.model_hr_overtime_request
+msgid "Attendance Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Attendance(s)"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,attendance_ids:0
+msgid "Attendances"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,valid_ok:0
+msgid "Can Validate"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+#: selection:hr.overtime_request,state:0
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Cancellation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,cancelled_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,cancelled_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.model,name:hr_attendance_overtime_request.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,company_id:0
+#: field:hr.overtime_request,company_id:0
+#: model:res.groups,name:hr_attendance_overtime_request.group_overtime_company
+msgid "Company"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.ui.menu,name:hr_attendance_overtime_request.hr_overtime_config_setting_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Confirmation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,confirmed_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,confirmed_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,create_uid:0
+#: field:hr.overtime_request,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,create_date:0
+#: field:hr.overtime_request,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Creation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+msgid "Date by Day"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+msgid "Date by Month"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+msgid "Date by Year"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:434
+#, python-format
+msgid "Date end must be greater than date start"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: help:hr.overtime_request,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,department_id:0
+#: model:res.groups,name:hr_attendance_overtime_request.group_overtime_department
+msgid "Department"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,display_name:0
+#: field:hr.overtime_request,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+#: selection:hr.overtime_request,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:451
+#, python-format
+msgid "Employe already has an overtime request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+#: field:hr.overtime_request,employee_id:0
+msgid "Employee"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,end_attendance_id:0
+msgid "End Attendance"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+#: field:hr.overtime_config_setting,end_overtime_buffer:0
+#: field:res.company,end_overtime_buffer:0
+msgid "End Overtime Buffer"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "Feature"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "Feature & Integration"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "General"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: help:hr.overtime_request,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,id:0
+#: field:hr.overtime_request,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: help:hr.overtime_request,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "Integration"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,__last_update:0
+#: field:hr.overtime_request,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,write_uid:0
+#: field:hr.overtime_request,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,write_date:0
+#: field:hr.overtime_request,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Log"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,manager_id:0
+msgid "Manager"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: help:hr.overtime_request,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.actions.act_window,name:hr_attendance_overtime_request.hr_overtime_request_my_action
+#: model:ir.ui.menu,name:hr_attendance_overtime_request.hr_overtime_request_my_menu
+msgid "My Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+#: field:hr.overtime_request,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.ui.menu,name:hr_attendance_overtime_request.hr_overtime_configuration_menu
+#: model:ir.ui.menu,name:hr_attendance_overtime_request.hr_overtime_root_menu
+msgid "Overtime"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.actions.act_window,name:hr_attendance_overtime_request.hr_overtime_config_setting_action
+msgid "Overtime Configuration"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,overtime_hour:0
+msgid "Overtime Hour"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.attendance,overtime_id:0
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+#: model:ir.actions.act_window,name:hr_attendance_overtime_request.hr_overtime_request_action
+#: model:ir.module.category,name:hr_attendance_overtime_request.module_attendance_overtime
+#: model:ir.ui.menu,name:hr_attendance_overtime_request.hr_overtime_request_menu
+msgid "Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:ir.module.category,name:hr_attendance_overtime_request.module_attendance_overtime_visibility
+msgid "Overtime Request Data Visibility"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:res.company,overtime_request_sequence_id:0
+msgid "Overtime Request Sequence"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Planned"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,real_date_end:0
+msgid "Real Date End"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,real_date_start:0
+msgid "Real Date Start"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,real_overtime_hour:0
+msgid "Real Overtime Hour"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Realization"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Restart"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_config_setting,overtime_request_sequence_id:0
+msgid "Sequence Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,start_attendance_id:0
+msgid "Start Attendance"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+#: field:hr.overtime_config_setting,start_overtime_buffer:0
+#: field:res.company,start_overtime_buffer:0
+msgid "Start Overtime Buffer"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+#: field:hr.overtime_request,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:res.groups,name:hr_attendance_overtime_request.group_overtime_supervisor
+msgid "Supervisor"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "To Approve"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "To Restart"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: model:res.groups,name:hr_attendance_overtime_request.group_overtime_user
+msgid "User"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+#: selection:hr.overtime_request,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,validated_user_id:0
+msgid "Validation By"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,validated_date:0
+msgid "Validation Date"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
+#: selection:hr.overtime_request,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:429
+#, python-format
+msgid "You can only delete data with draft state"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "hour(s)"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "or"
+msgstr ""
+
