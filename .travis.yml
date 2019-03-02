@@ -53,7 +53,7 @@ env:
 
   matrix:
   - LINT_CHECK="1"
-  #- TRANSIFEX="1"
+  - TRANSIFEX="1"
   #- TESTS="1" ODOO_REPO="odoo/odoo" UNIT_TEST="0"
   #- TESTS="1" ODOO_REPO="OCA/OCB" UNIT_TEST="0"
   - TESTS="1" ODOO_REPO="odoo/odoo" EXCLUDE="hr_worked_days_from_activity,hr_contract_security,hr_timesheet_security"
@@ -69,7 +69,7 @@ virtualenv:
   system_site_packages: true
 
 install:
-  - git clone --depth=1 https://github.com/OCA/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
+  - git clone --depth=1 https://github.com/open-synergy/maintainer-quality-tools.git ${HOME}/maintainer-quality-tools
   - sed -i 's/manifest_required_author\=.*/manifest_required_author="OpenSynergy Indonesia"/g' ${HOME}/maintainer-quality-tools/travis/cfg/travis_run_pylint_pr.cfg
   - export PATH=${HOME}/maintainer-quality-tools/travis:${PATH}
   - travis_install_nightly
