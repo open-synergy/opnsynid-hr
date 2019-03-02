@@ -1,0 +1,214 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_timesheet_attendance_schedule
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_timesheet_attendance_schedule
+#: selection:hr.timesheet_attendance_schedule,state:0
+msgid "Absence"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.filters,name:hr_timesheet_attendance_schedule.after_attendance_schedule_filter
+msgid "After Attendance Schedule Creation"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.attendance,schedule_id:0
+#: field:hr_timesheet_sheet.sheet,attendance_schedule_ids:0
+msgid "Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_attendance_schedule.hr_timesheet_sheet_view_form
+msgid "Attendance Schedules"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_form
+#: field:hr.timesheet_attendance_schedule,attendance_ids:0
+msgid "Attendances"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.filters,name:hr_timesheet_attendance_schedule.before_attendance_schedule_filter
+msgid "Before Attendance Schedule Creation"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.model,name:hr_timesheet_attendance_schedule.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.actions.server,name:hr_timesheet_attendance_schedule.create_attendance_schedule_actions_server
+msgid "Create Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+#: field:hr.attendance_config_setting,early_attendance_buffer:0
+#: field:res.company,early_attendance_buffer:0
+msgid "Early Attendance Buffer"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,early_start_hour:0
+msgid "Early Start"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,employee_id:0
+msgid "Employee"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,end_attendance_id:0
+msgid "End Attendance"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,finish_early_hour:0
+msgid "Finish Early"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,finish_late_hour:0
+msgid "Finish Late"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+#: field:hr.attendance_config_setting,late_attendance_buffer:0
+#: field:res.company,late_attendance_buffer:0
+msgid "Late Attendance Buffer"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,late_start_hour:0
+msgid "Late Start"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: selection:hr.timesheet_attendance_schedule,state:0
+msgid "Open"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: selection:hr.timesheet_attendance_schedule,state:0
+msgid "Present"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,real_date_end:0
+msgid "Real Date End"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,real_date_start:0
+msgid "Real Date Start"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,real_work_hour:0
+msgid "Real Work Hour"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.actions.server,name:hr_timesheet_attendance_schedule.recompute_attendance_schedule_actions_server
+msgid "Recompute Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,schedule_work_hour:0
+msgid "Schedule Work Hour"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,start_attendance_id:0
+msgid "Start Attendance"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,sheet_id:0
+#: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_timesheet_sheet_sheet
+msgid "Timesheet"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.actions.act_window,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_action
+#: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_timesheet_attendance_schedule
+#: model:ir.ui.menu,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_menu
+msgid "Timesheet Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+msgid "hour(s)"
+msgstr ""
+
