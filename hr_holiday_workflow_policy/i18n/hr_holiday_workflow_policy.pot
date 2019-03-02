@@ -1,0 +1,147 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_holiday_workflow_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_allocation_approve_group_ids:0
+msgid "Allowed to Approve Holiday Allocation"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_request_approve_group_ids:0
+msgid "Allowed to Approve Holiday Request"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_allocation_confirm_group_ids:0
+msgid "Allowed to Confirm Holiday Allocation"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_request_confirm_group_ids:0
+msgid "Allowed to Confirm Holiday Request"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_allocation_refuse_group_ids:0
+msgid "Allowed to Refuse Holiday Allocation"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_request_refuse_group_ids:0
+msgid "Allowed to Refuse Holiday Request"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_allocation_restart_group_ids:0
+msgid "Allowed to Restart Holiday Allocation"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_request_restart_group_ids:0
+msgid "Allowed to Restart Holiday Request"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_allocation_validate_group_ids:0
+msgid "Allowed to Validate Holiday Allocation"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.department,holiday_request_validate_group_ids:0
+msgid "Allowed to Validate Holiday Request"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.holidays,approve_ok:0
+msgid "Can Approve"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.holidays,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.holidays,refuse_ok:0
+msgid "Can Refuse"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.holidays,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: field:hr.holidays,validate_ok:0
+msgid "Can Validate"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.department:hr_holiday_workflow_policy.hr_department_view_form
+msgid "Holiday"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.department:hr_holiday_workflow_policy.hr_department_view_form
+msgid "Holiday Allocation Workflow"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.department:hr_holiday_workflow_policy.hr_department_view_form
+msgid "Holiday Request Workflow"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: model:ir.model,name:hr_holiday_workflow_policy.model_hr_holidays
+msgid "Leave"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_allocation_view_form
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_request_view_form
+msgid "{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_request_view_form
+msgid "{'invisible':['|',('state','!=','confirm'),('restart_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_allocation_view_form
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_request_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_allocation_view_form
+msgid "{'invisible':['|',('state','!=','validate1'),('validate_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_allocation_view_form
+msgid "{'invisible':['|',('state','not in',['confirm','refuse']),('restart_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_allocation_view_form
+msgid "{'invisible':['|',('state','not in',['draft','confirm','valid']),('refuse_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_holiday_workflow_policy
+#: view:hr.holidays:hr_holiday_workflow_policy.hr_holidays_request_view_form
+msgid "{'invisible':['|',('state','not in',['draft','confirm','validate']),('refuse_ok','=',False)]}"
+msgstr ""
+
