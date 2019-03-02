@@ -1,0 +1,35 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_training_analytic
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_training_analytic
+#: view:hr.training:hr_employee_training_analytic.hr_training_view_form
+msgid "Cost & Revenue"
+msgstr ""
+
+#. module: hr_employee_training_analytic
+#: field:hr.training,analytic_line_ids:0
+msgid "Cost and Revenue"
+msgstr ""
+
+#. module: hr_employee_training_analytic
+#: model:ir.model,name:hr_employee_training_analytic.model_hr_training
+msgid "Employee Training"
+msgstr ""
+
+#. module: hr_employee_training_analytic
+#: field:hr.training,analytic_account_id:0
+msgid "Parent Analytic Account"
+msgstr ""
+
