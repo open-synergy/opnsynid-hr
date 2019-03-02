@@ -1,0 +1,71 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_attendance_monkeypatch
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance_monkeypatch
+#: model:ir.model,name:hr_attendance_monkeypatch.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_config_setting,check_attendance:0
+#: field:res.company,check_attendance:0
+msgid "Check Attendance Entry"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: model:ir.model,name:hr_attendance_monkeypatch.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: constraint:hr.attendance:0
+msgid "Error! Sign in (resp. Sign out) must follow Sign out (resp. Sign in)"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_attendance_monkeypatch
+#: field:hr.attendance_monkeypatch,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
