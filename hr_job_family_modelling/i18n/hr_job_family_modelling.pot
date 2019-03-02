@@ -1,0 +1,219 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_job_family_modelling
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,active:0
+#: field:hr.job_family_grade,active:0
+#: field:hr.job_family_level,active:0
+#: field:hr.job_grade,active:0
+#: field:hr.job_grade_category,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,code:0
+#: field:hr.job_family_grade,code:0
+#: field:hr.job_family_level,code:0
+#: field:hr.job_grade,code:0
+#: field:hr.job_grade_category,code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,create_uid:0
+#: field:hr.job_family_grade,create_uid:0
+#: field:hr.job_family_level,create_uid:0
+#: field:hr.job_grade,create_uid:0
+#: field:hr.job_grade_category,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,create_date:0
+#: field:hr.job_family_grade,create_date:0
+#: field:hr.job_family_level,create_date:0
+#: field:hr.job_grade,create_date:0
+#: field:hr.job_grade_category,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,display_name:0
+#: field:hr.job_family_grade,display_name:0
+#: field:hr.job_family_level,display_name:0
+#: field:hr.job_grade,display_name:0
+#: field:hr.job_grade_category,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: model:ir.model,name:hr_job_family_modelling.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,id:0
+#: field:hr.job_family_grade,id:0
+#: field:hr.job_family_level,id:0
+#: field:hr.job_grade,id:0
+#: field:hr.job_grade_category,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: view:hr.job_family:hr_job_family_modelling.hr_job_family_view_form
+#: view:hr.job_family:hr_job_family_modelling.hr_job_family_view_tree
+#: field:hr.job_family,name:0
+#: view:hr.job_family_level:hr_job_family_modelling.hr_job_family_level_view_form
+#: field:hr.job_family_level,job_family_id:0
+#: model:ir.actions.act_window,name:hr_job_family_modelling.hr_job_family_action
+#: model:ir.model,name:hr_job_family_modelling.model_hr_job_family
+#: model:ir.ui.menu,name:hr_job_family_modelling.hr_job_family_menu
+msgid "Job Family"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: view:hr.job_family_grade:hr_job_family_modelling.hr_job_family_grade_view_form
+#: view:hr.job_family_grade:hr_job_family_modelling.hr_job_family_grade_view_tree
+#: field:hr.job_family_grade,name:0
+#: field:hr.job_family_level,job_family_grade_id:0
+#: model:ir.actions.act_window,name:hr_job_family_modelling.hr_job_family_grade_action
+#: model:ir.model,name:hr_job_family_modelling.model_hr_job_family_grade
+#: model:ir.ui.menu,name:hr_job_family_modelling.hr_job_family_grade_menu
+msgid "Job Family Grade"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job,job_family_level_id:0
+#: model:ir.actions.act_window,name:hr_job_family_modelling.hr_job_family_level_action
+#: model:ir.model,name:hr_job_family_modelling.model_hr_job_family_level
+#: model:ir.ui.menu,name:hr_job_family_modelling.hr_job_family_level_menu
+msgid "Job Family Level"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: model:ir.ui.menu,name:hr_job_family_modelling.job_family_modelling_configuration_menu
+msgid "Job Family Modelling"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.employee,job_grade_id:0
+#: view:hr.job_grade:hr_job_family_modelling.hr_job_grade_view_form
+#: view:hr.job_grade:hr_job_family_modelling.hr_job_grade_view_tree
+#: field:hr.job_grade,name:0
+#: model:ir.actions.act_window,name:hr_job_family_modelling.hr_job_grade_action
+#: model:ir.model,name:hr_job_family_modelling.model_hr_job_grade
+#: model:ir.ui.menu,name:hr_job_family_modelling.hr_job_grade_menu
+msgid "Job Grade"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_grade,category_id:0
+#: view:hr.job_grade_category:hr_job_family_modelling.hr_job_grade_category_view_form
+#: view:hr.job_grade_category:hr_job_family_modelling.hr_job_grade_category_view_tree
+#: field:hr.job_grade_category,name:0
+#: model:ir.actions.act_window,name:hr_job_family_modelling.hr_job_grade_category_action
+#: model:ir.model,name:hr_job_family_modelling.model_hr_job_grade_category
+#: model:ir.ui.menu,name:hr_job_family_modelling.hr_job_grade_category_menu
+msgid "Job Grade Category"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.employee,allowed_job_grade_ids:0
+#: field:hr.job,allowed_job_grade_ids:0
+#: field:hr.job,job_grade_ids:0
+#: view:hr.job_family:hr_job_family_modelling.hr_job_family_view_form
+#: field:hr.job_family,job_grade_ids:0
+#: view:hr.job_family_level:hr_job_family_modelling.hr_job_family_level_view_form
+#: field:hr.job_family_level,allowed_job_grade_ids:0
+#: field:hr.job_family_level,job_grade_ids:0
+msgid "Job Grades"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: model:ir.model,name:hr_job_family_modelling.model_hr_job
+msgid "Job Position"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: model:ir.ui.menu,name:hr_job_family_modelling.hr_job_menu
+msgid "Job Positions"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,__last_update:0
+#: field:hr.job_family_grade,__last_update:0
+#: field:hr.job_family_level,__last_update:0
+#: field:hr.job_grade,__last_update:0
+#: field:hr.job_grade_category,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,write_uid:0
+#: field:hr.job_family_grade,write_uid:0
+#: field:hr.job_family_level,write_uid:0
+#: field:hr.job_grade,write_uid:0
+#: field:hr.job_grade_category,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,write_date:0
+#: field:hr.job_family_grade,write_date:0
+#: field:hr.job_family_level,write_date:0
+#: field:hr.job_grade,write_date:0
+#: field:hr.job_grade_category,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,max_job_grade_id:0
+#: field:hr.job_family_level,max_job_grade_id:0
+msgid "Max. Grade"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_family,min_job_grade_id:0
+#: field:hr.job_family_level,min_job_grade_id:0
+msgid "Min. Grade"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: view:hr.job_family:hr_job_family_modelling.hr_job_family_view_form
+#: field:hr.job_family,note:0
+#: view:hr.job_family_grade:hr_job_family_modelling.hr_job_family_grade_view_form
+#: field:hr.job_family_grade,note:0
+#: view:hr.job_family_level:hr_job_family_modelling.hr_job_family_level_view_form
+#: field:hr.job_family_level,note:0
+#: view:hr.job_grade:hr_job_family_modelling.hr_job_grade_view_form
+#: field:hr.job_grade,note:0
+#: view:hr.job_grade_category:hr_job_family_modelling.hr_job_grade_category_view_form
+#: field:hr.job_grade_category,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: field:hr.job_grade,sequence:0
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_job_family_modelling
+#: code:addons/hr_job_family_modelling/models/hr_job_family.py:77
+#: code:addons/hr_job_family_modelling/models/hr_job_family_level.py:151
+#, python-format
+msgid "Wrong Max Min Grade"
+msgstr ""
+
