@@ -1,0 +1,195 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payslip_analysis
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payslip_analysis
+#: field:hr.payslip_analysis,amount:0
+msgid "Amount"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Col Grouping"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Ended by Day"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Ended by Month"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Ended by Week"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Ended by Year"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Started by Day"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Started by Month"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Started by Week"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Date Started by Year"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,department_id:0
+msgid "Department"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: field:hr.payslip_analysis,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: selection:hr.payslip_analysis,payslip_state:0
+msgid "Done"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: selection:hr.payslip_analysis,payslip_state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,employee_id:0
+msgid "Employee"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Empty"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: field:hr.payslip_analysis,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,job_id:0
+msgid "Job Title"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: field:hr.payslip_analysis,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,parent_id:0
+msgid "Manager"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,payslip_id:0
+msgid "Payslip"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: model:ir.actions.act_window,name:hr_payslip_analysis.hr_payslip_analysis_action
+#: model:ir.model,name:hr_payslip_analysis.model_hr_payslip_analysis
+#: model:ir.ui.menu,name:hr_payslip_analysis.hr_payslip_analysis_menu
+msgid "Payslip Analysis"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Payslip Rule"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,run_id:0
+msgid "Payslip Run"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: field:hr.payslip_analysis,payslip_state:0
+msgid "Payslip State"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Payslip Structure"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: selection:hr.payslip_analysis,payslip_state:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+msgid "Row Grouping"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: field:hr.payslip_analysis,rule_id:0
+msgid "Salary Rule"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: field:hr.payslip_analysis,structure_id:0
+msgid "Salary Structure"
+msgstr ""
+
+#. module: hr_payslip_analysis
+#: view:hr.payslip_analysis:hr_payslip_analysis.hr_payslip_analysis_view_search
+#: selection:hr.payslip_analysis,payslip_state:0
+msgid "Waiting"
+msgstr ""
+
