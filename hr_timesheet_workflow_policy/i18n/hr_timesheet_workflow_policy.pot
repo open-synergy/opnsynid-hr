@@ -1,0 +1,120 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_timesheet_workflow_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr.attendance_config_setting:hr_timesheet_workflow_policy.hr_attendance_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr.attendance_config_setting,timesheet_approve_grp_ids:0
+#: field:res.company,timesheet_approve_grp_ids:0
+msgid "Allowed To Approve"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr.attendance_config_setting,timesheet_refuse_grp_ids:0
+#: field:res.company,timesheet_refuse_grp_ids:0
+msgid "Allowed To Refuse"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr.attendance_config_setting,timesheet_set2draft_grp_ids:0
+#: field:res.company,timesheet_set2draft_grp_ids:0
+msgid "Allowed To Set To Draft"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr.attendance_config_setting,timesheet_submit_grp_ids:0
+#: field:res.company,timesheet_submit_grp_ids:0
+msgid "Allowed To Submit to Manager"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr_timesheet_sheet.sheet,approve_ok:0
+msgid "Can Approve"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr_timesheet_sheet.sheet,refuse_ok:0
+msgid "Can Refuse"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr_timesheet_sheet.sheet,set2draft_ok:0
+msgid "Can Set To Draft"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: field:hr_timesheet_sheet.sheet,submit_ok:0
+msgid "Can Submit to Manager"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: model:ir.model,name:hr_timesheet_workflow_policy.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_workflow_policy.hr_timesheet_sheet_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr.attendance_config_setting:hr_timesheet_workflow_policy.hr_attendance_config_setting_view_form
+#: model:ir.model,name:hr_timesheet_workflow_policy.model_hr_timesheet_sheet_sheet
+msgid "Timesheet"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr.attendance_config_setting:hr_timesheet_workflow_policy.hr_attendance_config_setting_view_form
+msgid "To Approve"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr.attendance_config_setting:hr_timesheet_workflow_policy.hr_attendance_config_setting_view_form
+msgid "To Refuse"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr.attendance_config_setting:hr_timesheet_workflow_policy.hr_attendance_config_setting_view_form
+msgid "To Set to Draft"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr.attendance_config_setting:hr_timesheet_workflow_policy.hr_attendance_config_setting_view_form
+msgid "To Submit to Manager"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_workflow_policy.hr_timesheet_sheet_view_form
+msgid "{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_workflow_policy.hr_timesheet_sheet_view_form
+msgid "{'invisible':['|',('state','!=','confirm'),('refuse_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_workflow_policy.hr_timesheet_sheet_view_form
+msgid "{'invisible':['|',('state','!=','done'),('set2draft_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_timesheet_workflow_policy
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_workflow_policy.hr_timesheet_sheet_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('submit_ok','=',False)]}"
+msgstr ""
+
