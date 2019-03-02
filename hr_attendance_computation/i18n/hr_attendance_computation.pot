@@ -1,0 +1,272 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_attendance_computation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_attendance_computation
+#: selection:resource.calendar,attendance_rounding:0
+#: selection:resource.calendar,leave_rounding:0
+#: selection:resource.calendar,overtime_rounding:0
+msgid "10"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: selection:resource.calendar,attendance_rounding:0
+#: selection:resource.calendar,leave_rounding:0
+#: selection:resource.calendar,overtime_rounding:0
+msgid "12"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: selection:resource.calendar,attendance_rounding:0
+#: selection:resource.calendar,leave_rounding:0
+#: selection:resource.calendar,overtime_rounding:0
+msgid "15"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: selection:resource.calendar,attendance_rounding:0
+#: selection:resource.calendar,leave_rounding:0
+#: selection:resource.calendar,overtime_rounding:0
+msgid "20"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: selection:resource.calendar,attendance_rounding:0
+#: selection:resource.calendar,leave_rounding:0
+#: selection:resource.calendar,overtime_rounding:0
+msgid "30"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: selection:resource.calendar,attendance_rounding:0
+#: selection:resource.calendar,leave_rounding:0
+#: selection:resource.calendar,overtime_rounding:0
+msgid "60"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: model:ir.model,name:hr_attendance_computation.model_hr_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:res.company:hr_attendance_computation.view_company_form
+msgid "Attendance analysis"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:hr.attendance,duration:0
+msgid "Attendance duration"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:resource.calendar,attendance_rounding:0
+msgid "Attendance rounding"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: model:ir.actions.act_window,name:hr_attendance_computation.open_view_attendance
+#: model:ir.ui.menu,name:hr_attendance_computation.menu_open_view_attendance
+msgid "Attendances analysis"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_calendar
+msgid "Calendar View"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: model:ir.model,name:hr_attendance_computation.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:res.company:hr_attendance_computation.view_company_form
+msgid "Configuration"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_filter
+#: field:hr.attendance,day:0
+msgid "Day"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:hr.attendance,inside_calendar_duration:0
+msgid "Duration within working schedule"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_filter
+msgid "Employee"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_attendance_analysis
+msgid "Employee attendances analysis"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:hr.attendance,end_datetime:0
+msgid "End date time"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:resource.calendar,attendance_rounding:0
+msgid "For instance, using rounding = 15 minutes, every sign in will be rounded to the following quarter hour and every sign out to the previous quarter hour"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_filter
+msgid "Group By..."
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_filter
+msgid "Hr Attendance Search"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:resource.calendar,leave_rounding:0
+msgid "Leave rounding"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:resource.calendar,leave_rounding:0
+msgid "On the contrary of overtime rounding, using rounding = 15 minutes, a leave of 1 minute will be considered as 15 minutes, 16 minutes as 30 minutes and so on"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_attendance_analysis
+#: field:hr.attendance,outside_calendar_duration:0
+msgid "Overtime"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:resource.calendar,overtime_rounding_tolerance:0
+msgid "Overtime can be rounded using a tolerance. Using tolerance = 3 minutes and rounding = 15 minutes, if employee does overtime of 12 minutes, it will be considered as 15 minutes."
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:resource.calendar,overtime_rounding:0
+msgid "Overtime rounding"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:resource.calendar,overtime_rounding_tolerance:0
+msgid "Overtime rounding tolerance"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: model:ir.model,name:hr_attendance_computation.model_resource_calendar
+msgid "Resource Calendar"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:resource.calendar:hr_attendance_computation.resource_calendar_form
+msgid "Roundings"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:resource.calendar,overtime_rounding:0
+msgid "Setting rounding = 30 minutes, an overtime of 29 minutes will be considered as 0 minutes, 31 minutes as 30 minutes, 61 minutes as 1 hour and so on"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:resource.calendar.attendance,tolerance_to:0
+msgid "Sign in done in the interval \"Work from + Tolerance to\" will be considered done at \"Work from\""
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:resource.calendar.attendance,tolerance_from:0
+msgid "Sign out done in the interval \"Work to - Tolerance from\" will be considered done at \"Work to\""
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_attendance_analysis
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_filter
+msgid "Start date time"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: help:res.company,working_time_precision:0
+msgid "The precision used to analyse working times over working schedule (hh:mm)"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:res.company:hr_attendance_computation.view_company_form
+msgid "This will update all the attendance data and may take a while"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_hr_attendance_filter
+msgid "Today"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:resource.calendar.attendance,tolerance_from:0
+msgid "Tolerance from"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:resource.calendar.attendance,tolerance_to:0
+msgid "Tolerance to"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_attendance_analysis
+msgid "Total hours"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:hr.attendance,triggering_attendance_id:0
+msgid "Triggering Attendance"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:res.company:hr_attendance_computation.view_company_form
+msgid "Update all the attendance data"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_attendance_form
+msgid "Update attendance analysis"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: view:hr.attendance:hr_attendance_computation.view_attendance_analysis
+msgid "Within working schedule"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: model:ir.model,name:hr_attendance_computation.model_resource_calendar_attendance
+msgid "Work Detail"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: model:ir.ui.menu,name:hr_attendance_computation.menu_view_resource_calendar
+msgid "Working Time"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: field:res.company,working_time_precision:0
+msgid "Working time precision"
+msgstr ""
+
+#. module: hr_attendance_computation
+#: code:addons/hr_attendance_computation/models/hr_attendance.py:335
+#, python-format
+msgid "Wrongly configured working schedule with id %s"
+msgstr ""
+
