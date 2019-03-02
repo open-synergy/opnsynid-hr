@@ -1,0 +1,46 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_training_experience
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_training_experience
+#: model:ir.model,name:hr_employee_training_experience.model_hr_certification
+msgid "Employee's Curriculum"
+msgstr ""
+
+#. module: hr_employee_training_experience
+#: field:hr.certification,participant_id:0
+msgid "Participant"
+msgstr ""
+
+#. module: hr_employee_training_experience
+#: field:hr.certification,training_id:0
+msgid "Training"
+msgstr ""
+
+#. module: hr_employee_training_experience
+#: field:hr.certification,training_category_id:0
+msgid "Training Category"
+msgstr ""
+
+#. module: hr_employee_training_experience
+#: model:ir.model,name:hr_employee_training_experience.model_hr_training_partisipant
+msgid "Training Partisipant"
+msgstr ""
+
+#. module: hr_employee_training_experience
+#: code:addons/hr_employee_training_experience/models/hr_certification.py:37
+#, python-format
+msgid "You can not delete certification that link into training participant"
+msgstr ""
+
