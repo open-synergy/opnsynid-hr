@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payslip_workflow_policy
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_cancel_grp_ids:0
+#: field:res.company,payslip_cancel_grp_ids:0
+msgid "Allowed To Cancel"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_run_close_grp_ids:0
+#: field:res.company,payslip_run_close_grp_ids:0
+msgid "Allowed To Close"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_compute_grp_ids:0
+#: field:hr.payroll_config_setting,payslip_run_set2draft_grp_ids:0
+#: field:res.company,payslip_compute_grp_ids:0
+#: field:res.company,payslip_run_set2draft_grp_ids:0
+msgid "Allowed To Compute Sheet"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_confirm_grp_ids:0
+#: field:res.company,payslip_confirm_grp_ids:0
+msgid "Allowed To Confirm"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_run_generate_grp_ids:0
+#: field:res.company,payslip_run_generate_grp_ids:0
+msgid "Allowed To Generate Payslips"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_refund_grp_ids:0
+#: field:res.company,payslip_refund_grp_ids:0
+msgid "Allowed To Refund"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payroll_config_setting,payslip_set2draft_grp_ids:0
+#: field:res.company,payslip_set2draft_grp_ids:0
+msgid "Allowed To Set To Draft"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip.run,close_ok:0
+msgid "Can Close"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip,compute_ok:0
+msgid "Can Compute Sheet"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip.run,generate_ok:0
+msgid "Can Generate"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip,refund_ok:0
+msgid "Can Refund"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip,set2draft_ok:0
+#: field:hr.payslip.run,set2draft_ok:0
+msgid "Can Set To Draft"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: model:ir.model,name:hr_payslip_workflow_policy.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: field:hr.payslip.run,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "Employee Payslips"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: model:ir.model,name:hr_payslip_workflow_policy.model_hr_payslip
+msgid "Pay Slip"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: model:ir.model,name:hr_payslip_workflow_policy.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "Payslips Batches"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip:hr_payslip_workflow_policy.hr_payslip_view_form
+#: view:hr.payslip.run:hr_payslip_workflow_policy.hr_payslip_run_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Close"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Compute Sheet"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Generate Payslips"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Refund"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payroll_config_setting:hr_payslip_workflow_policy.hr_payroll_config_setting_view_form
+msgid "To Set to Draft"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip:hr_payslip_workflow_policy.hr_payslip_view_form
+msgid "{'invisible':['|',('state','!=','cancel'),('set2draft_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip.run:hr_payslip_workflow_policy.hr_payslip_run_view_form
+msgid "{'invisible':['|',('state','!=','close'),('set2draft_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip.run:hr_payslip_workflow_policy.hr_payslip_run_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('close_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip:hr_payslip_workflow_policy.hr_payslip_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('compute_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip:hr_payslip_workflow_policy.hr_payslip_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip.run:hr_payslip_workflow_policy.hr_payslip_run_view_form
+msgid "{'invisible':['|',('state','!=','draft'),('generate_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip:hr_payslip_workflow_policy.hr_payslip_view_form
+msgid "{'invisible':['|',('state','not in',['confirm','done']),('refund_ok','=',False)]}"
+msgstr ""
+
+#. module: hr_payslip_workflow_policy
+#: view:hr.payslip:hr_payslip_workflow_policy.hr_payslip_view_form
+msgid "{'invisible':['|',('state','not in',['draft','hr_check','confirm','verify']),('cancel_ok','=',False)]}"
+msgstr ""
+
