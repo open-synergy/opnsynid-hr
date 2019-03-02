@@ -1,0 +1,1094 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_training
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_training
+#: selection:hr.change_training_attendance_status,state:0
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_form
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_kanban
+#: selection:hr.training_attendance,state:0
+msgid "Absence"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: selection:hr.training_partisipant,state:0
+msgid "Accomplish"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_accomplish_participant
+msgid "Accomplish Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.accomplish_participant:hr_employee_training.accomplish_participant_view_form
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: model:ir.actions.act_window,name:hr_employee_training.accomplish_participant_action
+msgid "Accomplish Participants"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.accomplish_participant:hr_employee_training.accomplish_participant_view_form
+msgid "Accomplish participants. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_cancel_reason,active:0
+#: field:hr.training_category,active:0
+#: field:hr.training_method,active:0
+#: field:hr.training_participant_cancel_reason,active:0
+#: field:hr.training_participant_type,active:0
+#: field:hr.training_purpose,active:0
+#: field:hr.training_syllabus,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: field:hr.training_partisipant,additional:0
+msgid "Additional Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,employee_training_allowed_approve_group_ids:0
+#: field:res.company,employee_training_allowed_approve_group_ids:0
+msgid "Allowed Approve Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,employee_training_allowed_cancel_group_ids:0
+#: field:res.company,employee_training_allowed_cancel_group_ids:0
+msgid "Allowed Cancel Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,employee_training_allowed_confirm_group_ids:0
+#: field:res.company,employee_training_allowed_confirm_group_ids:0
+msgid "Allowed Confirm Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,employee_training_allowed_finish_group_ids:0
+#: field:res.company,employee_training_allowed_finish_group_ids:0
+msgid "Allowed Finish Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_session,allowed_observer_ids:0
+msgid "Allowed Observer"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,employee_training_allowed_restart_group_ids:0
+#: field:res.company,employee_training_allowed_restart_group_ids:0
+msgid "Allowed Restart Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,employee_training_allowed_start_group_ids:0
+#: field:res.company,employee_training_allowed_start_group_ids:0
+msgid "Allowed Start Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_session,allowed_trainer_ids:0
+msgid "Allowed Trainer"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_analytic:0
+msgid "Analytic Account"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "Apply"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Approve training. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_partisipant,attendance_ids:0
+#: field:hr.training_session,attendance_ids:0
+msgid "Attendance"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.change_training_attendance_status:hr_employee_training.change_training_attendance_status_view_form
+#: field:hr.change_training_attendance_status,attendance_ids:0
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_form
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Attendances"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:res.partner,trainer_ok:0
+msgid "Available as Trainer"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:res.partner,observer_ok:0
+msgid "Avalaible as Observer"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,approve_ok:0
+msgid "Can Approve"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,finish_ok:0
+msgid "Can Finish"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,start_ok:0
+msgid "Can Start"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.accomplish_participant:hr_employee_training.accomplish_participant_view_form
+#: view:hr.cancel_participant:hr_employee_training.cancel_participant_view_form
+#: view:hr.change_training_attendance_status:hr_employee_training.change_training_attendance_status_view_form
+#: view:hr.select_training_participant:hr_employee_training.select_training_participant_view_form
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_cancel_participant
+msgid "Cancel Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.cancel_participant:hr_employee_training.cancel_participant_view_form
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: model:ir.actions.act_window,name:hr_employee_training.cancel_participant_action
+msgid "Cancel Participants"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.cancel_participant_detail,cancel_reason_id:0
+#: field:hr.training,cancel_reason_id:0
+#: field:hr.training_partisipant,cancel_reason_id:0
+msgid "Cancel Reason"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.cancel_participant:hr_employee_training.cancel_participant_view_form
+msgid "Cancel participants. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Cancel training session. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Cancel training. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training,state:0
+#: selection:hr.training_partisipant,state:0
+#: selection:hr.training_session,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: field:hr.training,category_id:0
+msgid "Category"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.change_training_attendance_to_absence_action
+msgid "Change Attendance Status to Absence"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.change_training_attendance_to_present_action
+msgid "Change Attendance Status to Present"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_change_training_attendance_status
+msgid "Change Training Attendance Status"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.change_training_attendance_status:hr_employee_training.change_training_attendance_status_view_form
+msgid "Change attendances status. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_category,code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,company_id:0
+#: field:hr.training.config.setting,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_config_setting_menu
+msgid "Configuration"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.accomplish_participant:hr_employee_training.accomplish_participant_view_form
+#: view:hr.cancel_participant:hr_employee_training.cancel_participant_view_form
+#: view:hr.change_training_attendance_status:hr_employee_training.change_training_attendance_status_view_form
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Confirm training. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,create_uid:0
+#: field:hr.accomplish_participant_detail,create_uid:0
+#: field:hr.cancel_participant,create_uid:0
+#: field:hr.cancel_participant_detail,create_uid:0
+#: field:hr.change_training_attendance_status,create_uid:0
+#: field:hr.select_training_participant,create_uid:0
+#: field:hr.training,create_uid:0
+#: field:hr.training.config.setting,create_uid:0
+#: field:hr.training_attendance,create_uid:0
+#: field:hr.training_cancel_reason,create_uid:0
+#: field:hr.training_category,create_uid:0
+#: field:hr.training_method,create_uid:0
+#: field:hr.training_participant_cancel_reason,create_uid:0
+#: field:hr.training_participant_type,create_uid:0
+#: field:hr.training_partisipant,create_uid:0
+#: field:hr.training_purpose,create_uid:0
+#: field:hr.training_session,create_uid:0
+#: field:hr.training_syllabus,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,create_date:0
+#: field:hr.accomplish_participant_detail,create_date:0
+#: field:hr.cancel_participant,create_date:0
+#: field:hr.cancel_participant_detail,create_date:0
+#: field:hr.change_training_attendance_status,create_date:0
+#: field:hr.select_training_participant,create_date:0
+#: field:hr.training,create_date:0
+#: field:hr.training.config.setting,create_date:0
+#: field:hr.training_attendance,create_date:0
+#: field:hr.training_cancel_reason,create_date:0
+#: field:hr.training_category,create_date:0
+#: field:hr.training_method,create_date:0
+#: field:hr.training_participant_cancel_reason,create_date:0
+#: field:hr.training_participant_type,create_date:0
+#: field:hr.training_partisipant,create_date:0
+#: field:hr.training_purpose,create_date:0
+#: field:hr.training_session,create_date:0
+#: field:hr.training_syllabus,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,date_end:0
+#: field:hr.training_attendance,date_end:0
+#: field:hr.training_session,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,date_start:0
+#: field:hr.training_attendance,date_start:0
+#: field:hr.training_session,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_search
+msgid "Date Start by Day"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_search
+msgid "Date Start by Month"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_search
+msgid "Date Start by Year"
+msgstr ""
+
+#. module: hr_employee_training
+#: code:addons/hr_employee_training/models/hr_training.py:429
+#: code:addons/hr_employee_training/models/hr_training_session.py:210
+#, python-format
+msgid "Date end must be greater than date start"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,participant_type_id:0
+msgid "Default Participant Type"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_accomplish_participant_detail
+msgid "Detail Accomplish Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_cancel_participant_detail
+msgid "Detail Cancel Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,display_name:0
+#: field:hr.accomplish_participant_detail,display_name:0
+#: field:hr.cancel_participant,display_name:0
+#: field:hr.cancel_participant_detail,display_name:0
+#: field:hr.change_training_attendance_status,display_name:0
+#: field:hr.select_training_participant,display_name:0
+#: field:hr.training,display_name:0
+#: field:hr.training.config.setting,display_name:0
+#: field:hr.training_attendance,display_name:0
+#: field:hr.training_cancel_reason,display_name:0
+#: field:hr.training_category,display_name:0
+#: field:hr.training_method,display_name:0
+#: field:hr.training_participant_cancel_reason,display_name:0
+#: field:hr.training_participant_type,display_name:0
+#: field:hr.training_partisipant,display_name:0
+#: field:hr.training_purpose,display_name:0
+#: field:hr.training_session,display_name:0
+#: field:hr.training_syllabus,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training,state:0
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: selection:hr.training_partisipant,state:0
+#: selection:hr.training_session,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant_detail,employee_id:0
+#: field:hr.cancel_participant_detail,employee_id:0
+#: field:hr.select_training_participant,employee_ids:0
+#: field:hr.training_attendance,employee_id:0
+msgid "Employee"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_attendance,identification_id:0
+msgid "Employee ID"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_training
+msgid "Employee Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_config_setting_action
+msgid "Employee Training Configuration"
+msgstr ""
+
+#. module: hr_employee_training
+#: sql_constraint:hr.training_partisipant:0
+msgid "Employee must be unique"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_experience:0
+msgid "Experience"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "Feature"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "Feature & Integration"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Finish"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Finish training session. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Finish training. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training,state:0
+#: selection:hr.training_session,state:0
+msgid "Finished"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Generate Attendance"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_search
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_search
+msgid "Group By"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,id:0
+#: field:hr.accomplish_participant_detail,id:0
+#: field:hr.cancel_participant,id:0
+#: field:hr.cancel_participant_detail,id:0
+#: field:hr.change_training_attendance_status,id:0
+#: field:hr.select_training_participant,id:0
+#: field:hr.training,id:0
+#: field:hr.training.config.setting,id:0
+#: field:hr.training_attendance,id:0
+#: field:hr.training_cancel_reason,id:0
+#: field:hr.training_category,id:0
+#: field:hr.training_method,id:0
+#: field:hr.training_participant_cancel_reason,id:0
+#: field:hr.training_participant_type,id:0
+#: field:hr.training_partisipant,id:0
+#: field:hr.training_purpose,id:0
+#: field:hr.training_session,id:0
+#: field:hr.training_syllabus,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "Integration"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,is_public:0
+msgid "Is Public"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_partisipant,job_id:0
+msgid "Job"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_job_family_modelling:0
+msgid "Job Family Modelling"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,__last_update:0
+#: field:hr.accomplish_participant_detail,__last_update:0
+#: field:hr.cancel_participant,__last_update:0
+#: field:hr.cancel_participant_detail,__last_update:0
+#: field:hr.change_training_attendance_status,__last_update:0
+#: field:hr.select_training_participant,__last_update:0
+#: field:hr.training,__last_update:0
+#: field:hr.training.config.setting,__last_update:0
+#: field:hr.training_attendance,__last_update:0
+#: field:hr.training_cancel_reason,__last_update:0
+#: field:hr.training_category,__last_update:0
+#: field:hr.training_method,__last_update:0
+#: field:hr.training_participant_cancel_reason,__last_update:0
+#: field:hr.training_participant_type,__last_update:0
+#: field:hr.training_partisipant,__last_update:0
+#: field:hr.training_purpose,__last_update:0
+#: field:hr.training_session,__last_update:0
+#: field:hr.training_syllabus,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,write_uid:0
+#: field:hr.accomplish_participant_detail,write_uid:0
+#: field:hr.cancel_participant,write_uid:0
+#: field:hr.cancel_participant_detail,write_uid:0
+#: field:hr.change_training_attendance_status,write_uid:0
+#: field:hr.select_training_participant,write_uid:0
+#: field:hr.training,write_uid:0
+#: field:hr.training.config.setting,write_uid:0
+#: field:hr.training_attendance,write_uid:0
+#: field:hr.training_cancel_reason,write_uid:0
+#: field:hr.training_category,write_uid:0
+#: field:hr.training_method,write_uid:0
+#: field:hr.training_participant_cancel_reason,write_uid:0
+#: field:hr.training_participant_type,write_uid:0
+#: field:hr.training_partisipant,write_uid:0
+#: field:hr.training_purpose,write_uid:0
+#: field:hr.training_session,write_uid:0
+#: field:hr.training_syllabus,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,write_date:0
+#: field:hr.accomplish_participant_detail,write_date:0
+#: field:hr.cancel_participant,write_date:0
+#: field:hr.cancel_participant_detail,write_date:0
+#: field:hr.change_training_attendance_status,write_date:0
+#: field:hr.select_training_participant,write_date:0
+#: field:hr.training,write_date:0
+#: field:hr.training.config.setting,write_date:0
+#: field:hr.training_attendance,write_date:0
+#: field:hr.training_cancel_reason,write_date:0
+#: field:hr.training_category,write_date:0
+#: field:hr.training_method,write_date:0
+#: field:hr.training_participant_cancel_reason,write_date:0
+#: field:hr.training_participant_type,write_date:0
+#: field:hr.training_partisipant,write_date:0
+#: field:hr.training_purpose,write_date:0
+#: field:hr.training_session,write_date:0
+#: field:hr.training_syllabus,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_allowance:0
+msgid "Manage Training Allowance"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_budget:0
+msgid "Manage Training Budget"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_evaluation:0
+msgid "Manage Training Evaluation"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training_category,type:0
+msgid "Normal"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: field:hr.training,note:0
+#: field:hr.training_cancel_reason,note:0
+#: field:hr.training_category,note:0
+#: field:hr.training_method,note:0
+#: field:hr.training_participant_cancel_reason,note:0
+#: view:hr.training_participant_type:hr_employee_training.hr_training_participant_type_view_form
+#: field:hr.training_participant_type,note:0
+#: field:hr.training_purpose,note:0
+#: field:hr.training_syllabus,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_cancel_reason:hr_employee_training.hr_training_cancel_reason_view_form
+#: view:hr.training_category:hr_employee_training.hr_training_catgory_view_form
+#: view:hr.training_method:hr_employee_training.hr_training_method_view_form
+#: view:hr.training_participant_cancel_reason:hr_employee_training.hr_training_participant_cancel_reason_view_form
+#: view:hr.training_purpose:hr_employee_training.hr_training_purpose_view_form
+#: view:hr.training_syllabus:hr_employee_training.hr_training_syllabus_view_form
+msgid "Notes"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,observer_ids:0
+#: field:hr.training_session,observer_ids:0
+msgid "Observer"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training.config.setting,module_hr_employee_training_organization_unit:0
+msgid "Organization Unit"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_category,parent_id:0
+msgid "Parent"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant_detail,participant_id:0
+#: field:hr.cancel_participant_detail,participant_id:0
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_search
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+msgid "Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_participant_cancel_reason,name:0
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_participant_cancel_reason_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_participant_cancel_reason
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_participant_cancel_reason_menu
+msgid "Participant Cancel Reason"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.select_training_participant,participant_type_id:0
+#: field:hr.training_participant_type,name:0
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_participant_type_menu
+msgid "Participant Type"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_form
+msgid "Participant absent. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: sql_constraint:hr.training_attendance:0
+msgid "Participant must be unique"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_form
+msgid "Participant present. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,detail_ids:0
+#: field:hr.cancel_participant,detail_ids:0
+msgid "Participants"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_attendance,partisipant_id:0
+#: field:hr.training_partisipant,partisipant_id:0
+msgid "Partisipant"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: field:hr.training,partisipant_ids:0
+msgid "Partisipants"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_res_partner
+msgid "Partner"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.change_training_attendance_status,state:0
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_form
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_kanban
+#: selection:hr.training_attendance,state:0
+msgid "Present"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: field:hr.training,responsible_id:0
+msgid "Primary PIC"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Purpose"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Purpose & Syllabus"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: field:hr.training,request_by_id:0
+msgid "Request By"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Reset"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Reset training. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Restart training session. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: field:hr.training,secondary_responsible_id:0
+msgid "Secondary PIC"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.select_training_participant:hr_employee_training.select_training_participant_view_form
+msgid "Select"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.select_training_participant:hr_employee_training.select_training_participant_view_form
+msgid "Select Employees"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: model:ir.actions.act_window,name:hr_employee_training.select_training_participant_action
+msgid "Select Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_select_training_participant
+msgid "Select Training Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.select_training_participant:hr_employee_training.select_training_participant_view_form
+msgid "Select participant. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_attendance,session_id:0
+msgid "Session"
+msgstr ""
+
+#. module: hr_employee_training
+#: code:addons/hr_employee_training/models/hr_training_session.py:218
+#, python-format
+msgid "Session's date end out of training duration"
+msgstr ""
+
+#. module: hr_employee_training
+#: code:addons/hr_employee_training/models/hr_training_session.py:217
+#, python-format
+msgid "Session's date start out of training duration"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: field:hr.training,session_ids:0
+msgid "Sessions"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,source_document:0
+msgid "Source Document"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Start"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Start Training. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_form
+msgid "Start training session. Are you sure?"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training,state:0
+#: selection:hr.training_session,state:0
+msgid "Started"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.change_training_attendance_status,state:0
+#: view:hr.training:hr_employee_training.hr_training_view_search
+#: field:hr.training,state:0
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_search
+#: field:hr.training_attendance,state:0
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: field:hr.training_partisipant,state:0
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_search
+#: field:hr.training_session,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.cancel_participant_detail,substitute_by_id:0
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: field:hr.training_partisipant,substitute_by_id:0
+msgid "Substitute By"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: field:hr.training_partisipant,substitute_from_id:0
+msgid "Substitute From"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training:hr_employee_training.hr_training_view_form
+msgid "Syllabus"
+msgstr ""
+
+#. module: hr_employee_training
+#: code:addons/hr_employee_training/models/hr_training.py:421
+#, python-format
+msgid "There are unfinished session(s)"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "To Approve"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "To FInish"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "To Restart"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "To Start"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,trainer_ids:0
+#: field:hr.training_session,trainer_ids:0
+msgid "Trainer"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant,training_id:0
+#: field:hr.cancel_participant,training_id:0
+#: field:hr.select_training_participant,training_id:0
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+#: view:hr.training_attendance:hr_employee_training.hr_training_attendance_view_search
+#: field:hr.training_attendance,training_id:0
+#: view:hr.training_partisipant:hr_employee_training.hr_training_participant_view_search
+#: field:hr.training_partisipant,training_id:0
+#: view:hr.training_session:hr_employee_training.hr_training_session_view_search
+#: field:hr.training_session,training_id:0
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_action
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_configuration_menu
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_menu
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_root_menu
+msgid "Training"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_attendance_action
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_attendance_per_session_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_attendance
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_attendance_menu
+msgid "Training Attendance"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_cancel_reason,name:0
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_cancel_reason_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_cancel_reason
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_cancel_reason_menu
+msgid "Training Cancel Reason"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_category,name:0
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_category_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_category
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_category_menu
+msgid "Training Category"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,method_ids:0
+#: field:hr.training_method,name:0
+#: model:ir.model,name:hr_employee_training.model_hr_training_method
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_method_menu
+msgid "Training Method"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,name:0
+msgid "Training Name"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_participant_action
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_participant_menu
+msgid "Training Participant"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_training_participant_type
+msgid "Training Participant Type"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.model,name:hr_employee_training.model_hr_training_partisipant
+msgid "Training Partisipant"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,training_purpose_ids:0
+#: field:hr.training_purpose,name:0
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_purpose_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_purpose
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_purpose_menu
+msgid "Training Purpose"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_session_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_session
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_session_menu
+msgid "Training Session"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_session,training_state:0
+msgid "Training State"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,training_syllabus_id:0
+#: field:hr.training_syllabus,name:0
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_syllabus_action
+#: model:ir.model,name:hr_employee_training.model_hr_training_syllabus
+#: model:ir.ui.menu,name:hr_employee_training.hr_training_syllabus_menu
+msgid "Training Syllabus"
+msgstr ""
+
+#. module: hr_employee_training
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_method_action
+#: model:ir.actions.act_window,name:hr_employee_training.hr_training_participant_type_action
+msgid "Training method"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training_category,type:0
+#: field:hr.training_partisipant,type_id:0
+msgid "Type"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.training,vendor_ids:0
+msgid "Vendor"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training_category,type:0
+msgid "View"
+msgstr ""
+
+#. module: hr_employee_training
+#: selection:hr.training,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_employee_training
+#: field:hr.accomplish_participant_detail,wizard_id:0
+#: field:hr.cancel_participant_detail,wizard_id:0
+msgid "Wizard"
+msgstr ""
+
+#. module: hr_employee_training
+#: view:hr.accomplish_participant:hr_employee_training.accomplish_participant_view_form
+#: view:hr.cancel_participant:hr_employee_training.cancel_participant_view_form
+#: view:hr.change_training_attendance_status:hr_employee_training.change_training_attendance_status_view_form
+#: view:hr.select_training_participant:hr_employee_training.select_training_participant_view_form
+#: view:hr.training.config.setting:hr_employee_training.hr_training_config_setting_view_form
+msgid "or"
+msgstr ""
+
