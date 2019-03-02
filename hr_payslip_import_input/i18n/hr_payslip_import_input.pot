@@ -1,0 +1,198 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payslip_import_input
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_run_process_input_line,amount:0
+msgid "Amount"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip_import_input:hr_payslip_import_input.hr_payslip_import_input_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: code:addons/hr_payslip_import_input/wizards/hr_payslip_import_input.py:43
+#, python-format
+msgid "Cannot import with the same file"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_run_process_input_line,input_code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,create_uid:0
+#: field:hr.payslip_run_imported_input_file,create_uid:0
+#: field:hr.payslip_run_process_input_line,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,create_date:0
+#: field:hr.payslip_run_imported_input_file,create_date:0
+#: field:hr.payslip_run_process_input_line,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: help:hr.payslip_import_input,delimeter:0
+msgid "Default delimeter is ,"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,delimeter:0
+msgid "Delimeter"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,display_name:0
+#: field:hr.payslip_run_imported_input_file,display_name:0
+#: field:hr.payslip_run_process_input_line,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_run_process_input_line,employee_code:0
+msgid "Employee Code"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,data:0
+msgid "File"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,name:0
+#: field:hr.payslip_run_imported_input_file,name:0
+#: field:hr.payslip_run_process_input_line,name:0
+msgid "Filename"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: model:ir.model,name:hr_payslip_import_input.model_hr_payslip_import_input
+msgid "HR Payslip Import Input"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: model:ir.actions.act_window,name:hr_payslip_import_input.hr_payslip_import_input_view_action
+msgid "HR Payslip Import Input Action"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: model:ir.model,name:hr_payslip_import_input.model_hr_payslip_run_imported_input_file
+msgid "HR Payslip Run Imported Input Line"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: model:ir.model,name:hr_payslip_import_input.model_hr_payslip_run_process_input_line
+msgid "HR Payslip Run Process Input Line"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,id:0
+#: field:hr.payslip_run_imported_input_file,id:0
+#: field:hr.payslip_run_process_input_line,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip_import_input:hr_payslip_import_input.hr_payslip_import_input_view_form
+msgid "Import"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip.run:hr_payslip_import_input.hr_payslip_run_view_form
+msgid "Import File"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip_import_input:hr_payslip_import_input.hr_payslip_import_input_view_form
+msgid "Import Inputs"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip.run:hr_payslip_import_input.hr_payslip_run_view_form
+#: field:hr.payslip.run,imported_files:0
+msgid "Imported Files"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_run_process_input_line,input_id:0
+msgid "Input"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,__last_update:0
+#: field:hr.payslip_run_imported_input_file,__last_update:0
+#: field:hr.payslip_run_process_input_line,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,write_uid:0
+#: field:hr.payslip_run_imported_input_file,write_uid:0
+#: field:hr.payslip_run_process_input_line,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,write_date:0
+#: field:hr.payslip_run_imported_input_file,write_date:0
+#: field:hr.payslip_run_process_input_line,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: code:addons/hr_payslip_import_input/wizards/hr_payslip_import_input.py:116
+#, python-format
+msgid "Not a valid file!"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: code:addons/hr_payslip_import_input/wizards/hr_payslip_import_input.py:123
+#, python-format
+msgid "Not employee or code or amount keys found"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: model:ir.model,name:hr_payslip_import_input.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: field:hr.payslip_import_input,run_id:0
+#: field:hr.payslip_run_imported_input_file,run_id:0
+#: field:hr.payslip_run_process_input_line,run_id:0
+msgid "Payslip Run"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip.run:hr_payslip_import_input.hr_payslip_run_view_form
+msgid "Payslips"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip.run:hr_payslip_import_input.hr_payslip_run_view_form
+#: field:hr.payslip.run,process_inputs:0
+msgid "Process Inputs"
+msgstr ""
+
+#. module: hr_payslip_import_input
+#: view:hr.payslip_import_input:hr_payslip_import_input.hr_payslip_import_input_view_form
+msgid "or"
+msgstr ""
+
