@@ -1,0 +1,518 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_dicipline
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_dicipline
+#: field:hr.dicipline,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_reason,active:0
+#: field:hr.dicipline_type,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,allowed_reason_ids:0
+msgid "Allowed Reasons"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,dicipline_approve_grp_ids:0
+msgid "Allowed To Approve Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,dicipline_cancel_grp_ids:0
+msgid "Allowed To Cancel Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,dicipline_confirm_grp_ids:0
+msgid "Allowed To Confirm Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,dicipline_done_grp_ids:0
+msgid "Allowed To Finish Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,dicipline_open_grp_ids:0
+msgid "Allowed To Open Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,dicipline_restart_grp_ids:0
+msgid "Allowed To Restart Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Approve Employee Diciplines. Are you sure?"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: selection:hr.dicipline,state:0
+msgid "Approved"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,approve_user_id:0
+msgid "Approved By"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,approve_date:0
+msgid "Approved Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,approve_ok:0
+msgid "Can Approve"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,done_ok:0
+msgid "Can Finish"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,open_ok:0
+msgid "Can Open"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Cancel Employee Diciplines. Are you sure?"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,cancel_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,cancel_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: selection:hr.dicipline,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_reason,code:0
+#: field:hr.dicipline_type,code:0
+msgid "Code"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: field:hr.dicipline,company_id:0
+#: model:res.groups,name:hr_dicipline.group_dicipline_operator_company
+#: model:res.groups,name:hr_dicipline.group_dicipline_viewer_company
+msgid "Company"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Confirm Employee Diciplines. Are you sure?"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,confirm_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,confirm_date:0
+msgid "Confirmation Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,create_uid:0
+#: field:hr.dicipline_reason,create_uid:0
+#: field:hr.dicipline_type,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,create_date:0
+#: field:hr.dicipline_reason,create_date:0
+#: field:hr.dicipline_type,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_dicipline
+#: help:hr.dicipline,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: field:hr.dicipline,department_id:0
+#: model:res.groups,name:hr_dicipline.group_dicipline_operator_department
+#: model:res.groups,name:hr_dicipline.group_dicipline_viewer_department
+msgid "Department"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.ui.menu,name:hr_dicipline.hr_dicipline_root_menu
+msgid "Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_reason,name:0
+#: field:hr.dicipline_type,reason_ids:0
+#: model:ir.model,name:hr_dicipline.model_hr_dicipline_reason
+msgid "Dicipline Reason"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.actions.act_window,name:hr_dicipline.hr_dicipline_reason_action
+#: model:ir.ui.menu,name:hr_dicipline.hr_dicipline_reason_type_menu
+msgid "Dicipline Reasons"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_reason,dicipline_type_id:0
+#: field:hr.dicipline_type,name:0
+#: model:ir.model,name:hr_dicipline.model_hr_dicipline_type
+msgid "Dicipline Type"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.actions.act_window,name:hr_dicipline.hr_dicipline_type_action
+#: model:ir.ui.menu,name:hr_dicipline.hr_dicipline_type_type_menu
+msgid "Dicipline Types"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,display_name:0
+#: field:hr.dicipline_reason,display_name:0
+#: field:hr.dicipline_type,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Done"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,done_user_id:0
+msgid "Done By"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,done_date:0
+msgid "Done Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: selection:hr.dicipline,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,effective_date:0
+msgid "Effective Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Effective Date by Day"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Effective Date by Month"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Effective Date by Week"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Effective Date by Year"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: field:hr.dicipline,employee_id:0
+msgid "Employee"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.model,name:hr_dicipline.model_hr_dicipline
+msgid "Employee Dicipline"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.module.category,name:hr_dicipline.module_categ_dicipline_operator
+msgid "Employee Dicipline Operator"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.module.category,name:hr_dicipline.module_categ_dicipline_viewer
+msgid "Employee Dicipline Viewer"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.actions.act_window,name:hr_dicipline.hr_dicipline_action
+#: model:ir.ui.menu,name:hr_dicipline.hr_dicipline_type_menu
+msgid "Employee Diciplines"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Finish Employee Diciplines. Are you sure?"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: hr_dicipline
+#: help:hr.dicipline,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,id:0
+#: field:hr.dicipline_reason,id:0
+#: field:hr.dicipline_type,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_dicipline
+#: help:hr.dicipline,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,__last_update:0
+#: field:hr.dicipline_reason,__last_update:0
+#: field:hr.dicipline_type,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,write_uid:0
+#: field:hr.dicipline_reason,write_uid:0
+#: field:hr.dicipline_type,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,write_date:0
+#: field:hr.dicipline_reason,write_date:0
+#: field:hr.dicipline_type,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Log"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_dicipline
+#: help:hr.dicipline,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:ir.actions.act_window,name:hr_dicipline.my_hr_dicipline_action
+#: model:ir.ui.menu,name:hr_dicipline.my_hr_dicipline_type_menu
+msgid "My Employee Diciplines"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+#: field:hr.dicipline,note:0
+#: view:hr.dicipline_reason:hr_dicipline.hr_dicipline_reason_view_form
+#: field:hr.dicipline_reason,note:0
+#: view:hr.dicipline_type:hr_dicipline.hr_dicipline_type_view_form
+#: field:hr.dicipline_type,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_dicipline
+#: selection:hr.dicipline,state:0
+msgid "On Progress"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+msgid "Open"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Open Employee Diciplines. Are you sure?"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,open_user_id:0
+msgid "Opened By"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,open_date:0
+msgid "Opened Date"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline_type:hr_dicipline.hr_dicipline_type_view_form
+msgid "Policies"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Policy"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: field:hr.dicipline,reason_id:0
+msgid "Reason"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Reset Employee Diciplines. Are you sure?"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline_type,sequence_id:0
+msgid "Sequence"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_form
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: field:hr.dicipline,state:0
+msgid "State"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:res.groups,name:hr_dicipline.group_dicipline_operator_supervisor
+#: model:res.groups,name:hr_dicipline.group_dicipline_viewer_supervisor
+msgid "Supervisor"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: field:hr.dicipline,type_id:0
+msgid "Type"
+msgstr ""
+
+#. module: hr_dicipline
+#: field:hr.dicipline,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_dicipline
+#: model:res.groups,name:hr_dicipline.group_dicipline_operator_user
+msgid "User"
+msgstr ""
+
+#. module: hr_dicipline
+#: selection:hr.dicipline,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: hr_dicipline
+#: view:hr.dicipline:hr_dicipline.hr_dicipline_view_search
+#: selection:hr.dicipline,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_dicipline
+#: code:addons/hr_dicipline/models/hr_dicipline.py:236
+#, python-format
+msgid "You can only delete data on draft state"
+msgstr ""
+
