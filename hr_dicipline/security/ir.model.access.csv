@@ -1,0 +1,7 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_dicipline_type_employee,hr.dicipline_type - Employee,model_hr_dicipline_type,base.group_hr_user,1,1,1,1
+access_hr_dicipline_type_all,hr.dicipline_type - All,model_hr_dicipline_type,,1,0,0,0
+access_hr_dicipline_reason_employee,hr.dicipline_reason - Employee,model_hr_dicipline_reason,base.group_hr_user,1,1,1,1
+access_hr_dicipline_reason_all,hr.dicipline_reason - All,model_hr_dicipline_reason,,1,0,0,0
+access_hr_dicipline_employee,hr.dicipline - Employee,model_hr_dicipline,base.group_hr_user,1,0,0,0
+access_hr_dicipline_operator,hr.dicipline - Operator,model_hr_dicipline,group_dicipline_operator_user,1,1,1,1
