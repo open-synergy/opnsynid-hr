@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="seq_type_dicipline" model="ir.sequence.type">
+    <field name="name">Employee Dicipline</field>
+    <field name="code">hr.dicipline</field>
+</record>
+
+</data>
+
+<data noupdate="1">
+<record id="sequence_dicipline" model="ir.sequence">
+    <field name="name">Employee Dicipline</field>
+    <field name="code">hr.dicipline</field>
+    <field name="padding">5</field>
+    <field name="prefix">DCP/%(year)s/</field>
+    <field eval="1" name="number_next"/>
+    <field eval="1" name="number_increment"/>
+</record>
+</data>
+</openerp>

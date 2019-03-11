@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2017 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<menuitem
+    id="hr_dicipline_root_menu"
+    name="Dicipline"
+    parent="hr.menu_hr_root"
+    sequence="3"
+    />
+
+
+
+</data>
+</openerp>
