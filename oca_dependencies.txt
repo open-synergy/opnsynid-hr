@@ -16,3 +16,4 @@ hr https://github.com/OCA/hr 8.0
 server-tools https://github.com/open-synergy/server-tools.git 8.0-dev
 opnsynid-server-tools https://github.com/open-synergy/opnsynid-server-tools.git 8.0
 opnsynid-partner-contact https://github.com/open-synergy/opnsynid-partner-contact.git 8.0
+opnsynid-loan-saving https://github.com/open-synergy/opnsynid-loan-saving.git 8.0
