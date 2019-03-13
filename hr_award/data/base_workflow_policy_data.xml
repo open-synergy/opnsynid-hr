@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="workflow_policy_award" model="base.workflow_policy">
+    <field name="model_id" ref="hr_award.model_hr_award"/>
+</record>
+
+<record id="workflow_policy_award_confirm" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_confirm_ok"/>
+    <field name="python_code">result = document.type_id.award_confirm_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_award_approve" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_approve_ok"/>
+    <field name="python_code">result = document.type_id.award_approve_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_award_open" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_open_ok"/>
+    <field name="python_code">result = document.type_id.award_open_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_award_done" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_done_ok"/>
+    <field name="python_code">result = document.type_id.award_done_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_award_cancel" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_cancel_ok"/>
+    <field name="python_code">result = document.type_id.award_cancel_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_award_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_restart_ok"/>
+    <field name="python_code">result = document.type_id.award_restart_grp_ids.ids</field>
+</record>
+
+</data>
+</openerp>

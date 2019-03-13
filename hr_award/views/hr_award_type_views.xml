@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+<record id="hr_award_type_view_tree" model="ir.ui.view">
+    <field name="name">hr.award_type tree</field>
+    <field name="model">hr.award_type</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+            <field name="code"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_award_type_view_form" model="ir.ui.view">
+    <field name="name">hr.award_type form</field>
+    <field name="model">hr.award_type</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+            </header>
+            <group name="header_1" colspan="4" col="2">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="active"/>
+                <field name="sequence_id"/>
+            </group>
+            <notebook>
+                <page name="policy" string="Policies">
+                    <group name="policy_1" colspan="4" col="2">
+                        <field name="award_confirm_grp_ids" widget="many2many_tags"/>
+                        <field name="award_approve_grp_ids" widget="many2many_tags"/>
+                        <field name="award_open_grp_ids" widget="many2many_tags"/>
+                        <field name="award_done_grp_ids" widget="many2many_tags"/>
+                        <field name="award_cancel_grp_ids" widget="many2many_tags"/>
+                        <field name="award_restart_grp_ids" widget="many2many_tags"/>
+                    </group>
+                </page>
+                <page name="note" string="Note">
+                    <field name="note"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="hr_award_type_view_search" model="ir.ui.view">
+    <field name="name">hr.award_type search</field>
+    <field name="model">hr.award_type</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+            <field name="code"/>
+        </search>
+    </field>
+</record>
+
+<record id="hr_award_type_action" model="ir.actions.act_window">
+    <field name="name">Award Types</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.award_type</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_award_type_view_search"/>
+</record>
+
+<menuitem
+    id="hr_award_type_type_menu"
+    name="Award Types"
+    parent="hr_career_administration_configuration_page.hr_career_administration_configuration_menu"
+    action="hr_award_type_action"
+    sequence="1"
+    />
+    </data>
+</openerp>
