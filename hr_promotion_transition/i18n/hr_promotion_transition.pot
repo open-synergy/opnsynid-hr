@@ -84,6 +84,11 @@ msgid "Change Department"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,change_job_grade:0
+msgid "Change Job Grade?"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,change_job_title:0
 msgid "Change Job Title"
 msgstr ""
@@ -195,6 +200,11 @@ msgid "Is a Follower"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,allowed_job_grade_ids:0
+msgid "Job Grades"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,message_last_post:0
 msgid "Last Message Date"
 msgstr ""
@@ -245,6 +255,11 @@ msgid "New Department"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,new_job_grade_id:0
+msgid "New Job Grade"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,new_job_id:0
 msgid "New Job Title"
 msgstr ""
@@ -292,6 +307,11 @@ msgstr ""
 #. module: hr_promotion_transition
 #: field:hr.promotion_transition,previous_department_id:0
 msgid "Previous Department"
+msgstr ""
+
+#. module: hr_promotion_transition
+#: field:hr.promotion_transition,previous_job_grade_id:0
+msgid "Previous Job Grade"
 msgstr ""
 
 #. module: hr_promotion_transition
