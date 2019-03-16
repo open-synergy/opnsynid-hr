@@ -18,18 +18,3 @@ msgstr ""
 msgid "Career Transition - Termination"
 msgstr ""
 
-#. module: hr_termination_transition_input_type_policy
-#: field:hr.termination_transition,change_input_type:0
-msgid "Change Payslip Input?"
-msgstr ""
-
-#. module: hr_termination_transition_input_type_policy
-#: field:hr.termination_transition,new_input_type_ids:0
-msgid "New Input Types"
-msgstr ""
-
-#. module: hr_termination_transition_input_type_policy
-#: field:hr.termination_transition,previous_input_type_ids:0
-msgid "Previous Input Types"
-msgstr ""
-
