@@ -1,0 +1,51 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_career_transition_job_family
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_career_transition_job_family
+#: model:ir.model,name:hr_career_transition_job_family.model_hr_career_transition
+msgid "Career Transition"
+msgstr ""
+
+#. module: hr_career_transition_job_family
+#: model:ir.model,name:hr_career_transition_job_family.model_hr_career_transition_type
+msgid "Career Transition Type"
+msgstr ""
+
+#. module: hr_career_transition_job_family
+#: field:hr.career_transition,change_job_grade:0
+#: field:hr.career_transition_type,change_job_grade:0
+msgid "Change Job Grade?"
+msgstr ""
+
+#. module: hr_career_transition_job_family
+#: view:hr.career_transition:hr_career_transition_job_family.hr_career_transition_view_form
+msgid "Job Grade"
+msgstr ""
+
+#. module: hr_career_transition_job_family
+#: field:hr.career_transition,allowed_job_grade_ids:0
+msgid "Job Grades"
+msgstr ""
+
+#. module: hr_career_transition_job_family
+#: field:hr.career_transition,new_job_grade_id:0
+msgid "New Job Grade"
+msgstr ""
+
+#. module: hr_career_transition_job_family
+#: field:hr.career_transition,previous_job_grade_id:0
+msgid "Previous Job Grade"
+msgstr ""
+
