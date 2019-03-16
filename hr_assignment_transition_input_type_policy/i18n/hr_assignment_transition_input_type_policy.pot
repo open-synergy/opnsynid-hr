@@ -24,27 +24,12 @@ msgid "Change Payslip Input?"
 msgstr ""
 
 #. module: hr_assignment_transition_input_type_policy
-#: field:hr.assignment_transition,change_salary_structure:0
-msgid "Change Salary Structure?"
-msgstr ""
-
-#. module: hr_assignment_transition_input_type_policy
 #: field:hr.assignment_transition,new_input_type_ids:0
 msgid "New Input Types"
 msgstr ""
 
 #. module: hr_assignment_transition_input_type_policy
-#: field:hr.assignment_transition,new_salary_structure_id:0
-msgid "New Salary Structure"
-msgstr ""
-
-#. module: hr_assignment_transition_input_type_policy
 #: field:hr.assignment_transition,previous_input_type_ids:0
 msgid "Previous Input Types"
-msgstr ""
-
-#. module: hr_assignment_transition_input_type_policy
-#: field:hr.assignment_transition,previous_salary_structure_id:0
-msgid "Previous Salery Structure"
 msgstr ""
 
