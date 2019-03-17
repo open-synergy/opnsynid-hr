@@ -14,6 +14,11 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,name:0
+msgid "# Document"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: selection:hr.timesheet_attendance_schedule,state:0
 msgid "Absence"
 msgstr ""
@@ -24,6 +29,45 @@ msgid "After Attendance Schedule Creation"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+msgid "Allowed Groups"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.attendance_config_setting,schedule_change_approve_grp_ids:0
+#: field:res.company,schedule_change_approve_grp_ids:0
+#: field:res.company,schedule_change_restart_grp_ids:0
+msgid "Allowed To Approve Attendance Schedule Change"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.attendance_config_setting,schedule_change_cancel_grp_ids:0
+#: field:res.company,schedule_change_cancel_grp_ids:0
+msgid "Allowed To Cancel Attendance Schedule Change"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.attendance_config_setting,schedule_change_confirm_grp_ids:0
+#: field:res.company,schedule_change_confirm_grp_ids:0
+msgid "Allowed To Confirm Attendance Schedule Change"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.attendance_config_setting,schedule_change_restart_grp_ids:0
+msgid "Allowed To Restart Attendance Schedule Change"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Approve"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Approve Attendance Schedule Change. Are you sure?"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_attendance
 msgid "Attendance"
 msgstr ""
@@ -31,7 +75,21 @@ msgstr ""
 #. module: hr_timesheet_attendance_schedule
 #: field:hr.attendance,schedule_id:0
 #: field:hr_timesheet_sheet.sheet,attendance_schedule_ids:0
+#: model:ir.actions.act_window,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_action
+#: model:ir.ui.menu,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_menu
 msgid "Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+#: model:ir.actions.act_window,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_action
+#: model:ir.ui.menu,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_menu
+msgid "Attendance Schedule Change"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_timesheet_attendance_schedule_change
+msgid "Attendance Schedule Change Request"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
@@ -51,8 +109,80 @@ msgid "Before Attendance Schedule Creation"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,cancel_ok:0
+msgid "Can Cancel"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,confirm_ok:0
+msgid "Can Confirm"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,valid_ok:0
+msgid "Can Finish"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,restart_ok:0
+msgid "Can Restart"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Cancel Attendance Schedule Change. Are you sure?"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,cancel_user_id:0
+msgid "Cancellation By"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,cancel_date:0
+msgid "Cancellation Date"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: selection:hr.timesheet_attendance_schedule_change,state:0
+msgid "Cancelled"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: model:ir.model,name:hr_timesheet_attendance_schedule.model_res_company
 msgid "Companies"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: field:hr.timesheet_attendance_schedule_change,company_id:0
+msgid "Company"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Confirm Attendance Schedule Change. Are you sure?"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,confirm_user_id:0
+msgid "Confirmation By"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,confirm_date:0
+msgid "Confirmation Date"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
@@ -62,11 +192,13 @@ msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,create_uid:0
+#: field:hr.timesheet_attendance_schedule_change,create_uid:0
 msgid "Created by"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,create_date:0
+#: field:hr.timesheet_attendance_schedule_change,create_date:0
 msgid "Created on"
 msgstr ""
 
@@ -81,8 +213,45 @@ msgid "Date Start"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
+msgid "Date Start by Day"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
+msgid "Date Start by Month"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
+msgid "Date Start by Week"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
+msgid "Date Start by Year"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: help:hr.timesheet_attendance_schedule_change,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,display_name:0
+#: field:hr.timesheet_attendance_schedule_change,display_name:0
 msgid "Display Name"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Done"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: selection:hr.timesheet_attendance_schedule_change,state:0
+msgid "Draft"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
@@ -98,7 +267,10 @@ msgid "Early Start"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
 #: field:hr.timesheet_attendance_schedule,employee_id:0
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: field:hr.timesheet_attendance_schedule_change,employee_id:0
 msgid "Employee"
 msgstr ""
 
@@ -118,22 +290,57 @@ msgid "Finish Late"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+msgid "Group By.."
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: help:hr.timesheet_attendance_schedule_change,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,id:0
+#: field:hr.timesheet_attendance_schedule_change,id:0
 msgid "ID"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: help:hr.timesheet_attendance_schedule_change,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,__last_update:0
+#: field:hr.timesheet_attendance_schedule_change,__last_update:0
 msgid "Last Modified on"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,write_uid:0
+#: field:hr.timesheet_attendance_schedule_change,write_uid:0
 msgid "Last Updated by"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,write_date:0
+#: field:hr.timesheet_attendance_schedule_change,write_date:0
 msgid "Last Updated on"
 msgstr ""
 
@@ -150,8 +357,54 @@ msgid "Late Start"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Log"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: help:hr.timesheet_attendance_schedule_change,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,new_date_end:0
+msgid "New Date End"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,new_date_start:0
+msgid "New Date Start"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+#: field:hr.timesheet_attendance_schedule_change,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,old_date_end:0
+msgid "Old Date End"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,old_date_start:0
+msgid "Old Date Start"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: selection:hr.timesheet_attendance_schedule,state:0
 msgid "Open"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Policy"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
@@ -180,8 +433,29 @@ msgid "Recompute Attendance Schedule"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Reset Attendance Schedule Change. Are you sure?"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: field:hr.timesheet_attendance_schedule_change,schedule_id:0
+msgid "Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule,change_ids:0
+msgid "Schedule Change"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,schedule_work_hour:0
 msgid "Schedule Work Hour"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+msgid "Set to Draft"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
@@ -191,20 +465,92 @@ msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
 #: field:hr.timesheet_attendance_schedule,state:0
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_form
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: field:hr.timesheet_attendance_schedule_change,state:0
 msgid "State"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_view_search
 #: field:hr.timesheet_attendance_schedule,sheet_id:0
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: field:hr.timesheet_attendance_schedule_change,sheet_id:0
 #: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_timesheet_sheet_sheet
 msgid "Timesheet"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
-#: model:ir.actions.act_window,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_action
 #: model:ir.model,name:hr_timesheet_attendance_schedule.model_hr_timesheet_attendance_schedule
-#: model:ir.ui.menu,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_menu
 msgid "Timesheet Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+msgid "To Approve"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+msgid "To Cancel"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+msgid "To Confirm"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.attendance_config_setting:hr_timesheet_attendance_schedule.hr_attendance_config_setting_view_form
+msgid "To Restart"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: selection:hr.timesheet_attendance_schedule_change,state:0
+msgid "Valid"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,valid_user_id:0
+msgid "Validated By"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,valid_date:0
+msgid "Validated Date"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr.timesheet_attendance_schedule_change:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_change_view_search
+#: selection:hr.timesheet_attendance_schedule_change,state:0
+msgid "Waiting for Approval"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: field:hr.timesheet_attendance_schedule_change,website_message_ids:0
+msgid "Website Messages"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: help:hr.timesheet_attendance_schedule_change,website_message_ids:0
+msgid "Website communication history"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: code:addons/hr_timesheet_attendance_schedule/models/hr_timesheet_attendance_schedule_change.py:183
+#, python-format
+msgid "You can only delete data on draft state"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
