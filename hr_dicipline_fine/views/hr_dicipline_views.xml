@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+    <data>
+<record id="hr_dicipline_view_tree" model="ir.ui.view">
+    <field name="name">hr.dicipline tree</field>
+    <field name="model">hr.dicipline</field>
+    <field name="inherit_id" ref="hr_dicipline.hr_dicipline_view_tree"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='reason_id']" position="after">
+                <field name="fine"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_dicipline_view_form" model="ir.ui.view">
+    <field name="name">hr.dicipline form</field>
+    <field name="model">hr.dicipline</field>
+    <field name="inherit_id" ref="hr_dicipline.hr_dicipline_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='reason_id']" position="after">
+                <field name="fine"/>
+            </xpath>
+            <xpath expr="//page[@name='note']" position="before">
+                <page name="fine" string="Fine" attrs="{'invisible':[('fine','=',False)]}">
+                    <group name="fine_1" colspan="4" col="2">
+                        <field name="journal_id"/>
+                        <field name="receivable_account_id"/>
+                        <field name="income_account_id"/>
+                    </group>
+                    <group name="fine_2" colspan="4" col="2">
+                        <field name="currency_id"/>
+                        <field name="fine_amount" widget="monetary" options="{'currency_field':'currency_id'}"/>
+                        <field name="fine_move_id"/>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+    </data>
+</openerp>
