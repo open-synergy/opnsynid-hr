@@ -7,3 +7,4 @@ from . import hr_timesheet_attendance_schedule
 from . import hr_timesheet_sheet
 from . import res_company
 from . import res_config
+from . import hr_timesheet_attendance_schedule_change

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="base_sequence_schedule_change" model="base.sequence_configurator">
+    <field name="model_id" ref="hr_timesheet_attendance_schedule.model_hr_timesheet_attendance_schedule_change"/>
+    <field name="sequence_field_id" search="[('model_id.model','=','hr.timesheet_attendance_schedule_change'),('name','=','name')]"/>
+    <field name="fallback_sequence_id" ref="hr_timesheet_attendance_schedule.seq_schedule_change"/>
+</record>
+
+<record id="base_sequence_schedule_change_line" model="base.sequence_configurator_line">
+    <field name="generator_id" ref="hr_timesheet_attendance_schedule.base_sequence_schedule_change"/>
+    <field name="sequence" eval="1"/>
+    <field name="sequence_computation_code">result = False</field>
+</record>
+
+</data>
+</openerp>

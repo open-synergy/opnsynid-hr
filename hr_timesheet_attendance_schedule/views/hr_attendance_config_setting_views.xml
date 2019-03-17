@@ -16,12 +16,36 @@
                         <label for="id" string="Early Attendance Buffer" class="oe_inline"/>
                         <field name="early_attendance_buffer" widget="float_time" class="oe_inline"/>
                         <label for="id" string="hour(s)" class="oe_inline"/>
-                    </div> 
+                    </div>
                     <div>
                         <label for="id" string="Late Attendance Buffer" class="oe_inline"/>
                         <field name="late_attendance_buffer" widget="float_time" class="oe_inline"/>
                         <label for="id" string="hour(s)" class="oe_inline"/>
-                    </div>               
+                    </div>
+            </xpath>
+            <xpath expr="//group[@name='general_configuration']" position="after">
+                <separator string="Attendance Schedule Change"/>
+                <group name="schedule_change_group">
+                    <label for="id" string="Allowed Groups"/>
+                    <div>
+                        <div>
+                            <label for="id" string="To Confirm" class="oe_inline"/>
+                            <field name="schedule_change_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        </div>
+                        <div>
+                            <label for="id" string="To Approve" class="oe_inline"/>
+                            <field name="schedule_change_approve_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        </div>
+                        <div>
+                            <label for="id" string="To Cancel" class="oe_inline"/>
+                            <field name="schedule_change_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        </div>
+                        <div>
+                            <label for="id" string="To Restart" class="oe_inline"/>
+                            <field name="schedule_change_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                        </div>
+                    </div>
+                </group>
             </xpath>
         </data>
     </field>

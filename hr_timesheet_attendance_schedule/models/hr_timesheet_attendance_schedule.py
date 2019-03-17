@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
@@ -157,10 +157,12 @@ class HrTimesheetAttendanceSchedule(models.Model):
     real_date_start = fields.Datetime(
         string="Real Date Start",
         related="start_attendance_id.name",
+        readonly=True,
     )
     real_date_end = fields.Datetime(
         string="Real Date End",
         related="end_attendance_id.name",
+        readonly=True,
     )
 
     state = fields.Selection(
@@ -204,6 +206,11 @@ class HrTimesheetAttendanceSchedule(models.Model):
         string="Finish Late",
         compute="_compute_work_hour",
         store=True,
+    )
+    change_ids = fields.One2many(
+        string="Schedule Change",
+        comodel_name="hr.timesheet_attendance_schedule_change",
+        inverse_name="schedule_id",
     )
 
     @api.multi
