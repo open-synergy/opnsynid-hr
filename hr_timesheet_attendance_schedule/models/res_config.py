@@ -16,3 +16,23 @@ class ResConfig(models.TransientModel):
         string="Late Attendance Buffer",
         related="company_id.late_attendance_buffer",
     )
+    schedule_change_confirm_grp_ids = fields.Many2one(
+        string="Allowed To Confirm Attendance Schedule Change",
+        comodel_name="res.groups",
+        related="company_id.schedule_change_confirm_grp_ids",
+    )
+    schedule_change_approve_grp_ids = fields.Many2one(
+        string="Allowed To Approve Attendance Schedule Change",
+        comodel_name="res.groups",
+        related="company_id.schedule_change_approve_grp_ids",
+    )
+    schedule_change_cancel_grp_ids = fields.Many2one(
+        string="Allowed To Cancel Attendance Schedule Change",
+        comodel_name="res.groups",
+        related="company_id.schedule_change_cancel_grp_ids",
+    )
+    schedule_change_restart_grp_ids = fields.Many2one(
+        string="Allowed To Restart Attendance Schedule Change",
+        comodel_name="res.groups",
+        related="company_id.schedule_change_restart_grp_ids",
+    )

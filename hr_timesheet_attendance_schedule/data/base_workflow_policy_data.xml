@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="base_workflow_attendance_schedule_change" model="base.workflow_policy">
+    <field name="model_id" ref="hr_timesheet_attendance_schedule.model_hr_timesheet_attendance_schedule_change"/>
+</record>
+<record id="base_workflow_line_loan_in_confirm" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="hr_timesheet_attendance_schedule.base_workflow_attendance_schedule_change"/>
+    <field name="field_id" search="[('model_id.model','=','hr.timesheet_attendance_schedule_change'),('name','=','confirm_ok')]"/>
+    <field name="python_code">result = document.company_id.schedule_change_confirm_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_loan_in_valid" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="hr_timesheet_attendance_schedule.base_workflow_attendance_schedule_change"/>
+    <field name="field_id" search="[('model_id.model','=','hr.timesheet_attendance_schedule_change'),('name','=','valid_ok')]"/>
+    <field name="python_code">result = document.company_id.schedule_change_valid_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_loan_in_cancel" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="hr_timesheet_attendance_schedule.base_workflow_attendance_schedule_change"/>
+    <field name="field_id" search="[('model_id.model','=','hr.timesheet_attendance_schedule_change'),('name','=','cancel_ok')]"/>
+    <field name="python_code">result = document.company_id.schedule_change_cancel_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_loan_in_restart" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="hr_timesheet_attendance_schedule.base_workflow_attendance_schedule_change"/>
+    <field name="field_id" search="[('model_id.model','=','hr.timesheet_attendance_schedule_change'),('name','=','restart_ok')]"/>
+    <field name="python_code">result = document.company_id.schedule_change_restart_grp_ids.ids</field>
+</record>
+
+</data>
+</openerp>

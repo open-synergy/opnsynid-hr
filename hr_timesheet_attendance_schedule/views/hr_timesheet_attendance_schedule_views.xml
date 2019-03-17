@@ -9,7 +9,7 @@
     <field name="name">hr.timesheet_attendance_schedule tree</field>
     <field name="model">hr.timesheet_attendance_schedule</field>
     <field name="arch" type="xml">
-        <tree>
+        <tree create="false" edit="false" delete="false">
             <field name="employee_id"/>
             <field name="sheet_id"/>
             <field name="date_start"/>
@@ -29,12 +29,13 @@
     <field name="name">hr.timesheet_attendance_schedule form</field>
     <field name="model">hr.timesheet_attendance_schedule</field>
     <field name="arch" type="xml">
-        <form>
+        <form create="false" edit="false" delete="false">
             <header>
                 <field name="state" widget="statusbar"/>
             </header>
             <group name="attendance_1" colspan="4" col="2">
                 <group name="attendance_1_1" colspan="1" col="2">
+                    <field name="sheet_id"/>
                     <field name="employee_id"/>
                     <field name="date_start"/>
                     <field name="date_end"/>
@@ -71,12 +72,20 @@
             <field name="date_start"/>
             <field name="date_end"/>
             <field name="state"/>
+            <group string="Group By.." name="groupby">
+                <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                <filter name="grp_sheet" string="Timesheet" context="{'group_by':'sheet_id'}"/>
+                <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
+                <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
+                <filter name="grp_date_start_week" string="Date Start by Week" context="{'group_by':'date_start:week'}"/>
+                <filter name="grp_date_start_day" string="Date Start by Day" context="{'group_by':'date_start:day'}"/>
+            </group>
         </search>
     </field>
 </record>
 
 <record id="hr_timesheet_attendance_schedule_action" model="ir.actions.act_window">
-    <field name="name">Timesheet Attendance Schedule</field>
+    <field name="name">Attendance Schedule</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">hr.timesheet_attendance_schedule</field>
     <field name="view_type">form</field>
@@ -86,10 +95,10 @@
 
 <menuitem
     id="hr_timesheet_attendance_schedule_menu"
-    name="Timesheet Attendance Schedule"
+    name="Attendance Schedule"
     parent="hr_attendance.menu_hr_time_tracking"
     action="hr_timesheet_attendance_schedule_action"
-    sequence="1"
+    sequence="21"
     />
 
 

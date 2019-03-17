@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Timesheet Attendance Schedule",
-    "version": "8.0.2.1.0",
+    "version": "8.0.3.0.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -13,6 +13,9 @@
     "depends": [
         "hr_timesheet_sheet",
         "hr_attendance_configuration_page",
+        "base_sequence_configurator",
+        "base_workflow_policy",
+        "web_readonly_bypass",
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -20,8 +23,12 @@
         "data/ir_actions_server_data.xml",
         "data/base_action_rule_data.xml",
         "data/ir_values_data.xml",
+        "data/ir_sequence_data.xml",
+        "data/base_sequence_configurator_data.xml",
+        "data/base_workflow_policy_data.xml",
         "views/hr_timesheet_sheet_views.xml",
         "views/hr_timesheet_attendance_schedule_views.xml",
+        "views/hr_timesheet_attendance_schedule_change_views.xml",
         "views/hr_attendance_config_setting_views.xml",
     ],
 }
