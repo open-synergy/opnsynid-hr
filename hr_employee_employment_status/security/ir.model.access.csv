@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_employment_status_employee,hr.employment_status - employee,model_hr_employment_status,base.group_user,1,1,1,1
+hr_employment_status_all,hr.employment_status - all,model_hr_employment_status,,1,0,0,0
