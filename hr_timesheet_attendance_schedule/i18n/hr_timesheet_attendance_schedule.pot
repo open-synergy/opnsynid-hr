@@ -548,6 +548,11 @@ msgid "Website communication history"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: field:hr_timesheet_sheet.sheet,working_schedule_id:0
+msgid "Working Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: code:addons/hr_timesheet_attendance_schedule/models/hr_timesheet_attendance_schedule_change.py:183
 #, python-format
 msgid "You can only delete data on draft state"
