@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
+# Copyright 2018-2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
@@ -20,6 +20,10 @@ class HrTimesheetSheet(models.Model):
                 ("readonly", False),
             ],
         },
+    )
+    working_schedule_id = fields.Many2one(
+        string="Working Schedule",
+        comodel_name="resource.calendar",
     )
 
     @api.multi
@@ -52,7 +56,12 @@ class HrTimesheetSheet(models.Model):
         if not contract.working_hours:
             return True
 
-        schedules = contract.working_hours._schedule_days(
+        if self.working_schedule_id:
+            working_schedule = self.working_schedule_id
+        else:
+            working_schedule = contract.working_hours
+
+        schedules = working_schedule._schedule_days(
             days=duration,
             day_date=dt_start)
 

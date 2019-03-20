@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -11,6 +11,9 @@
     <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
     <field name="arch" type="xml">
         <data>
+            <xpath expr="//field[@name='company_id']" position="after">
+                <field name="working_schedule_id"/>
+            </xpath>
             <xpath expr="//page[@string='Attendances']" position="after">
                 <page name="attendance_schedule" string="Attendance Schedules">
                     <field name="attendance_schedule_ids" colspan="4" nolabel="1">
