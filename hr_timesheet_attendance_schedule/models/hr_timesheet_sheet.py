@@ -32,6 +32,22 @@ class HrTimesheetSheet(models.Model):
             sheet._create_attendance_schedule()
 
     @api.multi
+    def _get_working_schedule(self):
+        self.ensure_one()
+
+        working_schedule = False
+
+        contract = self.contract_ids.sorted(
+            lambda r: r.date_start, reverse=True)[0]
+
+        if self.working_schedule_id:
+            working_schedule = self.working_schedule_id
+        elif contract.working_hours:
+            working_schedule = contract.working_hours
+
+        return working_schedule
+
+    @api.multi
     def _create_attendance_schedule(self):
         self.ensure_one()
         obj_schedule = self.env["hr.timesheet_attendance_schedule"]
@@ -50,16 +66,10 @@ class HrTimesheetSheet(models.Model):
         if not self.contract_ids:
             return True
 
-        contract = self.contract_ids.sorted(
-            lambda r: r.date_start, reverse=True)[0]
+        working_schedule = self._get_working_schedule()
 
-        if not contract.working_hours:
+        if not working_schedule:
             return True
-
-        if self.working_schedule_id:
-            working_schedule = self.working_schedule_id
-        else:
-            working_schedule = contract.working_hours
 
         schedules = working_schedule._schedule_days(
             days=duration,
@@ -96,3 +106,14 @@ class HrTimesheetSheet(models.Model):
         if schedule_count > 0:
             result = False
         return result
+
+    @api.multi
+    def action_rearrange_attendance_schedule(self):
+        waction = self.env.ref(
+            "hr_timesheet_attendance_schedule."
+            "hr_timesheet_attendance_schedule_rearrange_action").read()[0]
+        waction["domain"] = [
+            ("sheet_id", "in", self.ids),
+            ("sheet_id.state", "=", "draft"),
+        ]
+        return waction
