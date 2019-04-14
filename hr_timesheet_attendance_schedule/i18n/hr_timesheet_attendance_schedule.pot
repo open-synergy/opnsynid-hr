@@ -428,6 +428,17 @@ msgid "Real Work Hour"
 msgstr ""
 
 #. module: hr_timesheet_attendance_schedule
+#: model:ir.actions.act_window,name:hr_timesheet_attendance_schedule.hr_timesheet_attendance_schedule_rearrange_action
+msgid "Rearange Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_attendance_schedule.hr_timesheet_sheet_view_form
+#: model:ir.actions.server,name:hr_timesheet_attendance_schedule.rearrange_attendance_schedule_actions_server
+msgid "Rearrange Attendance Schedule"
+msgstr ""
+
+#. module: hr_timesheet_attendance_schedule
 #: model:ir.actions.server,name:hr_timesheet_attendance_schedule.recompute_attendance_schedule_actions_server
 msgid "Recompute Attendance Schedule"
 msgstr ""
