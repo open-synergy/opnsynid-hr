@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -10,6 +10,13 @@
     <field name="model">hr_timesheet_sheet.sheet</field>
     <field name="key2">client_action_multi</field>
     <field name="value" eval="'ir.actions.server,'+str(ref('hr_timesheet_attendance_schedule.recompute_attendance_schedule_actions_server'))"/>
+</record>
+
+<record id="rearrange_attendance_schedule_action_binding" model="ir.values">
+    <field name="name">Rearrange Attendance Schedule</field>
+    <field name="model">hr_timesheet_sheet.sheet</field>
+    <field name="key2">client_action_multi</field>
+    <field name="value" eval="'ir.actions.server,'+str(ref('hr_timesheet_attendance_schedule.rearrange_attendance_schedule_actions_server'))"/>
 </record>
 
 </data>

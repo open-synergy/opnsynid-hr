@@ -19,6 +19,11 @@ To install this module, you need to:
 5.  Search For *Timesheet Attendance Schedule*
 6.  Install the module
 
+ROADMAP
+=======
+
+1. Attendance schedule still can overlap.
+
 Credits
 =======
 

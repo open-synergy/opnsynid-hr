@@ -1,9 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright 2018 OpenSynergy Indonesia
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
 <data>
+
+<record id="hr_timesheet_attendance_schedule_view_calendar" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule calendar</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <calendar date_start="date_start" date_stop="date_end" event_open_popup="False" color="employee_id" quick_add="False" avatar_model="hr.employee">
+            <field name="employee_id"/>
+        </calendar>
+    </field>
+</record>
 
 <record id="hr_timesheet_attendance_schedule_view_tree" model="ir.ui.view">
     <field name="name">hr.timesheet_attendance_schedule tree</field>
@@ -100,6 +110,15 @@
     action="hr_timesheet_attendance_schedule_action"
     sequence="21"
     />
+
+<record id="hr_timesheet_attendance_schedule_rearrange_action" model="ir.actions.act_window">
+    <field name="name">Rearange Attendance Schedule</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.timesheet_attendance_schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">calendar</field>
+    <field name="search_view_id" ref="hr_timesheet_attendance_schedule_view_search"/>
+</record>
 
 
 </data>
