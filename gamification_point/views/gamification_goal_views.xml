@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!-- Copyright 2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+<record id="gamification_goal_view_form" model="ir.ui.view">
+    <field name="name">gamification.goal form</field>
+    <field name="model">gamification.goal</field>
+    <field name="inherit_id" ref="gamification.goal_form_view"/>
+    <field name="mode">extension</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='challenge_id']" position="after">
+                <field name="point"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="gamification_goal_view_tree" model="ir.ui.view">
+    <field name="name">gamification.goal tree</field>
+    <field name="model">gamification.goal</field>
+    <field name="inherit_id" ref="gamification.goal_list_view"/>
+    <field name="mode">extension</field>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="point" sum="Total Points"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+</data>
+</openerp>
