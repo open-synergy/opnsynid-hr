@@ -1,0 +1,45 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gamification_point
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gamification_point
+#: model:ir.model,name:gamification_point.model_gamification_challenge_line
+msgid "Gamification generic goal for challenge"
+msgstr ""
+
+#. module: gamification_point
+#: model:ir.model,name:gamification_point.model_gamification_goal
+msgid "Gamification goal instance"
+msgstr ""
+
+#. module: gamification_point
+#: field:gamification.goal,point:0
+msgid "Point"
+msgstr ""
+
+#. module: gamification_point
+#: field:gamification.challenge.line,fail_point:0
+msgid "Point Assigned When Goal Failed"
+msgstr ""
+
+#. module: gamification_point
+#: field:gamification.challenge.line,reach_point:0
+msgid "Point Assigned When Goal Reached"
+msgstr ""
+
+#. module: gamification_point
+#: view:gamification.goal:gamification_point.gamification_goal_view_tree
+msgid "Total Points"
+msgstr ""
+
