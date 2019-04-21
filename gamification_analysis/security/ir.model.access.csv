@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_gamification_goal_analysis_employee,gamification.goal_analysis - Employee,model_gamification_goal_analysis,base.group_user,1,0,0,0
