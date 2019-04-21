@@ -1,0 +1,194 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gamification_analysis
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: selection:gamification.goal_analysis,state:0
+msgid "Canceled"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Challange"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Challange Line"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,challenge_id:0
+msgid "Challenge"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,line_id:0
+msgid "Challenge Line"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Col Grouping"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,current:0
+msgid "Current Value"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Date End"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Date Start"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: selection:gamification.goal_analysis,state:0
+msgid "Draft"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Empty"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,end_date:0
+msgid "End Date"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "End Date by Day"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "End Date by Month"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "End Date by Week"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "End Date by Year"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: selection:gamification.goal_analysis,state:0
+msgid "Failed"
+msgstr ""
+
+#. module: gamification_analysis
+#: model:ir.actions.act_window,name:gamification_analysis.gamification_goal_analysis_action
+#: model:ir.model,name:gamification_analysis.model_gamification_goal_analysis
+#: model:ir.ui.menu,name:gamification_analysis.gamification_goal_analysis_menu
+msgid "Gamification Goal Analysis"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: field:gamification.goal_analysis,definition_id:0
+msgid "Goal Definition"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,id:0
+msgid "ID"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "In Progress"
+msgstr ""
+
+#. module: gamification_analysis
+#: selection:gamification.goal_analysis,state:0
+msgid "In progress"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: selection:gamification.goal_analysis,state:0
+msgid "Reached"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Row Grouping"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,start_date:0
+msgid "Start Date"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Start Date by Day"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Start Date by Month"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Start Date by Week"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+msgid "Start Date by Year"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: field:gamification.goal_analysis,state:0
+msgid "State"
+msgstr ""
+
+#. module: gamification_analysis
+#: field:gamification.goal_analysis,target_goal:0
+msgid "To Reach"
+msgstr ""
+
+#. module: gamification_analysis
+#: view:gamification.goal_analysis:gamification_analysis.gamification_goal_analysis_view_search
+#: field:gamification.goal_analysis,user_id:0
+msgid "User"
+msgstr ""
+
