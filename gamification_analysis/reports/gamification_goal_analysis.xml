@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Opensynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="gamification_goal_analysis_view_search" model="ir.ui.view">
+    <field name="name">gamification.goal_analysis search</field>
+    <field name="model">gamification.goal_analysis</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="definition_id"/>
+            <field name="user_id"/>
+            <field name="line_id"/>
+            <field name="challenge_id"/>
+            <field name="state"/>
+            <filter name="dom_empty" string="Empty" domain="[('id','=',0)]"/>
+            <group name="filter_state" string="State">
+                <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="filter_inprogress" string="In Progress" domain="[('state','=','inprogress')]"/>
+                <filter name="filter_reached" string="Reached" domain="[('state','=','reached')]"/>
+                <filter name="filter_failed" string="Failed" domain="[('state','=','failed')]"/>
+                <filter name="filter_canceled" string="Canceled" domain="[('state','=','canceled')]"/>
+            </group>
+            <group name="filter_start_date" string="Date Start">
+                <filter string="01" domain="[('start_date','&gt;=', datetime.date(context_today().year,1,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,1,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="02" domain="[('start_date','&gt;=', datetime.date(context_today().year,2,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', (datetime.date(context_today().year,2,1) + relativedelta(months=1) + relativedelta(days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="03" domain="[('start_date','&gt;=', datetime.date(context_today().year,3,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,3,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="04" domain="[('start_date','&gt;=', datetime.date(context_today().year,4,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,4,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="05" domain="[('start_date','&gt;=', datetime.date(context_today().year,5,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,5,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="06" domain="[('start_date','&gt;=', datetime.date(context_today().year,6,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,6,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="07" domain="[('start_date','&gt;=', datetime.date(context_today().year,7,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,7,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="08" domain="[('start_date','&gt;=', datetime.date(context_today().year,8,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,8,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="09" domain="[('start_date','&gt;=', datetime.date(context_today().year,9,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,9,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="10" domain="[('start_date','&gt;=', datetime.date(context_today().year,10,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,10,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="11" domain="[('start_date','&gt;=', datetime.date(context_today().year,11,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,11,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="12" domain="[('start_date','&gt;=', datetime.date(context_today().year,12,1).strftime('%Y-%m-%d')), ('start_date','&lt;=', datetime.date(context_today().year,12,31).strftime('%Y-%m-%d'))]"/>
+            </group>
+            <group name="filter_end_date" string="Date End">
+                <filter string="01" domain="[('end_date','&gt;=', datetime.date(context_today().year,1,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,1,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="02" domain="[('end_date','&gt;=', datetime.date(context_today().year,2,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', (datetime.date(context_today().year,2,1) + relativedelta(months=1) + relativedelta(days=-1)).strftime('%Y-%m-%d'))]"/>
+                <filter string="03" domain="[('end_date','&gt;=', datetime.date(context_today().year,3,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,3,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="04" domain="[('end_date','&gt;=', datetime.date(context_today().year,4,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,4,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="05" domain="[('end_date','&gt;=', datetime.date(context_today().year,5,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,5,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="06" domain="[('end_date','&gt;=', datetime.date(context_today().year,6,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,6,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="07" domain="[('end_date','&gt;=', datetime.date(context_today().year,7,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,7,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="08" domain="[('end_date','&gt;=', datetime.date(context_today().year,8,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,8,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="09" domain="[('end_date','&gt;=', datetime.date(context_today().year,9,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,9,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="10" domain="[('end_date','&gt;=', datetime.date(context_today().year,10,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,10,31).strftime('%Y-%m-%d'))]"/>
+                <filter string="11" domain="[('end_date','&gt;=', datetime.date(context_today().year,11,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,11,30).strftime('%Y-%m-%d'))]"/>
+                <filter string="12" domain="[('end_date','&gt;=', datetime.date(context_today().year,12,1).strftime('%Y-%m-%d')), ('end_date','&lt;=', datetime.date(context_today().year,12,31).strftime('%Y-%m-%d'))]"/>
+            </group>
+            <group name="row_grp" string="Row Grouping">
+                <filter name="row_grp_definition" string="Goal Definition" context="{'group_by':'definition_id'}"/>
+                <filter name="row_grp_user" string="User" context="{'group_by':'user_id'}"/>
+                <filter name="row_grp_line" string="Challange Line" context="{'group_by':'line_id'}"/>
+                <filter name="row_grp_challange" string="Challange" context="{'group_by':'challenge_id'}"/>
+                <filter name="row_grp_state" string="State" context="{'group_by':'state'}"/>
+                <filter name="row_grp_start_date_year" string="Start Date by Year" context="{'group_by':'start_date:year'}"/>
+                <filter name="row_grp_start_date_month" string="Start Date by Month" context="{'group_by':'start_date:month'}"/>
+                <filter name="row_grp_start_date_week" string="Start Date by Week" context="{'group_by':'start_date:week'}"/>
+                <filter name="row_grp_start_date_day" string="Start Date by Day" context="{'group_by':'start_date:day'}"/>
+                <filter name="row_grp_end_date_year" string="End Date by Year" context="{'group_by':'end_date:year'}"/>
+                <filter name="row_grp_end_date_month" string="End Date by Month" context="{'group_by':'end_date:month'}"/>
+                <filter name="row_grp_end_date_week" string="End Date by Week" context="{'group_by':'end_date:week'}"/>
+                <filter name="row_grp_end_date_day" string="End Date by Day" context="{'group_by':'end_date:day'}"/>
+            </group>
+            <group name="col_grp" string="Col Grouping">
+                <filter name="col_grp_definition" string="Goal Definition" context="{'col_group_by':'definition_id'}"/>
+                <filter name="col_grp_user" string="User" context="{'col_group_by':'user_id'}"/>
+                <filter name="col_grp_line" string="Challange Line" context="{'col_group_by':'line_id'}"/>
+                <filter name="col_grp_challange" string="Challange" context="{'col_group_by':'challenge_id'}"/>
+                <filter name="col_grp_state" string="State" context="{'col_group_by':'state'}"/>
+                <filter name="col_grp_start_date_year" string="Start Date by Year" context="{'col_group_by':'start_date:year'}"/>
+                <filter name="col_grp_start_date_month" string="Start Date by Month" context="{'col_group_by':'start_date:month'}"/>
+                <filter name="col_grp_start_date_week" string="Start Date by Week" context="{'col_group_by':'start_date:week'}"/>
+                <filter name="col_grp_start_date_day" string="Start Date by Day" context="{'col_group_by':'start_date:day'}"/>
+                <filter name="col_grp_end_date_year" string="End Date by Year" context="{'col_group_by':'end_date:year'}"/>
+                <filter name="col_grp_end_date_month" string="End Date by Month" context="{'col_group_by':'end_date:month'}"/>
+                <filter name="col_grp_end_date_week" string="End Date by Week" context="{'col_group_by':'end_date:week'}"/>
+                <filter name="col_grp_end_date_day" string="End Date by Day" context="{'col_group_by':'end_date:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="gamification_goal_analysis_view_graph" model="ir.ui.view">
+    <field name="name">gamification.goal_analysis graph</field>
+    <field name="model">gamification.goal_analysis</field>
+    <field name="arch" type="xml">
+        <graph type="pivot">
+            <field name="target_goal" type="measure"/>
+            <field name="current" type="measure"/>
+        </graph>
+    </field>
+</record>
+
+<record id="gamification_goal_analysis_action" model="ir.actions.act_window">
+    <field name="name">Gamification Goal Analysis</field>
+    <field name="res_model">gamification.goal_analysis</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">graph</field>
+    <field name="context">{'search_default_dom_empty':1}</field>
+    <field name="view_id" ref="gamification_goal_analysis_view_graph"/>
+    <field name="search_view_id" ref="gamification_goal_analysis_view_search"/>
+</record>
+
+
+<menuitem
+    id="gamification_goal_analysis_menu"
+    name="Gamification Goal Analysis"
+    parent="hr.menu_hr_reporting"
+    action="gamification_goal_analysis_action"
+    sequence="1" />
+
+</data>
+</openerp>
