@@ -4,16 +4,17 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Gamification Goal's Point",
-    "version": "8.0.1.1.0",
+    "version": "8.0.2.0.0",
     "category": "Human Resources",
     "website": "https://opensynergy-indonesia.com/",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "gamification",
+        "gamification_analysis",
     ],
     "data": [
+        "reports/gamification_goal_analysis.xml",
         "views/gamification_challange_views.xml",
         "views/gamification_goal_views.xml",
     ],
