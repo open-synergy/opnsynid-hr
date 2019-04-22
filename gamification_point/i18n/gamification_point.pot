@@ -14,6 +14,17 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: gamification_point
+#: field:gamification.challenge.line,fail_point_method:0
+msgid "Failed Point Method"
+msgstr ""
+
+#. module: gamification_point
+#: selection:gamification.challenge.line,fail_point_method:0
+#: selection:gamification.challenge.line,reach_point_method:0
+msgid "Fixed"
+msgstr ""
+
+#. module: gamification_point
 #: model:ir.model,name:gamification_point.model_gamification_goal_analysis
 msgid "Gamification Goal Analysis"
 msgstr ""
@@ -26,6 +37,12 @@ msgstr ""
 #. module: gamification_point
 #: model:ir.model,name:gamification_point.model_gamification_goal
 msgid "Gamification goal instance"
+msgstr ""
+
+#. module: gamification_point
+#: selection:gamification.challenge.line,fail_point_method:0
+#: selection:gamification.challenge.line,reach_point_method:0
+msgid "Multiply Current Result"
 msgstr ""
 
 #. module: gamification_point
@@ -42,6 +59,11 @@ msgstr ""
 #. module: gamification_point
 #: field:gamification.challenge.line,reach_point:0
 msgid "Point Assigned When Goal Reached"
+msgstr ""
+
+#. module: gamification_point
+#: field:gamification.challenge.line,reach_point_method:0
+msgid "Reached Point Method"
 msgstr ""
 
 #. module: gamification_point
