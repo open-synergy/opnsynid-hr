@@ -14,6 +14,11 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: gamification_point
+#: model:ir.model,name:gamification_point.model_gamification_goal_analysis
+msgid "Gamification Goal Analysis"
+msgstr ""
+
+#. module: gamification_point
 #: model:ir.model,name:gamification_point.model_gamification_challenge_line
 msgid "Gamification generic goal for challenge"
 msgstr ""
@@ -25,6 +30,7 @@ msgstr ""
 
 #. module: gamification_point
 #: field:gamification.goal,point:0
+#: field:gamification.goal_analysis,point:0
 msgid "Point"
 msgstr ""
 
