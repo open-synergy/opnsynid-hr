@@ -18,3 +18,21 @@ class GamificationChallangeLine(models.Model):
         required=True,
         default=0.0,
     )
+    reach_point_method = fields.Selection(
+        string="Reached Point Method",
+        selection=[
+            ("fixed", "Fixed"),
+            ("multiply", "Multiply Current Result")
+        ],
+        default="fixed",
+        required=True,
+    )
+    fail_point_method = fields.Selection(
+        string="Failed Point Method",
+        selection=[
+            ("fixed", "Fixed"),
+            ("multiply", "Multiply Current Result")
+        ],
+        default="fixed",
+        required=True,
+    )

@@ -11,7 +11,9 @@
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='line_ids']/tree/field[@name='target_goal']" position="after">
+                <field name="reach_point_method"/>
                 <field name="reach_point"/>
+                <field name="fail_point_method"/>
                 <field name="fail_point"/>
             </xpath>
         </data>
