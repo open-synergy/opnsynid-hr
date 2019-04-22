@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2019 Opensynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="gamification_goal_analysis_view_graph" model="ir.ui.view">
+    <field name="name">gamification.goal_analysis graph</field>
+    <field name="model">gamification.goal_analysis</field>
+    <field name="inherit_id" ref="gamification_analysis.gamification_goal_analysis_view_graph"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='current']" position="after">
+                <field name="point" type="measure"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+</data>
+</openerp>
