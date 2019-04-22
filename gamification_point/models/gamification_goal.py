@@ -13,14 +13,14 @@ class GamificationGoal(models.Model):
         "definition_id",
         "state",
         "closed",
+        "line_id",
     )
     def _compute_point(self):
         for rec in self:
-            if not rec.closed:
-                if rec.state == "reached":
-                    rec.point = rec.line_id.reach_point
-                elif rec.state == "failed":
-                    rec.point = rec.line_id.fail_point
+            if rec.state == "reached":
+                rec.point = rec.line_id.reach_point
+            elif rec.state == "failed":
+                rec.point = rec.line_id.fail_point
 
     point = fields.Float(
         string="Point",
