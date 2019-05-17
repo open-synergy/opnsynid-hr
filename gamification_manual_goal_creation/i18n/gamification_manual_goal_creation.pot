@@ -1,0 +1,131 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* gamification_manual_goal_creation
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: gamification_manual_goal_creation
+#: view:gamification.manual_goal_creation:gamification_manual_goal_creation.gamification_manual_goal_creation_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,challange_id:0
+msgid "Challange"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: view:gamification.manual_goal_creation:gamification_manual_goal_creation.gamification_manual_goal_creation_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: selection:gamification.manual_goal_creation,period:0
+msgid "Daily"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,date_end:0
+msgid "Date End"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,date_start:0
+msgid "Date Start"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,id:0
+msgid "ID"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: model:ir.model,name:gamification_manual_goal_creation.model_gamification_manual_goal_creation
+msgid "Manual Goal Creation"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: model:ir.actions.act_window,name:gamification_manual_goal_creation.gamification_manual_goal_creation_action
+msgid "Manually Create Goal"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: view:gamification.challenge:gamification_manual_goal_creation.gamification_challenge_view_form
+msgid "Manually Create Goals"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: selection:gamification.manual_goal_creation,period:0
+msgid "Monthly"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: selection:gamification.manual_goal_creation,period:0
+msgid "Non recurring"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: field:gamification.manual_goal_creation,period:0
+msgid "Periodicity"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: view:gamification.manual_goal_creation:gamification_manual_goal_creation.gamification_manual_goal_creation_view_form
+#: field:gamification.manual_goal_creation,user_ids:0
+msgid "Users"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: selection:gamification.manual_goal_creation,period:0
+msgid "Weekly"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: selection:gamification.manual_goal_creation,period:0
+msgid "Yearly"
+msgstr ""
+
+#. module: gamification_manual_goal_creation
+#: view:gamification.manual_goal_creation:gamification_manual_goal_creation.gamification_manual_goal_creation_view_form
+msgid "or"
+msgstr ""
+
