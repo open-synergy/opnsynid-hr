@@ -7,10 +7,11 @@
     <field name="arch" type="xml">
         <form>
             <group name="group_1" colspan="4" col="2">
-                <field name="payslip_batch_id"/>
+                <field name="payslip_batch_id" invisible="1"/>
                 <field name="payment_mode_id"/>
                 <field name="date_prefered"/>
-                <field name="date_scheduled"/>
+                <field name="date_scheduled"
+                    attrs="{'invisible':[('date_prefered','!=','fixed')], 'required':[('date_prefered','=','fixed')]}"/>
             </group>
             <group name="group_2" colspan="4" col="2" string="Allowed Move Lines" invisible="1">
                 <field name="allowed_move_line_ids" nolabel="1"/>
