@@ -20,7 +20,7 @@
                 <field name="account_move_line_ids" nolabel="1" domain="[('id','in',allowed_move_line_ids[0][2])]"/>
             </group>
             <footer>
-                <button string="Confirm" name="action_confirm" type="object" class="oe_highlight" confirm="Cancel participants. Are you sure?"/>
+                <button string="Confirm" name="action_confirm" type="object" class="oe_highlight" confirm="Create Payment Order. Are you sure?"/>
                 or
                 <button string="Cancel" class="oe_link" special="cancel"/>
             </footer>
