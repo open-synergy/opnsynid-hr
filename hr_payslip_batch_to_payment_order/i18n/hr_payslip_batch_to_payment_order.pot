@@ -1,0 +1,132 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payslip_batch_to_payment_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,payslip_batch_id:0
+msgid "# Payslip Batch"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,account_move_line_ids:0
+msgid "Account Move Lines"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.create_payment_order_from_payslip_batch:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_view_form
+#: field:hr.create_payment_order_from_payslip_batch,allowed_move_line_ids:0
+msgid "Allowed Move Lines"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.create_payment_order_from_payslip_batch:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_view_form
+msgid "Cancel"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.create_payment_order_from_payslip_batch:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_view_form
+msgid "Confirm"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.payslip.run:hr_payslip_batch_to_payment_order.hr_payslip_run_view_form
+msgid "Create Payment Order"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: model:ir.actions.act_window,name:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_action
+#: model:ir.model,name:hr_payslip_batch_to_payment_order.model_hr_create_payment_order_from_payslip_batch
+msgid "Create Payment Order From Payslip Batch"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.create_payment_order_from_payslip_batch:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_view_form
+msgid "Create Payment Order. Are you sure?"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: selection:hr.create_payment_order_from_payslip_batch,date_prefered:0
+msgid "Directly"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: selection:hr.create_payment_order_from_payslip_batch,date_prefered:0
+msgid "Due date"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: selection:hr.create_payment_order_from_payslip_batch,date_prefered:0
+msgid "Fixed date"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.create_payment_order_from_payslip_batch:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_view_form
+msgid "Move Lines"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,payment_mode_id:0
+msgid "Payment Mode"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,date_prefered:0
+msgid "Preferred Date"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: field:hr.create_payment_order_from_payslip_batch,date_scheduled:0
+msgid "Scheduled Date"
+msgstr ""
+
+#. module: hr_payslip_batch_to_payment_order
+#: view:hr.create_payment_order_from_payslip_batch:hr_payslip_batch_to_payment_order.create_payment_order_from_payslip_batch_view_form
+msgid "or"
+msgstr ""
+
