@@ -71,12 +71,13 @@ class HrAttendanceImport(models.TransientModel):
         try:
             employee_code = row[column]
         except:
-            return True, "Invalid employee code column"
+            return False
 
-        return False, employee_code
+        return employee_code
 
     @api.multi
     def check_employee_id(self, employee_code):
+        result = False
         obj_employee_code =\
             self.env["hr.attendance_machine_employee_code"]
         machine_id =\
@@ -91,24 +92,20 @@ class HrAttendanceImport(models.TransientModel):
             obj_employee_code.search(criteria).employee_id
 
         if employee_id:
-            return employee_id
-        else:
-            raise UserError(
-                _("No Employee Defined for code %s") % (employee_code,))
+            result = employee_id.id
+        return result
 
     @api.multi
     def get_employee_data(self, row, employee_code_column):
-        test_error, employee_code =\
+        result = False
+        employee_code =\
             self.check_employee_code(
                 row, employee_code_column)
 
-        if test_error:
-            raise UserError(
-                _("%s") % (employee_code,))
-
-        employee_id =\
-            self.check_employee_id(employee_code)
-        return employee_id.id
+        if employee_code:
+            result =\
+                self.check_employee_id(employee_code)
+        return result
 
     @api.multi
     def check_date(
@@ -263,11 +260,11 @@ class HrAttendanceImport(models.TransientModel):
             if detail == "employee_id":
                 employee_code_column =\
                     csv_detail[detail]["csv_column"]
-
-                data[detail] =\
+                data_employee =\
                     self.get_employee_data(
                         row,
                         employee_code_column)
+                data[detail] = data_employee
             elif "date" in csv_detail[detail]\
                     or "time" in csv_detail[detail]\
                     or "datetime" in csv_detail[detail]:
@@ -378,13 +375,14 @@ class HrAttendanceImport(models.TransientModel):
 
     @api.model
     def _check_attendance_creation(self, employee_id, attendance_date):
-        count_attd = self.check_attendance(
-            employee_id, attendance_date)
-
-        if count_attd == 0:
-            result = True
-        else:
-            result = False
+        result = False
+        if employee_id:
+            count_attd = self.check_attendance(
+                employee_id, attendance_date)
+            if count_attd == 0:
+                result = True
+            else:
+                result = False
 
         return result
 
