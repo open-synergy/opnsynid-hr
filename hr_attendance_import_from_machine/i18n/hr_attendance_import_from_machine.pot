@@ -14,9 +14,8 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_attendance_import_from_machine
-#: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:107
-#: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:218
-#: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:322
+#: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:215
+#: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:319
 #, python-format
 msgid "%s"
 msgstr ""
@@ -232,12 +231,6 @@ msgstr ""
 #: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:67
 #, python-format
 msgid "No CSV Details"
-msgstr ""
-
-#. module: hr_attendance_import_from_machine
-#: code:addons/hr_attendance_import_from_machine/wizards/hr_attendance_import.py:97
-#, python-format
-msgid "No Employee Defined for code %s"
 msgstr ""
 
 #. module: hr_attendance_import_from_machine
