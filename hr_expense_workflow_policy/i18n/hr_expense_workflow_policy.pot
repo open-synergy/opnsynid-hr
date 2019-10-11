@@ -115,11 +115,11 @@ msgstr ""
 
 #. module: hr_expense_workflow_policy
 #: view:hr.expense.expense:hr_expense_workflow_policy.hr_expense_view_form
-msgid "{'invisible':['|',('state','not', ['confirm','accepted']),('refuse_ok','=',False)]}"
+msgid "{'invisible':['|',('state','not in', ['confirm','accepted']),('refuse_ok','=',False)]}"
 msgstr ""
 
 #. module: hr_expense_workflow_policy
 #: view:hr.expense.expense:hr_expense_workflow_policy.hr_expense_view_form
-msgid "{'invisible':['|',('state','not', ['confirm','cancelled']),('restart_ok','=',False)]}"
+msgid "{'invisible':['|',('state','not in', ['confirm','cancelled']),('restart_ok','=',False)]}"
 msgstr ""
 
