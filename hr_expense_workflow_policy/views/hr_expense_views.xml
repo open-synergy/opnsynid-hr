@@ -40,7 +40,7 @@
 
                     <xpath expr="//button[@name='refuse']" position="attributes">
                         <attribute name="attrs">
-                            {'invisible':['|',('state','not', ['confirm','accepted']),('refuse_ok','=',False)]}
+                            {'invisible':['|',('state','not in', ['confirm','accepted']),('refuse_ok','=',False)]}
                         </attribute>
                         <attribute name="states"/>
                         <attribute name="groups"/>
@@ -48,7 +48,7 @@
 
                     <xpath expr="//button[@name='draft']" position="attributes">
                         <attribute name="attrs">
-                            {'invisible':['|',('state','not', ['confirm','cancelled']),('restart_ok','=',False)]}
+                            {'invisible':['|',('state','not in', ['confirm','cancelled']),('restart_ok','=',False)]}
                         </attribute>
                         <attribute name="states"/>
                         <attribute name="groups"/>
