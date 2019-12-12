@@ -99,6 +99,11 @@ msgid "Change Salary Structure?"
 msgstr ""
 
 #. module: hr_mutation_transition
+#: field:hr.mutation_transition,change_wage:0
+msgid "Change Wage"
+msgstr ""
+
+#. module: hr_mutation_transition
 #: field:hr.mutation_transition,change_working_schedule:0
 msgid "Change Working Schedule"
 msgstr ""
@@ -281,6 +286,11 @@ msgid "New Salary Structure"
 msgstr ""
 
 #. module: hr_mutation_transition
+#: field:hr.mutation_transition,new_wage:0
+msgid "New Wage"
+msgstr ""
+
+#. module: hr_mutation_transition
 #: field:hr.mutation_transition,new_working_hour_id:0
 msgid "New Working Schedule"
 msgstr ""
@@ -333,6 +343,11 @@ msgstr ""
 #. module: hr_mutation_transition
 #: field:hr.mutation_transition,previous_salary_structure_id:0
 msgid "Previous Salery Structure"
+msgstr ""
+
+#. module: hr_mutation_transition
+#: field:hr.mutation_transition,previous_wage:0
+msgid "Previous Wage"
 msgstr ""
 
 #. module: hr_mutation_transition
