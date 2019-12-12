@@ -89,6 +89,11 @@ msgid "Change Job Title"
 msgstr ""
 
 #. module: hr_assignment_transition
+#: field:hr.assignment_transition,change_wage:0
+msgid "Change Wage"
+msgstr ""
+
+#. module: hr_assignment_transition
 #: field:hr.assignment_transition,change_working_schedule:0
 msgid "Change Working Schedule"
 msgstr ""
@@ -260,6 +265,11 @@ msgid "New Job Title"
 msgstr ""
 
 #. module: hr_assignment_transition
+#: field:hr.assignment_transition,new_wage:0
+msgid "New Wage"
+msgstr ""
+
+#. module: hr_assignment_transition
 #: field:hr.assignment_transition,new_working_hour_id:0
 msgid "New Working Schedule"
 msgstr ""
@@ -302,6 +312,11 @@ msgstr ""
 #. module: hr_assignment_transition
 #: field:hr.assignment_transition,previous_job_id:0
 msgid "Previous Job Title"
+msgstr ""
+
+#. module: hr_assignment_transition
+#: field:hr.assignment_transition,previous_wage:0
+msgid "Previous Wage"
 msgstr ""
 
 #. module: hr_assignment_transition
