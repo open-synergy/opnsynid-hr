@@ -77,6 +77,11 @@ msgid "Archieve"
 msgstr ""
 
 #. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Basic Salary"
+msgstr ""
+
+#. module: hr_career_transition
 #: field:hr.career_transition,cancel_ok:0
 msgid "Can Cancel"
 msgstr ""
@@ -168,7 +173,7 @@ msgid "Career Transitions"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:710
+#: code:addons/hr_career_transition/models/hr_career_transition.py:735
 #, python-format
 msgid "Career transition limit exceed"
 msgstr ""
@@ -189,6 +194,12 @@ msgstr ""
 #: field:hr.career_transition,change_job_title:0
 #: field:hr.career_transition_type,change_job_title:0
 msgid "Change Job Title"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,change_wage:0
+#: field:hr.career_transition_type,change_wage:0
+msgid "Change Wage"
 msgstr ""
 
 #. module: hr_career_transition
@@ -257,13 +268,13 @@ msgid "Contract Type"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:693
+#: code:addons/hr_career_transition/models/hr_career_transition.py:718
 #, python-format
 msgid "Contract date end have to be greater than start date"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:681
+#: code:addons/hr_career_transition/models/hr_career_transition.py:706
 #, python-format
 msgid "Contract start date have to be equal to effective date"
 msgstr ""
@@ -361,7 +372,7 @@ msgid "Effective Date by Year"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:668
+#: code:addons/hr_career_transition/models/hr_career_transition.py:693
 #, python-format
 msgid "Effective date have to be greater than lastest career transition"
 msgstr ""
@@ -518,6 +529,11 @@ msgid "New Job Title"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,new_wage:0
+msgid "New Wage"
+msgstr ""
+
+#. module: hr_career_transition
 #: view:hr.career_transition_analysis:hr_career_transition.hr_career_transition_analysis_view_search
 msgid "New Working Hour"
 msgstr ""
@@ -591,6 +607,11 @@ msgstr ""
 #: field:hr.career_transition,previous_job_id:0
 #: field:hr.career_transition_analysis,previous_job_id:0
 msgid "Previous Job Title"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,previous_wage:0
+msgid "Previous Wage"
 msgstr ""
 
 #. module: hr_career_transition
@@ -719,13 +740,13 @@ msgid "Working Schedule"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:393
+#: code:addons/hr_career_transition/models/hr_career_transition.py:410
 #, python-format
 msgid "You can only cancel valid latest transition"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:644
+#: code:addons/hr_career_transition/models/hr_career_transition.py:669
 #, python-format
 msgid "You can only delete data on draft state"
 msgstr ""
