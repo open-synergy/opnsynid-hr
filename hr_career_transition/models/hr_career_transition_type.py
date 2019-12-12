@@ -55,6 +55,9 @@ class HrCareerTransitionType(models.Model):
     change_working_schedule = fields.Boolean(
         string="Change Working Schedule",
     )
+    change_wage = fields.Boolean(
+        string="Change Wage",
+    )
 
     sequence_id = fields.Many2one(
         string="Sequence",

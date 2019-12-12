@@ -237,6 +237,15 @@ class HrCareerTransition(models.Model):
             ],
         },
     )
+    new_wage = fields.Float(
+        string="New Wage",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
+    )
     # Previous Data
     previous_company_id = fields.Many2one(
         string="Previous Company",
@@ -253,6 +262,9 @@ class HrCareerTransition(models.Model):
     previous_working_hour_id = fields.Many2one(
         string="Previous Working Schedule",
         comodel_name="resource.calendar",
+    )
+    previous_wage = fields.Float(
+        string="Previous Wage",
     )
     # Data Change Policy
     change_company = fields.Boolean(
@@ -273,6 +285,11 @@ class HrCareerTransition(models.Model):
     change_working_schedule = fields.Boolean(
         related="type_id.change_working_schedule",
         string="Change Working Schedule",
+        readonly=True,
+    )
+    change_wage = fields.Boolean(
+        related="type_id.change_wage",
+        string="Change Wage",
         readonly=True,
     )
 
@@ -489,6 +506,10 @@ class HrCareerTransition(models.Model):
     def onchange_new_working_hour_id(self):
         self.new_working_hour_id = self.previous_working_hour_id
 
+    @api.onchange("previous_wage")
+    def onchange_new_wage(self):
+        self.new_wage = self.previous_wage
+
     @api.multi
     def onchange_previous_contract(self, previous_contract_id):
         value = self._get_value_before_onchange_previous_contract()
@@ -510,6 +531,7 @@ class HrCareerTransition(models.Model):
             "previous_job_id": False,
             "previous_department_id": False,
             "previous_company_id": False,
+            "previous_wage": 0.0,
         }
 
     @api.multi
@@ -524,6 +546,7 @@ class HrCareerTransition(models.Model):
             "previous_job_id": previous_contract.job_id,
             "previous_department_id": previous_contract.contract_department_id,
             "previous_company_id": previous_contract.company_id,
+            "previous_wage": previous_contract.wage,
         }
 
     @api.multi
@@ -559,7 +582,7 @@ class HrCareerTransition(models.Model):
             "working_hours": self.new_working_hour_id and \
             self.new_working_hour_id.id or \
             False,
-            "wage": 0.0,
+            "wage": self.new_wage,
             "contract_department_id": self.new_department_id and \
             self.new_department_id.id or \
             False,
@@ -584,6 +607,7 @@ class HrCareerTransition(models.Model):
             "company_id": self.new_company_id and
             self.new_company_id.id or
             False,
+            "wage": self.new_wage,
         }
 
     @api.multi
@@ -602,6 +626,7 @@ class HrCareerTransition(models.Model):
             "company_id": self.previous_company_id and
             self.previous_company_id.id or
             False,
+            "wage": self.previous_wage,
         }
 
     @api.multi

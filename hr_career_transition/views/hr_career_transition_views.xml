@@ -72,6 +72,9 @@
                             <field name="previous_working_hour_id" string="Working Schedule" readonly="1"/>
                             <field name="new_working_hour_id" nolabel="1"
                                 attrs="{'required':[('change_working_schedule','=',True)], 'readonly':[('change_working_schedule','=',False)]}"/>
+                            <field name="previous_wage" string="Basic Salary" readonly="1"/>
+                            <field name="new_wage" nolabel="1"
+                                attrs="{'required':[('change_wage','=',True)], 'readonly':[('change_wage','=',False)]}"/>
                         </group>
                     </page>
                     <page name="note" string="Note">
@@ -83,6 +86,7 @@
                             <field name="change_department"/>
                             <field name="change_job_title"/>
                             <field name="change_working_schedule"/>
+                            <field name="change_wage"/>
                         </group>
                         <group name="group_policy_2" colspan="4" col="2">
                             <field name="confirm_ok"/>

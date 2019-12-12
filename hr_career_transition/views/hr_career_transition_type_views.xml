@@ -44,6 +44,7 @@
                                 <field name="change_job_title"/>
                                 <field name="change_department"/>
                                 <field name="change_working_schedule"/>
+                                <field name="change_wage"/>
                             </group>
                         </page>
                         <page name="reason" string="Reasons">
