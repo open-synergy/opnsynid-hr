@@ -13,5 +13,8 @@ class HrExpenseExpense(models.Model):
     )
     def onchange_journal_id(self):
         self.journal_id = False
-        if self.employee_id:
+        default_journal_id = self.env.context.get("default_journal_id", False)
+        if default_journal_id:
+            self.journal_id = default_journal_id
+        elif self.employee_id:
             self.journal_id = self.employee_id.expense_journal_id
