@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="hr_overtime_request_compute_timesheet_action" model="ir.actions.server">
+    <field name="name">Link to Timesheet</field>
+    <field name="type">ir.actions.server</field>
+    <field name="state">code</field>
+    <field name="model_id" ref="hr_attendance_overtime_request.model_hr_overtime_request"/>
+    <field name="code">active_ids = env.context.get("active_ids", False)
+if active_ids:
+    for document in object.browse(active_ids):
+        if document.state in ["draft", "confirm"]:
+            document.button_link_to_timesheet()
+    </field>
+</record>
+
+<record id="hr_overtime_request_compute_timesheet_value" model="ir.values">
+    <field name="name">Link to Timesheet</field>
+    <field name="model">hr.overtime_request</field>
+    <field name="key2">client_action_multi</field>
+    <field name="value" eval="'ir.actions.server,' + str(ref('hr_overtime_request_compute_timesheet_action'))" />
+</record>
+
+</data>
+</openerp>
