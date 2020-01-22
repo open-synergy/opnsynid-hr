@@ -3,7 +3,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "Timesheet Computation Integration With Overtime",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -14,6 +14,7 @@
         "hr_attendance_overtime_request",
     ],
     "data": [
+        "data/ir_actions_server_data.xml",
         "views/hr_timesheet_sheet_views.xml",
         "views/hr_overtime_request_views.xml",
     ],

@@ -9,16 +9,22 @@ class HrOvertimeRequest(models.Model):
     _inherit = "hr.overtime_request"
 
     @api.multi
+    def _prepare_criteria_timesheet(self):
+        self.ensure_one()
+        criteria = [
+            ("employee_id", "=", self.employee_id.id),
+            ("date_from", "<=", self.date_start),
+            ("date_to", ">=", self.date_end),
+        ]
+        return criteria
+
+    @api.multi
     @api.depends(
         "employee_id", "date_start", "date_end")
     def _compute_sheet(self):
         obj_sheet = self.env["hr_timesheet_sheet.sheet"]
         for overtime in self:
-            criteria = [
-                ("employee_id", "=", overtime.employee_id.id),
-                ("date_from", "<=", overtime.date_start),
-                ("date_to", ">=", overtime.date_end),
-            ]
+            criteria = overtime._prepare_criteria_timesheet()
             sheets = obj_sheet.search(criteria, limit=1)
             overtime.sheet_id = sheets[0].id if len(sheets) > 0 else False
 
@@ -28,3 +34,7 @@ class HrOvertimeRequest(models.Model):
         compute="_compute_sheet",
         store=True,
     )
+
+    @api.multi
+    def button_link_to_timesheet(self):
+        return self._compute_sheet()
