@@ -14,6 +14,11 @@
             <xpath expr="//field[@name='active']" position="after">
                 <field name="date_join"/>
                 <field name="date_termination"/>
+                <label for="year_work_longetivity" string="Work Longetivity"/>
+                <div>
+                  <field name="year_work_longetivity" class="oe_inline"/> Years
+                  <field name="month_work_longetivity" class="oe_inline"/> Months
+                </div>
             </xpath>
         </data>
     </field>

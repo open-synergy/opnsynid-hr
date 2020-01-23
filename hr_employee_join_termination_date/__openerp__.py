@@ -4,7 +4,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Employee Join and Termination Date",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
@@ -13,6 +13,12 @@
     "depends": [
         "hr",
     ],
+    "external_dependencies": {
+        "python": [
+            "pandas",
+            "numpy",
+        ],
+    },
     "data": [
         "views/hr_employee_views.xml",
     ],
