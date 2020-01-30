@@ -33,4 +33,10 @@ class HrPayslip(models.Model):
         relation="rel_payslip_2_timesheet_computation",
         column1="payslip_id",
         column2="computation_id",
+        store=True,
+    )
+    timesheet_computation_summary_ids = fields.One2many(
+        string="Timesheet Computation Summary",
+        comodel_name="hr.timesheet_computation_summary",
+        inverse_name="payslip_id",
     )
