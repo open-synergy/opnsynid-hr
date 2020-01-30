@@ -2,7 +2,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import models, fields
 from openerp import tools
 
 
@@ -28,40 +28,40 @@ class HrTimesheetComputationSummary(models.Model):
     def _select(self):
         select_str = """
             SELECT
-            	row_number() OVER() AS id,
-            	b.payslip_id AS payslip_id,
-            	c.item_id as item_id,
-            	SUM(c.amount) as amount
+                row_number() OVER() AS id,
+                b.payslip_id AS payslip_id,
+                c.item_id as item_id,
+                SUM(c.amount) as amount
         """
         return select_str
 
     def _from(self):
         from_str = """
             FROM
-            	hr_payslip a
+                hr_payslip a
         """
         return from_str
 
     def _join(self):
         join_str = """
             JOIN
-            	rel_payslip_2_timesheet_computation AS b ON a.id=b.payslip_id
+                rel_payslip_2_timesheet_computation AS b ON a.id=b.payslip_id
             JOIN
-            	hr_timesheet_computation AS c ON b.computation_id=c.id
+                hr_timesheet_computation AS c ON b.computation_id=c.id
         """
         return join_str
 
     def _group_by(self):
         group_by_str = """
             GROUP BY
-            	b.payslip_id,c.item_id
+                b.payslip_id,c.item_id
         """
         return group_by_str
 
     def _order_by(self):
         order_by_str = """
             ORDER BY
-            	b.payslip_id
+                b.payslip_id
         """
         return order_by_str
 
