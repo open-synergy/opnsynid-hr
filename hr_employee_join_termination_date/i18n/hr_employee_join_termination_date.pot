@@ -24,6 +24,16 @@ msgid "Join Date"
 msgstr ""
 
 #. module: hr_employee_join_termination_date
+#: field:hr.employee,month_work_longetivity:0
+msgid "Month Work Longetivity"
+msgstr ""
+
+#. module: hr_employee_join_termination_date
+#: view:hr.employee:hr_employee_join_termination_date.hr_employee_view_form
+msgid "Months"
+msgstr ""
+
+#. module: hr_employee_join_termination_date
 #: view:hr.employee:hr_employee_join_termination_date.hr_employee_view_search
 msgid "Terminated"
 msgstr ""
@@ -31,5 +41,20 @@ msgstr ""
 #. module: hr_employee_join_termination_date
 #: field:hr.employee,date_termination:0
 msgid "Termination Date"
+msgstr ""
+
+#. module: hr_employee_join_termination_date
+#: view:hr.employee:hr_employee_join_termination_date.hr_employee_view_form
+msgid "Work Longetivity"
+msgstr ""
+
+#. module: hr_employee_join_termination_date
+#: field:hr.employee,year_work_longetivity:0
+msgid "Year Work Longetivity"
+msgstr ""
+
+#. module: hr_employee_join_termination_date
+#: view:hr.employee:hr_employee_join_termination_date.hr_employee_view_form
+msgid "Years"
 msgstr ""
 
