@@ -19,6 +19,12 @@ msgid "Attendance Overtime Request"
 msgstr ""
 
 #. module: hr_timesheet_computation_overtime
+#: view:hr.overtime_request:hr_timesheet_computation_overtime.hr_overtime_request_view_form
+#: model:ir.actions.server,name:hr_timesheet_computation_overtime.hr_overtime_request_compute_timesheet_action
+msgid "Link to Timesheet"
+msgstr ""
+
+#. module: hr_timesheet_computation_overtime
 #: view:hr_timesheet_sheet.sheet:hr_timesheet_computation_overtime.hr_timesheet_sheet_view_form
 #: field:hr_timesheet_sheet.sheet,overtime_ids:0
 msgid "Overtimes"
