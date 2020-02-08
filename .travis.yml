@@ -17,6 +17,8 @@ addons:
       - python-simplejson
       - python-serial
       - python-yaml
+      - python-pandas
+      - python-numpy
 
 env:
   global:
