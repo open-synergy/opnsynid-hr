@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+<record id="hr_birthday_list_reminder_view_search" model="ir.ui.view">
+    <field name="name">hr.birthday_list_reminder.search</field>
+    <field name="model">hr.birthday_list_reminder</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="name"/>
+        </search>
+    </field>
+</record>
+
+<record id="hr_birthday_list_reminder_view_tree" model="ir.ui.view">
+  <field name="name">hr.birthday_list_reminder.tree</field>
+  <field name="model">hr.birthday_list_reminder</field>
+    <field name="arch" type="xml">
+        <tree>
+            <field name="name"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_birthday_list_reminder_view_form" model="ir.ui.view">
+    <field name="name">hr.birthday_list_reminder.form</field>
+    <field name="model">hr.birthday_list_reminder</field>
+    <field name="arch" type="xml">
+        <form>
+            <header>
+                <button name="action_create_cron" string="Generate Cron" type="object" attrs="{'invisible':[('cron_id','!=',False)]}"/>
+                <button name="action_delete_cron" string="Delete Cron" type="object" attrs="{'invisible':[('cron_id','=',False)]}"/>
+            </header>
+            <sheet>
+              <group name="group_1" colspan="4" col="2">
+                  <group name="group_1_1" colspan="1" col="2">
+                    <field name="name"/>
+                    <field name="list_type"/>
+                    <field name="active"/>
+                  </group>
+                  <group name="group_1_2" colspan="1" col="2">
+                      <field name="date_start_offset"/>
+                      <field name="date_start_offset_period"/>
+                      <field name="date_end_offset"/>
+                      <field name="date_end_offset_period"/>
+                      <separator/>
+                      <newLine/>
+                      <field name="cron_id"/>
+                      <field name="recipient_partner_ids" widget="many2many_tags"/>
+                      <field name="email_template_id" domain="[('model_id.model','=','hr.birthday_list_reminder')]"/>
+                  </group>
+              </group>
+                <notebook>
+                  <page name="employee" string="Employee(s) Manual Selection" attrs="{'invisible': [('list_type', '!=', 'manual')]}">
+                      <group name="group_manual_employee" colspan="4" col="2">
+                          <field name="manual_employee_ids" col="2" nolabel="1"/>
+                      </group>
+                  </page>
+                    <page name="employee" string="Employee(s) List" groups="base.group_erp_manager">
+                        <group name="group_employee" colspan="4" col="2">
+                            <field name="employee_ids" col="2" nolabel="1"/>
+                        </group>
+                    </page>
+                    <page name="note" string="Note">
+                        <field name="note" nolabel="1" colspan="4"/>
+                    </page>
+                </notebook>
+            </sheet>
+        </form>
+    </field>
+</record>
+
+<record id="hr_birthday_list_reminder_action" model="ir.actions.act_window">
+    <field name="name">Employee Birthday Reminder</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.birthday_list_reminder</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+</record>
+
+<menuitem
+    id="hr_birthday_list_reminder_menu"
+    name="Employee Birthday Reminder"
+    parent="hr.menu_hr_configuration"
+    action="hr_birthday_list_reminder_action"
+    sequence="500"
+    />
+
+</data>
+</openerp>
