@@ -11,7 +11,6 @@
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "web",
         "mail",
         "email_template",
         "hr",
@@ -20,4 +19,9 @@
         "security/ir.model.access.csv",
         "views/hr_birthday_list_reminder_views.xml",
     ],
+    "external_dependencies": {
+        "python": [
+            "pandas"
+        ],
+    },
 }

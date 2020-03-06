@@ -125,11 +125,11 @@ class HrBirthdayListReminder(models.Model):
         # Compute Date Start Offset
         if date_start_offset_period == "day":
             dt_start =\
-                dt_now - pd.DateOffset(
+                dt_now + pd.DateOffset(
                     days=date_start_offset)
         else:
             dt_start =\
-                dt_now - pd.DateOffset(
+                dt_now + pd.DateOffset(
                     months=date_start_offset)
         # Compute Date End Offset
         if date_end_offset_period == "day":

@@ -58,7 +58,7 @@
                           <field name="manual_employee_ids" col="2" nolabel="1"/>
                       </group>
                   </page>
-                    <page name="employee" string="Employee(s) List" groups="base.group_erp_manager">
+                    <page name="employee" string="Employee(s) List">
                         <group name="group_employee" colspan="4" col="2">
                             <field name="employee_ids" col="2" nolabel="1"/>
                         </group>
