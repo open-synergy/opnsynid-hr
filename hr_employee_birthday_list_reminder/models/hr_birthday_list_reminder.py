@@ -47,7 +47,9 @@ class HrBirthdayListReminder(models.Model):
             employee_ids =\
                 obj_hr_employee.search(
                     document._prepare_employee_data())
-            document.employee_ids = employee_ids.ids
+            employee_birthday_list =\
+                document._get_birthday_list(employee_ids)
+            document.employee_ids = employee_birthday_list
 
     employee_ids = fields.Many2many(
         string="Employee(s)",
@@ -150,20 +152,37 @@ class HrBirthdayListReminder(models.Model):
     @api.multi
     def _prepare_employee_data(self):
         self.ensure_one()
-        date_start_conv, date_end_conv =\
-            self._compute_date_offset()
         if self.list_type == "all":
-            result = [
-                ("birthday", ">=", date_start_conv),
-                ("birthday", "<=", date_end_conv),
-            ]
+            result = []
         else:
             result = [
                 ("id", "in", self.manual_employee_ids.ids),
-                ("birthday", ">=", date_start_conv),
-                ("birthday", "<=", date_end_conv),
             ]
         return result
+
+    @api.multi
+    def _get_birthday_list(self, employee_ids):
+        self.ensure_one()
+        employee_birtday_list = []
+
+        date_start_conv, date_end_conv =\
+            self._compute_date_offset()
+        current_year =\
+            datetime.now().year
+
+        for employee in employee_ids:
+            if employee.birthday:
+                birthday = employee.birthday
+                date = datetime.strptime(birthday, '%Y-%m-%d')
+                conv_birtday = date.replace(year=current_year)
+                str_birthday =\
+                    datetime.strftime(conv_birtday, "%Y-%m-%d")
+                if (
+                    str_birthday >= date_start_conv and
+                    str_birthday <= date_end_conv
+                ):
+                    employee_birtday_list.append(employee.id)
+        return employee_birtday_list
 
     @api.multi
     def action_create_cron(self):
