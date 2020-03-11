@@ -1,0 +1,211 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_employee_birthday_list_reminder
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,active:0
+msgid "Active"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: selection:hr.birthday_list_reminder,list_type:0
+msgid "All Employee"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,create_uid:0
+msgid "Created by"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,create_date:0
+msgid "Created on"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,cron_id:0
+msgid "Cron"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,date_end_offset:0
+msgid "Date End Offset"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,date_end_offset_period:0
+msgid "Date End Offset Period"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,date_start_offset:0
+msgid "Date Start Offset"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,date_start_offset_period:0
+msgid "Date Start Offset Period"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: help:hr.birthday_list_reminder,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: selection:hr.birthday_list_reminder,date_end_offset_period:0
+#: selection:hr.birthday_list_reminder,date_start_offset_period:0
+msgid "Day"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: view:hr.birthday_list_reminder:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_view_form
+msgid "Delete Cron"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,name:0
+msgid "Description"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,display_name:0
+msgid "Display Name"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,email_template_id:0
+msgid "Email Template"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: model:ir.actions.act_window,name:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_action
+#: model:ir.model,name:hr_employee_birthday_list_reminder.model_hr_birthday_list_reminder
+#: model:ir.ui.menu,name:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_menu
+msgid "Employee Birthday Reminder"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,employee_ids:0
+#: field:hr.birthday_list_reminder,manual_employee_ids:0
+msgid "Employee(s)"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: view:hr.birthday_list_reminder:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_view_form
+msgid "Employee(s) List"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: view:hr.birthday_list_reminder:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_view_form
+msgid "Employee(s) Manual Selection"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: view:hr.birthday_list_reminder:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_view_form
+msgid "Generate Cron"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: help:hr.birthday_list_reminder,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,id:0
+msgid "ID"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: help:hr.birthday_list_reminder,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,__last_update:0
+msgid "Last Modified on"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,write_uid:0
+msgid "Last Updated by"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,write_date:0
+msgid "Last Updated on"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: selection:hr.birthday_list_reminder,list_type:0
+msgid "Manual Selection"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: help:hr.birthday_list_reminder,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: selection:hr.birthday_list_reminder,date_end_offset_period:0
+#: selection:hr.birthday_list_reminder,date_start_offset_period:0
+msgid "Month"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: view:hr.birthday_list_reminder:hr_employee_birthday_list_reminder.hr_birthday_list_reminder_view_form
+#: field:hr.birthday_list_reminder,note:0
+msgid "Note"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,recipient_partner_ids:0
+msgid "Recipient(s)"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,list_type:0
+msgid "Type"
+msgstr ""
+
+#. module: hr_employee_birthday_list_reminder
+#: field:hr.birthday_list_reminder,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
