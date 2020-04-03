@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
+<openerp>
+<data>
+
+<record id="seq_type_reimbusement" model="ir.sequence.type">
+    <field name="name">Employee Reimbusement</field>
+    <field name="code">reimbusement</field>
+</record>
+
+</data>
+
+<data noupdate="1">
+<record id="sequence_reimbusement" model="ir.sequence">
+    <field name="name">Employee Reimbusement</field>
+    <field name="code">reimbusement</field>
+    <field name="padding">6</field>
+    <field name="prefix">RMB/%(y)s/</field>
+    <field eval="1" name="number_next"/>
+    <field eval="1" name="number_increment"/>
+</record>
+</data>
+</openerp>
