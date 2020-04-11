@@ -13,11 +13,11 @@
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='product_id']" position="before">
-                <field name="timesheet_account_allowed_product_categ_ids" widget="many2many_tags" invisible="0"/>
+                <field name="timesheet_account_allowed_product_categ_ids" widget="many2many_tags" invisible="1"/>
                 <field name="timesheet_account_allowed_product_ids" widget="many2many_tags" invisible="1"/>
             </xpath>
             <xpath expr="//field[@name='timesheet_ids']/tree/field[@name='product_id']" position="attributes">
-                <attribute name="invisible">1</attribute>
+                <attribute name="invisible">0</attribute>
                 <attribute name="domain">['|',('categ_id','in',timesheet_account_allowed_product_categ_ids[0][2]),('id','in',timesheet_account_allowed_product_ids[0][2])]</attribute>
             </xpath>
         </data>
