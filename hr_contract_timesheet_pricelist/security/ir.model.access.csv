@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+hr_contract_timesheet_pricelist_employee,hr.contract_timesheet_pricelist - Employee,hr_contract_timesheet_pricelist.model_hr_contract_timesheet_pricelist,base.group_user,1,1,1,1
+hr_contract_timesheet_pricelist_all,hr.contract_timesheet_pricelist - All,hr_contract_timesheet_pricelist.model_hr_contract_timesheet_pricelist,,1,0,0,0
