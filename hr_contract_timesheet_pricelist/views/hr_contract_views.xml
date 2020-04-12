@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_contract_view_tree" model="ir.ui.view">
+    <field name="name">hr.contract form</field>
+    <field name="model">hr.contract</field>
+    <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//notebook" position="inside">
+                <page name="timesheet_pricelist" string="Timesheet Pricelist">
+                    <group name="timesheet_pricelist_1" colspan="4" col="2">
+                        <field name="timesheet_pricelist_ids" nolabel="1" colspan="2">
+                            <tree editable="top">
+                                <field name="product_id" domain="[('type','=','service')]"/>
+                                <field name="pricelist_id" domain="[('type','=','timesheet')]"/>
+                            </tree>
+                        </field>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
