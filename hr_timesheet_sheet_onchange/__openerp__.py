@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 {
     "name": "New API for Timesheet Analytic Line Onchange - Sheet",
-    "version": "8.0.1.0.0",
+    "version": "8.0.1.1.0",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
