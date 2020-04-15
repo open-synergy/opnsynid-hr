@@ -1,0 +1,89 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_timesheet_accrue_expense
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_timesheet_accrue_expense
+#: view:account.analytic.account:hr_timesheet_accrue_expense.account_analytic_account_view_form
+#: view:hr.employee:hr_timesheet_accrue_expense.hr_employee_view_form
+msgid "Accrue Expense"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: field:account.analytic.account,accrue_expense_account_id:0
+#: field:hr.analytic.timesheet,accrue_expense_account_id:0
+#: field:hr.employee,accrue_expense_account_id:0
+msgid "Accrue Expense Account"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: field:account.analytic.account,accrue_expense_journal_id:0
+#: field:hr.analytic.timesheet,accrue_expense_journal_id:0
+#: field:hr.employee,accrue_expense_journal_id:0
+msgid "Accrue Expense Journal"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: field:hr.analytic.timesheet,accrue_expense_move_id:0
+msgid "Accrue Expense Move"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: model:ir.model,name:hr_timesheet_accrue_expense.model_account_analytic_account
+msgid "Analytic Account"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: field:account.analytic.account,accrue_expense_ok:0
+#: field:hr.analytic.timesheet,accrue_expense_ok:0
+msgid "Can Create Accrue Expense"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: view:hr.analytic.timesheet:hr_timesheet_accrue_expense.hr_analytic_timesheet_view_tree
+msgid "Delete Accrue Expense"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: model:ir.model,name:hr_timesheet_accrue_expense.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: view:hr.analytic.timesheet:hr_timesheet_accrue_expense.hr_analytic_timesheet_view_tree
+msgid "Generate Accrue Expense"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:125
+#, python-format
+msgid "No accrue expense account defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:117
+#, python-format
+msgid "No accrue expense journal defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:165
+#, python-format
+msgid "No home address defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_expense
+#: model:ir.model,name:hr_timesheet_accrue_expense.model_hr_analytic_timesheet
+msgid "Timesheet Line"
+msgstr ""
+
