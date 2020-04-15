@@ -33,6 +33,7 @@ class HrAnalyticTimesheet(models.Model):
         string="Accrue Expense Move",
         comodel_name="account.move",
         readonly=True,
+        ondelete="restrict",
     )
 
     @api.onchange(
