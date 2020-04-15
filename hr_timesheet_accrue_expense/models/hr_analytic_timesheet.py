@@ -171,7 +171,7 @@ class HrAnalyticTimesheet(models.Model):
         self.ensure_one()
         return (0, 0, {
             "account_id": self._get_accrue_expense_account().id,
-            "credit": self.amount,
+            "credit": abs(self.amount),
             "debit": 0.0,
             "partner_id": self._get_partner().id,
             "name": self.name,
@@ -185,7 +185,7 @@ class HrAnalyticTimesheet(models.Model):
         self.ensure_one()
         return (0, 0, {
             "account_id": self._get_expense_account().id,
-            "debit": self.amount,
+            "debit": abs(self.amount),
             "credit": 0.0,
             "partner_id": self._get_partner().id,
             "name": self.name,
