@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="account_analytic_account_view_form" model="ir.ui.view">
+    <field name="name">account.analytic.account form</field>
+    <field name="model">account.analytic.account</field>
+    <field name="inherit_id" ref="hr_timesheet.account_analytic_account_timesheet_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//notebook" position="inside">
+                <page name="accrue_expense" string="Accrue Expense" attrs="{'invisible':[('use_timesheets','=',False)]}">
+                    <group name="accrue_expense_1" colspan="4" col="2">
+                        <field name="accrue_expense_journal_id"/>
+                        <field name="accrue_expense_account_id"/>
+                        <field name="accrue_expense_ok"/>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
