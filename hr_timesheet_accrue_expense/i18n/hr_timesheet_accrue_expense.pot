@@ -65,19 +65,19 @@ msgid "Generate Accrue Expense"
 msgstr ""
 
 #. module: hr_timesheet_accrue_expense
-#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:125
+#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:126
 #, python-format
 msgid "No accrue expense account defined"
 msgstr ""
 
 #. module: hr_timesheet_accrue_expense
-#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:117
+#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:118
 #, python-format
 msgid "No accrue expense journal defined"
 msgstr ""
 
 #. module: hr_timesheet_accrue_expense
-#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:165
+#: code:addons/hr_timesheet_accrue_expense/models/hr_analytic_timesheet.py:166
 #, python-format
 msgid "No home address defined"
 msgstr ""
