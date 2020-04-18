@@ -18,3 +18,4 @@ opnsynid-server-tools https://github.com/open-synergy/opnsynid-server-tools.git 
 opnsynid-partner-contact https://github.com/open-synergy/opnsynid-partner-contact.git 8.0
 opnsynid-loan-saving https://github.com/open-synergy/opnsynid-loan-saving.git 8.0
 opnsynid-account-analytic https://github.com/open-synergy/opnsynid-account-analytic.git 8.0
+opnsynid-project https://github.com/open-synergy/opnsynid-project.git 8.0
