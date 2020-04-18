@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="project_task_views_form" model="ir.ui.view">
+    <field name="name">project.task form</field>
+    <field name="model">project.task</field>
+    <field name="inherit_id" ref="timesheet_task.view_task_form2"/>
+    <field name="priority" eval="30"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//field[@name='work_ids']/tree/field[@name='product_id']" position="before">
+                <field name="pricelist_id" domain="[('type','=','timesheet')]" invisible="1"/>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
