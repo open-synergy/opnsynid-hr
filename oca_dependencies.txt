@@ -20,3 +20,4 @@ opnsynid-loan-saving https://github.com/open-synergy/opnsynid-loan-saving.git 8.
 opnsynid-account-analytic https://github.com/open-synergy/opnsynid-account-analytic.git 8.0
 opnsynid-project https://github.com/open-synergy/opnsynid-project.git 8.0
 project https://github.com/oca/project.git 8.0
+hr-timesheet https://github.com/oca/hr-timesheet.git 8.0
