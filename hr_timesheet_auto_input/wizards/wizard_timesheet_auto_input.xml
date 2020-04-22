@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+
+<record id="hr_timesheet_sheet_sheet_auto_input_view_form" model="ir.ui.view">
+    <field name="name">hr.timesheet.sheet.sheet.auto.input.form</field>
+    <field name="model">hr_timesheet_sheet.sheet.auto_input</field>
+    <field name="arch" type="xml">
+        <form>
+            <group>
+              <field name="timesheet_account_id" attrs="{'required':[('state_attendance', '=', 'present')], 'invisible':[('state_attendance', '=', 'absent')]}"/>
+              <field name="task_id" domain="[('id', '=', 0)]" attrs="{'invisible':[('state_attendance', '=', 'absent')]}"/>
+              <field name="product_id" attrs="{'required':[('state_attendance', '=', 'present')], 'invisible':[('state_attendance', '=', 'absent')]}"/>
+              <field name="description" attrs="{'required':[('state_attendance', '=', 'absent')], 'invisible':[('state_attendance', '=', 'present')]}"/>
+              <field name="state_attendance" invisible="1"/>
+            </group>
+
+            <footer>
+                <button name="action_ok"
+                        type="object"
+                        string="Confirm"
+                        class="oe_highlight"/>
+                or
+                <button special="cancel"
+                        string="Cancel"/>
+            </footer>
+        </form>
+    </field>
+</record>
+
+<record id="hr_timesheet_sheet_sheet_auto_input_action" model="ir.actions.act_window">
+    <field name="name">Sign In/Out</field>
+    <field name="res_model">hr_timesheet_sheet.sheet.auto_input</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="target">new</field>
+</record>
+
+</data>
+</openerp>
