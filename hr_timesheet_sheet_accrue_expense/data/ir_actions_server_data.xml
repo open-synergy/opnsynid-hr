@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="create_accrue_expense_actions_server" model="ir.actions.server">
+    <field name="name">Create Accrue Expense</field>
+    <field name="sequence" eval="5"/>
+    <field name="type">ir.actions.server</field>
+    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet"/>
+    <field name="condition">True</field>
+    <field name="state">code</field>
+    <field name="code">object._generate_accrue_expense_move()</field>
+</record>
+
+<record id="remove_accrue_expense_actions_server" model="ir.actions.server">
+    <field name="name">Remove Accrue Expense</field>
+    <field name="sequence" eval="5"/>
+    <field name="type">ir.actions.server</field>
+    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet"/>
+    <field name="condition">True</field>
+    <field name="state">code</field>
+    <field name="code">object._remove_accrue_expense_move()</field>
+</record>
+
+
+</data>
+</openerp>

@@ -20,6 +20,7 @@
             </xpath>
             <xpath expr="//button[@name='cancel']" position="after">
                 <button name="action_generate_accrue_expense_move" string="Generate Accrue Expense" type="object" states="draft"/>
+                <button name="action_remove_accrue_expense_move" string="Generate Accrue Expense" type="object" states="draft"/>                
             </xpath>
         </data>
     </field>

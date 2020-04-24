@@ -26,3 +26,19 @@ class HrTimesheetSheetSheet(models.Model):
     def action_generate_accrue_expense_move(self):
         for document in self:
             document._generate_accrue_expense_move()
+
+    @api.multi
+    def _remove_accrue_expense_move(self):
+        self.ensure_one()
+        obj_detail = self.env["hr.analytic.timesheet"]
+        criteria = [
+            ("sheet_id", "=", self.id),
+            ("accrue_expense_move_id", "!=", False),
+        ]
+        details = obj_detail.search(criteria)
+        details.action_unlink_accrue_expense_move()
+
+    @api.multi
+    def action_remove_accrue_expense_move(self):
+        for document in self:
+            document._remove_accrue_expense_move()
