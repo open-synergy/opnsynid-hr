@@ -14,8 +14,38 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_timesheet_sheet_accrue_expense
+#: model:ir.filters,name:hr_timesheet_sheet_accrue_expense.after_accrue_expense_filter
+msgid "After Accrue Expense Creation"
+msgstr ""
+
+#. module: hr_timesheet_sheet_accrue_expense
+#: model:ir.filters,name:hr_timesheet_sheet_accrue_expense.after_accrue_expense_removal_filter
+msgid "After Accrue Expense Removal"
+msgstr ""
+
+#. module: hr_timesheet_sheet_accrue_expense
+#: model:ir.filters,name:hr_timesheet_sheet_accrue_expense.before_accrue_expense_filter
+msgid "Before Accrue Expense Creation"
+msgstr ""
+
+#. module: hr_timesheet_sheet_accrue_expense
+#: model:ir.filters,name:hr_timesheet_sheet_accrue_expense.before_accrue_expense_removal_filter
+msgid "Before Accrue Expense Removal"
+msgstr ""
+
+#. module: hr_timesheet_sheet_accrue_expense
+#: model:ir.actions.server,name:hr_timesheet_sheet_accrue_expense.create_accrue_expense_actions_server
+msgid "Create Accrue Expense"
+msgstr ""
+
+#. module: hr_timesheet_sheet_accrue_expense
 #: view:hr_timesheet_sheet.sheet:hr_timesheet_sheet_accrue_expense.hr_timesheet_sheet_sheet_view_form
 msgid "Generate Accrue Expense"
+msgstr ""
+
+#. module: hr_timesheet_sheet_accrue_expense
+#: model:ir.actions.server,name:hr_timesheet_sheet_accrue_expense.remove_accrue_expense_actions_server
+msgid "Remove Accrue Expense"
 msgstr ""
 
 #. module: hr_timesheet_sheet_accrue_expense
