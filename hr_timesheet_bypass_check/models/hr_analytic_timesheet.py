@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from openerp import models, api, fields
 
 
 class HrAnalyticTimesheet(models.Model):
@@ -12,10 +12,28 @@ class HrAnalyticTimesheet(models.Model):
 
     @api.multi
     def _check(self):
-        no_check = self.env.context.get("no_check", False)
-
-        if not no_check:
-            _super = super(HrAnalyticTimesheet, self)
-            _super._check()
-
         return True
+
+    @api.depends(
+        "sheet_id.employee_id",
+        "sheet_id.date_from",
+        "sheet_id.date_to",
+        "user_id",
+        "date",
+    )
+    def _compute_sheet(self):
+        obj_sheet = self.env["hr_timesheet_sheet.sheet"]
+        for document in self:
+            criteria = [
+                ("date_to", ">=", document.date),
+                ("date_from", "<=", document.date),
+                ("employee_id.user_id", "=", document.user_id.id),
+            ]
+            sheets = obj_sheet.search(criteria)
+            if len(sheets) > 0:
+                document.sheet_id = sheets[0]
+
+    sheet_id = fields.Many2one(
+        compute="_compute_sheet",
+        store=True,
+    )
