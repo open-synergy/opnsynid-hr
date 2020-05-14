@@ -11,8 +11,7 @@
     "installable": True,
     "auto_install": True,
     "depends": [
-        "hr_timesheet_sheet_product_policy",
-        "timesheet_task",
+        "hr_timesheet_sheet",
     ],
     "data": [
         "wizards/wizard_timesheet_auto_input.xml",

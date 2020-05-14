@@ -13,13 +13,3 @@ class HrTimesheetSheet(models.Model):
         comodel_name="account.analytic.account",
         readonly=True,
     )
-    current_product_id = fields.Many2one(
-        string="Current Product",
-        comodel_name="product.product",
-        readonly=True,
-    )
-    current_task_id = fields.Many2one(
-        string="Current Task",
-        comodel_name="project.task",
-        readonly=True,
-    )

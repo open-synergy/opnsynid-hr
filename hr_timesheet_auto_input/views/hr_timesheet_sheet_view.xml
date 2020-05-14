@@ -14,24 +14,14 @@
     <field name="arch" type="xml">
         <data>
             <xpath expr="//notebook/page[3]/group[1]/group" position="replace">
-                <group>
-                    <label for="current_timesheet_account_id"/>
-                    <div>
+                <group name="grp_auto_input">
+                    <label name="lbl_current_timesheet" for="current_timesheet_account_id"/>
+                    <div name="div_current_timesheet">
                         <field name="current_timesheet_account_id"/>
                     </div>
 
-                    <label for="current_product_id"/>
-                    <div>
-                        <field name="current_product_id"/>
-                    </div>
-
-                    <label for="current_task_id"/>
-                    <div>
-                        <field name="current_task_id"/>
-                    </div>
-
-                    <label for="state_attendance"/>
-                    <div>
+                    <label name="lbl_state_attendance" for="state_attendance"/>
+                    <div name="div_state_attendance">
                         <field name="state_attendance"/>
                         <button
                             name="%(hr_timesheet_sheet_sheet_auto_input_action)d"
