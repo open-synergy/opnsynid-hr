@@ -1,0 +1,80 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_payslip_batch_openchatter
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_payslip_batch_openchatter
+#: help:hr.payslip.run,message_last_post:0
+msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,message_follower_ids:0
+msgid "Followers"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: help:hr.payslip.run,message_summary:0
+msgid "Holds the Chatter summary (number of messages, ...). This summary is directly in html format in order to be inserted in kanban views."
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: help:hr.payslip.run,message_unread:0
+msgid "If checked new messages require your attention."
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,message_is_follower:0
+msgid "Is a Follower"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,message_last_post:0
+msgid "Last Message Date"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,message_ids:0
+msgid "Messages"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: help:hr.payslip.run,message_ids:0
+msgid "Messages and communication history"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: model:ir.model,name:hr_payslip_batch_openchatter.model_hr_payslip_run
+msgid "Payslip Batches"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,message_summary:0
+msgid "Summary"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,message_unread:0
+msgid "Unread Messages"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: field:hr.payslip.run,website_message_ids:0
+msgid "Website Messages"
+msgstr ""
+
+#. module: hr_payslip_batch_openchatter
+#: help:hr.payslip.run,website_message_ids:0
+msgid "Website communication history"
+msgstr ""
+
