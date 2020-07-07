@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data noupdate="1">
+
+        <record id="cron_employee_longetivity_update" model="ir.cron">
+            <field name='name'>Update Employee Longetivity</field>
+            <field name='interval_number'>1</field>
+            <field name='interval_type'>days</field>
+            <field name="numbercall">-1</field>
+            <field name="active">False</field>
+            <field name="doall" eval="False" />
+            <field name="model">hr.employee</field>
+            <field name="function">cron_update_longetivity</field>
+            <field name="args">()</field>
+        </record>
+
+    </data>
+</openerp>
