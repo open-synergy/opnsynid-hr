@@ -30,9 +30,19 @@ msgid "Active"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: hr_career_transition
 #: model:ir.actions.act_window,name:hr_career_transition.hr_career_transition_action
 #: model:ir.ui.menu,name:hr_career_transition.hr_career_transition_menu
 msgid "All Career Transitions"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition_type,restart_approval_grp_ids:0
+msgid "Allow To Restart Approval"
 msgstr ""
 
 #. module: hr_career_transition
@@ -56,18 +66,8 @@ msgid "Allowed to Restart"
 msgstr ""
 
 #. module: hr_career_transition
-#: field:hr.career_transition_type,open_grp_ids:0
-msgid "Allowed to Start Process"
-msgstr ""
-
-#. module: hr_career_transition
 #: field:hr.career_transition_type,valid_grp_ids:0
 msgid "Allowed to Validate"
-msgstr ""
-
-#. module: hr_career_transition
-#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
-msgid "Approve"
 msgstr ""
 
 #. module: hr_career_transition
@@ -92,13 +92,13 @@ msgid "Can Confirm"
 msgstr ""
 
 #. module: hr_career_transition
-#: field:hr.career_transition,open_ok:0
-msgid "Can Open"
+#: field:hr.career_transition,restart_ok:0
+msgid "Can Restart"
 msgstr ""
 
 #. module: hr_career_transition
-#: field:hr.career_transition,restart_ok:0
-msgid "Can Restart"
+#: field:hr.career_transition,restart_approval_ok:0
+msgid "Can Restart Approval"
 msgstr ""
 
 #. module: hr_career_transition
@@ -173,7 +173,7 @@ msgid "Career Transitions"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:735
+#: code:addons/hr_career_transition/models/hr_career_transition.py:762
 #, python-format
 msgid "Career transition limit exceed"
 msgstr ""
@@ -268,13 +268,13 @@ msgid "Contract Type"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:718
+#: code:addons/hr_career_transition/models/hr_career_transition.py:745
 #, python-format
 msgid "Contract date end have to be greater than start date"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:706
+#: code:addons/hr_career_transition/models/hr_career_transition.py:733
 #, python-format
 msgid "Contract start date have to be equal to effective date"
 msgstr ""
@@ -312,6 +312,11 @@ msgstr ""
 #. module: hr_career_transition
 #: help:hr.career_transition,message_last_post:0
 msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,definition_id:0
+msgid "Definition"
 msgstr ""
 
 #. module: hr_career_transition
@@ -372,7 +377,7 @@ msgid "Effective Date by Year"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:693
+#: code:addons/hr_career_transition/models/hr_career_transition.py:720
 #, python-format
 msgid "Effective date have to be greater than lastest career transition"
 msgstr ""
@@ -487,6 +492,11 @@ msgid "Messages and communication history"
 msgstr ""
 
 #. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+msgid "My Career Transition to review"
+msgstr ""
+
+#. module: hr_career_transition
 #: model:ir.actions.act_window,name:hr_career_transition.hr_my_career_transition_action
 #: model:ir.ui.menu,name:hr_career_transition.hr_my_career_transition_menu
 msgid "My Career Transitions"
@@ -496,6 +506,16 @@ msgstr ""
 #: field:hr.career_transition,need_previous_contract:0
 #: field:hr.career_transition_type,need_previous_contract:0
 msgid "Need Previous Contract"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,need_validation:0
+msgid "Need Validation"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_search
+msgid "Needs my Review"
 msgstr ""
 
 #. module: hr_career_transition
@@ -545,6 +565,11 @@ msgid "New Working Schedule"
 msgstr ""
 
 #. module: hr_career_transition
+#: field:hr.career_transition,next_reviewer_ids:0
+msgid "Next Reviewers"
+msgstr ""
+
+#. module: hr_career_transition
 #: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
 #: field:hr.career_transition,note:0
 msgid "Note"
@@ -571,6 +596,11 @@ msgstr ""
 #. module: hr_career_transition
 #: field:hr.career_transition,opened_date:0
 msgid "Opened Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Operation has been"
 msgstr ""
 
 #. module: hr_career_transition
@@ -641,6 +671,21 @@ msgid "Reasons"
 msgstr ""
 
 #. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,rejected:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Request Validation"
+msgstr ""
+
+#. module: hr_career_transition
 #: field:hr.career_transition,require_reason:0
 #: field:hr.career_transition_type,require_reason:0
 msgid "Require Reason"
@@ -649,6 +694,26 @@ msgstr ""
 #. module: hr_career_transition
 #: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
 msgid "Restart"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,reviewer_partner_ids:0
+msgid "Review Partners"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,reviewer_ids:0
+msgid "Reviewers"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Reviews"
 msgstr ""
 
 #. module: hr_career_transition
@@ -672,6 +737,12 @@ msgstr ""
 #. module: hr_career_transition
 #: field:hr.career_transition,message_summary:0
 msgid "Summary"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "This Career Transition needs to be\n"
+"                    validated."
 msgstr ""
 
 #. module: hr_career_transition
@@ -703,6 +774,16 @@ msgstr ""
 
 #. module: hr_career_transition
 #: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "Validate"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,validated:0
+msgid "Validated"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
 msgid "Validation"
 msgstr ""
 
@@ -714,6 +795,11 @@ msgstr ""
 #. module: hr_career_transition
 #: field:hr.career_transition,validated_date:0
 msgid "Validation Date"
+msgstr ""
+
+#. module: hr_career_transition
+#: field:hr.career_transition,review_ids:0
+msgid "Validations"
 msgstr ""
 
 #. module: hr_career_transition
@@ -740,13 +826,13 @@ msgid "Working Schedule"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:410
+#: code:addons/hr_career_transition/models/hr_career_transition.py:421
 #, python-format
 msgid "You can only cancel valid latest transition"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:669
+#: code:addons/hr_career_transition/models/hr_career_transition.py:696
 #, python-format
 msgid "You can only delete data on draft state"
 msgstr ""
@@ -755,5 +841,15 @@ msgstr ""
 #: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form_1
 #: view:hr.career_transition:hr_career_transition.hr_career_transition_view_tree_1
 msgid "false"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "rejected"
+msgstr ""
+
+#. module: hr_career_transition
+#: view:hr.career_transition:hr_career_transition.hr_career_transition_view_form
+msgid "validated"
 msgstr ""
 
