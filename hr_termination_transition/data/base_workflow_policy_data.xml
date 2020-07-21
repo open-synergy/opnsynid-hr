@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -11,11 +12,6 @@
     <field name="workflow_id" ref="hr_termination_transition.base_workflow_termination_transition"/>
     <field name="field_id" search="[('model_id.model','=','hr.termination_transition'),('name','=','confirm_ok')]"/>
     <field name="python_code">result = document.type_id.confirm_grp_ids.ids</field>
-</record>
-<record id="base_workflow_line_termination_transition_open" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="hr_termination_transition.base_workflow_termination_transition"/>
-    <field name="field_id" search="[('model_id.model','=','hr.termination_transition'),('name','=','open_ok')]"/>
-    <field name="python_code">result = document.type_id.open_grp_ids.ids</field>
 </record>
 <record id="base_workflow_line_termination_transition_valid" model="base.workflow_policy_line">
     <field name="workflow_id" ref="hr_termination_transition.base_workflow_termination_transition"/>
@@ -31,6 +27,11 @@
     <field name="workflow_id" ref="hr_termination_transition.base_workflow_termination_transition"/>
     <field name="field_id" search="[('model_id.model','=','hr.termination_transition'),('name','=','restart_ok')]"/>
     <field name="python_code">result = document.type_id.restart_grp_ids.ids</field>
+</record>
+<record id="base_workflow_line_termination_transition_restart_approval" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="hr_termination_transition.base_workflow_termination_transition"/>
+    <field name="field_id" search="[('model_id.model','=','hr.termination_transition'),('name','=','restart_approval_ok')]"/>
+    <field name="python_code">result = document.type_id.restart_approval_grp_ids.ids</field>
 </record>
 </data>
 </openerp>
