@@ -24,6 +24,11 @@ msgid "# Reference"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,archieve:0
 msgid "Archieve"
 msgstr ""
@@ -39,13 +44,13 @@ msgid "Can Confirm"
 msgstr ""
 
 #. module: hr_promotion_transition
-#: field:hr.promotion_transition,open_ok:0
-msgid "Can Open"
+#: field:hr.promotion_transition,restart_ok:0
+msgid "Can Restart"
 msgstr ""
 
 #. module: hr_promotion_transition
-#: field:hr.promotion_transition,restart_ok:0
-msgid "Can Restart"
+#: field:hr.promotion_transition,restart_approval_ok:0
+msgid "Can Restart Approval"
 msgstr ""
 
 #. module: hr_promotion_transition
@@ -159,6 +164,11 @@ msgid "Date of the last message posted on the record."
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,definition_id:0
+msgid "Definition"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,display_name:0
 msgid "Display Name"
 msgstr ""
@@ -245,6 +255,11 @@ msgid "Need Previous Contract"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,need_validation:0
+msgid "Need Validation"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,new_company_id:0
 msgid "New Company"
 msgstr ""
@@ -282,6 +297,11 @@ msgstr ""
 #. module: hr_promotion_transition
 #: field:hr.promotion_transition,new_working_hour_id:0
 msgid "New Working Schedule"
+msgstr ""
+
+#. module: hr_promotion_transition
+#: field:hr.promotion_transition,next_reviewer_ids:0
+msgid "Next Reviewers"
 msgstr ""
 
 #. module: hr_promotion_transition
@@ -361,8 +381,23 @@ msgid "Reason"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,rejected:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,require_reason:0
 msgid "Require Reason"
+msgstr ""
+
+#. module: hr_promotion_transition
+#: field:hr.promotion_transition,reviewer_partner_ids:0
+msgid "Review Partners"
+msgstr ""
+
+#. module: hr_promotion_transition
+#: field:hr.promotion_transition,reviewer_ids:0
+msgid "Reviewers"
 msgstr ""
 
 #. module: hr_promotion_transition
@@ -391,6 +426,11 @@ msgid "Valid"
 msgstr ""
 
 #. module: hr_promotion_transition
+#: field:hr.promotion_transition,validated:0
+msgid "Validated"
+msgstr ""
+
+#. module: hr_promotion_transition
 #: field:hr.promotion_transition,validated_user_id:0
 msgid "Validation By"
 msgstr ""
@@ -398,6 +438,11 @@ msgstr ""
 #. module: hr_promotion_transition
 #: field:hr.promotion_transition,validated_date:0
 msgid "Validation Date"
+msgstr ""
+
+#. module: hr_promotion_transition
+#: field:hr.promotion_transition,review_ids:0
+msgid "Validations"
 msgstr ""
 
 #. module: hr_promotion_transition
