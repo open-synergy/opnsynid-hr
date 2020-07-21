@@ -14,8 +14,18 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_attendance_overtime_request_tier_validation
+#: field:hr.overtime_request,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_tier_validation
 #: model:ir.model,name:hr_attendance_overtime_request_tier_validation.model_hr_overtime_request
 msgid "Attendance Overtime Request"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_tier_validation
+#: field:hr.overtime_request,definition_id:0
+msgid "Definition"
 msgstr ""
 
 #. module: hr_attendance_overtime_request_tier_validation
@@ -25,12 +35,17 @@ msgstr ""
 
 #. module: hr_attendance_overtime_request_tier_validation
 #: field:hr.overtime_request,need_validation:0
-msgid "Need validation"
+msgid "Need Validation"
 msgstr ""
 
 #. module: hr_attendance_overtime_request_tier_validation
 #: view:hr.overtime_request:hr_attendance_overtime_request_tier_validation.hr_overtime_request_view_search
 msgid "Needs my Review"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_tier_validation
+#: field:hr.overtime_request,next_reviewer_ids:0
+msgid "Next Reviewers"
 msgstr ""
 
 #. module: hr_attendance_overtime_request_tier_validation
@@ -61,6 +76,11 @@ msgstr ""
 #. module: hr_attendance_overtime_request_tier_validation
 #: view:hr.overtime_request:hr_attendance_overtime_request_tier_validation.hr_overtime_request_view_form
 msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request_tier_validation
+#: field:hr.overtime_request,reviewer_partner_ids:0
+msgid "Review Partners"
 msgstr ""
 
 #. module: hr_attendance_overtime_request_tier_validation
