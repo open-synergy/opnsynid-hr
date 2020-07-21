@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api, _
@@ -8,9 +9,20 @@ from openerp.exceptions import Warning as UserError
 
 class HrCareerTransition(models.Model):
     _name = "hr.career_transition"
-    _inherit = ["mail.thread", "base.sequence_document",
-                "base.workflow_policy_object"]
     _description = "Career Transition"
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+        "tier.validation",
+    ]
+    _state_from = [
+        "draft",
+        "confirm",
+    ]
+    _state_to = [
+        "open",
+    ]
     _order = "effective_date desc, id"
 
     @api.multi
@@ -363,12 +375,6 @@ class HrCareerTransition(models.Model):
         store=False,
         readonly=True,
     )
-    open_ok = fields.Boolean(
-        string="Can Open",
-        compute="_compute_policy",
-        store=False,
-        readonly=True,
-    )
     valid_ok = fields.Boolean(
         string="Can Validate",
         compute="_compute_policy",
@@ -387,11 +393,16 @@ class HrCareerTransition(models.Model):
         store=False,
         readonly=True,
     )
+    restart_approval_ok = fields.Boolean(
+        string="Can Restart Approval",
+        compute="_compute_policy",
+    )
 
     @api.multi
     def action_confirm(self):
         for transition in self:
             transition.write(transition._prepare_confirm_data())
+            transition.request_validation()
 
     @api.multi
     def action_approve(self):
@@ -417,11 +428,27 @@ class HrCareerTransition(models.Model):
                 new_contract.unlink()
             else:
                 transition._revert_contract()
+            transition.restart_validation()
 
     @api.multi
     def action_restart(self):
         for transition in self:
             transition.write(transition._prepare_restart_data())
+
+    @api.multi
+    def validate_tier(self):
+        _super = super(HrCareerTransition, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.action_approve()
+
+    @api.multi
+    def restart_validation(self):
+        _super = super(HrCareerTransition, self)
+        _super.restart_validation()
+        for document in self:
+            document.request_validation()
 
     @api.multi
     def _prepare_confirm_data(self):

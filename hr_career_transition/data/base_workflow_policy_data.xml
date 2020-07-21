@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -13,12 +14,6 @@
     <field name="workflow_id" ref="workflow_policy_career_transition"/>
     <field name="field_id" ref="hr_career_transition.field_hr_career_transition_confirm_ok"/>
     <field name="python_code">result = document.type_id.confirm_grp_ids.ids</field>
-</record>
-
-<record id="workflow_policy_career_transition_open" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_career_transition"/>
-    <field name="field_id" ref="hr_career_transition.field_hr_career_transition_open_ok"/>
-    <field name="python_code">result = document.type_id.open_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_career_transition_valid" model="base.workflow_policy_line">
@@ -37,6 +32,12 @@
     <field name="workflow_id" ref="workflow_policy_career_transition"/>
     <field name="field_id" ref="hr_career_transition.field_hr_career_transition_restart_ok"/>
     <field name="python_code">result = document.type_id.restart_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_career_transition_restart_approval" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_career_transition"/>
+    <field name="field_id" ref="hr_career_transition.field_hr_career_transition_restart_approval_ok"/>
+    <field name="python_code">result = document.type_id.restart_approval_grp_ids.ids</field>
 </record>
 
 </data>

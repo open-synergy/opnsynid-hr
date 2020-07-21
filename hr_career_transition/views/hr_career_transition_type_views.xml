@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -64,10 +65,10 @@
                             <group name="policy_1" colspan="1" col="2">
                                 <field name="confirm_grp_ids" widget="many2many_tags"/>
                                 <field name="approve_grp_ids" widget="many2many_tags"/>
-                                <field name="open_grp_ids" widget="many2many_tags"/>
                                 <field name="valid_grp_ids" widget="many2many_tags"/>
                                 <field name="cancel_grp_ids" widget="many2many_tags"/>
                                 <field name="restart_grp_ids" widget="many2many_tags"/>
+                                <field name="restart_approval_grp_ids" widget="many2many_tags"/>
                             </group>
                         </page>
                     </notebook>

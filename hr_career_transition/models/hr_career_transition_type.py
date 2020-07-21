@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
@@ -78,13 +79,6 @@ class HrCareerTransitionType(models.Model):
         column1="type_id",
         column2="group_id",
     )
-    open_grp_ids = fields.Many2many(
-        string="Allowed to Start Process",
-        comodel_name="res.groups",
-        relation="rel_open_career_transition",
-        column1="type_id",
-        column2="group_id",
-    )
     valid_grp_ids = fields.Many2many(
         string="Allowed to Validate",
         comodel_name="res.groups",
@@ -103,6 +97,13 @@ class HrCareerTransitionType(models.Model):
         string="Allowed to Restart",
         comodel_name="res.groups",
         relation="rel_finish_career_transition",
+        column1="type_id",
+        column2="group_id",
+    )
+    restart_approval_grp_ids = fields.Many2many(
+        string="Allow To Restart Approval",
+        comodel_name="res.groups",
+        relation="rel_restart_approval_career_transition",
         column1="type_id",
         column2="group_id",
     )
