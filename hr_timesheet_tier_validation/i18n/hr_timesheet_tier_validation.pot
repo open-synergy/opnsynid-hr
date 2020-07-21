@@ -14,18 +14,33 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_timesheet_tier_validation
+#: field:hr_timesheet_sheet.sheet,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: hr_timesheet_tier_validation
+#: field:hr_timesheet_sheet.sheet,definition_id:0
+msgid "Definition"
+msgstr ""
+
+#. module: hr_timesheet_tier_validation
 #: view:hr_timesheet_sheet.sheet:hr_timesheet_tier_validation.hr_timesheet_sheet_view_search
 msgid "My Timesheet to review"
 msgstr ""
 
 #. module: hr_timesheet_tier_validation
 #: field:hr_timesheet_sheet.sheet,need_validation:0
-msgid "Need validation"
+msgid "Need Validation"
 msgstr ""
 
 #. module: hr_timesheet_tier_validation
 #: view:hr_timesheet_sheet.sheet:hr_timesheet_tier_validation.hr_timesheet_sheet_view_search
 msgid "Needs my Review"
+msgstr ""
+
+#. module: hr_timesheet_tier_validation
+#: field:hr_timesheet_sheet.sheet,next_reviewer_ids:0
+msgid "Next Reviewers"
 msgstr ""
 
 #. module: hr_timesheet_tier_validation
@@ -51,6 +66,11 @@ msgstr ""
 #. module: hr_timesheet_tier_validation
 #: view:hr_timesheet_sheet.sheet:hr_timesheet_tier_validation.hr_timesheet_sheet_view_form
 msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_timesheet_tier_validation
+#: field:hr_timesheet_sheet.sheet,reviewer_partner_ids:0
+msgid "Review Partners"
 msgstr ""
 
 #. module: hr_timesheet_tier_validation
