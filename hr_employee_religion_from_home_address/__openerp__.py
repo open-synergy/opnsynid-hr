@@ -4,14 +4,14 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Employee Religion From Home Address",
-    "version": "8.0.1.0.0",
+    "version": "8.0.2.0.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia,OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
-        "hr_contract",
+        "hr",
         "partner_contact_religion",
     ],
     "data": [
