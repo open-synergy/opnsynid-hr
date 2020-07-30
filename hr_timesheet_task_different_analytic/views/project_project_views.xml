@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="project_project_views_form" model="ir.ui.view">
+    <field name="name">project.project form</field>
+    <field name="model">project.project</field>
+    <field name="inherit_id" ref="project.edit_project"/>
+    <field name="priority" eval="50"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//notebook" position="inside">
+                <page name="alternate_analytic" string="Alternate Analytic Account">
+                    <field name="allowed_alternate_analytic_account_ids"/>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+
+</data>
+</openerp>
