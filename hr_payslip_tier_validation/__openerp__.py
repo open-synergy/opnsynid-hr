@@ -8,7 +8,7 @@
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia",
     "license": "AGPL-3",
-    "installable": True,
+    "installable": False,
     "depends": [
         "hr_payslip_extend",
         "base_tier_validation",
