@@ -1,0 +1,100 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* hr_timesheet_accrue_income
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: hr_timesheet_accrue_income
+#: view:account.analytic.account:hr_timesheet_accrue_income.account_analytic_account_view_form
+#: view:hr.employee:hr_timesheet_accrue_income.hr_employee_view_form
+msgid "Accrue Income"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: field:account.analytic.account,accrue_income_account_id:0
+#: field:hr.analytic.timesheet,accrue_income_account_id:0
+#: field:hr.employee,accrue_income_account_id:0
+msgid "Accrue Income Account"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: field:account.analytic.account,accrue_income_journal_id:0
+#: field:hr.analytic.timesheet,accrue_income_journal_id:0
+#: field:hr.employee,accrue_income_journal_id:0
+msgid "Accrue Income Journal"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: field:hr.analytic.timesheet,accrue_income_move_id:0
+msgid "Accrue Income Move"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: model:ir.model,name:hr_timesheet_accrue_income.model_account_analytic_account
+msgid "Analytic Account"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: field:account.analytic.account,accrue_income_ok:0
+#: field:hr.analytic.timesheet,accrue_income_ok:0
+msgid "Can Create Accrue Income"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: view:hr.analytic.timesheet:hr_timesheet_accrue_income.hr_analytic_timesheet_view_tree
+msgid "Delete Accrue Income"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: model:ir.model,name:hr_timesheet_accrue_income.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: view:hr.analytic.timesheet:hr_timesheet_accrue_income.hr_analytic_timesheet_view_tree
+msgid "Generate Accrue Income"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: code:addons/hr_timesheet_accrue_income/models/hr_analytic_timesheet.py:126
+#, python-format
+msgid "No accrue income account defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: code:addons/hr_timesheet_accrue_income/models/hr_analytic_timesheet.py:118
+#, python-format
+msgid "No accrue income journal defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: code:addons/hr_timesheet_accrue_income/models/hr_analytic_timesheet.py:172
+#, python-format
+msgid "No customer defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: code:addons/hr_timesheet_accrue_income/models/hr_analytic_timesheet.py:137
+#, python-format
+msgid "No income account defined"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: field:account.analytic.account,prepaid_price_unit:0
+msgid "Prepaid Price Unit"
+msgstr ""
+
+#. module: hr_timesheet_accrue_income
+#: model:ir.model,name:hr_timesheet_accrue_income.model_hr_analytic_timesheet
+msgid "Timesheet Line"
+msgstr ""
+
