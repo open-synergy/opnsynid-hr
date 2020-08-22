@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="before_accrue_income_filter" model="ir.filters">
+    <field name="name">Before Accrue Income Creation</field>
+    <field name="model_id">hr_timesheet_sheet.sheet</field>
+    <field name="domain">[["state","=","confirm"]]</field>
+    <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
+</record>
+
+<record id="after_accrue_income_filter" model="ir.filters">
+    <field name="name">After Accrue Income Creation</field>
+    <field name="model_id">hr_timesheet_sheet.sheet</field>
+    <field name="domain">[["state","=","done"]]</field>
+    <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
+</record>
+
+<record id="before_accrue_income_removal_filter" model="ir.filters">
+    <field name="name">Before Accrue Income Removal</field>
+    <field name="model_id">hr_timesheet_sheet.sheet</field>
+    <field name="domain">[["state","=","done"]]</field>
+    <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
+</record>
+
+<record id="after_accrue_income_removal_filter" model="ir.filters">
+    <field name="name">After Accrue Income Removal</field>
+    <field name="model_id">hr_timesheet_sheet.sheet</field>
+    <field name="domain">[["state","=","draft"]]</field>
+    <field name="active" eval="0"/>
+    <field name="user_id" eval="0"/>
+</record>
+
+</data>
+</openerp>
