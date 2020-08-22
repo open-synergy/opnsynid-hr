@@ -25,6 +25,13 @@ class HrAnalyticTimesheet(models.Model):
             ("type", "=", "other"),
         ],
     )
+    income_account_id = fields.Many2one(
+        string="Income Account",
+        comodel_name="account.account",
+        domain=[
+            ("type", "=", "other"),
+        ],
+    )
     accrue_income_ok = fields.Boolean(
         string="Can Create Accrue Income",
         default=False,
@@ -71,6 +78,26 @@ class HrAnalyticTimesheet(models.Model):
             account = self.account_id.accrue_income_account_id
 
         self.accrue_income_account_id = account
+
+    @api.onchange(
+        "account_id",
+        "product_id",
+    )
+    def onchange_income_account_id(self):
+        account = False
+        if not account and \
+                self.account_id and \
+                self.account_id.accrue_income_account_id:
+            account = self.account_id.income_account_id
+
+        if not account:
+            account = self.product_id.property_account_income
+
+        if not account:
+            account = \
+                self.product_id.categ_id.property_account_income_categ
+
+        self.income_account_id = account
 
     @api.onchange(
         "account_id",
@@ -130,9 +157,7 @@ class HrAnalyticTimesheet(models.Model):
     @api.multi
     def _get_income_account(self):
         self.ensure_one()
-        result = self.product_id.categ_id.property_account_income_categ
-        if not result:
-            result = self.product_id.property_income_account
+        result = self.income_account_id
         if not result:
             err_msg = _("No income account defined")
             raise UserError(err_msg)

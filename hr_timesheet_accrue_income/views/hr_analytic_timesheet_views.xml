@@ -15,6 +15,7 @@
             <xpath expr="//field[@name='general_account_id']" position="after">
                 <field name="accrue_income_journal_id"/>
                 <field name="accrue_income_account_id"/>
+                <field name="income_account_id"/>
                 <field name="accrue_income_ok"/>
                 <field name="accrue_income_move_id"/>
                 <button name="action_create_accrue_income_move" string="Generate Accrue Income" icon="gtk-apply" type="object" attrs="{'invisible':['|',('accrue_income_move_id','!=',False),('accrue_income_ok','=',False)]}"/>
