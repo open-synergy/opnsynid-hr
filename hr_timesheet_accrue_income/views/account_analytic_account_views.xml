@@ -17,6 +17,7 @@
                     <group name="accrue_expense_1" colspan="4" col="2">
                         <field name="accrue_income_journal_id"/>
                         <field name="accrue_income_account_id"/>
+                        <field name="income_account_id"/>
                         <field name="accrue_income_ok"/>
                     </group>
                 </page>

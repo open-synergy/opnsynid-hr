@@ -24,6 +24,13 @@ class AccountAnalyticAccount(models.Model):
             ("type", "=", "other"),
         ],
     )
+    income_account_id = fields.Many2one(
+        string="Income Account",
+        comodel_name="account.account",
+        domain=[
+            ("type", "=", "other"),
+        ],
+    )
     accrue_income_ok = fields.Boolean(
         string="Can Create Accrue Income",
         default=False,
