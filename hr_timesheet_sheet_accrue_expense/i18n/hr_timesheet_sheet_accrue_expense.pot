@@ -44,6 +44,7 @@ msgid "Generate Accrue Expense"
 msgstr ""
 
 #. module: hr_timesheet_sheet_accrue_expense
+#: view:hr_timesheet_sheet.sheet:hr_timesheet_sheet_accrue_expense.hr_timesheet_sheet_sheet_view_form
 #: model:ir.actions.server,name:hr_timesheet_sheet_accrue_expense.remove_accrue_expense_actions_server
 msgid "Remove Accrue Expense"
 msgstr ""
