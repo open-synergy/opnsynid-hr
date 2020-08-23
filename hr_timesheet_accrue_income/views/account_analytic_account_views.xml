@@ -32,8 +32,11 @@
     <field name="inherit_id" ref="account_analytic_analysis.account_analytic_account_form_form"/>
     <field name="arch" type="xml">
         <data>
-            <xpath expr="//field[@name='date']" position="after">
-                <field name="prepaid_price_unit"/>
+            <xpath expr="//div[@name='duration']" position="after">
+                <label for="prepaid_price_unit"/>
+                <div>
+                    <field name="prepaid_price_unit"/>
+                </div>
             </xpath>
         </data>
     </field>
