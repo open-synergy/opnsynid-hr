@@ -133,7 +133,7 @@ class HrAnalyticTimesheet(models.Model):
         return self.general_account_id
 
     @api.multi
-    def _get_period(self):
+    def _get_accrue_expense_period(self):
         self.ensure_one()
         period = self.env["account.period"].find(self.date)
         return period
@@ -142,16 +142,16 @@ class HrAnalyticTimesheet(models.Model):
     def _prepare_accrue_expense_move(self):
         self.ensure_one()
         journal = self._get_accrue_expense_journal()
-        period = self._get_period()
+        period = self._get_accrue_expense_period()
         return {
             "journal_id": journal.id,
             "period_id": period.id,
             "date": self.date,
-            "line_id": self._prepare_move_lines()
+            "line_id": self._prepare_accrue_expense_move_lines()
         }
 
     @api.multi
-    def _prepare_move_lines(self):
+    def _prepare_accrue_expense_move_lines(self):
         self.ensure_one()
         result = []
         result.append(self._prepare_accrue_expense_line())
@@ -159,7 +159,7 @@ class HrAnalyticTimesheet(models.Model):
         return result
 
     @api.multi
-    def _get_partner(self):
+    def _get_accrue_expense_partner(self):
         self.ensure_one()
         partner = self.user_id.employee_ids[0].address_home_id
         if not partner:
@@ -174,7 +174,7 @@ class HrAnalyticTimesheet(models.Model):
             "account_id": self._get_accrue_expense_account().id,
             "credit": abs(self.amount),
             "debit": 0.0,
-            "partner_id": self._get_partner().id,
+            "partner_id": self._get_accrue_expense_partner().id,
             "name": self.name,
             "product_id": self.product_id.id,
             "product_uom_id": self.product_uom_id.id,
@@ -188,7 +188,7 @@ class HrAnalyticTimesheet(models.Model):
             "account_id": self._get_expense_account().id,
             "debit": abs(self.amount),
             "credit": 0.0,
-            "partner_id": self._get_partner().id,
+            "partner_id": self._get_accrue_expense_partner().id,
             "name": self.name,
             "product_id": self.product_id.id,
             "product_uom_id": self.product_uom_id.id,
