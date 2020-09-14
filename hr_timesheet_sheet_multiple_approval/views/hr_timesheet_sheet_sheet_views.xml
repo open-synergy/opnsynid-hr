@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_timesheet_sheet_sheet_view_form" model="ir.ui.view">
+    <field name="name">hr_timesheet_sheet.sheet.multiple.approval.form</field>
+    <field name="model">hr_timesheet_sheet.sheet</field>
+    <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+    <field name="arch" type="xml">
+        <data>
+            <xpath expr="//button[@name='button_confirm']" position="before">
+                <button name="request_validation"
+                    string="Request Validation"
+                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                    type="object"/>
+                <button name="restart_validation"
+                    string="Restart Validation"
+                    attrs="{'invisible': ['|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm'])]}"
+                    type="object"/>
+            </xpath>
+            <xpath expr="//button[@name='done']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//header" position="after">
+                <field name="need_validation" invisible="1"/>
+                <field name="validated" invisible="1"/>
+                <field name="rejected" invisible="1"/>
+                <div class="alert alert-warning"
+                     attrs="{'invisible': ['|', '|', '|',
+                     ('validated', '=', True), ('state', 'not in', ['confirm']),
+                     ('rejected', '=', True), ('review_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p><i class="fa fa-info-circle"/>This Timesheet needs to be
+                        validated.
+                        <button name="validate_tier"
+                            string="Validate"
+                            attrs="{'invisible': [('review_ids', '=', [])]}"
+                            type="object"
+                            class="oe_inline oe_button btn-success"
+                            icon="terp-check"/>
+                        <button name="reject_tier"
+                            string="Reject"
+                            type="object"
+                            class="btn-icon btn-danger"
+                            icon="terp-gtk-stop"/>
+                    </p>
+                </div>
+                <div class="alert alert-success"
+                     attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+                </div>
+                <div class="alert alert-danger"
+                     attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+                </div>
+            </xpath>
+            <xpath expr="//notebook" position="inside">
+                <page string="Reviews" name="tier_validation">
+                    <group>
+                        <field name="definition_id"/>
+                        <field name="reviewer_partner_ids" widget="many2many_tags"/>
+                        <field name="review_ids" readonly="1"/>
+                    </group>
+                </page>
+            </xpath>
+        </data>
+    </field>
+</record>
+
+<record id="hr_timesheet_sheet_sheet_view_search" model="ir.ui.view">
+    <field name="name">hr_timesheet_sheet.sheet.multiple.approval.search</field>
+    <field name="model">hr_timesheet_sheet.sheet</field>
+    <field name="inherit_id" ref="hr_timesheet_sheet.view_hr_timesheet_sheet_filter"/>
+    <field name="arch" type="xml">
+        <xpath expr="//filter[@name='to_approve']" position="after">
+            <filter name="needs_review" string="Needs my Review"
+                    domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done'])]"
+                    help="Timesheet to review"/>
+        </xpath>
+    </field>
+</record>
+
+
+</data>
+</openerp>
