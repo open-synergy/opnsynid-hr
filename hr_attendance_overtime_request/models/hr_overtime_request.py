@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
-from openerp import models, fields, api, SUPERUSER_ID
+from openerp import models, fields, api
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -10,7 +10,19 @@ from openerp.tools.translate import _
 class HrOvertimeRequest(models.Model):
     _name = "hr.overtime_request"
     _description = "Attendance Overtime Request"
-    _inherit = ["mail.thread"]
+    _inherit = [
+        "mail.thread",
+        "base.sequence_document",
+        "base.workflow_policy_object",
+        "tier.validation",
+    ]
+    _state_from = [
+        "draft",
+        "confirm",
+    ]
+    _state_to = [
+        "valid",
+    ]
 
     @api.model
     def _default_company_id(self):
@@ -109,28 +121,11 @@ class HrOvertimeRequest(models.Model):
 
     @api.multi
     @api.depends(
-        "state",
         "company_id",
     )
     def _compute_policy(self):
-        for overtime in self:
-            if self.env.user.id == SUPERUSER_ID:
-                overtime.confirm_ok = overtime.valid_ok = \
-                    overtime.cancel_ok = \
-                    overtime.restart_ok = True
-                continue
-
-            if overtime.company_id:
-                company = overtime.company_id
-                for policy in company.\
-                        _get_overtime_button_policy_map():
-                    setattr(
-                        overtime,
-                        policy[0],
-                        company.
-                        _get_overtime_button_policy(
-                            policy[1]),
-                    )
+        _super = super(HrOvertimeRequest, self)
+        _super._compute_policy()
 
     name = fields.Char(
         string="# Overtime Request",
@@ -261,26 +256,18 @@ class HrOvertimeRequest(models.Model):
     confirm_ok = fields.Boolean(
         string="Can Confirm",
         compute="_compute_policy",
-        store=False,
-        readonly=True,
-    )
-    valid_ok = fields.Boolean(
-        string="Can Validate",
-        compute="_compute_policy",
-        store=False,
-        readonly=True,
     )
     cancel_ok = fields.Boolean(
         string="Can Cancel",
         compute="_compute_policy",
-        store=False,
-        readonly=True,
     )
     restart_ok = fields.Boolean(
         string="Can Restart",
         compute="_compute_policy",
-        store=False,
-        readonly=True,
+    )
+    restart_validation_ok = fields.Boolean(
+        string="Can Restart Validation",
+        compute="_compute_policy",
     )
     confirmed_date = fields.Datetime(
         string="Confirmation Date",
@@ -317,9 +304,25 @@ class HrOvertimeRequest(models.Model):
     )
 
     @api.multi
+    def validate_tier(self):
+        _super = super(HrOvertimeRequest, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.action_valid()
+
+    @api.multi
+    def restart_validation(self):
+        _super = super(HrOvertimeRequest, self)
+        _super.restart_validation()
+        for document in self:
+            document.request_validation()
+
+    @api.multi
     def action_confirm(self):
         for overtime in self:
             overtime.write(overtime._prepare_confirm_data())
+            overtime.request_validation()
 
     @api.multi
     def action_valid(self):
@@ -330,6 +333,7 @@ class HrOvertimeRequest(models.Model):
     def action_cancel(self):
         for overtime in self:
             overtime.write(overtime._prepare_cancel_data())
+            overtime.restart_validation()
 
     @api.multi
     def action_restart(self):
@@ -377,38 +381,21 @@ class HrOvertimeRequest(models.Model):
             "validated_date": False,
             "cancelled_user_id": False,
             "cancelled_date": False,
+            "definition_id": False,
+            "reviewer_partner_ids": False,
+            "review_ids": False,
         }
         return result
 
     @api.model
-    def _prepare_create_data(self, values):
-        name = values.get("name", False)
-        company_id = values.get("company_id", False)
-        if not name or name == "/":
-            values["name"] = self._create_sequence(company_id)
-        return values
-
-    @api.model
-    def _get_sequence(self, company_id):
-        company = self.env["res.company"].browse([company_id])[0]
-
-        if company.overtime_request_sequence_id:
-            result = company.overtime_request_sequence_id
-        else:
-            result = self.env.ref(
-                "hr_attendance_overtime_request.sequence_overtime_request")
-        return result
-
-    @api.model
-    def _create_sequence(self, company_id):
-        name = self.env["ir.sequence"].\
-            next_by_id(self._get_sequence(company_id).id) or "/"
-        return name
-
-    @api.model
     def create(self, values):
-        new_values = self._prepare_create_data(values)
-        return super(HrOvertimeRequest, self).create(new_values)
+        _super = super(HrOvertimeRequest, self)
+        result = _super.create(values)
+        sequence = result._create_sequence()
+        result.write({
+            "name": sequence,
+        })
+        return result
 
     @api.multi
     def copy(self, default):
