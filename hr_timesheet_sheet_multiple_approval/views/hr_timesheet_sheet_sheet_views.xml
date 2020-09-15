@@ -22,6 +22,9 @@
                     attrs="{'invisible': ['|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm'])]}"
                     type="object"/>
             </xpath>
+            <xpath expr="//button[@name='cancel']" position="attributes">
+                <attribute name="string">Re-Open</attribute>
+            </xpath>
             <xpath expr="//button[@name='done']" position="attributes">
                 <attribute name="invisible">1</attribute>
             </xpath>
