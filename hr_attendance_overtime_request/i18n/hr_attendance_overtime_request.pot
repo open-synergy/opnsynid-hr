@@ -19,6 +19,11 @@ msgid "# Overtime Request"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,active_reviewer_ids:0
+msgid "Active Reviewers"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
 #: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
 msgid "Allowed Groups"
 msgstr ""
@@ -42,9 +47,9 @@ msgid "Allowed To Restart Overtime Request"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: field:hr.overtime_config_setting,overtime_request_valid_grp_ids:0
-#: field:res.company,overtime_request_valid_grp_ids:0
-msgid "Allowed To Validate Overtime Request"
+#: field:hr.overtime_config_setting,overtime_request_restart_validation_grp_ids:0
+#: field:res.company,overtime_request_restart_validation_grp_ids:0
+msgid "Allowed To Restart Validation Overtime Request"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -88,8 +93,8 @@ msgid "Can Restart"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: field:hr.overtime_request,valid_ok:0
-msgid "Can Validate"
+#: field:hr.overtime_request,restart_validation_ok:0
+msgid "Can Restart Validation"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -195,7 +200,7 @@ msgid "Date by Year"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:434
+#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:421
 #, python-format
 msgid "Date end must be greater than date start"
 msgstr ""
@@ -203,6 +208,11 @@ msgstr ""
 #. module: hr_attendance_overtime_request
 #: help:hr.overtime_request,message_last_post:0
 msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,definition_id:0
+msgid "Definition"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -224,7 +234,7 @@ msgid "Draft"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:451
+#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:438
 #, python-format
 msgid "Employe already has an overtime request"
 msgstr ""
@@ -348,9 +358,24 @@ msgid "My Overtime Request"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,need_validation:0
+msgid "Need Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,next_reviewer_ids:0
+msgid "Next Reviewers"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
 #: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
 #: field:hr.overtime_request,note:0
 msgid "Note"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Operation has been"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -420,7 +445,42 @@ msgstr ""
 
 #. module: hr_attendance_overtime_request
 #: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,rejected:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Request Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
 msgid "Restart"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,reviewer_partner_ids:0
+msgid "Review Partners"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,reviewer_ids:0
+msgid "Reviewers"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Reviews"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -462,8 +522,8 @@ msgid "Supervisor"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
-msgid "To Approve"
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "This data needs to be validated."
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -482,6 +542,11 @@ msgid "To Restart"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
+#: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
+msgid "To Restart Validation"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
 #: field:hr.overtime_request,message_unread:0
 msgid "Unread Messages"
 msgstr ""
@@ -492,10 +557,19 @@ msgid "User"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
 #: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
 #: selection:hr.overtime_request,state:0
 msgid "Valid"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "Validate"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,validated:0
+msgid "Validated"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
@@ -514,13 +588,18 @@ msgid "Validation Date"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
+#: field:hr.overtime_request,review_ids:0
+msgid "Validations"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
 #: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_search
 #: selection:hr.overtime_request,state:0
 msgid "Waiting for Approval"
 msgstr ""
 
 #. module: hr_attendance_overtime_request
-#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:429
+#: code:addons/hr_attendance_overtime_request/models/hr_overtime_request.py:416
 #, python-format
 msgid "You can only delete data with draft state"
 msgstr ""
@@ -534,5 +613,15 @@ msgstr ""
 #. module: hr_attendance_overtime_request
 #: view:hr.overtime_config_setting:hr_attendance_overtime_request.hr_overtime_config_setting_view_form
 msgid "or"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "rejected"
+msgstr ""
+
+#. module: hr_attendance_overtime_request
+#: view:hr.overtime_request:hr_attendance_overtime_request.hr_overtime_request_view_form
+msgid "validated"
 msgstr ""
 
