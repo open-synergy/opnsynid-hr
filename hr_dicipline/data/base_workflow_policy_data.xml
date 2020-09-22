@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -13,12 +14,6 @@
     <field name="workflow_id" ref="workflow_policy_dicipline"/>
     <field name="field_id" ref="hr_dicipline.field_hr_dicipline_confirm_ok"/>
     <field name="python_code">result = document.type_id.dicipline_confirm_grp_ids.ids</field>
-</record>
-
-<record id="workflow_policy_dicipline_approve" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_approve_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_approve_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_dicipline_open" model="base.workflow_policy_line">
@@ -43,6 +38,12 @@
     <field name="workflow_id" ref="workflow_policy_dicipline"/>
     <field name="field_id" ref="hr_dicipline.field_hr_dicipline_restart_ok"/>
     <field name="python_code">result = document.type_id.dicipline_restart_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_dicipline_restart_validation" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_dicipline"/>
+    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_restart_validation_ok"/>
+    <field name="python_code">result = document.type_id.dicipline_restart_val_grp_ids.ids</field>
 </record>
 
 </data>

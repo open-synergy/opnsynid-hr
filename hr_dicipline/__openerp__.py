@@ -1,19 +1,21 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Employee Dicipline",
-    "version": "8.0.1.0.0",
+    "version": "8.0.2.0.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
         "hr_career_administration_configuration_page",
         "base_sequence_configurator",
         "base_workflow_policy",
+        "base_multiple_approval",
     ],
     "data": [
         "security/ir_module_category_data.xml",
@@ -27,5 +29,8 @@
         "views/hr_dicipline_type_views.xml",
         "views/hr_dicipline_reason_views.xml",
         "views/hr_dicipline_views.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
     ],
 }

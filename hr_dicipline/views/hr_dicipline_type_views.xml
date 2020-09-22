@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2019 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -32,11 +33,11 @@
                 <page name="policy" string="Policies">
                     <group name="policy_1" colspan="4" col="2">
                         <field name="dicipline_confirm_grp_ids" widget="many2many_tags"/>
-                        <field name="dicipline_approve_grp_ids" widget="many2many_tags"/>
                         <field name="dicipline_open_grp_ids" widget="many2many_tags"/>
                         <field name="dicipline_done_grp_ids" widget="many2many_tags"/>
                         <field name="dicipline_cancel_grp_ids" widget="many2many_tags"/>
                         <field name="dicipline_restart_grp_ids" widget="many2many_tags"/>
+                        <field name="dicipline_restart_val_grp_ids" widget="many2many_tags"/>
                     </group>
                 </page>
                 <page name="note" string="Note">
