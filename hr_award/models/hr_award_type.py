@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from openerp import models, fields
 
 
@@ -41,13 +41,6 @@ class HrAwardType(models.Model):
         column1="award_type_id",
         column2="group_id",
     )
-    award_approve_grp_ids = fields.Many2many(
-        string="Allowed To Approve Employee Award",
-        comodel_name="res.groups",
-        relation="rel_award_type_2_group_award_approve",
-        column1="award_type_id",
-        column2="group_id",
-    )
     award_open_grp_ids = fields.Many2many(
         string="Allowed To Open Employee Award",
         comodel_name="res.groups",
@@ -73,6 +66,13 @@ class HrAwardType(models.Model):
         string="Allowed To Restart Employee Award",
         comodel_name="res.groups",
         relation="rel_award_type_2_group_award_restart",
+        column1="award_type_id",
+        column2="group_id",
+    )
+    award_restart_val_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Employee Award",
+        comodel_name="res.groups",
+        relation="rel_award_type_2_group_award_restart_val",
         column1="award_type_id",
         column2="group_id",
     )
