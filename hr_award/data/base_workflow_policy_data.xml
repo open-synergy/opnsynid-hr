@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -13,12 +14,6 @@
     <field name="workflow_id" ref="workflow_policy_award"/>
     <field name="field_id" ref="hr_award.field_hr_award_confirm_ok"/>
     <field name="python_code">result = document.type_id.award_confirm_grp_ids.ids</field>
-</record>
-
-<record id="workflow_policy_award_approve" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_award"/>
-    <field name="field_id" ref="hr_award.field_hr_award_approve_ok"/>
-    <field name="python_code">result = document.type_id.award_approve_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_award_open" model="base.workflow_policy_line">
@@ -43,6 +38,12 @@
     <field name="workflow_id" ref="workflow_policy_award"/>
     <field name="field_id" ref="hr_award.field_hr_award_restart_ok"/>
     <field name="python_code">result = document.type_id.award_restart_grp_ids.ids</field>
+</record>
+
+<record id="workflow_policy_award_restart_validation" model="base.workflow_policy_line">
+    <field name="workflow_id" ref="workflow_policy_award"/>
+    <field name="field_id" ref="hr_award.field_hr_award_restart_validation_ok"/>
+    <field name="python_code">result = document.type_id.award_restart_val_grp_ids.ids</field>
 </record>
 
 </data>
