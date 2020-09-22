@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from openerp import models, fields
 
 
@@ -41,13 +41,6 @@ class HrDiciplineType(models.Model):
         column1="dicipline_type_id",
         column2="group_id",
     )
-    dicipline_approve_grp_ids = fields.Many2many(
-        string="Allowed To Approve Employee Dicipline",
-        comodel_name="res.groups",
-        relation="rel_dicipline_type_2_group_dicipline_approve",
-        column1="dicipline_type_id",
-        column2="group_id",
-    )
     dicipline_open_grp_ids = fields.Many2many(
         string="Allowed To Open Employee Dicipline",
         comodel_name="res.groups",
@@ -73,6 +66,13 @@ class HrDiciplineType(models.Model):
         string="Allowed To Restart Employee Dicipline",
         comodel_name="res.groups",
         relation="rel_dicipline_type_2_group_dicipline_restart",
+        column1="dicipline_type_id",
+        column2="group_id",
+    )
+    dicipline_restart_val_grp_ids = fields.Many2many(
+        string="Allowed To Restart Validation Employee Dicipline",
+        comodel_name="res.groups",
+        relation="rel_dicipline_type_2_group_dicipline_restart_val",
         column1="dicipline_type_id",
         column2="group_id",
     )
