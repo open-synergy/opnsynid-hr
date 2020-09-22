@@ -2,12 +2,12 @@
    :target: http://www.gnu.org/licenses/agpl-3.0-standalone.html
    :alt: License: AGPL-3
 
-=======================
-Payslip Tier Validation
-=======================
+=========================
+Payslip Multiple Approval
+=========================
 
 This module extends the functionality of Payslip
-to support a tier validation process.
+to support a Multiple Approval process.
 
 Installation
 ============
@@ -18,7 +18,7 @@ To install this module, you need to:
 2.  Add the path to this repository in your configuration (addons-path)
 3.  Update the module list
 4.  Go to menu *Setting -> Modules -> Local Modules*
-5.  Search For *Payslip Tier Validation*
+5.  Search For *Payslip Multiple Approval*
 6.  Install the module
 
 Bug Tracker
@@ -43,8 +43,8 @@ Contributors
 Maintainer
 ----------
 
-.. image:: https://opensynergy-indonesia.com/logo.png
-   :alt: OpenSynergy Indonesia
-   :target: https://opensynergy-indonesia.com
+.. image:: https://simetri-sinergi.id/logo.png
+   :alt: PT. Simetri Sinergi Indonesia
+   :target: https://simetri-sinergi.id.com
 
-This module is maintained by the OpenSynergy Indonesia.
+This module is maintained by the PT. Simetri Sinergi Indonesia.

@@ -1,4 +1,7 @@
 <?xml version="1.0"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <openerp>
     <data>
         <record id="hr_payslip_view_form" model="ir.ui.view">
@@ -6,7 +9,7 @@
             <field name="model">hr.payslip</field>
             <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
             <field name="arch" type="xml">
-                <button name="hr_verify_sheet" position="before">
+                <xpath expr="//button[@name='hr_verify_sheet']" position="before">
                     <button name="request_validation"
                         string="Request Validation"
                         attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['verify'])]}"
@@ -15,8 +18,8 @@
                         string="Restart Validation"
                         attrs="{'invisible': ['|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['verify'])]}"
                         type="object"/>
-                </button>
-                <header position="after">
+                </xpath>
+                <xpath expr="//header" position="after">
                     <field name="need_validation" invisible="1"/>
                     <field name="validated" invisible="1"/>
                     <field name="rejected" invisible="1"/>
@@ -50,12 +53,16 @@
                          style="margin-bottom:0px;">
                         <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
                     </div>
-                </header>
-                <notebook position="inside">
+                </xpath>
+                <xpath expr="//notebook" position="inside">
                     <page string="Reviews" name="tier_validation">
-                        <field name="review_ids" readonly="1"/>
+                        <group>
+                            <field name="definition_id"/>
+                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
+                            <field name="review_ids" readonly="1"/>
+                        </group>
                     </page>
-                </notebook>
+                </xpath>
             </field>
         </record>
 
@@ -68,9 +75,6 @@
                     <filter name="needs_review" string="Needs my Review"
                             domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel'])]"
                             help="My Payslip to review"/>
-                    <filter name="tier_validated" string="Validated"
-                            domain="[('validated', '=', True)]"
-                            help="Payslip validated and ready to be confirmed"/>
                 </xpath>
             </field>
         </record>
