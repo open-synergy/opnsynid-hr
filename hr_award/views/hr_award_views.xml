@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2019 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -27,13 +28,52 @@
     <field name="arch" type="xml">
         <form>
             <header>
+                <button name="request_validation"
+                    string="Request Validation"
+                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                    type="object"/>
+                <button name="restart_validation"
+                    string="Restart Validation"
+                    attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_validation_ok','=',False)]}"
+                    type="object"/>
                 <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm Employee Awards. Are you sure?"/>
-                <button name="button_approve" string="Approve" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}" confirm="Approve Employee Awards. Are you sure?"/>
                 <button name="button_open" string="Open" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','approve'),('open_ok','=',False)]}" confirm="Open Employee Awards. Are you sure?"/>
                 <button name="button_done" string="Done" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','open'),('done_ok','=',False)]}" confirm="Finish Employee Awards. Are you sure?"/>
                 <button name="%(base_cancel_reason.base_cancel_reason_wizard_action)d" string="Cancel" type="action" attrs="{'invisible':['|',('state','not in',['draft','confirm','approve','open','done']),('cancel_ok','=',False)]}" confirm="Cancel Employee Awards. Are you sure?"/>
                 <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Reset Employee Awards. Are you sure?"/>
                 <field name="state" string="State" widget="statusbar" statusbar_visible="draft,confirm,approve,open"/>
+                <field name="need_validation" invisible="1"/>
+                <field name="validated" invisible="1"/>
+                <field name="rejected" invisible="1"/>
+                <div class="alert alert-warning"
+                     attrs="{'invisible': ['|', '|', '|',
+                     ('validated', '=', True), ('state', 'not in', ['confirm']),
+                     ('rejected', '=', True), ('review_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p><i class="fa fa-info-circle"/>This data needs to be validated.
+                        <button name="validate_tier"
+                            string="Validate"
+                            attrs="{'invisible': [('review_ids', '=', [])]}"
+                            type="object"
+                            class="oe_inline oe_button btn-success"
+                            icon="terp-check"/>
+                        <button name="reject_tier"
+                            string="Reject"
+                            type="object"
+                            class="btn-icon btn-danger"
+                            icon="terp-gtk-stop"/>
+                    </p>
+                </div>
+                <div class="alert alert-success"
+                     attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+                </div>
+                <div class="alert alert-danger"
+                     attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                     style="margin-bottom:0px;">
+                    <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+                </div>
             </header>
             <sheet>
                 <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
@@ -84,11 +124,18 @@
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
                             <field name="confirm_ok"/>
-                            <field name="approve_ok"/>
                             <field name="open_ok"/>
                             <field name="done_ok"/>
                             <field name="cancel_ok"/>
                             <field name="restart_ok"/>
+                            <field name="restart_validation_ok"/>
+                        </group>
+                    </page>
+                    <page string="Reviews" name="tier_validation">
+                        <group>
+                            <field name="definition_id"/>
+                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
+                            <field name="review_ids" readonly="1"/>
                         </group>
                     </page>
                 </notebook>
