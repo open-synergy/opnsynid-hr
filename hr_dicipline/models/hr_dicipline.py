@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Copyright 2019 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from openerp import models, fields, api, _
 from openerp.exceptions import Warning as UserError
 
@@ -13,6 +13,14 @@ class HrDicipline(models.Model):
         "mail.thread",
         "base.sequence_document",
         "base.workflow_policy_object",
+        "tier.validation",
+    ]
+    _state_from = [
+        "draft",
+        "confirm",
+    ]
+    _state_to = [
+        "approve",
     ]
 
     @api.model
@@ -200,10 +208,6 @@ class HrDicipline(models.Model):
         string="Can Confirm",
         compute="_compute_policy",
     )
-    approve_ok = fields.Boolean(
-        string="Can Approve",
-        compute="_compute_policy",
-    )
     open_ok = fields.Boolean(
         string="Can Open",
         compute="_compute_policy",
@@ -220,6 +224,25 @@ class HrDicipline(models.Model):
         string="Can Restart",
         compute="_compute_policy",
     )
+    restart_validation_ok = fields.Boolean(
+        string="Can Restart Validation",
+        compute="_compute_policy",
+    )
+
+    @api.multi
+    def validate_tier(self):
+        _super = super(HrDicipline, self)
+        _super.validate_tier()
+        for document in self:
+            if document.validated:
+                document.button_approve()
+
+    @api.multi
+    def restart_validation(self):
+        _super = super(HrDicipline, self)
+        _super.restart_validation()
+        for document in self:
+            document.request_validation()
 
     @api.model
     def create(self, values):
@@ -245,6 +268,7 @@ class HrDicipline(models.Model):
     def button_confirm(self):
         for document in self:
             document.write(document._prepare_confirm_data())
+            document.request_validation()
 
     @api.multi
     def button_approve(self):
@@ -265,6 +289,7 @@ class HrDicipline(models.Model):
     def button_cancel(self):
         for document in self:
             document.write(document._prepare_cancel_data())
+            document.restart_validation()
 
     @api.multi
     def button_restart(self):
@@ -336,6 +361,9 @@ class HrDicipline(models.Model):
             "done_user_id": False,
             "cancel_date": False,
             "cancel_user_id": False,
+            "definition_id": False,
+            "reviewer_partner_ids": False,
+            "review_ids": False,
         }
         return result
 
