@@ -25,13 +25,13 @@ msgid "Active"
 msgstr ""
 
 #. module: hr_award
-#: field:hr.award,allowed_reason_ids:0
-msgid "Allowed Reasons"
+#: field:hr.award,active_reviewer_ids:0
+msgid "Active Reviewers"
 msgstr ""
 
 #. module: hr_award
-#: field:hr.award_type,award_approve_grp_ids:0
-msgid "Allowed To Approve Employee Award"
+#: field:hr.award,allowed_reason_ids:0
+msgid "Allowed Reasons"
 msgstr ""
 
 #. module: hr_award
@@ -60,13 +60,13 @@ msgid "Allowed To Restart Employee Award"
 msgstr ""
 
 #. module: hr_award
-#: view:hr.award:hr_award.hr_award_view_form
-msgid "Approve"
+#: field:hr.award_type,award_restart_val_grp_ids:0
+msgid "Allowed To Restart Validation Employee Award"
 msgstr ""
 
 #. module: hr_award
 #: view:hr.award:hr_award.hr_award_view_form
-msgid "Approve Employee Awards. Are you sure?"
+msgid "Approve"
 msgstr ""
 
 #. module: hr_award
@@ -117,11 +117,6 @@ msgid "Award Types"
 msgstr ""
 
 #. module: hr_award
-#: field:hr.award,approve_ok:0
-msgid "Can Approve"
-msgstr ""
-
-#. module: hr_award
 #: field:hr.award,cancel_ok:0
 msgid "Can Cancel"
 msgstr ""
@@ -144,6 +139,11 @@ msgstr ""
 #. module: hr_award
 #: field:hr.award,restart_ok:0
 msgid "Can Restart"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,restart_validation_ok:0
+msgid "Can Restart Validation"
 msgstr ""
 
 #. module: hr_award
@@ -233,6 +233,11 @@ msgstr ""
 #. module: hr_award
 #: help:hr.award,message_last_post:0
 msgid "Date of the last message posted on the record."
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,definition_id:0
+msgid "Definition"
 msgstr ""
 
 #. module: hr_award
@@ -409,6 +414,16 @@ msgid "My Employee Awards"
 msgstr ""
 
 #. module: hr_award
+#: field:hr.award,need_validation:0
+msgid "Need Validation"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,next_reviewer_ids:0
+msgid "Next Reviewers"
+msgstr ""
+
+#. module: hr_award
 #: view:hr.award:hr_award.hr_award_view_form
 #: field:hr.award,note:0
 #: view:hr.award_reason:hr_award.hr_award_reason_view_form
@@ -445,6 +460,11 @@ msgid "Opened Date"
 msgstr ""
 
 #. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "Operation has been"
+msgstr ""
+
+#. module: hr_award
 #: view:hr.award_type:hr_award.hr_award_type_view_form
 msgid "Policies"
 msgstr ""
@@ -462,7 +482,42 @@ msgstr ""
 
 #. module: hr_award
 #: view:hr.award:hr_award.hr_award_view_form
+msgid "Reject"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,rejected:0
+msgid "Rejected"
+msgstr ""
+
+#. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "Request Validation"
+msgstr ""
+
+#. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
 msgid "Reset Employee Awards. Are you sure?"
+msgstr ""
+
+#. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "Restart Validation"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,reviewer_partner_ids:0
+msgid "Review Partners"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,reviewer_ids:0
+msgid "Reviewers"
+msgstr ""
+
+#. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "Reviews"
 msgstr ""
 
 #. module: hr_award
@@ -494,6 +549,11 @@ msgid "Supervisor"
 msgstr ""
 
 #. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "This data needs to be validated."
+msgstr ""
+
+#. module: hr_award
 #: view:hr.award:hr_award.hr_award_view_search
 #: field:hr.award,type_id:0
 msgid "Type"
@@ -515,14 +575,39 @@ msgid "Valid"
 msgstr ""
 
 #. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "Validate"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,validated:0
+msgid "Validated"
+msgstr ""
+
+#. module: hr_award
+#: field:hr.award,review_ids:0
+msgid "Validations"
+msgstr ""
+
+#. module: hr_award
 #: view:hr.award:hr_award.hr_award_view_search
 #: selection:hr.award,state:0
 msgid "Waiting for Approval"
 msgstr ""
 
 #. module: hr_award
-#: code:addons/hr_award/models/hr_award.py:237
+#: code:addons/hr_award/models/hr_award.py:261
 #, python-format
 msgid "You can only delete data on draft state"
+msgstr ""
+
+#. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "rejected"
+msgstr ""
+
+#. module: hr_award
+#: view:hr.award:hr_award.hr_award_view_form
+msgid "validated"
 msgstr ""
 
