@@ -108,6 +108,9 @@
                             <field name="previous_department_id" string="Department" readonly="1"/>
                             <field name="new_department_id" nolabel="1"
                                 attrs="{'required':[('change_department','=',True)], 'readonly':[('change_department','=',False)]}"/>
+                            <field name="previous_manager_id" string="Manager" readonly="1"/>
+                            <field name="new_manager_id" nolabel="1"
+                                attrs="{'required':[('change_manager','=',True)], 'readonly':[('change_manager','=',False)]}"/>
                             <field name="previous_job_id" string="Job" readonly="1"/>
                             <field name="new_job_id" nolabel="1"
                                 attrs="{'required':[('change_job_title','=',True)], 'readonly':[('change_job_title','=',False)]}"/>
@@ -136,6 +139,7 @@
                             <field name="change_company"/>
                             <field name="change_department"/>
                             <field name="change_job_title"/>
+                            <field name="change_manager"/>
                             <field name="change_working_schedule"/>
                             <field name="change_wage"/>
                         </group>
