@@ -25,8 +25,24 @@ msgid "Contract"
 msgstr ""
 
 #. module: hr_contract_additional_field
+#: model:ir.model,name:hr_contract_additional_field.model_hr_contract_type
+msgid "Contract Type"
+msgstr ""
+
+#. module: hr_contract_additional_field
 #: view:hr.contract:hr_contract_additional_field.hr_contract_view_search
 #: field:hr.contract,contract_department_id:0
 msgid "Department"
+msgstr ""
+
+#. module: hr_contract_additional_field
+#: field:hr.contract,employment_status_id:0
+#: field:hr.contract.type,employment_status_id:0
+msgid "Employment Status"
+msgstr ""
+
+#. module: hr_contract_additional_field
+#: field:hr.contract,manager_id:0
+msgid "Manager"
 msgstr ""
 
