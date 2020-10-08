@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018-2019 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -18,6 +19,12 @@
             <xpath expr="//field[@name='job_id']" position="before">
                 <field name="company_id" groups="base.group_multi_company"/>
                 <field name="contract_department_id"/>
+            </xpath>
+            <xpath expr="//field[@name='job_id']" position="after">
+                <field name="manager_id"/>
+            </xpath>
+            <xpath expr="//field[@name='type_id']" position="after">
+                <field name="employment_status_id"/>
             </xpath>
         </data>
     </field>
