@@ -227,6 +227,17 @@ class HrCareerTransition(models.Model):
             ],
         },
     )
+    new_manager_id = fields.Many2one(
+        string="New Manager",
+        comodel_name="hr.employee",
+        ondelete="restrict",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
+    )
     new_job_id = fields.Many2one(
         string="New Job Title",
         comodel_name="hr.job",
@@ -267,6 +278,10 @@ class HrCareerTransition(models.Model):
         string="Previous Department",
         comodel_name="hr.department",
     )
+    previous_manager_id = fields.Many2one(
+        string="Previous Department",
+        comodel_name="hr.employee",
+    )
     previous_job_id = fields.Many2one(
         string="Previous Job Title",
         comodel_name="hr.job",
@@ -292,6 +307,11 @@ class HrCareerTransition(models.Model):
     change_department = fields.Boolean(
         related="type_id.change_department",
         string="Change Department",
+        readonly=True,
+    )
+    change_manager = fields.Boolean(
+        related="type_id.change_manager",
+        string="Change Manager",
         readonly=True,
     )
     change_working_schedule = fields.Boolean(
@@ -525,6 +545,10 @@ class HrCareerTransition(models.Model):
     def onchange_new_department_id(self):
         self.new_department_id = self.previous_department_id
 
+    @api.onchange("previous_manager_id")
+    def onchange_new_manager_id(self):
+        self.new_manager_id = self.previous_manager_id
+
     @api.onchange("previous_job_id")
     def onchange_new_job_id(self):
         self.new_job_id = self.previous_job_id
@@ -557,6 +581,7 @@ class HrCareerTransition(models.Model):
             "previous_working_hour_id": False,
             "previous_job_id": False,
             "previous_department_id": False,
+            "previous_manager_id": False,
             "previous_company_id": False,
             "previous_wage": 0.0,
         }
@@ -572,6 +597,7 @@ class HrCareerTransition(models.Model):
             "previous_working_hour_id": previous_contract.working_hours,
             "previous_job_id": previous_contract.job_id,
             "previous_department_id": previous_contract.contract_department_id,
+            "previous_manager_id": previous_contract.manager_id,
             "previous_company_id": previous_contract.company_id,
             "previous_wage": previous_contract.wage,
         }
@@ -613,6 +639,9 @@ class HrCareerTransition(models.Model):
             "contract_department_id": self.new_department_id and \
             self.new_department_id.id or \
             False,
+            "parent_id": self.new_manager_id and \
+            self.new_manager_id.id or \
+            False,
             "company_id": self.new_company_id and \
             self.new_company_id.id or \
             False,
@@ -634,6 +663,9 @@ class HrCareerTransition(models.Model):
             "company_id": self.new_company_id and
             self.new_company_id.id or
             False,
+            "parent_id": self.new_manager_id and
+            self.new_manager_id.id or
+            False,
             "wage": self.new_wage,
         }
 
@@ -652,6 +684,9 @@ class HrCareerTransition(models.Model):
             False,
             "company_id": self.previous_company_id and
             self.previous_company_id.id or
+            False,
+            "parent_id": self.previous_manager_id and
+            self.previous_manager_id.id or
             False,
             "wage": self.previous_wage,
         }

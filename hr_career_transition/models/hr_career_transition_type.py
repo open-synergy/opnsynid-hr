@@ -50,6 +50,9 @@ class HrCareerTransitionType(models.Model):
     change_job_title = fields.Boolean(
         string="Change Job Title",
     )
+    change_manager = fields.Boolean(
+        string="Change Manager",
+    )
     change_department = fields.Boolean(
         string="Change Department",
     )

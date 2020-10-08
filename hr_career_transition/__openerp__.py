@@ -5,7 +5,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Career Transition",
-    "version": "8.0.2.0.0",
+    "version": "8.0.3.0.0",
     "category": "Human Resource",
     "website": "https://opensynergy-indonesia.com",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
@@ -14,7 +14,6 @@
     "depends": [
         "hr_career_administration_configuration_page",
         "hr_contract_additional_field",
-        "hr_contract_reference",
         "base_sequence_configurator",
         "base_workflow_policy",
         "base_multiple_approval",
