@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <record id="hr_holidays_view_form" model="ir.ui.view">
+            <field name="name">hr.holidays.multiple.approval.form</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.edit_holiday_new" />
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='confirm']" position="before">
+                    <button name="request_validation"
+                        string="Request Validation"
+                        attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                        type="object"/>
+                    <button name="restart_validation"
+                        string="Restart Validation"
+                        attrs="{'invisible': ['|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm'])]}"
+                        type="object"/>
+                </xpath>
+                <xpath expr="//button[@name='validate']" position="attributes">
+                    <attribute name="invisible">1</attribute>
+                </xpath>
+                <xpath expr="//button[@name='reset']" position="replace">
+                    <button string="Reset to Draft" name="reset" type="workflow"
+                            attrs="{'invisible': ['|', ('can_reset', '=', False), ('state', 'not in', ['refuse'])]}"/>
+                </xpath>
+                <xpath expr="//header" position="after">
+                    <field name="need_validation" invisible="1"/>
+                    <field name="validated" invisible="1"/>
+                    <field name="rejected" invisible="1"/>
+                    <div class="alert alert-warning"
+                         attrs="{'invisible': ['|', '|', '|',
+                         ('validated', '=', True), ('state', 'not in', ['confirm']),
+                         ('rejected', '=', True), ('review_ids', '=', [])]}"
+                         style="margin-bottom:0px;">
+                        <p><i class="fa fa-info-circle"/>This Holiday needs to be
+                            validated.
+                            <button name="validate_tier"
+                                string="Validate"
+                                attrs="{'invisible': [('review_ids', '=', [])]}"
+                                type="object"
+                                class="oe_inline oe_button btn-success"
+                                icon="terp-check"/>
+                            <button name="reject_tier"
+                                string="Reject"
+                                type="object"
+                                class="btn-icon btn-danger"
+                                icon="terp-gtk-stop"/>
+                        </p>
+                    </div>
+                    <div class="alert alert-success"
+                         attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                         style="margin-bottom:0px;">
+                        <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+                    </div>
+                    <div class="alert alert-danger"
+                         attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                         style="margin-bottom:0px;">
+                        <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+                    </div>
+                </xpath>
+                <xpath expr="//field[@name='notes']" position="after">
+                    <separator string="Reviews"/>
+                    <group>
+                        <field name="definition_id"/>
+                        <field name="reviewer_partner_ids" widget="many2many_tags"/>
+                        <field name="review_ids" readonly="1"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="hr_holidays_view_search" model="ir.ui.view">
+            <field name="name">hr.holidays.multiple.approval.search</field>
+            <field name="model">hr.holidays</field>
+            <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter"/>
+            <field name="arch" type="xml">
+                <xpath expr="//filter[@name='my_department_leaves']" position="before">
+                    <filter name="needs_review" string="Needs my Review"
+                            domain="[('reviewer_ids','in',uid), ('state', 'not in', ['validate', 'refuse'])]"
+                            help="My Holidays to review"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</openerp>
