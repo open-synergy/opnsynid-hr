@@ -12,6 +12,6 @@ def set_double_validation_false(cr, registry):
     ]
     status_ids = \
         obj_hr_holidays_status.search(cr, SUPERUSER_ID, criteria)
-    if holidays_status_ids:
+    if status_ids:
         obj_hr_holidays_status.write(
             cr, SUPERUSER_ID, status_ids, {"double_validation": False})
