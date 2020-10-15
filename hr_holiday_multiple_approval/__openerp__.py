@@ -19,6 +19,7 @@
         "views/hr_holidays_status_view.xml",
     ],
     "images": [
+        "static/description/banner.png",
     ],
     "post_init_hook": "set_double_validation_false",
 }
