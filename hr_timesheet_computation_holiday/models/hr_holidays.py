@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from openerp import models, fields, api
@@ -20,7 +21,7 @@ class HrHolidays(models.Model):
             criteria = [
                 ("employee_id", "=", holiday.employee_id.id),
                 ("date_from", "<=", holiday.date_from),
-                ("date_to", ">=", holiday.date_from),
+                ("date_to", ">=", holiday.date_to),
             ]
             sheets = obj_sheet.search(criteria, limit=1)
             holiday.sheet_id = sheets[0].id if len(sheets) > 0 else False
