@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 
 <openerp>
@@ -30,11 +31,52 @@
         <form>
             <header>
                 <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm Attendance Schedule Change. Are you sure?"/>
-                <button name="button_approve" string="Approve" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','confirm'),('valid_ok','=',False)]}" confirm="Approve Attendance Schedule Change. Are you sure?"/>
+                <button name="request_validation"
+                    string="Request Validation"
+                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                    class="oe_highlight"
+                    type="object"/>
+                <button name="restart_validation"
+                    string="Restart Validation"
+                    attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
+                    type="object"/>
                 <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Reset Attendance Schedule Change. Are you sure?"/>
                 <button name="button_cancel" string="Cancel" type="object" attrs="{'invisible':['|',('state','in',['cancel','valid']),('cancel_ok','=',False)]}" confirm="Cancel Attendance Schedule Change. Are you sure?"/>
-                <field name="state" string="State" widget="statusbar" statusbar_visible="draft,confirm"/>
+                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
             </header>
+            <field name="need_validation" invisible="1"/>
+            <field name="validated" invisible="1"/>
+            <field name="rejected" invisible="1"/>
+            <div class="alert alert-warning"
+                 attrs="{'invisible': ['|', '|', '|',
+                 ('validated', '=', True), ('state', 'not in', ['confirm']),
+                 ('rejected', '=', True), ('review_ids', '=', [])]}"
+                 style="margin-bottom:0px;">
+                <p><i class="fa fa-info-circle"/>This Data needs to be
+                    validated.
+                    <button name="validate_tier"
+                        string="Validate"
+                        attrs="{'invisible': [('review_ids', '=', [])]}"
+                        type="object"
+                        class="oe_inline oe_button btn-success"
+                        icon="terp-check"/>
+                    <button name="reject_tier"
+                        string="Reject"
+                        type="object"
+                        class="btn-icon btn-danger"
+                        icon="terp-gtk-stop"/>
+                </p>
+            </div>
+            <div class="alert alert-success"
+                 attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                 style="margin-bottom:0px;">
+                <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+            </div>
+            <div class="alert alert-danger"
+                 attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                 style="margin-bottom:0px;">
+                <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+            </div>
             <sheet>
                 <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
                 </div>
@@ -77,9 +119,18 @@
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
                             <field name="confirm_ok"/>
-                            <field name="valid_ok"/>
                             <field name="cancel_ok"/>
                             <field name="restart_ok"/>
+                            <field name="restart_approval_ok"/>
+                        </group>
+                    </page>
+                    <page string="Reviews" name="tier_validation">
+                        <group name="tier_validation_1" colspan="4" col="2">
+                            <field name="definition_id"/>
+                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
+                        </group>
+                        <group name="tier_validation_2" colspan="4" col="2">
+                            <field name="review_ids" readonly="1"/>
                         </group>
                     </page>
                 </notebook>
@@ -107,6 +158,9 @@
                 <filter name="dom_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
                 <filter name="dom_valid" string="Valid" domain="[('state','=','valid')]"/>
                 <filter name="dom_cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
+                <filter name="needs_review" string="Needs my Review"
+                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['valid', 'cancel'])]"
+                        help="My Data to review"/>
             </group>
             <group name="grp_group" string="Group By..">
                 <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
