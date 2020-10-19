@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
+
+<openerp>
+<data>
+<record id="hr_employment_status_view_form" model="ir.ui.view">
+    <field name="name">hr.employment.status.form</field>
+    <field name="model">hr.employment_status</field>
+    <field name="inherit_id" ref="hr_employee_employment_status.hr_employment_status_view_form"/>
+    <field name="arch" type="xml">
+        <xpath expr="//field[@name='code']" position="after">
+            <field name="sequence_id"/>
+        </xpath>
+    </field>
+</record>
+</data>
+</openerp>
