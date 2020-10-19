@@ -1,13 +1,14 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018-2019 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Timesheet Attendance Schedule",
-    "version": "8.0.3.3.0",
+    "version": "8.0.4.0.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -16,6 +17,8 @@
         "base_sequence_configurator",
         "base_workflow_policy",
         "web_readonly_bypass",
+        "base_multiple_approval",
+        "base_action_rule",
     ],
     "data": [
         "security/ir.model.access.csv",
@@ -30,5 +33,8 @@
         "views/hr_timesheet_attendance_schedule_views.xml",
         "views/hr_timesheet_attendance_schedule_change_views.xml",
         "views/hr_attendance_config_setting_views.xml",
+    ],
+    "images": [
+        "static/description/banner.png",
     ],
 }
