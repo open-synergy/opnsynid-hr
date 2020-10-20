@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <record id="hr_attendance_config_setting_view_form" model="ir.ui.view">
+            <field name="name">hr.attendance_config_setting.sequence.form</field>
+            <field name="model">hr.attendance_config_setting</field>
+            <field name="inherit_id" ref="hr_attendance_configuration_page.hr_attendance_config_setting_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='general_configuration']" position="after">
+                    <div>
+                        <label for="id" string="Timesheet Sheet Sequence" class="oe_inline"/>
+                        <field name="timesheet_sheet_sequence_id" class="oe_inline"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
