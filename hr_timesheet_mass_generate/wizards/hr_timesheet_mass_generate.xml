@@ -37,6 +37,6 @@
             action="hr_timesheet_mass_generate_action"
             sequence="1000"
         />
-        
+
     </data>
 </openerp>
