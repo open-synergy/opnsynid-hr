@@ -34,7 +34,7 @@ msgid "Date From"
 msgstr ""
 
 #. module: hr_timesheet_mass_generate
-#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:38
+#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:39
 #, python-format
 msgid "Date From must be greater than Date To"
 msgstr ""
@@ -55,13 +55,13 @@ msgid "Employee"
 msgstr ""
 
 #. module: hr_timesheet_mass_generate
-#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:53
+#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:63
 #, python-format
 msgid "Employee {name} must be linked to a user."
 msgstr ""
 
 #. module: hr_timesheet_mass_generate
-#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:57
+#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:68
 #, python-format
 msgid "Employee {name} must have analytic journal."
 msgstr ""
@@ -104,7 +104,7 @@ msgid "Last Updated on"
 msgstr ""
 
 #. module: hr_timesheet_mass_generate
-#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:71
+#: code:addons/hr_timesheet_mass_generate/wizards/hr_timesheet_mass_generate.py:82
 #, python-format
 msgid "Timesheet already exists for {name}."
 msgstr ""
