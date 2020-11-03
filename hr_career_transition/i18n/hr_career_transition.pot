@@ -173,7 +173,7 @@ msgid "Career Transitions"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:797
+#: code:addons/hr_career_transition/models/hr_career_transition.py:802
 #, python-format
 msgid "Career transition limit exceed"
 msgstr ""
@@ -274,13 +274,13 @@ msgid "Contract Type"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:780
+#: code:addons/hr_career_transition/models/hr_career_transition.py:785
 #, python-format
 msgid "Contract date end have to be greater than start date"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:768
+#: code:addons/hr_career_transition/models/hr_career_transition.py:773
 #, python-format
 msgid "Contract start date have to be equal to effective date"
 msgstr ""
@@ -383,7 +383,7 @@ msgid "Effective Date by Year"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:755
+#: code:addons/hr_career_transition/models/hr_career_transition.py:760
 #, python-format
 msgid "Effective date have to be greater than lastest career transition"
 msgstr ""
@@ -849,7 +849,7 @@ msgid "You can only cancel valid latest transition"
 msgstr ""
 
 #. module: hr_career_transition
-#: code:addons/hr_career_transition/models/hr_career_transition.py:731
+#: code:addons/hr_career_transition/models/hr_career_transition.py:736
 #, python-format
 msgid "You can only delete data on draft state"
 msgstr ""
