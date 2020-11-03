@@ -625,25 +625,31 @@ class HrCareerTransition(models.Model):
         self.ensure_one()
         return {
             "employee_id": self.employee_id.id,
-            "job_id": self.new_job_id and \
-            self.new_job_id.id or \
-            False,
+            "job_id": self.new_job_id and self.new_job_id.id or False,
             "type_id": self.contract_type_id.id,
             "date_start": self.contract_start_date,
             "date_end": self.contract_end_date,
-            "working_hours": self.new_working_hour_id and \
-            self.new_working_hour_id.id or \
-            False,
+            "working_hours": (
+                self.new_working_hour_id and
+                self.new_working_hour_id.id or
+                False
+            ),
             "wage": self.new_wage,
-            "contract_department_id": self.new_department_id and \
-            self.new_department_id.id or \
-            False,
-            "parent_id": self.new_manager_id and \
-            self.new_manager_id.id or \
-            False,
-            "company_id": self.new_company_id and \
-            self.new_company_id.id or \
-            False,
+            "contract_department_id": (
+                self.new_department_id and
+                self.new_department_id.id or
+                False
+            ),
+            "parent_id": (
+                self.new_manager_id and
+                self.new_manager_id.id or
+                False
+            ),
+            "company_id": (
+                self.new_company_id and
+                self.new_company_id.id or
+                False
+            ),
         }
 
     @api.multi
