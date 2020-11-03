@@ -624,7 +624,6 @@ class HrCareerTransition(models.Model):
     def _prepare_new_contract(self):
         self.ensure_one()
         return {
-            # "name": "-",
             "employee_id": self.employee_id.id,
             "job_id": self.new_job_id and \
             self.new_job_id.id or \
