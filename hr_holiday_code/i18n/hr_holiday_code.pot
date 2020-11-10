@@ -14,14 +14,14 @@ msgstr ""
 "Plural-Forms: \n"
 
 #. module: hr_holiday_code
-#: field:hr.holidays.status,allocation_request_sequence_id:0
-#: field:res.company,allocation_request_sequence_id:0
-msgid "Allocation Request Sequence"
+#: field:hr.holidays,holiday_code:0
+msgid "# Document"
 msgstr ""
 
 #. module: hr_holiday_code
-#: field:hr.holidays,holiday_code:0
-msgid "Code"
+#: field:hr.holidays.status,allocation_request_sequence_id:0
+#: field:res.company,allocation_request_sequence_id:0
+msgid "Allocation Request Sequence"
 msgstr ""
 
 #. module: hr_holiday_code
