@@ -10,7 +10,7 @@ class HrHolidays(models.Model):
     _inherit = "hr.holidays"
 
     holiday_code = fields.Char(
-        string="Code",
+        string="# Document",
         required=True,
         default="/"
     )
@@ -126,4 +126,11 @@ class HrHolidays(models.Model):
         _super = super(HrHolidays, self)
         result = _super.create(values)
         result.write(result._prepare_create_data())
+        return result
+
+    @api.multi
+    def name_get(self):
+        result = []
+        for record in self:
+            result.append((record["id"], record.holiday_code))
         return result
