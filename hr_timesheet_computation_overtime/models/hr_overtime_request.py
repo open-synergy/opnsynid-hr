@@ -44,14 +44,11 @@ class HrOvertimeRequest(models.Model):
     @api.constrains(
         "sheet_id",
         "state",
-        "company_id.overtime_check_timesheet",
     )
     def _check_timesheet(self):
-        obj_overtime = self.env[self._name]
-        if self.state in ["confirm", "valid"]:
-            criteria = [
-                ("sheet_id", "=", False),
-                ("company_id.overtime_check_timesheet", "<>", False),
-            ]
-            if obj_overtime.search_count(criteria) > 0:
-                raise UserError(_("Timesheet cannot be empty"))
+        if (
+            self.state in ["confirm", "valid"] and not
+            self.sheet_id and
+            self.company_id.overtime_check_timesheet
+        ):
+            raise UserError(_("Timesheet cannot be empty"))
