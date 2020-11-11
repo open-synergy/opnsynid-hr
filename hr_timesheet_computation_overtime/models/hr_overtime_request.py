@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 # Copyright 2018 OpenSynergy Indonesia
+# Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-
 from openerp import models, fields, api
+from openerp.exceptions import Warning as UserError
+from openerp.tools.translate import _
 
 
 class HrOvertimeRequest(models.Model):
@@ -38,3 +40,15 @@ class HrOvertimeRequest(models.Model):
     @api.multi
     def button_link_to_timesheet(self):
         return self._compute_sheet()
+
+    @api.constrains(
+        "sheet_id",
+        "state",
+    )
+    def _check_timesheet(self):
+        if (
+            self.state in ["confirm", "valid"] and not
+            self.sheet_id and
+            self.company_id.overtime_check_timesheet
+        ):
+            raise UserError(_("No Timesheet defined"))
