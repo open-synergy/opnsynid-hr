@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<openerp>
+    <data>
+        <record id="hr_overtime_config_setting_view_form" model="ir.ui.view">
+            <field name="name">hr.overtime_config_setting form</field>
+            <field name="model">hr.overtime_config_setting</field>
+            <field name="inherit_id" ref="hr_attendance_overtime_request.hr_overtime_config_setting_view_form" />
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='overtime_config']" position="inside">
+                    <label for="id" string="Timesheet Computation Overtime"/>
+                    <div>
+                        <div>
+                            <label for="id" string="Check Timesheet" class="oe_inline"/>
+                            <field name="overtime_check_timesheet" class="oe_inline"/>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</openerp>
