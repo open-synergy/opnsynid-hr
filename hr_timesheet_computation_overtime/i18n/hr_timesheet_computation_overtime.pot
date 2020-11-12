@@ -19,9 +19,27 @@ msgid "Attendance Overtime Request"
 msgstr ""
 
 #. module: hr_timesheet_computation_overtime
+#: view:hr.overtime_config_setting:hr_timesheet_computation_overtime.hr_overtime_config_setting_view_form
+#: field:hr.overtime_config_setting,overtime_check_timesheet:0
+#: field:res.company,overtime_check_timesheet:0
+msgid "Check Timesheet"
+msgstr ""
+
+#. module: hr_timesheet_computation_overtime
+#: model:ir.model,name:hr_timesheet_computation_overtime.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: hr_timesheet_computation_overtime
 #: view:hr.overtime_request:hr_timesheet_computation_overtime.hr_overtime_request_view_form
 #: model:ir.actions.server,name:hr_timesheet_computation_overtime.hr_overtime_request_compute_timesheet_action
 msgid "Link to Timesheet"
+msgstr ""
+
+#. module: hr_timesheet_computation_overtime
+#: code:addons/hr_timesheet_computation_overtime/models/hr_overtime_request.py:54
+#, python-format
+msgid "No Timesheet defined"
 msgstr ""
 
 #. module: hr_timesheet_computation_overtime
@@ -39,5 +57,10 @@ msgstr ""
 #. module: hr_timesheet_computation_overtime
 #: model:ir.model,name:hr_timesheet_computation_overtime.model_hr_timesheet_computation_item
 msgid "Timesheet Computation Item"
+msgstr ""
+
+#. module: hr_timesheet_computation_overtime
+#: view:hr.overtime_config_setting:hr_timesheet_computation_overtime.hr_overtime_config_setting_view_form
+msgid "Timesheet Computation Overtime"
 msgstr ""
 
