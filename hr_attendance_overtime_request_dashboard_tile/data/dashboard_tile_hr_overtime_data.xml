@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2020 OpenSynergy Indonesia
+     Copyright 2020 PT Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+    <!--  HR OT Request-->
+    <record id="dashboard_tile_all_hr_overtime_request_draft" model="tile.tile">
+        <field name="name">All HR Overtime Request: Draft</field>
+        <field name="sequence">33</field>
+        <field name="domain">
+        [
+            ("state", "=", "draft"),
+        ]
+        </field>
+        <field name="model_id" search="[('model','=','hr.overtime_request')]"/>
+        <field name="action_id" ref="hr_attendance_overtime_request.hr_overtime_request_action" />
+        <field name="primary_function">count</field>
+        <field name="background_color">#776D8A</field>
+    </record>
+    <record id="dashboard_tile_all_hr_oertime_request_confirm" model="tile.tile">
+        <field name="name">All HR Overtime Request: Waiting For Approval</field>
+        <field name="sequence">33</field>
+        <field name="domain">
+        [
+            ("state", "=", "confirm"),
+        ]
+        </field>
+        <field name="model_id" search="[('model','=','hr.overtime_request')]"/>
+        <field name="action_id" ref="hr_attendance_overtime_request.hr_overtime_request_action" />
+        <field name="primary_function">count</field>
+        <field name="background_color">#776D8A</field>
+    </record>
+</data>
+</openerp>
