@@ -204,6 +204,7 @@ class HrAnalyticTimesheet(models.Model):
         amount = self.unit_amount * self.account_id.prepaid_price_unit
         return (0, 0, {
             "account_id": self._get_accrue_income_account().id,
+            "analytic_account_id": self.account_id.id,
             "credit": 0.0,
             "debit": amount,
             "partner_id": self._get_accrue_income_partner().id,
