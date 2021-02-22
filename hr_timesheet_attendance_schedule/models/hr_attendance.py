@@ -4,7 +4,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from dateutil.relativedelta import relativedelta
-from openerp import models, fields, api
+from openerp import models, fields, api, _
+from openerp.exceptions import Warning as UserError
 
 
 class HrAttendance(models.Model):
@@ -37,3 +38,31 @@ class HrAttendance(models.Model):
         compute="_compute_schedule",
         store=True,
     )
+
+    @api.constrains(
+        "schedule_id",
+    )
+    def _check_att_sign_in_out(self):
+        for document in self:
+            company = document.employee_id.company_id
+
+            if not document.schedule_id:
+                continue
+
+            if company.max_att_sign_in > 0:
+                len_att_sign_in = \
+                    len(document.schedule_id.attendance_ids.filtered(
+                        lambda x: x.action == "sign_in"))
+                if len_att_sign_in > company.max_att_sign_in:
+                    msg = _("Total Sign In has reached maximum "
+                            "attempts per schedule")
+                    raise UserError(msg)
+
+            if company.max_att_sign_out > 0:
+                len_att_sign_out = \
+                    len(document.schedule_id.attendance_ids.filtered(
+                        lambda x: x.action == "sign_out"))
+                if len_att_sign_out > company.max_att_sign_out:
+                    msg = _("Total Sign Out has reached maximum "
+                            "attempts per schedule")
+                    raise UserError(msg)

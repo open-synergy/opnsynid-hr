@@ -47,3 +47,13 @@ class ResCompany(models.Model):
         column1="company_id",
         column2="group_id",
     )
+    max_att_sign_in = fields.Integer(
+        string="Maximum Of Sign In",
+        default=0,
+        required=False,
+    )
+    max_att_sign_out = fields.Integer(
+        string="Maximum Of Sign Out",
+        default=0,
+        required=False,
+    )
