@@ -23,6 +23,16 @@
                         <field name="late_attendance_buffer" widget="float_time" class="oe_inline"/>
                         <label for="id" string="hour(s)" class="oe_inline"/>
                     </div>
+                    <div>
+                        <label for="id" string="Maximum Of Sign In" class="oe_inline"/>
+                        <field name="max_att_sign_in" class="oe_inline"/>
+                        <label for="id" string="per schedule" class="oe_inline"/>
+                    </div>
+                    <div>
+                        <label for="id" string="Maximum Of Sign Out" class="oe_inline"/>
+                        <field name="max_att_sign_out" class="oe_inline"/>
+                        <label for="id" string="per schedule" class="oe_inline"/>
+                    </div>
             </xpath>
             <xpath expr="//group[@name='general_configuration']" position="after">
                 <separator string="Attendance Schedule Change"/>

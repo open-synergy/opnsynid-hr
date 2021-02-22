@@ -37,3 +37,11 @@ class ResConfig(models.TransientModel):
         comodel_name="res.groups",
         related="company_id.schedule_change_restart_val_grp_ids",
     )
+    max_att_sign_in = fields.Integer(
+        string="Maximum Of Sign In",
+        related="company_id.max_att_sign_in",
+    )
+    max_att_sign_out = fields.Integer(
+        string="Maximum Of Sign Out",
+        related="company_id.max_att_sign_out",
+    )
