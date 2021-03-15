@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright 2018-2019 OpenSynergy Indonesia
+     Copyright 2020 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+
+<openerp>
+<data>
+
+<record id="hr_timesheet_attendance_schedule_view_calendar" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule calendar</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <calendar date_start="date_start" date_stop="date_end" event_open_popup="False" color="employee_id" quick_add="False" avatar_model="hr.employee">
+            <field name="employee_id"/>
+        </calendar>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_view_tree" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule tree</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <tree create="false" edit="false" delete="false">
+            <field name="employee_id"/>
+            <field name="sheet_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="schedule_work_hour" widget="float_time"/>
+            <field name="real_work_hour" widget="float_time"/>
+            <field name="early_start_hour" widget="float_time"/>
+            <field name="late_start_hour" widget="float_time"/>
+            <field name="finish_early_hour" widget="float_time"/>
+            <field name="finish_late_hour" widget="float_time"/>
+            <field name="state"/>
+        </tree>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_view_form" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule form</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <form create="false" edit="false" delete="true">
+            <header>
+                <field name="state" widget="statusbar"/>
+            </header>
+            <group name="attendance_1" colspan="4" col="2">
+                <group name="attendance_1_1" colspan="1" col="2">
+                    <field name="sheet_id"/>
+                    <field name="employee_id"/>
+                    <field name="date_start"/>
+                    <field name="date_end"/>
+                    <field name="start_attendance_id"/>
+                    <field name="end_attendance_id"/>
+                    <field name="real_date_start"/>
+                    <field name="real_date_end"/>
+                </group>
+                <group name="attendance_1_2" colspan="1" col="2">
+                    <field name="schedule_work_hour" widget="float_time"/>
+                    <field name="real_work_hour" widget="float_time"/>
+                    <field name="early_start_hour" widget="float_time"/>
+                    <field name="late_start_hour" widget="float_time"/>
+                    <field name="finish_early_hour" widget="float_time"/>
+                    <field name="finish_late_hour" widget="float_time"/>
+                </group>
+            </group>
+            <notebook>
+                <page name="attendance" string="Attendances">
+                    <field name="attendance_ids" colspan="4" nolabel="1"/>
+                </page>
+            </notebook>
+        </form>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_view_search" model="ir.ui.view">
+    <field name="name">hr.timesheet_attendance_schedule search</field>
+    <field name="model">hr.timesheet_attendance_schedule</field>
+    <field name="arch" type="xml">
+        <search>
+            <field name="employee_id"/>
+            <field name="sheet_id"/>
+            <field name="date_start"/>
+            <field name="date_end"/>
+            <field name="state"/>
+            <group string="Group By.." name="groupby">
+                <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
+                <filter name="grp_sheet" string="Timesheet" context="{'group_by':'sheet_id'}"/>
+                <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
+                <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
+                <filter name="grp_date_start_week" string="Date Start by Week" context="{'group_by':'date_start:week'}"/>
+                <filter name="grp_date_start_day" string="Date Start by Day" context="{'group_by':'date_start:day'}"/>
+            </group>
+        </search>
+    </field>
+</record>
+
+<record id="hr_timesheet_attendance_schedule_action" model="ir.actions.act_window">
+    <field name="name">Attendance Schedule</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.timesheet_attendance_schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">tree,form</field>
+    <field name="search_view_id" ref="hr_timesheet_attendance_schedule_view_search"/>
+</record>
+
+<menuitem
+    id="hr_timesheet_attendance_schedule_menu"
+    name="Attendance Schedule"
+    parent="hr_attendance.menu_hr_time_tracking"
+    action="hr_timesheet_attendance_schedule_action"
+    sequence="21"
+    />
+
+<record id="hr_timesheet_attendance_schedule_rearrange_action" model="ir.actions.act_window">
+    <field name="name">Rearange Attendance Schedule</field>
+    <field name="type">ir.actions.act_window</field>
+    <field name="res_model">hr.timesheet_attendance_schedule</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">calendar,tree,form</field>
+    <field name="search_view_id" ref="hr_timesheet_attendance_schedule_view_search"/>
+</record>
+
+
+</data>
+</openerp>
