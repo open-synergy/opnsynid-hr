@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
 <record id="hr_dicipline_type_view_tree" model="ir.ui.view">
@@ -10,8 +9,8 @@
     <field name="model">hr.dicipline_type</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="code"/>
+            <field name="name" />
+            <field name="code" />
         </tree>
     </field>
 </record>
@@ -24,24 +23,36 @@
             <header>
             </header>
             <group name="header_1" colspan="4" col="2">
-                <field name="name"/>
-                <field name="code"/>
-                <field name="active"/>
-                <field name="sequence_id"/>
+                <field name="name" />
+                <field name="code" />
+                <field name="active" />
+                <field name="sequence_id" />
             </group>
             <notebook>
                 <page name="policy" string="Policies">
                     <group name="policy_1" colspan="4" col="2">
-                        <field name="dicipline_confirm_grp_ids" widget="many2many_tags"/>
-                        <field name="dicipline_open_grp_ids" widget="many2many_tags"/>
-                        <field name="dicipline_done_grp_ids" widget="many2many_tags"/>
-                        <field name="dicipline_cancel_grp_ids" widget="many2many_tags"/>
-                        <field name="dicipline_restart_grp_ids" widget="many2many_tags"/>
-                        <field name="dicipline_restart_val_grp_ids" widget="many2many_tags"/>
+                        <field
+                                    name="dicipline_confirm_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field name="dicipline_open_grp_ids" widget="many2many_tags" />
+                        <field name="dicipline_done_grp_ids" widget="many2many_tags" />
+                        <field
+                                    name="dicipline_cancel_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="dicipline_restart_grp_ids"
+                                    widget="many2many_tags"
+                                />
+                        <field
+                                    name="dicipline_restart_val_grp_ids"
+                                    widget="many2many_tags"
+                                />
                     </group>
                 </page>
                 <page name="note" string="Note">
-                    <field name="note"/>
+                    <field name="note" />
                 </page>
             </notebook>
         </form>
@@ -53,8 +64,8 @@
     <field name="model">hr.dicipline_type</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="code"/>
+            <field name="name" />
+            <field name="code" />
         </search>
     </field>
 </record>
@@ -65,15 +76,15 @@
     <field name="res_model">hr.dicipline_type</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_dicipline_type_view_search"/>
+    <field name="search_view_id" ref="hr_dicipline_type_view_search" />
 </record>
 
 <menuitem
-    id="hr_dicipline_type_type_menu"
-    name="Dicipline Types"
-    parent="hr_career_administration_configuration_page.hr_career_administration_configuration_menu"
-    action="hr_dicipline_type_action"
-    sequence="1"
-    />
+            id="hr_dicipline_type_type_menu"
+            name="Dicipline Types"
+            parent="hr_career_administration_configuration_page.hr_career_administration_configuration_menu"
+            action="hr_dicipline_type_action"
+            sequence="1"
+        />
     </data>
 </openerp>

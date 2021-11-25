@@ -1,27 +1,41 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
 
-        <record id="hr_payslip_mass_import_timesheet_activity_view_form" model="ir.ui.view">
+        <record
+            id="hr_payslip_mass_import_timesheet_activity_view_form"
+            model="ir.ui.view"
+        >
             <field name="name">Mass Import Timesheet Activity Form</field>
             <field name="model">hr.payslip.mass_import_timesheet_activity</field>
             <field name="arch" type="xml">
                 <form string="Import Activity">
                     <footer>
-                        <button string="Apply" name="button_import_activity" type="object" class="oe_highlight"/>
+                        <button
+                            string="Apply"
+                            name="button_import_activity"
+                            type="object"
+                            class="oe_highlight"
+                        />
                         or
-                        <button string="Cancel" class="oe_link" special="cancel"/>
+                        <button string="Cancel" class="oe_link" special="cancel" />
                     </footer>
                 </form>
            </field>
         </record>
 
-        <record id="hr_payslip_mass_import_timesheet_activity_act_window" model="ir.actions.act_window">
+        <record
+            id="hr_payslip_mass_import_timesheet_activity_act_window"
+            model="ir.actions.act_window"
+        >
             <field name="name">Mass Import Timesheet Activity</field>
             <field name="res_model">hr.payslip.mass_import_timesheet_activity</field>
             <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
-            <field name="view_id" ref="hr_payslip_mass_import_timesheet_activity_view_form"/>
+            <field
+                name="view_id"
+                ref="hr_payslip_mass_import_timesheet_activity_view_form"
+            />
             <field name="target">new</field>
         </record>
 
@@ -29,7 +43,10 @@
             <field name="model_id" ref="hr_payroll.model_hr_payslip" />
             <field name="name">Mass Import Timesheet Activity</field>
             <field name="key2">client_action_multi</field>
-            <field name="value" eval="'ir.actions.act_window,' + str(ref('hr_payslip_mass_import_timesheet_activity_act_window'))"/>
+            <field
+                name="value"
+                eval="'ir.actions.act_window,' + str(ref('hr_payslip_mass_import_timesheet_activity_act_window'))"
+            />
             <field name="key">action</field>
             <field name="model">hr.payslip</field>
         </record>

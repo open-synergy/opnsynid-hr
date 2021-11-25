@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
 <data>
 <record id="hr_payslip_run_view_form" model="ir.ui.view">
     <field name="name">hr.payslip.run form</field>
     <field name="model">hr.payslip.run</field>
-    <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+    <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
     <field name="arch" type="xml">
         <xpath expr="//field[@name='state']" position="before">
-            <button name="%(create_payment_order_from_payslip_batch_action)d"
-                string="Create Payment Order"
-                type="action"
-                states="close"
-                />
+            <button
+                        name="%(create_payment_order_from_payslip_batch_action)d"
+                        string="Create Payment Order"
+                        type="action"
+                        states="close"
+                    />
         </xpath>
     </field>
 </record>

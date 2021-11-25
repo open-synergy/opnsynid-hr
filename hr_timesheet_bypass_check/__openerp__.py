@@ -12,6 +12,5 @@
     "depends": [
         "hr_timesheet_sheet",
     ],
-    "data": [
-    ],
+    "data": [],
 }

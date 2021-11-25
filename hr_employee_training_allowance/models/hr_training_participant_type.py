@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.safe_eval import safe_eval as eval
 
@@ -28,12 +28,16 @@ class HrTrainingParticipantType(models.Model):
         }
         for policy in self.pricelist_allowance_policy_ids:
             try:
-                eval(policy.policy_field_id.python_code,
-                     localdict, mode="exec", nocopy=True)
+                eval(
+                    policy.policy_field_id.python_code,
+                    localdict,
+                    mode="exec",
+                    nocopy=True,
+                )
                 result = localdict["result"]
                 if result:
                     break
-            except:
+            except Exception:
                 warning_msg = _("Error on pricelist allowance formula")
                 raise UserError(warning_msg)
         return result

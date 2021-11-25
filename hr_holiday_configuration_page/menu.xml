@@ -1,23 +1,22 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2016 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
-<menuitem 
-    id="hr_holiday_configuration_main_menu"
-    name="Holiday"
-    sequence="5"
-    parent="hr.menu_hr_configuration"
-    />
+<menuitem
+            id="hr_holiday_configuration_main_menu"
+            name="Holiday"
+            sequence="5"
+            parent="hr.menu_hr_configuration"
+        />
 
 <menuitem
-    id="hr_holidays.menu_open_view_holiday_status"
-    name="Leaves Types"
-    action="hr_holidays.open_view_holiday_status"
-    parent="hr_holiday_configuration_main_menu"
-    sequence="1"
-    />
+            id="hr_holidays.menu_open_view_holiday_status"
+            name="Leaves Types"
+            action="hr_holidays.open_view_holiday_status"
+            parent="hr_holiday_configuration_main_menu"
+            sequence="1"
+        />
 </data>
 </openerp>

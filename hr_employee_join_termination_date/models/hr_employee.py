@@ -3,13 +3,15 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import api, models, fields
 import logging
+
+from openerp import api, fields, models
+
 _logger = logging.getLogger(__name__)
 
 try:
-    import pandas as pd
     import numpy as np
+    import pandas as pd
 except (ImportError, IOError) as err:
     _logger.debug(err)
 
@@ -44,22 +46,17 @@ class HrEmployee(models.Model):
             year_work = month_work = 0
             if document.date_join:
                 if not document.date_termination:
-                    dt_termination = \
-                        pd.to_datetime(fields.Date.today())
+                    dt_termination = pd.to_datetime(fields.Date.today())
                 else:
-                    dt_termination =\
-                        pd.to_datetime(document.date_termination)
-                dt_join =\
-                    pd.to_datetime(document.date_join)
+                    dt_termination = pd.to_datetime(document.date_termination)
+                dt_join = pd.to_datetime(document.date_join)
 
-                dt_year_work = (dt_termination - dt_join)
-                year_work =\
-                    int(dt_year_work / np.timedelta64(1, "Y"))
+                dt_year_work = dt_termination - dt_join
+                year_work = int(dt_year_work / np.timedelta64(1, "Y"))
                 dt_temp_year = dt_join + pd.DateOffset(years=year_work)
 
-                dt_month_work = (dt_termination - dt_temp_year)
-                month_work =\
-                    int(dt_month_work / np.timedelta64(1, "M"))
+                dt_month_work = dt_termination - dt_temp_year
+                month_work = int(dt_month_work / np.timedelta64(1, "M"))
 
             document.year_work_longetivity = year_work
             document.month_work_longetivity = month_work

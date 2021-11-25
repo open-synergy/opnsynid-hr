@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 from openerp.tools.translate import _
 
 
@@ -21,6 +21,5 @@ class HrContractTimesheetComputation(models.Model):
     )
 
     _sql_constrains = [
-        ("item_unique", "unique(contract_id, item_id)",
-         _("No duplicate item")),
+        ("item_unique", "unique(contract_id, item_id)", _("No duplicate item")),
     ]

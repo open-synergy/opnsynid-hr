@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -21,8 +21,7 @@ class HrOvertimeRequest(models.Model):
         return criteria
 
     @api.multi
-    @api.depends(
-        "employee_id", "date_start", "date_end")
+    @api.depends("employee_id", "date_start", "date_end")
     def _compute_sheet(self):
         obj_sheet = self.env["hr_timesheet_sheet.sheet"]
         for overtime in self:
@@ -47,8 +46,8 @@ class HrOvertimeRequest(models.Model):
     )
     def _check_timesheet(self):
         if (
-            self.state in ["confirm", "valid"] and not
-            self.sheet_id and
-            self.company_id.overtime_check_timesheet
+            self.state in ["confirm", "valid"]
+            and not self.sheet_id
+            and self.company_id.overtime_check_timesheet
         ):
             raise UserError(_("No Timesheet defined"))

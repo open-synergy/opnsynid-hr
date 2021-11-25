@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrEmployee(models.Model):
@@ -18,8 +18,9 @@ class HrEmployee(models.Model):
         for employee in self:
             termination_date = False
             termination_transition_id = False
-            terminations = employee.termination_transition_ids.\
-                filtered(lambda r: r.state == "valid")
+            terminations = employee.termination_transition_ids.filtered(
+                lambda r: r.state == "valid"
+            )
             if len(terminations) > 0:
                 termination = terminations[0]
                 termination_date = termination.effective_date

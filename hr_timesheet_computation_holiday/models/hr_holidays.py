@@ -3,15 +3,14 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrHolidays(models.Model):
     _inherit = "hr.holidays"
 
     @api.multi
-    @api.depends(
-        "employee_id", "date_from", "date_to")
+    @api.depends("employee_id", "date_from", "date_to")
     def _compute_sheet(self):
         obj_sheet = self.env["hr_timesheet_sheet.sheet"]
         for holiday in self:

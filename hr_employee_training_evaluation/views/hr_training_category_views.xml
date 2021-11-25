@@ -1,21 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_training_category_view_form" model="ir.ui.view">
     <field name="name">hr.training_category form</field>
     <field name="model">hr.training_category</field>
-    <field name="inherit_id" ref="hr_employee_training.hr_training_catgory_view_form"/>
+    <field name="inherit_id" ref="hr_employee_training.hr_training_catgory_view_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//notebook" position="inside">
                 <page name="evaluation" string="Evaluation">
                     <group name="evaluation_1" colspan="4" col="2">
-                        <field name="pre_survey_ids" widget="many2many_tags" domain="[('training_pre_ok','=',True)]"/>
-                        <field name="post_survey_ids" widget="many2many_tags" domain="[('training_post_ok','=',True)]"/>
+                        <field
+                                    name="pre_survey_ids"
+                                    widget="many2many_tags"
+                                    domain="[('training_pre_ok','=',True)]"
+                                />
+                        <field
+                                    name="post_survey_ids"
+                                    widget="many2many_tags"
+                                    domain="[('training_post_ok','=',True)]"
+                                />
                     </group>
                 </page>
             </xpath>

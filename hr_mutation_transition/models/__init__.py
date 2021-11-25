@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from . import(
+from . import (
     hr_employee,
     hr_mutation_transition,
     tier_definition,

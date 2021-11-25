@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class GamificationChallangeLine(models.Model):
@@ -20,19 +20,13 @@ class GamificationChallangeLine(models.Model):
     )
     reach_point_method = fields.Selection(
         string="Reached Point Method",
-        selection=[
-            ("fixed", "Fixed"),
-            ("multiply", "Multiply Current Result")
-        ],
+        selection=[("fixed", "Fixed"), ("multiply", "Multiply Current Result")],
         default="fixed",
         required=True,
     )
     fail_point_method = fields.Selection(
         string="Failed Point Method",
-        selection=[
-            ("fixed", "Fixed"),
-            ("multiply", "Multiply Current Result")
-        ],
+        selection=[("fixed", "Fixed"), ("multiply", "Multiply Current Result")],
         default="fixed",
         required=True,
     )

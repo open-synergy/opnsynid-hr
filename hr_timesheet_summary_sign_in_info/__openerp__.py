@@ -6,14 +6,12 @@
     "name": "Human Resource - Summary Sign In Info",
     "version": "8.0.1.0.0",
     "category": "Human Resources",
-    "website": "https://opensynergy-indonesia/",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
         "hr_timesheet_sheet",
     ],
-    "data": [
-        "views/hr_timesheet_sheet_sheet_views.xml"
-    ],
+    "data": ["views/hr_timesheet_sheet_sheet_views.xml"],
 }

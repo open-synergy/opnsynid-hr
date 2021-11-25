@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, fields
+from openerp import api, fields, models
 
 
 class AccomplishParticipant(models.TransientModel):
@@ -17,10 +17,7 @@ class AccomplishParticipant(models.TransientModel):
     def _default_detail_ids(self):
         training_id = self.env.context.get("active_id", False)
         obj_participant = self.env["hr.training_partisipant"]
-        criteria = [
-            ("training_id", "=", training_id),
-            ("state", "=", "draft")
-        ]
+        criteria = [("training_id", "=", training_id), ("state", "=", "draft")]
         participants = obj_participant.search(criteria)
         result = []
         for participant in participants:

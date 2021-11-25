@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
@@ -9,7 +9,10 @@
     <field name="name">Link to Timesheet</field>
     <field name="type">ir.actions.server</field>
     <field name="state">code</field>
-    <field name="model_id" ref="hr_attendance_overtime_request.model_hr_overtime_request"/>
+    <field
+                name="model_id"
+                ref="hr_attendance_overtime_request.model_hr_overtime_request"
+            />
     <field name="code">active_ids = env.context.get("active_ids", False)
 if active_ids:
     for document in object.browse(active_ids):
@@ -22,7 +25,10 @@ if active_ids:
     <field name="name">Link to Timesheet</field>
     <field name="model">hr.overtime_request</field>
     <field name="key2">client_action_multi</field>
-    <field name="value" eval="'ir.actions.server,' + str(ref('hr_overtime_request_compute_timesheet_action'))" />
+    <field
+                name="value"
+                eval="'ir.actions.server,' + str(ref('hr_overtime_request_compute_timesheet_action'))"
+            />
 </record>
 
 </data>

@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrTraining(models.Model):
@@ -24,7 +24,7 @@ class HrTraining(models.Model):
     def button_approve(self):
         _super = super(HrTraining, self)
         _super.button_approve()
-        for training in self:
+        for training in self:  # noqa: B007
             self._generate_participant_allowance()
 
     @api.multi

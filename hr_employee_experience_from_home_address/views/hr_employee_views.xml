@@ -1,126 +1,165 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_employee_view_form" model="ir.ui.view">
     <field name="name">hr.employee form</field>
     <field name="model">hr.employee</field>
-    <field name="inherit_id" ref="hr_experience.view_employee_form_inherit"/>
+    <field name="inherit_id" ref="hr_experience.view_employee_form_inherit" />
     <field name="arch" type="xml">
         <data>
             <!-- Academic -->
             <xpath expr="//page[@string='Academic Experiences']" position="attributes">
-                <attribute name="attrs">{'invisible':[('address_home_id','=',False)]}</attribute>
+                <attribute
+                            name="attrs"
+                        >{'invisible':[('address_home_id','=',False)]}</attribute>
             </xpath>
 
             <xpath expr="//field[@name='academic_ids']" position="attributes">
-                <attribute name="context">{'default_partner_id':address_home_id}</attribute>
+                <attribute
+                            name="context"
+                        >{'default_partner_id':address_home_id}</attribute>
             </xpath>
 
             <xpath expr="//field[@name='academic_ids']/tree" position="replace">
                 <tree string="Academic Experiences">
-                    <field name="sequence" widget="handle"/>
-                    <field name="education_level_id"/>
-                    <field name="field_of_study_id"/>
-                    <field name="partner_address_id" string="Institution"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
-                    <field name="diploma"/>
-                    <field name="gpa"/>
+                    <field name="sequence" widget="handle" />
+                    <field name="education_level_id" />
+                    <field name="field_of_study_id" />
+                    <field name="partner_address_id" string="Institution" />
+                    <field name="start_date" />
+                    <field name="end_date" />
+                    <field name="diploma" />
+                    <field name="gpa" />
                 </tree>
             </xpath>
 
             <xpath expr="//field[@name='academic_ids']/form" position="replace">
                 <form string="Academic Experience">
                     <group name="main">
-                        <field name="partner_address_id" string="Institution" domain="[('is_company','=',1)]"/>
-                        <field name="education_level_id"/>
-                        <field name="field_of_study_id"/>
-                        <field name="diploma"/>
-                        <field name="gpa"/>
-                        <field name="activities"/>
-                        <field name="sequence"/>
-                        <separator string="Dates" colspan="4"/>
-                        <field name="start_date"/>
-                        <field name="expire"/>
-                        <field name="end_date" attrs="{'invisible':[('expire', '=', False)]}"/>
-                        <separator string="Description" colspan="4"/>
-                        <field name="description" colspan="4" nolabel="1"/>
+                        <field
+                                    name="partner_address_id"
+                                    string="Institution"
+                                    domain="[('is_company','=',1)]"
+                                />
+                        <field name="education_level_id" />
+                        <field name="field_of_study_id" />
+                        <field name="diploma" />
+                        <field name="gpa" />
+                        <field name="activities" />
+                        <field name="sequence" />
+                        <separator string="Dates" colspan="4" />
+                        <field name="start_date" />
+                        <field name="expire" />
+                        <field
+                                    name="end_date"
+                                    attrs="{'invisible':[('expire', '=', False)]}"
+                                />
+                        <separator string="Description" colspan="4" />
+                        <field name="description" colspan="4" nolabel="1" />
                     </group>
                 </form>
             </xpath>
 
             <!-- Experience -->
             <xpath expr="//field[@name='experience_ids']" position="attributes">
-                <attribute name="context">{'default_partner_id':address_home_id}</attribute>
+                <attribute
+                            name="context"
+                        >{'default_partner_id':address_home_id}</attribute>
             </xpath>
 
-            <xpath expr="//page[@string='Professional Experiences']" position="attributes">
-                <attribute name="attrs">{'invisible':[('address_home_id','=',False)]}</attribute>
+            <xpath
+                        expr="//page[@string='Professional Experiences']"
+                        position="attributes"
+                    >
+                <attribute
+                            name="attrs"
+                        >{'invisible':[('address_home_id','=',False)]}</attribute>
             </xpath>
 
             <xpath expr="//field[@name='experience_ids']/tree" position="replace">
                 <tree string="Professional Experiences">
-                    <field name="sequence" widget="handle"/>
-                    <field name="partner_address_id" string="Company"/>
-                    <field name="job_id"/>
-                    <field name="job_level_id"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
+                    <field name="sequence" widget="handle" />
+                    <field name="partner_address_id" string="Company" />
+                    <field name="job_id" />
+                    <field name="job_level_id" />
+                    <field name="start_date" />
+                    <field name="end_date" />
                 </tree>
             </xpath>
 
             <xpath expr="//field[@name='experience_ids']/form" position="replace">
                 <form string="Professional Experience">
                     <group name="main">
-                        <field name="partner_address_id" string="Company" domain="[('is_company','=',1)]"/>
-                        <field name="job_id"/>
-                        <field name="job_level_id"/>
-                        <field name="sequence"/>
-                        <separator string="Dates" colspan="4"/>
-                        <field name="start_date"/>
-                        <field name="expire"/>
-                        <field name="end_date" attrs="{'invisible':[('expire', '=', False)]}"/>
-                        <separator string="Description" colspan="4"/>
-                        <field name="description" colspan="4" nolabel="1"/>
+                        <field
+                                    name="partner_address_id"
+                                    string="Company"
+                                    domain="[('is_company','=',1)]"
+                                />
+                        <field name="job_id" />
+                        <field name="job_level_id" />
+                        <field name="sequence" />
+                        <separator string="Dates" colspan="4" />
+                        <field name="start_date" />
+                        <field name="expire" />
+                        <field
+                                    name="end_date"
+                                    attrs="{'invisible':[('expire', '=', False)]}"
+                                />
+                        <separator string="Description" colspan="4" />
+                        <field name="description" colspan="4" nolabel="1" />
                     </group>
                 </form>
             </xpath>
 
             <!-- Certification -->
             <xpath expr="//field[@name='certification_ids']" position="attributes">
-                <attribute name="context">{'default_partner_id':address_home_id}</attribute>
+                <attribute
+                            name="context"
+                        >{'default_partner_id':address_home_id}</attribute>
             </xpath>
 
             <xpath expr="//page[@string='Certifications']" position="attributes">
-                <attribute name="attrs">{'invisible':[('address_home_id','=',False)]}</attribute>
+                <attribute
+                            name="attrs"
+                        >{'invisible':[('address_home_id','=',False)]}</attribute>
             </xpath>
 
             <xpath expr="//field[@name='certification_ids']/tree" position="replace">
                 <tree string="Certifications">
-                    <field name="sequence" widget="handle"/>
-                    <field name="name" string="Certification"/>
-                    <field name="certification" string="# Certificate"/>
-                    <field name="partner_address_id" string="Institution" domain="[('is_company','=',1)]"/>
-                    <field name="start_date"/>
-                    <field name="end_date"/>
+                    <field name="sequence" widget="handle" />
+                    <field name="name" string="Certification" />
+                    <field name="certification" string="# Certificate" />
+                    <field
+                                name="partner_address_id"
+                                string="Institution"
+                                domain="[('is_company','=',1)]"
+                            />
+                    <field name="start_date" />
+                    <field name="end_date" />
                 </tree>
             </xpath>
 
             <xpath expr="//field[@name='certification_ids']/form" position="replace">
                 <form string="Professional Experience">
                     <group name="main">
-                        <field name="name" string="Certification"/>
-                        <field name="certification" string="# Certification"/>
-                        <field name="partner_address_id" string="Company" domain="[('is_company','=',1)]"/>
-                        <field name="start_date"/>
-                        <field name="expire"/>
-                        <field name="end_date" attrs="{'invisible':[('expire', '=', False)]}"/>
-                        <separator string="Description" colspan="4"/>
-                        <field name="description" colspan="4" nolabel="1"/>
+                        <field name="name" string="Certification" />
+                        <field name="certification" string="# Certification" />
+                        <field
+                                    name="partner_address_id"
+                                    string="Company"
+                                    domain="[('is_company','=',1)]"
+                                />
+                        <field name="start_date" />
+                        <field name="expire" />
+                        <field
+                                    name="end_date"
+                                    attrs="{'invisible':[('expire', '=', False)]}"
+                                />
+                        <separator string="Description" colspan="4" />
+                        <field name="description" colspan="4" nolabel="1" />
                     </group>
                 </form>
             </xpath>

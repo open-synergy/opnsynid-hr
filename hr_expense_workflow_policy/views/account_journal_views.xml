@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
@@ -6,16 +6,27 @@
         <record id="account_journal_view_form" model="ir.ui.view">
             <field name="name">account.journal form</field>
             <field name="model">account.journal</field>
-            <field name="inherit_id" ref="hr_expense_journal_configuration_page.account_journal_view_form"/>
+            <field
+                name="inherit_id"
+                ref="hr_expense_journal_configuration_page.account_journal_view_form"
+            />
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='expense']" position="inside">
-                    <group name="grp_expense_policy" string="Expense Button Policy" colspan="4" col="2">
-                        <field name="expense_confirm_grp_ids" widget="many2many_tags"/>
-                        <field name="expense_validate_grp_ids" widget="many2many_tags"/>
-                        <field name="expense_refuse_grp_ids" widget="many2many_tags"/>
-                        <field name="expense_done_grp_ids" widget="many2many_tags"/>
-                        <field name="expense_restart_grp_ids" widget="many2many_tags"/>
-                        <field name="expense_view_grp_ids" widget="many2many_tags"/>
+                    <group
+                        name="grp_expense_policy"
+                        string="Expense Button Policy"
+                        colspan="4"
+                        col="2"
+                    >
+                        <field name="expense_confirm_grp_ids" widget="many2many_tags" />
+                        <field
+                            name="expense_validate_grp_ids"
+                            widget="many2many_tags"
+                        />
+                        <field name="expense_refuse_grp_ids" widget="many2many_tags" />
+                        <field name="expense_done_grp_ids" widget="many2many_tags" />
+                        <field name="expense_restart_grp_ids" widget="many2many_tags" />
+                        <field name="expense_view_grp_ids" widget="many2many_tags" />
                     </group>
                 </xpath>
             </field>

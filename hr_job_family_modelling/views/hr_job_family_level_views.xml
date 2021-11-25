@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- © <YEAR(S)> <AUTHOR(S)>
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
-
 <openerp>
 <data>
 
@@ -11,11 +10,11 @@
     <field name="model">hr.job_family_level</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="job_family_grade_id"/>
-            <field name="code"/>
-            <field name="job_family_id"/>
-            <field name="min_job_grade_id"/>
-            <field name="max_job_grade_id"/>
+            <field name="job_family_grade_id" />
+            <field name="code" />
+            <field name="job_family_id" />
+            <field name="min_job_grade_id" />
+            <field name="max_job_grade_id" />
         </tree>
     </field>
 </record>
@@ -26,26 +25,39 @@
     <field name="arch" type="xml">
         <form string="Job Family">
             <group name="main">
-                <field name="job_family_grade_id"/>
-                <field name="code"/>
-                <field name="job_family_id" on_change="onchange_job_family_id(job_family_id)"/>
-                <field name="min_job_grade_id" domain="[('id','in',allowed_job_grade_ids[0][2])]"/>
-                <field name="max_job_grade_id" domain="[('id','in',allowed_job_grade_ids[0][2])]"/>
-                <field name="active"/>
+                <field name="job_family_grade_id" />
+                <field name="code" />
+                <field
+                            name="job_family_id"
+                            on_change="onchange_job_family_id(job_family_id)"
+                        />
+                <field
+                            name="min_job_grade_id"
+                            domain="[('id','in',allowed_job_grade_ids[0][2])]"
+                        />
+                <field
+                            name="max_job_grade_id"
+                            domain="[('id','in',allowed_job_grade_ids[0][2])]"
+                        />
+                <field name="active" />
             </group>
             <notebook colspan="4">
                 <page name="grade" string="Job Grades">
-                    <field name="allowed_job_grade_ids" widget="many2many_tags" invisible="1"/>
+                    <field
+                                name="allowed_job_grade_ids"
+                                widget="many2many_tags"
+                                invisible="1"
+                            />
                     <field name="job_grade_ids">
                         <tree>
-                            <field name="name"/>
-                            <field name="code"/>
-                            <field name="category_id"/>
+                            <field name="name" />
+                            <field name="code" />
+                            <field name="category_id" />
                         </tree>
                     </field>
                 </page>
                 <page name="note" string="Note">
-                    <field name="note" colspan="4" nolabel="1"/>
+                    <field name="note" colspan="4" nolabel="1" />
                 </page>
             </notebook>
         </form>
@@ -59,11 +71,13 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<menuitem action="hr_job_family_level_action"
-    id="hr_job_family_level_menu"
-    parent="job_family_modelling_configuration_menu"
-    groups="base.group_hr_user"
-    sequence="5"/>
+<menuitem
+            action="hr_job_family_level_action"
+            id="hr_job_family_level_menu"
+            parent="job_family_modelling_configuration_menu"
+            groups="base.group_hr_user"
+            sequence="5"
+        />
 
 </data>
 </openerp>

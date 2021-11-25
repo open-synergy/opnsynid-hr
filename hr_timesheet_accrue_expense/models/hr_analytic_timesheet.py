@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -42,14 +42,18 @@ class HrAnalyticTimesheet(models.Model):
     )
     def onchange_accrue_expense_journal_id(self):
         journal = False
-        if self.user_id and \
-                len(self.user_id.employee_ids) > 0 and \
-                self.user_id.employee_ids[0].accrue_expense_journal_id:
+        if (
+            self.user_id
+            and len(self.user_id.employee_ids) > 0
+            and self.user_id.employee_ids[0].accrue_expense_journal_id
+        ):
             journal = self.user_id.employee_ids[0].accrue_expense_journal_id
 
-        if not journal and \
-                self.account_id and \
-                self.account_id.accrue_expense_journal_id:
+        if (
+            not journal
+            and self.account_id
+            and self.account_id.accrue_expense_journal_id
+        ):
             journal = self.account_id.accrue_expense_journal_id
 
         self.accrue_expense_journal_id = journal
@@ -60,14 +64,18 @@ class HrAnalyticTimesheet(models.Model):
     )
     def onchange_accrue_expense_account_id(self):
         account = False
-        if self.user_id and \
-                len(self.user_id.employee_ids) > 0 and \
-                self.user_id.employee_ids[0].accrue_expense_account_id:
+        if (
+            self.user_id
+            and len(self.user_id.employee_ids) > 0
+            and self.user_id.employee_ids[0].accrue_expense_account_id
+        ):
             account = self.user_id.employee_ids[0].accrue_expense_account_id
 
-        if not account and \
-                self.account_id and \
-                self.account_id.accrue_expense_account_id:
+        if (
+            not account
+            and self.account_id
+            and self.account_id.accrue_expense_account_id
+        ):
             account = self.account_id.accrue_expense_account_id
 
         self.accrue_expense_account_id = account
@@ -97,9 +105,11 @@ class HrAnalyticTimesheet(models.Model):
     def _unlink_accrue_expense_move(self):
         self.ensure_one()
         move = self.accrue_expense_move_id
-        self.write({
-            "accrue_expense_move_id": False,
-        })
+        self.write(
+            {
+                "accrue_expense_move_id": False,
+            }
+        )
         move.unlink()
 
     @api.multi
@@ -107,9 +117,11 @@ class HrAnalyticTimesheet(models.Model):
         self.ensure_one()
         obj_move = self.env["account.move"]
         move = obj_move.create(self._prepare_accrue_expense_move())
-        self.write({
-            "accrue_expense_move_id": move.id,
-        })
+        self.write(
+            {
+                "accrue_expense_move_id": move.id,
+            }
+        )
 
     @api.multi
     def _get_accrue_expense_journal(self):
@@ -147,7 +159,7 @@ class HrAnalyticTimesheet(models.Model):
             "journal_id": journal.id,
             "period_id": period.id,
             "date": self.date,
-            "line_id": self._prepare_accrue_expense_move_lines()
+            "line_id": self._prepare_accrue_expense_move_lines(),
         }
 
     @api.multi
@@ -170,29 +182,37 @@ class HrAnalyticTimesheet(models.Model):
     @api.multi
     def _prepare_accrue_expense_line(self):
         self.ensure_one()
-        return (0, 0, {
-            "account_id": self._get_accrue_expense_account().id,
-            "credit": abs(self.amount),
-            "debit": 0.0,
-            "analytic_account_id": self.account_id.id,
-            "partner_id": self._get_accrue_expense_partner().id,
-            "name": self.name,
-            "product_id": self.product_id.id,
-            "product_uom_id": self.product_uom_id.id,
-            "quantity": self.unit_amount,
-        })
+        return (
+            0,
+            0,
+            {
+                "account_id": self._get_accrue_expense_account().id,
+                "credit": abs(self.amount),
+                "debit": 0.0,
+                "analytic_account_id": self.account_id.id,
+                "partner_id": self._get_accrue_expense_partner().id,
+                "name": self.name,
+                "product_id": self.product_id.id,
+                "product_uom_id": self.product_uom_id.id,
+                "quantity": self.unit_amount,
+            },
+        )
 
     @api.multi
     def _prepare_expense_line(self):
         self.ensure_one()
-        return (0, 0, {
-            "account_id": self._get_expense_account().id,
-            "analytic_account_id": self.account_id.id,
-            "debit": abs(self.amount),
-            "credit": 0.0,
-            "partner_id": self._get_accrue_expense_partner().id,
-            "name": self.name,
-            "product_id": self.product_id.id,
-            "product_uom_id": self.product_uom_id.id,
-            "quantity": self.unit_amount,
-        })
+        return (
+            0,
+            0,
+            {
+                "account_id": self._get_expense_account().id,
+                "analytic_account_id": self.account_id.id,
+                "debit": abs(self.amount),
+                "credit": 0.0,
+                "partner_id": self._get_accrue_expense_partner().id,
+                "name": self.name,
+                "product_id": self.product_id.id,
+                "product_uom_id": self.product_uom_id.id,
+                "quantity": self.unit_amount,
+            },
+        )

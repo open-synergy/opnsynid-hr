@@ -3,9 +3,10 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
-from pytz import timezone
 from datetime import datetime
+
+from openerp import api, fields, models
+from pytz import timezone
 
 
 class HrTimesheetSheet(models.Model):
@@ -38,8 +39,7 @@ class HrTimesheetSheet(models.Model):
 
         working_schedule = False
 
-        contract = self.contract_ids.sorted(
-            lambda r: r.date_start, reverse=True)[0]
+        contract = self.contract_ids.sorted(lambda r: r.date_start, reverse=True)[0]
 
         if self.working_schedule_id:
             working_schedule = self.working_schedule_id
@@ -55,14 +55,16 @@ class HrTimesheetSheet(models.Model):
         tz = self.employee_id.user_id.tz or self.env.user.tz
 
         # TODO: Refactoring
-        dt_start = datetime.strptime(self.date_from + " 00:00:00",
-                                     "%Y-%m-%d %H:%M:%S")
-        dt_end = datetime.strptime(self.date_to + " 23:59:00",
-                                   "%Y-%m-%d %H:%M:%S")
+        dt_start = datetime.strptime(self.date_from + " 00:00:00", "%Y-%m-%d %H:%M:%S")
+        dt_end = datetime.strptime(self.date_to + " 23:59:00", "%Y-%m-%d %H:%M:%S")
 
         duration = abs((dt_end - dt_start).days) + 1
-        dt_stop = timezone(tz).localize(dt_end).astimezone(timezone("UTC")).\
-            replace(tzinfo=None)
+        dt_stop = (
+            timezone(tz)
+            .localize(dt_end)
+            .astimezone(timezone("UTC"))
+            .replace(tzinfo=None)
+        )
 
         if not self.contract_ids:
             return True
@@ -72,9 +74,7 @@ class HrTimesheetSheet(models.Model):
         if not working_schedule:
             return True
 
-        schedules = working_schedule._schedule_days(
-            days=duration,
-            day_date=dt_start)
+        schedules = working_schedule._schedule_days(days=duration, day_date=dt_start)
 
         if len(schedules) == 0:
             return True
@@ -112,7 +112,8 @@ class HrTimesheetSheet(models.Model):
     def action_rearrange_attendance_schedule(self):
         waction = self.env.ref(
             "hr_timesheet_attendance_schedule."
-            "hr_timesheet_attendance_schedule_rearrange_action").read()[0]
+            "hr_timesheet_attendance_schedule_rearrange_action"
+        ).read()[0]
         waction["domain"] = [
             ("sheet_id", "in", self.ids),
             ("sheet_id.state", "=", "draft"),

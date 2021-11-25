@@ -6,8 +6,8 @@
     "name": "HR Payslip - Workflow Policy",
     "version": "8.0.1.0.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -16,6 +16,6 @@
     "data": [
         "views/hr_payroll_config_setting_views.xml",
         "views/hr_payslip_views.xml",
-        "views/hr_payslip_run_views.xml"
+        "views/hr_payslip_run_views.xml",
     ],
 }

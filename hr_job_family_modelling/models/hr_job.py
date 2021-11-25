@@ -2,16 +2,14 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrJob(models.Model):
     _inherit = "hr.job"
 
     @api.multi
-    @api.depends(
-        "job_family_level_id"
-    )
+    @api.depends("job_family_level_id")
     def _compute_job_grade(self):
         for job in self:
             result = False
@@ -44,11 +42,8 @@ class HrJob(models.Model):
 
         if job_family_level_id:
             obj_job_family_level = self.env["hr.job_family_level"]
-            job_family_level = obj_job_family_level.browse(
-                [job_family_level_id])[0]
-            value = self._get_value_after_onchange_job_family_level_id(
-                job_family_level
-            )
+            job_family_level = obj_job_family_level.browse([job_family_level_id])[0]
+            value = self._get_value_after_onchange_job_family_level_id(job_family_level)
             domain = self._get_domain_after_onchange_job_family_level_id(
                 job_family_level
             )

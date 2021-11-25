@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
-    <data>        
+    <data>
         <record id="hr_payroll.t5" model="workflow.transition">
-            <field name="act_from" ref="hr_payroll.act_verify"/>
-            <field name="act_to" ref="hr_payroll.act_done"/>
+            <field name="act_from" ref="hr_payroll.act_verify" />
+            <field name="act_to" ref="hr_payroll.act_done" />
             <field name="signal">button_done</field>
         </record>
     </data>

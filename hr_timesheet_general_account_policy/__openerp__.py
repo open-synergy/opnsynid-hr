@@ -14,6 +14,5 @@
         "hr_timesheet_onchange",
         "account_analytic_line_general_account_policy",
     ],
-    "data": [
-    ],
+    "data": [],
 }

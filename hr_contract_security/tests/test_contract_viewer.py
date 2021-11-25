@@ -2,8 +2,9 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from .base import BaseCase
 from openerp.exceptions import except_orm
+
+from .base import BaseCase
 
 
 class TestContractViewer(BaseCase):
@@ -17,11 +18,13 @@ class TestContractViewer(BaseCase):
         # 3. Employee 2 has Department Database Administrator
         # Result:
         # 1. Create successfully
-        contract_1 = self.obj_contract.sudo(self.user_2).create({
-            "name": "Contract 1",
-            "employee_id": self.employee_2.id,
-            "wage": 500.00,
-        })
+        contract_1 = self.obj_contract.sudo(self.user_2).create(
+            {
+                "name": "Contract 1",
+                "employee_id": self.employee_2.id,
+                "wage": 500.00,
+            }
+        )
         self.assertIsNotNone(contract_1)
 
         # Condition 2:
@@ -35,11 +38,13 @@ class TestContractViewer(BaseCase):
         self.assertIsNotNone(check_manager_id)
         self.assertEqual(check_manager_id, self.employee_2.id)
 
-        contract_2 = self.obj_contract.sudo(self.user_2).create({
-            "name": "Contract 2",
-            "employee_id": self.employee_5.id,
-            "wage": 500.00,
-        })
+        contract_2 = self.obj_contract.sudo(self.user_2).create(
+            {
+                "name": "Contract 2",
+                "employee_id": self.employee_5.id,
+                "wage": 500.00,
+            }
+        )
 
         self.assertIsNotNone(contract_2)
 
@@ -51,11 +56,13 @@ class TestContractViewer(BaseCase):
         # 3. Employee 1 has Department Technology Information
         # Result:
         # 1. Create successfully
-        contract_3 = self.obj_contract.sudo(self.user_1).create({
-            "name": "Contract 3",
-            "employee_id": self.employee_1.id,
-            "wage": 500.00,
-        })
+        contract_3 = self.obj_contract.sudo(self.user_1).create(
+            {
+                "name": "Contract 3",
+                "employee_id": self.employee_1.id,
+                "wage": 500.00,
+            }
+        )
         self.assertIsNotNone(contract_3)
 
         # Condition 4:
@@ -63,12 +70,8 @@ class TestContractViewer(BaseCase):
         # Result:
         # 1. Employee 1 can only see contract under his management
         #    which is (1)contract_1 and (2)contract_2
-        self.assertEqual(
-            contract_1.sudo(self.user_2).name,
-            "Contract 1")
-        self.assertEqual(
-            contract_2.sudo(self.user_2).name,
-            "Contract 2")
+        self.assertEqual(contract_1.sudo(self.user_2).name, "Contract 1")
+        self.assertEqual(contract_2.sudo(self.user_2).name, "Contract 2")
         with self.assertRaises(except_orm):
             contract_3.sudo(self.user_2).name
 
@@ -82,11 +85,9 @@ class TestContractViewer(BaseCase):
         # 3. Employee 4 has Department Human Resource
         # Result:
         # 1. Create successfully
-        contract_5 = self.obj_contract.sudo(self.user_4).create({
-            "name": "Contract 5",
-            "employee_id": self.employee_4.id,
-            "wage": 500.00
-        })
+        contract_5 = self.obj_contract.sudo(self.user_4).create(
+            {"name": "Contract 5", "employee_id": self.employee_4.id, "wage": 500.00}
+        )
         self.assertIsNotNone(contract_5)
 
         # Condition 2:
@@ -107,11 +108,13 @@ class TestContractViewer(BaseCase):
         self.assertIsNotNone(check_manager_id)
         self.assertEqual(check_manager_id, self.employee_4.id)
 
-        contract_6 = self.obj_contract.sudo(self.user_4).create({
-            "name": "Contract 6",
-            "employee_id": self.employee_7.id,
-            "wage": 500.00,
-        })
+        contract_6 = self.obj_contract.sudo(self.user_4).create(
+            {
+                "name": "Contract 6",
+                "employee_id": self.employee_7.id,
+                "wage": 500.00,
+            }
+        )
 
         self.assertIsNotNone(contract_6)
 
@@ -123,11 +126,9 @@ class TestContractViewer(BaseCase):
         # 3. Employee 8 has Department Finance and Accounting
         # Result:
         # 1. Create successfully
-        contract_7 = self.obj_contract.sudo(self.user_8).create({
-            "name": "Contract 7",
-            "employee_id": self.employee_8.id,
-            "wage": 500.00
-        })
+        contract_7 = self.obj_contract.sudo(self.user_8).create(
+            {"name": "Contract 7", "employee_id": self.employee_8.id, "wage": 500.00}
+        )
         self.assertIsNotNone(contract_7)
 
         # Condition 4:
@@ -135,12 +136,8 @@ class TestContractViewer(BaseCase):
         # Result:
         # 1. Employee 4 can only see contract under his department
         #    which is (1)contract_5 and (2)contract_6
-        self.assertEqual(
-            contract_5.sudo(self.user_4).name,
-            "Contract 5")
-        self.assertEqual(
-            contract_6.sudo(self.user_4).name,
-            "Contract 6")
+        self.assertEqual(contract_5.sudo(self.user_4).name, "Contract 5")
+        self.assertEqual(contract_6.sudo(self.user_4).name, "Contract 6")
         with self.assertRaises(except_orm):
             contract_7.sudo(self.user_4).name
 
@@ -154,11 +151,9 @@ class TestContractViewer(BaseCase):
         # 4. Employee 8 has Main Company
         # Result:
         # 1. Create successfully
-        contract_8 = self.obj_contract.sudo(self.user_8).create({
-            "name": "Contract 8",
-            "employee_id": self.employee_8.id,
-            "wage": 500.00
-        })
+        contract_8 = self.obj_contract.sudo(self.user_8).create(
+            {"name": "Contract 8", "employee_id": self.employee_8.id, "wage": 500.00}
+        )
         self.assertIsNotNone(contract_8)
 
         # Condition 2:
@@ -172,11 +167,13 @@ class TestContractViewer(BaseCase):
         # 6. Employee 8 has Main Company
         # Result:
         # 1. Create successfully
-        contract_9 = self.obj_contract.sudo(self.user_8).create({
-            "name": "Contract 9",
-            "employee_id": self.employee_6.id,
-            "wage": 500.00,
-        })
+        contract_9 = self.obj_contract.sudo(self.user_8).create(
+            {
+                "name": "Contract 9",
+                "employee_id": self.employee_6.id,
+                "wage": 500.00,
+            }
+        )
         self.assertIsNotNone(contract_9)
 
         # Condition 3:
@@ -188,11 +185,13 @@ class TestContractViewer(BaseCase):
         # 4. Employee 11 has Kawula Odoo Indonesia Company
         # Result:
         # 1. Create successfully
-        contract_10 = self.obj_contract.create({
-            "name": "Contract 10",
-            "employee_id": self.employee_11.id,
-            "wage": 500.00,
-        })
+        contract_10 = self.obj_contract.create(
+            {
+                "name": "Contract 10",
+                "employee_id": self.employee_11.id,
+                "wage": 500.00,
+            }
+        )
 
         self.assertIsNotNone(contract_10)
 
@@ -201,11 +200,7 @@ class TestContractViewer(BaseCase):
         # Result:
         # 1. Employee 4 can only see contract under his company
         #    which is (1)contract_8 and (2)contract_9
-        self.assertEqual(
-            contract_8.sudo(self.user_8).name,
-            "Contract 8")
-        self.assertEqual(
-            contract_9.sudo(self.user_8).name,
-            "Contract 9")
+        self.assertEqual(contract_8.sudo(self.user_8).name, "Contract 8")
+        self.assertEqual(contract_9.sudo(self.user_8).name, "Contract 9")
         with self.assertRaises(except_orm):
             contract_10.sudo(self.user_8).name

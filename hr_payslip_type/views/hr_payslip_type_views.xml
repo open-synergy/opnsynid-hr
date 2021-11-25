@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
 
@@ -10,9 +9,9 @@
             <field name="model">hr.payslip.type</field>
             <field name="arch" type="xml">
                 <tree>
-                    <field name="name"/>
-                    <field name="description"/>
-                    <field name="active"/>
+                    <field name="name" />
+                    <field name="description" />
+                    <field name="active" />
                 </tree>
             </field>
         </record>
@@ -24,9 +23,9 @@
                 <form string="Payslip Type">
                     <sheet>
                         <group col="4">
-                            <field name="name"/>
-                            <field name="active"/>
-                            <field name="description"/>
+                            <field name="name" />
+                            <field name="active" />
+                            <field name="description" />
                         </group>
                     </sheet>
                 </form>
@@ -52,7 +51,7 @@
             parent="hr_payroll.payroll_configure"
             groups="base.group_hr_user"
             action="hr_payslip_type_action"
-            />
+        />
 
     </data>
 </openerp>

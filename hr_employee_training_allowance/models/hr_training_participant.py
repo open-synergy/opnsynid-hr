@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -28,8 +28,9 @@ class HrTrainingParticipant(models.Model):
             str_warning = _("No pricelist defined")
             raise UserError(str_warning)
         for allowance in training.allowance_ids:
-            if self._check_existing_product(allowance.product_id) and \
-                    allowance._check_participant_type(self):
+            if self._check_existing_product(
+                allowance.product_id
+            ) and allowance._check_participant_type(self):
                 allowance._create_participant_allowance(self)
 
     @api.multi
@@ -37,10 +38,13 @@ class HrTrainingParticipant(models.Model):
         self.ensure_one()
         criteria = [
             ("participant_id", "=", self.id),
-            ("state", "=", "draft",),
+            (
+                "state",
+                "=",
+                "draft",
+            ),
         ]
-        self.env["hr.training_participant_allowance"].search(criteria).\
-            unlink()
+        self.env["hr.training_participant_allowance"].search(criteria).unlink()
 
     @api.multi
     def action_generate_allowance(self):
@@ -57,7 +61,6 @@ class HrTrainingParticipant(models.Model):
             ("participant_id", "=", self.id),
             ("product_id", "=", product.id),
         ]
-        if self.env["hr.training_participant_allowance"].\
-                search_count(criteria) > 0:
+        if self.env["hr.training_participant_allowance"].search_count(criteria) > 0:
             result = False
         return result

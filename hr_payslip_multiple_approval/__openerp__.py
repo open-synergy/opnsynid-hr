@@ -15,9 +15,7 @@
         "hr_payslip_extend",
         "base_multiple_approval",
     ],
-    "data": [
-        "views/hr_payslip_views.xml"
-    ],
+    "data": ["views/hr_payslip_views.xml"],
     "images": [
         "static/description/banner.png",
     ],

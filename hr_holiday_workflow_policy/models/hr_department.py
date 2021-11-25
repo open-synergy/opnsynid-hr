@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrDepartment(models.Model):
@@ -96,13 +96,12 @@ class HrDepartment(models.Model):
         user = self.env.user
         group_ids = user.groups_id.ids
 
-        button_group_ids += getattr(
-            self, policy_field).ids
+        button_group_ids += getattr(self, policy_field).ids
 
         if not button_group_ids:
             result = True
         else:
-            if (set(button_group_ids) & set(group_ids)):
+            if set(button_group_ids) & set(group_ids):
                 result = True
         return result
 

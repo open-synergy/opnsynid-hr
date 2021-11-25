@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -40,73 +40,59 @@ class HrOvertimeRequest(models.Model):
     def _compute_attendance(self):
         for overtime in self:
             attendances = overtime.attendance_ids.filtered(
-                lambda r: r.action == "sign_in").sorted(key=lambda r: r.name)
-            overtime.start_attendance_id = attendances[
-                0].id if len(attendances) > 0 else False
+                lambda r: r.action == "sign_in"
+            ).sorted(key=lambda r: r.name)
+            overtime.start_attendance_id = (
+                attendances[0].id if len(attendances) > 0 else False
+            )
 
-            attendances = overtime.attendance_ids.\
-                filtered(lambda r: r.action == "sign_out").\
-                sorted(key=lambda r: r.name, reverse=True)
-            overtime.end_attendance_id = attendances[
-                0].id if len(attendances) > 0 else False
+            attendances = overtime.attendance_ids.filtered(
+                lambda r: r.action == "sign_out"
+            ).sorted(key=lambda r: r.name, reverse=True)
+            overtime.end_attendance_id = (
+                attendances[0].id if len(attendances) > 0 else False
+            )
 
     @api.multi
-    @api.depends(
-        "start_attendance_id",
-        "date_start")
+    @api.depends("start_attendance_id", "date_start")
     def _compute_real_start(self):
         for overtime in self:
             overtime.real_date_start = False
-            if not overtime.start_attendance_id or \
-                    not overtime.date_start:
+            if not overtime.start_attendance_id or not overtime.date_start:
                 continue
 
-            if overtime.start_attendance_id.name <= \
-                    overtime.date_start:
-                overtime.real_date_start = \
-                    overtime.date_start
+            if overtime.start_attendance_id.name <= overtime.date_start:
+                overtime.real_date_start = overtime.date_start
             else:
-                overtime.real_date_start = \
-                    overtime.start_attendance_id.name
+                overtime.real_date_start = overtime.start_attendance_id.name
 
     @api.multi
-    @api.depends(
-        "end_attendance_id",
-        "date_end")
+    @api.depends("end_attendance_id", "date_end")
     def _compute_real_end(self):
         for overtime in self:
             overtime.real_date_end = False
-            if not overtime.end_attendance_id or \
-                    not overtime.date_end:
+            if not overtime.end_attendance_id or not overtime.date_end:
                 continue
 
-            if overtime.end_attendance_id.name <= \
-                    overtime.date_end:
-                overtime.real_date_end = \
-                    overtime.end_attendance_id.name
+            if overtime.end_attendance_id.name <= overtime.date_end:
+                overtime.real_date_end = overtime.end_attendance_id.name
             else:
-                overtime.real_date_end = \
-                    overtime.date_end
+                overtime.real_date_end = overtime.date_end
 
     @api.multi
-    @api.depends(
-        "real_date_start",
-        "real_date_end")
+    @api.depends("real_date_start", "real_date_end")
     def _compute_real(self):
         for overtime in self:
             overtime.real_overtime_hour = 0.0
-            if overtime.real_date_start and \
-                    overtime.real_date_end:
-                dt_start = fields.Datetime.\
-                    from_string(overtime.real_date_start)
-                dt_end = fields.Datetime.\
-                    from_string(overtime.real_date_end)
-                overtime.real_overtime_hour = (dt_end - dt_start).\
-                    total_seconds() / 3600.00
+            if overtime.real_date_start and overtime.real_date_end:
+                dt_start = fields.Datetime.from_string(overtime.real_date_start)
+                dt_end = fields.Datetime.from_string(overtime.real_date_end)
+                overtime.real_overtime_hour = (
+                    dt_end - dt_start
+                ).total_seconds() / 3600.00
 
     @api.multi
-    @api.depends(
-        "date_start", "date_end")
+    @api.depends("date_start", "date_end")
     def _compute_hour(self):
         for ovt in self:
             ovt_hour = 0.0
@@ -392,19 +378,23 @@ class HrOvertimeRequest(models.Model):
         _super = super(HrOvertimeRequest, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.multi
     def copy(self, default):
         self.ensure_one()
         _super = super(HrOvertimeRequest, self)
-        default.update({
-            "department_id": self._get_department_id().id,
-            "manager_id": self._get_manager_id().id,
-        })
+        default.update(
+            {
+                "department_id": self._get_department_id().id,
+                "manager_id": self._get_manager_id().id,
+            }
+        )
         return _super.copy(default)
 
     @api.multi

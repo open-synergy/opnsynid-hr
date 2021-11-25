@@ -1,14 +1,17 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <openerp>
     <data>
         <record id="hr_overtime_request_view_form" model="ir.ui.view">
             <field name="name">hr.overtime_request form</field>
             <field name="model">hr.overtime_request</field>
-            <field name="inherit_id" ref="hr_attendance_overtime_request.hr_overtime_request_view_form"/>
+            <field
+                name="inherit_id"
+                ref="hr_attendance_overtime_request.hr_overtime_request_view_form"
+            />
             <field name="arch" type="xml">
                 <xpath expr="//page[@name='log']" position="inside">
                     <group name="group_log_1" colspan="4" col="3">
-                        <field name="request_batch_id"/>
+                        <field name="request_batch_id" />
                     </group>
                 </xpath>
             </field>

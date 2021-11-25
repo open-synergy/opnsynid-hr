@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrTrainingPartisipant(models.Model):
@@ -68,8 +68,11 @@ class HrTrainingPartisipant(models.Model):
     )
 
     _sql_constraints = [
-        ("participant_unique", "unique(training_id, partisipant_id)",
-         "Employee must be unique"),
+        (
+            "participant_unique",
+            "unique(training_id, partisipant_id)",
+            "Employee must be unique",
+        ),
     ]
 
     @api.onchange(
@@ -95,8 +98,7 @@ class HrTrainingPartisipant(models.Model):
     @api.multi
     def button_cancel(self, cancel_reason_id=False):
         for participant in self:
-            participant.write(
-                participant._prepare_cancel_data(cancel_reason_id))
+            participant.write(participant._prepare_cancel_data(cancel_reason_id))
 
     @api.multi
     def button_reset(self):
@@ -133,8 +135,7 @@ class HrTrainingPartisipant(models.Model):
     @api.multi
     def _substitute(self, substitute_by_id):
         self.ensure_one()
-        substitute_by = self.copy(
-            self._prepare_substitute_data(substitute_by_id))
+        substitute_by = self.copy(self._prepare_substitute_data(substitute_by_id))
         self.write({"substitute_by_id": substitute_by.id})
 
     @api.multi

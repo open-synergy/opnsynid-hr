@@ -2,7 +2,7 @@
 # Copyright 2020 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, api, fields
+from openerp import api, fields, models
 
 
 class HrTimesheetSheetSheet(models.Model):
@@ -23,9 +23,11 @@ class HrTimesheetSheetSheet(models.Model):
         _super = super(HrTimesheetSheetSheet, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.multi

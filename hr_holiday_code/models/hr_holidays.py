@@ -2,18 +2,14 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import api, fields, models, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
 class HrHolidays(models.Model):
     _inherit = "hr.holidays"
 
-    holiday_code = fields.Char(
-        string="# Document",
-        required=True,
-        default="/"
-    )
+    holiday_code = fields.Char(string="# Document", required=True, default="/")
 
     @api.multi
     def _get_holidays_sequence_by_type(self, default_type):
@@ -21,20 +17,15 @@ class HrHolidays(models.Model):
         lvr_sequence_id = False
         alr_sequence_id = False
 
-        status_id =\
-            self.holiday_status_id
+        status_id = self.holiday_status_id
         if status_id:
-            lvr_sequence_id =\
-                status_id.leave_request_sequence_id
-            alr_sequence_id =\
-                status_id.allocation_request_sequence_id
+            lvr_sequence_id = status_id.leave_request_sequence_id
+            alr_sequence_id = status_id.allocation_request_sequence_id
 
         if lvr_sequence_id and default_type == "remove":
-            result = self.env["ir.sequence"].\
-                next_by_id(lvr_sequence_id.id)
+            result = self.env["ir.sequence"].next_by_id(lvr_sequence_id.id)
         elif alr_sequence_id and default_type == "add":
-            result = self.env["ir.sequence"].\
-                next_by_id(alr_sequence_id.id)
+            result = self.env["ir.sequence"].next_by_id(alr_sequence_id.id)
         else:
             result = False
         return result
@@ -42,28 +33,22 @@ class HrHolidays(models.Model):
     @api.multi
     def _get_holidays_sequence_by_company(self, default_type):
         self.ensure_one()
-        obj_res_company =\
-            self.env["res.company"]
+        obj_res_company = self.env["res.company"]
 
-        company_id =\
-            self.env.user.company_id.id
+        company_id = self.env.user.company_id.id
 
         lvr_sequence_id = False
         alr_sequence_id = False
 
         company = obj_res_company.browse([company_id])[0]
         if company:
-            lvr_sequence_id =\
-                company.leave_request_sequence_id
-            alr_sequence_id =\
-                company.allocation_request_sequence_id
+            lvr_sequence_id = company.leave_request_sequence_id
+            alr_sequence_id = company.allocation_request_sequence_id
 
         if lvr_sequence_id and default_type == "remove":
-            result = self.env["ir.sequence"].\
-                next_by_id(lvr_sequence_id.id)
+            result = self.env["ir.sequence"].next_by_id(lvr_sequence_id.id)
         elif alr_sequence_id and default_type == "add":
-            result = self.env["ir.sequence"].\
-                next_by_id(alr_sequence_id.id)
+            result = self.env["ir.sequence"].next_by_id(alr_sequence_id.id)
         else:
             result = False
         return result
@@ -73,11 +58,9 @@ class HrHolidays(models.Model):
         self.ensure_one()
 
         if default_type == "remove":
-            result =\
-                self.env["ir.sequence"].next_by_code("hr.holidays.lvr")
+            result = self.env["ir.sequence"].next_by_code("hr.holidays.lvr")
         elif default_type == "add":
-            result =\
-                self.env["ir.sequence"].next_by_code("hr.holidays.alr")
+            result = self.env["ir.sequence"].next_by_code("hr.holidays.alr")
         else:
             result = False
         return result
@@ -87,16 +70,12 @@ class HrHolidays(models.Model):
         self.ensure_one()
         context = self._context
 
-        default_type =\
-            context.get("default_type", False)
+        default_type = context.get("default_type", False)
 
         if default_type:
-            by_type =\
-                self._get_holidays_sequence_by_type(default_type)
-            by_default =\
-                self._get_holidays_sequence_by_default(default_type)
-            by_company =\
-                self._get_holidays_sequence_by_company(default_type)
+            by_type = self._get_holidays_sequence_by_type(default_type)
+            by_default = self._get_holidays_sequence_by_default(default_type)
+            by_company = self._get_holidays_sequence_by_company(default_type)
             if by_type:
                 result = by_type
             elif by_company:
@@ -113,8 +92,7 @@ class HrHolidays(models.Model):
     def _prepare_create_data(self):
         self.ensure_one()
         result = {}
-        sequence =\
-            self._get_holidays_sequence()
+        sequence = self._get_holidays_sequence()
         if sequence:
             result.update({"holiday_code": sequence})
         else:

@@ -1,17 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <menuitem
-    id="hr_career_transition_root_menu"
-    name="Career Transition"
-    parent="hr.menu_hr_root"
-    sequence="2"
-    />
+            id="hr_career_transition_root_menu"
+            name="Career Transition"
+            parent="hr.menu_hr_root"
+            sequence="2"
+        />
 
 
 

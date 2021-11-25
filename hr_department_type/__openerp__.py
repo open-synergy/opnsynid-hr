@@ -5,16 +5,14 @@
     "name": "Human Resource - Department Type",
     "version": "8.0.1.0.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "hr"
-    ],
+    "depends": ["hr"],
     "data": [
         "security/ir.model.access.csv",
         "views/hr_department_type_views.xml",
-        "views/hr_department_views.xml"
+        "views/hr_department_views.xml",
     ],
 }

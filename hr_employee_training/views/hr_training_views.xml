@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -11,13 +10,13 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="category_id"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="date_start"/>
-            <field name="date_end"/>
-            <field name="request_by_id"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="category_id" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="date_start" />
+            <field name="date_end" />
+            <field name="request_by_id" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -29,74 +28,165 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm training. Are you sure?"/>
-                <button name="%(select_training_participant_action)d" string="Select Participant" type="action" states="draft,start"/>
-                <button name="%(accomplish_participant_action)d" string="Accomplish Participants" type="action" states="start"/>
-                <button name="%(cancel_participant_action)d" string="Cancel Participants" type="action" states="start"/>
-                <button name="button_generate_attendance" string="Generate Attendance" type="object" states="draft"/>
-                <button name="button_approve" string="Approve" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}" confirm="Approve training. Are you sure?"/>
-                <button name="button_start" string="Start" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','approve'),('start_ok','=',False)]}" confirm="Start Training. Are you sure?"/>
-                <button name="button_finish" string="Finish" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','start'),('finish_ok','=',False)]}" confirm="Finish training. Are you sure?"/>
-                <button name="button_cancel" string="Cancel" type="object" attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}" confirm="Cancel training. Are you sure?"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Reset training. Are you sure?"/>
-                <field name="state" widget="statusbar"/>
+                <button
+                            name="button_confirm"
+                            string="Confirm"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                            confirm="Confirm training. Are you sure?"
+                        />
+                <button
+                            name="%(select_training_participant_action)d"
+                            string="Select Participant"
+                            type="action"
+                            states="draft,start"
+                        />
+                <button
+                            name="%(accomplish_participant_action)d"
+                            string="Accomplish Participants"
+                            type="action"
+                            states="start"
+                        />
+                <button
+                            name="%(cancel_participant_action)d"
+                            string="Cancel Participants"
+                            type="action"
+                            states="start"
+                        />
+                <button
+                            name="button_generate_attendance"
+                            string="Generate Attendance"
+                            type="object"
+                            states="draft"
+                        />
+                <button
+                            name="button_approve"
+                            string="Approve"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','confirm'),('approve_ok','=',False)]}"
+                            confirm="Approve training. Are you sure?"
+                        />
+                <button
+                            name="button_start"
+                            string="Start"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','approve'),('start_ok','=',False)]}"
+                            confirm="Start Training. Are you sure?"
+                        />
+                <button
+                            name="button_finish"
+                            string="Finish"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','start'),('finish_ok','=',False)]}"
+                            confirm="Finish training. Are you sure?"
+                        />
+                <button
+                            name="button_cancel"
+                            string="Cancel"
+                            type="object"
+                            attrs="{'invisible':['|',('state','=','cancel'),('cancel_ok','=',False)]}"
+                            confirm="Cancel training. Are you sure?"
+                        />
+                <button
+                            name="button_restart"
+                            string="Set to Draft"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                            confirm="Reset training. Are you sure?"
+                        />
+                <field name="state" widget="statusbar" />
             </header>
             <sheet>
-                <label for="name"/>
+                <label for="name" />
                 <h1>
-                    <field name="name"/>
+                    <field name="name" />
                 </h1>
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="category_id"/>
-                        <field name="method_ids" widget="many2many_tags"/>
-                        <field name="trainer_ids" widget="many2many_tags" domain="[('trainer_ok','=',True)]"/>
-                        <field name="observer_ids" widget="many2many_tags" domain="[('observer_ok','=',True)]"/>
-                        <field name="vendor_ids" widget="many2many_tags"/>
-                        <field name="is_public"/>
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="category_id" />
+                        <field name="method_ids" widget="many2many_tags" />
+                        <field
+                                    name="trainer_ids"
+                                    widget="many2many_tags"
+                                    domain="[('trainer_ok','=',True)]"
+                                />
+                        <field
+                                    name="observer_ids"
+                                    widget="many2many_tags"
+                                    domain="[('observer_ok','=',True)]"
+                                />
+                        <field name="vendor_ids" widget="many2many_tags" />
+                        <field name="is_public" />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
-                        <field name="date_start"/>
-                        <field name="date_end"/>
-                        <field name="request_by_id"/>
-                        <field name="responsible_id"/>
-                        <field name="secondary_responsible_id"/>
+                        <field name="date_start" />
+                        <field name="date_end" />
+                        <field name="request_by_id" />
+                        <field name="responsible_id" />
+                        <field name="secondary_responsible_id" />
                     </group>
                 </group>
                 <notebook>
                     <page name="page_syllabus_purpose" string="Purpose &amp; Syllabus">
-                        <separator string="Purpose" colspan="4"/>
-                        <field name="training_purpose_ids" nolabel="1" colspan="4"/>
-                        <separator string="Syllabus" colspan="4"/>
-                        <field name="training_syllabus_id" nolabel="1" colspan="4"/>
+                        <separator string="Purpose" colspan="4" />
+                        <field name="training_purpose_ids" nolabel="1" colspan="4" />
+                        <separator string="Syllabus" colspan="4" />
+                        <field name="training_syllabus_id" nolabel="1" colspan="4" />
                     </page>
                     <page name="page_session" string="Sessions">
                         <field name="session_ids" colspan="4" nolabel="1">
                             <tree>
-                                <field name="date_start"/>
-                                <field name="date_end"/>
-                                <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',parent.trainer_ids[0][2])]"/>
-                                <field name="observer_ids" widget="many2many_tags" domain="[('id','in',parent.observer_ids[0][2])]"/>
-                                <field name="attendance_ids"/>
-                                <field name="state"/>
-                                <field name="training_state" invisible="1"/>
-                                <button name="button_generate_attendance" string="Generate Attendance" icon="gtk-execute" type="object" attrs="{'invisible':[('training_state','in',['finish','cancel'])]}"/>
+                                <field name="date_start" />
+                                <field name="date_end" />
+                                <field
+                                            name="trainer_ids"
+                                            widget="many2many_tags"
+                                            domain="[('id','in',parent.trainer_ids[0][2])]"
+                                        />
+                                <field
+                                            name="observer_ids"
+                                            widget="many2many_tags"
+                                            domain="[('id','in',parent.observer_ids[0][2])]"
+                                        />
+                                <field name="attendance_ids" />
+                                <field name="state" />
+                                <field name="training_state" invisible="1" />
+                                <button
+                                            name="button_generate_attendance"
+                                            string="Generate Attendance"
+                                            icon="gtk-execute"
+                                            type="object"
+                                            attrs="{'invisible':[('training_state','in',['finish','cancel'])]}"
+                                        />
                             </tree>
                             <form>
                                 <header>
-                                    <field name="state" widget="statusbar"/>
+                                    <field name="state" widget="statusbar" />
                                 </header>
                                 <sheet>
-                                    <div class="oe_right oe_button_box"/>
+                                    <div class="oe_right oe_button_box" />
                                     <group name="group_1" colspan="4" col="2">
                                         <group name="group_1_1" colspan="1" col="2">
-                                            <field name="date_start"/>
-                                            <field name="date_end"/>
+                                            <field name="date_start" />
+                                            <field name="date_end" />
                                         </group>
                                         <group name="group_1_2" colspan="1" col="2">
-                                            <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',parent.trainer_ids[0][2])]"/>
-                                            <field name="observer_ids" widget="many2many_tags" domain="[('id','in',parent.observer_ids[0][2])]"/>
+                                            <field
+                                                        name="trainer_ids"
+                                                        widget="many2many_tags"
+                                                        domain="[('id','in',parent.trainer_ids[0][2])]"
+                                                    />
+                                            <field
+                                                        name="observer_ids"
+                                                        widget="many2many_tags"
+                                                        domain="[('id','in',parent.observer_ids[0][2])]"
+                                                    />
                                         </group>
                                     </group>
                                 </sheet>
@@ -105,33 +195,44 @@
                     </page>
                     <page name="page_partisipant" string="Partisipants">
                         <group name="partcipant_1" colspan="4" col="2">
-                            <field name="participant_type_id"/>
+                            <field name="participant_type_id" />
                         </group>
-                        <field name="partisipant_ids" colspan="4" nolabel="1" context="{'default_type_id':participant_type_id}">
+                        <field
+                                    name="partisipant_ids"
+                                    colspan="4"
+                                    nolabel="1"
+                                    context="{'default_type_id':participant_type_id}"
+                                >
                             <tree editable="top" create="false">
-                                <field name="partisipant_id"/>
-                                <field name="type_id"/>
-                                <field name="additional"/>
-                                <field name="job_id"/>
-                                <field name="state"/>
-                                <field name="cancel_reason_id" readonly="1"/>
-                                <field name="substitute_by_id" readonly="1"/>
-                                <field name="substitute_from_id" readonly="1"/>
-                                <button name="button_reset" string="Reset" icon="gtk-refresh" type="object" states="accomplish,cancel"/>
+                                <field name="partisipant_id" />
+                                <field name="type_id" />
+                                <field name="additional" />
+                                <field name="job_id" />
+                                <field name="state" />
+                                <field name="cancel_reason_id" readonly="1" />
+                                <field name="substitute_by_id" readonly="1" />
+                                <field name="substitute_from_id" readonly="1" />
+                                <button
+                                            name="button_reset"
+                                            string="Reset"
+                                            icon="gtk-refresh"
+                                            type="object"
+                                            states="accomplish,cancel"
+                                        />
                             </tree>
                         </field>
                     </page>
                     <page name="page_note" string="Note">
-                        <field name="note"/>
+                        <field name="note" />
                     </page>
                     <page name="page_policy" string="Policy" groups="base.group_system">
                         <group name="grp_policy_1" colspan="4" col="2">
-                            <field name="confirm_ok"/>
-                            <field name="approve_ok"/>
-                            <field name="start_ok"/>
-                            <field name="finish_ok"/>
-                            <field name="cancel_ok"/>
-                            <field name="restart_ok"/>
+                            <field name="confirm_ok" />
+                            <field name="approve_ok" />
+                            <field name="start_ok" />
+                            <field name="finish_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
                         </group>
                     </page>
                 </notebook>
@@ -146,16 +247,44 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="category_id"/>
+            <field name="name" />
+            <field name="category_id" />
             <group name="group_1" string="Group By">
-                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
-                <filter name="grp_category" string="Category" context="{'group_by':'category_id'}"/>
-                <filter name="grp_request_by" string="Request By" context="{'group_by':'request_by_id'}"/>
-                <filter name="grp_responsible" string="Primary PIC" context="{'group_by':'responsible_id'}"/>
-                <filter name="grp_second_responsible" string="Secondary PIC" context="{'group_by':'secondary_responsible_id'}"/>
-                <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
-                <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_category"
+                            string="Category"
+                            context="{'group_by':'category_id'}"
+                        />
+                <filter
+                            name="grp_request_by"
+                            string="Request By"
+                            context="{'group_by':'request_by_id'}"
+                        />
+                <filter
+                            name="grp_responsible"
+                            string="Primary PIC"
+                            context="{'group_by':'responsible_id'}"
+                        />
+                <filter
+                            name="grp_second_responsible"
+                            string="Secondary PIC"
+                            context="{'group_by':'secondary_responsible_id'}"
+                        />
+                <filter
+                            name="grp_date_start_month"
+                            string="Date Start by Month"
+                            context="{'group_by':'date_start:month'}"
+                        />
+                <filter
+                            name="grp_date_start_year"
+                            string="Date Start by Year"
+                            context="{'group_by':'date_start:year'}"
+                        />
             </group>
         </search>
     </field>
@@ -167,16 +296,16 @@
     <field name="res_model">hr.training</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_employee_training.hr_training_view_search"/>
+    <field name="search_view_id" ref="hr_employee_training.hr_training_view_search" />
 </record>
 
 <menuitem
-    id="hr_training_menu"
-    name="Training"
-    parent="hr_employee_training.hr_training_root_menu"
-    action="hr_training_action"
-    sequence="1"
-    />
+            id="hr_training_menu"
+            name="Training"
+            parent="hr_employee_training.hr_training_root_menu"
+            action="hr_training_action"
+            sequence="1"
+        />
 
 
 </data>

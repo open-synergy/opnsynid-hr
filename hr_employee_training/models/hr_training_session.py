@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -193,8 +193,7 @@ class HrTrainingSession(models.Model):
             ]
             participant_count = obj_attendance.search_count(criteria)
             if participant_count == 0:
-                obj_attendance.create(
-                    self._prepare_attendance_data(participant))
+                obj_attendance.create(self._prepare_attendance_data(participant))
 
     @api.multi
     def _prepare_attendance_data(self, participant):
@@ -216,9 +215,13 @@ class HrTrainingSession(models.Model):
     def _check_training_limit(self):
         strWarning1 = _("Session's date start out of training duration")
         strWarning2 = _("Session's date end out of training duration")
-        if self.training_id.date_start > self.date_start or \
-                self.training_id.date_end < self.date_start:
+        if (
+            self.training_id.date_start > self.date_start
+            or self.training_id.date_end < self.date_start
+        ):
             raise UserError(strWarning1)
-        if self.training_id.date_end < self.date_end or \
-                self.training_id.date_start > self.date_end:
+        if (
+            self.training_id.date_end < self.date_end
+            or self.training_id.date_start > self.date_end
+        ):
             raise UserError(strWarning2)

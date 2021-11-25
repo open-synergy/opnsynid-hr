@@ -1,23 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="res_partner_view_form" model="ir.ui.view">
     <field name="name">res.partner form</field>
     <field name="model">res.partner</field>
-    <field name="inherit_id" ref="base.view_partner_form"/>
+    <field name="inherit_id" ref="base.view_partner_form" />
     <field name="arch" type="xml">
         <data>
-            <xpath expr="//page[@name='sales_purchases']/group/group/field[@name='supplier']" position="after">
-                <field name="trainer_ok" attrs="{'invisible':[('is_company','=',True)]}"/>
-                <field name="observer_ok" attrs="{'invisible':[('is_company','=',True)]}"/>
+            <xpath
+                        expr="//page[@name='sales_purchases']/group/group/field[@name='supplier']"
+                        position="after"
+                    >
+                <field
+                            name="trainer_ok"
+                            attrs="{'invisible':[('is_company','=',True)]}"
+                        />
+                <field
+                            name="observer_ok"
+                            attrs="{'invisible':[('is_company','=',True)]}"
+                        />
             </xpath>
-            <xpath expr="//field[@name='child_ids']/form/sheet/group/field[@name='function']" position="before">
-                <field name="trainer_ok"/>
-                <field name="observer_ok"/>
+            <xpath
+                        expr="//field[@name='child_ids']/form/sheet/group/field[@name='function']"
+                        position="before"
+                    >
+                <field name="trainer_ok" />
+                <field name="observer_ok" />
             </xpath>
         </data>
     </field>

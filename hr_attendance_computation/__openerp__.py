@@ -8,11 +8,12 @@
     "version": "8.0.1.0.0",
     "category": "Human Resources",
     "summary": "Dynamic reports based on employee's attendances and "
-               "contract's calendar",
+    "contract's calendar",
     "author": "Agile Business Group,"
-              "OpenSynergy Indonesia,"
-              "Odoo Community Association (OCA)",
-    "website": "http://www.agilebg.com",
+    "OpenSynergy Indonesia,"
+    "PT. Simetri Sinergi Indonesia,"
+    "Odoo Community Association (OCA)",
+    "website": "https://simetri-sinergi.id",
     "license": "AGPL-3",
     "depends": [
         "hr_attendance",
@@ -27,5 +28,5 @@
     "demo": [
         "demo/hr_attendance_demo.xml",
     ],
-    "installable": True
+    "installable": True,
 }

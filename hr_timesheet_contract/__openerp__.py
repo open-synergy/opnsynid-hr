@@ -5,8 +5,8 @@
     "name": "Helper Module To List All Contracts That Relevant to Timesheet",
     "version": "8.0.1.0.0",
     "category": "Hidden",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [

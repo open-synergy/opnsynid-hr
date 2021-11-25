@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -156,9 +156,7 @@ class HrTrainingParticipantEvaluation(models.Model):
             raise UserError(warning_msg)
         return user.partner_id
 
-    @api.constrains(
-        "state",
-        "respon_id")
+    @api.constrains("state", "respon_id")
     def _check_survey_respon_ok(self):
         if self.state == "done" and self.respon_id.state != "done":
             warning_msg = _("Evaluation is not finish!")

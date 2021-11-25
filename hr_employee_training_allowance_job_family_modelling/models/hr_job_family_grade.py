@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrJobFamilyGrade(models.Model):
@@ -17,8 +17,7 @@ class HrJobFamilyGrade(models.Model):
     @api.multi
     def _get_training_allowance_pricelist(self, participant_type):
         self.ensure_one()
-        obj_pricelist = self.env[
-            "hr.job_family_grade_training_allowance_pricelist"]
+        obj_pricelist = self.env["hr.job_family_grade_training_allowance_pricelist"]
         criteria = [
             ("job_family_grade_id", "=", self.id),
             ("participant_type_id", "=", participant_type.id),

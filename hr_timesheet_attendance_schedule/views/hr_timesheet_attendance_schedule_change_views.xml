@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -11,15 +10,15 @@
     <field name="model">hr.timesheet_attendance_schedule_change</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="employee_id"/>
-            <field name="sheet_id"/>
-            <field name="old_date_start"/>
-            <field name="old_date_end"/>
-            <field name="new_date_start"/>
-            <field name="new_date_end"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="employee_id" />
+            <field name="sheet_id" />
+            <field name="old_date_start" />
+            <field name="old_date_end" />
+            <field name="new_date_start" />
+            <field name="new_date_end" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -30,114 +29,171 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm Attendance Schedule Change. Are you sure?"/>
-                <button name="request_validation"
-                    string="Request Validation"
-                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
-                    class="oe_highlight"
-                    type="object"/>
-                <button name="restart_validation"
-                    string="Restart Validation"
-                    attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
-                    type="object"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Reset Attendance Schedule Change. Are you sure?"/>
-                <button name="button_cancel" string="Cancel" type="object" attrs="{'invisible':['|',('state','in',['cancel','valid']),('cancel_ok','=',False)]}" confirm="Cancel Attendance Schedule Change. Are you sure?"/>
-                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,approve"/>
+                <button
+                            name="button_confirm"
+                            string="Confirm"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                            confirm="Confirm Attendance Schedule Change. Are you sure?"
+                        />
+                <button
+                            name="request_validation"
+                            string="Request Validation"
+                            attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                <button
+                            name="restart_validation"
+                            string="Restart Validation"
+                            attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
+                            type="object"
+                        />
+                <button
+                            name="button_restart"
+                            string="Set to Draft"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                            confirm="Reset Attendance Schedule Change. Are you sure?"
+                        />
+                <button
+                            name="button_cancel"
+                            string="Cancel"
+                            type="object"
+                            attrs="{'invisible':['|',('state','in',['cancel','valid']),('cancel_ok','=',False)]}"
+                            confirm="Cancel Attendance Schedule Change. Are you sure?"
+                        />
+                <field
+                            name="state"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,approve"
+                        />
             </header>
-            <field name="need_validation" invisible="1"/>
-            <field name="validated" invisible="1"/>
-            <field name="rejected" invisible="1"/>
-            <div class="alert alert-warning"
-                 attrs="{'invisible': ['|', '|', '|',
+            <field name="need_validation" invisible="1" />
+            <field name="validated" invisible="1" />
+            <field name="rejected" invisible="1" />
+            <div
+                        class="alert alert-warning"
+                        attrs="{'invisible': ['|', '|', '|',
                  ('validated', '=', True), ('state', 'not in', ['confirm']),
                  ('rejected', '=', True), ('review_ids', '=', [])]}"
-                 style="margin-bottom:0px;">
-                <p><i class="fa fa-info-circle"/>This Data needs to be
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-info-circle" />This Data needs to be
                     validated.
-                    <button name="validate_tier"
-                        string="Validate"
-                        attrs="{'invisible': [('review_ids', '=', [])]}"
-                        type="object"
-                        class="oe_inline oe_button btn-success"
-                        icon="terp-check"/>
-                    <button name="reject_tier"
-                        string="Reject"
-                        type="object"
-                        class="btn-icon btn-danger"
-                        icon="terp-gtk-stop"/>
+                    <button
+                                name="validate_tier"
+                                string="Validate"
+                                attrs="{'invisible': [('review_ids', '=', [])]}"
+                                type="object"
+                                class="oe_inline oe_button btn-success"
+                                icon="terp-check"
+                            />
+                    <button
+                                name="reject_tier"
+                                string="Reject"
+                                type="object"
+                                class="btn-icon btn-danger"
+                                icon="terp-gtk-stop"
+                            />
                 </p>
             </div>
-            <div class="alert alert-success"
-                 attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
-                 style="margin-bottom:0px;">
-                <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+            <div
+                        class="alert alert-success"
+                        attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-thumbs-up" /> Operation has been <b
+                            >validated</b>!</p>
             </div>
-            <div class="alert alert-danger"
-                 attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
-                 style="margin-bottom:0px;">
-                <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+            <div
+                        class="alert alert-danger"
+                        attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-thumbs-down" /> Operation has been <b
+                            >rejected</b>.</p>
             </div>
             <sheet>
-                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
                 </div>
                 <div class="oe_left" style="width: 500px;">
                     <div class="oe_title" style="width: 500px;">
-                        <label for="name"/>
+                        <label for="name" />
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                 </div>
                 <group name="header_1" colspan="4" col="2">
                     <group name="header_1_1" colspan="1" col="2">
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="employee_id"/>
-                        <field name="sheet_id" domain="[('employee_id','=',employee_id)]"/>
-                        <field name="schedule_id" domain="[('sheet_id','=',sheet_id)]"/>
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="employee_id" />
+                        <field
+                                    name="sheet_id"
+                                    domain="[('employee_id','=',employee_id)]"
+                                />
+                        <field
+                                    name="schedule_id"
+                                    domain="[('sheet_id','=',sheet_id)]"
+                                />
                     </group>
                     <group name="header_1_2" colspan="1" col="2">
-                        <field name="old_date_start"/>
-                        <field name="old_date_end"/>
-                        <field name="new_date_start"/>
-                        <field name="new_date_end"/>
+                        <field name="old_date_start" />
+                        <field name="old_date_end" />
+                        <field name="new_date_start" />
+                        <field name="new_date_end" />
                     </group>
                 </group>
                 <notebook>
                     <page name="note" string="Note">
-                        <field name="note"/>
+                        <field name="note" />
                     </page>
                     <page name="log" string="Log" groups="base.group_system">
                         <group name="group_log_1" colspan="4" col="3">
-                            <field name="confirm_date" string="Confirm"/>
-                            <field name="confirm_user_id" nolabel="1"/>
-                            <field name="valid_date" string="Done"/>
-                            <field name="valid_user_id" nolabel="1"/>
-                            <field name="cancel_date" string="Cancel"/>
-                            <field name="cancel_user_id" nolabel="1"/>
+                            <field name="confirm_date" string="Confirm" />
+                            <field name="confirm_user_id" nolabel="1" />
+                            <field name="valid_date" string="Done" />
+                            <field name="valid_user_id" nolabel="1" />
+                            <field name="cancel_date" string="Cancel" />
+                            <field name="cancel_user_id" nolabel="1" />
                         </group>
                     </page>
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
-                            <field name="confirm_ok"/>
-                            <field name="cancel_ok"/>
-                            <field name="restart_ok"/>
-                            <field name="restart_approval_ok"/>
+                            <field name="confirm_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
+                            <field name="restart_approval_ok" />
                         </group>
                     </page>
                     <page string="Reviews" name="tier_validation">
                         <group name="tier_validation_1" colspan="4" col="2">
-                            <field name="definition_id"/>
-                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
+                            <field name="definition_id" />
+                            <field
+                                        name="reviewer_partner_ids"
+                                        widget="many2many_tags"
+                                    />
                         </group>
                         <group name="tier_validation_2" colspan="4" col="2">
-                            <field name="review_ids" readonly="1"/>
+                            <field name="review_ids" readonly="1" />
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                <field name="message_ids" widget="mail_thread"/>
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
             </div>
         </form>
     </field>
@@ -148,48 +204,96 @@
     <field name="model">hr.timesheet_attendance_schedule_change</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="employee_id"/>
-            <field name="sheet_id"/>
-            <field name="state"/>
-            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="name" />
+            <field name="employee_id" />
+            <field name="sheet_id" />
+            <field name="state" />
+            <field name="company_id" groups="base.group_multi_company" />
             <group name="grp_state" string="State">
-                <filter name="dom_draft" string="Draft" domain="[('state','=','draft')]"/>
-                <filter name="dom_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
-                <filter name="dom_valid" string="Valid" domain="[('state','=','valid')]"/>
-                <filter name="dom_cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
-                <filter name="needs_review" string="Needs my Review"
-                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['valid', 'cancel'])]"
-                        help="My Data to review"/>
+                <filter
+                            name="dom_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                <filter
+                            name="dom_valid"
+                            string="Valid"
+                            domain="[('state','=','valid')]"
+                        />
+                <filter
+                            name="dom_cancel"
+                            string="Cancelled"
+                            domain="[('state','=','cancel')]"
+                        />
+                <filter
+                            name="needs_review"
+                            string="Needs my Review"
+                            domain="[('reviewer_ids','in',uid), ('state', 'not in', ['valid', 'cancel'])]"
+                            help="My Data to review"
+                        />
             </group>
             <group name="grp_group" string="Group By..">
-                <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
-                <filter name="grp_sheet" string="Timesheet" context="{'group_by':'sheet_id'}"/>
-                <filter name="grp_schedule" string="Schedule" context="{'group_by':'schedule_id'}"/>
-                <filter name="grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
-                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
+                <filter
+                            name="grp_employee"
+                            string="Employee"
+                            context="{'group_by':'employee_id'}"
+                        />
+                <filter
+                            name="grp_sheet"
+                            string="Timesheet"
+                            context="{'group_by':'sheet_id'}"
+                        />
+                <filter
+                            name="grp_schedule"
+                            string="Schedule"
+                            context="{'group_by':'schedule_id'}"
+                        />
+                <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
             </group>
         </search>
     </field>
 </record>
 
-<record id="hr_timesheet_attendance_schedule_change_action" model="ir.actions.act_window">
+<record
+            id="hr_timesheet_attendance_schedule_change_action"
+            model="ir.actions.act_window"
+        >
     <field name="name">Attendance Schedule Change</field>
     <field name="type">ir.actions.act_window</field>
     <field name="res_model">hr.timesheet_attendance_schedule_change</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_timesheet_attendance_schedule_change_view_search"/>
-    <field name="context">{'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_open':1,'readonly_by_pass': True}</field>
+    <field
+                name="search_view_id"
+                ref="hr_timesheet_attendance_schedule_change_view_search"
+            />
+    <field
+                name="context"
+            >{'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_open':1,'readonly_by_pass': True}</field>
 </record>
 
 <menuitem
-    id="hr_timesheet_attendance_schedule_change_menu"
-    name="Attendance Schedule Change"
-    parent="hr_attendance.menu_hr_time_tracking"
-    action="hr_timesheet_attendance_schedule_change_action"
-    sequence="22"
-    />
+            id="hr_timesheet_attendance_schedule_change_menu"
+            name="Attendance Schedule Change"
+            parent="hr_attendance.menu_hr_time_tracking"
+            action="hr_timesheet_attendance_schedule_change_action"
+            sequence="22"
+        />
 
 </data>
 </openerp>

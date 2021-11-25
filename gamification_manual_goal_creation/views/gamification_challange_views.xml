@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
@@ -6,11 +6,16 @@
 <record id="gamification_challenge_view_form" model="ir.ui.view">
     <field name="name">gamification.challenge</field>
     <field name="model">gamification.challenge</field>
-    <field name="inherit_id" ref="gamification.challenge_form_view"/>
+    <field name="inherit_id" ref="gamification.challenge_form_view" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='state']" position="before">
-                <button name="%(gamification_manual_goal_creation_action)d" type="action" string="Manually Create Goals" states="inprogress"/>
+                <button
+                            name="%(gamification_manual_goal_creation_action)d"
+                            type="action"
+                            string="Manually Create Goals"
+                            states="inprogress"
+                        />
             </xpath>
         </data>
     </field>

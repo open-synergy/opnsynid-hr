@@ -2,8 +2,8 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from openerp import SUPERUSER_ID, api
 from openupgradelib import openupgrade
-from openerp import api, SUPERUSER_ID
 
 
 def reload_record_rule(env):
@@ -11,7 +11,7 @@ def reload_record_rule(env):
         env.cr,
         "hr_attendance_overtime_request",
         "security/ir_rule_data.xml",
-        mode="update"
+        mode="update",
     )
 
 

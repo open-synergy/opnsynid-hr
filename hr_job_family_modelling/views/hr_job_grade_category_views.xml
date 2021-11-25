@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- © <YEAR(S)> <AUTHOR(S)>
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
-
 <openerp>
 <data>
 <!-- Job Grade Category -->
@@ -10,8 +9,8 @@
     <field name="model">hr.job_grade_category</field>
     <field name="arch" type="xml">
         <tree string="Job Grade Category">
-            <field name="name"/>
-            <field name="code"/>
+            <field name="name" />
+            <field name="code" />
         </tree>
     </field>
 </record>
@@ -22,13 +21,13 @@
     <field name="arch" type="xml">
         <form string="Job Grade Category">
             <group name="main">
-                <field name="name"/>
-                <field name="code"/>
-                <field name="active"/>
+                <field name="name" />
+                <field name="code" />
+                <field name="active" />
             </group>
             <notebook colspan="4">
                 <page name="note" string="Note">
-                    <field name="note" colspan="4" nolabel="1"/>
+                    <field name="note" colspan="4" nolabel="1" />
                 </page>
             </notebook>
         </form>
@@ -42,10 +41,12 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<menuitem action="hr_job_grade_category_action"
-    id="hr_job_grade_category_menu"
-    parent="job_family_modelling_configuration_menu"
-    groups="base.group_hr_user"
-    sequence="1"/>
+<menuitem
+            action="hr_job_grade_category_action"
+            id="hr_job_grade_category_menu"
+            parent="job_family_modelling_configuration_menu"
+            groups="base.group_hr_user"
+            sequence="1"
+        />
 </data>
 </openerp>

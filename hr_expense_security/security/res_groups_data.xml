@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <openerp>
@@ -7,101 +7,113 @@
 <!-- Contract Operator -->
 <record id="group_expense_operation_user" model="res.groups">
     <field name="name">User</field>
-    <field name="category_id" ref="module_hr_expense_operation"/>
-    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="category_id" ref="module_hr_expense_operation" />
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
 </record>
 
 <record id="group_expense_operation_supervisor" model="res.groups">
     <field name="name">Supervisor</field>
-    <field name="category_id" ref="module_hr_expense_operation"/>
-    <field name="implied_ids" eval="[(4, ref('group_expense_operation_user'))]"/>
+    <field name="category_id" ref="module_hr_expense_operation" />
+    <field name="implied_ids" eval="[(4, ref('group_expense_operation_user'))]" />
 </record>
 
 <record id="group_expense_operation_department" model="res.groups">
     <field name="name">Department</field>
-    <field name="category_id" ref="module_hr_expense_operation"/>
-    <field name="implied_ids" eval="[(4, ref('group_expense_operation_supervisor'))]"/>
+    <field name="category_id" ref="module_hr_expense_operation" />
+    <field name="implied_ids" eval="[(4, ref('group_expense_operation_supervisor'))]" />
 </record>
 
 <record id="group_expense_operation_company" model="res.groups">
     <field name="name">Company</field>
-    <field name="category_id" ref="module_hr_expense_operation"/>
-    <field name="implied_ids" eval="[(4, ref('group_expense_operation_department'))]"/>
-    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    <field name="category_id" ref="module_hr_expense_operation" />
+    <field name="implied_ids" eval="[(4, ref('group_expense_operation_department'))]" />
+    <field name="users" eval="[(4, ref('base.user_root'))]" />
 </record>
 
 <!-- Contract Viewer -->
 <record id="group_expense_viewer_supervisor" model="res.groups">
     <field name="name">Supervisor</field>
-    <field name="category_id" ref="module_hr_expense_viewer"/>
-    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="category_id" ref="module_hr_expense_viewer" />
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
 </record>
 
 <record id="group_expense_viewer_department" model="res.groups">
     <field name="name">Department</field>
-    <field name="category_id" ref="module_hr_expense_viewer"/>
-    <field name="implied_ids" eval="[(4, ref('group_expense_viewer_supervisor'))]"/>
+    <field name="category_id" ref="module_hr_expense_viewer" />
+    <field name="implied_ids" eval="[(4, ref('group_expense_viewer_supervisor'))]" />
 </record>
 
 <record id="group_expense_viewer_company" model="res.groups">
     <field name="name">Company</field>
-    <field name="category_id" ref="module_hr_expense_viewer"/>
-    <field name="implied_ids" eval="[(4, ref('group_expense_viewer_department'))]"/>
-    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    <field name="category_id" ref="module_hr_expense_viewer" />
+    <field name="implied_ids" eval="[(4, ref('group_expense_viewer_department'))]" />
+    <field name="users" eval="[(4, ref('base.user_root'))]" />
 </record>
 
 <!-- Disable old rule -->
 
 <function name="write" model="ir.model.data">
     <function name="search" model="ir.model.data">
-       <value eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_manager')]"/>
+       <value
+                    eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_manager')]"
+                />
     </function>
-    <value eval="{'noupdate': False}"/>
+    <value eval="{'noupdate': False}" />
 </function>
 <record id="hr_expense.property_rule_expense_manager" model="ir.rule">
     <field name="name">Manager Expense (Depreceted)</field>
-    <field name="active" eval="0"/>
+    <field name="active" eval="0" />
 </record>
 <function name="write" model="ir.model.data">
     <function name="search" model="ir.model.data">
-       <value eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_manager')]"/>
+       <value
+                    eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_manager')]"
+                />
     </function>
-    <value eval="{'noupdate': True}"/>
+    <value eval="{'noupdate': True}" />
 </function>
 
 
 <function name="write" model="ir.model.data">
     <function name="search" model="ir.model.data">
-       <value eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_employee')]"/>
+       <value
+                    eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_employee')]"
+                />
     </function>
-    <value eval="{'noupdate': False}"/>
+    <value eval="{'noupdate': False}" />
 </function>
 <record id="hr_expense.property_rule_expense_employee" model="ir.rule">
     <field name="name">Employee Expense (Depreceted)</field>
-    <field name="active" eval="0"/>
+    <field name="active" eval="0" />
 </record>
 <function name="write" model="ir.model.data">
     <function name="search" model="ir.model.data">
-       <value eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_employee')]"/>
+       <value
+                    eval="[('module', '=', 'hr_expense'), ('name', '=', 'property_rule_expense_employee')]"
+                />
     </function>
-    <value eval="{'noupdate': True}"/>
+    <value eval="{'noupdate': True}" />
 </function>
 
 <function name="write" model="ir.model.data">
     <function name="search" model="ir.model.data">
-       <value eval="[('module', '=', 'hr_expense'), ('name', '=', 'hr_expense_comp_rule')]"/>
+       <value
+                    eval="[('module', '=', 'hr_expense'), ('name', '=', 'hr_expense_comp_rule')]"
+                />
     </function>
-    <value eval="{'noupdate': False}"/>
+    <value eval="{'noupdate': False}" />
 </function>
 <record id="hr_expense.hr_expense_comp_rule" model="ir.rule">
     <field name="name">Expense multi company rule (Depreceted)</field>
-    <field name="active" eval="0"/>
+    <field name="active" eval="0" />
 </record>
 <function name="write" model="ir.model.data">
     <function name="search" model="ir.model.data">
-       <value eval="[('module', '=', 'hr_expense'), ('name', '=', 'hr_expense_comp_rule')]"/>
+       <value
+                    eval="[('module', '=', 'hr_expense'), ('name', '=', 'hr_expense_comp_rule')]"
+                />
     </function>
-    <value eval="{'noupdate': True}"/>
+    <value eval="{'noupdate': True}" />
 </function>
 
 </data>

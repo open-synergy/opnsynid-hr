@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- © <YEAR(S)> <AUTHOR(S)>
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html). -->
-
 <openerp>
 <data>
 
@@ -11,10 +10,10 @@
     <field name="model">hr.job_grade</field>
     <field name="arch" type="xml">
         <tree string="Job Grade">
-            <field name="sequence" widget="handle"/>
-            <field name="name"/>
-            <field name="code"/>
-            <field name="category_id"/>
+            <field name="sequence" widget="handle" />
+            <field name="name" />
+            <field name="code" />
+            <field name="category_id" />
         </tree>
     </field>
 </record>
@@ -25,15 +24,15 @@
     <field name="arch" type="xml">
         <form string="Job Grade">
             <group name="main">
-                <field name="name"/>
-                <field name="code"/>
-                <field name="sequence"/>
-                <field name="category_id"/>
-                <field name="active"/>
+                <field name="name" />
+                <field name="code" />
+                <field name="sequence" />
+                <field name="category_id" />
+                <field name="active" />
             </group>
             <notebook colspan="4">
                 <page name="note" string="Note">
-                    <field name="note" colspan="4" nolabel="1"/>
+                    <field name="note" colspan="4" nolabel="1" />
                 </page>
             </notebook>
         </form>
@@ -47,11 +46,13 @@
     <field name="view_mode">tree,form</field>
 </record>
 
-<menuitem action="hr_job_grade_action"
-    id="hr_job_grade_menu"
-    parent="job_family_modelling_configuration_menu"
-    groups="base.group_hr_user"
-    sequence="2"/>
+<menuitem
+            action="hr_job_grade_action"
+            id="hr_job_grade_menu"
+            parent="job_family_modelling_configuration_menu"
+            groups="base.group_hr_user"
+            sequence="2"
+        />
 
 </data>
 </openerp>

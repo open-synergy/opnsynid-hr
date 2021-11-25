@@ -1,20 +1,27 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_employee_view_form" model="ir.ui.view">
     <field name="name">hr.employee form</field>
     <field name="model">hr.employee</field>
-    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="inherit_id" ref="hr.view_employee_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//notebook" position="inside">
-                <page name="identification" string="Identifications" attrs="{'invisible':[('address_home_id','=',False)]}">
-                    <field name="identification_ids" colspan="4" nolabel="1"
-                           widget="one2many_list"/>
+                <page
+                            name="identification"
+                            string="Identifications"
+                            attrs="{'invisible':[('address_home_id','=',False)]}"
+                        >
+                    <field
+                                name="identification_ids"
+                                colspan="4"
+                                nolabel="1"
+                                widget="one2many_list"
+                            />
                 </page>
             </xpath>
 

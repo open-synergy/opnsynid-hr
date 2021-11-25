@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class HrOvertimeRequest(models.Model):
@@ -12,9 +12,7 @@ class HrOvertimeRequest(models.Model):
         string="Request Batch",
         comodel_name="hr.overtime_request_batch",
         readonly=True,
-        states={
-            'draft': [('readonly', False)]
-        },
+        states={"draft": [("readonly", False)]},
         copy=False,
-        ondelete='restrict'
+        ondelete="restrict",
     )

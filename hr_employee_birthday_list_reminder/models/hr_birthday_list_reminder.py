@@ -2,9 +2,11 @@
 # Copyright 2020 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
-from datetime import datetime
 import logging
+from datetime import datetime
+
+from openerp import api, fields, models
+
 _logger = logging.getLogger(__name__)
 
 try:
@@ -40,15 +42,11 @@ class HrBirthdayListReminder(models.Model):
 
     @api.multi
     def _compute_employee(self):
-        obj_hr_employee =\
-            self.env["hr.employee"]
+        obj_hr_employee = self.env["hr.employee"]
 
         for document in self:
-            employee_ids =\
-                obj_hr_employee.search(
-                    document._prepare_employee_data())
-            employee_birthday_list =\
-                document._get_birthday_list(employee_ids)
+            employee_ids = obj_hr_employee.search(document._prepare_employee_data())
+            employee_birthday_list = document._get_birthday_list(employee_ids)
             document.employee_ids = employee_birthday_list
 
     employee_ids = fields.Many2many(
@@ -115,38 +113,24 @@ class HrBirthdayListReminder(models.Model):
     @api.multi
     def _compute_date_offset(self):
         self.ensure_one()
-        date_start_offset =\
-            self.date_start_offset
-        date_end_offset =\
-            self.date_end_offset
-        date_start_offset_period =\
-            self.date_start_offset_period
-        date_end_offset_period =\
-            self.date_end_offset_period
+        date_start_offset = self.date_start_offset
+        date_end_offset = self.date_end_offset
+        date_start_offset_period = self.date_start_offset_period
+        date_end_offset_period = self.date_end_offset_period
         dt_now = pd.to_datetime(datetime.now())
         # Compute Date Start Offset
         if date_start_offset_period == "day":
-            dt_start =\
-                dt_now + pd.DateOffset(
-                    days=date_start_offset)
+            dt_start = dt_now + pd.DateOffset(days=date_start_offset)
         else:
-            dt_start =\
-                dt_now + pd.DateOffset(
-                    months=date_start_offset)
+            dt_start = dt_now + pd.DateOffset(months=date_start_offset)
         # Compute Date End Offset
         if date_end_offset_period == "day":
-            dt_end =\
-                dt_now + pd.DateOffset(
-                    days=date_end_offset)
+            dt_end = dt_now + pd.DateOffset(days=date_end_offset)
         else:
-            dt_end =\
-                dt_now + pd.DateOffset(
-                    months=date_end_offset)
+            dt_end = dt_now + pd.DateOffset(months=date_end_offset)
         # Convert offset from datetime to date
-        date_start_conv =\
-            datetime.strftime(dt_start, "%Y-%m-%d")
-        date_end_conv =\
-            datetime.strftime(dt_end, "%Y-%m-%d")
+        date_start_conv = datetime.strftime(dt_start, "%Y-%m-%d")
+        date_end_conv = datetime.strftime(dt_end, "%Y-%m-%d")
         return date_start_conv, date_end_conv
 
     @api.multi
@@ -165,22 +149,16 @@ class HrBirthdayListReminder(models.Model):
         self.ensure_one()
         employee_birtday_list = []
 
-        date_start_conv, date_end_conv =\
-            self._compute_date_offset()
-        current_year =\
-            datetime.now().year
+        date_start_conv, date_end_conv = self._compute_date_offset()
+        current_year = datetime.now().year
 
         for employee in employee_ids:
             if employee.birthday:
                 birthday = employee.birthday
-                date = datetime.strptime(birthday, '%Y-%m-%d')
+                date = datetime.strptime(birthday, "%Y-%m-%d")
                 conv_birtday = date.replace(year=current_year)
-                str_birthday =\
-                    datetime.strftime(conv_birtday, "%Y-%m-%d")
-                if (
-                    str_birthday >= date_start_conv and
-                    str_birthday <= date_end_conv
-                ):
+                str_birthday = datetime.strftime(conv_birtday, "%Y-%m-%d")
+                if str_birthday >= date_start_conv and str_birthday <= date_end_conv:
                     employee_birtday_list.append(employee.id)
         return employee_birtday_list
 
@@ -205,8 +183,7 @@ class HrBirthdayListReminder(models.Model):
     @api.multi
     def _prepare_cron_data(self):
         self.ensure_one()
-        cron_name = "Employee Birthday Reminder: %s" % (
-            self.name)
+        cron_name = "Employee Birthday Reminder: %s" % (self.name)
         return {
             "name": cron_name,
             "user_id": self.env.user.id,
@@ -235,8 +212,8 @@ class HrBirthdayListReminder(models.Model):
             template = self.email_template_id
             # TODO: Use email.template send_mail method
             email_dict = obj_template.generate_email(
-                template_id=template.id, res_id=self.id)
+                template_id=template.id, res_id=self.id
+            )
             mail = obj_mail.create(email_dict)
-            mail.write(
-                {"recipient_ids": [(6, 0, self.recipient_partner_ids.ids)]})
+            mail.write({"recipient_ids": [(6, 0, self.recipient_partner_ids.ids)]})
             mail.send()

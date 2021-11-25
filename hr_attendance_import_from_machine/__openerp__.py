@@ -5,8 +5,8 @@
 {
     "name": "Import Attendance Data From Machine",
     "version": "8.0.1.5.1",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -15,6 +15,6 @@
     "data": [
         "security/ir.model.access.csv",
         "views/hr_attendance_machine_views.xml",
-        "wizards/hr_attendance_import.xml"
+        "wizards/hr_attendance_import.xml",
     ],
 }

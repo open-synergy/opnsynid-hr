@@ -2,7 +2,7 @@
 # Copyright 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api, fields
+from openerp import api, fields, models
 from openerp.tools.translate import _
 
 
@@ -18,8 +18,7 @@ class HrHolidays(models.Model):
         for leave in self:
             limit = -1
             leave_status = leave.holiday_status_id
-            if leave_status.limit_day_per_request and \
-                    leave.type == "remove":
+            if leave_status.limit_day_per_request and leave.type == "remove":
                 limit = leave_status.day_limit_per_request
             leave.day_limit_per_request = limit
 

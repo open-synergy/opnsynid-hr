@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrCareerTransition(models.Model):
@@ -34,24 +34,26 @@ class HrCareerTransition(models.Model):
     def _get_value_before_onchange_previous_contract(self):
         _super = super(HrCareerTransition, self)
         result = _super._get_value_before_onchange_previous_contract()
-        result.update({
-            "new_timesheet_computation_ids": [],
-            "previous_timesheet_computation_ids": [],
-        })
+        result.update(
+            {
+                "new_timesheet_computation_ids": [],
+                "previous_timesheet_computation_ids": [],
+            }
+        )
         return result
 
     @api.multi
-    def _get_value_after_onchange_previous_contract(
-            self, previous_contract):
+    def _get_value_after_onchange_previous_contract(self, previous_contract):
         _super = super(HrCareerTransition, self)
-        result = _super._get_value_after_onchange_previous_contract(
-            previous_contract)
-        result.update({
-            "new_timesheet_computation_ids": previous_contract.
-            _get_timesheet_computation_item_dict(),
-            "previous_timesheet_computation_ids": previous_contract.
-            _get_timesheet_computation_item_dict(),
-        })
+        result = _super._get_value_after_onchange_previous_contract(previous_contract)
+        new_ts = previous_contract._get_timesheet_computation_item_dict()
+        prev_ts = previous_contract._get_timesheet_computation_item_dict()
+        result.update(
+            {
+                "new_timesheet_computation_ids": new_ts,
+                "previous_timesheet_computation_ids": prev_ts,
+            }
+        )
         return result
 
     @api.multi
@@ -60,12 +62,20 @@ class HrCareerTransition(models.Model):
         result = _super._prepare_new_contract()
         computations = []
         for computation in self.new_timesheet_computation_ids:
-            computations.append((0, 0, {
-                "item_id": computation.item_id.id,
-            }))
-        result.update({
-            "computation_ids": computations,
-        })
+            computations.append(
+                (
+                    0,
+                    0,
+                    {
+                        "item_id": computation.item_id.id,
+                    },
+                )
+            )
+        result.update(
+            {
+                "computation_ids": computations,
+            }
+        )
         return result
 
     @api.multi
@@ -75,12 +85,20 @@ class HrCareerTransition(models.Model):
         self.previous_contract_id.computation_ids.unlink()
         computations = []
         for computation in self.previous_timesheet_computation_ids:
-            computations.append((0, 0, {
-                "item_id": computation.item_id.id,
-            }))
-        result.update({
-            "computation_ids": computations,
-        })
+            computations.append(
+                (
+                    0,
+                    0,
+                    {
+                        "item_id": computation.item_id.id,
+                    },
+                )
+            )
+        result.update(
+            {
+                "computation_ids": computations,
+            }
+        )
         return result
 
     @api.multi
@@ -90,12 +108,20 @@ class HrCareerTransition(models.Model):
         self.previous_contract_id.computation_ids.unlink()
         computations = []
         for computation in self.new_timesheet_computation_ids:
-            computations.append((0, 0, {
-                "item_id": computation.item_id.id,
-            }))
-        result.update({
-            "computation_ids": computations,
-        })
+            computations.append(
+                (
+                    0,
+                    0,
+                    {
+                        "item_id": computation.item_id.id,
+                    },
+                )
+            )
+        result.update(
+            {
+                "computation_ids": computations,
+            }
+        )
         return result
 
 

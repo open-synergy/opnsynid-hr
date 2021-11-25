@@ -2,15 +2,14 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrPayslip(models.Model):
     _inherit = "hr.payslip"
 
     @api.multi
-    @api.depends(
-        "employee_id", "date_from", "date_to")
+    @api.depends("employee_id", "date_from", "date_to")
     def _compute_goal_ids(self):
         obj_goal = self.env["gamification.goal"]
         for payslip in self:

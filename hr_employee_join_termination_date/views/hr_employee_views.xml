@@ -1,24 +1,23 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_employee_view_form" model="ir.ui.view">
     <field name="name">hr.employee form</field>
     <field name="model">hr.employee</field>
-    <field name="inherit_id" ref="hr.view_employee_form"/>
+    <field name="inherit_id" ref="hr.view_employee_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='active']" position="after">
-                <field name="date_join"/>
-                <field name="date_termination"/>
-                <label for="year_work_longetivity" string="Work Longetivity"/>
+                <field name="date_join" />
+                <field name="date_termination" />
+                <label for="year_work_longetivity" string="Work Longetivity" />
                 <div>
-                  <field name="year_work_longetivity" class="oe_inline"/> Years
-                  <field name="month_work_longetivity" class="oe_inline"/> Months
+                  <field name="year_work_longetivity" class="oe_inline" /> Years
+                  <field name="month_work_longetivity" class="oe_inline" /> Months
                 </div>
             </xpath>
         </data>
@@ -28,11 +27,15 @@
 <record id="hr_employee_view_search" model="ir.ui.view">
     <field name="name">hr.employee search</field>
     <field name="model">hr.employee</field>
-    <field name="inherit_id" ref="hr.view_employee_filter"/>
+    <field name="inherit_id" ref="hr.view_employee_filter" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='category_ids']" position="after">
-                <filter name="filter_terminated" string="Terminated" domain="[('date_termination','!=',False)]"/>
+                <filter
+                            name="filter_terminated"
+                            string="Terminated"
+                            domain="[('date_termination','!=',False)]"
+                        />
             </xpath>
         </data>
     </field>

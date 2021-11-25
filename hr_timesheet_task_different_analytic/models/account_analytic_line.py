@@ -2,7 +2,7 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, _
+from openerp import _, models
 
 
 class AccountAnalyticLine(models.Model):
@@ -13,6 +13,9 @@ class AccountAnalyticLine(models.Model):
         return True
 
     _constraints = [
-        (_check_task_project, _('Error! Task must belong to the project.'),
-         ['task_id', 'account_id']),
+        (
+            _check_task_project,
+            _("Error! Task must belong to the project."),
+            ["task_id", "account_id"],
+        ),
     ]

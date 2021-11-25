@@ -7,7 +7,7 @@
     "name": "Career Transition - New Assignment",
     "version": "8.0.2.0.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
+    "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,

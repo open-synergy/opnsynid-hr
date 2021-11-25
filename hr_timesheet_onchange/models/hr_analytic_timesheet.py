@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import fields, models, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -125,8 +125,9 @@ class HrAnalyticTimesheet(models.Model):
                 ]
                 price_type = obj_price_type.search(criteria)[0]
 
-            amount_unit = product.with_context(ctx).\
-                price_get(price_type.field)[self.product_id.id]
+            amount_unit = product.with_context(ctx).price_get(price_type.field)[
+                self.product_id.id
+            ]
 
             prec = obj_precision.precision_get("Account")
             amount = amount_unit * self.unit_amount or 0.0

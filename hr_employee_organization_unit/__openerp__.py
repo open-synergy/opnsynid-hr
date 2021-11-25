@@ -5,14 +5,10 @@
     "name": "Human Resource - Employee Organization Unit",
     "version": "8.0.1.2.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
-    "depends": [
-        "hr"
-    ],
-    "data": [
-        "views/hr_employee_views.xml"
-    ],
+    "depends": ["hr"],
+    "data": ["views/hr_employee_views.xml"],
 }

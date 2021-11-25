@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2018-2019 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
@@ -10,162 +10,281 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="action_confirm" type="object" string="Confirm" class="oe_highlight" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"/>
-                <button name="request_validation"
-                    string="Request Validation"
-                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
-                    class="oe_highlight"
-                    type="object"/>
-                <button name="restart_validation"
-                    string="Restart Validation"
-                    attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
-                    type="object"/>
-                <button name="action_valid" type="object" string="Valid" class="oe_highlight" attrs="{'invisible':['|',('state','!=','open'),('valid_ok','=',False)]}"/>
-                <button name="action_cancel" type="object" string="Cancel" attrs="{'invisible':['|',('state','not in',['draft','confirm','open','valid']),('cancel_ok','=',False)]}"/>
-                <button name="action_restart" type="object" string="Restart" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"/>
-                <field name="state" widget="statusbar" statusbar_visible="draft,confirm,open,valid"/>
+                <button
+                            name="action_confirm"
+                            type="object"
+                            string="Confirm"
+                            class="oe_highlight"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                        />
+                <button
+                            name="request_validation"
+                            string="Request Validation"
+                            attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                            class="oe_highlight"
+                            type="object"
+                        />
+                <button
+                            name="restart_validation"
+                            string="Restart Validation"
+                            attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_approval_ok','=',False)]}"
+                            type="object"
+                        />
+                <button
+                            name="action_valid"
+                            type="object"
+                            string="Valid"
+                            class="oe_highlight"
+                            attrs="{'invisible':['|',('state','!=','open'),('valid_ok','=',False)]}"
+                        />
+                <button
+                            name="action_cancel"
+                            type="object"
+                            string="Cancel"
+                            attrs="{'invisible':['|',('state','not in',['draft','confirm','open','valid']),('cancel_ok','=',False)]}"
+                        />
+                <button
+                            name="action_restart"
+                            type="object"
+                            string="Restart"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                        />
+                <field
+                            name="state"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,open,valid"
+                        />
             </header>
-            <field name="need_validation" invisible="1"/>
-            <field name="validated" invisible="1"/>
-            <field name="rejected" invisible="1"/>
-            <div class="alert alert-warning"
-                 attrs="{'invisible': ['|', '|', '|',
+            <field name="need_validation" invisible="1" />
+            <field name="validated" invisible="1" />
+            <field name="rejected" invisible="1" />
+            <div
+                        class="alert alert-warning"
+                        attrs="{'invisible': ['|', '|', '|',
                  ('validated', '=', True), ('state', 'not in', ['confirm']),
                  ('rejected', '=', True), ('review_ids', '=', [])]}"
-                 style="margin-bottom:0px;">
-                <p><i class="fa fa-info-circle"/>This Career Transition needs to be
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-info-circle" />This Career Transition needs to be
                     validated.
-                    <button name="validate_tier"
-                        string="Validate"
-                        attrs="{'invisible': [('review_ids', '=', [])]}"
-                        type="object"
-                        class="oe_inline oe_button btn-success"
-                        icon="terp-check"/>
-                    <button name="reject_tier"
-                        string="Reject"
-                        type="object"
-                        class="btn-icon btn-danger"
-                        icon="terp-gtk-stop"/>
+                    <button
+                                name="validate_tier"
+                                string="Validate"
+                                attrs="{'invisible': [('review_ids', '=', [])]}"
+                                type="object"
+                                class="oe_inline oe_button btn-success"
+                                icon="terp-check"
+                            />
+                    <button
+                                name="reject_tier"
+                                string="Reject"
+                                type="object"
+                                class="btn-icon btn-danger"
+                                icon="terp-gtk-stop"
+                            />
                 </p>
             </div>
-            <div class="alert alert-success"
-                 attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
-                 style="margin-bottom:0px;">
-                <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+            <div
+                        class="alert alert-success"
+                        attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-thumbs-up" /> Operation has been <b
+                            >validated</b>!</p>
             </div>
-            <div class="alert alert-danger"
-                 attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
-                 style="margin-bottom:0px;">
-                <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+            <div
+                        class="alert alert-danger"
+                        attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                <p><i class="fa fa-thumbs-down" /> Operation has been <b
+                            >rejected</b>.</p>
             </div>
             <sheet>
-                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
                 </div>
                 <div class="oe_left" style="width: 500px;">
                     <div class="oe_title" style="width: 500px;">
-                        <label for="name"/>
+                        <label for="name" />
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                 </div>
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
-                        <field name="id"/>
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="effective_date"/>
-                        <field name="type_id" invisible="1"/>
-                        <field name="require_reason" invisible="1"/>
-                        <field name="reason_id" domain="[('type_id','=',type_id)]"
-                            attrs="{'required':[('require_reason','=',True)]}"/>
-                        <field name="archieve"/>
+                        <field name="id" />
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="effective_date" />
+                        <field name="type_id" invisible="1" />
+                        <field name="require_reason" invisible="1" />
+                        <field
+                                    name="reason_id"
+                                    domain="[('type_id','=',type_id)]"
+                                    attrs="{'required':[('require_reason','=',True)]}"
+                                />
+                        <field name="archieve" />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
-                        <field name="employee_id"/>
-                        <field name="need_previous_contract"
-                            attrs="{'invisible':[('archieve','=',True)]}"/>
-                        <field name="previous_contract_id"
-                            readonly="1"
-                            on_change="onchange_previous_contract(previous_contract_id)"
-                            domain="[('employee_id','=',employee_id)]"
-                            attrs="{'required':[('archieve','=',False),('need_previous_contract','=',True)],'invisible':[('archieve','=',True)]}"/>
-                        <field name="create_new_contract" attrs="{'invisible':[('archieve','=',True)]}"/>
-                        <field name="new_contract_id" attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"/>
-                        <field name="contract_type_id"
-                            attrs="{'required':[('create_new_contract','=',True),('archieve','=',False)],'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"/>
-                        <label for="contract_start_date" string="Contract Duraction" attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"/>
-                        <div attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}">
-                            <field name="contract_start_date" class="oe_inline" attrs="{'required':[('create_new_contract','=',True),('archieve','=',False)]}"/> - <field name="contract_end_date" class="oe_inline"/>
+                        <field name="employee_id" />
+                        <field
+                                    name="need_previous_contract"
+                                    attrs="{'invisible':[('archieve','=',True)]}"
+                                />
+                        <field
+                                    name="previous_contract_id"
+                                    readonly="1"
+                                    on_change="onchange_previous_contract(previous_contract_id)"
+                                    domain="[('employee_id','=',employee_id)]"
+                                    attrs="{'required':[('archieve','=',False),('need_previous_contract','=',True)],'invisible':[('archieve','=',True)]}"
+                                />
+                        <field
+                                    name="create_new_contract"
+                                    attrs="{'invisible':[('archieve','=',True)]}"
+                                />
+                        <field
+                                    name="new_contract_id"
+                                    attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"
+                                />
+                        <field
+                                    name="contract_type_id"
+                                    attrs="{'required':[('create_new_contract','=',True),('archieve','=',False)],'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"
+                                />
+                        <label
+                                    for="contract_start_date"
+                                    string="Contract Duraction"
+                                    attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"
+                                />
+                        <div
+                                    attrs="{'invisible':['|',('create_new_contract','=',False),('archieve','=',True)]}"
+                                >
+                            <field
+                                        name="contract_start_date"
+                                        class="oe_inline"
+                                        attrs="{'required':[('create_new_contract','=',True),('archieve','=',False)]}"
+                                    /> - <field
+                                        name="contract_end_date"
+                                        class="oe_inline"
+                                    />
                         </div>
                     </group>
                 </group>
                 <notebook>
                     <page name="change" string="Career Transition Detail">
                         <group name="change_1" colspan="4" col="3">
-                            <field name="previous_company_id" string="Company" readonly="1"/>
-                            <field name="new_company_id" nolabel="1"
-                                    attrs="{'required':[('change_company','=',True)], 'readonly':[('change_company','=',False)]}"/>
-                            <field name="previous_department_id" string="Department" readonly="1"/>
-                            <field name="new_department_id" nolabel="1"
-                                attrs="{'required':[('change_department','=',True)], 'readonly':[('change_department','=',False)]}"/>
-                            <field name="previous_manager_id" string="Manager" readonly="1"/>
-                            <field name="new_manager_id" nolabel="1"
-                                attrs="{'required':[('change_manager','=',True)], 'readonly':[('change_manager','=',False)]}"/>
-                            <field name="previous_job_id" string="Job" readonly="1"/>
-                            <field name="new_job_id" nolabel="1"
-                                attrs="{'required':[('change_job_title','=',True)], 'readonly':[('change_job_title','=',False)]}"/>
-                            <field name="previous_working_hour_id" string="Working Schedule" readonly="1"/>
-                            <field name="new_working_hour_id" nolabel="1"
-                                attrs="{'required':[('change_working_schedule','=',True)], 'readonly':[('change_working_schedule','=',False)]}"/>
-                            <field name="previous_wage" string="Basic Salary" readonly="1"/>
-                            <field name="new_wage" nolabel="1"
-                                attrs="{'required':[('change_wage','=',True)], 'readonly':[('change_wage','=',False)]}"/>
+                            <field
+                                        name="previous_company_id"
+                                        string="Company"
+                                        readonly="1"
+                                    />
+                            <field
+                                        name="new_company_id"
+                                        nolabel="1"
+                                        attrs="{'required':[('change_company','=',True)], 'readonly':[('change_company','=',False)]}"
+                                    />
+                            <field
+                                        name="previous_department_id"
+                                        string="Department"
+                                        readonly="1"
+                                    />
+                            <field
+                                        name="new_department_id"
+                                        nolabel="1"
+                                        attrs="{'required':[('change_department','=',True)], 'readonly':[('change_department','=',False)]}"
+                                    />
+                            <field
+                                        name="previous_manager_id"
+                                        string="Manager"
+                                        readonly="1"
+                                    />
+                            <field
+                                        name="new_manager_id"
+                                        nolabel="1"
+                                        attrs="{'required':[('change_manager','=',True)], 'readonly':[('change_manager','=',False)]}"
+                                    />
+                            <field name="previous_job_id" string="Job" readonly="1" />
+                            <field
+                                        name="new_job_id"
+                                        nolabel="1"
+                                        attrs="{'required':[('change_job_title','=',True)], 'readonly':[('change_job_title','=',False)]}"
+                                    />
+                            <field
+                                        name="previous_working_hour_id"
+                                        string="Working Schedule"
+                                        readonly="1"
+                                    />
+                            <field
+                                        name="new_working_hour_id"
+                                        nolabel="1"
+                                        attrs="{'required':[('change_working_schedule','=',True)], 'readonly':[('change_working_schedule','=',False)]}"
+                                    />
+                            <field
+                                        name="previous_wage"
+                                        string="Basic Salary"
+                                        readonly="1"
+                                    />
+                            <field
+                                        name="new_wage"
+                                        nolabel="1"
+                                        attrs="{'required':[('change_wage','=',True)], 'readonly':[('change_wage','=',False)]}"
+                                    />
                         </group>
                     </page>
                     <page name="note" string="Note">
-                        <field name="note" colspan="4" nolabel="1"/>
+                        <field name="note" colspan="4" nolabel="1" />
                     </page>
                     <page string="Reviews" name="tier_validation">
                         <group>
-                            <field name="definition_id"/>
-                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
-                            <field name="active_reviewer_ids" widget="many2many_tags"/>
-                            <field name="next_reviewer_ids" widget="many2many_tags"/>
-                            <field name="review_ids" readonly="1"/>
+                            <field name="definition_id" />
+                            <field
+                                        name="reviewer_partner_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field name="active_reviewer_ids" widget="many2many_tags" />
+                            <field name="next_reviewer_ids" widget="many2many_tags" />
+                            <field name="review_ids" readonly="1" />
                         </group>
                     </page>
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="group_policy_1" colspan="4" col="2">
-                            <field name="change_company"/>
-                            <field name="change_department"/>
-                            <field name="change_job_title"/>
-                            <field name="change_manager"/>
-                            <field name="change_working_schedule"/>
-                            <field name="change_wage"/>
+                            <field name="change_company" />
+                            <field name="change_department" />
+                            <field name="change_job_title" />
+                            <field name="change_manager" />
+                            <field name="change_working_schedule" />
+                            <field name="change_wage" />
                         </group>
                         <group name="group_policy_2" colspan="4" col="2">
-                            <field name="confirm_ok"/>
-                            <field name="valid_ok"/>
-                            <field name="cancel_ok"/>
-                            <field name="restart_ok"/>
-                            <field name="restart_approval_ok"/>
+                            <field name="confirm_ok" />
+                            <field name="valid_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
+                            <field name="restart_approval_ok" />
                         </group>
                     </page>
                     <page name="log" string="Log" groups="base.group_system">
                         <group name="group_log_1" colspan="4" col="3">
-                            <field name="confirmed_date" string="Confirmation"/>
-                            <field name="confirmed_user_id" nolabel="1"/>
-                            <field name="validated_date" string="Validation"/>
-                            <field name="validated_user_id" nolabel="1"/>
-                            <field name="cancelled_date" string="Cancellation"/>
-                            <field name="cancelled_user_id" nolabel="1"/>
+                            <field name="confirmed_date" string="Confirmation" />
+                            <field name="confirmed_user_id" nolabel="1" />
+                            <field name="validated_date" string="Validation" />
+                            <field name="validated_user_id" nolabel="1" />
+                            <field name="cancelled_date" string="Cancellation" />
+                            <field name="cancelled_user_id" nolabel="1" />
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                <field name="message_ids" widget="mail_thread"/>
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
             </div>
         </form>
     </field>
@@ -176,14 +295,14 @@
     <field name="model">hr.career_transition</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="type_id" invisible="1"/>
-            <field name="effective_date"/>
-            <field name="employee_id"/>
-            <field name="reason_id"/>
-            <field name="archieve"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="type_id" invisible="1" />
+            <field name="effective_date" />
+            <field name="employee_id" />
+            <field name="reason_id" />
+            <field name="archieve" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -193,32 +312,92 @@
     <field name="model">hr.career_transition</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="employee_id"/>
-            <field name="type_id"/>
-            <field name="reason_id"/>
-            <field name="state"/>
-            <filter name="filter_archieve" string="Archieve" domain="[('archieve','=',True)]"/>
-            <filter name="needs_review" string="Needs my Review"
-                    domain="[('reviewer_ids','in',uid), ('state', 'not in', ['approved', 'rejected'])]"
-                    help="My Career Transition to review"/>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="employee_id" />
+            <field name="type_id" />
+            <field name="reason_id" />
+            <field name="state" />
+            <filter
+                        name="filter_archieve"
+                        string="Archieve"
+                        domain="[('archieve','=',True)]"
+                    />
+            <filter
+                        name="needs_review"
+                        string="Needs my Review"
+                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['approved', 'rejected'])]"
+                        help="My Career Transition to review"
+                    />
             <group name="group_state" string="State">
-                <filter name="filter_draft" string="Draft" domain="[('state','=','draft')]"/>
-                <filter name="filter_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
-                <filter name="filter_open" string="On Progress" domain="[('state','=','open')]"/>
-                <filter name="filter_valid" string="Valid" domain="[('state','=','valid')]"/>
-                <filter name="filter_cancel" string="Cancel" domain="[('state','=','cancel')]"/>
+                <filter
+                            name="filter_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="filter_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                <filter
+                            name="filter_open"
+                            string="On Progress"
+                            domain="[('state','=','open')]"
+                        />
+                <filter
+                            name="filter_valid"
+                            string="Valid"
+                            domain="[('state','=','valid')]"
+                        />
+                <filter
+                            name="filter_cancel"
+                            string="Cancel"
+                            domain="[('state','=','cancel')]"
+                        />
             </group>
             <group name="group_by" string="Group By">
-                <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}"/>
-                <filter name="grp_type" string="Type" context="{'group_by':'type_id'}"/>
-                <filter name="grp_reason" string="Reason" context="{'group_by':'reason_id'}"/>
-                <filter name="grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
-                <filter name="grp_date_year" string="Effective Date by Year" context="{'group_by':'effective_date:year'}"/>
-                <filter name="grp_date_month" string="Effective Date by Month" context="{'group_by':'effective_date:month'}"/>
-                <filter name="grp_date_week" string="Effective Date by Week" context="{'group_by':'effective_date:week'}"/>
-                <filter name="grp_date_year" string="Effective Date by Day" context="{'group_by':'effective_date:day'}"/>
+                <filter
+                            name="grp_employee"
+                            string="Employee"
+                            context="{'group_by':'employee_id'}"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                <filter
+                            name="grp_reason"
+                            string="Reason"
+                            context="{'group_by':'reason_id'}"
+                        />
+                <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                <filter
+                            name="grp_date_year"
+                            string="Effective Date by Year"
+                            context="{'group_by':'effective_date:year'}"
+                        />
+                <filter
+                            name="grp_date_month"
+                            string="Effective Date by Month"
+                            context="{'group_by':'effective_date:month'}"
+                        />
+                <filter
+                            name="grp_date_week"
+                            string="Effective Date by Week"
+                            context="{'group_by':'effective_date:week'}"
+                        />
+                <filter
+                            name="grp_date_year"
+                            string="Effective Date by Day"
+                            context="{'group_by':'effective_date:day'}"
+                        />
             </group>
         </search>
     </field>
@@ -227,7 +406,10 @@
 <record id="hr_career_transition_view_form_1" model="ir.ui.view">
     <field name="name">hr.career_transition form</field>
     <field name="model">hr.career_transition</field>
-    <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_form"/>
+    <field
+                name="inherit_id"
+                ref="hr_career_transition.hr_career_transition_view_form"
+            />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <xpath expr="//form" position="attributes">
@@ -256,7 +438,10 @@
 <record id="hr_career_transition_view_tree_1" model="ir.ui.view">
     <field name="name">hr.career_transition tree</field>
     <field name="model">hr.career_transition</field>
-    <field name="inherit_id" ref="hr_career_transition.hr_career_transition_view_tree"/>
+    <field
+                name="inherit_id"
+                ref="hr_career_transition.hr_career_transition_view_tree"
+            />
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <xpath expr="//tree" position="attributes">
@@ -276,30 +461,33 @@
     <field name="res_model">hr.career_transition</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="context">{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'search_default_filter_open':1, 'readonly_by_pass': True}</field>
-    <field name="search_view_id" ref="hr_career_transition_view_search"/>
+    <field
+                name="context"
+            >{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'search_default_filter_open':1, 'readonly_by_pass': True}</field>
+    <field name="search_view_id" ref="hr_career_transition_view_search" />
 </record>
 
 <record id="hr_career_transition_window_tree" model="ir.actions.act_window.view">
-    <field eval="1" name="sequence"/>
+    <field eval="1" name="sequence" />
     <field name="view_mode">tree</field>
-    <field name="view_id" ref="hr_career_transition_view_tree_1"/>
-    <field name="act_window_id" ref="hr_career_transition_action"/>
+    <field name="view_id" ref="hr_career_transition_view_tree_1" />
+    <field name="act_window_id" ref="hr_career_transition_action" />
 </record>
 
 <record id="hr_career_transition_window_form" model="ir.actions.act_window.view">
-    <field eval="2" name="sequence"/>
+    <field eval="2" name="sequence" />
     <field name="view_mode">form</field>
-    <field name="view_id" ref="hr_career_transition_view_form_1"/>
-    <field name="act_window_id" ref="hr_career_transition_action"/>
+    <field name="view_id" ref="hr_career_transition_view_form_1" />
+    <field name="act_window_id" ref="hr_career_transition_action" />
 </record>
 
 <menuitem
-    id="hr_career_transition_menu"
-    name="All Career Transitions"
-    parent="hr_career_transition_root_menu"
-    action="hr_career_transition_action"
-    sequence="1"/>
+            id="hr_career_transition_menu"
+            name="All Career Transitions"
+            parent="hr_career_transition_root_menu"
+            action="hr_career_transition_action"
+            sequence="1"
+        />
 
 
     <record id="hr_my_career_transition_action" model="ir.actions.act_window">
@@ -307,31 +495,34 @@
         <field name="res_model">hr.career_transition</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="context">{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'search_default_filter_open':1, 'readonly_by_pass': True}</field>
+        <field
+                name="context"
+            >{'search_default_filter_draft':1, 'search_default_filter_confirm':1, 'search_default_filter_open':1, 'readonly_by_pass': True}</field>
         <field name="domain">[('employee_id.user_id.id','=',uid)]</field>
-        <field name="search_view_id" ref="hr_career_transition_view_search"/>
+        <field name="search_view_id" ref="hr_career_transition_view_search" />
     </record>
 
     <record id="hr_my_career_transition_window_tree" model="ir.actions.act_window.view">
-        <field eval="1" name="sequence"/>
+        <field eval="1" name="sequence" />
         <field name="view_mode">tree</field>
-        <field name="view_id" ref="hr_career_transition_view_tree_1"/>
-        <field name="act_window_id" ref="hr_my_career_transition_action"/>
+        <field name="view_id" ref="hr_career_transition_view_tree_1" />
+        <field name="act_window_id" ref="hr_my_career_transition_action" />
     </record>
 
     <record id="hr_my_career_transition_window_form" model="ir.actions.act_window.view">
-        <field eval="2" name="sequence"/>
+        <field eval="2" name="sequence" />
         <field name="view_mode">form</field>
-        <field name="view_id" ref="hr_career_transition_view_form_1"/>
-        <field name="act_window_id" ref="hr_my_career_transition_action"/>
+        <field name="view_id" ref="hr_career_transition_view_form_1" />
+        <field name="act_window_id" ref="hr_my_career_transition_action" />
     </record>
 
     <menuitem
-        id="hr_my_career_transition_menu"
-        name="My Career Transitions"
-        parent="hr_career_transition_root_menu"
-        action="hr_my_career_transition_action"
-        sequence="2"/>
+            id="hr_my_career_transition_menu"
+            name="My Career Transitions"
+            parent="hr_career_transition_root_menu"
+            action="hr_my_career_transition_action"
+            sequence="2"
+        />
 
 </data>
 </openerp>

@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class HrAttendanceImport(models.TransientModel):
@@ -11,9 +11,7 @@ class HrAttendanceImport(models.TransientModel):
     @api.model
     def _check_attendance_creation(self, employee_id, attendance_date):
         _super = super(HrAttendanceImport, self)
-        result = _super._check_attendance_creation(
-            employee_id,
-            attendance_date)
+        result = _super._check_attendance_creation(employee_id, attendance_date)
         ts_check_result = self._check_timesheet(employee_id, attendance_date)
         if result and ts_check_result:
             result = True

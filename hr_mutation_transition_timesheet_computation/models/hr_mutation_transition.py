@@ -7,7 +7,4 @@ from openerp import models
 
 class HrMutationTransition(models.Model):
     _name = "hr.mutation_transition"
-    _inherit = [
-        "hr.mutation_transition",
-        "hr.career_transition"
-    ]
+    _inherit = ["hr.mutation_transition", "hr.career_transition"]

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <openerp>
@@ -7,47 +7,47 @@
 <!-- Award Operator -->
 <record id="group_award_operator_user" model="res.groups">
     <field name="name">User</field>
-    <field name="category_id" ref="hr_award.module_categ_award_operator"/>
-    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_operator" />
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
 </record>
 
 <record id="group_award_operator_supervisor" model="res.groups">
     <field name="name">Supervisor</field>
-    <field name="category_id" ref="hr_award.module_categ_award_operator"/>
-    <field name="implied_ids" eval="[(4, ref('group_award_operator_user'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_operator" />
+    <field name="implied_ids" eval="[(4, ref('group_award_operator_user'))]" />
 </record>
 
 <record id="group_award_operator_department" model="res.groups">
     <field name="name">Department</field>
-    <field name="category_id" ref="hr_award.module_categ_award_operator"/>
-    <field name="implied_ids" eval="[(4, ref('group_award_operator_supervisor'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_operator" />
+    <field name="implied_ids" eval="[(4, ref('group_award_operator_supervisor'))]" />
 </record>
 
 <record id="group_award_operator_company" model="res.groups">
     <field name="name">Company</field>
-    <field name="category_id" ref="hr_award.module_categ_award_operator"/>
-    <field name="implied_ids" eval="[(4, ref('group_award_operator_department'))]"/>
-    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_operator" />
+    <field name="implied_ids" eval="[(4, ref('group_award_operator_department'))]" />
+    <field name="users" eval="[(4, ref('base.user_root'))]" />
 </record>
 
 <!-- Award Viewer -->
 <record id="group_award_viewer_supervisor" model="res.groups">
     <field name="name">Supervisor</field>
-    <field name="category_id" ref="hr_award.module_categ_award_viewer"/>
-    <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_viewer" />
+    <field name="implied_ids" eval="[(4, ref('base.group_user'))]" />
 </record>
 
 <record id="group_award_viewer_department" model="res.groups">
     <field name="name">Department</field>
-    <field name="category_id" ref="hr_award.module_categ_award_viewer"/>
-    <field name="implied_ids" eval="[(4, ref('group_award_viewer_supervisor'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_viewer" />
+    <field name="implied_ids" eval="[(4, ref('group_award_viewer_supervisor'))]" />
 </record>
 
 <record id="group_award_viewer_company" model="res.groups">
     <field name="name">Company</field>
-    <field name="category_id" ref="hr_award.module_categ_award_viewer"/>
-    <field name="implied_ids" eval="[(4, ref('group_award_viewer_department'))]"/>
-    <field name="users" eval="[(4, ref('base.user_root'))]"/>
+    <field name="category_id" ref="hr_award.module_categ_award_viewer" />
+    <field name="implied_ids" eval="[(4, ref('group_award_viewer_department'))]" />
+    <field name="users" eval="[(4, ref('base.user_root'))]" />
 </record>
 
 

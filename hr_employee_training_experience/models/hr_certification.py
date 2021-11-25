@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -34,7 +34,9 @@ class HrCertification(models.Model):
         _super = super(HrCertification, self)
         for certification in self:
             if certification.participant_id:
-                str_warning = _("You can not delete certification that "
-                                "link into training participant")
+                str_warning = _(
+                    "You can not delete certification that "
+                    "link into training participant"
+                )
                 raise UserError(str_warning)
         return _super.unlink()

@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -136,9 +136,11 @@ class HrDicipline(models.Model):
         self.ensure_one()
         _super = super(HrDicipline, self)
         result = _super._prepare_approve_data()
-        result.update({
-            "fine_move_id": self._create_fine_move().id,
-        })
+        result.update(
+            {
+                "fine_move_id": self._create_fine_move().id,
+            }
+        )
         return result
 
     @api.multi
@@ -159,15 +161,13 @@ class HrDicipline(models.Model):
             "journal_id": self._get_fine_move_journal().id,
             "date": self.effective_date,
             "ref": self.name,
-            "period_id": obj_period.find(
-                self.effective_date)[0].id,
+            "period_id": obj_period.find(self.effective_date)[0].id,
             "line_id": line,
         }
         return res
 
     @api.multi
-    def _prepare_fine_move_line(
-            self, name, debit, credit, account_id, partner_id):
+    def _prepare_fine_move_line(self, name, debit, credit, account_id, partner_id):
         self.ensure_one()
         res = {
             "name": name,
@@ -187,7 +187,7 @@ class HrDicipline(models.Model):
             account_id=self._get_fine_move_receivable_account().id,
             debit=self.fine_amount,
             credit=0.0,
-            partner_id=self._get_fine_move_partner().id
+            partner_id=self._get_fine_move_partner().id,
         )
 
     @api.multi
@@ -199,5 +199,5 @@ class HrDicipline(models.Model):
             account_id=self._get_fine_move_income_account().id,
             debit=0.0,
             credit=self.fine_amount,
-            partner_id=self._get_fine_move_partner().id
+            partner_id=self._get_fine_move_partner().id,
         )

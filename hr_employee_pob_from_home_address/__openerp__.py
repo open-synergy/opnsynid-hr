@@ -14,6 +14,5 @@
         "hr",
         "partner_place_of_birth",
     ],
-    "data": [
-    ],
+    "data": [],
 }

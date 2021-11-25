@@ -1,20 +1,30 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="base_sequence_hr_timesheet_sheet" model="base.sequence_configurator">
-    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet"/>
-    <field name="sequence_field_id" search="[('model_id.model','=','hr_timesheet_sheet.sheet'),('name','=','name')]"/>
-    <field name="fallback_sequence_id" ref="hr_timesheet_sheet_sequence_configurator.sequence_hr_timesheet_sheet"/>
+    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet" />
+    <field
+                name="sequence_field_id"
+                search="[('model_id.model','=','hr_timesheet_sheet.sheet'),('name','=','name')]"
+            />
+    <field
+                name="fallback_sequence_id"
+                ref="hr_timesheet_sheet_sequence_configurator.sequence_hr_timesheet_sheet"
+            />
 </record>
 
-<record id="base_sequence_hr_timesheet_sheet_line" model="base.sequence_configurator_line">
-    <field name="generator_id" ref="base_sequence_hr_timesheet_sheet"/>
-    <field name="sequence" eval="1"/>
-    <field name="sequence_computation_code">result = document.company_id.timesheet_sheet_sequence_id</field>
+<record
+            id="base_sequence_hr_timesheet_sheet_line"
+            model="base.sequence_configurator_line"
+        >
+    <field name="generator_id" ref="base_sequence_hr_timesheet_sheet" />
+    <field name="sequence" eval="1" />
+    <field
+                name="sequence_computation_code"
+            >result = document.company_id.timesheet_sheet_sequence_id</field>
 </record>
 </data>
 </openerp>

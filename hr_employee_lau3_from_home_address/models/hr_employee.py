@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrEmployee(models.Model):
@@ -21,6 +21,8 @@ class HrEmployee(models.Model):
     @api.onchange("home_lau2_id")
     def onchange_home_lau3(self):
         for employee in self:
-            if employee.home_lau3_id and \
-                    employee.home_lau3_id.parent_id != employee.home_lau2_id:
+            if (
+                employee.home_lau3_id
+                and employee.home_lau3_id.parent_id != employee.home_lau2_id
+            ):
                 employee.home_lau3_id = False

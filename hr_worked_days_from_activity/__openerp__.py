@@ -5,8 +5,8 @@
     "name": "Worked Days From Timesheet Activitiy",
     "version": "8.0.1.1.0",
     "category": "Human Resource",
-    "website": "https://opensynergy-indonesia.com/",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "application": False,
     "installable": True,
@@ -17,6 +17,6 @@
     "data": [
         "views/hr_salary_rule_views.xml",
         "views/hr_payslip_views.xml",
-        "views/hr_payslip_mass_import_timesheet_activity_view.xml"
+        "views/hr_payslip_mass_import_timesheet_activity_view.xml",
     ],
 }

@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields
+from openerp import fields, models
 
 
 class HrDiciplineType(models.Model):
@@ -20,9 +20,7 @@ class HrDiciplineType(models.Model):
         string="Active",
         default=True,
     )
-    note = fields.Text(
-        string="Note"
-    )
+    note = fields.Text(string="Note")
     reason_ids = fields.One2many(
         string="Dicipline Reason",
         comodel_name="hr.dicipline_reason",

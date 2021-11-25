@@ -1,44 +1,75 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
     <data>
         <record id="hr_overtime_config_setting_view_form" model="ir.ui.view">
             <field name="name">hr.overtime_config_setting form</field>
             <field name="model">hr.overtime_config_setting</field>
-            <field name="inherit_id" ref="hr_attendance_overtime_request.hr_overtime_config_setting_view_form" />
+            <field
+                name="inherit_id"
+                ref="hr_attendance_overtime_request.hr_overtime_config_setting_view_form"
+            />
             <field name="arch" type="xml">
                 <xpath expr="//group[@name='overtime_group']" position="after">
-                    <separator string="Batch Overtime Request"/>
+                    <separator string="Batch Overtime Request" />
                     <group name="batch_overtime_config">
-                        <label for="id" string="General"/>
+                        <label for="id" string="General" />
                         <div>
                             <div>
-                                <label for="id" string="Sequence" class="oe_inline"/>
-                                <field name="overtime_request_batch_sequence_id" class="oe_inline" domain="[('code','=','hr.overtime_request_batch')]"/>
+                                <label for="id" string="Sequence" class="oe_inline" />
+                                <field
+                                    name="overtime_request_batch_sequence_id"
+                                    class="oe_inline"
+                                    domain="[('code','=','hr.overtime_request_batch')]"
+                                />
                             </div>
                         </div>
                     </group>
                     <group name="batch_overtime_group">
-                        <label for="id" string="Allowed Groups"/>
+                        <label for="id" string="Allowed Groups" />
                         <div>
                             <div>
-                                <label for="id" string="To Confirm" class="oe_inline"/>
-                                <field name="overtime_request_batch_confirm_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                                <label for="id" string="To Confirm" class="oe_inline" />
+                                <field
+                                    name="overtime_request_batch_confirm_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                             </div>
                             <div>
-                                <label for="id" string="To Valid" class="oe_inline"/>
-                                <field name="overtime_request_batch_valid_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                                <label for="id" string="To Valid" class="oe_inline" />
+                                <field
+                                    name="overtime_request_batch_valid_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                             </div>
                             <div>
-                                <label for="id" string="To Cancel" class="oe_inline"/>
-                                <field name="overtime_request_batch_cancel_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                                <label for="id" string="To Cancel" class="oe_inline" />
+                                <field
+                                    name="overtime_request_batch_cancel_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                             </div>
                             <div>
-                                <label for="id" string="To Restart" class="oe_inline"/>
-                                <field name="overtime_request_batch_restart_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                                <label for="id" string="To Restart" class="oe_inline" />
+                                <field
+                                    name="overtime_request_batch_restart_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                             </div>
                             <div>
-                                <label for="id" string="To Generate" class="oe_inline"/>
-                                <field name="overtime_request_batch_generate_grp_ids" widget="many2many_tags" class="oe_inline"/>
+                                <label
+                                    for="id"
+                                    string="To Generate"
+                                    class="oe_inline"
+                                />
+                                <field
+                                    name="overtime_request_batch_generate_grp_ids"
+                                    widget="many2many_tags"
+                                    class="oe_inline"
+                                />
                             </div>
                         </div>
                     </group>

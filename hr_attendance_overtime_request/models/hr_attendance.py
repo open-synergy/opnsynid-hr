@@ -4,7 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from dateutil.relativedelta import relativedelta
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrAttendance(models.Model):
@@ -16,11 +16,13 @@ class HrAttendance(models.Model):
         obj_overtime = self.env["hr.overtime_request"]
         for attn in self:
             company = attn.employee_id.company_id
-            start_buffer = fields.Datetime.from_string(attn.name) + \
-                relativedelta(hours=company.start_overtime_buffer)
+            start_buffer = fields.Datetime.from_string(attn.name) + relativedelta(
+                hours=company.start_overtime_buffer
+            )
             start_buffer = fields.Datetime.to_string(start_buffer)
-            end_buffer = fields.Datetime.from_string(attn.name) + \
-                relativedelta(hours=-company.end_overtime_buffer)
+            end_buffer = fields.Datetime.from_string(attn.name) + relativedelta(
+                hours=-company.end_overtime_buffer
+            )
             end_buffer = fields.Datetime.to_string(end_buffer)
 
             criteria = [

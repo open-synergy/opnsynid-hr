@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -11,7 +10,7 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
+            <field name="name" />
         </tree>
     </field>
 </record>
@@ -23,12 +22,12 @@
     <field name="arch" type="xml">
         <form>
             <group name="group_1" colspan="4" col="2">
-                <field name="name"/>
-                <field name="active"/>
+                <field name="name" />
+                <field name="active" />
             </group>
             <notebook colspan="4">
                 <page name="note" string="Notes">
-                    <field name="note"/>
+                    <field name="note" />
                 </page>
             </notebook>
         </form>
@@ -41,7 +40,7 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
+            <field name="name" />
         </search>
     </field>
 </record>
@@ -52,16 +51,19 @@
     <field name="res_model">hr.training_participant_cancel_reason</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_employee_training.hr_training_participant_cancel_reason_view_search"/>
+    <field
+                name="search_view_id"
+                ref="hr_employee_training.hr_training_participant_cancel_reason_view_search"
+            />
 </record>
 
 <menuitem
-    id="hr_training_participant_cancel_reason_menu"
-    name="Participant Cancel Reason"
-    parent="hr_employee_training.hr_training_configuration_menu"
-    action="hr_training_participant_cancel_reason_action"
-    sequence="1"
-    />
+            id="hr_training_participant_cancel_reason_menu"
+            name="Participant Cancel Reason"
+            parent="hr_employee_training.hr_training_configuration_menu"
+            action="hr_training_participant_cancel_reason_action"
+            sequence="1"
+        />
 
 
 </data>

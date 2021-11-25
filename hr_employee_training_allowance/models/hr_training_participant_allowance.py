@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.addons import decimal_precision as dp
 
 
@@ -21,8 +21,7 @@ class HrTrainingParticipantAllowance(models.Model):
     )
     def _compute_price(self):
         for allw in self:
-            allw.price_subtotal = allw.price_unit * \
-                allw.quantity
+            allw.price_subtotal = allw.price_unit * allw.quantity
 
     participant_id = fields.Many2one(
         string="Participant",
@@ -147,10 +146,10 @@ class HrTrainingParticipantAllowance(models.Model):
         self.price_unit = 0.0
         quantity = self.quantity
         obj_uom = self.env["product.uom"]
-        if self.product_id and \
-                self.quantity and self.pricelist_id and \
-                self.uom_id:
+        if self.product_id and self.quantity and self.pricelist_id and self.uom_id:
             self.price_unit = self.pricelist_id.price_get(
-                prod_id=self.product_id.id, qty=quantity)[self.pricelist_id.id]
+                prod_id=self.product_id.id, qty=quantity
+            )[self.pricelist_id.id]
             self.price_unit = obj_uom._compute_price(
-                self.product_id.uom_id.id, self.price_unit, self.uom_id.id)
+                self.product_id.uom_id.id, self.price_unit, self.uom_id.id
+            )

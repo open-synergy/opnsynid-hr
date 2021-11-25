@@ -2,16 +2,14 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrEmployee(models.Model):
     _inherit = "hr.employee"
 
     @api.multi
-    @api.depends(
-        "job_id"
-    )
+    @api.depends("job_id")
     def _compute_job_grade(self):
         for employee in self:
             result = False

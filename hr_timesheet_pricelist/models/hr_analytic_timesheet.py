@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class HrAnalyticTimesheet(models.Model):
@@ -22,7 +22,7 @@ class HrAnalyticTimesheet(models.Model):
             criteria = [
                 ("analytic_account_id", "=", self.account_id.id),
                 ("user_id", "=", self.user_id.id),
-                ("product_id", "=", self.product_id.id)
+                ("product_id", "=", self.product_id.id),
             ]
             ts_pricelists = obj_ts_pricelist.search(criteria)
             if len(ts_pricelists) > 0:
@@ -54,12 +54,14 @@ class HrAnalyticTimesheet(models.Model):
             if self.date:
                 ctx1.update({"date": self.date})
             amount_unit = pricelist.with_context(ctx1).price_get(
-                prod_id=self.product_id.id,
-                qty=self.unit_amount)[pricelist.id]
-            amount = obj_uom._compute_price(
-                self.product_id.uom_id.id,
-                amount_unit,
-                self.product_uom_id.id) * self.unit_amount
+                prod_id=self.product_id.id, qty=self.unit_amount
+            )[pricelist.id]
+            amount = (
+                obj_uom._compute_price(
+                    self.product_id.uom_id.id, amount_unit, self.product_uom_id.id
+                )
+                * self.unit_amount
+            )
 
             prec = obj_precision.precision_get("Account")
             result = round(amount, prec)

@@ -6,14 +6,14 @@
     "version": "8.0.1.0.0",
     "summary": "Adds wizard to compute sheet",
     "category": "Human Resources",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": ["hr_payroll"],
     "data": [
         "wizards/hr_compute_sheet_views.xml",
         "views/hr_payslip_views.xml",
-        "data/ir_values_data.xml"
+        "data/ir_values_data.xml",
     ],
 }

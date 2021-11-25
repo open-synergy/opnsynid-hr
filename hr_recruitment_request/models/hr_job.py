@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrJob(models.Model):
@@ -17,7 +17,8 @@ class HrJob(models.Model):
     def _compute_recruitment_request(self):
         for job in self:
             active_requests = job.recruitment_request_ids.filtered(
-                lambda r: r.state == "open")
+                lambda r: r.state == "open"
+            )
             num_rec = 0
             for active_request in active_requests:
                 num_rec += active_request.num_of_request
