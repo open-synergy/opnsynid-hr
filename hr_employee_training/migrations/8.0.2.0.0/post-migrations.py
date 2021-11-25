@@ -2,8 +2,8 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
+from openerp import SUPERUSER_ID, api
 from openupgradelib import openupgrade
-from openerp import api, SUPERUSER_ID
 
 
 def map_training_participant(env):

@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
-from openerp import models, fields
+from openerp import fields, models
 
 
 class HrDiciplineReason(models.Model):
@@ -25,6 +25,4 @@ class HrDiciplineReason(models.Model):
         string="Active",
         default=True,
     )
-    note = fields.Text(
-        string="Note"
-    )
+    note = fields.Text(string="Note")

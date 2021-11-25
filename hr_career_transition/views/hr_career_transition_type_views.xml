@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
 
@@ -11,8 +10,8 @@
             <field name="model">hr.career_transition_type</field>
             <field name="arch" type="xml">
                 <tree create="false" delete="false">
-                    <field name="name"/>
-                    <field name="name"/>
+                    <field name="name" />
+                    <field name="name" />
                 </tree>
             </field>
         </record>
@@ -23,53 +22,56 @@
             <field name="arch" type="xml">
                 <form create="false" delete="false">
                     <group name="main_1" colspan="4" col="2">
-                        <field name="code"/>
-                        <field name="name"/>
+                        <field name="code" />
+                        <field name="name" />
                     </group>
                     <notebook>
                         <page name="general" string="General">
                             <group name="general_1" colspan="4" col="2">
                                 <group name="general_1_1" colspan="1" col="2">
-                                    <field name="sequence_id"/>
+                                    <field name="sequence_id" />
                                 </group>
                                 <group name="general_1_2" colspan="1" col="2">
-                                    <field name="limit"/>
-                                    <field name="need_previous_contract"/>
-                                    <field name="create_new_contract"/>
+                                    <field name="limit" />
+                                    <field name="need_previous_contract" />
+                                    <field name="create_new_contract" />
                                 </group>
                             </group>
                         </page>
                         <page name="change" string="Data to Change">
                             <group name="change_1" colspan="1" col="2">
-                                <field name="change_company"/>
-                                <field name="change_job_title"/>
-                                <field name="change_department"/>
-                                <field name="change_manager"/>
-                                <field name="change_working_schedule"/>
-                                <field name="change_wage"/>
+                                <field name="change_company" />
+                                <field name="change_job_title" />
+                                <field name="change_department" />
+                                <field name="change_manager" />
+                                <field name="change_working_schedule" />
+                                <field name="change_wage" />
                             </group>
                         </page>
                         <page name="reason" string="Reasons">
                             <group name="reason_1" colspan="4" col="2">
-                                <field name="require_reason"/>
+                                <field name="require_reason" />
                             </group>
                             <field name="reason_ids" nolabel="1">
                                 <tree editable="top">
-                                    <field name="name"/>
-                                    <field name="active"/>
-                                    <field name="limit"/>
-                                    <field name="description"/>
+                                    <field name="name" />
+                                    <field name="active" />
+                                    <field name="limit" />
+                                    <field name="description" />
                                 </tree>
                             </field>
                         </page>
                         <page name="policy" string="Policy">
                             <group name="policy_1" colspan="1" col="2">
-                                <field name="confirm_grp_ids" widget="many2many_tags"/>
-                                <field name="approve_grp_ids" widget="many2many_tags"/>
-                                <field name="valid_grp_ids" widget="many2many_tags"/>
-                                <field name="cancel_grp_ids" widget="many2many_tags"/>
-                                <field name="restart_grp_ids" widget="many2many_tags"/>
-                                <field name="restart_approval_grp_ids" widget="many2many_tags"/>
+                                <field name="confirm_grp_ids" widget="many2many_tags" />
+                                <field name="approve_grp_ids" widget="many2many_tags" />
+                                <field name="valid_grp_ids" widget="many2many_tags" />
+                                <field name="cancel_grp_ids" widget="many2many_tags" />
+                                <field name="restart_grp_ids" widget="many2many_tags" />
+                                <field
+                                    name="restart_approval_grp_ids"
+                                    widget="many2many_tags"
+                                />
                             </group>
                         </page>
                     </notebook>
@@ -91,7 +93,7 @@
             parent="hr_career_administration_configuration_page.hr_career_administration_configuration_menu"
             action="hr_career_transition_type_action"
             sequence="1"
-            />
+        />
 
     </data>
 </openerp>

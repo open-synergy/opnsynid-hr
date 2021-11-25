@@ -15,8 +15,7 @@
         "hr_contract_additional_field",
         "hr_employee_data_from_contract",
     ],
-    "data": [
-    ],
+    "data": [],
     "images": [
         "static/description/banner.png",
     ],

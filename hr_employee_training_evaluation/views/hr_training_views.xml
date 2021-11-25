@@ -1,40 +1,74 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_training_view_form" model="ir.ui.view">
     <field name="name">hr.training form</field>
     <field name="model">hr.training</field>
-    <field name="inherit_id" ref="hr_employee_training.hr_training_view_form"/>
+    <field name="inherit_id" ref="hr_employee_training.hr_training_view_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='state']" position="before">
-                <button name="action_create_participant_evaluation" string="Create Participant Evaluation" type="object"/>
+                <button
+                            name="action_create_participant_evaluation"
+                            string="Create Participant Evaluation"
+                            type="object"
+                        />
             </xpath>
             <xpath expr="//notebook" position="inside">
                 <page name="evaluation" string="Evaluations">
-                    <group name="evaluation_3" colspan="4" col="2" string="Avalaible Survey">
-                        <field name="pre_survey_ids" widget="many2many_tags"/>
-                        <field name="post_survey_ids" widget="many2many_tags"/>
+                    <group
+                                name="evaluation_3"
+                                colspan="4"
+                                col="2"
+                                string="Avalaible Survey"
+                            >
+                        <field name="pre_survey_ids" widget="many2many_tags" />
+                        <field name="post_survey_ids" widget="many2many_tags" />
                     </group>
-                    <group name="evaluation_1" colspan="4" col="2" string="Pre-Evaluations">
-                        <field name="pre_evaluation_ids" nolabel="1" colspan="2" context="{'default_pre_post_test':'pre'}">
+                    <group
+                                name="evaluation_1"
+                                colspan="4"
+                                col="2"
+                                string="Pre-Evaluations"
+                            >
+                        <field
+                                    name="pre_evaluation_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                    context="{'default_pre_post_test':'pre'}"
+                                >
                             <tree editable="top">
-                                <field name="sequence" widget="handle"/>
-                                <field name="pre_post_test" invisible="1"/>
-                                <field name="survey_id" domain="[('id','in',parent.pre_survey_ids[0][2])]"/>
+                                <field name="sequence" widget="handle" />
+                                <field name="pre_post_test" invisible="1" />
+                                <field
+                                            name="survey_id"
+                                            domain="[('id','in',parent.pre_survey_ids[0][2])]"
+                                        />
                             </tree>
                         </field>
                     </group>
-                    <group name="evaluation_2" colspan="4" col="2" string="Post-Evaluations">
-                        <field name="post_evaluation_ids" nolabel="1" colspan="2" context="{'default_pre_post_test':'post'}">
+                    <group
+                                name="evaluation_2"
+                                colspan="4"
+                                col="2"
+                                string="Post-Evaluations"
+                            >
+                        <field
+                                    name="post_evaluation_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                    context="{'default_pre_post_test':'post'}"
+                                >
                             <tree editable="top">
-                                <field name="sequence" widget="handle"/>
-                                <field name="pre_post_test" invisible="1"/>
-                                <field name="survey_id" domain="[('id','in',parent.post_survey_ids[0][2])]"/>
+                                <field name="sequence" widget="handle" />
+                                <field name="pre_post_test" invisible="1" />
+                                <field
+                                            name="survey_id"
+                                            domain="[('id','in',parent.post_survey_ids[0][2])]"
+                                        />
                             </tree>
                         </field>
                     </group>

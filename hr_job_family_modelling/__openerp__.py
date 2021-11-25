@@ -5,11 +5,11 @@
 {
     "name": "Job Family Modelling",
     "summary": "Grading system that divides jobs into coherent groups "
-               "based on shared characteristics",
+    "based on shared characteristics",
     "version": "8.0.1.2.0",
     "category": "Human Resources",
-    "website": "https://opensynergy-indonesia.com/",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [

@@ -1,64 +1,128 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_training_participant_view_form" model="ir.ui.view">
     <field name="name">hr.training_participant form</field>
     <field name="model">hr.training_partisipant</field>
-    <field name="inherit_id" ref="hr_employee_training.hr_training_participant_view_form"/>
+    <field
+                name="inherit_id"
+                ref="hr_employee_training.hr_training_participant_view_form"
+            />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//header/field[@name='state']" position="before">
-                <button name="action_generate_allowance"
-                    string="Generate Allowance"
-                    type="object"
-                    confirm="This will remove all non-draft allowance and regenerate allowance. Are you sure?"
-                    />
+                <button
+                            name="action_generate_allowance"
+                            string="Generate Allowance"
+                            type="object"
+                            confirm="This will remove all non-draft allowance and regenerate allowance. Are you sure?"
+                        />
             </xpath>
             <xpath expr="//notebook" position="inside">
                 <page name="page_allowance" string="Allowance">
                     <group name="allowance_1" colspan="4" col="2">
-                        <field name="pricelist_id"/>
+                        <field name="pricelist_id" />
                     </group>
-                    <field name="allowance_ids" nolabel="1" colspan="4" readonly="0" context="{'default_pricelist_id': pricelist_id}">
+                    <field
+                                name="allowance_ids"
+                                nolabel="1"
+                                colspan="4"
+                                readonly="0"
+                                context="{'default_pricelist_id': pricelist_id}"
+                            >
                         <tree>
-                            <field name="sequence" widget="handle"/>
-                            <field name="product_id"
-                                domain="[('training_allowance_ok','=',True)]"
-                                />
-                            <field name="pricelist_id" 
-                                domain="[('type','=','training_allowance')"/>
-                            <field name="price_unit"/>
-                            <field name="uom_id"/>
-                            <field name="quantity"/>
-                            <field name="price_subtotal"/>
-                            <field name="state"/>
-                            <button name="action_confirm" string="Confirm" type="object" states="draft" icon="gtk-go-forward"/>
-                            <button name="action_approve" string="Approve" type="object" states="confirm" icon="gtk-apply"/>
-                            <button name="action_reject" string="Reject" type="object" states="confirm" icon="gtk-cancel"/>
-                            <button name="action_restart" string="Reject" type="object" states="reject,approve" icon="gtk-undo"/>
+                            <field name="sequence" widget="handle" />
+                            <field
+                                        name="product_id"
+                                        domain="[('training_allowance_ok','=',True)]"
+                                    />
+                            <field
+                                        name="pricelist_id"
+                                        domain="[('type','=','training_allowance')"
+                                    />
+                            <field name="price_unit" />
+                            <field name="uom_id" />
+                            <field name="quantity" />
+                            <field name="price_subtotal" />
+                            <field name="state" />
+                            <button
+                                        name="action_confirm"
+                                        string="Confirm"
+                                        type="object"
+                                        states="draft"
+                                        icon="gtk-go-forward"
+                                    />
+                            <button
+                                        name="action_approve"
+                                        string="Approve"
+                                        type="object"
+                                        states="confirm"
+                                        icon="gtk-apply"
+                                    />
+                            <button
+                                        name="action_reject"
+                                        string="Reject"
+                                        type="object"
+                                        states="confirm"
+                                        icon="gtk-cancel"
+                                    />
+                            <button
+                                        name="action_restart"
+                                        string="Reject"
+                                        type="object"
+                                        states="reject,approve"
+                                        icon="gtk-undo"
+                                    />
                         </tree>
                         <form>
                             <header>
-                                <button name="action_confirm" string="Confirm" type="object" states="draft" icon="gtk-go-forward"/>
-                                <button name="action_approve" string="Approve" type="object" states="confirm" icon="gtk-apply"/>
-                                <button name="action_reject" string="Reject" type="object" states="confirm" icon="gtk-cancel"/>
-                                <button name="action_restart" string="Reject" type="object" states="reject,approve" icon="gtk-undo"/>
-                                <field name="state" invisible="1"/>
+                                <button
+                                            name="action_confirm"
+                                            string="Confirm"
+                                            type="object"
+                                            states="draft"
+                                            icon="gtk-go-forward"
+                                        />
+                                <button
+                                            name="action_approve"
+                                            string="Approve"
+                                            type="object"
+                                            states="confirm"
+                                            icon="gtk-apply"
+                                        />
+                                <button
+                                            name="action_reject"
+                                            string="Reject"
+                                            type="object"
+                                            states="confirm"
+                                            icon="gtk-cancel"
+                                        />
+                                <button
+                                            name="action_restart"
+                                            string="Reject"
+                                            type="object"
+                                            states="reject,approve"
+                                            icon="gtk-undo"
+                                        />
+                                <field name="state" invisible="1" />
                             </header>
                             <group name="allowance_2" colspan="4" col="2">
-                                <field name="sequence"/>
-                                <field name="pricelist_id"
-                                    domaib="[('type','=','training_allowance')]"/>
-                                <field name="product_id"
-                                    domain="[('training_allowance_ok','=',True)]"/>
-                                <field name="price_unit"/>
-                                <field name="quantity"/>
-                                <field name="uom_id"/>
-                                <field name="price_subtotal"/>
+                                <field name="sequence" />
+                                <field
+                                            name="pricelist_id"
+                                            domaib="[('type','=','training_allowance')]"
+                                        />
+                                <field
+                                            name="product_id"
+                                            domain="[('training_allowance_ok','=',True)]"
+                                        />
+                                <field name="price_unit" />
+                                <field name="quantity" />
+                                <field name="uom_id" />
+                                <field name="price_subtotal" />
                             </group>
                         </form>
                     </field>

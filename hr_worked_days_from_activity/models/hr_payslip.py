@@ -2,9 +2,9 @@
 # © 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api
-from openerp.tools.translate import _
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
+from openerp.tools.translate import _
 
 
 class HrPayslipWorkedDays(models.Model):
@@ -43,7 +43,8 @@ class HrPayslip(models.Model):
 
             if payslip.state != "draft":
                 raise UserError(
-                    _("Cannot import timesheet activity on non-draft payslip"))
+                    _("Cannot import timesheet activity on non-draft payslip")
+                )
 
             criteria = [
                 ("payslip_id", "=", payslip.id),
@@ -84,12 +85,9 @@ class HrPayslip(models.Model):
                         ("date", ">=", payslip.date_from),
                         ("date", "<=", payslip.date_to),
                     ]
-                    for ts_line in obj_timesheet_line.search(
-                            criteria):
+                    for ts_line in obj_timesheet_line.search(criteria):
                         ts_line_hour = obj_uom._compute_qty(
-                            ts_line.product_uom_id.id,
-                            ts_line.unit_amount,
-                            uom_hour.id
+                            ts_line.product_uom_id.id, ts_line.unit_amount, uom_hour.id
                         )
                         res["number_of_hours"] += ts_line_hour
                 obj_worked_days.create(res)

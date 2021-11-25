@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <openerp>
     <data>
         <record model="ir.ui.view" id="hr_holidays_lvr_tree_view">
@@ -30,7 +30,7 @@
             <field name="arch" type="xml">
                 <xpath expr="//sheet/group[1]" position="before">
                     <h1>
-                        <field name="holiday_code" nolabel="1"/>
+                        <field name="holiday_code" nolabel="1" />
                     </h1>
                 </xpath>
             </field>
@@ -42,7 +42,7 @@
             <field name="inherit_id" ref="hr_holidays.view_hr_holidays_filter" />
             <field name="arch" type="xml">
                 <field name="name" position="before">
-                    <field name="holiday_code"/>
+                    <field name="holiday_code" />
                 </field>
             </field>
         </record>

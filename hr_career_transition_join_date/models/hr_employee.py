@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrEmployee(models.Model):
@@ -18,8 +18,7 @@ class HrEmployee(models.Model):
         for employee in self:
             join_date = False
             join_transition_id = False
-            joins = employee.join_transition_ids.\
-                filtered(lambda r: r.state == "valid")
+            joins = employee.join_transition_ids.filtered(lambda r: r.state == "valid")
             if len(joins) > 0:
                 join = joins[0]
                 join_date = join.effective_date

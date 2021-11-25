@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2020 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
@@ -7,59 +7,78 @@
         <record id="hr_payslip_view_form" model="ir.ui.view">
             <field name="name">hr.payslip.form tier validation form</field>
             <field name="model">hr.payslip</field>
-            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
             <field name="arch" type="xml">
                 <xpath expr="//button[@name='hr_verify_sheet']" position="before">
-                    <button name="request_validation"
+                    <button
+                        name="request_validation"
                         string="Request Validation"
                         attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['verify'])]}"
-                        type="object"/>
-                    <button name="restart_validation"
+                        type="object"
+                    />
+                    <button
+                        name="restart_validation"
                         string="Restart Validation"
                         attrs="{'invisible': ['|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['verify'])]}"
-                        type="object"/>
+                        type="object"
+                    />
                 </xpath>
                 <xpath expr="//header" position="after">
-                    <field name="need_validation" invisible="1"/>
-                    <field name="validated" invisible="1"/>
-                    <field name="rejected" invisible="1"/>
-                    <div class="alert alert-warning"
-                         attrs="{'invisible': ['|', '|', '|',
+                    <field name="need_validation" invisible="1" />
+                    <field name="validated" invisible="1" />
+                    <field name="rejected" invisible="1" />
+                    <div
+                        class="alert alert-warning"
+                        attrs="{'invisible': ['|', '|', '|',
                          ('validated', '=', True), ('state', 'not in', ['verify']),
                          ('rejected', '=', True), ('review_ids', '=', [])]}"
-                         style="margin-bottom:0px;">
-                        <p><i class="fa fa-info-circle"/>This Payslip needs to be
+                        style="margin-bottom:0px;"
+                    >
+                        <p><i class="fa fa-info-circle" />This Payslip needs to be
                             validated.
-                            <button name="validate_tier"
+                            <button
+                                name="validate_tier"
                                 string="Validate"
                                 attrs="{'invisible': [('review_ids', '=', [])]}"
                                 type="object"
                                 class="oe_inline oe_button btn-success"
-                                icon="terp-check"/>
-                            <button name="reject_tier"
+                                icon="terp-check"
+                            />
+                            <button
+                                name="reject_tier"
                                 string="Reject"
                                 type="object"
                                 class="btn-icon btn-danger"
-                                icon="terp-gtk-stop"/>
+                                icon="terp-gtk-stop"
+                            />
                         </p>
                     </div>
-                    <div class="alert alert-success"
-                         attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['verify']), ('review_ids', '=', [])]}"
-                         style="margin-bottom:0px;">
-                        <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+                    <div
+                        class="alert alert-success"
+                        attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['verify']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                        <p><i class="fa fa-thumbs-up" /> Operation has been <b
+                            >validated</b>!</p>
                     </div>
-                    <div class="alert alert-danger"
-                         attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['verify']), ('review_ids', '=', [])]}"
-                         style="margin-bottom:0px;">
-                        <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+                    <div
+                        class="alert alert-danger"
+                        attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['verify']), ('review_ids', '=', [])]}"
+                        style="margin-bottom:0px;"
+                    >
+                        <p><i class="fa fa-thumbs-down" /> Operation has been <b
+                            >rejected</b>.</p>
                     </div>
                 </xpath>
                 <xpath expr="//notebook" position="inside">
                     <page string="Reviews" name="tier_validation">
                         <group>
-                            <field name="definition_id"/>
-                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
-                            <field name="review_ids" readonly="1"/>
+                            <field name="definition_id" />
+                            <field
+                                name="reviewer_partner_ids"
+                                widget="many2many_tags"
+                            />
+                            <field name="review_ids" readonly="1" />
                         </group>
                     </page>
                 </xpath>
@@ -69,12 +88,15 @@
         <record id="hr_payslip_view_search" model="ir.ui.view">
             <field name="name">hr.payslip.form tier validation search</field>
             <field name="model">hr.payslip</field>
-            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_filter"/>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_filter" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='employee_id']" position="before">
-                    <filter name="needs_review" string="Needs my Review"
-                            domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel'])]"
-                            help="My Payslip to review"/>
+                    <filter
+                        name="needs_review"
+                        string="Needs my Review"
+                        domain="[('reviewer_ids','in',uid), ('state', 'not in', ['done', 'cancel'])]"
+                        help="My Payslip to review"
+                    />
                 </xpath>
             </field>
         </record>

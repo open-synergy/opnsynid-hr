@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
 <record id="hr_dicipline_view_tree" model="ir.ui.view">
@@ -10,14 +9,17 @@
     <field name="model">hr.dicipline</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="company_id" groups="base.group_multi_company"/>
-            <field name="effective_date"/>
-            <field name="employee_id" invisible="context.get('hide_employee_field',0)"/>
-            <field name="department_id"/>
-            <field name="type_id"/>
-            <field name="reason_id"/>
-            <field name="state"/>
+            <field name="name" />
+            <field name="company_id" groups="base.group_multi_company" />
+            <field name="effective_date" />
+            <field
+                        name="employee_id"
+                        invisible="context.get('hide_employee_field',0)"
+                    />
+            <field name="department_id" />
+            <field name="type_id" />
+            <field name="reason_id" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -28,117 +30,193 @@
     <field name="arch" type="xml">
         <form>
             <header>
-                <button name="request_validation"
-                    string="Request Validation"
-                    attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
-                    type="object"/>
-                <button name="restart_validation"
-                    string="Restart Validation"
-                    attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_validation_ok','=',False)]}"
-                    type="object"/>
-                <button name="button_confirm" string="Confirm" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}" confirm="Confirm Employee Diciplines. Are you sure?"/>
-                <button name="button_open" string="Open" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','approve'),('open_ok','=',False)]}" confirm="Open Employee Diciplines. Are you sure?"/>
-                <button name="button_done" string="Done" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','open'),('done_ok','=',False)]}" confirm="Finish Employee Diciplines. Are you sure?"/>
-                <button name="button_cancel" string="Cancel" type="object" attrs="{'invisible':['|',('state','not in',['draft','confirm','approve','open','done']),('cancel_ok','=',False)]}" confirm="Cancel Employee Diciplines. Are you sure?"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}" confirm="Reset Employee Diciplines. Are you sure?"/>
-                <field name="state" string="State" widget="statusbar" statusbar_visible="draft,confirm,approve,open"/>
-                <field name="need_validation" invisible="1"/>
-                <field name="validated" invisible="1"/>
-                <field name="rejected" invisible="1"/>
-                <div class="alert alert-warning"
-                     attrs="{'invisible': ['|', '|', '|',
+                <button
+                            name="request_validation"
+                            string="Request Validation"
+                            attrs="{'invisible': ['|','|',('need_validation', '!=', True),('rejected','=',True),('state','not in',['confirm'])]}"
+                            type="object"
+                        />
+                <button
+                            name="restart_validation"
+                            string="Restart Validation"
+                            attrs="{'invisible': ['|','|','|',('review_ids', '=', []),('rejected','=',False),('state','not in',['confirm']),('restart_validation_ok','=',False)]}"
+                            type="object"
+                        />
+                <button
+                            name="button_confirm"
+                            string="Confirm"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','draft'),('confirm_ok','=',False)]}"
+                            confirm="Confirm Employee Diciplines. Are you sure?"
+                        />
+                <button
+                            name="button_open"
+                            string="Open"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','approve'),('open_ok','=',False)]}"
+                            confirm="Open Employee Diciplines. Are you sure?"
+                        />
+                <button
+                            name="button_done"
+                            string="Done"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','open'),('done_ok','=',False)]}"
+                            confirm="Finish Employee Diciplines. Are you sure?"
+                        />
+                <button
+                            name="button_cancel"
+                            string="Cancel"
+                            type="object"
+                            attrs="{'invisible':['|',('state','not in',['draft','confirm','approve','open','done']),('cancel_ok','=',False)]}"
+                            confirm="Cancel Employee Diciplines. Are you sure?"
+                        />
+                <button
+                            name="button_restart"
+                            string="Set to Draft"
+                            class="oe_highlight"
+                            type="object"
+                            attrs="{'invisible':['|',('state','!=','cancel'),('restart_ok','=',False)]}"
+                            confirm="Reset Employee Diciplines. Are you sure?"
+                        />
+                <field
+                            name="state"
+                            string="State"
+                            widget="statusbar"
+                            statusbar_visible="draft,confirm,approve,open"
+                        />
+                <field name="need_validation" invisible="1" />
+                <field name="validated" invisible="1" />
+                <field name="rejected" invisible="1" />
+                <div
+                            class="alert alert-warning"
+                            attrs="{'invisible': ['|', '|', '|',
                      ('validated', '=', True), ('state', 'not in', ['confirm']),
                      ('rejected', '=', True), ('review_ids', '=', [])]}"
-                     style="margin-bottom:0px;">
-                    <p><i class="fa fa-info-circle"/>This data needs to be validated.
-                        <button name="validate_tier"
-                            string="Validate"
-                            attrs="{'invisible': [('review_ids', '=', [])]}"
-                            type="object"
-                            class="oe_inline oe_button btn-success"
-                            icon="terp-check"/>
-                        <button name="reject_tier"
-                            string="Reject"
-                            type="object"
-                            class="btn-icon btn-danger"
-                            icon="terp-gtk-stop"/>
+                            style="margin-bottom:0px;"
+                        >
+                    <p><i class="fa fa-info-circle" />This data needs to be validated.
+                        <button
+                                    name="validate_tier"
+                                    string="Validate"
+                                    attrs="{'invisible': [('review_ids', '=', [])]}"
+                                    type="object"
+                                    class="oe_inline oe_button btn-success"
+                                    icon="terp-check"
+                                />
+                        <button
+                                    name="reject_tier"
+                                    string="Reject"
+                                    type="object"
+                                    class="btn-icon btn-danger"
+                                    icon="terp-gtk-stop"
+                                />
                     </p>
                 </div>
-                <div class="alert alert-success"
-                     attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
-                     style="margin-bottom:0px;">
-                    <p><i class="fa fa-thumbs-up"/> Operation has been <b>validated</b>!</p>
+                <div
+                            class="alert alert-success"
+                            attrs="{'invisible': ['|', '|', ('validated', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                            style="margin-bottom:0px;"
+                        >
+                    <p><i class="fa fa-thumbs-up" /> Operation has been <b
+                                >validated</b>!</p>
                 </div>
-                <div class="alert alert-danger"
-                     attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
-                     style="margin-bottom:0px;">
-                    <p><i class="fa fa-thumbs-down"/> Operation has been <b>rejected</b>.</p>
+                <div
+                            class="alert alert-danger"
+                            attrs="{'invisible': ['|', '|', ('rejected', '!=', True), ('state', 'not in', ['confirm']), ('review_ids', '=', [])]}"
+                            style="margin-bottom:0px;"
+                        >
+                    <p><i class="fa fa-thumbs-down" /> Operation has been <b
+                                >rejected</b>.</p>
                 </div>
             </header>
             <sheet>
-                <div class="oe_right oe_button_box" style="width: 300px;" name="buttons">
+                <div
+                            class="oe_right oe_button_box"
+                            style="width: 300px;"
+                            name="buttons"
+                        >
                 </div>
                 <div class="oe_left" style="width: 500px;">
                     <div class="oe_title" style="width: 500px;">
-                        <label for="name"/>
+                        <label for="name" />
                         <h1>
-                            <field name="name"/>
+                            <field name="name" />
                         </h1>
                     </div>
                 </div>
                 <group name="header_1" colspan="4" col="2">
                     <group name="header_1_1" colspan="1" col="2">
-                        <field name="company_id" groups="base.group_multi_company"/>
-                        <field name="effective_date"/>
+                        <field name="company_id" groups="base.group_multi_company" />
+                        <field name="effective_date" />
                     </group>
                     <group name="header_1_2" colspan="1" col="2">
-                        <field name="employee_id" invisible="context.get('hide_employee_field',0)"/>
-                        <field name="department_id"/>
-                        <field name="type_id"/>
-                        <field name="reason_id" domain="[('id','in',allowed_reason_ids[0][2])]"/>
-                        <field name="allowed_reason_ids" widget="many2many_tags" invisible="1"/>
+                        <field
+                                    name="employee_id"
+                                    invisible="context.get('hide_employee_field',0)"
+                                />
+                        <field name="department_id" />
+                        <field name="type_id" />
+                        <field
+                                    name="reason_id"
+                                    domain="[('id','in',allowed_reason_ids[0][2])]"
+                                />
+                        <field
+                                    name="allowed_reason_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
                     </group>
                 </group>
                 <notebook>
                     <page name="note" string="Note">
-                        <field name="note"/>
+                        <field name="note" />
                     </page>
                     <page name="log" string="Log" groups="base.group_system">
                         <group name="group_log_1" colspan="4" col="3">
-                            <field name="confirm_date" string="Confirm"/>
-                            <field name="confirm_user_id" nolabel="1"/>
-                            <field name="approve_date" string="Approve"/>
-                            <field name="approve_user_id" nolabel="1"/>
-                            <field name="open_date" string="Open"/>
-                            <field name="open_user_id" nolabel="1"/>
-                            <field name="done_date" string="Done"/>
-                            <field name="done_user_id" nolabel="1"/>
-                            <field name="cancel_date" string="Cancel"/>
-                            <field name="cancel_user_id" nolabel="1"/>
+                            <field name="confirm_date" string="Confirm" />
+                            <field name="confirm_user_id" nolabel="1" />
+                            <field name="approve_date" string="Approve" />
+                            <field name="approve_user_id" nolabel="1" />
+                            <field name="open_date" string="Open" />
+                            <field name="open_user_id" nolabel="1" />
+                            <field name="done_date" string="Done" />
+                            <field name="done_user_id" nolabel="1" />
+                            <field name="cancel_date" string="Cancel" />
+                            <field name="cancel_user_id" nolabel="1" />
                         </group>
                     </page>
                     <page name="policy" string="Policy" groups="base.group_system">
                         <group name="policy_1" colspan="4" col="2">
-                            <field name="confirm_ok"/>
-                            <field name="open_ok"/>
-                            <field name="done_ok"/>
-                            <field name="cancel_ok"/>
-                            <field name="restart_ok"/>
-                            <field name="restart_validation_ok"/>
+                            <field name="confirm_ok" />
+                            <field name="open_ok" />
+                            <field name="done_ok" />
+                            <field name="cancel_ok" />
+                            <field name="restart_ok" />
+                            <field name="restart_validation_ok" />
                         </group>
                     </page>
                     <page string="Reviews" name="tier_validation">
                         <group>
-                            <field name="definition_id"/>
-                            <field name="reviewer_partner_ids" widget="many2many_tags"/>
-                            <field name="review_ids" readonly="1"/>
+                            <field name="definition_id" />
+                            <field
+                                        name="reviewer_partner_ids"
+                                        widget="many2many_tags"
+                                    />
+                            <field name="review_ids" readonly="1" />
                         </group>
                     </page>
                 </notebook>
             </sheet>
             <div class="oe_chatter">
-                <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
-                <field name="message_ids" widget="mail_thread"/>
+                <field
+                            name="message_follower_ids"
+                            widget="mail_followers"
+                            groups="base.group_user"
+                        />
+                <field name="message_ids" widget="mail_thread" />
             </div>
         </form>
     </field>
@@ -149,32 +227,93 @@
     <field name="model">hr.dicipline</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="employee_id" invisible="context.get('hide_employee_field',0)"/>
-            <field name="department_id"/>
-            <field name="type_id"/>
-            <field name="reason_id"/>
-            <field name="state"/>
-            <field name="company_id" groups="base.group_multi_company"/>
+            <field name="name" />
+            <field
+                        name="employee_id"
+                        invisible="context.get('hide_employee_field',0)"
+                    />
+            <field name="department_id" />
+            <field name="type_id" />
+            <field name="reason_id" />
+            <field name="state" />
+            <field name="company_id" groups="base.group_multi_company" />
             <group name="grp_state" string="State">
-                <filter name="dom_draft" string="Draft" domain="[('state','=','draft')]"/>
-                <filter name="dom_confirm" string="Waiting for Approval" domain="[('state','=','confirm')]"/>
-                <filter name="dom_approve" string="Approved" domain="[('state','=','approve')]"/>
-                <filter name="dom_open" string="Open" domain="[('state','=','open')]"/>
-                <filter name="dom_done" string="Done" domain="[('state','=','done')]"/>
-                <filter name="dom_cancel" string="Cancelled" domain="[('state','=','cancel')]"/>
+                <filter
+                            name="dom_draft"
+                            string="Draft"
+                            domain="[('state','=','draft')]"
+                        />
+                <filter
+                            name="dom_confirm"
+                            string="Waiting for Approval"
+                            domain="[('state','=','confirm')]"
+                        />
+                <filter
+                            name="dom_approve"
+                            string="Approved"
+                            domain="[('state','=','approve')]"
+                        />
+                <filter name="dom_open" string="Open" domain="[('state','=','open')]" />
+                <filter name="dom_done" string="Done" domain="[('state','=','done')]" />
+                <filter
+                            name="dom_cancel"
+                            string="Cancelled"
+                            domain="[('state','=','cancel')]"
+                        />
             </group>
             <group name="grp_group" string="Group By..">
-                <filter name="grp_company" string="Company" context="{'group_by':'company_id'}" groups="base.group_multi_company"/>
-                <filter name="grp_employee" string="Employee" context="{'group_by':'employee_id'}" invisible="context.get('hide_employee_field',0)"/>
-                <filter name="grp_department" string="Department" context="{'group_by':'department_id'}" />
-                <filter name="grp_type" string="Type" context="{'group_by':'type_id'}"/>
-                <filter name="grp_reason" string="Reason" context="{'group_by':'reason_id'}"/>
-                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
-                <filter name="grp_effective_date_year" string="Effective Date by Year" context="{'group_by':'effective_date:year'}"/>
-                <filter name="grp_effective_date_month" string="Effective Date by Month" context="{'group_by':'effective_date:month'}"/>
-                <filter name="grp_effective_date_week" string="Effective Date by Week" context="{'group_by':'effective_date:week'}"/>
-                <filter name="grp_effective_date_day" string="Effective Date by Day" context="{'group_by':'effective_date:day'}"/>
+                <filter
+                            name="grp_company"
+                            string="Company"
+                            context="{'group_by':'company_id'}"
+                            groups="base.group_multi_company"
+                        />
+                <filter
+                            name="grp_employee"
+                            string="Employee"
+                            context="{'group_by':'employee_id'}"
+                            invisible="context.get('hide_employee_field',0)"
+                        />
+                <filter
+                            name="grp_department"
+                            string="Department"
+                            context="{'group_by':'department_id'}"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
+                        />
+                <filter
+                            name="grp_reason"
+                            string="Reason"
+                            context="{'group_by':'reason_id'}"
+                        />
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_effective_date_year"
+                            string="Effective Date by Year"
+                            context="{'group_by':'effective_date:year'}"
+                        />
+                <filter
+                            name="grp_effective_date_month"
+                            string="Effective Date by Month"
+                            context="{'group_by':'effective_date:month'}"
+                        />
+                <filter
+                            name="grp_effective_date_week"
+                            string="Effective Date by Week"
+                            context="{'group_by':'effective_date:week'}"
+                        />
+                <filter
+                            name="grp_effective_date_day"
+                            string="Effective Date by Day"
+                            context="{'group_by':'effective_date:day'}"
+                        />
             </group>
         </search>
     </field>
@@ -186,17 +325,19 @@
     <field name="res_model">hr.dicipline</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_dicipline_view_search"/>
-    <field name="context">{'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_open':1}</field>
+    <field name="search_view_id" ref="hr_dicipline_view_search" />
+    <field
+                name="context"
+            >{'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_open':1}</field>
 </record>
 
 <menuitem
-    id="hr_dicipline_type_menu"
-    name="Employee Diciplines"
-    parent="hr_dicipline.hr_dicipline_root_menu"
-    action="hr_dicipline_action"
-    sequence="2"
-    />
+            id="hr_dicipline_type_menu"
+            name="Employee Diciplines"
+            parent="hr_dicipline.hr_dicipline_root_menu"
+            action="hr_dicipline_action"
+            sequence="2"
+        />
 
     <record id="my_hr_dicipline_action" model="ir.actions.act_window">
         <field name="name">My Employee Diciplines</field>
@@ -204,16 +345,18 @@
         <field name="res_model">hr.dicipline</field>
         <field name="view_type">form</field>
         <field name="view_mode">tree,form</field>
-        <field name="search_view_id" ref="hr_dicipline_view_search"/>
-        <field name="context">{'hide_employee_field':1,'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_open':1}</field>
+        <field name="search_view_id" ref="hr_dicipline_view_search" />
+        <field
+                name="context"
+            >{'hide_employee_field':1,'search_default_dom_draft':1,'search_default_dom_confirm':1,'search_default_dom_approve':1,'search_default_dom_open':1}</field>
     </record>
 
     <menuitem
-        id="my_hr_dicipline_type_menu"
-        name="My Employee Diciplines"
-        parent="hr_dicipline.hr_dicipline_root_menu"
-        action="my_hr_dicipline_action"
-        sequence="1"
+            id="my_hr_dicipline_type_menu"
+            name="My Employee Diciplines"
+            parent="hr_dicipline.hr_dicipline_root_menu"
+            action="my_hr_dicipline_action"
+            sequence="1"
         />
     </data>
 </openerp>

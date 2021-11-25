@@ -1,79 +1,83 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
 <data noupdate="1">
 
-    <record
-        id="ir_rule_overtime_request_batch_user"
-        model="ir.rule">
+    <record id="ir_rule_overtime_request_batch_user" model="ir.rule">
         <field
-            name="model_id"
-            ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"/>
+                name="model_id"
+                ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"
+            />
         <field name="domain_force">
             [('user_id.id','=',user.id)]
         </field>
         <field name="name">Overtime Request Batch Rule for User</field>
         <field
-            name="groups"
-            eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_user')])]"/>
-        <field eval="1" name="perm_unlink"/>
-        <field eval="1" name="perm_write"/>
-        <field eval="1" name="perm_read"/>
-        <field eval="1" name="perm_create"/>
+                name="groups"
+                eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_user')])]"
+            />
+        <field eval="1" name="perm_unlink" />
+        <field eval="1" name="perm_write" />
+        <field eval="1" name="perm_read" />
+        <field eval="1" name="perm_create" />
     </record>
 
-    <record
-        id="ir_rule_overtime_request_batch_supervisor"
-        model="ir.rule">
+    <record id="ir_rule_overtime_request_batch_supervisor" model="ir.rule">
         <field
-            name="model_id"
-            ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"/>
-        <field
-            name="domain_force">
+                name="model_id"
+                ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"
+            />
+        <field name="domain_force">
                 [('manager_id.id','child_of',user.employee_ids[0].id)]
         </field>
         <field name="name">Overtime Request Batch Rule for Manager</field>
         <field
-            name="groups"
-            eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_supervisor')])]"/>
-        <field eval="1" name="perm_unlink"/>
-        <field eval="1" name="perm_write"/>
-        <field eval="1" name="perm_read"/>
-        <field eval="1" name="perm_create"/>
+                name="groups"
+                eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_supervisor')])]"
+            />
+        <field eval="1" name="perm_unlink" />
+        <field eval="1" name="perm_write" />
+        <field eval="1" name="perm_read" />
+        <field eval="1" name="perm_create" />
     </record>
 
-    <record id="ir_rule_overtime_request_batch_manager"
-            model="ir.rule">
+    <record id="ir_rule_overtime_request_batch_manager" model="ir.rule">
         <field
-            name="model_id"
-            ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"/>
-        <field
-            name="domain_force">
+                name="model_id"
+                ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"
+            />
+        <field name="domain_force">
                 [('department_id.manager_id.id','child_of',user.employee_ids[0].id)]
         </field>
         <field name="name">Overtime Request Batch Rule for Department</field>
-        <field name="groups" eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_department')])]"/>
-        <field eval="1" name="perm_unlink"/>
-        <field eval="1" name="perm_write"/>
-        <field eval="1" name="perm_read"/>
-        <field eval="1" name="perm_create"/>
+        <field
+                name="groups"
+                eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_department')])]"
+            />
+        <field eval="1" name="perm_unlink" />
+        <field eval="1" name="perm_write" />
+        <field eval="1" name="perm_read" />
+        <field eval="1" name="perm_create" />
     </record>
 
-    <record id="ir_rule_overtime_request_batch_company"
-            model="ir.rule">
+    <record id="ir_rule_overtime_request_batch_company" model="ir.rule">
         <field
-            name="model_id"
-            ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"/>
+                name="model_id"
+                ref="hr_attendance_overtime_request_batch.model_hr_overtime_request_batch"
+            />
         <field name="domain_force">
             [('company_id.id','child_of',user.company_id.id)]
         </field>
         <field name="name">Overtime Request Batch Rule for Company</field>
-        <field name="groups" eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_company')])]"/>
-        <field eval="1" name="perm_unlink"/>
-        <field eval="1" name="perm_write"/>
-        <field eval="1" name="perm_read"/>
-        <field eval="1" name="perm_create"/>
+        <field
+                name="groups"
+                eval="[(6, 0, [ref('hr_attendance_overtime_request.group_overtime_company')])]"
+            />
+        <field eval="1" name="perm_unlink" />
+        <field eval="1" name="perm_write" />
+        <field eval="1" name="perm_read" />
+        <field eval="1" name="perm_create" />
     </record>
 
 </data>

@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -12,11 +11,16 @@
     <field name="arch" type="xml">
         <form class="oe_form_configuration">
             <header>
-                <button name="execute" string="Apply" type="object" class="oe_highlight"/>
+                <button
+                            name="execute"
+                            string="Apply"
+                            type="object"
+                            class="oe_highlight"
+                        />
                 or
-                <button name="cancel" string="Cancel" type="object" class="oe_link"/>
+                <button name="cancel" string="Cancel" type="object" class="oe_link" />
             </header>
-            <field name="company_id" invisible="1"/>
+            <field name="company_id" invisible="1" />
         </form>
     </field>
 </record>
@@ -32,12 +36,12 @@
 </record>
 
 <menuitem
-    id="hr_holiday_config_setting_menu"
-    name="Configuration"
-    parent="hr_holiday_configuration_main_menu"
-    action="hr_holiday_config_setting_action"
-    sequence="0"
-    />
+            id="hr_holiday_config_setting_menu"
+            name="Configuration"
+            parent="hr_holiday_configuration_main_menu"
+            action="hr_holiday_config_setting_action"
+            sequence="0"
+        />
 
 
 </data>

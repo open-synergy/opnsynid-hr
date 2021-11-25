@@ -1,18 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
-<record id="allowance_field_employee" model="hr.training_allowance_pricelist_policy_field">
+<record
+            id="allowance_field_employee"
+            model="hr.training_allowance_pricelist_policy_field"
+        >
     <field name="name">Employee</field>
     <field name="python_code">result = employee.allowance_pricelist_id</field>
 </record>
 
-<record id="allowance_field_department" model="hr.training_allowance_pricelist_policy_field">
+<record
+            id="allowance_field_department"
+            model="hr.training_allowance_pricelist_policy_field"
+        >
     <field name="name">Department</field>
-    <field name="python_code">result = employee.department_id.allowance_pricelist_id</field>
+    <field
+                name="python_code"
+            >result = employee.department_id.allowance_pricelist_id</field>
 </record>
 
 <record id="allowance_field_job" model="hr.training_allowance_pricelist_policy_field">
@@ -20,9 +27,14 @@
     <field name="python_code">result = employee.job_id.allowance_pricelist_id</field>
 </record>
 
-<record id="allowance_field_training_category" model="hr.training_allowance_pricelist_policy_field">
+<record
+            id="allowance_field_training_category"
+            model="hr.training_allowance_pricelist_policy_field"
+        >
     <field name="name">Training Category</field>
-    <field name="python_code">result = training.category_id.allowance_pricelist_id</field>
+    <field
+                name="python_code"
+            >result = training.category_id.allowance_pricelist_id</field>
 </record>
 
 

@@ -1,35 +1,57 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_training_participant_view_form" model="ir.ui.view">
     <field name="name">hr.training_partisipant form</field>
     <field name="model">hr.training_partisipant</field>
-    <field name="inherit_id" ref="hr_employee_training.hr_training_participant_view_form"/>
+    <field
+                name="inherit_id"
+                ref="hr_employee_training.hr_training_participant_view_form"
+            />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//notebook" position="inside">
                 <page name="evaluation" string="Evaluations">
-                    <group name="evaluation_1" colspan="4" col="2" string="Pre-Evaluations">
-                        <field name="pre_evaluation_ids" nolabel="1" colspan="2" context="{'default_pre_post_test':'pre'}">
+                    <group
+                                name="evaluation_1"
+                                colspan="4"
+                                col="2"
+                                string="Pre-Evaluations"
+                            >
+                        <field
+                                    name="pre_evaluation_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                    context="{'default_pre_post_test':'pre'}"
+                                >
                             <tree editable="top">
-                                <field name="sequence" widget="handle"/>
-                                <field name="pre_post_test" invisible="1"/>
-                                <field name="survey_id"/>
-                                <field name="state" invisible="1"/>
+                                <field name="sequence" widget="handle" />
+                                <field name="pre_post_test" invisible="1" />
+                                <field name="survey_id" />
+                                <field name="state" invisible="1" />
                             </tree>
                         </field>
                     </group>
-                    <group name="evaluation_2" colspan="4" col="2" string="Post-Evaluations">
-                        <field name="post_evaluation_ids" nolabel="1" colspan="2" context="{'default_pre_post_test':'post'}">
+                    <group
+                                name="evaluation_2"
+                                colspan="4"
+                                col="2"
+                                string="Post-Evaluations"
+                            >
+                        <field
+                                    name="post_evaluation_ids"
+                                    nolabel="1"
+                                    colspan="2"
+                                    context="{'default_pre_post_test':'post'}"
+                                >
                             <tree editable="top">
-                                <field name="sequence" widget="handle"/>
-                                <field name="pre_post_test" invisible="1"/>
-                                <field name="survey_id"/>
-                                <field name="state" invisible="1"/>
+                                <field name="sequence" widget="handle" />
+                                <field name="pre_post_test" invisible="1" />
+                                <field name="survey_id" />
+                                <field name="state" invisible="1" />
                             </tree>
                         </field>
                     </group>

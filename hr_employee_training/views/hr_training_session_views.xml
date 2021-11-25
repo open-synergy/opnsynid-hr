@@ -1,7 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
@@ -11,10 +10,10 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <tree create="false" delete="false" edit="false">
-            <field name="training_id"/>
-            <field name="date_start"/>
-            <field name="date_end"/>
-            <field name="state"/>
+            <field name="training_id" />
+            <field name="date_start" />
+            <field name="date_end" />
+            <field name="state" />
         </tree>
     </field>
 </record>
@@ -26,35 +25,88 @@
     <field name="arch" type="xml">
         <form create="false" delete="false">
             <header>
-                <button name="button_start" string="Start" class="oe_highlight" type="object" states="draft" confirm="Start training session. Are you sure?"/>
-                <button name="button_finish" string="Finish" class="oe_highlight" type="object" states="start" confirm="Finish training session. Are you sure?"/>
-                <button name="button_cancel" string="Cancel" type="object" states="draft,start,finish" confirm="Cancel training session. Are you sure?"/>
-                <button name="button_restart" string="Set to Draft" class="oe_highlight" type="object" states="cancel" confirm="Restart training session. Are you sure?"/>
-                <button type="action" string="Attendances" name="%(hr_training_attendance_per_session_action)d" states="start"/>
-                <field name="state" widget="statusbar"/>
+                <button
+                            name="button_start"
+                            string="Start"
+                            class="oe_highlight"
+                            type="object"
+                            states="draft"
+                            confirm="Start training session. Are you sure?"
+                        />
+                <button
+                            name="button_finish"
+                            string="Finish"
+                            class="oe_highlight"
+                            type="object"
+                            states="start"
+                            confirm="Finish training session. Are you sure?"
+                        />
+                <button
+                            name="button_cancel"
+                            string="Cancel"
+                            type="object"
+                            states="draft,start,finish"
+                            confirm="Cancel training session. Are you sure?"
+                        />
+                <button
+                            name="button_restart"
+                            string="Set to Draft"
+                            class="oe_highlight"
+                            type="object"
+                            states="cancel"
+                            confirm="Restart training session. Are you sure?"
+                        />
+                <button
+                            type="action"
+                            string="Attendances"
+                            name="%(hr_training_attendance_per_session_action)d"
+                            states="start"
+                        />
+                <field name="state" widget="statusbar" />
             </header>
             <sheet>
-                <div class="oe_right oe_button_box"/>
+                <div class="oe_right oe_button_box" />
                 <group name="group_1" colspan="4" col="2">
                     <group name="group_1_1" colspan="1" col="2">
-                        <field name="training_id" readonly="1"/>
-                        <field name="date_start" readonly="1"/>
-                        <field name="date_end" readonly="1"/>
+                        <field name="training_id" readonly="1" />
+                        <field name="date_start" readonly="1" />
+                        <field name="date_end" readonly="1" />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
-                        <field name="allowed_trainer_ids" widget="many2many_tags" invisible="1"/>
-                        <field name="allowed_observer_ids" widget="many2many_tags" invisible="1"/>
-                        <field name="trainer_ids" widget="many2many_tags" domain="[('id','in',allowed_trainer_ids[0][2])]"/>
-                        <field name="observer_ids" widget="many2many_tags" domain="[('id','in',allowed_observer_ids[0][2])]"/>
+                        <field
+                                    name="allowed_trainer_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="allowed_observer_ids"
+                                    widget="many2many_tags"
+                                    invisible="1"
+                                />
+                        <field
+                                    name="trainer_ids"
+                                    widget="many2many_tags"
+                                    domain="[('id','in',allowed_trainer_ids[0][2])]"
+                                />
+                        <field
+                                    name="observer_ids"
+                                    widget="many2many_tags"
+                                    domain="[('id','in',allowed_observer_ids[0][2])]"
+                                />
                     </group>
                 </group>
                 <notebook>
                     <page name="page_attendance" string="Attendances">
-                        <field name="attendance_ids" colspan="4" nolabel="1" readonly="1">
+                        <field
+                                    name="attendance_ids"
+                                    colspan="4"
+                                    nolabel="1"
+                                    readonly="1"
+                                >
                             <tree>
-                                <field name="partisipant_id" invisible="1"/>
-                                <field name="employee_id"/>
-                                <field name="state"/>
+                                <field name="partisipant_id" invisible="1" />
+                                <field name="employee_id" />
+                                <field name="state" />
                             </tree>
                         </field>
                     </page>
@@ -70,13 +122,29 @@
     <field name="mode">primary</field>
     <field name="arch" type="xml">
         <search>
-            <field name="training_id"/>
-            <field name="state"/>
+            <field name="training_id" />
+            <field name="state" />
             <group name="group_1" string="Group By">
-                <filter name="grp_state" string="State" context="{'group_by':'state'}"/>
-                <filter name="grp_training" string="Training" context="{'group_by':'training_id'}"/>
-                <filter name="grp_date_start_month" string="Date Start by Month" context="{'group_by':'date_start:month'}"/>
-                <filter name="grp_date_start_year" string="Date Start by Year" context="{'group_by':'date_start:year'}"/>
+                <filter
+                            name="grp_state"
+                            string="State"
+                            context="{'group_by':'state'}"
+                        />
+                <filter
+                            name="grp_training"
+                            string="Training"
+                            context="{'group_by':'training_id'}"
+                        />
+                <filter
+                            name="grp_date_start_month"
+                            string="Date Start by Month"
+                            context="{'group_by':'date_start:month'}"
+                        />
+                <filter
+                            name="grp_date_start_year"
+                            string="Date Start by Year"
+                            context="{'group_by':'date_start:year'}"
+                        />
             </group>
         </search>
     </field>
@@ -88,16 +156,19 @@
     <field name="res_model">hr.training_session</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_employee_training.hr_training_session_view_search"/>
+    <field
+                name="search_view_id"
+                ref="hr_employee_training.hr_training_session_view_search"
+            />
 </record>
 
 <menuitem
-    id="hr_training_session_menu"
-    name="Training Session"
-    parent="hr_employee_training.hr_training_root_menu"
-    action="hr_training_session_action"
-    sequence="3"
-    />
+            id="hr_training_session_menu"
+            name="Training Session"
+            parent="hr_employee_training.hr_training_root_menu"
+            action="hr_training_session_action"
+            sequence="3"
+        />
 
 
 </data>

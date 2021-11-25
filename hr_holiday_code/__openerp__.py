@@ -5,8 +5,8 @@
 {
     "name": "HR Holiday Code",
     "version": "8.0.1.1.0",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": [
@@ -16,7 +16,7 @@
         "data/hr_holidays_sequence.xml",
         "views/hr_holidays_view.xml",
         "views/hr_holidays_status_view.xml",
-        "views/res_company_views.xml"
+        "views/res_company_views.xml",
     ],
     "pre_init_hook": "create_code_equal_to_id",
     "post_init_hook": "assign_old_sequences",

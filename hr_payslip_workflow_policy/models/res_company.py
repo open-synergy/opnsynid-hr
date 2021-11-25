@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class ResCompany(models.Model):
@@ -68,27 +68,19 @@ class ResCompany(models.Model):
     @api.model
     def _get_payslip_button_policy_map(self):
         return [
-            ("confirm_ok",
-                "payslip_confirm_grp_ids"),
-            ("refund_ok",
-                "payslip_refund_grp_ids"),
-            ("compute_ok",
-                "payslip_compute_grp_ids"),
-            ("set2draft_ok",
-                "payslip_set2draft_grp_ids"),
-            ("cancel_ok",
-                "payslip_cancel_grp_ids"),
+            ("confirm_ok", "payslip_confirm_grp_ids"),
+            ("refund_ok", "payslip_refund_grp_ids"),
+            ("compute_ok", "payslip_compute_grp_ids"),
+            ("set2draft_ok", "payslip_set2draft_grp_ids"),
+            ("cancel_ok", "payslip_cancel_grp_ids"),
         ]
 
     @api.model
     def _get_payslip_run_button_policy_map(self):
         return [
-            ("close_ok",
-                "payslip_run_close_grp_ids"),
-            ("generate_ok",
-                "payslip_run_generate_grp_ids"),
-            ("set2draft_ok",
-                "payslip_run_set2draft_grp_ids"),
+            ("close_ok", "payslip_run_close_grp_ids"),
+            ("generate_ok", "payslip_run_generate_grp_ids"),
+            ("set2draft_ok", "payslip_run_set2draft_grp_ids"),
         ]
 
     @api.multi
@@ -99,12 +91,11 @@ class ResCompany(models.Model):
         user = self.env.user
         group_ids = user.groups_id.ids
 
-        button_group_ids += getattr(
-            self, policy_field).ids
+        button_group_ids += getattr(self, policy_field).ids
 
         if not button_group_ids:
             result = True
         else:
-            if (set(button_group_ids) & set(group_ids)):
+            if set(button_group_ids) & set(group_ids):
                 result = True
         return result

@@ -2,7 +2,7 @@
 # Copyright 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 from openerp.tools.translate import _
 
 
@@ -27,9 +27,11 @@ class HrContractInputType(models.Model):
         require=True,
     )
     _sql_constraints = [
-        ("contract_input_type_unique",
-         "unique(contract_id, input_type_id)",
-         _("No duplicate input type"))
+        (
+            "contract_input_type_unique",
+            "unique(contract_id, input_type_id)",
+            _("No duplicate input type"),
+        )
     ]
 
 

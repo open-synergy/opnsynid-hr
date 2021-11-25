@@ -14,9 +14,7 @@
     "depends": [
         "hr_timesheet_sheet",
     ],
-    "data": [
-        "wizards/hr_timesheet_mass_generate.xml"
-    ],
+    "data": ["wizards/hr_timesheet_mass_generate.xml"],
     "images": [
         "static/description/banner.png",
     ],

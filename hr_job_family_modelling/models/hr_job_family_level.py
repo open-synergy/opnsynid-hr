@@ -2,7 +2,7 @@
 # © 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -35,7 +35,7 @@ class HrJobFamilyLevel(models.Model):
                 max_job_grade_id = jf.max_job_grade_id.id
                 min_index = job_grade_ids.index(min_job_grade_id)
                 max_index = job_grade_ids.index(max_job_grade_id)
-                result = job_grade_ids[min_index:max_index + 1]
+                result = job_grade_ids[min_index : max_index + 1]
             jf.job_grade_ids = result
 
     code = fields.Char(
@@ -97,11 +97,12 @@ class HrJobFamilyLevel(models.Model):
                 min_grade = jfl.job_grade_ids[0].name
                 max_grade = jfl.job_grade_ids[grade_count - 1].name
 
-            name = "%s %s (%s - %s)" % (
+            name = "{} {} ({} - {})".format(
                 jfl.job_family_grade_id.name,
                 jfl.job_family_id.name,
                 min_grade,
-                max_grade)
+                max_grade,
+            )
             result.append([jfl.id, name])
         return result
 
@@ -113,12 +114,8 @@ class HrJobFamilyLevel(models.Model):
         if job_family_id:
             obj_job_family = self.env["hr.job_family"]
             job_family = obj_job_family.browse([job_family_id])[0]
-            value = self._get_value_after_onchange_job_family_id(
-                job_family
-            )
-            domain = self._get_domain_after_onchange_job_family_id(
-                job_family
-            )
+            value = self._get_value_after_onchange_job_family_id(job_family)
+            domain = self._get_domain_after_onchange_job_family_id(job_family)
         return {"value": value, "domain": domain}
 
     @api.multi

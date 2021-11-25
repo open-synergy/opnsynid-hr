@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class HrAttendanceMachine(models.Model):
@@ -36,7 +36,7 @@ class HrAttendanceMachine(models.Model):
             (";", ";"),
             (":", ":"),
             ("\t", "{tab}"),
-            (" ", "{space}")
+            (" ", "{space}"),
         ],
         default=",",
         required=True,

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
@@ -6,16 +6,26 @@
 <record id="hr_career_transition_view_form" model="ir.ui.view">
     <field name="name">hr.career_transition form</field>
     <field name="model">hr.career_transition</field>
-    <field name="inherit_id" ref="hr_career_transition_payroll.hr_career_transition_view_form"/>
+    <field
+                name="inherit_id"
+                ref="hr_career_transition_payroll.hr_career_transition_view_form"
+            />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='new_salary_structure_id']" position="after">
-                <field name="previous_analytic_account_id" string="Analytic Account" readonly="1"/>
-                <field name="new_analytic_account_id" nolabel="1"
-                    attrs="{'required':[('change_analytic_account','=',True)], 'readonly':[('change_analytic_account','=',False)]}"/>
+                <field
+                            name="previous_analytic_account_id"
+                            string="Analytic Account"
+                            readonly="1"
+                        />
+                <field
+                            name="new_analytic_account_id"
+                            nolabel="1"
+                            attrs="{'required':[('change_analytic_account','=',True)], 'readonly':[('change_analytic_account','=',False)]}"
+                        />
             </xpath>
             <xpath expr="//group[@name='group_policy_1']" position="inside">
-                <field name="change_analytic_account"/>
+                <field name="change_analytic_account" />
             </xpath>
         </data>
     </field>

@@ -2,16 +2,14 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrCareerTransition(models.Model):
     _inherit = "hr.career_transition"
 
     @api.multi
-    @api.depends(
-        "new_job_id"
-    )
+    @api.depends("new_job_id")
     def _compute_job_grade(self):
         for transition in self:
             result = False
@@ -54,51 +52,59 @@ class HrCareerTransition(models.Model):
     def _get_value_before_onchange_previous_contract(self):
         _super = super(HrCareerTransition, self)
         result = _super._get_value_before_onchange_previous_contract()
-        result.update({
-            "previous_job_grade_id": False,
-        })
+        result.update(
+            {
+                "previous_job_grade_id": False,
+            }
+        )
         return result
 
     @api.multi
-    def _get_value_after_onchange_previous_contract(
-            self, previous_contract):
+    def _get_value_after_onchange_previous_contract(self, previous_contract):
         _super = super(HrCareerTransition, self)
-        result = _super._get_value_after_onchange_previous_contract(
-            previous_contract)
-        result.update({
-            "previous_job_grade_id": previous_contract.job_grade_id,
-        })
+        result = _super._get_value_after_onchange_previous_contract(previous_contract)
+        result.update(
+            {
+                "previous_job_grade_id": previous_contract.job_grade_id,
+            }
+        )
         return result
 
     @api.multi
     def _prepare_new_contract(self):
         _super = super(HrCareerTransition, self)
         result = _super._prepare_new_contract()
-        result.update({
-            "job_grade_id": self.new_job_grade_id and
-            self.new_job_grade_id.id or
-            False,
-        })
+        result.update(
+            {
+                "job_grade_id": self.new_job_grade_id
+                and self.new_job_grade_id.id
+                or False,
+            }
+        )
         return result
 
     @api.multi
     def _prepare_contract_update(self):
         _super = super(HrCareerTransition, self)
         result = _super._prepare_contract_update()
-        result.update({
-            "job_grade_id": self.new_job_grade_id and
-            self.new_job_grade_id.id or
-            False,
-        })
+        result.update(
+            {
+                "job_grade_id": self.new_job_grade_id
+                and self.new_job_grade_id.id
+                or False,
+            }
+        )
         return result
 
     @api.multi
     def _prepare_contract_revert(self):
         _super = super(HrCareerTransition, self)
         result = _super._prepare_contract_revert()
-        result.update({
-            "job_grade_id": self.previous_job_grade_id and
-            self.previous_job_grade_id.id or
-            False,
-        })
+        result.update(
+            {
+                "job_grade_id": self.previous_job_grade_id
+                and self.previous_job_grade_id.id
+                or False,
+            }
+        )
         return result

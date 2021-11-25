@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
 <data>
 <record id="change_training_attendance_status_view_form" model="ir.ui.view">
@@ -6,19 +6,25 @@
     <field name="model">hr.change_training_attendance_status</field>
     <field name="arch" type="xml">
         <form>
-            <field name="state" invisible="1"/>
+            <field name="state" invisible="1" />
             <group name="group_1" colspan="4" col="2" string="Attendances">
                 <field name="attendance_ids" nolabel="1" colspan="2" readonly="1">
                     <tree>
-                        <field name="employee_id"/>
-                        <field name="state"/>
+                        <field name="employee_id" />
+                        <field name="state" />
                     </tree>
                 </field>
             </group>
             <footer>
-                <button string="Confirm" name="action_confirm" type="object" class="oe_highlight" confirm="Change attendances status. Are you sure?"/>
+                <button
+                            string="Confirm"
+                            name="action_confirm"
+                            type="object"
+                            class="oe_highlight"
+                            confirm="Change attendances status. Are you sure?"
+                        />
                 or
-                <button string="Cancel" class="oe_link" special="cancel"/>
+                <button string="Cancel" class="oe_link" special="cancel" />
             </footer>
         </form>
     </field>
@@ -29,7 +35,7 @@
     <field name="res_model">hr.change_training_attendance_status</field>
     <field name="view_type">form</field>
     <field name="view_mode">form</field>
-    <field name="view_id" ref="change_training_attendance_status_view_form"/>
+    <field name="view_id" ref="change_training_attendance_status_view_form" />
     <field name="context">{'state':'absence'}</field>
     <field name="target">new</field>
 </record>
@@ -39,25 +45,31 @@
     <field name="res_model">hr.change_training_attendance_status</field>
     <field name="view_type">form</field>
     <field name="view_mode">form</field>
-    <field name="view_id" ref="change_training_attendance_status_view_form"/>
+    <field name="view_id" ref="change_training_attendance_status_view_form" />
     <field name="context">{'state':'present'}</field>
     <field name="target">new</field>
 </record>
 
 <record id="value_change_training_attendance_to_absence" model="ir.values">
     <field name="name">Absence</field>
-    <field name="model_id" ref="model_hr_training_attendance"/>
+    <field name="model_id" ref="model_hr_training_attendance" />
     <field name="key2">client_action_multi</field>
-    <field name="value" eval="'ir.actions.act_window,' + str(ref('change_training_attendance_to_absence_action'))"/>
+    <field
+                name="value"
+                eval="'ir.actions.act_window,' + str(ref('change_training_attendance_to_absence_action'))"
+            />
     <field name="key">action</field>
     <field name="model">hr.training_attendance</field>
 </record>
 
 <record id="value_change_training_attendance_to_present" model="ir.values">
     <field name="name">Present</field>
-    <field name="model_id" ref="model_hr_training_attendance"/>
+    <field name="model_id" ref="model_hr_training_attendance" />
     <field name="key2">client_action_multi</field>
-    <field name="value" eval="'ir.actions.act_window,' + str(ref('change_training_attendance_to_present_action'))"/>
+    <field
+                name="value"
+                eval="'ir.actions.act_window,' + str(ref('change_training_attendance_to_present_action'))"
+            />
     <field name="key">action</field>
     <field name="model">hr.training_attendance</field>
 </record>

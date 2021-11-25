@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrEmployee(models.Model):
@@ -17,8 +17,9 @@ class HrEmployee(models.Model):
     def _compute_career_transition(self):
         for employee in self:
             transition = False
-            transitions = employee.career_transition_ids.\
-                filtered(lambda r: r.state == "valid")
+            transitions = employee.career_transition_ids.filtered(
+                lambda r: r.state == "valid"
+            )
             if len(transitions) > 0:
                 transition = transitions[0]
             employee.latest_career_transition_id = transition

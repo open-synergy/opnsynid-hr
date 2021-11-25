@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class HrAnalyticTimesheet(models.Model):
@@ -20,9 +20,7 @@ class HrAnalyticTimesheet(models.Model):
         _super.onchange_pricelist_id()
         obj_pricelist = self.env["hr.contract_timesheet_pricelist"]
 
-        if not self.pricelist_id and \
-                self.user_id and \
-                self.product_id:
+        if not self.pricelist_id and self.user_id and self.product_id:
             employees = self.user_id.employee_ids
             if len(employees) > 0:
                 # TODO: Revisit later

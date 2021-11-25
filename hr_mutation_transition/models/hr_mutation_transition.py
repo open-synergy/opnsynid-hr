@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class HrMutationTransition(models.Model):
@@ -14,20 +14,16 @@ class HrMutationTransition(models.Model):
 
     @api.model
     def _default_type_id(self):
-        return self.env.ref(
-            "hr_mutation_transition."
-            "career_transition_mutation").id
+        return self.env.ref("hr_mutation_transition." "career_transition_mutation").id
 
     @api.model
     def search(self, args, offset=0, limit=None, order=None, count=False):
-        type_id = self.env.ref(
-            "hr_mutation_transition."
-            "career_transition_mutation", False) and self.env.ref(
-                "hr_mutation_transition."
-                "career_transition_mutation") or self.env["hr."
-                                                          "career_transition_"
-                                                          "type"]
+        type_id = (
+            self.env.ref("hr_mutation_transition." "career_transition_mutation", False)
+            and self.env.ref("hr_mutation_transition." "career_transition_mutation")
+            or self.env["hr." "career_transition_" "type"]
+        )
         args.append(("type_id", "=", type_id.id))
         return super(HrMutationTransition, self).search(
-            args=args, offset=offset, limit=limit,
-            order=order, count=count)
+            args=args, offset=offset, limit=limit, order=order, count=count
+        )

@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, SUPERUSER_ID
+from openerp import SUPERUSER_ID, api, fields, models
 
 
 class HrPayslip(models.Model):
@@ -16,22 +16,18 @@ class HrPayslip(models.Model):
     def _compute_policy(self):
         for batch in self:
             if self.env.user.id == SUPERUSER_ID:
-                batch.confirm_ok = batch.refund_ok = \
-                    batch.compute_ok = \
-                    batch.set2draft_ok = \
-                    batch.cancel_ok = True
+                batch.confirm_ok = (
+                    batch.refund_ok
+                ) = batch.compute_ok = batch.set2draft_ok = batch.cancel_ok = True
                 continue
 
             if batch.company_id:
                 company = batch.company_id
-                for policy in company.\
-                        _get_payslip_button_policy_map():
+                for policy in company._get_payslip_button_policy_map():
                     setattr(
                         batch,
                         policy[0],
-                        company.
-                        _get_payslip_button_policy(
-                            policy[1]),
+                        company._get_payslip_button_policy(policy[1]),
                     )
 
     confirm_ok = fields.Boolean(

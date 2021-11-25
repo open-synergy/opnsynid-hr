@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
 <openerp>
@@ -7,23 +7,26 @@
 <record id="hr_payslip_view_form" model="ir.ui.view">
     <field name="name">hr.payslip form</field>
     <field name="model">hr.payslip</field>
-    <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+    <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
     <field name="arch" type="xml">
         <xpath expr="//notebook/page[1]" position="after">
             <page name="loan" string="Loan Payment Schedule">
                 <field name="loan_payment_schedule_ids" nolabel="1">
                     <tree create="false" edit="false" delete="false">
-                        <field name="loan_id"/>
-                        <field name="partner_id"/>
-                        <field name="schedule_date"/>
-                        <field name="principle_amount" sum="Total Principle Amount"/>
-                        <field name="interest_amount" sum="Total Interest Amount"/>
-                        <field name="interest_move_line_id" invisible="1"/>
-                        <field name="installment_amount" sum="Total Installment Amount"/>
-                        <field name="principle_payment_state"/>
-                        <field name="interest_payment_state"/>
-                        <field name="state"/>
-                        <field name="old_principle_move_line_id" invisible="1"/>
+                        <field name="loan_id" />
+                        <field name="partner_id" />
+                        <field name="schedule_date" />
+                        <field name="principle_amount" sum="Total Principle Amount" />
+                        <field name="interest_amount" sum="Total Interest Amount" />
+                        <field name="interest_move_line_id" invisible="1" />
+                        <field
+                                    name="installment_amount"
+                                    sum="Total Installment Amount"
+                                />
+                        <field name="principle_payment_state" />
+                        <field name="interest_payment_state" />
+                        <field name="state" />
+                        <field name="old_principle_move_line_id" invisible="1" />
                     </tree>
                 </field>
             </page>

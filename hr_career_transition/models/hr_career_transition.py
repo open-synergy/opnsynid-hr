@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -487,7 +487,6 @@ class HrCareerTransition(models.Model):
             "state": "open",
             "opened_user_id": self.env.user.id,
             "opened_date": fields.Datetime.now(),
-
         }
         return result
 
@@ -532,9 +531,11 @@ class HrCareerTransition(models.Model):
     def create(self, values):
         _super = super(HrCareerTransition, self)
         result = _super.create(values)
-        result.write({
-            "name": result._create_sequence(),
-        })
+        result.write(
+            {
+                "name": result._create_sequence(),
+            }
+        )
         return result
 
     @api.onchange("previous_company_id")
@@ -569,10 +570,10 @@ class HrCareerTransition(models.Model):
         if previous_contract_id:
             obj_contract = self.env["hr.contract"]
             previous_contract = obj_contract.browse([previous_contract_id])[0]
-            value = self._get_value_after_onchange_previous_contract(
-                previous_contract)
+            value = self._get_value_after_onchange_previous_contract(previous_contract)
             domain = self._get_domain_after_onchange_previous_contract(
-                previous_contract)
+                previous_contract
+            )
         return {"value": value, "domain": domain}
 
     @api.multi
@@ -591,8 +592,7 @@ class HrCareerTransition(models.Model):
         return {}
 
     @api.multi
-    def _get_value_after_onchange_previous_contract(
-            self, previous_contract):
+    def _get_value_after_onchange_previous_contract(self, previous_contract):
         return {
             "previous_working_hour_id": previous_contract.working_hours,
             "previous_job_id": previous_contract.job_id,
@@ -603,18 +603,14 @@ class HrCareerTransition(models.Model):
         }
 
     @api.multi
-    def _get_domain_after_onchange_previous_contract(
-            self, previous_contract):
+    def _get_domain_after_onchange_previous_contract(self, previous_contract):
         return {}
 
     @api.onchange("employee_id", "archieve")
     def onchange_previous_contract_id(self):
         self.previous_contract_id = False
-        if self.employee_id and \
-                self.need_previous_contract and \
-                not self.archieve:
-            self.previous_contract_id = \
-                self.employee_id.contract_id
+        if self.employee_id and self.need_previous_contract and not self.archieve:
+            self.previous_contract_id = self.employee_id.contract_id
 
     @api.onchange("type_id")
     def onchange_reason_id(self):
@@ -630,47 +626,29 @@ class HrCareerTransition(models.Model):
             "date_start": self.contract_start_date,
             "date_end": self.contract_end_date,
             "working_hours": (
-                self.new_working_hour_id and
-                self.new_working_hour_id.id or
-                False
+                self.new_working_hour_id and self.new_working_hour_id.id or False
             ),
             "wage": self.new_wage,
             "contract_department_id": (
-                self.new_department_id and
-                self.new_department_id.id or
-                False
+                self.new_department_id and self.new_department_id.id or False
             ),
-            "parent_id": (
-                self.new_manager_id and
-                self.new_manager_id.id or
-                False
-            ),
-            "company_id": (
-                self.new_company_id and
-                self.new_company_id.id or
-                False
-            ),
+            "parent_id": (self.new_manager_id and self.new_manager_id.id or False),
+            "company_id": (self.new_company_id and self.new_company_id.id or False),
         }
 
     @api.multi
     def _prepare_contract_update(self):
         self.ensure_one()
         return {
-            "job_id": self.new_job_id and
-            self.new_job_id.id or
-            False,
-            "working_hours": self.new_working_hour_id and
-            self.new_working_hour_id.id or
-            False,
-            "contract_department_id": self.new_department_id and
-            self.new_department_id.id or
-            False,
-            "company_id": self.new_company_id and
-            self.new_company_id.id or
-            False,
-            "parent_id": self.new_manager_id and
-            self.new_manager_id.id or
-            False,
+            "job_id": self.new_job_id and self.new_job_id.id or False,
+            "working_hours": self.new_working_hour_id
+            and self.new_working_hour_id.id
+            or False,
+            "contract_department_id": self.new_department_id
+            and self.new_department_id.id
+            or False,
+            "company_id": self.new_company_id and self.new_company_id.id or False,
+            "parent_id": self.new_manager_id and self.new_manager_id.id or False,
             "wage": self.new_wage,
         }
 
@@ -678,21 +656,19 @@ class HrCareerTransition(models.Model):
     def _prepare_contract_revert(self):
         self.ensure_one()
         return {
-            "job_id": self.previous_job_id and
-            self.previous_job_id.id or
-            False,
-            "working_hours": self.previous_working_hour_id and
-            self.previous_working_hour_id.id or
-            False,
-            "contract_department_id": self.previous_department_id and
-            self.previous_department_id.id or
-            False,
-            "company_id": self.previous_company_id and
-            self.previous_company_id.id or
-            False,
-            "parent_id": self.previous_manager_id and
-            self.previous_manager_id.id or
-            False,
+            "job_id": self.previous_job_id and self.previous_job_id.id or False,
+            "working_hours": self.previous_working_hour_id
+            and self.previous_working_hour_id.id
+            or False,
+            "contract_department_id": self.previous_department_id
+            and self.previous_department_id.id
+            or False,
+            "company_id": self.previous_company_id
+            and self.previous_company_id.id
+            or False,
+            "parent_id": self.previous_manager_id
+            and self.previous_manager_id.id
+            or False,
             "wage": self.previous_wage,
         }
 
@@ -700,18 +676,18 @@ class HrCareerTransition(models.Model):
     def _revert_contract(self):
         self.ensure_one()
         if self._check_revert_contract():
-            self.previous_contract_id.write(
-                self._prepare_contract_revert()
-            )
+            self.previous_contract_id.write(self._prepare_contract_revert())
 
     @api.multi
     def _check_revert_contract(self):
         self.ensure_one()
         result = False
-        if self.need_previous_contract and \
-                self.previous_contract_id and \
-                not self.create_new_contract and \
-                not self.archieve:
+        if (
+            self.need_previous_contract
+            and self.previous_contract_id
+            and not self.create_new_contract
+            and not self.archieve
+        ):
             result = True
         return result
 
@@ -750,7 +726,7 @@ class HrCareerTransition(models.Model):
             criteria = [
                 ("id", "!=", self.id),
                 ("state", "=", "valid"),
-                ("employee_id", "=", self.employee_id.id)
+                ("employee_id", "=", self.employee_id.id),
             ]
             obj_transition = self.env["hr.career_transition"]
             transitions = obj_transition.search(criteria)
@@ -759,28 +735,28 @@ class HrCareerTransition(models.Model):
                 if self.effective_date < last_transition.effective_date:
                     msg = _(
                         "Effective date have to be greater than "
-                        "lastest career transition")
+                        "lastest career transition"
+                    )
                     raise UserError(msg)
 
     @api.constrains(
         "state",
     )
     def _check_contract_start_date_no_equal_effective_date(self):
-        if self.state == "valid" and \
-                self.create_new_contract and \
-                not self.archieve:
+        if self.state == "valid" and self.create_new_contract and not self.archieve:
             if self.contract_start_date != self.effective_date:
-                msg = _("Contract start date have to be "
-                        "equal to effective date")
+                msg = _("Contract start date have to be " "equal to effective date")
                 raise UserError(msg)
 
     @api.constrains(
         "state",
     )
     def _check_contract_end_date_equal_less_start_date(self):
-        if self.state == "valid" and \
-                self.create_new_contract and \
-                self.contract_end_date:
+        if (
+            self.state == "valid"
+            and self.create_new_contract
+            and self.contract_end_date
+        ):
             if self.contract_end_date <= self.contract_start_date:
                 msg = _("Contract date end have to be greater than start date")
                 raise UserError(msg)
@@ -796,9 +772,11 @@ class HrCareerTransition(models.Model):
         transition_limit = self.type_id._get_transition_limit(
             self.reason_id,
         )
-        if self.state == "valid" and \
-                transition_limit != 0 and \
-                transition_count > transition_limit:
+        if (
+            self.state == "valid"
+            and transition_limit != 0
+            and transition_count > transition_limit
+        ):
             msg = _("Career transition limit exceed")
             raise UserError(msg)
 
@@ -806,8 +784,10 @@ class HrCareerTransition(models.Model):
     def _check_cant_cancel_latest_transition(self):
         self.ensure_one()
         result = True
-        if self.id != self.employee_id.latest_career_transition_id.id and \
-                not self.archieve and \
-                self.state == "valid":
+        if (
+            self.id != self.employee_id.latest_career_transition_id.id
+            and not self.archieve
+            and self.state == "valid"
+        ):
             result = False
         return result

@@ -2,11 +2,11 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from datetime import datetime
-from dateutil.relativedelta import relativedelta
-from openerp import models, api, fields
-
 import logging
+from datetime import datetime
+
+from dateutil.relativedelta import relativedelta
+from openerp import api, fields, models
 
 _logger = logging.getLogger(__name__)
 
@@ -47,7 +47,7 @@ class ManualGoalCreation(models.TransientModel):
             ("daily", "Daily"),
             ("weekly", "Weekly"),
             ("monthly", "Monthly"),
-            ("yearly", "Yearly")
+            ("yearly", "Yearly"),
         ],
         required=True,
         default=lambda self: self._default_period(),
@@ -107,8 +107,7 @@ class ManualGoalCreation(models.TransientModel):
     def _create_goal(self, user, line, start_date, end_date):
         self.ensure_one()
         obj_goal = self.env["gamification.goal"]
-        goal = obj_goal.create(self._prepare_goal(
-            user, line, start_date, end_date))
+        goal = obj_goal.create(self._prepare_goal(user, line, start_date, end_date))
         goal.update()
 
     @api.multi
@@ -146,9 +145,7 @@ class ManualGoalCreation(models.TransientModel):
     def _check_goal(self, user, line, start_date, end_date):
         self.ensure_one()
         result = True
-        domain = self._prepare_check_goal_domain(
-            user, line, start_date, end_date
-        )
+        domain = self._prepare_check_goal_domain(user, line, start_date, end_date)
         obj_goal = self.env["gamification.goal"]
         goal_count = obj_goal.search_count(domain)
         if goal_count > 0:

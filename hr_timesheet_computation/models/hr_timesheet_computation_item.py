@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.safe_eval import safe_eval as eval
 from openerp.tools.translate import _
@@ -48,9 +48,8 @@ class HrTimesheetComputationItem(models.Model):
         result = 0.0
         localdict = self._get_localdict(sheet)
         try:
-            eval(self.python_code,
-                 localdict, mode="exec", nocopy=True)
+            eval(self.python_code, localdict, mode="exec", nocopy=True)
             result = localdict["result"]
-        except:
+        except Exception:
             raise UserError(_("Error in timesheet computation"))
         return result

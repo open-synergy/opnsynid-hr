@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -183,9 +183,11 @@ class HrTimesheetAttendanceScheduleChange(models.Model):
         _super = super(HrTimesheetAttendanceScheduleChange, self)
         result = _super.create(values)
         sequence = result._create_sequence()
-        result.write({
-            "name": sequence,
-        })
+        result.write(
+            {
+                "name": sequence,
+            }
+        )
         return result
 
     @api.multi
@@ -223,9 +225,7 @@ class HrTimesheetAttendanceScheduleChange(models.Model):
     def button_approve(self):
         for document in self:
             document.write(document._prepare_approve_data())
-            document.schedule_id.write(
-                document._prepare_schedule_change()
-            )
+            document.schedule_id.write(document._prepare_schedule_change())
 
     @api.multi
     def button_cancel(self):

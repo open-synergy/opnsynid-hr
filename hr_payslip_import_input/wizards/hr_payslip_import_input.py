@@ -2,11 +2,12 @@
 # Copyright 2017 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
-from openerp.exceptions import Warning as UserError
 import base64
 import csv
+
 import cStringIO
+from openerp import _, api, fields, models
+from openerp.exceptions import Warning as UserError
 
 
 class HrPayslipImportInput(models.TransientModel):
@@ -25,40 +26,26 @@ class HrPayslipImportInput(models.TransientModel):
         default=",",
         help="Default delimeter is ,",
     )
-    run_id = fields.Many2one(
-        string="Payslip Run",
-        comodel_name="hr.payslip.run"
-    )
+    run_id = fields.Many2one(string="Payslip Run", comodel_name="hr.payslip.run")
 
     @api.multi
     def _create_imported_line(self, payslip_run):
-        obj_imported_line =\
-            self.env["hr.payslip_run_imported_input_file"]
-        criteria = [
-            ("name", "=", self.name),
-            ("run_id", "=", payslip_run.id)
-        ]
+        obj_imported_line = self.env["hr.payslip_run_imported_input_file"]
+        criteria = [("name", "=", self.name), ("run_id", "=", payslip_run.id)]
         imported_line_ids = obj_imported_line.search(criteria)
         if imported_line_ids:
             raise UserError(_("Cannot import with the same file"))
         else:
-            val_imported = {
-                "name": self.name,
-                "run_id": payslip_run.id
-            }
-            imported_line_id =\
-                obj_imported_line.create(val_imported)
+            val_imported = {"name": self.name, "run_id": payslip_run.id}
+            imported_line_id = obj_imported_line.create(val_imported)
             return imported_line_id
 
     @api.multi
-    def _create_process_line(
-        self, data, keys, payslip_run, imported_line_id
-    ):
+    def _create_process_line(self, data, keys, payslip_run, imported_line_id):
         obj_employee = self.env["hr.employee"]
         obj_payslip_input = self.env["hr.payslip.input"]
         obj_payslip = self.env["hr.payslip"]
-        obj_process_line =\
-            self.env["hr.payslip_run_process_input_line"]
+        obj_process_line = self.env["hr.payslip_run_process_input_line"]
         for i in range(len(data)):
             val_process = {}
             field = data[i]
@@ -69,14 +56,14 @@ class HrPayslipImportInput(models.TransientModel):
             )
             criteria_payslip = [
                 ("employee_id", "=", employee.id),
-                ("payslip_run_id", "=", payslip_run.id)
+                ("payslip_run_id", "=", payslip_run.id),
             ]
 
             payslip = obj_payslip.search(criteria_payslip)
             if payslip.input_line_ids:
                 criteria_input = [
                     ("code", "=", values["code"]),
-                    ("payslip_id", "=", payslip.id)
+                    ("payslip_id", "=", payslip.id),
                 ]
                 input_line = obj_payslip_input.search(criteria_input)
                 input_line.amount = values["amount"]
@@ -108,26 +95,21 @@ class HrPayslipImportInput(models.TransientModel):
             delimeter = str(self.delimeter)
         else:
             delimeter = ","
-        reader = csv.reader(file_input, delimiter=delimeter,
-                            lineterminator="\r\n")
+        reader = csv.reader(file_input, delimiter=delimeter, lineterminator="\r\n")
         try:
             reader_info.extend(reader)
         except Exception:
             raise UserError(_("Not a valid file!"))
         keys = reader_info[0]
-        if not isinstance(keys, list) or ("employee" not in keys or
-                                          "code" not in keys or
-                                          "amount" not in keys):
+        if not isinstance(keys, list) or (
+            "employee" not in keys or "code" not in keys or "amount" not in keys
+        ):
 
-            raise UserError(
-                _("Not employee or code or amount keys found")
-            )
+            raise UserError(_("Not employee or code or amount keys found"))
         del reader_info[0]
 
         # Create Imported Line
-        imported_line_id =\
-            self._create_imported_line(payslip_run)
+        imported_line_id = self._create_imported_line(payslip_run)
 
         # Create Process Line
-        self._create_process_line(
-            reader_info, keys, payslip_run, imported_line_id)
+        self._create_process_line(reader_info, keys, payslip_run, imported_line_id)

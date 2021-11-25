@@ -1,15 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <openerp>
 <data>
 
 <record id="hr_payslip_view_form" model="ir.ui.view">
     <field name="name">hr.payslip form</field>
     <field name="model">hr.payslip</field>
-    <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+    <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form" />
     <field name="arch" type="xml">
         <xpath expr="//notebook/page[1]" position="after">
             <page name="gamification_goal" string="Gamification Goals">
-                <field name="gamification_goal_ids" nolabel="1"/>
+                <field name="gamification_goal_ids" nolabel="1" />
             </page>
         </xpath>
     </field>

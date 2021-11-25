@@ -2,12 +2,12 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from .base import BaseCase
 from openerp.exceptions import except_orm
+
+from .base import BaseCase
 
 
 class TestContractOperator(BaseCase):
-
     def test_contract_user(self):
         # Condition 1:
         # 1. Employee 1 create a new contract for himself
@@ -17,11 +17,13 @@ class TestContractOperator(BaseCase):
         # 3. Employee 1 has Department Technology Information
         # Result:
         # 1. Create successfully
-        contract_1 = self.obj_contract.sudo(self.user_1).create({
-            "name": "Contract 1",
-            "employee_id": self.employee_1.id,
-            "wage": 500.00,
-        })
+        contract_1 = self.obj_contract.sudo(self.user_1).create(
+            {
+                "name": "Contract 1",
+                "employee_id": self.employee_1.id,
+                "wage": 500.00,
+            }
+        )
         self.assertIsNotNone(contract_1)
 
         # Condition 2:
@@ -35,11 +37,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_1).create({
-                "name": "Contract 2",
-                "employee_id": self.employee_2.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_1).create(
+                {
+                    "name": "Contract 2",
+                    "employee_id": self.employee_2.id,
+                    "wage": 500.00,
+                }
+            )
 
         # Condition 3:
         # 1. Employee 1 create a new contract for Employee 3
@@ -50,11 +54,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_1).create({
-                "name": "Contract 3",
-                "employee_id": self.employee_3.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_1).create(
+                {
+                    "name": "Contract 3",
+                    "employee_id": self.employee_3.id,
+                    "wage": 500.00,
+                }
+            )
 
         # Condition 4:
         # 1. Employee 1 create a new contract for Employee 4
@@ -65,11 +71,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_1).create({
-                "name": "Contract 4",
-                "employee_id": self.employee_4.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_1).create(
+                {
+                    "name": "Contract 4",
+                    "employee_id": self.employee_4.id,
+                    "wage": 500.00,
+                }
+            )
 
     def test_contract_supervisor(self):
         # Condition 1:
@@ -80,11 +88,13 @@ class TestContractOperator(BaseCase):
         # 3. Employee 2 has Department Database Administrator
         # Result:
         # 1. Create successfully
-        contract_5 = self.obj_contract.sudo(self.user_2).create({
-            "name": "Contract 5",
-            "employee_id": self.employee_2.id,
-            "wage": 500.00,
-        })
+        contract_5 = self.obj_contract.sudo(self.user_2).create(
+            {
+                "name": "Contract 5",
+                "employee_id": self.employee_2.id,
+                "wage": 500.00,
+            }
+        )
         self.assertIsNotNone(contract_5)
 
         # Condition 2:
@@ -99,11 +109,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_2).create({
-                "name": "Contract 6",
-                "employee_id": self.employee_1.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_2).create(
+                {
+                    "name": "Contract 6",
+                    "employee_id": self.employee_1.id,
+                    "wage": 500.00,
+                }
+            )
 
         # Condition 3:
         # 1. Employee 2 create a new contract for Employee 4
@@ -114,11 +126,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_2).create({
-                "name": "Contract 7",
-                "employee_id": self.employee_4.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_2).create(
+                {
+                    "name": "Contract 7",
+                    "employee_id": self.employee_4.id,
+                    "wage": 500.00,
+                }
+            )
 
         # Condition 4:
         # 1. Employee 2 create a new contract for Employee 5
@@ -134,11 +148,13 @@ class TestContractOperator(BaseCase):
         self.assertIsNotNone(check_manager_id)
         self.assertEqual(check_manager_id, self.employee_2.id)
 
-        contract_8 = self.obj_contract.sudo(self.user_2).create({
-            "name": "Contract 8",
-            "employee_id": self.employee_5.id,
-            "wage": 500.00,
-        })
+        contract_8 = self.obj_contract.sudo(self.user_2).create(
+            {
+                "name": "Contract 8",
+                "employee_id": self.employee_5.id,
+                "wage": 500.00,
+            }
+        )
 
         self.assertIsNotNone(contract_8)
 
@@ -151,11 +167,9 @@ class TestContractOperator(BaseCase):
         # 3. Employee 4 has Department Human Resource
         # Result:
         # 1. Create successfully
-        contract_9 = self.obj_contract.sudo(self.user_4).create({
-            "name": "Contract 9",
-            "employee_id": self.employee_4.id,
-            "wage": 500.00
-        })
+        contract_9 = self.obj_contract.sudo(self.user_4).create(
+            {"name": "Contract 9", "employee_id": self.employee_4.id, "wage": 500.00}
+        )
         self.assertIsNotNone(contract_9)
 
         # Condition 2:
@@ -168,11 +182,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_4).create({
-                "name": "Contract 10",
-                "employee_id": self.employee_1.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_4).create(
+                {
+                    "name": "Contract 10",
+                    "employee_id": self.employee_1.id,
+                    "wage": 500.00,
+                }
+            )
 
         # Condition 3:
         # 1. Employee 4 create a new contract for Employee 1
@@ -184,11 +200,13 @@ class TestContractOperator(BaseCase):
         # Result:
         # 1. Raise Error
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_4).create({
-                "name": "Contract 11",
-                "employee_id": self.employee_1.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_4).create(
+                {
+                    "name": "Contract 11",
+                    "employee_id": self.employee_1.id,
+                    "wage": 500.00,
+                }
+            )
 
         # Condition 4:
         # 1. Employee 4 create a new contract for Employee 7
@@ -208,11 +226,13 @@ class TestContractOperator(BaseCase):
         self.assertIsNotNone(check_manager_id)
         self.assertEqual(check_manager_id, self.employee_4.id)
 
-        contract_12 = self.obj_contract.sudo(self.user_4).create({
-            "name": "Contract 12",
-            "employee_id": self.employee_7.id,
-            "wage": 500.00,
-        })
+        contract_12 = self.obj_contract.sudo(self.user_4).create(
+            {
+                "name": "Contract 12",
+                "employee_id": self.employee_7.id,
+                "wage": 500.00,
+            }
+        )
 
         self.assertIsNotNone(contract_12)
 
@@ -226,11 +246,9 @@ class TestContractOperator(BaseCase):
         # 4. Employee 8 has Main Company
         # Result:
         # 1. Create successfully
-        contract_13 = self.obj_contract.sudo(self.user_8).create({
-            "name": "Contract 13",
-            "employee_id": self.employee_8.id,
-            "wage": 500.00
-        })
+        contract_13 = self.obj_contract.sudo(self.user_8).create(
+            {"name": "Contract 13", "employee_id": self.employee_8.id, "wage": 500.00}
+        )
         self.assertIsNotNone(contract_13)
 
         # Condition 2:
@@ -244,11 +262,13 @@ class TestContractOperator(BaseCase):
         # 6. Employee 8 has Main Company
         # Result:
         # 1. Create successfully
-        contract_14 = self.obj_contract.sudo(self.user_8).create({
-            "name": "Contract 14",
-            "employee_id": self.employee_6.id,
-            "wage": 500.00,
-        })
+        contract_14 = self.obj_contract.sudo(self.user_8).create(
+            {
+                "name": "Contract 14",
+                "employee_id": self.employee_6.id,
+                "wage": 500.00,
+            }
+        )
         self.assertIsNotNone(contract_14)
 
         # Condition 3:
@@ -268,15 +288,15 @@ class TestContractOperator(BaseCase):
 
         self.assertIsNotNone(check_company_id_user_8)
         self.assertIsNotNone(check_company_id_user_10)
-        self.assertNotEqual(
-            check_company_id_user_8,
-            check_company_id_user_10)
+        self.assertNotEqual(check_company_id_user_8, check_company_id_user_10)
 
-        contract_15 = self.obj_contract.sudo(self.user_8).create({
-            "name": "Contract 15",
-            "employee_id": self.employee_10.id,
-            "wage": 500.00,
-        })
+        contract_15 = self.obj_contract.sudo(self.user_8).create(
+            {
+                "name": "Contract 15",
+                "employee_id": self.employee_10.id,
+                "wage": 500.00,
+            }
+        )
 
         self.assertIsNotNone(contract_15)
 
@@ -296,14 +316,13 @@ class TestContractOperator(BaseCase):
 
         self.assertIsNotNone(check_company_id_user_8)
         self.assertIsNotNone(check_company_id_user_11)
-        self.assertNotEqual(
-            check_company_id_user_8,
-            check_company_id_user_11
-        )
+        self.assertNotEqual(check_company_id_user_8, check_company_id_user_11)
 
         with self.assertRaises(except_orm):
-            self.obj_contract.sudo(self.user_8).create({
-                "name": "Contract 16",
-                "employee_id": self.employee_11.id,
-                "wage": 500.00,
-            })
+            self.obj_contract.sudo(self.user_8).create(
+                {
+                    "name": "Contract 16",
+                    "employee_id": self.employee_11.id,
+                    "wage": 500.00,
+                }
+            )

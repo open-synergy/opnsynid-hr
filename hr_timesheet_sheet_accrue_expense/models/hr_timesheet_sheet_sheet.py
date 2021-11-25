@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class HrTimesheetSheetSheet(models.Model):
@@ -17,7 +17,7 @@ class HrTimesheetSheetSheet(models.Model):
         criteria = [
             ("sheet_id", "=", self.id),
             ("accrue_expense_move_id", "=", False),
-            ("accrue_expense_ok", "=", True)
+            ("accrue_expense_ok", "=", True),
         ]
         details = obj_detail.search(criteria)
         details.action_create_accrue_expense_move()

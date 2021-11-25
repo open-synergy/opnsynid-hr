@@ -3,7 +3,7 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrContract(models.Model):
@@ -66,7 +66,7 @@ class HrContract(models.Model):
             self.job_id = self.employee_id.job_id
 
     @api.onchange("employee_id")
-    def onchange_job_id(self):
+    def onchange_manager_id(self):
         self.manager_id = False
         if self.employee_id:
             self.manager_id = self.employee_id.parent_id

@@ -3,12 +3,11 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
-    "name": "Join Transition - "
-            "Integration With Payroll Account",
+    "name": "Join Transition - " "Integration With Payroll Account",
     "version": "8.0.1.0.0",
     "category": "Hidden",
-    "website": "https://opensynergy-indonesia.com",
-    "author": "OpenSynergy Indonesia",
+    "website": "https://simetri-sinergi.id",
+    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "auto_install": True,
@@ -16,6 +15,5 @@
         "hr_career_transition_payroll_account",
         "hr_join_transition",
     ],
-    "data": [
-    ],
+    "data": [],
 }

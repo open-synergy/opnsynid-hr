@@ -1,17 +1,18 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2017 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 <record id="hr_contract_view_form" model="ir.ui.view">
     <field name="name">hr.contract form</field>
     <field name="model">hr.contract</field>
-    <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+    <field name="inherit_id" ref="hr_contract.hr_contract_view_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='employee_id']" position="attributes">
-                <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+                <attribute
+                            name="invisible"
+                        >context.get('hide_employee_field',0)</attribute>
             </xpath>
         </data>
     </field>
@@ -20,11 +21,13 @@
 <record id="hr_contract_view_tree" model="ir.ui.view">
     <field name="name">hr.contract tree</field>
     <field name="model">hr.contract</field>
-    <field name="inherit_id" ref="hr_contract.hr_contract_view_tree"/>
+    <field name="inherit_id" ref="hr_contract.hr_contract_view_tree" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='employee_id']" position="attributes">
-                <attribute name="invisible">context.get('hide_employee_field',0)</attribute>
+                <attribute
+                            name="invisible"
+                        >context.get('hide_employee_field',0)</attribute>
             </xpath>
         </data>
     </field>
@@ -41,20 +44,20 @@
 </record>
 
 <menuitem
-    id="hr_contract_my_menu"
-    name="My Contracts"
-    parent="hr.menu_hr_main"
-    action="hr_contract_my_action"
-    sequence="11"
-    />
+            id="hr_contract_my_menu"
+            name="My Contracts"
+            parent="hr.menu_hr_main"
+            action="hr_contract_my_action"
+            sequence="11"
+        />
 
 <menuitem
-    id="hr_contract.hr_menu_contract"
-    name="Contracts"
-    parent="hr.menu_hr_main"
-    action="hr_contract.action_hr_contract"
-    sequence="12"
-    />
+            id="hr_contract.hr_menu_contract"
+            name="Contracts"
+            parent="hr.menu_hr_main"
+            action="hr_contract.action_hr_contract"
+            sequence="12"
+        />
 
 
 </data>

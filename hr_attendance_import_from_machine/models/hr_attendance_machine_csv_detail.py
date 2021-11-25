@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -26,16 +26,10 @@ class HrAttendanceMachineCsvDetail(models.Model):
         domain="[('model', '=', 'hr.attendance')]",
         required=True,
     )
-    field_type = fields.Char(
-        string="Field Type"
-    )
+    field_type = fields.Char(string="Field Type")
     date_format = fields.Selection(
         string="Format Date",
-        selection=[
-            ("datetime", "Datetime"),
-            ("date", "Date"),
-            ("time", "Time")
-        ],
+        selection=[("datetime", "Datetime"), ("date", "Date"), ("time", "Time")],
     )
 
     @api.onchange("field_id")
@@ -63,7 +57,7 @@ class HrAttendanceMachineCsvDetail(models.Model):
             ("id", "!=", self.id),
             ("field_id.id", "=", self.field_id.id),
             ("attendance_machine_id", "=", self.attendance_machine_id.id),
-            ("field_id.ttype", "<>", "datetime")
+            ("field_id.ttype", "<>", "datetime"),
         ]
         result = obj_machine.search_count(criteria)
         if result > 0:

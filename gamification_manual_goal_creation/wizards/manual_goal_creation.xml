@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<?xml version="1.0" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl-3.0) -->
 <openerp>
@@ -9,18 +9,26 @@
     <field name="arch" type="xml">
         <form>
             <group name="group_1" string="Users" colspan="4" col="2">
-                <field name="user_ids" colspan="2" nolabel="1"/>
+                <field name="user_ids" colspan="2" nolabel="1" />
             </group>
             <group name="group_2" colspan="4" col="2">
-                <field name="challange_id" invisible="1"/>
-                <field name="period" invisible="1"/>
-                <field name="date_start"/>
-                <field name="date_end" attrs="{'invisible':[('period','=','once')], 'required':[('period','!=','once')]}"/>
+                <field name="challange_id" invisible="1" />
+                <field name="period" invisible="1" />
+                <field name="date_start" />
+                <field
+                            name="date_end"
+                            attrs="{'invisible':[('period','=','once')], 'required':[('period','!=','once')]}"
+                        />
             </group>
             <footer>
-                <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"/>
+                <button
+                            name="action_confirm"
+                            type="object"
+                            string="Confirm"
+                            class="oe_highlight"
+                        />
                 or
-                <button special="cancel" string="Cancel" class="oe_link"/>
+                <button special="cancel" string="Cancel" class="oe_link" />
             </footer>
         </form>
     </field>
@@ -31,7 +39,7 @@
     <field name="res_model">gamification.manual_goal_creation</field>
     <field name="view_type">form</field>
     <field name="view_mode">form</field>
-    <field name="view_id" ref="gamification_manual_goal_creation_view_form"/>
+    <field name="view_id" ref="gamification_manual_goal_creation_view_form" />
     <field name="target">new</field>
 </record>
 </data>

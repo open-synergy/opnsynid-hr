@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrTraining(models.Model):
@@ -13,12 +13,10 @@ class HrTraining(models.Model):
         "category_id",
     )
     def _compute_survey(self):
-        for training in self:
+        for training in self:  # noqa: B007
             if self.category_id:
-                self.pre_survey_ids = [
-                    (6, 0, self.category_id.pre_survey_ids.ids)]
-                self.post_survey_ids = [
-                    (6, 0, self.category_id.post_survey_ids.ids)]
+                self.pre_survey_ids = [(6, 0, self.category_id.pre_survey_ids.ids)]
+                self.post_survey_ids = [(6, 0, self.category_id.post_survey_ids.ids)]
 
     pre_survey_ids = fields.Many2many(
         string="Pre-Evaluation Survey",

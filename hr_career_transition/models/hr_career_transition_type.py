@@ -3,27 +3,19 @@
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrCareerTransitionType(models.Model):
     _name = "hr.career_transition_type"
     _description = "Career Transition Type"
 
-    name = fields.Char(
-        string="Career Transition Type",
-        required=True
-    )
+    name = fields.Char(string="Career Transition Type", required=True)
     code = fields.Char(
         string="Code",
     )
-    description = fields.Text(
-        string="Description"
-    )
-    active = fields.Boolean(
-        string="Active",
-        default=True
-    )
+    description = fields.Text(string="Description")
+    active = fields.Boolean(string="Active", default=True)
     require_reason = fields.Boolean(
         string="Require Reason",
     )

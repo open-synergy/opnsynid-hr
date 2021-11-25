@@ -1,26 +1,31 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="create_accrue_expense_action_rule" model="base.action.rule">
     <field name="name">Create Accrue Expense</field>
-    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet"/>
+    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet" />
     <field name="kind">on_write</field>
-    <field name="filter_pre_id" ref="before_accrue_expense_filter"/>
-    <field name="filter_id" ref="after_accrue_expense_filter"/>
-    <field name="server_action_ids" eval="[(4, ref('hr_timesheet_sheet_accrue_expense.create_accrue_expense_actions_server'))]"/>
+    <field name="filter_pre_id" ref="before_accrue_expense_filter" />
+    <field name="filter_id" ref="after_accrue_expense_filter" />
+    <field
+                name="server_action_ids"
+                eval="[(4, ref('hr_timesheet_sheet_accrue_expense.create_accrue_expense_actions_server'))]"
+            />
 </record>
 
 <record id="remove_accrue_expense_action_rule" model="base.action.rule">
     <field name="name">Remove Accrue Expense</field>
-    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet"/>
+    <field name="model_id" ref="hr_timesheet_sheet.model_hr_timesheet_sheet_sheet" />
     <field name="kind">on_write</field>
-    <field name="filter_pre_id" ref="before_accrue_expense_removal_filter"/>
-    <field name="filter_id" ref="after_accrue_expense_removal_filter"/>
-    <field name="server_action_ids" eval="[(4, ref('hr_timesheet_sheet_accrue_expense.remove_accrue_expense_actions_server'))]"/>
+    <field name="filter_pre_id" ref="before_accrue_expense_removal_filter" />
+    <field name="filter_id" ref="after_accrue_expense_removal_filter" />
+    <field
+                name="server_action_ids"
+                eval="[(4, ref('hr_timesheet_sheet_accrue_expense.remove_accrue_expense_actions_server'))]"
+            />
 </record>
 
 </data>

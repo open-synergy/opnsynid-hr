@@ -2,14 +2,13 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
 class HrRecruitmentRequest(models.Model):
     _name = "hr.recruitment_request"
-    _inherit = ["mail.thread", "base.sequence_document",
-                "base.workflow_policy_object"]
+    _inherit = ["mail.thread", "base.sequence_document", "base.workflow_policy_object"]
     _description = "Recruitment Request"
 
     @api.multi
@@ -270,7 +269,6 @@ class HrRecruitmentRequest(models.Model):
             "state": "open",
             "opened_user_id": self.env.user.id,
             "opened_date": fields.Datetime.now(),
-
         }
         return result
 
@@ -332,9 +330,11 @@ class HrRecruitmentRequest(models.Model):
     def create(self, values):
         _super = super(HrRecruitmentRequest, self)
         result = _super.create(values)
-        result.write({
-            "name": result._create_sequence(),
-        })
+        result.write(
+            {
+                "name": result._create_sequence(),
+            }
+        )
         return result
 
     @api.multi

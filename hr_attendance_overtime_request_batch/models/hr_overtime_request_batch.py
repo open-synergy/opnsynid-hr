@@ -2,9 +2,10 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, SUPERUSER_ID
-from openerp.exceptions import Warning as UserError
 from datetime import datetime
+
+from openerp import SUPERUSER_ID, api, fields, models
+from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
 
@@ -16,19 +17,15 @@ class HrOvertimeRequestBatch(models.Model):
         string="# Batch",
         required=True,
         readonly=True,
-        states={
-            "draft": [("readonly", False)]
-        },
+        states={"draft": [("readonly", False)]},
         default="/",
     )
     user_id = fields.Many2one(
         string="User",
         comodel_name="res.users",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]
-        },
-        default=lambda self: self.env.user
+        states={"draft": [("readonly", False)]},
+        default=lambda self: self.env.user,
     )
 
     @api.model
@@ -45,35 +42,27 @@ class HrOvertimeRequestBatch(models.Model):
         string="Department",
         comodel_name="hr.department",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]
-        },
+        states={"draft": [("readonly", False)]},
     )
     manager_id = fields.Many2one(
         string="Manager",
         comodel_name="hr.employee",
         readonly=True,
-        states={
-            "draft": [("readonly", False)]
-        },
+        states={"draft": [("readonly", False)]},
     )
     date_start = fields.Datetime(
         string="Date Start",
         required=True,
         default=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         readonly=True,
-        states={
-            "draft": [("readonly", False)]
-        },
+        states={"draft": [("readonly", False)]},
     )
     date_end = fields.Datetime(
         string="Date End",
         required=True,
         default=datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
         readonly=True,
-        states={
-            "draft": [("readonly", False)]
-        },
+        states={"draft": [("readonly", False)]},
     )
     request_ids = fields.One2many(
         string="Overtime Request(s)",
@@ -90,22 +79,18 @@ class HrOvertimeRequestBatch(models.Model):
     def _compute_policy(self):
         for batch in self:
             if self.env.user.id == SUPERUSER_ID:
-                batch.confirm_ok = batch.valid_ok = \
-                    batch.cancel_ok = \
-                    batch.settodraft_ok = \
-                    batch.generate_ok = True
+                batch.confirm_ok = (
+                    batch.valid_ok
+                ) = batch.cancel_ok = batch.settodraft_ok = batch.generate_ok = True
                 continue
 
             if batch.company_id:
                 company = batch.company_id
-                for policy in company.\
-                        _get_overtime_batch_button_policy_map():
+                for policy in company._get_overtime_batch_button_policy_map():
                     setattr(
                         batch,
                         policy[0],
-                        company.
-                        _get_overtime_batch_button_policy(
-                            policy[1]),
+                        company._get_overtime_batch_button_policy(policy[1]),
                     )
 
     confirm_ok = fields.Boolean(
@@ -203,13 +188,15 @@ class HrOvertimeRequestBatch(models.Model):
         else:
             result = self.env.ref(
                 "hr_attendance_overtime_request_batch."
-                "sequence_batch_overtime_request")
+                "sequence_batch_overtime_request"
+            )
         return result
 
     @api.model
     def _create_sequence(self, company_id):
-        name = self.env["ir.sequence"].\
-            next_by_id(self._get_sequence(company_id).id) or "/"
+        name = (
+            self.env["ir.sequence"].next_by_id(self._get_sequence(company_id).id) or "/"
+        )
         return name
 
     @api.model
@@ -284,11 +271,9 @@ class HrOvertimeRequestBatch(models.Model):
             "cancelled_date": False,
         }
 
-    @api.constrains(
-        "date_start", "date_end")
+    @api.constrains("date_start", "date_end")
     def _check_date(self):
-        strWarning = _(
-            "Date start must be greater than date end")
+        strWarning = _("Date start must be greater than date end")
         if self.date_start and self.date_end:
             if self.date_start > self.date_end:
                 raise UserError(_("%s") % (strWarning))

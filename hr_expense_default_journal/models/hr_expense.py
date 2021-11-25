@@ -2,15 +2,13 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, api
+from openerp import api, models
 
 
 class HrExpenseExpense(models.Model):
     _inherit = "hr.expense.expense"
 
-    @api.onchange(
-        "employee_id"
-    )
+    @api.onchange("employee_id")
     def onchange_journal_id(self):
         self.journal_id = False
         default_journal_id = self.env.context.get("default_journal_id", False)

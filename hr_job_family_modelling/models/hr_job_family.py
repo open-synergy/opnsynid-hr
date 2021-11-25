@@ -2,7 +2,7 @@
 # © 2016 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, fields, api, _
+from openerp import _, api, fields, models
 from openerp.exceptions import Warning as UserError
 
 
@@ -27,7 +27,7 @@ class HrJobFamily(models.Model):
                 max_job_grade_id = jf.max_job_grade_id.id
                 min_index = job_grade_ids.index(min_job_grade_id)
                 max_index = job_grade_ids.index(max_job_grade_id)
-                result = job_grade_ids[min_index:max_index + 1]
+                result = job_grade_ids[min_index : max_index + 1]
             jf.job_grade_ids = result
 
     name = fields.Char(

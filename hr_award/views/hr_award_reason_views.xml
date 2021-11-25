@@ -1,8 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2019 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
     <data>
 <record id="hr_award_reason_view_tree" model="ir.ui.view">
@@ -10,9 +9,9 @@
     <field name="model">hr.award_reason</field>
     <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="code"/>
-            <field name="award_type_id"/>
+            <field name="name" />
+            <field name="code" />
+            <field name="award_type_id" />
         </tree>
     </field>
 </record>
@@ -25,14 +24,14 @@
             <header>
             </header>
             <group name="header_1" colspan="4" col="2">
-                <field name="name"/>
-                <field name="code"/>
-                <field name="award_type_id"/>
-                <field name="active"/>
+                <field name="name" />
+                <field name="code" />
+                <field name="award_type_id" />
+                <field name="active" />
             </group>
             <notebook>
                 <page name="note" string="Note">
-                    <field name="note"/>
+                    <field name="note" />
                 </page>
             </notebook>
         </form>
@@ -44,9 +43,9 @@
     <field name="model">hr.award_reason</field>
     <field name="arch" type="xml">
         <search>
-            <field name="name"/>
-            <field name="code"/>
-            <field name="award_type_id"/>
+            <field name="name" />
+            <field name="code" />
+            <field name="award_type_id" />
         </search>
     </field>
 </record>
@@ -57,15 +56,15 @@
     <field name="res_model">hr.award_reason</field>
     <field name="view_type">form</field>
     <field name="view_mode">tree,form</field>
-    <field name="search_view_id" ref="hr_award_reason_view_search"/>
+    <field name="search_view_id" ref="hr_award_reason_view_search" />
 </record>
 
 <menuitem
-    id="hr_award_reason_type_menu"
-    name="Award Reasons"
-    parent="hr_career_administration_configuration_page.hr_career_administration_configuration_menu"
-    action="hr_award_reason_action"
-    sequence="2"
-    />
+            id="hr_award_reason_type_menu"
+            name="Award Reasons"
+            parent="hr_career_administration_configuration_page.hr_career_administration_configuration_menu"
+            action="hr_award_reason_action"
+            sequence="2"
+        />
     </data>
 </openerp>

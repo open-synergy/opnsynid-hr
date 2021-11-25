@@ -4,12 +4,17 @@
 
 from . import (
     hr_training_method,
-    hr_training_purpose, hr_training_syllabus,
+    hr_training_purpose,
+    hr_training_syllabus,
     hr_training_cancel_reason,
     hr_training_participant_cancel_reason,
     hr_training_participant_type,
-    hr_training_category, hr_training, hr_training_partisipant,
-    hr_training_session, hr_training_attendance,
+    hr_training_category,
+    hr_training,
+    hr_training_partisipant,
+    hr_training_session,
+    hr_training_attendance,
     res_company,
-    res_config, res_partner,
+    res_config,
+    res_partner,
 )

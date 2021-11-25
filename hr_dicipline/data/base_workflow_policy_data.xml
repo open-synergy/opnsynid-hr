@@ -1,49 +1,66 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="workflow_policy_dicipline" model="base.workflow_policy">
-    <field name="model_id" ref="hr_dicipline.model_hr_dicipline"/>
+    <field name="model_id" ref="hr_dicipline.model_hr_dicipline" />
 </record>
 
 <record id="workflow_policy_dicipline_confirm" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_confirm_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_confirm_grp_ids.ids</field>
+    <field name="workflow_id" ref="workflow_policy_dicipline" />
+    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_confirm_ok" />
+    <field
+                name="python_code"
+            >result = document.type_id.dicipline_confirm_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_dicipline_open" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_open_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_open_grp_ids.ids</field>
+    <field name="workflow_id" ref="workflow_policy_dicipline" />
+    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_open_ok" />
+    <field
+                name="python_code"
+            >result = document.type_id.dicipline_open_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_dicipline_done" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_done_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_done_grp_ids.ids</field>
+    <field name="workflow_id" ref="workflow_policy_dicipline" />
+    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_done_ok" />
+    <field
+                name="python_code"
+            >result = document.type_id.dicipline_done_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_dicipline_cancel" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_cancel_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_cancel_grp_ids.ids</field>
+    <field name="workflow_id" ref="workflow_policy_dicipline" />
+    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_cancel_ok" />
+    <field
+                name="python_code"
+            >result = document.type_id.dicipline_cancel_grp_ids.ids</field>
 </record>
 
 <record id="workflow_policy_dicipline_restart" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_restart_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_restart_grp_ids.ids</field>
+    <field name="workflow_id" ref="workflow_policy_dicipline" />
+    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_restart_ok" />
+    <field
+                name="python_code"
+            >result = document.type_id.dicipline_restart_grp_ids.ids</field>
 </record>
 
-<record id="workflow_policy_dicipline_restart_validation" model="base.workflow_policy_line">
-    <field name="workflow_id" ref="workflow_policy_dicipline"/>
-    <field name="field_id" ref="hr_dicipline.field_hr_dicipline_restart_validation_ok"/>
-    <field name="python_code">result = document.type_id.dicipline_restart_val_grp_ids.ids</field>
+<record
+            id="workflow_policy_dicipline_restart_validation"
+            model="base.workflow_policy_line"
+        >
+    <field name="workflow_id" ref="workflow_policy_dicipline" />
+    <field
+                name="field_id"
+                ref="hr_dicipline.field_hr_dicipline_restart_validation_ok"
+            />
+    <field
+                name="python_code"
+            >result = document.type_id.dicipline_restart_val_grp_ids.ids</field>
 </record>
 
 </data>

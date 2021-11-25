@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
 
@@ -18,44 +18,38 @@ class HrTraining(models.Model):
     )
     def _compute_policy(self):
         user_group_ids = self.env.user.groups_id.ids
-        for training in self:
-            can_confirm = can_approve = can_start = \
-                can_finish = can_cancel = \
-                can_restart = True
+        for training in self:  # noqa: B007
+            can_confirm = (
+                can_approve
+            ) = can_start = can_finish = can_cancel = can_restart = True
             company = training.company_id
 
-            confirm_group_ids = company.\
-                employee_training_allowed_confirm_group_ids.ids
+            confirm_group_ids = company.employee_training_allowed_confirm_group_ids.ids
             if confirm_group_ids:
                 if not (set(user_group_ids) & set(confirm_group_ids)):
                     can_confirm = False
 
-            approve_group_ids = company.\
-                employee_training_allowed_approve_group_ids.ids
+            approve_group_ids = company.employee_training_allowed_approve_group_ids.ids
             if approve_group_ids:
                 if not (set(user_group_ids) & set(approve_group_ids)):
                     can_approve = False
 
-            start_group_ids = company.\
-                employee_training_allowed_start_group_ids.ids
+            start_group_ids = company.employee_training_allowed_start_group_ids.ids
             if start_group_ids:
                 if not (set(user_group_ids) & set(start_group_ids)):
                     can_start = False
 
-            finish_group_ids = company.\
-                employee_training_allowed_finish_group_ids.ids
+            finish_group_ids = company.employee_training_allowed_finish_group_ids.ids
             if finish_group_ids:
                 if not (set(user_group_ids) & set(finish_group_ids)):
                     can_finish = False
 
-            cancel_group_ids = company.\
-                employee_training_allowed_cancel_group_ids.ids
+            cancel_group_ids = company.employee_training_allowed_cancel_group_ids.ids
             if cancel_group_ids:
                 if not (set(user_group_ids) & set(cancel_group_ids)):
                     can_cancel = False
 
-            restart_group_ids = company.\
-                employee_training_allowed_restart_group_ids.ids
+            restart_group_ids = company.employee_training_allowed_restart_group_ids.ids
             if restart_group_ids:
                 if not (set(user_group_ids) & set(restart_group_ids)):
                     can_restart = False

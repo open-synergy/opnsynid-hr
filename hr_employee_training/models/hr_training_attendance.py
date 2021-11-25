@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrTrainingAttendance(models.Model):
@@ -57,8 +57,11 @@ class HrTrainingAttendance(models.Model):
         readonly=True,
     )
     _sql_constraints = [
-        ("participant_unique", "unique(session_id, partisipant_id)",
-         "Participant must be unique"),
+        (
+            "participant_unique",
+            "unique(session_id, partisipant_id)",
+            "Participant must be unique",
+        ),
     ]
 
     @api.multi

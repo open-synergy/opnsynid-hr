@@ -7,8 +7,5 @@ from openerp import models
 
 
 class HRPayslipRun(models.Model):
-    _name = 'hr.payslip.run'
-    _inherit = [
-        'hr.payslip.run',
-        'mail.thread'
-    ]
+    _name = "hr.payslip.run"
+    _inherit = ["hr.payslip.run", "mail.thread"]

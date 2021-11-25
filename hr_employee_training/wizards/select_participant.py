@@ -2,7 +2,7 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 
-from openerp import models, api, fields
+from openerp import api, fields, models
 
 
 class SelectTrainingParticipant(models.TransientModel):
@@ -20,8 +20,7 @@ class SelectTrainingParticipant(models.TransientModel):
             return False
 
         obj_training = self.env["hr.training"]
-        return obj_training.browse([training_id])[0].\
-            participant_type_id.id
+        return obj_training.browse([training_id])[0].participant_type_id.id
 
     training_id = fields.Many2one(
         string="Training",
@@ -53,11 +52,13 @@ class SelectTrainingParticipant(models.TransientModel):
             existing_employee_ids = []
             for participant in self.training_id.partisipant_ids:
                 existing_employee_ids.append(participant.partisipant_id.id)
-            result["domain"].update({
-                "employee_ids": [
-                    ("id", "not in", existing_employee_ids),
-                ]
-            })
+            result["domain"].update(
+                {
+                    "employee_ids": [
+                        ("id", "not in", existing_employee_ids),
+                    ]
+                }
+            )
         return result
 
     @api.multi

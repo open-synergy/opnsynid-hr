@@ -2,13 +2,12 @@
 # Copyright 2018 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields
+from openerp import fields, models
 
 
 class HrDepartment(models.Model):
     _inherit = "hr.department"
 
     department_type_id = fields.Many2one(
-        string="Department Type",
-        comodel_name="hr.department.type"
+        string="Department Type", comodel_name="hr.department.type"
     )

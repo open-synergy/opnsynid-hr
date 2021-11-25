@@ -3,7 +3,8 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
 from datetime import datetime
-from openerp import models, api
+
+from openerp import api, models
 
 
 class HrTrainingParticipant(models.Model):
@@ -21,8 +22,7 @@ class HrTrainingParticipant(models.Model):
     def _create_certification(self):
         self.ensure_one()
         obj_certification = self.env["hr.certification"]
-        obj_certification.create(
-            self._prepare_create_certification())
+        obj_certification.create(self._prepare_create_certification())
 
     @api.multi
     def button_reset(self):
@@ -36,10 +36,11 @@ class HrTrainingParticipant(models.Model):
         self.ensure_one()
         training = self.training_id
         date_start = datetime.strptime(
-            self.training_id.date_start,
-            "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d")
-        date_end = datetime.strptime(self.training_id.date_end,
-                                     "%Y-%m-%d %H:%M:%S").strftime("%Y-%m-%d")
+            self.training_id.date_start, "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d")
+        date_end = datetime.strptime(
+            self.training_id.date_end, "%Y-%m-%d %H:%M:%S"
+        ).strftime("%Y-%m-%d")
         return {
             "name": training.name,
             "employee_id": self.partisipant_id.id,

@@ -2,7 +2,7 @@
 # Copyright 2019 OpenSynergy Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 
-from openerp import models, fields, api
+from openerp import api, fields, models
 
 
 class HrPayslip(models.Model):
@@ -31,11 +31,12 @@ class HrPayslip(models.Model):
 
     @api.multi
     def onchange_employee_id(
-            self, date_from, date_to,
-            employee_id=False, contract_id=False):
+        self, date_from, date_to, employee_id=False, contract_id=False
+    ):
         _super = super(HrPayslip, self)
         result = _super.onchange_employee_id(
-            date_from, date_to, employee_id, contract_id)
+            date_from, date_to, employee_id, contract_id
+        )
         result["value"]["department_id"] = False
         obj_employee = self.env["hr.employee"]
         employee = obj_employee.browse([employee_id])[0]
