@@ -1,5 +1,5 @@
 [MASTER]
-load-plugins=ssi_pylint_odoo
+load-plugins=pylint_odoo
 score=n
 
 [ODOOLINT]
