@@ -1,60 +1,84 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <!-- Copyright 2018-2019 OpenSynergy Indonesia
      Copyright 2020 PT. Simetri Sinergi Indonesia
      License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
-
 <openerp>
 <data>
 
 <record id="hr_timesheet_sheet_view_form" model="ir.ui.view">
     <field name="name">hr_timesheet_sheet.sheet form</field>
     <field name="model">hr_timesheet_sheet.sheet</field>
-    <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form"/>
+    <field name="inherit_id" ref="hr_timesheet_sheet.hr_timesheet_sheet_form" />
     <field name="arch" type="xml">
         <data>
             <xpath expr="//field[@name='state']" position="before">
-                <button name="%(rearrange_attendance_schedule_actions_server)d" type="action" string="Rearrange Attendance Schedule" states="draft"/>
+                <button
+                            name="%(rearrange_attendance_schedule_actions_server)d"
+                            type="action"
+                            string="Rearrange Attendance Schedule"
+                            states="draft"
+                        />
             </xpath>
             <xpath expr="//field[@name='company_id']" position="after">
-                <field name="working_schedule_id"/>
+                <field name="working_schedule_id" />
             </xpath>
             <xpath expr="//page[@string='Attendances']" position="after">
                 <page name="attendance_schedule" string="Attendance Schedules">
                     <field name="attendance_schedule_ids" colspan="4" nolabel="1">
                         <tree>
-                            <field name="date_start"/>
-                            <field name="date_end"/>
-                            <field name="real_date_start"/>
-                            <field name="real_date_end"/>
-                            <field name="schedule_work_hour" widget="float_time"/>
-                            <field name="real_work_hour" widget="float_time"/>
-                            <field name="early_start_hour" widget="float_time"/>
-                            <field name="late_start_hour" widget="float_time"/>
-                            <field name="finish_early_hour" widget="float_time"/>
-                            <field name="finish_late_hour" widget="float_time"/>
-                            <field name="state"/>
+                            <field name="date_start" />
+                            <field name="date_end" />
+                            <field name="real_date_start" />
+                            <field name="real_date_end" />
+                            <field name="schedule_work_hour" widget="float_time" />
+                            <field name="real_work_hour" widget="float_time" />
+                            <field name="early_start_hour" widget="float_time" />
+                            <field name="late_start_hour" widget="float_time" />
+                            <field name="finish_early_hour" widget="float_time" />
+                            <field name="finish_late_hour" widget="float_time" />
+                            <field name="state" />
                         </tree>
                         <form>
                             <header>
-                                <field name="state" widget="statusbar"/>
+                                <field name="state" widget="statusbar" />
                             </header>
                             <group name="attendance_1" colspan="4" col="2">
                                 <group name="attendance_1_1" colspan="1" col="2">
-                                    <field name="date_start"/>
-                                    <field name="date_end"/>
-                                    <field name="start_attendance_id"/>
-                                    <field name="end_attendance_id"/>
-                                    <field name="real_date_start"/>
-                                    <field name="real_date_end"/>
+                                    <field name="date_start" />
+                                    <field name="date_end" />
+                                    <field name="start_attendance_id" />
+                                    <field name="end_attendance_id" />
+                                    <field name="real_date_start" />
+                                    <field name="real_date_end" />
                                 </group>
                                 <group name="attendance_1_2" colspan="1" col="2">
-                                    <field name="schedule_work_hour" widget="float_time"/>
-                                    <field name="real_work_hour" widget="float_time"/>
-                                    <field name="early_start_hour" widget="float_time"/>
-                                    <field name="late_start_hour" widget="float_time"/>
-                                    <field name="finish_early_hour" widget="float_time"/>
-                                    <field name="finish_late_hour" widget="float_time"/>
+                                    <field
+                                                name="schedule_work_hour"
+                                                widget="float_time"
+                                            />
+                                    <field name="real_work_hour" widget="float_time" />
+                                    <field
+                                                name="early_start_hour"
+                                                widget="float_time"
+                                            />
+                                    <field name="late_start_hour" widget="float_time" />
+                                    <field
+                                                name="finish_early_hour"
+                                                widget="float_time"
+                                            />
+                                    <field
+                                                name="finish_late_hour"
+                                                widget="float_time"
+                                            />
                                 </group>
+                            </group>
+                            <group
+                                        name="attendance_2"
+                                        colspan="4"
+                                        col="2"
+                                        string="Attendances"
+                                    >
+                                <field name="attendance_ids" nolabel="1" />
                             </group>
                         </form>
                     </field>

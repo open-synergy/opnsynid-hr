@@ -1,11 +1,10 @@
-# -*- coding: utf-8 -*-
 # Copyright 2018-2019 OpenSynergy Indonesia
 # Copyright 2020 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Timesheet Attendance Schedule",
-    "version": "8.0.4.1.0",
+    "version": "8.0.4.2.0",
     "category": "Human Resource",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
