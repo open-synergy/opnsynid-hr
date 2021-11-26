@@ -37,8 +37,8 @@ class HrAttendance(models.Model):
                         ("date_start", "<=", early_buffer),
                         ("date_end", ">=", attn.name),
                     ]
-                    schedules = obj_schedule.search(criteria, limit=1)
-                    schedule = schedules[0] if len(schedules) > 0 else False
+                    schedules = obj_schedule.search(criteria)
+                    schedule = schedules[-1] if len(schedules) > 0 else False
                 elif attn.action == "sign_out":
                     late_buffer = fields.Datetime.from_string(
                         attn.name
@@ -49,7 +49,7 @@ class HrAttendance(models.Model):
                         ("date_start", "<=", attn.name),
                         ("date_end", ">=", late_buffer),
                     ]
-                    schedules = obj_schedule.search(criteria, limit=1)
+                    schedules = obj_schedule.search(criteria)
                     schedule = schedules[0] if len(schedules) > 0 else False
 
             attn.schedule_id = schedule and schedule.id or False
