@@ -5,6 +5,7 @@
         <record id="hr_payslip_run_view_form" model="ir.ui.view">
             <field name="name">Inherit HR Payslip Run Form</field>
             <field name="model">hr.payslip.run</field>
+            <field name="priority">100</field>
             <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form" />
             <field name="arch" type="xml">
                 <xpath expr="//field[@name='slip_ids']" position="replace">

@@ -13,10 +13,14 @@ class HrTraining(models.Model):
         "category_id",
     )
     def _compute_survey(self):
-        for training in self:  # noqa: B007
-            if self.category_id:
-                self.pre_survey_ids = [(6, 0, self.category_id.pre_survey_ids.ids)]
-                self.post_survey_ids = [(6, 0, self.category_id.post_survey_ids.ids)]
+        for training in self:
+            if training.category_id:
+                training.pre_survey_ids = [
+                    (6, 0, training.category_id.pre_survey_ids.ids)
+                ]
+                training.post_survey_ids = [
+                    (6, 0, training.category_id.post_survey_ids.ids)
+                ]
 
     pre_survey_ids = fields.Many2many(
         string="Pre-Evaluation Survey",

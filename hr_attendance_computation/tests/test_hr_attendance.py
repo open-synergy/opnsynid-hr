@@ -318,7 +318,7 @@ class TestHrAttendance(TransactionCase):
         )
 
         msg = ("Wrongly configured working schedule with " "id %s") % (
-            unicode(self.calendar_id.id),  # noqa: F821
+            self.calendar_id.id,
         )
 
         with self.assertRaises(UserError) as error:

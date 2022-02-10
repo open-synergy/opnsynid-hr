@@ -12,7 +12,7 @@ from pytz import timezone
 class HrTimesheetAttendanceSchedule(models.Model):
     _name = "hr.timesheet_attendance_schedule"
     _description = "Timesheet Attendance Schedule"
-    _order = "date_start"
+    _order = "sheet_id, date_start"
 
     @api.multi
     @api.depends("attendance_ids")

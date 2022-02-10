@@ -63,7 +63,7 @@ class TestComputeWorkdays(TransactionCase):
         date_start = datetime.strptime("2016-04-01 07:00:00", "%Y-%m-%d %H:%M:%S")
         date_end = datetime.strptime("2016-04-01 17:00:00", "%Y-%m-%d %H:%M:%S")
         self.nb_days = (day_end - day_start).days + 1
-        for day in range(0, self.nb_days):  # noqa: B007
+        for _day in range(0, self.nb_days):
 
             attn_dict_1 = {
                 "sheet_id": self.ts.id,

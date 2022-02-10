@@ -3,7 +3,6 @@
 # Copyright 2011-15 Agile Business Group sagl (<http://www.agilebg.com>)
 # Copyright 2017 OpenSynergy Indonesia (<https://opensynergy-indonesia.com>)
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
 from __future__ import division
 
 import math
@@ -216,7 +215,7 @@ class HrAttendance(models.Model):
         "employee_id.contract_ids.working_hours.attendance_ids.calendar_id",
     )
     @api.multi
-    def _compute_attendance_duration(self):  # noqa: C901
+    def _compute_attendance_duration(self):  # noqa C901
         precision = (
             self.env["res.users"]
             .browse(self.env.user.id)

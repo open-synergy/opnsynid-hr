@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 # Copyright 2017 OpenSynergy Indonesia
+# Copyright 2022 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 # pylint: disable=locally-disabled, manifest-required-author
 {
@@ -8,7 +9,7 @@
     "summary": "Adds wizard to import other inputs from a CSV file",
     "category": "Human Resources",
     "website": "https://simetri-sinergi.id",
-    "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
+    "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
     "depends": ["hr_payroll", "hr_employee_id"],

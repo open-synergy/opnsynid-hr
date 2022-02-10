@@ -147,7 +147,7 @@ class TestImport(TransactionCase):
         z = 0
         for payslip in payslip_run.slip_ids:
             if payslip.input_line_ids:
-                for input_line in payslip.input_line_ids:  # noqa: B007
+                for _number in payslip.input_line_ids:
                     z += 1
 
         self.assertEqual(z, 4)

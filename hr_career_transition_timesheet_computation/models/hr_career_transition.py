@@ -46,12 +46,10 @@ class HrCareerTransition(models.Model):
     def _get_value_after_onchange_previous_contract(self, previous_contract):
         _super = super(HrCareerTransition, self)
         result = _super._get_value_after_onchange_previous_contract(previous_contract)
-        new_ts = previous_contract._get_timesheet_computation_item_dict()
-        prev_ts = previous_contract._get_timesheet_computation_item_dict()
         result.update(
             {
-                "new_timesheet_computation_ids": new_ts,
-                "previous_timesheet_computation_ids": prev_ts,
+                "new_timesheet_computation_ids": previous_contract._get_timesheet_computation_item_dict(),  # noqa: B950
+                "previous_timesheet_computation_ids": previous_contract._get_timesheet_computation_item_dict(),  # noqa: B950
             }
         )
         return result
