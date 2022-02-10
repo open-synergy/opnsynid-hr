@@ -10,7 +10,7 @@
             <field name="model">hr.career_transition_type</field>
             <field name="arch" type="xml">
                 <tree create="false" delete="false">
-                    <field name="name" />
+                    <field name="code" />
                     <field name="name" />
                 </tree>
             </field>

@@ -4,9 +4,9 @@
 
 <!-- /!\ do not modify above this line -->
 
-# Human Resource Addons
+# opnsynid-hr
 
-Human Resource Addons
+opnsynid-hr
 
 <!-- /!\ do not modify below this line -->
 

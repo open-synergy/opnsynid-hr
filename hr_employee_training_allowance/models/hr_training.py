@@ -24,8 +24,8 @@ class HrTraining(models.Model):
     def button_approve(self):
         _super = super(HrTraining, self)
         _super.button_approve()
-        for training in self:  # noqa: B007
-            self._generate_participant_allowance()
+        for document in self:
+            document._generate_participant_allowance()
 
     @api.multi
     def _generate_participant_allowance(self):

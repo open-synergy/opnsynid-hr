@@ -2,13 +2,13 @@
 _commit: 0f6de6d
 _src_path: gh:open-synergy/ssi-addons-repo-template
 dependency_installation_mode: OCA
-generate_requirements_txt: true
+generate_requirements_txt: false
 include_aeroo_report: false
-include_wkhtmltopdf: true
+include_wkhtmltopdf: false
 odoo_version: 8.0
 rebel_module_groups: []
-repo_description: Human Resource Addons
-repo_name: Human Resource Addons
+repo_description: opnsynid-hr
+repo_name: opnsynid-hr
 repo_slug: opnsynid-hr
 travis_apt_packages: []
 travis_apt_sources: []

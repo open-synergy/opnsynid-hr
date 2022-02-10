@@ -18,7 +18,7 @@ class HrTraining(models.Model):
     )
     def _compute_policy(self):
         user_group_ids = self.env.user.groups_id.ids
-        for training in self:  # noqa: B007
+        for training in self:
             can_confirm = (
                 can_approve
             ) = can_start = can_finish = can_cancel = can_restart = True

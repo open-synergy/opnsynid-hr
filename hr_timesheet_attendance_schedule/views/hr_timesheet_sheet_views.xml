@@ -72,14 +72,6 @@
                                             />
                                 </group>
                             </group>
-                            <group
-                                        name="attendance_2"
-                                        colspan="4"
-                                        col="2"
-                                        string="Attendances"
-                                    >
-                                <field name="attendance_ids" nolabel="1" />
-                            </group>
                         </form>
                     </field>
                 </page>
