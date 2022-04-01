@@ -105,6 +105,7 @@
                                 />
                         <field name="department_id" groups="base.group_system" />
                         <field name="manager_id" groups="base.group_system" />
+                        <field name="type_id" />
                     </group>
                     <group name="group_1_2" colspan="1" col="2">
                         <separator string="Planned" colspan="2" />
@@ -196,6 +197,7 @@
             <field name="employee_id" invisible="context.get('hide_employee', 0)" />
             <field name="department_id" groups="base.group_system" />
             <field name="manager_id" groups="base.group_system" />
+            <field name="type_id" />
             <field name="date_start" />
             <field name="date_end" />
             <field name="overtime_hour" widget="float_time" />
@@ -217,6 +219,7 @@
             <field name="employee_id" invisible="context.get('hide_employee', 0)" />
             <field name="department_id" groups="base.group_system" />
             <field name="manager_id" groups="base.group_system" />
+            <field name="type_id" />
             <field name="date_start" />
             <field name="date_end" />
             <field name="state" />
@@ -247,6 +250,11 @@
                             name="grp_employee"
                             string="Employee"
                             context="{'group_by':'employee_id'}"
+                        />
+                <filter
+                            name="grp_type"
+                            string="Type"
+                            context="{'group_by':'type_id'}"
                         />
                 <filter
                             name="grp_date_year"
