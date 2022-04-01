@@ -4,6 +4,7 @@
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
 from . import (
     hr_attendance,
+    hr_overtime_request_type,
     hr_overtime_request,
     res_company,
     res_config,

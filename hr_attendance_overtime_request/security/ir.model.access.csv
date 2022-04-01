@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 hr_overtime_request_employee,hr.overtime_request - employee,model_hr_overtime_request,base.group_user,1,0,0,0
 hr_overtime_request_user,hr.overtime_request - overtime user,model_hr_overtime_request,hr_attendance_overtime_request.group_overtime_user,1,1,1,1
+hr_overtime_request_type_employee,hr.overtime_request_type - employee,model_hr_overtime_request_type,base.group_user,1,1,1,1
+hr_overtime_request_type_all,hr.overtime_request_type - all,model_hr_overtime_request_type,,1,0,0,0

@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
-# Copyright 2018 OpenSynergy Indonesia
-# Copyright 2020 PT. Simetri Sinergi Indonesia
+# Copyright 2022 OpenSynergy Indonesia
+# Copyright 2022 PT. Simetri Sinergi Indonesia
 # License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl).
+
 from openerp import api, fields, models
 from openerp.exceptions import Warning as UserError
 from openerp.tools.translate import _
@@ -130,6 +131,16 @@ class HrOvertimeRequest(models.Model):
         comodel_name="res.company",
         default=lambda self: self._default_company_id(),
         readonly=False,
+    )
+    type_id = fields.Many2one(
+        string="Type",
+        comodel_name="hr.overtime_request_type",
+        readonly=True,
+        states={
+            "draft": [
+                ("readonly", False),
+            ],
+        },
     )
     employee_id = fields.Many2one(
         string="Employee",
