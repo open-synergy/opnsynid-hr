@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+
+<!-- Configurator -->
+<record id="hr_departement_group" model="res.groups">
+    <field name="name">Department</field>
+    <field name="category_id" ref="human_resource_configurator_module_category" />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<record id="hr_job_group" model="res.groups">
+    <field name="name">Job Position</field>
+    <field name="category_id" ref="human_resource_configurator_module_category" />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<record id="hr_employee_group" model="res.groups">
+    <field name="name">Employee</field>
+    <field name="category_id" ref="human_resource_configurator_module_category" />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<record id="hr_employee_category_group" model="res.groups">
+    <field name="name">Employee Tags</field>
+    <field name="category_id" ref="human_resource_configurator_module_category" />
+    <field
+            name="users"
+            eval="[(4, ref('base.user_root')), (4, ref('base.user_admin'))]"
+        />
+</record>
+
+<!-- Other -->
+<record id="original_employee_group" model="res.groups">
+    <field name="name">Show original employee top menu</field>
+    <field name="category_id" ref="base.module_category_hidden" />
+</record>
+</odoo>
