@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<record id="human_resource_module_category" model="ir.module.category">
+    <field name="name">Human Resource</field>
+</record>
+
+<record id="human_resource_configurator_module_category" model="ir.module.category">
+    <field name="name">Human Resource Configurator</field>
+    <field name="parent_id" ref="human_resource_module_category" />
+</record>
+
+</odoo>

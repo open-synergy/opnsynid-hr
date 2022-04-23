@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_department_configurator,hr.department - configurator,hr.model_hr_department,hr_departement_group,1,1,1,1
+access_hr_department_all,hr.department - all,hr.model_hr_department,,1,0,0,0
+access_hr_job_configurator,hr.job - configurator,hr.model_hr_job,hr_job_group,1,1,1,1
+access_hr_job_all,hr.department - all,hr.model_hr_job,,1,0,0,0
+access_hr_employee_configurator,hr.employee - configurator,hr.model_hr_employee,hr_employee_group,1,1,1,1
+access_hr_employee_all,hr.employee - all,hr.model_hr_employee,,1,0,0,0
+access_hr_employee_category_configurator,hr.employee.category - configurator,hr.model_hr_employee_category,hr_employee_category_group,1,1,1,1
+access_hr_employee_category_all,hr.employee.category - all,hr.model_hr_employee_category,,1,0,0,0
+access_resource_resource_configurator,resource.resource - configurator,resource.model_resource_resource,hr_employee_group,1,1,1,1
+access_resource_resource_all,resource.resource - all,resource.model_resource_resource,,1,0,0,0

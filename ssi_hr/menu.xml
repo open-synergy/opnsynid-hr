@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2022 OpenSynergy Indonesia
+     Copyright 2022 PT. Simetri Sinergi Indonesia
+     License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
+<odoo>
+<menuitem
+        id="menu_root_human_resource"
+        name="Human Resource"
+        web_icon="ssi_hr,static/description/icon.png"
+    />
+
+<menuitem
+        id="hr_employee_menu"
+        name="Employees"
+        action="hr.open_view_employee_list_my"
+        parent="menu_root_human_resource"
+        groups="hr_employee_group"
+        sequence="1"
+    />
+
+<menuitem
+        id="menu_human_resource_report"
+        name="Report"
+        parent="menu_root_human_resource"
+        sequence="98"
+    />
+<menuitem
+        id="menu_human_resource_configuration"
+        name="Configuration"
+        parent="menu_root_human_resource"
+        sequence="99"
+    />
+
+<menuitem
+        id="menu_organization_configuration"
+        name="Organization"
+        parent="menu_human_resource_configuration"
+        sequence="1"
+    />
+
+<menuitem
+        id="hr_department_menu"
+        name="Departments"
+        parent="menu_organization_configuration"
+        action="hr.hr_department_tree_action"
+        groups="hr_departement_group"
+        sequence="19"
+    />
+
+<menuitem
+        id="hr_job_menu"
+        name="Job Positions"
+        parent="menu_organization_configuration"
+        action="hr.action_hr_job"
+        groups="hr_job_group"
+        sequence="29"
+    />
+
+<menuitem
+        id="menu_employee_configuration"
+        name="Employee"
+        parent="menu_human_resource_configuration"
+        sequence="2"
+    />
+
+<menuitem
+        id="hr_employee_catgeory_menu"
+        name="Tags"
+        parent="menu_employee_configuration"
+        action="hr.open_view_categ_form"
+        groups="hr_job_group"
+        sequence="1"
+    />
+
+<!-- Hide menu -->
+<record id="hr.menu_hr_root" model="ir.ui.menu">
+  <field name="groups_id" eval="[(6, 0, [ref('original_employee_group')])]" />
+</record>
+
+</odoo>
