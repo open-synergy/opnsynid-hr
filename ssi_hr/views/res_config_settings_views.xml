@@ -18,6 +18,302 @@
                 >
                 <h2>Feature</h2>
                 <div class="row mt16 o_settings_container" id="human_resource_feature">
+                    <div
+                            id="use_ssi_hr_join_transition"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_join_transition_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_join_transition" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_join_transition_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_join_transition" />
+                            <div class="text-muted">
+                                Manage join transition
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_promotion_transition"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_promotion_transition_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_promotion_transition" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_promotion_transition_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_promotion_transition" />
+                            <div class="text-muted">
+                                Manage promotion transition
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_mutation_transition"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_mutation_transition_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_mutation_transition" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_mutation_transition_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_mutation_transition" />
+                            <div class="text-muted">
+                                Manage mutation transition
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_demotion_transition"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_demotion_transition_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_demotion_transition" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_demotion_transition_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_demotion_transition" />
+                            <div class="text-muted">
+                                Manage demotion transition
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_termination_transition"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_termination_transition_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_termination_transition" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_termination_transition_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_termination_transition" />
+                            <div class="text-muted">
+                                Manage termination transition
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_new_assignment_transition"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_new_assignment_transition_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_new_assignment_transition" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_new_assignment_transition_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_new_assignment_transition" />
+                            <div class="text-muted">
+                                Manage new assignment transition
+                            </div>
+                        </div>
+                    </div>
+                    <div id="use_ssi_hr_award" class="col-12 col-lg-6 o_setting_box">
+                        <div name="use_ssi_hr_award_left" class="o_setting_left_pane">
+                            <field name="module_ssi_hr_award" />
+                        </div>
+                        <div name="use_ssi_hr_award_right" class="o_setting_right_pane">
+                            <label for="module_ssi_hr_award" />
+                            <div class="text-muted">
+                                Manage award
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_dicipline"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_dicipline_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_dicipline" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_dicipline_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_dicipline" />
+                            <div class="text-muted">
+                                Manage dicipline
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_timesheet_attendance"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_timesheet_attendance_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_timesheet_attendance" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_timesheet_attendance_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_timesheet_attendance" />
+                            <div class="text-muted">
+                                Manage attendance
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_timesheet_worklog"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_timesheet_worklog_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_timesheet_worklog" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_timesheet_worklog_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_timesheet_worklog" />
+                            <div class="text-muted">
+                                Manage worklog
+                            </div>
+                        </div>
+                    </div>
+                    <div id="use_ssi_hr_holiday" class="col-12 col-lg-6 o_setting_box">
+                        <div name="use_ssi_hr_holiday_left" class="o_setting_left_pane">
+                            <field name="module_ssi_hr_holiday" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_holiday_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_holiday" />
+                            <div class="text-muted">
+                                Manage holiday
+                            </div>
+                        </div>
+                    </div>
+                    <div id="use_ssi_hr_overtime" class="col-12 col-lg-6 o_setting_box">
+                        <div
+                                name="use_ssi_hr_overtime_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_overtime" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_overtime_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_overtime" />
+                            <div class="text-muted">
+                                Manage overtime
+                            </div>
+                        </div>
+                    </div>
+                    <div id="use_ssi_hr_payroll" class="col-12 col-lg-6 o_setting_box">
+                        <div name="use_ssi_hr_payroll_left" class="o_setting_left_pane">
+                            <field name="module_ssi_hr_payroll" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_payroll_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_payroll" />
+                            <div class="text-muted">
+                                Manage payroll
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_reimbursement"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_reimbursement_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_reimbursement" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_reimbursement_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_reimbursement" />
+                            <div class="text-muted">
+                                Manage reimbursement
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_cash_advance"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_cash_advance_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_cash_advance" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_cash_advance_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_cash_advance" />
+                            <div class="text-muted">
+                                Manage cash advance
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_expense_account"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_expense_account_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_expense_account" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_expense_account_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_expense_account" />
+                            <div class="text-muted">
+                                Manage expense account
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <h2>Integration</h2>
                 <div
