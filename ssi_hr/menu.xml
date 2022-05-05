@@ -19,6 +19,13 @@
     />
 
 <menuitem
+        id="hr_career_management_menu"
+        name="Career Management"
+        parent="menu_root_human_resource"
+        sequence="2"
+    />
+
+<menuitem
         id="menu_human_resource_report"
         name="Report"
         parent="menu_root_human_resource"
