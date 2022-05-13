@@ -60,8 +60,8 @@ class HrAttendance(models.Model):
 
     def total_seconds(self, td):
         return (
-            td.microseconds + (td.seconds + td.days * 24 * 3600) * 10 ** 6
-        ) / 10 ** 6
+            td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6
+        ) / 10**6
 
     def time_difference(self, float_start_time, float_end_time, help_message=False):
         # Original Code
