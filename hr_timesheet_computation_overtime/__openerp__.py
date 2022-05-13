@@ -5,7 +5,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Timesheet Computation Integration With Overtime",
-    "version": "8.0.1.2.0",
+    "version": "8.0.1.3.0",
     "category": "Human Resource",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
