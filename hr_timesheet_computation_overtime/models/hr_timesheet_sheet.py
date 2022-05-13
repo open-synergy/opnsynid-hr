@@ -12,4 +12,5 @@ class HrTimesheetSheet(models.Model):
         string="Overtimes",
         comodel_name="hr.overtime_request",
         inverse_name="sheet_id",
+        readonly=True,
     )
