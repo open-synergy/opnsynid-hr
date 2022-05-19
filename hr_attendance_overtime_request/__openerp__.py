@@ -14,6 +14,7 @@
     "depends": [
         "hr_attendance",
         "base_multiple_approval",
+        "base_sequence_configurator",
     ],
     "data": [
         "menu.xml",
@@ -26,6 +27,5 @@
         "data/base_workflow_policy_data.xml",
         "views/hr_overtime_request_views.xml",
         "views/hr_overtime_config_setting_views.xml",
-        "views/hr_overtime_request_type_views.xml",
     ],
 }
