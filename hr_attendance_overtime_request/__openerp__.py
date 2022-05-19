@@ -5,7 +5,7 @@
 # pylint: disable=locally-disabled, manifest-required-author
 {
     "name": "Attendance Overtime Request",
-    "version": "8.0.3.1.0",
+    "version": "8.0.3.2.0",
     "category": "Human Resources",
     "website": "https://simetri-sinergi.id",
     "author": "PT. Simetri Sinergi Indonesia, OpenSynergy Indonesia",
@@ -14,6 +14,7 @@
     "depends": [
         "hr_attendance",
         "base_multiple_approval",
+        "base_workflow_policy",
         "base_sequence_configurator",
     ],
     "data": [
