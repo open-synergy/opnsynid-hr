@@ -632,7 +632,7 @@ class HrCareerTransition(models.Model):
             "contract_department_id": (
                 self.new_department_id and self.new_department_id.id or False
             ),
-            "parent_id": (self.new_manager_id and self.new_manager_id.id or False),
+            "manager_id": (self.new_manager_id and self.new_manager_id.id or False),
             "company_id": (self.new_company_id and self.new_company_id.id or False),
         }
 
@@ -648,7 +648,7 @@ class HrCareerTransition(models.Model):
             and self.new_department_id.id
             or False,
             "company_id": self.new_company_id and self.new_company_id.id or False,
-            "parent_id": self.new_manager_id and self.new_manager_id.id or False,
+            "manager_id": self.new_manager_id and self.new_manager_id.id or False,
             "wage": self.new_wage,
         }
 
@@ -666,7 +666,7 @@ class HrCareerTransition(models.Model):
             "company_id": self.previous_company_id
             and self.previous_company_id.id
             or False,
-            "parent_id": self.previous_manager_id
+            "manager_id": self.previous_manager_id
             and self.previous_manager_id.id
             or False,
             "wage": self.previous_wage,
