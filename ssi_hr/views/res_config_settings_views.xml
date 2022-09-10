@@ -177,13 +177,13 @@
                                 name="use_ssi_hr_timesheet_attendance_left"
                                 class="o_setting_left_pane"
                             >
-                            <field name="module_ssi_hr_timesheet_attendance" />
+                            <field name="module_ssi_timesheet_attendance" />
                         </div>
                         <div
                                 name="use_ssi_hr_timesheet_attendance_right"
                                 class="o_setting_right_pane"
                             >
-                            <label for="module_ssi_hr_timesheet_attendance" />
+                            <label for="module_ssi_timesheet_attendance" />
                             <div class="text-muted">
                                 Manage attendance
                             </div>
@@ -197,13 +197,13 @@
                                 name="use_ssi_hr_timesheet_worklog_left"
                                 class="o_setting_left_pane"
                             >
-                            <field name="module_ssi_hr_timesheet_worklog" />
+                            <field name="module_ssi_worklog_mixin" />
                         </div>
                         <div
                                 name="use_ssi_hr_timesheet_worklog_right"
                                 class="o_setting_right_pane"
                             >
-                            <label for="module_ssi_hr_timesheet_worklog" />
+                            <label for="module_ssi_worklog_mixin" />
                             <div class="text-muted">
                                 Manage worklog
                             </div>

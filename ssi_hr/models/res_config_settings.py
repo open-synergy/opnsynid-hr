@@ -36,10 +36,10 @@ class ResConfigSettings(models.TransientModel):
     module_ssi_hr_dicipline = fields.Boolean(
         string="Dicipline",
     )
-    module_ssi_hr_timesheet_attendance = fields.Boolean(
+    module_ssi_timesheet_attendance = fields.Boolean(
         string="Attendance",
     )
-    module_ssi_hr_timesheet_worklog = fields.Boolean(
+    module_ssi_worklog_mixin = fields.Boolean(
         string="Worklog",
     )
     module_ssi_hr_holiday = fields.Boolean(
