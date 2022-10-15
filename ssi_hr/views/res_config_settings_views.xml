@@ -4,7 +4,7 @@
      License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl). -->
 <odoo>
 <record id="res_config_settings_view_form" model="ir.ui.view">
-    <field name="name">res.config.settings form - Psychology</field>
+    <field name="name">res.config.settings form - Human Resource</field>
     <field name="model">res.config.settings</field>
     <field name="priority" eval="1" />
     <field name="inherit_id" ref="base.res_config_settings_view_form" />
@@ -190,20 +190,20 @@
                         </div>
                     </div>
                     <div
-                            id="use_ssi_hr_timesheet_worklog"
+                            id="use_ssi_work_log_mixin"
                             class="col-12 col-lg-6 o_setting_box"
                         >
                         <div
-                                name="use_ssi_hr_timesheet_worklog_left"
+                                name="use_ssi_work_log_mixin_left"
                                 class="o_setting_left_pane"
                             >
-                            <field name="module_ssi_worklog_mixin" />
+                            <field name="module_ssi_work_log_mixin" />
                         </div>
                         <div
-                                name="use_ssi_hr_timesheet_worklog_right"
+                                name="use_ssi_work_log_mixin_right"
                                 class="o_setting_right_pane"
                             >
-                            <label for="module_ssi_worklog_mixin" />
+                            <label for="module_ssi_work_log_mixin" />
                             <div class="text-muted">
                                 Manage worklog
                             </div>
@@ -250,7 +250,27 @@
                             >
                             <label for="module_ssi_hr_payroll" />
                             <div class="text-muted">
-                                Manage payroll
+                                Manage payslip
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                            id="use_ssi_hr_payroll_batch"
+                            class="col-12 col-lg-6 o_setting_box"
+                        >
+                        <div
+                                name="use_ssi_hr_payroll_batch_left"
+                                class="o_setting_left_pane"
+                            >
+                            <field name="module_ssi_hr_payroll_batch" />
+                        </div>
+                        <div
+                                name="use_ssi_hr_payroll_batch_right"
+                                class="o_setting_right_pane"
+                            >
+                            <label for="module_ssi_hr_payroll_batch" />
+                            <div class="text-muted">
+                                Manage payslip batch
                             </div>
                         </div>
                     </div>
