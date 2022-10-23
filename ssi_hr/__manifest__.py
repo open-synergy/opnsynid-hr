@@ -4,7 +4,7 @@
 
 {
     "name": "Human Resource",
-    "version": "14.0.2.3.0",
+    "version": "14.0.2.4.0",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "LGPL-3",
