@@ -16,4 +16,9 @@
     <field name="name">Human Resource - Data Ownership</field>
 </record>
 
+<record id="human_resource_reporting_module_category" model="ir.module.category">
+    <field name="name">Human Resource - Reporting</field>
+    <field name="parent_id" ref="human_resource_module_category" />
+</record>
+
 </odoo>
