@@ -2,3 +2,4 @@
 
 oca-server-tools https://github.com/OCA/server-tools.git 14.0
 ssi-mixin https://github.com/open-synergy/ssi-mixin.git 14.0
+opnsynid-project https://github.com/open-synergy/opnsynid-project.git 14.0
