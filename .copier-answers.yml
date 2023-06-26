@@ -1,13 +1,13 @@
 # Do NOT update manually; changes here will be overwritten by Copier
-_commit: edb24fc
-_src_path: gh:open-synergy/ssi-addons-repo-template
+_commit: 5b146b5
+_src_path: https://github.com/open-synergy/ssi-addons-repo-template.git
 dependency_installation_mode: OCA
 generate_requirements_txt: true
 include_aeroo_report: false
 include_wkhtmltopdf: false
 odoo_version: 14.0
 rebel_module_groups: []
-repo_description: null
+repo_description: opnsynid-hr
 repo_name: opnsynid-hr
 repo_slug: opnsynid-hr
 travis_apt_packages: []
