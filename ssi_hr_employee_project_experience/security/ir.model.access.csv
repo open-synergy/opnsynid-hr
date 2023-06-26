@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_hr_employee_project_experience_all,hr.employee_project_experience - all,model_hr_employee_project_experience,ssi_hr.hr_employee_group,1,0,0,0

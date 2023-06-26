@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Employee View -->
+    <record id="hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.project.experience.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//page[last()]" position="after">
+                <page name="project_experience" string="Project Experience">
+                    <field name="project_experience_ids" colspan="2" nolabel="1">
+                        <tree>
+                            <field name="project_id" />
+                            <field name="type_id" />
+                            <field name="partner_id" />
+                            <field name="role_id" />
+                            <field name="date_start" />
+                            <field name="date_end" />
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
