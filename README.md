@@ -14,7 +14,12 @@ opnsynid-hr
 
 [//]: # (addons)
 
-This part will be replaced when running the oca-gen-addons-table script from OCA/maintainer-tools.
+Available addons
+----------------
+addon | version | maintainers | summary
+--- | --- | --- | ---
+[ssi_hr](ssi_hr/) | 14.0.2.5.0 |  | Human Resource
+[ssi_hr_employee_project_experience](ssi_hr_employee_project_experience/) | 14.0.1.0.0 |  | Employee Project Experience
 
 [//]: # (end addons)
 
