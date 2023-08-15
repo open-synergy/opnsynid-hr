@@ -6,8 +6,8 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[last()]" position="after">
-                <page string="Academic Experiences">
+            <xpath expr="//notebook" position="inside">
+                <page name="academic_experience" string="Academic Experiences">
                     <field name="academic_ids">
                         <tree>
                             <field name="partner_address_id" string="Institution" />
@@ -54,7 +54,7 @@
                         </form>
                     </field>
                 </page>
-                <page string="Certifications">
+                <page name="certification" string="Certifications">
                     <field name="certification_ids">
                     <tree>
                         <field name="name" string="Certification" />
@@ -90,7 +90,7 @@
                     </form>
                     </field>
                 </page>
-                <page string="Professional Experiences">
+                <page name="experience" string="Professional Experiences">
                     <field name="experience_ids">
                     <tree>
                         <field name="job_position" />
