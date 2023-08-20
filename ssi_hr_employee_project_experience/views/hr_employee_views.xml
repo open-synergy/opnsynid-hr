@@ -6,7 +6,7 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[last()]" position="after">
+            <xpath expr="//notebook" position="inside">
                 <page name="project_experience" string="Project Experience">
                     <field name="project_experience_ids" colspan="2" nolabel="1">
                         <tree>

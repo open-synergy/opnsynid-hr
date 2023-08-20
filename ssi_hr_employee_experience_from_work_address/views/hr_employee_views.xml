@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!-- Employee View -->
+    <record id="hr_employee_view_form" model="ir.ui.view">
+        <field name="name">hr.employee.experiece.view.form</field>
+        <field name="model">hr.employee</field>
+        <field name="inherit_id" ref="hr.view_employee_form" />
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="academic_experience" string="Academic Experiences">
+                    <field name="academic_ids">
+                        <tree>
+                            <field name="partner_address_id" string="Institution" />
+                            <field name="diploma" />
+                            <field name="education_level_id" />
+                            <field name="field_of_study_id" />
+                            <field name="date_start" />
+                            <field name="date_end" />
+                        </tree>
+                        <form>
+                            <group name="header" colspan="4" col="2">
+                                <group name="header_left" colspan="1" col="2">
+                                    <field name="partner_id" invisible="1" />
+                                    <field
+                                        name="partner_address_id"
+                                        string="Institution"
+                                    />
+                                    <field name="location" />
+                                    <field name="active" widget="boolean_toggle" />
+                                </group>
+                                <group name="header_right" colspan="1" col="2">
+                                    <field name="date_start" />
+                                    <field name="expire" />
+                                    <field
+                                        name="date_end"
+                                        attrs="{'invisible':[('expire', '=', False)], 'required': [('expire', '=', True)]}"
+                                    />
+                                    <separator
+                                        string="Academic Information"
+                                        colspan="1"
+                                    />
+                                    <field name="diploma" />
+                                    <field name="education_level_id" />
+                                    <field name="field_of_study_id" />
+                                    <field name="gpa" />
+                                    <field name="activities" />
+                                </group>
+                            </group>
+                            <notebook>
+                                <page name="note" string="Note">
+                                    <field name="note" colspan="4" nolabel="1" />
+                                </page>
+                            </notebook>
+                        </form>
+                    </field>
+                </page>
+                <page name="certification" string="Certifications">
+                    <field name="certification_ids">
+                    <tree>
+                        <field name="name" string="Certification" />
+                        <field name="certification" string="# Certificate" />
+                        <field name="partner_address_id" string="Issued By" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </tree>
+                    <form>
+                        <group name="header" colspan="4" col="2">
+                            <group name="header_left" colspan="1" col="2">
+                                <field name="name" string="Certification" />
+                                <field name="certification" />
+                                <field name="partner_id" invisible="1" />
+                                <field name="partner_address_id" string="Issued By" />
+                                <field name="location" />
+                                <field name="active" widget="boolean_toggle" />
+                            </group>
+                            <group name="header_right" colspan="1" col="2">
+                                <field name="date_start" />
+                                <field name="expire" />
+                                <field
+                                        name="date_end"
+                                        attrs="{'invisible':[('expire', '=', False)], 'required': [('expire', '=', True)]}"
+                                    />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="note" string="Note">
+                                <field name="note" colspan="4" nolabel="1" />
+                            </page>
+                        </notebook>
+                    </form>
+                    </field>
+                </page>
+                <page name="experience" string="Professional Experiences">
+                    <field name="experience_ids">
+                    <tree>
+                        <field name="job_position" />
+                        <field name="job_level" />
+                        <field name="partner_address_id" string="Employer" />
+                        <field name="date_start" />
+                        <field name="date_end" />
+                    </tree>
+                    <form>
+                        <group name="header" colspan="4" col="2">
+                            <group name="header_left" colspan="1" col="2">
+                                <field name="job_position" />
+                                <field name="job_level" />
+                                <field name="partner_id" invisible="1" />
+                                <field name="partner_address_id" string="Employer" />
+                                <field name="location" />
+                                <field name="active" widget="boolean_toggle" />
+                            </group>
+                            <group name="header_right" colspan="1" col="2">
+                                <field name="date_start" />
+                                <field name="expire" />
+                                <field
+                                        name="date_end"
+                                        attrs="{'invisible':[('expire', '=', False)], 'required': [('expire', '=', True)]}"
+                                    />
+                            </group>
+                        </group>
+                        <notebook>
+                            <page name="note" string="Note">
+                                <field name="note" colspan="4" nolabel="1" />
+                            </page>
+                        </notebook>
+                    </form>
+                    </field>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>
