@@ -9,6 +9,7 @@ setuptools.setup(
     version=version,
     install_requires=[
         'odoo14-addon-ssi_hr',
+        'odoo14-addon-ssi_hr_employee_experience_from_work_address',
         'odoo14-addon-ssi_hr_employee_project_experience',
     ],
     classifiers=[
