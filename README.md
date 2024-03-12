@@ -20,6 +20,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [ssi_hr](ssi_hr/) | 14.0.2.6.0 |  | Human Resource
 [ssi_hr_employee_experience_from_work_address](ssi_hr_employee_experience_from_work_address/) | 14.0.1.0.0 |  | Employee Experience From Home Address
+[ssi_hr_employee_personal_from_work_address](ssi_hr_employee_personal_from_work_address/) | 14.0.1.0.0 |  | Employee Personal Information From Home Address
 [ssi_hr_employee_project_experience](ssi_hr_employee_project_experience/) | 14.0.1.1.1 |  | Employee Project Experience
 
 [//]: # (end addons)
