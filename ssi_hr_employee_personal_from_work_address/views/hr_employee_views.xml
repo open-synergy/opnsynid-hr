@@ -6,20 +6,12 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
-            <xpath expr="//notebook" position="inside">
-                <page name="personal_information" string="Personal Information">
-                    <group name="personal_information">
-                        <field name="nationality_id" string="Nationality (Country)" />
-                        <field name="gender" />
-                        <field name="birthdate_date" string="Date of Birth" />
-                        <field name="birth_city" string="Place of Birth" />
-                        <field name="birth_country_id" string="Country of Birth" />
-                        <field name="religion_id" />
-                        <field name="ethnicity_id" />
-                        <field name="blood_type" />
-                        <field name="blood_type_rhesus" />
-                    </group>
-                </page>
+            <xpath expr="//field[@name='country_of_birth']" position="after">
+                <field name="birth_state_id" />
+                <field name="ethnicity_id" />
+                <field name="religion_id" />
+                <field name="blood_type" />
+                <field name="blood_type_rhesus" />
             </xpath>
         </field>
     </record>
