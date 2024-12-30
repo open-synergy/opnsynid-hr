@@ -26,6 +26,13 @@
     />
 
 <menuitem
+        id="hr_inventory_menu"
+        name="Inventory"
+        parent="menu_root_human_resource"
+        sequence="3"
+    />
+
+<menuitem
         id="menu_human_resource_report"
         name="Report"
         parent="menu_root_human_resource"
