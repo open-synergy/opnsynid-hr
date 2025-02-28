@@ -68,3 +68,21 @@ class HrEmployee(models.Model):
         readonly=False,
         store=True,
     )
+    marital = fields.Selection(
+        string="Marital Status",
+        related="address_home_id.marital",
+        readonly=False,
+        store=True,
+    )
+    spouse_complete_name = fields.Char(
+        string="Spouse Complete Name",
+        related="address_home_id.spouse_complete_name",
+        readonly=False,
+        store=True,
+    )
+    spouse_birthdate = fields.Date(
+        string="Spouse Birthdate",
+        related="address_home_id.spouse_birthdate",
+        readonly=False,
+        store=True,  
+    )
