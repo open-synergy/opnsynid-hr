@@ -1,0 +1,10 @@
+odoo14-addon-ssi-hr
+odoo14-addon-ssi-master-data-mixin
+odoo14-addon-ssi-transaction-confirm-mixin
+odoo14-addon-ssi-transaction-open-mixin
+odoo14-addon-ssi-transaction-done-mixin
+odoo14-addon-ssi-transaction-cancel-mixin
+odoo14-addon-ssi-transaction-terminate-mixin
+odoo14-addon-ssi-duration-mixin
+odoo14-addon-ssi-decorator
+odoo14-addon-ssi-partner-language
