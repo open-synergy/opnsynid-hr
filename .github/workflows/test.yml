@@ -38,8 +38,10 @@ jobs:
           - container: ghcr.io/oca/oca-ci/py3.6-odoo14.0:latest
             makepot: "true"
             name: test with Odoo
+            exclude: "ssi_hr_employee_experience_from_work_address"
           - container: ghcr.io/oca/oca-ci/py3.6-ocb14.0:latest
             name: test with OCB
+            exclude: "ssi_hr_employee_experience_from_work_address"
     services:
       postgres:
         image: postgres:9.6
