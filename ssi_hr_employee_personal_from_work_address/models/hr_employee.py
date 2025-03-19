@@ -84,5 +84,5 @@ class HrEmployee(models.Model):
         string="Spouse Birthdate",
         related="address_home_id.spouse_birthdate",
         readonly=False,
-        store=True,  
+        store=True,
     )
