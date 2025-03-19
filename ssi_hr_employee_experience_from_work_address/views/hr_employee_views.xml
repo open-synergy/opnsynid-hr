@@ -6,7 +6,10 @@
         <field name="model">hr.employee</field>
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
-            <xpath expr="//page[@name='personal_information']/group/group[8]" position="attributes">
+            <xpath
+                expr="//page[@name='personal_information']/group/group[8]"
+                position="attributes"
+            >
                 <attribute name="invisible">1</attribute>
             </xpath>
             <xpath expr="//notebook" position="inside">
@@ -92,7 +95,10 @@
                         </notebook>
                     </form>
                     </field>
-                    <separator name="personal_experience" string="Professional Experiences" />
+                    <separator
+                        name="personal_experience"
+                        string="Professional Experiences"
+                    />
                     <field
                         name="experience_ids"
                         context="{'default_partner_id': active_id}"
