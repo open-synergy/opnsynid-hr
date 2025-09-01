@@ -9,10 +9,10 @@
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
-    "auto_install": True,
+    "auto_install": False,
     "depends": [
+        "hr",
         "ssi_partner_language",
-        "ssi_hr",
     ],
     "data": [
         "views/hr_employee_views.xml",
