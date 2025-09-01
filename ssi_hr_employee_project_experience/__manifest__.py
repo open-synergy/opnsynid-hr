@@ -11,7 +11,7 @@
     "installable": True,
     "auto_install": False,
     "depends": [
-        "hr",
+        "ssi_hr",
         "ssi_project_assignment",
     ],
     "data": [
