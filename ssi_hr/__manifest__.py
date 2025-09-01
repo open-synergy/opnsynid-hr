@@ -18,7 +18,6 @@
         "ssi_hr_employee_experience_from_work_address",
         "ssi_hr_employee_identification_from_work_address",
         "ssi_hr_employee_personal_from_work_address",
-        "ssi_hr_employee_project_experience",
     ],
     "data": [
         "security/ir_module_category_data.xml",
