@@ -11,6 +11,7 @@
                     <field name="project_experience_ids" colspan="2" nolabel="1">
                         <tree>
                             <field name="project_id" />
+                            <field name="assignment_id" />
                             <field name="type_id" />
                             <field name="partner_id" />
                             <field name="role_id" />
