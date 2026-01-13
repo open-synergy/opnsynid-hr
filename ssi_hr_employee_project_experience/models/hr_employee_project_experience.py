@@ -43,6 +43,11 @@ class HrEmployeeProjectExprerience(models.Model):
         comodel_name="project.type",
         readonly=True,
     )
+    assignment_id = fields.Many2one(
+        string="Assignment",
+        comodel_name="project.assignment",
+        readonly=True,
+    )
 
     @property
     def _table_query(self):
@@ -64,7 +69,8 @@ class HrEmployeeProjectExprerience(models.Model):
             a.role_id AS role_id,
             b.id AS project_id,
             b.partner_id AS partner_id,
-            b.type_id AS type_id
+            b.type_id AS type_id,
+            a.id as assignment_id
         """
         return select_str
 
