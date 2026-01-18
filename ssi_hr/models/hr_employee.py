@@ -15,6 +15,7 @@ class HrEmployee(models.Model):
         compute="_compute_initials",
         inverse="_inverse_initials",
         store=True,
+        compute_sudo=True,
         help="Automatically generated from name, unless manually overridden.",
     )
 
