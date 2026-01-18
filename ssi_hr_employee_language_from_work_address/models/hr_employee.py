@@ -14,4 +14,5 @@ class HrEmployee(models.Model):
         string="Languages",
         help="Languages",
         readonly=False,
+        compute_sudo=True,
     )

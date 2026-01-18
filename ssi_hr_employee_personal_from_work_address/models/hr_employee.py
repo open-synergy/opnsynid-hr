@@ -13,27 +13,32 @@ class HrEmployee(models.Model):
         related="address_home_id.nationality_id",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     gender = fields.Selection(
         related="address_home_id.gender",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     birthday = fields.Date(
         related="address_home_id.birthdate_date",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     place_of_birth = fields.Char(
         related="address_home_id.birth_city",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     country_of_birth = fields.Many2one(
         comodel_name="res.country",
         related="address_home_id.birth_country_id",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     birth_state_id = fields.Many2one(
         string="Birth state",
@@ -41,18 +46,21 @@ class HrEmployee(models.Model):
         related="address_home_id.birth_state_id",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     blood_type = fields.Selection(
         string="Blood Type (ABO)",
         related="address_home_id.blood_type",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     blood_type_rhesus = fields.Selection(
         string="Blood Type (Rh)",
         related="address_home_id.blood_type_rhesus",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     religion_id = fields.Many2one(
         string="Religion",
@@ -60,6 +68,7 @@ class HrEmployee(models.Model):
         related="address_home_id.religion_id",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     ethnicity_id = fields.Many2one(
         string="Ethnicity",
@@ -67,22 +76,26 @@ class HrEmployee(models.Model):
         related="address_home_id.ethnicity_id",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     marital = fields.Selection(
         string="Marital Status",
         related="address_home_id.marital",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     spouse_complete_name = fields.Char(
         string="Spouse Complete Name",
         related="address_home_id.spouse_complete_name",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )
     spouse_birthdate = fields.Date(
         string="Spouse Birthdate",
         related="address_home_id.spouse_birthdate",
         readonly=False,
         store=True,
+        compute_sudo=True,
     )

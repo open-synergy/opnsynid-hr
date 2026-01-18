@@ -14,6 +14,7 @@ class HrEmployee(models.Model):
         string="Academic experiences",
         help="Academic experiences",
         readonly=False,
+        compute_sudo=True,
     )
     certification_ids = fields.One2many(
         comodel_name="partner.certification",
@@ -21,6 +22,7 @@ class HrEmployee(models.Model):
         string="Certifications",
         help="Certifications",
         readonly=False,
+        compute_sudo=True,
     )
     experience_ids = fields.One2many(
         comodel_name="partner.experience",
@@ -28,4 +30,5 @@ class HrEmployee(models.Model):
         string="Professional Experiences",
         help="Professional Experiences",
         readonly=False,
+        compute_sudo=True,
     )
