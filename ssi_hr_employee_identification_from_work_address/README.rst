@@ -6,6 +6,8 @@
 Employee Identification Number From Home Address
 ================================================
 
+Glue module that surfaces identification number records on the employee form,
+pulling data directly from the employee's linked home address (``res.partner``).
 
 Installation
 ============
