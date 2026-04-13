@@ -6,6 +6,8 @@
 Employee Language From Home Address
 ===================================
 
+Glue module that surfaces language proficiency records on the employee form,
+pulling data directly from the employee's linked home address (``res.partner``).
 
 Installation
 ============

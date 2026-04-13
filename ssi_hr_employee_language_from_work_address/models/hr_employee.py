@@ -6,6 +6,13 @@ from odoo import fields, models
 
 
 class HrEmployee(models.Model):
+    """
+    Extends hr.employee to expose language proficiency records from the home address partner.
+
+    Provides a relational field bridging language data stored on the employee's
+    linked home address (res.partner).
+    """
+
     _inherit = "hr.employee"
 
     language_ids = fields.One2many(
