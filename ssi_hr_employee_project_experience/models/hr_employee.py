@@ -6,6 +6,13 @@ from odoo import fields, models
 
 
 class HrEmployee(models.Model):
+    """
+    Extends hr.employee with a project experience summary field.
+
+    Adds a read-only One2many field linking to the virtual
+    hr.employee_project_experience view model.
+    """
+
     _inherit = "hr.employee"
 
     project_experience_ids = fields.One2many(
