@@ -1,0 +1,26 @@
+scenarios:
+  - name: "SSI HR Employee Language From Work Address - Related field accessible"
+    steps:
+      - step: "Create home address partner"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test Employee Language Partner"
+
+      - step: "Create employee linked to home address"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee"
+        values:
+          name: "Test Employee Language"
+          address_home_id: "EVAL: registry['partner'].id"
+
+      - step: "Assert language_ids related field is accessible"
+        action: "assert"
+        target: "employee"
+        asserts:
+          language_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 0
