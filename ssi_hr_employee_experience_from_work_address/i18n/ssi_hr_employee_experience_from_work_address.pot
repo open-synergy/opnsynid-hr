@@ -1,0 +1,99 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_hr_employee_experience_from_work_address
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "# Certificate"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Academic Information"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model.fields,field_description:ssi_hr_employee_experience_from_work_address.field_hr_employee__academic_ids
+#: model:ir.model.fields,help:ssi_hr_employee_experience_from_work_address.field_hr_employee__academic_ids
+msgid "Academic experiences"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Academics"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Certification"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model.fields,field_description:ssi_hr_employee_experience_from_work_address.field_hr_employee__certification_ids
+#: model:ir.model.fields,help:ssi_hr_employee_experience_from_work_address.field_hr_employee__certification_ids
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Certifications"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model.fields,field_description:ssi_hr_employee_experience_from_work_address.field_hr_employee__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model,name:ssi_hr_employee_experience_from_work_address.model_hr_employee
+msgid "Employee"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Employer"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Experiences"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model.fields,field_description:ssi_hr_employee_experience_from_work_address.field_hr_employee__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Institution"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Issued By"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model.fields,field_description:ssi_hr_employee_experience_from_work_address.field_hr_employee____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Note"
+msgstr ""
+
+#. module: ssi_hr_employee_experience_from_work_address
+#: model:ir.model.fields,field_description:ssi_hr_employee_experience_from_work_address.field_hr_employee__experience_ids
+#: model:ir.model.fields,help:ssi_hr_employee_experience_from_work_address.field_hr_employee__experience_ids
+#: model_terms:ir.ui.view,arch_db:ssi_hr_employee_experience_from_work_address.hr_employee_view_form
+msgid "Professional Experiences"
+msgstr ""
