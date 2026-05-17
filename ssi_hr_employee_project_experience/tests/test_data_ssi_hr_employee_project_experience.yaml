@@ -1,0 +1,24 @@
+scenarios:
+  - name: "SSI HR Employee Project Experience - SQL view accessible"
+    steps:
+      - step: "Create employee"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee"
+        values:
+          name: "Test Employee Project Experience"
+
+      - step: "Assert project_experience_ids field accessible"
+        action: "assert"
+        target: "employee"
+        asserts:
+          project_experience_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 0
+
+      - step: "Search project experience view (verify SQL executes without error)"
+        action: "search"
+        model: "hr.employee_project_experience"
+        domain: []
+        save_as: "all_experiences"
