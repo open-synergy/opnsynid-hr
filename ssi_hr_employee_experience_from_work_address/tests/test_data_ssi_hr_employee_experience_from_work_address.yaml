@@ -1,0 +1,34 @@
+scenarios:
+  - name: "SSI HR Employee Experience From Work Address - Related fields accessible"
+    steps:
+      - step: "Create home address partner"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test Employee Experience Partner"
+
+      - step: "Create employee linked to home address"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee"
+        values:
+          name: "Test Employee Experience"
+          address_home_id: "EVAL: registry['partner'].id"
+
+      - step: "Assert experience related fields are accessible"
+        action: "assert"
+        target: "employee"
+        asserts:
+          academic_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 0
+          certification_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 0
+          experience_ids:
+            type: "o2m"
+            check: "count"
+            expected_count: 0
