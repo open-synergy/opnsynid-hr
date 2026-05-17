@@ -6,5 +6,9 @@ from odoo import models
 
 
 class ResCompany(models.Model):
+    """
+    Extends res.company as a base hook for ssi_hr company-level configuration.
+    """
+
     _name = "res.company"
     _inherit = "res.company"

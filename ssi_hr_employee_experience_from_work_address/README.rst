@@ -6,6 +6,9 @@
 Employee Experience From Home Address
 =====================================
 
+Glue module that surfaces academic history, professional experience, and
+certification records on the employee form, pulling data directly from
+the employee's linked home address (``res.partner``).
 
 Installation
 ============

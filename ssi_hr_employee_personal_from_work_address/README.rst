@@ -6,6 +6,9 @@
 Employee Personal Information From Home Address
 ===============================================
 
+Glue module that syncs personal information (nationality, gender, date and place
+of birth, blood type, religion, and ethnicity) from the employee's linked home
+address (``res.partner``) to the ``hr.employee`` record.
 
 Installation
 ============

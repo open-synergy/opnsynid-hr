@@ -1,0 +1,34 @@
+scenarios:
+  - name: "SSI HR Employee Personal From Work Address - Personal fields accessible"
+    steps:
+      - step: "Create home address partner"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner"
+        values:
+          name: "Test Employee Personal Partner"
+
+      - step: "Create employee linked to home address"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee"
+        values:
+          name: "Test Employee Personal"
+          address_home_id: "EVAL: registry['partner'].id"
+
+      - step: "Assert personal fields are accessible from home address"
+        action: "assert"
+        target: "employee"
+        asserts:
+          country_id:
+            type: "value"
+            operator: "is_falsy"
+          gender:
+            type: "value"
+            operator: "is_falsy"
+          birthday:
+            type: "value"
+            operator: "is_falsy"
+          place_of_birth:
+            type: "value"
+            operator: "is_falsy"

@@ -6,6 +6,14 @@ from odoo import fields, models
 
 
 class ResConfigSettings(models.TransientModel):
+    """
+    Extends configuration settings with HR module toggles.
+
+    Provides boolean fields that allow administrators to enable or disable
+    optional HR submodules (transitions, awards, discipline, timesheet, worklog,
+    holiday, overtime, payroll, etc.) directly from the Settings menu.
+    """
+
     _name = "res.config.settings"
     _inherit = [
         "res.config.settings",

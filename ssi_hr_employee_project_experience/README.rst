@@ -6,6 +6,9 @@
 Employee Project Experience
 ===========================
 
+Displays a read-only summary of project assignments on the employee form.
+Aggregates data from ``project.assignment`` records via a SQL view model,
+showing each project, role, partner, and assignment period per employee.
 
 Installation
 ============

@@ -8,6 +8,14 @@ from odoo import api, fields, models
 
 
 class HrEmployee(models.Model):
+    """
+    Extends the standard hr.employee model with initials support.
+
+    Automatically computes employee initials from the employee name,
+    stripping common titles and taking the first letter of each word.
+    Users can manually override initials, at which point auto-generation is disabled.
+    """
+
     _inherit = "hr.employee"
 
     initials = fields.Char(

@@ -9,7 +9,7 @@
             <xpath expr='//notebook' position="inside">
                 <page string="Languages">
                     <field name="language_ids" nolabel="1" colspan="4">
-                        <tree string="Language" editable="bottom">
+                        <tree editable="bottom">
                             <field name="name" />
                             <field name="read_rating" />
                             <field name="write_rating" />

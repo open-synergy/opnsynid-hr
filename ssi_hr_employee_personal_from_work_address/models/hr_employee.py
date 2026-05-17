@@ -6,6 +6,14 @@ from odoo import fields, models
 
 
 class HrEmployee(models.Model):
+    """
+    Extends hr.employee to sync personal information from the home address partner.
+
+    Provides related fields that mirror personal data (nationality, gender, birth date,
+    place of birth, blood type, religion, ethnicity, etc.) from the employee's linked
+    home address (res.partner), keeping both records in sync.
+    """
+
     _inherit = "hr.employee"
 
     country_id = fields.Many2one(

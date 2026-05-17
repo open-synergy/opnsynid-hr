@@ -1,3 +1,4 @@
+odoo-yaml-test
 odoo14-addon-ssi-hr
 odoo14-addon-ssi-master-data-mixin
 odoo14-addon-ssi-transaction-confirm-mixin

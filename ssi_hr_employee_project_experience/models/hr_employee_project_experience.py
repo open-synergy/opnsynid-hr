@@ -6,6 +6,14 @@ from odoo import api, fields, models
 
 
 class HrEmployeeProjectExprerience(models.Model):
+    """
+    Virtual (SQL view) model aggregating an employee's project assignment history.
+
+    Builds a read-only, non-stored dataset from project.assignment records
+    joined to hr.employee via the resource link. Used to display a summary
+    of projects an employee has participated in.
+    """
+
     _name = "hr.employee_project_experience"
     _description = "Employee Project Experience"
     _auto = False
