@@ -1,0 +1,158 @@
+scenarios:
+  - name: "SSI HR - Employee initials auto-generation from simple name"
+    steps:
+      - step: "Create employee with simple name"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_simple"
+        values:
+          name: "John Doe"
+
+      - step: "Assert initials auto-generated from simple name"
+        action: "assert"
+        target: "employee_simple"
+        asserts:
+          initials:
+            type: "value"
+            expected: "JD"
+          initials_manual:
+            type: "value"
+            expected: false
+
+  - name: "SSI HR - Employee initials strips common title prefixes"
+    steps:
+      - step: "Create employee with Dr. prefix"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_dr"
+        values:
+          name: "Dr. Ahmad Santoso"
+
+      - step: "Assert initials strip Dr. prefix"
+        action: "assert"
+        target: "employee_dr"
+        asserts:
+          initials:
+            type: "value"
+            expected: "AS"
+
+      - step: "Create employee with Ir. prefix"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_ir"
+        values:
+          name: "Ir. Budi Prasetyo"
+
+      - step: "Assert initials strip Ir. prefix"
+        action: "assert"
+        target: "employee_ir"
+        asserts:
+          initials:
+            type: "value"
+            expected: "BP"
+
+  - name: "SSI HR - Employee initials ignores suffix after comma"
+    steps:
+      - step: "Create employee with suffix after comma"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_suffix"
+        values:
+          name: "Siti Rahayu, S.T."
+
+      - step: "Assert initials uses only part before comma"
+        action: "assert"
+        target: "employee_suffix"
+        asserts:
+          initials:
+            type: "value"
+            expected: "SR"
+
+  - name: "SSI HR - Employee initials manual override"
+    steps:
+      - step: "Create employee"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_manual"
+        values:
+          name: "Andi Wijaya"
+
+      - step: "Assert auto-generated initials"
+        action: "assert"
+        target: "employee_manual"
+        asserts:
+          initials:
+            type: "value"
+            expected: "AW"
+          initials_manual:
+            type: "value"
+            expected: false
+
+      - step: "Manually set initials"
+        action: "write"
+        target: "employee_manual"
+        values:
+          initials: "AWJ"
+
+      - step: "Invalidate cache"
+        action: "call"
+        target: "employee_manual"
+        method: "invalidate_cache"
+
+      - step: "Assert initials_manual flag set"
+        action: "assert"
+        target: "employee_manual"
+        asserts:
+          initials:
+            type: "value"
+            expected: "AWJ"
+          initials_manual:
+            type: "value"
+            expected: true
+
+  - name: "SSI HR - Clearing initials reverts to auto mode"
+    steps:
+      - step: "Create employee with manual initials"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_clear"
+        values:
+          name: "Rina Kusuma"
+
+      - step: "Manually override initials"
+        action: "write"
+        target: "employee_clear"
+        values:
+          initials: "RKK"
+
+      - step: "Invalidate cache"
+        action: "call"
+        target: "employee_clear"
+        method: "invalidate_cache"
+
+      - step: "Assert initials_manual is true"
+        action: "assert"
+        target: "employee_clear"
+        asserts:
+          initials_manual:
+            type: "value"
+            expected: true
+
+      - step: "Clear initials"
+        action: "write"
+        target: "employee_clear"
+        values:
+          initials: ""
+
+      - step: "Invalidate cache after clear"
+        action: "call"
+        target: "employee_clear"
+        method: "invalidate_cache"
+
+      - step: "Assert initials_manual reverted to false"
+        action: "assert"
+        target: "employee_clear"
+        asserts:
+          initials_manual:
+            type: "value"
+            expected: false
