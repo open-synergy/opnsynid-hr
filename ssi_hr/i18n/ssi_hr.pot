@@ -1,0 +1,398 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* ssi_hr
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 14.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid ""
+"<span class=\"searchIcon\"><i class=\"fa fa-search\" role=\"img\" aria-"
+"label=\"Search\" title=\"Search\"/></span>"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_timesheet_attendance
+msgid "Attendance"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,help:ssi_hr.field_hr_employee__initials
+msgid "Automatically generated from name, unless manually overridden."
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_award
+msgid "Award"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.menu_career_configuration
+msgid "Career"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_career_management_menu
+msgid "Career Management"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_cash_advance
+msgid "Cash Advance"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model,name:ssi_hr.model_res_company
+msgid "Companies"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__company_id
+msgid "Company"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model,name:ssi_hr.model_res_config_settings
+msgid "Config Settings"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.menu_human_resource_configuration
+msgid "Configuration"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_demotion_transition
+msgid "Demotion Transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model:res.groups,name:ssi_hr.hr_departement_group
+msgid "Department"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_department_menu
+msgid "Departments"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_dicipline
+msgid "Dicipline"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid "Discard"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_hr_employee__display_name
+#: model:ir.model.fields,field_description:ssi_hr.field_res_company__display_name
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model,name:ssi_hr.model_hr_employee
+#: model:ir.ui.menu,name:ssi_hr.menu_employee_configuration
+#: model:res.groups,name:ssi_hr.hr_employee_group
+msgid "Employee"
+msgstr ""
+
+#. module: ssi_hr
+#: model:res.groups,name:ssi_hr.hr_employee_category_group
+msgid "Employee Tags"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_employee_menu
+msgid "Employees"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_expense_account
+msgid "Expense Account"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Feature"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_holiday
+msgid "Holiday"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_settings_menu
+#: model:ir.ui.menu,name:ssi_hr.menu_root_human_resource
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid "Human Resource"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.module.category,name:ssi_hr.human_resource_configurator_module_category
+msgid "Human Resource - Configurator"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.module.category,name:ssi_hr.human_resource_data_module_category
+msgid "Human Resource - Data Ownership"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.module.category,name:ssi_hr.human_resource_reporting_module_category
+msgid "Human Resource - Reporting"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.module.category,name:ssi_hr.human_resource_module_category
+msgid "Human Resource - Workflow"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.actions.act_window,name:ssi_hr.hr_settings_action
+msgid "Human Resource Settings"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Human Resources"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_hr_employee__id
+#: model:ir.model.fields,field_description:ssi_hr.field_res_company__id
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__id
+msgid "ID"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,help:ssi_hr.field_hr_employee__initials_manual
+msgid "If checked, initials will not auto-update from name."
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_hr_employee__initials
+msgid "Initials"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_hr_employee__initials_manual
+msgid "Initials Manually Set"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Integration"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_inventory_menu
+msgid "Inventory"
+msgstr ""
+
+#. module: ssi_hr
+#: model:res.groups,name:ssi_hr.hr_job_group
+msgid "Job Position"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_job_menu
+msgid "Job Positions"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_join_transition
+msgid "Join Transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_hr_employee____last_update
+#: model:ir.model.fields,field_description:ssi_hr.field_res_company____last_update
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings____last_update
+msgid "Last Modified on"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage attendance"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage award"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage cash advance"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage demotion transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage dicipline"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage expense account"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage holiday"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage join transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage mutation transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage new assignment transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage overtime"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage payslip"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage payslip batch"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage promotion transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage reimbursement"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage termination transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.res_config_settings_view_form
+msgid "Manage worklog"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_mutation_transition
+msgid "Mutation Transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_new_assignment_transition
+msgid "New Assignment Transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid "No Record Found"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.menu_organization_configuration
+msgid "Organization"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_overtime
+msgid "Overtime"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_payroll
+msgid "Payslip"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_payroll_batch
+msgid "Payslip Batch"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_promotion_transition
+msgid "Promotion Transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_reimbursement
+msgid "Reimbursement"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.menu_human_resource_report
+msgid "Report"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid "Save"
+msgstr ""
+
+#. module: ssi_hr
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid "Search..."
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.actions.act_window,name:ssi_hr.res_config_settings_action
+#: model:ir.ui.menu,name:ssi_hr.res_config_settings_menu
+#: model_terms:ir.ui.view,arch_db:ssi_hr.hr_settings_view_form
+msgid "Settings"
+msgstr ""
+
+#. module: ssi_hr
+#: model:res.groups,name:ssi_hr.original_employee_group
+msgid "Show original employee top menu"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.ui.menu,name:ssi_hr.hr_employee_catgeory_menu
+msgid "Tags"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_hr_termination_transition
+msgid "Termination Transition"
+msgstr ""
+
+#. module: ssi_hr
+#: model:ir.model.fields,field_description:ssi_hr.field_res_config_settings__module_ssi_work_log_mixin
+msgid "Worklog"
+msgstr ""
