@@ -4,13 +4,13 @@
 load-plugins=pylint_odoo
 score=n
 
-[ODOOLINT]
-readme_template_url="https://github.com/OCA/maintainer-tools/blob/master/template/module/README.rst"
-manifest_required_authors=PT. Simetri Sinergi Indonesia
-manifest_required_keys=license
-manifest_deprecated_keys=description,active
-license_allowed=AGPL-3,GPL-2,GPL-2 or any later version,GPL-3,GPL-3 or any later version,LGPL-3
-valid_odoo_versions=14.0
+[odoolint]
+readme-template-url="https://github.com/OCA/maintainer-tools/blob/master/template/module/README.rst"
+manifest-required-authors=PT. Simetri Sinergi Indonesia
+manifest-required-keys=license
+manifest-deprecated-keys=description,active
+license-allowed=AGPL-3,GPL-2,GPL-2 or any later version,GPL-3,GPL-3 or any later version,LGPL-3
+valid-odoo-versions=14.0
 
 [MESSAGES CONTROL]
 disable=all
@@ -23,21 +23,6 @@ disable=all
 # config as a blocking check.
 
 enable=anomalous-backslash-in-string,
-    api-one-deprecated,
-    api-one-multi-together,
-    class-camelcase,
-    dangerous-view-replace-wo-priority,
-    duplicate-id-csv,
-    duplicate-xml-fields,
-    duplicate-xml-record-id,
-    eval-referenced,
-    incoherent-interpreter-exec-perm,
-    openerp-exception-warning,
-    redundant-modulename-xml,
-    relative-import,
-    rst-syntax-error,
-    wrong-tabs-instead-of-spaces,
-    xml-syntax-error,
     assignment-from-none,
     attribute-deprecated,
     dangerous-default-value,
