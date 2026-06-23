@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<!-- Copyright 2025 OpenSynergy Indonesia
+     Copyright 2025 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <data>
+        <record id="indonesia_cv_report_py3o" model="ir.actions.report">
+            <field name="name">Daftar Riwayat Hidup</field>
+            <field name="type">ir.actions.report</field>
+            <field name="model">hr.employee</field>
+            <field name="report_name">cv_indo</field>
+            <field name="report_type">py3o</field>
+            <field name="py3o_filetype">pdf</field>
+            <field name="module">ssi_hr</field>
+            <field name="py3o_template_fallback">reports/cv_indo.odt</field>
+            <field name="binding_model_id" ref="hr.model_hr_employee" />
+            <field name="binding_type">report</field>
+            <field name="parser_loc">ssi_hr/reports/cv.py</field>
+            <field name="parser_state">loc</field>
+        </record>
+        <record id="english_cv_report_py3o" model="ir.actions.report">
+            <field name="name">Curriculum Vitae</field>
+            <field name="type">ir.actions.report</field>
+            <field name="model">hr.employee</field>
+            <field name="report_name">cv_eng</field>
+            <field name="report_type">py3o</field>
+            <field name="py3o_filetype">pdf</field>
+            <field name="module">ssi_hr</field>
+            <field name="py3o_template_fallback">reports/cv_eng.odt</field>
+            <field name="binding_model_id" ref="hr.model_hr_employee" />
+            <field name="binding_type">report</field>
+            <field name="parser_loc">ssi_hr/reports/cv.py</field>
+            <field name="parser_state">loc</field>
+        </record>
+    </data>
+</odoo>

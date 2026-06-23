@@ -9,8 +9,11 @@
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
     "installable": True,
-    "auto_install": True,
-    "depends": ["ssi_hr", "ssi_project_assignment"],
+    "auto_install": False,
+    "depends": [
+        "ssi_hr",
+        "ssi_project_assignment",
+    ],
     "data": [
         "security/ir.model.access.csv",
         "views/hr_employee_views.xml",
