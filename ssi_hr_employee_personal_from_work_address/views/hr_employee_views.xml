@@ -13,6 +13,26 @@
                 <field name="blood_type" />
                 <field name="blood_type_rhesus" />
             </xpath>
+            <xpath expr="//page[@name='personal_information']" position="inside">
+                <div name="children_button_box">
+                    <button
+                        name="action_add_child"
+                        type="object"
+                        string="Add Child"
+                        class="oe_highlight"
+                        attrs="{'invisible': [('address_home_id', '=', False)]}"
+                    />
+                </div>
+                <separator string="Children" />
+                <field name="children_ids" nolabel="1">
+                    <tree>
+                        <field name="name" />
+                        <field name="birth_city" />
+                        <field name="birthdate_date" />
+                        <field name="gender" />
+                    </tree>
+                </field>
+            </xpath>
         </field>
     </record>
 </odoo>

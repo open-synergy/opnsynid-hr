@@ -107,3 +107,36 @@ class HrEmployee(models.Model):
         store=True,
         compute_sudo=True,
     )
+    children_ids = fields.Many2many(
+        string="Children",
+        comodel_name="res.partner",
+        related="address_home_id.children_ids",
+        readonly=True,
+        compute_sudo=True,
+        help="Children of this employee, taken from the children of the "
+        "home address contact.",
+    )
+
+    def action_add_child(self):
+        """Open the wizard used to add a child to this employee.
+
+        :return: an ``ir.actions.act_window`` dict opening the wizard
+        """
+        for record in self.sudo():
+            result = record._add_child()
+        return result
+
+    def _add_child(self):
+        """Build the window action opening the Add Child wizard.
+
+        :return: an ``ir.actions.act_window`` dict, target new
+        """
+        self.ensure_one()
+        return {
+            "type": "ir.actions.act_window",
+            "name": "Add Child",
+            "res_model": "add_employee_child",
+            "view_mode": "form",
+            "target": "new",
+            "context": {"default_employee_id": self.id},
+        }

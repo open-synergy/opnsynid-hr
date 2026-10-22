@@ -13,9 +13,13 @@
     "depends": [
         "ssi_partner",
         "ssi_hr",
+        "web_tour",
     ],
     "data": [
+        "security/ir_model_access/add_employee_child.xml",
         "views/hr_employee_views.xml",
+        "wizards/add_employee_child.xml",
+        "views/hr_employee_assets_tests.xml",
     ],
     "demo": [],
 }

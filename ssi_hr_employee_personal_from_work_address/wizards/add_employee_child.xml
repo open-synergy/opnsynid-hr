@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- Copyright 2026 OpenSynergy Indonesia
+     Copyright 2026 PT. Simetri Sinergi Indonesia
+     License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl). -->
+<odoo>
+    <record id="add_employee_child_view_form" model="ir.ui.view">
+        <field name="name">add_employee_child - form</field>
+        <field name="model">add_employee_child</field>
+        <field name="arch" type="xml">
+            <form>
+                <group name="group_1" colspan="4" col="2">
+                    <field name="employee_id" invisible="1" />
+                    <field name="name" />
+                    <field name="birth_city" />
+                    <field name="birthdate_date" />
+                    <field name="gender" />
+                </group>
+                <footer>
+                    <button
+                        name="action_add_child"
+                        type="object"
+                        string="Add Child"
+                        class="btn-primary"
+                    />
+                    <button string="Cancel" class="btn-default" special="cancel" />
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>
