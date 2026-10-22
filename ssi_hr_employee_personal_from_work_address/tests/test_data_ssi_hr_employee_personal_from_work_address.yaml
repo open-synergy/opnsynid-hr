@@ -32,3 +32,200 @@ scenarios:
           place_of_birth:
             type: "value"
             operator: "is_falsy"
+
+  - name: "SSI HR Employee Personal From Work Address - Add child to male employee"
+    steps:
+      - step: "Create home address partner (male)"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner_male"
+        values:
+          name: "Test Father Partner"
+          gender: "male"
+
+      - step: "Create male employee linked to home address"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_male"
+        values:
+          name: "Test Father Employee"
+          address_home_id: "REC: partner_male.id"
+
+      - step: "Add child through wizard"
+        action: "wizard"
+        model: "add_employee_child"
+        target: "employee_male"
+        values:
+          name: "Test Child Of Father"
+          birth_city: "Bandung"
+          birthdate_date: "2015-05-17"
+          gender: "female"
+        method: "action_add_child"
+
+      - step: "Find the new child partner"
+        action: "search"
+        model: "res.partner"
+        domain: [["name", "=", "Test Child Of Father"]]
+        save_as: "child_father"
+        expect_count: 1
+
+      - step: "Assert child is a private contact without parent"
+        action: "assert"
+        target: "child_father"
+        asserts:
+          type:
+            type: "value"
+            expected: "private"
+          parent_id:
+            type: "value"
+            operator: "is_falsy"
+          birth_city:
+            type: "value"
+            expected: "Bandung"
+          gender:
+            type: "value"
+            expected: "female"
+          father_id:
+            type: "m2o"
+            expected: "REC: partner_male"
+          mother_id:
+            type: "value"
+            operator: "is_falsy"
+
+      - step: "Assert employee lists the child"
+        action: "assert"
+        target: "employee_male"
+        asserts:
+          children_ids:
+            type: "m2m"
+            check: "exact"
+            expected_records:
+              - "REC: child_father"
+
+  - name: "SSI HR Employee Personal From Work Address - Add child to female employee"
+    steps:
+      - step: "Create home address partner (female)"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner_female"
+        values:
+          name: "Test Mother Partner"
+          gender: "female"
+
+      - step: "Create female employee linked to home address"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_female"
+        values:
+          name: "Test Mother Employee"
+          address_home_id: "REC: partner_female.id"
+
+      - step: "Add child through wizard"
+        action: "wizard"
+        model: "add_employee_child"
+        target: "employee_female"
+        values:
+          name: "Test Child Of Mother"
+        method: "action_add_child"
+
+      - step: "Find the new child partner"
+        action: "search"
+        model: "res.partner"
+        domain: [["name", "=", "Test Child Of Mother"]]
+        save_as: "child_mother"
+        expect_count: 1
+
+      - step: "Assert child has the mother set"
+        action: "assert"
+        target: "child_mother"
+        asserts:
+          mother_id:
+            type: "m2o"
+            expected: "REC: partner_female"
+          father_id:
+            type: "value"
+            operator: "is_falsy"
+
+      - step: "Assert employee lists the child"
+        action: "assert"
+        target: "employee_female"
+        asserts:
+          children_ids:
+            type: "m2m"
+            check: "exact"
+            expected_records:
+              - "REC: child_mother"
+
+  - name:
+      "SSI HR Employee Personal From Work Address - Add child to employee without gender"
+    steps:
+      - step: "Create home address partner (no gender)"
+        action: "create"
+        model: "res.partner"
+        save_as: "partner_nogender"
+        values:
+          name: "Test Neutral Partner"
+
+      - step: "Create employee without gender"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_nogender"
+        values:
+          name: "Test Neutral Employee"
+          address_home_id: "REC: partner_nogender.id"
+
+      - step: "Add child through wizard"
+        action: "wizard"
+        model: "add_employee_child"
+        target: "employee_nogender"
+        values:
+          name: "Test Child Of Neutral"
+        method: "action_add_child"
+
+      - step: "Find the new child partner"
+        action: "search"
+        model: "res.partner"
+        domain: [["name", "=", "Test Child Of Neutral"]]
+        save_as: "child_neutral"
+        expect_count: 1
+
+      - step: "Assert child has no father or mother"
+        action: "assert"
+        target: "child_neutral"
+        asserts:
+          father_id:
+            type: "value"
+            operator: "is_falsy"
+          mother_id:
+            type: "value"
+            operator: "is_falsy"
+
+      - step: "Assert employee still lists the child"
+        action: "assert"
+        target: "employee_nogender"
+        asserts:
+          children_ids:
+            type: "m2m"
+            check: "exact"
+            expected_records:
+              - "REC: child_neutral"
+
+  - name: "SSI HR Employee Personal From Work Address - Add child without home address"
+    steps:
+      - step: "Create employee without home address"
+        action: "create"
+        model: "hr.employee"
+        save_as: "employee_noaddress"
+        values:
+          name: "Test No Address Employee"
+
+      - step: "Adding a child is rejected"
+        action: "wizard"
+        model: "add_employee_child"
+        target: "employee_noaddress"
+        values:
+          name: "Test Orphan Child"
+        method: "action_add_child"
+        expect_error:
+          type: "UserError"
+          message_contains: "Employee has no home address"

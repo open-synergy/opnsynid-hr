@@ -8,7 +8,13 @@ Employee Personal Information From Home Address
 
 Glue module that syncs personal information (nationality, gender, date and place
 of birth, blood type, religion, and ethnicity) from the employee's linked home
-address (``res.partner``) to the ``hr.employee`` record.
+address (``res.partner``) to the ``hr.employee`` record. It also lists the
+children of the employee and lets HR add a child from the employee form.
+
+Work Instruction
+================
+
+* `Add Child Employee <docs/hr_employee/index.html>`_
 
 Installation
 ============
