@@ -7,7 +7,7 @@
         <field name="inherit_id" ref="hr.view_employee_form" />
         <field name="arch" type="xml">
             <xpath expr='//notebook' position="inside">
-                <page string="Languages">
+                <page string="Languages" name="languages">
                     <field name="language_ids" nolabel="1" colspan="4">
                         <tree editable="bottom">
                             <field name="name" />
@@ -16,6 +16,15 @@
                             <field name="speak_rating" />
                             <field name="listen_rating" />
                         </tree>
+                        <form>
+                            <group name="language_1" col="2">
+                                <field name="name" />
+                                <field name="read_rating" />
+                                <field name="write_rating" />
+                                <field name="speak_rating" />
+                                <field name="listen_rating" />
+                            </group>
+                        </form>
                     </field>
                 </page>
             </xpath>
