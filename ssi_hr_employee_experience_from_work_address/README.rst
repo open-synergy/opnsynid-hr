@@ -10,6 +10,11 @@ Glue module that surfaces academic history, professional experience, and
 certification records on the employee form, pulling data directly from
 the employee's linked home address (``res.partner``).
 
+Work Instruction
+================
+
+* `Edit Employee <docs/hr_employee/index.html>`_
+
 Installation
 ============
 
