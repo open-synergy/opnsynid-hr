@@ -9,5 +9,8 @@ from odoo.tests import tagged
 
 @tagged("post_install", "-at_install")
 class TestSsiHr(YamlTransactionCase):
+    """Cover the employee initials generation of ``hr.employee``."""
+
     def test_ssi_hr(self):
+        """Run the employee initials scenarios from the YAML file."""
         self.run_yaml_scenario("test_data_ssi_hr.yaml")

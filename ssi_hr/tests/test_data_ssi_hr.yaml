@@ -69,6 +69,8 @@ scenarios:
             expected: "SR"
 
   - name: "SSI HR - Employee initials manual override"
+    options:
+      auto_refresh: true
     steps:
       - step: "Create employee"
         action: "create"
@@ -94,11 +96,6 @@ scenarios:
         values:
           initials: "AWJ"
 
-      - step: "Invalidate cache"
-        action: "call"
-        target: "employee_manual"
-        method: "invalidate_cache"
-
       - step: "Assert initials_manual flag set"
         action: "assert"
         target: "employee_manual"
@@ -111,6 +108,8 @@ scenarios:
             expected: true
 
   - name: "SSI HR - Clearing initials reverts to auto mode"
+    options:
+      auto_refresh: true
     steps:
       - step: "Create employee with manual initials"
         action: "create"
@@ -125,11 +124,6 @@ scenarios:
         values:
           initials: "RKK"
 
-      - step: "Invalidate cache"
-        action: "call"
-        target: "employee_clear"
-        method: "invalidate_cache"
-
       - step: "Assert initials_manual is true"
         action: "assert"
         target: "employee_clear"
@@ -143,11 +137,6 @@ scenarios:
         target: "employee_clear"
         values:
           initials: ""
-
-      - step: "Invalidate cache after clear"
-        action: "call"
-        target: "employee_clear"
-        method: "invalidate_cache"
 
       - step: "Assert initials_manual reverted to false"
         action: "assert"

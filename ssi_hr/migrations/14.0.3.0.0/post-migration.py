@@ -3,31 +3,43 @@
 # License LGPL-3.0 or later (http://www.gnu.org/licenses/lgpl).
 import re
 
-from odoo import SUPERUSER_ID, api
+from openupgradelib import openupgrade
 
 
 def _generate_initials(name):
+    """Build the initials of a person name.
+
+    Only the part before the first comma is used. Common titles
+    (Dr, Ir, Prof, Hj, H, Mr, Mrs, Ms) are removed, then the first
+    letter of each alphabetic word is taken and uppercased.
+
+    :param name: the employee name
+    :return: the generated initials, empty when ``name`` is empty
+    """
     if not name:
         return ""
-    # Ambil hanya bagian sebelum koma
+    # Take only the part before the comma
     main_part = name.split(",")[0]
 
-    # Hilangkan gelar depan umum
+    # Remove common leading titles
     main_part = re.sub(
         r"\b(Dr|Ir|Prof|Hj|H|Mr|Mrs|Ms)\.?\s+", "", main_part, flags=re.IGNORECASE
     )
 
-    # Ambil huruf pertama dari tiap kata
+    # Take the first letter of each word
     words = main_part.split()
     return "".join([w[0].upper() for w in words if w and w[0].isalpha()])
 
 
-def migrate(cr, version):
-    """Populate initials for existing data"""
+@openupgrade.migrate()
+def migrate(env, version):
+    """Populate initials for existing employees.
+
+    :param env: the Odoo environment provided by ``openupgrade``
+    :param version: the installed version, empty on fresh install
+    """
     if not version:
         return
-
-    env = api.Environment(cr, SUPERUSER_ID, {})
 
     employees = env["hr.employee"].with_context(active_test=False).search([])
     for emp in employees:
