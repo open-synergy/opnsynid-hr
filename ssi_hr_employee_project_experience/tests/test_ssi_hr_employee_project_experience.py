@@ -9,5 +9,8 @@ from odoo.tests import tagged
 
 @tagged("post_install", "-at_install")
 class TestSsiHrEmployeeProjectExperience(YamlTransactionCase):
+    """Cover the project experience SQL view model."""
+
     def test_ssi_hr_employee_project_experience(self):
+        """Run the SQL view accessibility scenario."""
         self.run_yaml_scenario("test_data_ssi_hr_employee_project_experience.yaml")

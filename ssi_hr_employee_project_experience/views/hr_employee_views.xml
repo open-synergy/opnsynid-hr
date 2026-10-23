@@ -18,6 +18,17 @@
                             <field name="date_start" />
                             <field name="date_end" />
                         </tree>
+                        <form>
+                            <group name="project_experience_main" col="2">
+                                <field name="project_id" />
+                                <field name="assignment_id" />
+                                <field name="type_id" />
+                                <field name="partner_id" />
+                                <field name="role_id" />
+                                <field name="date_start" />
+                                <field name="date_end" />
+                            </group>
+                        </form>
                     </field>
                 </page>
             </xpath>

@@ -1,0 +1,3 @@
+# Penyimpangan yang diterima (kontrak validator §13).
+module nama-class-pascalcase-dari-name|models/hr_employee_project_experience.py: class HrEmployeeProjectExprerience, seharusnya HrEmployeeProjectExperience -- rename class menunggu instruksi eksplisit user (odoo-development Prinsip Inti 3 melarang mengganti nama class Python yang sudah ada); hapus baris ini di PR yang sama dengan rename-nya
+ik modul-tak-punya-direktori-docs-belum-ada-ik-sama-sekali|docs/ -- satu-satunya permukaan pengguna adalah tab read-only berisi model SQL view tanpa menu/act_window; bukan alur sendiri sehingga tidak membutuhkan IK (modul-extension.md, Kapan tidak membuat IK)
