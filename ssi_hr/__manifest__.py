@@ -4,7 +4,7 @@
 # pylint: disable=C8101
 {
     "name": "Human Resource",
-    "version": "14.0.3.3.1",
+    "version": "14.0.3.3.2",
     "website": "https://simetri-sinergi.id",
     "author": "OpenSynergy Indonesia, PT. Simetri Sinergi Indonesia",
     "license": "AGPL-3",
