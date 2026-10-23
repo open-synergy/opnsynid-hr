@@ -20,7 +20,7 @@ addon | version | maintainers | summary
 --- | --- | --- | ---
 [ssi_hr](ssi_hr/) | 14.0.3.3.2 |  | Human Resource
 [ssi_hr_employee_experience_from_work_address](ssi_hr_employee_experience_from_work_address/) | 14.0.1.3.1 |  | Employee Experience From Home Address
-[ssi_hr_employee_identification_from_work_address](ssi_hr_employee_identification_from_work_address/) | 14.0.1.1.0 |  | Employee Identification Number From Home Address
+[ssi_hr_employee_identification_from_work_address](ssi_hr_employee_identification_from_work_address/) | 14.0.1.1.1 |  | Employee Identification Number From Home Address
 [ssi_hr_employee_language_from_work_address](ssi_hr_employee_language_from_work_address/) | 14.0.1.2.0 |  | Employee Language From Home Address
 [ssi_hr_employee_personal_from_work_address](ssi_hr_employee_personal_from_work_address/) | 14.0.1.5.1 |  | Employee Personal Information From Home Address
 [ssi_hr_employee_project_experience](ssi_hr_employee_project_experience/) | 14.0.1.3.1 |  | Employee Project Experience
