@@ -14,6 +14,7 @@
     "depends": [
         "hr",
         "configuration_helper",
+        "web_tour",
     ],
     "data": [
         "security/ir_module_category_data.xml",
@@ -22,6 +23,7 @@
         "menu.xml",
         "views/res_config_settings_views.xml",
         "views/hr_employee_views.xml",
+        "views/assets.xml",
     ],
     "post_init_hook": "post_init_hook",
     "demo": [],

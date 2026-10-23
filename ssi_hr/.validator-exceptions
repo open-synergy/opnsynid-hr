@@ -1,0 +1,6 @@
+# Penyimpangan yang diterima (kontrak validator §13).
+# res.config.settings adalah extension model core (_inherit berisi dua model),
+# bukan wizard SSI, sehingga tiga aturan wizard tidak berlaku.
+module name-wizard-tanpa-notasi-titik|models/res_config_settings.py: _name 'res.config.settings' memakai notasi titik -- _name wajib res.config.settings karena _inherit berisi dua model (extension model core, bukan wizard SSI)
+module berkas-wizard-berada-di-wizards|models/res_config_settings.py: TransientModel di luar wizards/ -- res.config.settings adalah extension model core; konvensi korpus 14.0 menaruhnya di models/res_config_settings.py (100 modul vs 3 di wizards/)
+module acl-wizard-satu-user-access-tanpa-all-access|res.config.settings: tidak ada ACL sama sekali -- ACL res.config.settings disediakan core (odoo/addons/base/security/ir.model.access.csv, access_res_config_settings, base.group_system)
