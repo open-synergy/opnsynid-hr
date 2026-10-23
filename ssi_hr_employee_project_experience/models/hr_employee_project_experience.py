@@ -59,6 +59,14 @@ class HrEmployeeProjectExprerience(models.Model):
 
     @property
     def _table_query(self):
+        """Build the SQL query backing this view model.
+
+        Concatenates the fragments from ``_select``, ``_from``, ``_join``
+        and ``_where`` so extensions can override each part separately.
+
+        :return: Complete SQL ``SELECT`` statement.
+        :rtype: str
+        """
         return "%s %s %s %s" % (
             self._select(),
             self._from(),
@@ -68,6 +76,13 @@ class HrEmployeeProjectExprerience(models.Model):
 
     @api.model
     def _select(self):
+        """Build the ``SELECT`` clause of the view query.
+
+        Extension point for adding columns to the view.
+
+        :return: SQL fragment with the selected columns.
+        :rtype: str
+        """
         select_str = """
         SELECT
             row_number() OVER() as id,
@@ -84,6 +99,13 @@ class HrEmployeeProjectExprerience(models.Model):
 
     @api.model
     def _from(self):
+        """Build the ``FROM`` clause of the view query.
+
+        Extension point for changing the base table.
+
+        :return: SQL fragment with the base table.
+        :rtype: str
+        """
         from_str = """
         FROM project_assignment AS a
         """
@@ -91,6 +113,13 @@ class HrEmployeeProjectExprerience(models.Model):
 
     @api.model
     def _join(self):
+        """Build the ``JOIN`` clauses of the view query.
+
+        Links assignments to projects, resources and employees.
+
+        :return: SQL fragment with the joined tables.
+        :rtype: str
+        """
         join_str = """
         JOIN project_project AS b ON
             a.project_id=b.id
@@ -103,6 +132,13 @@ class HrEmployeeProjectExprerience(models.Model):
 
     @api.model
     def _where(self):
+        """Build the ``WHERE`` clause of the view query.
+
+        Excludes cancelled and rejected project assignments.
+
+        :return: SQL fragment with the row filter.
+        :rtype: str
+        """
         where_str = """
         WHERE a.state NOT IN ('cancel', 'reject')
         """
