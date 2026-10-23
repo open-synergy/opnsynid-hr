@@ -9,6 +9,11 @@ Employee Language From Home Address
 Glue module that surfaces language proficiency records on the employee form,
 pulling data directly from the employee's linked home address (``res.partner``).
 
+Work Instruction
+================
+
+* `Edit Employee <docs/hr_employee/index.html>`_
+
 Installation
 ============
 
