@@ -13,9 +13,11 @@
     "depends": [
         "ssi_partner_identification",
         "ssi_hr",
+        "web_tour",
     ],
     "data": [
         "views/hr_employee_views.xml",
+        "views/hr_employee_assets_tests.xml",
     ],
     "demo": [],
 }

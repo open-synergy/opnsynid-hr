@@ -6,12 +6,10 @@ from odoo import fields, models
 
 
 class HrEmployee(models.Model):
-    """
-    Extends hr.employee to expose identification numbers from the home address partner.
-
-    Provides a relational field bridging identification number records stored
-    on the employee's linked home address (res.partner).
-    """
+    # Extends hr.employee to expose identification numbers from the home
+    # address partner. Provides a relational field bridging identification
+    # number records stored on the employee's linked home address
+    # (res.partner).
 
     _inherit = "hr.employee"
 
