@@ -11,6 +11,28 @@ initials auto-generation and provides a configuration settings page to enable
 optional HR submodules (transitions, awards, discipline, timesheet, worklog,
 holiday, overtime, and payroll).
 
+Work Instruction
+================
+
+* `Create Employee <docs/hr_employee/index.html>`_
+* `Edit Employee <docs/hr_employee/index.html>`_
+* `Delete Employee <docs/hr_employee/index.html>`_
+* `Deactivate Employee <docs/hr_employee/index.html>`_
+* `Activate Employee <docs/hr_employee/index.html>`_
+* `Create Department <docs/hr_department/index.html>`_
+* `Edit Department <docs/hr_department/index.html>`_
+* `Delete Department <docs/hr_department/index.html>`_
+* `Deactivate Department <docs/hr_department/index.html>`_
+* `Activate Department <docs/hr_department/index.html>`_
+* `Create Job Position <docs/hr_job/index.html>`_
+* `Edit Job Position <docs/hr_job/index.html>`_
+* `Delete Job Position <docs/hr_job/index.html>`_
+* `Start Recruitment of Job Position <docs/hr_job/index.html>`_
+* `Stop Recruitment of Job Position <docs/hr_job/index.html>`_
+* `Create Employee Tag <docs/hr_employee_category/index.html>`_
+* `Edit Employee Tag <docs/hr_employee_category/index.html>`_
+* `Delete Employee Tag <docs/hr_employee_category/index.html>`_
+
 Installation
 ============
 

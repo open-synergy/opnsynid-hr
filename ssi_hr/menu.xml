@@ -36,13 +36,13 @@
         id="menu_human_resource_report"
         name="Report"
         parent="menu_root_human_resource"
-        sequence="98"
+        sequence="998"
     />
 <menuitem
         id="menu_human_resource_configuration"
         name="Configuration"
         parent="menu_root_human_resource"
-        sequence="99"
+        sequence="999"
     />
 
 <menuitem

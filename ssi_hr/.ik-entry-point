@@ -1,0 +1,9 @@
+# Titik masuk IK untuk model milik Odoo core yang di-inherit modul ini.
+# Format: <model.bertitik> -- <alasan satu baris>
+# Lihat skill odoo-development-instruksi-kerja, references/modul-extension.md
+# §"Model milik Odoo core / OCA — deklarasi titik masuk".
+
+hr.employee -- ssi_hr menyediakan menu Human Resource > Employees dan group configurator Employee sebagai pintu masuk pengguna untuk model core ini, serta menambah field Initials
+hr.department -- ssi_hr menyediakan menu Human Resource > Configuration > Organization > Departments dan group configurator Department sebagai pintu masuk pengguna untuk model core ini
+hr.job -- ssi_hr menyediakan menu Human Resource > Configuration > Organization > Job Positions dan group configurator Job Position sebagai pintu masuk pengguna untuk model core ini
+hr.employee.category -- ssi_hr menyediakan menu Human Resource > Configuration > Employee > Tags dan group configurator Employee Tags sebagai pintu masuk pengguna untuk model core ini
