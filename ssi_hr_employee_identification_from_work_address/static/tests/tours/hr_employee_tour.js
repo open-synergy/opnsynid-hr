@@ -68,7 +68,7 @@ odoo.define(
                 {
                     content: "Identification No and Passport No are not displayed",
                     trigger:
-                        ".o_notebook .tab-pane.active .o_field_widget[name='country_id']",
+                        ".o_notebook .tab-pane.active .o_horizontal_separator:contains(Citizenship)",
                     run: function () {
                         // Assertion only: the visible fields of this tab must not
                         // include the hidden core fields.
